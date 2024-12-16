@@ -1,0 +1,8 @@
+<resources>
+
+    <string-array name="modes">
+        <item>حالت آسان</item>
+        <item>حالت ماجراجویی</item>
+        <item>حالت سخت</item>
+    </string-array>
+</resources>
