@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">دیجی‌پاز</string>
+
+    <string name="start">آغاز</string>
+    <string name="stop">متوقف کردن</string>
+    <string name="missing_permission">مجوز از دست رفته</string>
+
+    <string name="settings">تنظیمات</string>
+    <string name="info">اطلاعات</string>
+    <string name="close">بستن</string>
+    <string name="proceed">ادامه</string>
+    <string name="buy_20_mins">خرید ۲۰ دقیقه</string>
+    <string name="desc_sd_overlay">آیا می‌خواهید یک زمان‌سوز ۲۰ دقیقه‌ای را به قیمت ۱ آورا خریداری کنید؟ این خرید تمام محدودیت‌ها را برای این برنامه یا مورد به مدت ۲۰ دقیقه برمی‌دارد.</string>
+
+    <string name="no_coins_title">آورا ناکافی</string>
+    <string name="desc_no_coins_overlay">شما ۰ آورا برای هدر دادن زمان دارید. برای کسب آورا اکنون یک مأموریت انجام دهید!</string>
+
+    <string name="desc_ex_overlay">آیا می‌خواهید به هدر دادن زمان ادامه دهید و در تاریکی خلاقیت ذهن‌تان غرق شوید؟</string>
+
+
+    <string name="breathe">یک نفس عمیق بکشید!!!</string>
+    <string name="warning_title">مطمئنی؟</string>
+
+    <string name="notification_accessibility_permission">مجوز دسترس‌پذیری برای اجرای مسدودکننده‌ها لازم است.</string>
+    <string name="notification_overlay_permission">اجازه‌ی پوشش را برای نمایش هشدارها روی موارد مسدود شده بدهید. (داده‌های شما در دستگاه شما باقی می‌ماند و هرگز به جای دیگری منتقل نمی‌شود.)</string>
+    <string name="notification_notif_permission">اجازه‌ی آگاه‌سازی لازم است تا به‌روزرسانی‌های مأموریت را دریافت کنید.</string>
+    <string name="notification_location_permission">اجازه‌ی موقعیت دقیق را برای ردیابی موقعیت برای مأموریت‌ها بدهید. (داده‌های شما در دستگاه شما باقی می‌ماند و هرگز به جای دیگری منتقل نمی‌شود.)</string>
+    <string name="notification_camera_permission">اجازه‌ی دوربین را برای ردیابی موقعیت و شمارش تکرارهای مأموریت‌ها بدهید. (داده‌های شما در دستگاه شما باقی می‌ماند و هرگز به جای دیگری منتقل نمی‌شود.)</string>
+
+
+    <string name="notification_marathon_title">مأموریت ماراتن در حال اجرا</string>
+
+
+    <string name="select_quest">انتخاب مأموریت</string>
+    <string name="welcome">خوش آمدید</string>
+    <string name="app_desc">دیجی‌پاز نرم‌افزار آزاد است که به حل اعتیاد به صفحه نمایش با تنظیم میزان استفاده از برنامه‌ها با یک تجربه بازی‌سازی شده می‌پردازد. آسان، ماجراجویانه و سخت — هر کدام با ویژگی‌ها و چالش‌های منحصر به فرد برای ترویج عادات سالم.</string>
+
+    <string name="easy_mode">حالت آسان</string>
+    <string name="easy_mode_desc">دسترسی به برنامه‌های مسدود شده فقط هشدارهای ملایم می‌دهد. این هشدارها تکرار می‌شود تا شما را در مدیریت زمان صفحه نمایش پایدار نگه دارد.</string>
+
+    <string name="adventure_mode">حالت ماجراجویی (آزمایشی)</string>
+    <string name="adventure_mode_desc">تنبلی با یک پیاده روی ناگهانی از بین میرود. برای دسترسی به یک برنامه مسدود شده به مدت ۲۰ دقیقه به آورا نیاز دارید که از طریق مأموریت‌ها کسب شده است. با هر مأموریت، سختی افزایش می‌یابد.</string>
+
+    <string name="hard_mode">حالت سخت</string>
+    <string name="hard_mode_desc">از ببه‌کارگیری برنامه‌های مسدود شده به طور کامل جلوگیری می‌کند.</string>
+
+    <string name="block_vb_title">چه چیزی را می‌خواهید مسدود کنید؟</string>
+    <string name="block_shorts_cb">مسدود کردن ویدیوهای کوتاه</string>
+    <string name="block_comments_cb">مسدود کردن نظرات (آزمایشی)</string>
+    <string name="block_porn_cb">مسدود کردن واژگان کلیدی (آزمایشی)</string>
+    <string name="block_vb_desc">سکوهای پشتیبانی شده: یوتیوب، اینستاگرام، ReVanced تیک‌تاک.</string>
+
+    <string name="anti_uninstall_title">#بازپروری_فناوری</string>
+    <string name="anti_uninstall_cb">فعال کردن بازپروری فناوری</string>
+     <string name="anti_reboot_cb">جلوگیری از بسته شدن اجباری دستگاه (آزمایشی)</string>
+    <string name="anti_uninstall_desc">#یک چالش سخت‌گیرانه ۳ هفته‌ای برای افزایش بهره‌وری و ایجاد عادت. در این مدت، شما نمی‌توانید برنامه را تغییر دهید یا دیجی‌پاز را حذف کنید.</string>
+    <string name="anti_uninstall_desc_day">روزهای پرقدرت!!!</string>
+
+
+    <string name="choose_mode_title">حالت</string>
+    <string name="choose_mode">انتخاب حالت</string>
+    <string name="loading">در حال بارگذاری</string>
+
+
+    <string name="choose_delay_title">چند وقت یکبار؟</string>
+    <string name="choose_delay_desc">یک زمان استراحت سفارشی بین هر هشدار مشخص کنید. این گزینه برای حالت ماجراجویی در دسترس نیست.</string>
+
+    <string name="acc_desc">لطفاً اگر مشکلی پیش آمد یا برای اعمال هرگونه تغییرات پیکربندی دوباره خاموش و روشن کنید.</string>
+
+    <string name="choose_blocked_apps_title">پیکربندی مسدودکننده برنامه</string>
+    <string name="choose_blocked_apps_desc">برنامه‌هایی را که می‌خواهید مسدود کنید یا برای آن‌ها هشدار بهره‌وری دریافت کنید، انتخاب کنید.</string>
+
+    <string name="choose_whitelist_apps">برنامه‌های خاکستری</string>
+    <string name="choose_whitelist_apps_desc">برنامه‌هایی را انتخاب کنید که در حالت تمرکز مجاز هستند. حالت تمرکز یک مأموریت است که در آن نمی‌توانید به هیچ یک از این برنامه‌ها در مدت زمان مشخصی دسترسی داشته باشید. این مأموریت پس از آغاز نمی‌تواند متوقف شود.</string>
+
+    <string name="perm_quest_manager_label">مأموریت‌های دیجی‌پاز</string>
+    <string name="perm_quest_manager_desc">با انجام یک ماموریت تعداد آورا را دگرگون کنید؟</string>
+
+    <string
+            name="pref_category_key_camera"
+            translatable="false">pckc</string>
+    <string
+            name="pref_category_title_camera"
+            translatable="false">دوربین</string>
+    <string
+            name="pref_key_rear_camera_preview_size"
+            translatable="false">rcpvs</string>
+    <string
+            name="pref_key_rear_camera_picture_size"
+            translatable="false">rcpts</string>
+    <string
+            name="pref_key_front_camera_preview_size"
+            translatable="false">fcpvs</string>
+    <string
+            name="pref_key_front_camera_picture_size"
+            translatable="false">fcpts</string>
+
+    <string name="marathon_desc">برای پیروزی از منطقه قرمز خارج شوید، بدون جریمه برای شکست. فراموش نکنید که دستگاه خود را همراه داشته باشید.</string>
+    <string name="squats_desc">$valuex اسکوات ۱ آورا به دست می‌آورد. این مأموریت را در ست‌های مختلف انجام دهید. اطمینان حاصل کنید که تمام بدن شما در دوربین بالا قرار دارد. کار نمی‌کند؟</string>
+    <string name="pushups_desc">$valuex شنا ۱ آورا به دست می‌آورد. این مأموریت را در ست‌های مختلف انجام دهید. اطمینان حاصل کنید که تمام بدن شما در دوربین بالا قرار دارد. کار نمی‌کند؟</string>
+    <string name="focus_desc">حالت تمرکز یا بقا تمام برنامه‌ها به جز نیازهای اساسی مانند تماس و پیامک را به مدت ۹۰ دقیقه مسدود می‌کند. مأموریت انجام شده ۱ آورا به شما می‌دهد و نمی‌تواند خاموش شود.</string>
+
+    <string name="aura_earned_1">شما ۱ سکه آورا به دست آوردید</string>
+    <string name="tac">با ادامه دادن، شما با شرایط و ضوابط موافقت می‌کنید</string>
+
+    <string name="accessibility_perm">دسترس پذیری برای تنظیمات مبتنی بر استفاده از ویژگی‌های خاص در برنامه‌های مسدود شده، مانند فید رسانه‌های اجتماعی یا یک بازی نیاز است.
+    \n\n
+        (داده‌های شما در دستگاه شما می‌ماند و هرگز به جای دیگری منتقل نمی‌شود.)
+    </string>
+
+    <string name="choose_msg_title">صفحه هشدار</string>
+
+    <string name="battery_optimisation_title">خاموش کردن بهینه‌سازی باتری</string>
+    <string name="battery_optimisation_desc">به برنامه کمک می‌کند تا همیشه در زمان نیاز کار کند.</string>
+
+    <string name="congratulate_text_challenge_comp">تبریک به شما برای #بازپروری_فناوری! ۲۱ روز تعهد شما واقعاً الهام‌بخش است. به درخشش ادامه دهید! 🌟</string>
+    <string name="congratulate_text_challenge_incomp">شما در حال انجام #بازپروری_فناوری هستید. با قدرت ادامه دهید — هر گام مهم است! 🫵👑</string>
+    <string name="title">عنوان</string>
+    <string name="description">توضیحات</string>
+    <string name="shorts_allow_first_shorts_title">اجازه باز کردن ویدیوهای کوتاه، اما مسدود کردن پیمایش (آزمایشی)</string>
+    <string name="enter_safe_mode_title">برای خروج از حالت تمرکز، "دقیقه‌ها" را ده بار فشار دهید.</string>
+</resources>
