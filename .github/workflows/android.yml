@@ -5,6 +5,7 @@ on:
     branches: [ "kt-rewrite" ]
   pull_request:
     branches: [ "kt-rewrite" ]
+  workflow_dispatch:
 
 jobs:
   build:
