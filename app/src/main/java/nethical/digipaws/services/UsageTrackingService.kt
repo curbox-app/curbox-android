@@ -48,8 +48,6 @@ class UsageTrackingService : BaseBlockingService() {
     private val SCROLL_DEBOUNCE_TIME = 800L // Aumentado a 800ms
     private val MIN_SCROLL_DISTANCE = 100f // Distancia mínima para considerar un nuevo scroll
 
-    private lateinit var questTrackingService: QuestTrackingService
-
     companion object {
 
         const val INTENT_ACTION_REFRESH_USAGE_TRACKER = "nethical.digipaws.refresh.usage_tracker"

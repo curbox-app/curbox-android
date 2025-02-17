@@ -492,6 +492,10 @@ class MainActivity : AppCompatActivity() {
                 .setPositiveButton(getString(R.string.ok), null)
                 .show()
         }
+
+        binding.btnBackup.setOnClickListener {
+            ZipUtils.showDirectoryPicker(directoryPicker)
+        }
     }
 
     private fun openUrl(url: String) {
