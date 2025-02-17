@@ -42,6 +42,14 @@ class UsageTrackingService : BaseBlockingService() {
     private var supportsViewScrolled = false
 
     private var displayOverlayApps = hashSetOf("") //show overlay only on these apps
+    private var lastScrollTime: Long = 0
+    private var lastScrollY: Float = 0f
+    private var isScrollInProgress = false
+    private val SCROLL_DEBOUNCE_TIME = 800L // Aumentado a 800ms
+    private val MIN_SCROLL_DISTANCE = 100f // Distancia mínima para considerar un nuevo scroll
+
+    private lateinit var questTrackingService: QuestTrackingService
+
     companion object {
 
         const val INTENT_ACTION_REFRESH_USAGE_TRACKER = "nethical.digipaws.refresh.usage_tracker"
@@ -256,55 +264,81 @@ class UsageTrackingService : BaseBlockingService() {
         }
 
         if (event?.eventType == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
-            Log.d("scroll", event.source?.className.toString())
+            Log.d("scroll", "Scroll event - ${event.scrollY} - ${event.source?.className}")
             supportsViewScrolled = true
-            when {
-                // handle tiktok scrolls
-                TIKTOK_PACKAGES.contains(
-                    event.packageName
-                ) && event.source?.className == "androidx.viewpager.widget.ViewPager" -> {
-                    takeReelAction(event.packageName.toString())
-                }
+            
+            val currentTime = System.currentTimeMillis()
+            val scrollY = event.scrollY.toFloat()
+            
+            // Solo procesar el evento si:
+            // 1. No hay un scroll en progreso, o
+            // 2. Ha pasado suficiente tiempo desde el último scroll y la distancia es significativa
+            if (!isScrollInProgress || 
+                (currentTime - lastScrollTime > SCROLL_DEBOUNCE_TIME && 
+                Math.abs(scrollY - lastScrollY) > MIN_SCROLL_DISTANCE)) {
+                
+                when {
+                    // handle tiktok scrolls
+                    TIKTOK_PACKAGES.contains(event.packageName) && 
+                    event.source?.className == "androidx.viewpager.widget.ViewPager" -> {
+                        handleScrollEvent(event.packageName.toString())
+                    }
 
-                // handle facebook scrolls
-                event.packageName == "com.facebook.katana" && event.source?.className == "androidx.recyclerview.widget.RecyclerView" -> {
-                    val nodes =
-                        rootInActiveWindow.findAccessibilityNodeInfosByText("FbShortsComposerAttachmentComponentSpec_STICKER")
-                    if (nodes.firstOrNull() != null) takeReelAction("com.facebook.katana")
-                }
+                    // handle facebook scrolls
+                    event.packageName == "com.facebook.katana" && 
+                    event.source?.className == "androidx.recyclerview.widget.RecyclerView" -> {
+                        val nodes = rootInActiveWindow.findAccessibilityNodeInfosByText(
+                            "FbShortsComposerAttachmentComponentSpec_STICKER"
+                        )
+                        if (nodes.firstOrNull() != null) handleScrollEvent("com.facebook.katana")
+                    }
 
-                // handle instagram scrolls
-                event.source?.className == "androidx.viewpager.widget.ViewPager" && event.packageName == "com.instagram.android" -> {
-                    val reelView = ViewBlocker.findElementById(
-                        rootInActiveWindow,
-                        "com.instagram.android:id/root_clips_layout"
-                    )
-                    if (reelView != null) takeReelAction("com.instagram.android") else hideReelTrackingView()
-                }
+                    // handle instagram scrolls
+                    event.source?.className == "androidx.viewpager.widget.ViewPager" && 
+                    event.packageName == "com.instagram.android" -> {
+                        val reelView = ViewBlocker.findElementById(
+                            rootInActiveWindow,
+                            "com.instagram.android:id/root_clips_layout"
+                        )
+                        if (reelView != null) handleScrollEvent("com.instagram.android") 
+                        else hideReelTrackingView()
+                    }
 
-                // youtube scrolls
-                event.packageName == "com.google.android.youtube" &&
-                        event.source?.className == "android.support.v7.widget.RecyclerView" -> {
-                    val reelView = ViewBlocker.findElementById(
-                        rootInActiveWindow,
-                        "com.google.android.youtube:id/reel_recycler"
-                    )
-                    val commentsSection = ViewBlocker.findElementById(rootInActiveWindow,"com.google.android.youtube:id/engagement_panel_content")
-                    if (reelView != null && commentsSection == null) takeReelAction("com.google.android.youtube") else hideReelTrackingView()
-                }
+                    // youtube scrolls
+                    event.packageName == "com.google.android.youtube" &&
+                    event.source?.className == "android.support.v7.widget.RecyclerView" -> {
+                        val reelView = ViewBlocker.findElementById(
+                            rootInActiveWindow,
+                            "com.google.android.youtube:id/reel_recycler"
+                        )
+                        val commentsSection = ViewBlocker.findElementById(
+                            rootInActiveWindow,
+                            "com.google.android.youtube:id/engagement_panel_content"
+                        )
+                        if (reelView != null && commentsSection == null) 
+                            handleScrollEvent("com.google.android.youtube") 
+                        else hideReelTrackingView()
+                    }
 
-
-                // revanced scrolls
-                event.packageName == "app.revanced.android.youtube" &&
-                        event.source?.className == "android.support.v7.widget.RecyclerView" -> {
-                    val reelView = ViewBlocker.findElementById(
-                        rootInActiveWindow,
-                        "app.revanced.android.youtube:id/reel_recycler"
-                    )
-                    // prevents events from scrolls on comments section
-                    val commentsSection = ViewBlocker.findElementById(rootInActiveWindow,"app.revanced.android.youtube:id/engagement_panel_content")
-                    if (reelView != null && commentsSection == null) takeReelAction("app.revanced.android.youtube") else hideReelTrackingView()
+                    // revanced scrolls
+                    event.packageName == "app.revanced.android.youtube" &&
+                    event.source?.className == "android.support.v7.widget.RecyclerView" -> {
+                        val reelView = ViewBlocker.findElementById(
+                            rootInActiveWindow,
+                            "app.revanced.android.youtube:id/reel_recycler"
+                        )
+                        val commentsSection = ViewBlocker.findElementById(
+                            rootInActiveWindow,
+                            "app.revanced.android.youtube:id/engagement_panel_content"
+                        )
+                        if (reelView != null && commentsSection == null) 
+                            handleScrollEvent("app.revanced.android.youtube") 
+                        else hideReelTrackingView()
+                    }
                 }
+                
+                lastScrollY = scrollY
+                lastScrollTime = currentTime
             }
         }
     }
@@ -339,9 +373,11 @@ class UsageTrackingService : BaseBlockingService() {
         lastVideoViewFoundTime = SystemClock.uptimeMillis()
     }
 
-    private fun takeReelAction(eventPackageName: String) {
-        if (++userYSwipeEventCounter > (MIN_SCROLL_THRESHOLD[eventPackageName]!!)) {
+    private fun handleScrollEvent(packageName: String) {
+        if (++userYSwipeEventCounter > (MIN_SCROLL_THRESHOLD[packageName]!!)) {
+            isScrollInProgress = true
             userYSwipeEventCounter = 0
+            
             val date = TimeTools.getCurrentDate()
             val newCount = (reelCountData[date] ?: 0) + 1
 
@@ -357,10 +393,15 @@ class UsageTrackingService : BaseBlockingService() {
                 usageStatOverlayManager.binding?.reelCounter?.visibility = View.GONE
             }
 
-//            trackAttentionSpan()
+            trackAttentionSpan()
 
             savedPreferencesLoader.saveReelsScrolled(reelCountData)
             lastEventActionTakenTimeStamp = SystemClock.uptimeMillis()
+            
+            // Programar el reset del estado de scroll
+            handler.postDelayed({
+                isScrollInProgress = false
+            }, SCROLL_DEBOUNCE_TIME)
         }
     }
 
