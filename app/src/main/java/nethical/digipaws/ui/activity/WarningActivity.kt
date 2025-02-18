@@ -25,7 +25,7 @@ class WarningActivity : AppCompatActivity() {
         binding.minsPicker.minValue = 2
         val isDialogCancelable = mode != Constants.WARNING_SCREEN_MODE_APP_BLOCKER || isHomePressRequested
 
-        // Configurar visibilidad de elementos
+        // Configure element visibility
         binding.proceedSeconds.visibility = View.GONE
         if (intent.getBooleanExtra("is_proceed_disabled", false)) {
             binding.btnProceed.visibility = View.GONE

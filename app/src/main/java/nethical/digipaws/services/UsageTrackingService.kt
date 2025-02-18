@@ -45,8 +45,8 @@ class UsageTrackingService : BaseBlockingService() {
     private var lastScrollTime: Long = 0
     private var lastScrollY: Float = 0f
     private var isScrollInProgress = false
-    private val SCROLL_DEBOUNCE_TIME = 800L // Aumentado a 800ms
-    private val MIN_SCROLL_DISTANCE = 100f // Distancia mínima para considerar un nuevo scroll
+    private val SCROLL_DEBOUNCE_TIME = 800L // Increased to 800ms
+    private val MIN_SCROLL_DISTANCE = 100f // Minimum distance to consider a new scroll
 
     companion object {
 
@@ -268,9 +268,9 @@ class UsageTrackingService : BaseBlockingService() {
             val currentTime = System.currentTimeMillis()
             val scrollY = event.scrollY.toFloat()
             
-            // Solo procesar el evento si:
-            // 1. No hay un scroll en progreso, o
-            // 2. Ha pasado suficiente tiempo desde el último scroll y la distancia es significativa
+            // Only process the event if:
+            // 1. There's no scroll in progress, or
+            // 2. Enough time has passed since the last scroll and the distance is significant
             if (!isScrollInProgress || 
                 (currentTime - lastScrollTime > SCROLL_DEBOUNCE_TIME && 
                 Math.abs(scrollY - lastScrollY) > MIN_SCROLL_DISTANCE)) {
@@ -396,7 +396,7 @@ class UsageTrackingService : BaseBlockingService() {
             savedPreferencesLoader.saveReelsScrolled(reelCountData)
             lastEventActionTakenTimeStamp = SystemClock.uptimeMillis()
             
-            // Programar el reset del estado de scroll
+            // Schedule the reset of scroll state
             handler.postDelayed({
                 isScrollInProgress = false
             }, SCROLL_DEBOUNCE_TIME)
