@@ -58,7 +58,15 @@ class KeywordPacks {
             "desire",
             "bondage",
             "swingers",
-            "provocateur"
+            "provocateur", 
+            "buceta",
+            "pussy",
+            "pelada",
+            "siririca",
+            "gozo",
+            "gozei",
+            "gozar",
+            "masturbate"
         )
     }
 }
