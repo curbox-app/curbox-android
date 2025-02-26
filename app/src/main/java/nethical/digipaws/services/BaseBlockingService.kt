@@ -19,7 +19,7 @@ open class BaseBlockingService : AccessibilityService() {
     override fun onInterrupt() {
     }
 
-    fun isDelayOver(): Boolean {
+    private fun isDelayOver(): Boolean {
         return isDelayOver(1000)
     }
 
@@ -28,13 +28,22 @@ open class BaseBlockingService : AccessibilityService() {
         return currentTime - lastBackPressTimeStamp > delay
     }
 
+    fun isDelayOver(lastTimestamp: Long, delay: Int): Boolean {
+        val currentTime = SystemClock.uptimeMillis().toFloat()
+        return currentTime - lastTimestamp > delay
+    }
+
     fun pressHome() {
-        performGlobalAction(GLOBAL_ACTION_HOME)
-        lastBackPressTimeStamp = SystemClock.uptimeMillis()
+        if (isDelayOver()) {
+            performGlobalAction(GLOBAL_ACTION_HOME)
+            lastBackPressTimeStamp = SystemClock.uptimeMillis()
+        }
     }
 
     fun pressBack() {
-        performGlobalAction(GLOBAL_ACTION_BACK)
-        lastBackPressTimeStamp = SystemClock.uptimeMillis()
+        if (isDelayOver()) {
+            performGlobalAction(GLOBAL_ACTION_BACK)
+            lastBackPressTimeStamp = SystemClock.uptimeMillis()
+        }
     }
 }

@@ -63,7 +63,7 @@
     <string name="app_icon">app_icon</string>
 
     <string name="accessibility_permission_app_blocker">
-        Enabling this would unlock the following in DigiPaws:\n1. App Blocking\n\n
+        Enabling this would unlock the following in DigiPaws:\n1. App Blocking\n2, Focus Mode \n\n
         DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
         This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
         Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
@@ -94,7 +94,7 @@
     </string>
 
     <string name="accessibility_permission_general_features">
-        Enabling this would unlock the following in DigiPaws:\n1. Focus Mode: block distraction until a set period of time.\n2. Anti-Uninstall (Setup required to run)\n\n
+        Enabling this would unlock the following in DigiPaws:\n1. Anti-Uninstall (Setup required to run)\n\n
         DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
         This lets DigiPaws block those features for you based on your preferences, helendping you stay focused and reduce screen distractions.\n\n
         Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.

@@ -46,7 +46,7 @@ import nethical.digipaws.databinding.DialogPermissionInfoBinding
 import nethical.digipaws.databinding.DialogRemoveAntiUninstallBinding
 import nethical.digipaws.receivers.AdminReceiver
 import nethical.digipaws.services.AppBlockerService
-import nethical.digipaws.services.DigipawsMainService
+import nethical.digipaws.services.GeneralFeaturesService
 import nethical.digipaws.services.KeywordBlockerService
 import nethical.digipaws.services.UsageTrackingService
 import nethical.digipaws.services.ViewBlockerService
@@ -197,7 +197,7 @@ class MainActivity : AppCompatActivity() {
                     val selectedApps = result.data?.getStringArrayListExtra("SELECTED_APPS")
                     selectedApps?.let {
                         savedPreferencesLoader.saveGrayScaleApps(it.toSet())
-                        sendRefreshRequest(DigipawsMainService.INTENT_ACTION_REFRESH_GRAYSCALE)
+                        sendRefreshRequest(GeneralFeaturesService.INTENT_ACTION_REFRESH_GRAYSCALE)
                     }
                 }
             }
@@ -242,7 +242,7 @@ class MainActivity : AppCompatActivity() {
 
         addAutoFocusHoursActivity =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { _ ->
-                sendRefreshRequest(DigipawsMainService.INTENT_ACTION_REFRESH_FOCUS_MODE)
+                sendRefreshRequest(AppBlockerService.INTENT_ACTION_REFRESH_FOCUS_MODE)
             }
         // Register the directory picker
         directoryPicker = ZipUtils.registerDirectoryPicker(this) { directoryUri ->
@@ -405,14 +405,17 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("fragment", ChooseModeFragment.FRAGMENT_ID)
                     startActivity(intent, options.toBundle())
                 } else {
-                    makeAccessibilityInfoDialog("General Features", DigipawsMainService::class.java)
+                    makeAccessibilityInfoDialog(
+                        "General Features",
+                        GeneralFeaturesService::class.java
+                    )
                 }
             }
         }
 
         binding.monochromeStatusChip.setOnClickListener {
             if(!isGeneralSettingsOn){
-                makeAccessibilityInfoDialog("General Features", DigipawsMainService::class.java)
+                makeAccessibilityInfoDialog("General Features", GeneralFeaturesService::class.java)
                 return@setOnClickListener
             }
             if(isShizukuBinderRecieved){
@@ -440,7 +443,7 @@ class MainActivity : AppCompatActivity() {
             makeAccessibilityInfoDialog("Keyword Blocker", KeywordBlockerService::class.java)
         }
         binding.focusModeStatusChip.setOnClickListener {
-            makeAccessibilityInfoDialog("General Features", DigipawsMainService::class.java)
+            makeAccessibilityInfoDialog("App Blocker", AppBlockerService::class.java)
         }
         binding.appBlockerStatusChip.setOnClickListener {
             makeAccessibilityInfoDialog("App Blocker", AppBlockerService::class.java)
@@ -525,7 +528,7 @@ class MainActivity : AppCompatActivity() {
             val isUsageTrackerOn =
                 withContext(Dispatchers.IO) { isAccessibilityServiceEnabled(UsageTrackingService::class.java) }
             isGeneralSettingsOn =
-                withContext(Dispatchers.IO) { isAccessibilityServiceEnabled(DigipawsMainService::class.java) }
+                withContext(Dispatchers.IO) { isAccessibilityServiceEnabled(GeneralFeaturesService::class.java) }
 
             val devicePolicyManager =
                 getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
@@ -593,14 +596,14 @@ class MainActivity : AppCompatActivity() {
 
                 // General Settings
                 updateChip(
-                    isGeneralSettingsOn,
+                    isAppBlockerOn,
                     binding.focusModeStatusChip,
                     binding.focusModeWarning
                 )
                 binding.apply {
-                    startFocusMode.isEnabled = isGeneralSettingsOn
-                    selectFocusBlockedApps.isEnabled = isGeneralSettingsOn
-                    autoFocus.isEnabled = isGeneralSettingsOn
+                    startFocusMode.isEnabled = isAppBlockerOn
+                    selectFocusBlockedApps.isEnabled = isAppBlockerOn
+                    autoFocus.isEnabled = isAppBlockerOn
                 }
 
                 // Anti-Uninstall settings
@@ -635,7 +638,7 @@ class MainActivity : AppCompatActivity() {
                         startFocusMode.isEnabled = false
                     }
                 }
-                if (isGeneralSettingsOn) {
+                if (isAppBlockerOn) {
                     val isFocusedModeOn = savedPreferencesLoader.getFocusModeData().isTurnedOn
                     binding.selectFocusBlockedApps.isEnabled = !isFocusedModeOn
                     binding.startFocusMode.isEnabled = !isFocusedModeOn
@@ -972,7 +975,7 @@ class MainActivity : AppCompatActivity() {
                     )
                         .show()
                     antiUninstallInfo.edit().putBoolean("is_anti_uninstall_on", false).commit()
-                    sendRefreshRequest(DigipawsMainService.INTENT_ACTION_REFRESH_ANTI_UNINSTALL)
+                    sendRefreshRequest(GeneralFeaturesService.INTENT_ACTION_REFRESH_ANTI_UNINSTALL)
 
                 } else {
 
@@ -999,7 +1002,7 @@ class MainActivity : AppCompatActivity() {
                         ) {
                             antiUninstallInfo.edit().putBoolean("is_anti_uninstall_on", false)
                                 .commit()
-                            sendRefreshRequest(DigipawsMainService.INTENT_ACTION_REFRESH_ANTI_UNINSTALL)
+                            sendRefreshRequest(GeneralFeaturesService.INTENT_ACTION_REFRESH_ANTI_UNINSTALL)
 
                             Snackbar.make(
                                 binding.root,

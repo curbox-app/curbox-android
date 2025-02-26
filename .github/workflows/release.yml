@@ -120,9 +120,15 @@ jobs:
           
           # Format Telegram message (Markdown)
           MESSAGE="**New Beta Release** \n" # %0A = newline
-          MESSAGE+="A new signed beta APK is ready! \n"
+          
+          MESSAGE+="A new signed beta APK is ready! \n\n"
+          
+          
           MESSAGE+="*Commit:* [$COMMIT_SHA]($COMMIT_URL) \n"
-          MESSAGE+="*Message:* $COMMIT_MESSAGE \n"
+          
+          MESSAGE+="*Message:* $COMMIT_MESSAGE \n\n"
+          
+          
           MESSAGE+="*Author:* [$COMMIT_AUTHOR]($AUTHOR_URL) \n"
           MESSAGE+="Built with Github Actions on $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
           

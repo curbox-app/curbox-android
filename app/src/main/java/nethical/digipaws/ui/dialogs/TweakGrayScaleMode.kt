@@ -9,8 +9,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import nethical.digipaws.Constants
 import nethical.digipaws.R
 import nethical.digipaws.databinding.DialogGrayscaleBinding
-import nethical.digipaws.services.DigipawsMainService
-import nethical.digipaws.services.UsageTrackingService
+import nethical.digipaws.services.GeneralFeaturesService
 import nethical.digipaws.utils.GrayscaleControl
 import nethical.digipaws.utils.SavedPreferencesLoader
 
@@ -68,7 +67,7 @@ class TweakGrayScaleMode(
 
                 }
                 // Send broadcast to refresh UsageTrackingService
-                sendRefreshRequest(DigipawsMainService.INTENT_ACTION_REFRESH_GRAYSCALE)
+                sendRefreshRequest(GeneralFeaturesService.INTENT_ACTION_REFRESH_GRAYSCALE)
                 dialog.dismiss()
             }
             .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->

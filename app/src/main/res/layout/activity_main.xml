@@ -159,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/warning_general_settings"
+                    android:text="@string/warning_app_blocker_settings"
                     android:textAlignment="center"
                     android:textColor="?attr/colorError" />
 

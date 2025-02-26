@@ -27,9 +27,10 @@ class ViewBlockerService : BaseBlockingService() {
 
     private val viewBlocker = ViewBlocker()
     private var warningScreenConfig = MainActivity.WarningData()
+    private var lastEventTimeStamp = 0L
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
-        if (!isDelayOver(2500)) {
+        if (!isDelayOver(lastEventTimeStamp, 2000)) {
             return
         }
         val rootNode: AccessibilityNodeInfo? = rootInActiveWindow
@@ -40,6 +41,7 @@ class ViewBlockerService : BaseBlockingService() {
                 event?.packageName.toString()
             )
         })
+        lastEventTimeStamp = SystemClock.uptimeMillis()
     }
 
     override fun onInterrupt() {
@@ -50,7 +52,6 @@ class ViewBlockerService : BaseBlockingService() {
     private fun handleViewBlockerResult(result: ViewBlocker.ViewBlockerResult?) {
         if (result == null || !result.isBlocked) return
 
-        lastBackPressTimeStamp = SystemClock.uptimeMillis()
         pressBack()
 
         if(warningScreenConfig.isWarningDialogHidden) return

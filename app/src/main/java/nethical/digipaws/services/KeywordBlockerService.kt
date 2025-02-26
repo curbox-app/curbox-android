@@ -1,6 +1,5 @@
 package nethical.digipaws.services
 
-import android.accessibilityservice.AccessibilityServiceInfo
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -17,7 +16,8 @@ import nethical.digipaws.data.blockers.KeywordPacks
 
 class KeywordBlockerService : BaseBlockingService() {
 
-    var refreshCooldown = 1000
+    private var refreshCooldown = 1000
+    private var lastEventTimeStamp = 0L
     companion object {
         const val INTENT_ACTION_REFRESH_BLOCKED_KEYWORD_LIST =
             "nethical.digipaws.refresh.keywordblocker.blockedwords"
@@ -32,7 +32,10 @@ class KeywordBlockerService : BaseBlockingService() {
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
 
-        if (!isDelayOver(refreshCooldown) || event == null || event.packageName == "nethical.digipaws" || KbIgnoredApps.contains(
+        if (!isDelayOver(
+                lastEventTimeStamp,
+                refreshCooldown
+            ) || event == null || event.packageName == "nethical.digipaws" || KbIgnoredApps.contains(
                 event.packageName
             )
         ) {
@@ -42,7 +45,8 @@ class KeywordBlockerService : BaseBlockingService() {
         Log.d("KeywordBlocker", "Searching Keywords")
         handleKeywordBlockerResult(keywordBlocker.checkIfUserGettingFreaky(rootnode, event))
 
-        lastBackPressTimeStamp = SystemClock.uptimeMillis()
+        lastEventTimeStamp = SystemClock.uptimeMillis()
+
     }
 
     override fun onInterrupt() {
@@ -54,15 +58,6 @@ class KeywordBlockerService : BaseBlockingService() {
         super.onServiceConnected()
         setupBlockedWords()
         setupConfig()
-        val info = AccessibilityServiceInfo().apply {
-            eventTypes =
-                AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED or AccessibilityEvent.TYPE_VIEW_SCROLLED
-            feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC
-            notificationTimeout = 100
-            flags = AccessibilityServiceInfo.DEFAULT
-        }
-        serviceInfo = info
-
 
         val filter = IntentFilter().apply {
             addAction(INTENT_ACTION_REFRESH_BLOCKED_KEYWORD_LIST)

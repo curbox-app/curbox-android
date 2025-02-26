@@ -11,10 +11,14 @@ import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
+import android.widget.Toast
 import nethical.digipaws.Constants
 import nethical.digipaws.blockers.AppBlocker
+import nethical.digipaws.blockers.FocusModeBlocker
 import nethical.digipaws.ui.activity.MainActivity
 import nethical.digipaws.ui.activity.WarningActivity
+import nethical.digipaws.utils.getCurrentKeyboardPackageName
+import nethical.digipaws.utils.getDefaultLauncherPackageName
 
 class AppBlockerService : BaseBlockingService() {
 
@@ -32,16 +36,27 @@ class AppBlockerService : BaseBlockingService() {
          */
         const val INTENT_ACTION_REFRESH_APP_BLOCKER_COOLDOWN =
             "nethical.digipaws.refresh.appblocker.cooldown"
+
+        /**
+         * Refreshes information related to focus mode.
+         */
+
+        const val INTENT_ACTION_REFRESH_FOCUS_MODE = "nethical.digipaws.refresh.focus_mode"
     }
 
+    private var appBlockerWarning = MainActivity.WarningData()
     private val appBlocker = AppBlocker()
 
-    // responsible to trigger what app user is currently using even when no events is sent
+    private val focusModeBlocker = FocusModeBlocker()
+
+    // responsible to trigger a recheck for what app user is currently using even when no event is received. Used in putting the usage recheck logic into
+    // cooldown for an app and later when the cooldown duration is over, trigger a recheck
     private val handler = Handler(Looper.getMainLooper())
+
+
     private var updateRunnable: Runnable? = null
 
 
-    private var warningScreenConfig = MainActivity.WarningData()
 
     private var lastPackage = ""
 
@@ -52,6 +67,7 @@ class AppBlockerService : BaseBlockingService() {
         lastPackage = packageName
         Log.d("AppBlockerService", "Switched to app $packageName")
         handleAppBlockerResult(appBlocker.doesAppNeedToBeBlocked(packageName), packageName)
+        handleFocusModeBlockerResult(focusModeBlocker.doesAppNeedToBeBlocked(packageName))
     }
 
 
@@ -68,7 +84,7 @@ class AppBlockerService : BaseBlockingService() {
         if (!result.isBlocked) return
 
 
-        if(warningScreenConfig.isWarningDialogHidden){
+        if (appBlockerWarning.isWarningDialogHidden) {
             pressHome()
             return
         }
@@ -77,14 +93,28 @@ class AppBlockerService : BaseBlockingService() {
         Thread.sleep(300)
         val dialogIntent = Intent(this, WarningActivity::class.java)
         dialogIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        dialogIntent.putExtra("warning_message", warningScreenConfig.message)
+        dialogIntent.putExtra("warning_message", appBlockerWarning.message)
         dialogIntent.putExtra("mode", Constants.WARNING_SCREEN_MODE_APP_BLOCKER)
-        dialogIntent.putExtra("is_dynamic_timing", warningScreenConfig.isDynamicIntervalSettingAllowed)
+        dialogIntent.putExtra(
+            "is_dynamic_timing",
+            appBlockerWarning.isDynamicIntervalSettingAllowed
+        )
         dialogIntent.putExtra("result_id", packageName)
-        dialogIntent.putExtra("default_cooldown", warningScreenConfig.timeInterval / 60000)
-        dialogIntent.putExtra("is_proceed_disabled", warningScreenConfig.isProceedDisabled)
+        dialogIntent.putExtra("default_cooldown", appBlockerWarning.timeInterval / 60000)
+        dialogIntent.putExtra("is_proceed_disabled", appBlockerWarning.isProceedDisabled)
         startActivity(dialogIntent)
 
+    }
+
+    private fun handleFocusModeBlockerResult(result: FocusModeBlocker.FocusModeResult) {
+        if (result.isRequestingToUpdateSPData) {
+            savedPreferencesLoader.saveFocusModeData(focusModeBlocker.focusModeData)
+        }
+
+        if (!result.isBlocked) return
+
+        pressHome()
+        Toast.makeText(this, "This app is currently under focus mode", Toast.LENGTH_LONG).show()
     }
 
     override fun onInterrupt() {
@@ -94,8 +124,11 @@ class AppBlockerService : BaseBlockingService() {
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     override fun onServiceConnected() {
         super.onServiceConnected()
-        setupBlocker()
+        setupAppBlocker()
+        setupFocusMode()
+
         val filter = IntentFilter().apply {
+            addAction(INTENT_ACTION_REFRESH_FOCUS_MODE)
             addAction(INTENT_ACTION_REFRESH_APP_BLOCKER)
             addAction(INTENT_ACTION_REFRESH_APP_BLOCKER_COOLDOWN)
         }
@@ -111,9 +144,11 @@ class AppBlockerService : BaseBlockingService() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent == null) return
             when (intent.action) {
-                INTENT_ACTION_REFRESH_APP_BLOCKER -> setupBlocker()
+                INTENT_ACTION_REFRESH_FOCUS_MODE -> setupFocusMode()
+                INTENT_ACTION_REFRESH_APP_BLOCKER -> setupAppBlocker()
                 INTENT_ACTION_REFRESH_APP_BLOCKER_COOLDOWN -> {
-                    val interval = intent.getIntExtra("selected_time", warningScreenConfig.timeInterval)
+                    val interval =
+                        intent.getIntExtra("selected_time", appBlockerWarning.timeInterval)
                     val coolPackage = intent.getStringExtra("result_id") ?: ""
                     val cooldownUntil =
                         SystemClock.uptimeMillis() + interval
@@ -160,11 +195,30 @@ class AppBlockerService : BaseBlockingService() {
 
         handler.postAtTime(updateRunnable!!, endMillis)
     }
-    private fun setupBlocker() {
+    private fun setupAppBlocker() {
         appBlocker.blockedAppsList = savedPreferencesLoader.loadBlockedApps().toHashSet()
         appBlocker.refreshCheatHoursData(savedPreferencesLoader.loadAppBlockerCheatHoursList())
 
-        warningScreenConfig = savedPreferencesLoader.loadAppBlockerWarningInfo()
+        appBlockerWarning = savedPreferencesLoader.loadAppBlockerWarningInfo()
+    }
+
+    fun setupFocusMode() {
+        focusModeBlocker.refreshCheatHoursData(savedPreferencesLoader.loadAutoFocusHoursList())
+
+        val selectedFocusModeApps = savedPreferencesLoader.getFocusModeSelectedApps().toHashSet()
+        val focusModeData = savedPreferencesLoader.getFocusModeData()
+
+        // As all apps wil get blocked except the selected ones, add essential packages that need not be blocked
+        // to the list of selected apps
+        if (focusModeData.modeType == Constants.FOCUS_MODE_BLOCK_ALL_EX_SELECTED) {
+            selectedFocusModeApps.add("com.android.systemui")
+            getDefaultLauncherPackageName(packageManager)?.let { selectedFocusModeApps.add(it) }
+            getCurrentKeyboardPackageName(this)?.let { selectedFocusModeApps.add(it) }
+        }
+
+        focusModeData.selectedApps = selectedFocusModeApps
+        focusModeBlocker.focusModeData = focusModeData
+
     }
 
     override fun onDestroy() {

@@ -1,6 +1,7 @@
 package nethical.digipaws.blockers
 
 import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_HOME
 import android.accessibilityservice.GestureDescription
 import android.content.res.Resources
 import android.graphics.Path
@@ -250,7 +251,8 @@ class KeywordBlocker(val service: AccessibilityService) : BaseBlocker() {
 
             override fun onCancelled(gestureDescription: GestureDescription?) {
                 super.onCancelled(gestureDescription)
-                // Handle cancellation if needed
+                service.performGlobalAction(GLOBAL_ACTION_HOME)
+
             }
         }, null)
     }

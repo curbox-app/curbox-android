@@ -48,6 +48,7 @@ class UsageTrackingService : BaseBlockingService() {
     private val SCROLL_DEBOUNCE_TIME = 800L // Increased to 800ms
     private val MIN_SCROLL_DISTANCE = 100f // Minimum distance to consider a new scroll
 
+    private var lastEventTimeStamp = 0L
     companion object {
 
         const val INTENT_ACTION_REFRESH_USAGE_TRACKER = "nethical.digipaws.refresh.usage_tracker"
@@ -240,7 +241,11 @@ class UsageTrackingService : BaseBlockingService() {
             usageStatOverlayManager.removeOverlay()
         }
 
-        if (event?.eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED && isDelayOver(2000)) {
+        if (event?.eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED && isDelayOver(
+                lastEventTimeStamp,
+                2000
+            )
+        ) {
 
 
             // apps supports reel tracking
@@ -257,7 +262,7 @@ class UsageTrackingService : BaseBlockingService() {
                 hideReelTrackingView()
             }
 
-            lastBackPressTimeStamp = SystemClock.uptimeMillis()
+            lastEventTimeStamp = SystemClock.uptimeMillis()
 
         }
 

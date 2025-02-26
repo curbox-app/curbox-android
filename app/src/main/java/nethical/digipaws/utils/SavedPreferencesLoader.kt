@@ -3,7 +3,7 @@ package nethical.digipaws.utils
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import nethical.digipaws.services.DigipawsMainService
+import nethical.digipaws.blockers.FocusModeBlocker
 import nethical.digipaws.services.UsageTrackingService.AttentionSpanVideoItem
 import nethical.digipaws.ui.activity.MainActivity
 import nethical.digipaws.ui.activity.TimedActionActivity
@@ -218,7 +218,7 @@ class SavedPreferencesLoader(private val context: Context) {
         return gson.fromJson(json, type)
     }
 
-    fun saveFocusModeData(focusModeData: DigipawsMainService.FocusModeData) {
+    fun saveFocusModeData(focusModeData: FocusModeBlocker.FocusModeData) {
         val sharedPreferences =
             context.getSharedPreferences("focus_mode", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -231,7 +231,7 @@ class SavedPreferencesLoader(private val context: Context) {
     }
 
 
-    fun getFocusModeData(): DigipawsMainService.FocusModeData {
+    fun getFocusModeData(): FocusModeBlocker.FocusModeData {
 
         val sharedPreferences =
             context.getSharedPreferences("focus_mode", Context.MODE_PRIVATE)
@@ -239,10 +239,10 @@ class SavedPreferencesLoader(private val context: Context) {
 
         val json = sharedPreferences.getString("focus_mode", null)
 
-        if (json.isNullOrEmpty()) return DigipawsMainService.FocusModeData()
+        if (json.isNullOrEmpty()) return FocusModeBlocker.FocusModeData()
 
         val type =
-            object : TypeToken<DigipawsMainService.FocusModeData>() {}.type
+            object : TypeToken<FocusModeBlocker.FocusModeData>() {}.type
         return gson.fromJson(json, type)
     }
 

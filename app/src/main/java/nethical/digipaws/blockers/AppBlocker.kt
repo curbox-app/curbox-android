@@ -67,6 +67,8 @@ class AppBlocker:BaseBlocker() {
      * @return Returns null if the app is not under cheat hours, or the timestamp (uptimeMillis) when it ends.
      */
     private fun getEndTimeInMillis(packageName: String): Long? {
+        if (cheatHours[packageName] == null) return null
+
         val currentTime = Calendar.getInstance()
         val currentHour = currentTime.get(Calendar.HOUR_OF_DAY)
         val currentMinute = currentTime.get(Calendar.MINUTE)

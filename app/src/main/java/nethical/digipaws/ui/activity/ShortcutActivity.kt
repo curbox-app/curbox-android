@@ -6,20 +6,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import nethical.digipaws.Constants
-import nethical.digipaws.R
-import nethical.digipaws.databinding.DialogFocusModeBinding
-import nethical.digipaws.services.DigipawsMainService
+import nethical.digipaws.services.GeneralFeaturesService
 import nethical.digipaws.ui.dialogs.StartFocusMode
-import nethical.digipaws.ui.dialogs.TweakAppBlockerWarning
-import nethical.digipaws.utils.NotificationTimerManager
 import nethical.digipaws.utils.SavedPreferencesLoader
 
 class ShortcutActivity : AppCompatActivity() {
@@ -35,10 +24,10 @@ class ShortcutActivity : AppCompatActivity() {
             finish()
         }
 
-        val isGeneralSettingsOn = isAccessibilityServiceEnabled(DigipawsMainService::class.java)
+        val isGeneralSettingsOn = isAccessibilityServiceEnabled(GeneralFeaturesService::class.java)
         if(!isGeneralSettingsOn){
             Toast.makeText(this,"Find 'General Features' and press enable",Toast.LENGTH_LONG).show()
-            openAccessibilityServiceScreen(cls = DigipawsMainService::class.java)
+            openAccessibilityServiceScreen(cls = GeneralFeaturesService::class.java)
             finish()
         }
         StartFocusMode(savedPreferencesLoader, onPositiveButtonPressed = {

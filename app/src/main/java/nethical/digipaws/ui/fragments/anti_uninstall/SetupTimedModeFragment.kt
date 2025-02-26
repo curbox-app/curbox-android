@@ -11,7 +11,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import nethical.digipaws.Constants
 import nethical.digipaws.R
 import nethical.digipaws.databinding.FragmentSetupTimedModeBinding
-import nethical.digipaws.services.DigipawsMainService
+import nethical.digipaws.services.GeneralFeaturesService
 
 class SetupTimedModeFragment : Fragment() {
 
@@ -71,7 +71,7 @@ class SetupTimedModeFragment : Fragment() {
             commit()
         }
 
-        val intent = Intent(DigipawsMainService.INTENT_ACTION_REFRESH_ANTI_UNINSTALL)
+        val intent = Intent(GeneralFeaturesService.INTENT_ACTION_REFRESH_ANTI_UNINSTALL)
         activity?.sendBroadcast(intent)
 
         activity?.finish()

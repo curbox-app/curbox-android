@@ -1,11 +1,8 @@
 package nethical.digipaws.utils
 
 import java.text.SimpleDateFormat
-import java.time.Instant
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.LocalTime
-import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.Locale
@@ -79,7 +76,7 @@ class TimeTools {
 
             return buildString {
                 if (hours > 0) append("${hours}h")
-                if (minutes > 0L && hours == 0L) append("${minutes}m") // Append minutes only if hours is 0 or minutes > 0
+                if (minutes > 0L) append("${minutes}m")
                 if (hours == 0L && minutes == 0L) append("<1m") // Handle case for less than 1 minute
             }.trim()
         }

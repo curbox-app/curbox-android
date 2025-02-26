@@ -117,7 +117,7 @@
                 android:resource="@xml/usage_tracker_service_config" />
         </service>
         <service
-            android:name=".services.DigipawsMainService"
+            android:name=".services.GeneralFeaturesService"
             android:exported="true"
             android:label="General Features"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">

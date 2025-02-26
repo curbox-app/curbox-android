@@ -4,6 +4,5 @@
     android:accessibilityFeedbackType="feedbackGeneric"
     android:accessibilityFlags="flagDefault"
     android:canRetrieveWindowContent="true"
-    android:isAccessibilityTool="false"
     android:description="@string/accessibility_permission_general_features"
     android:label="General Features" />
