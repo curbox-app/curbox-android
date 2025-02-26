@@ -6,6 +6,7 @@
     android:gravity="center"
     android:orientation="horizontal"
     android:padding="8dp"
+    android:background="?android:colorBackground"
     tools:context=".ui.activity.LauncherActivity">
 
     <ImageView

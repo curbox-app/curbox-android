@@ -1,55 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/app_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:clipToPadding="false"
+    android:paddingBottom="120dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <SearchView
-        android:id="@+id/searchView"
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/app_bar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    app:elevation="0dp"
+    app:liftOnScroll="false"
+    app:liftOnScrollColor="@android:color/transparent"
+    app:statusBarForeground="?attr/colorSurface">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical">
+
+      <com.google.android.material.search.SearchBar
+        android:id="@+id/search_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search apps"
-        app:layout_constraintBottom_toTopOf="@+id/app_list"
-        app:layout_constraintEnd_toStartOf="@+id/select_apps_magic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="1"
+        android:hint="@string/search_apps"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
 
-    <Button
+      <Button
         android:id="@+id/select_apps_magic"
         style="@style/Widget.Material3.Button.IconButton.Filled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:icon="@drawable/baseline_auto_fix_high_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/app_list"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:clipToPadding="false"
-        android:fitsSystemWindows="true"
-        android:paddingBottom="?attr/actionBarSize"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:icon="@drawable/baseline_auto_fix_high_24" />
+    </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/confirm_selection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:text="@string/save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:icon="@drawable/baseline_done_24" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <com.google.android.material.search.SearchView
+    android:id="@+id/search_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:hint="@string/search_apps"
+    app:layout_anchor="@id/search_bar">
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/search_list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:clipToPadding="false"
+      android:paddingBottom="120dp"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+  </com.google.android.material.search.SearchView>
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/confirm_selection"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|bottom"
+    android:layout_margin="16dp"
+    android:text="@string/save"
+    app:icon="@drawable/baseline_done_24" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

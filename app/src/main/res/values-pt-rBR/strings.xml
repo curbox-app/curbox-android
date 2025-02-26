@@ -175,4 +175,5 @@ Ativar isso desbloquearia o seguinte no DigiPaws:\n1. Contar o número de reels/
     <!-- TODO: Remover ou alterar este texto de espaço reservado -->
     <string name="hello_blank_fragment">Olá, fragmento em branco</string>
     <string name="join_telegram">Entrar no Telegram</string>
+    <string name="search_apps">Pesquisar apps</string>
 </resources>
