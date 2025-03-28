@@ -21,7 +21,7 @@ class GrayscaleControl {
      */
     fun enableGrayscale() {
         ShizukuRunner.executeCommand(
-            "settings put secure accessibility_display_daltonizer 1 && " +
+            "settings put secure accessibility_display_daltonizer 0 && " +
                     "settings put secure accessibility_display_daltonizer_enabled 1",
             commandListener
         )
@@ -32,8 +32,7 @@ class GrayscaleControl {
      */
     fun disableGrayscale() {
         ShizukuRunner.executeCommand(
-            "settings put secure accessibility_display_daltonizer 0 && " +
-                    "settings put secure accessibility_display_daltonizer_enabled 0",
+            "settings put secure accessibility_display_daltonizer_enabled 0",
             commandListener
         )
     }
@@ -44,10 +43,9 @@ class GrayscaleControl {
     fun toggleGrayscale() {
         ShizukuRunner.executeCommand(
             "if [ $(settings get secure accessibility_display_daltonizer_enabled) = \"1\" ]; then " +
-                    "settings put secure accessibility_display_daltonizer 0 && " +
                     "settings put secure accessibility_display_daltonizer_enabled 0; " +
                     "else " +
-                    "settings put secure accessibility_display_daltonizer 1 && " +
+                    "settings put secure accessibility_display_daltonizer 0 && " +
                     "settings put secure accessibility_display_daltonizer_enabled 1; " +
                     "fi",
             commandListener
