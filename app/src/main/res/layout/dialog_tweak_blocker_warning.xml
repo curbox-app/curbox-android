@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="How long should the cooldown be after pressing the proceed button?" />
+            android:text="How long to unlock for after proceeding?" />
 
         <nethical.digipaws.views.HorizontalNumberPicker
         android:id="@+id/select_mins"
