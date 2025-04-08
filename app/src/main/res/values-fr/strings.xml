@@ -43,7 +43,7 @@
     <string name="display_time_elapsed">Display Time Elapsed</string>
     <string name="display_number_of_reels_scrolled">Display number of reels scrolled</string>
     <string name="specify_duration_of_focus_mode_in_mins">Specify duration of focus mode in mins</string>
-    <string name="block_adult_keywords">Block Adult Keywords</string>
+    <string name="block_adult_keywords">Bloquer des mots clés Adultes</string>
     <string name="password">Mot de passe</string>
     <string name="specify_cooldown_interval_in_minutes">Specify cooldown interval in minutes</string>
     <string name="warning_message">Warning message</string>
@@ -52,13 +52,13 @@
     <string name="in_warning_changeable_cooldown">in-warning changeable cooldown</string>
     <string name="timed_mode">Timed Mode</string>
     <string name="block_all_uninstall_attempts_for_a_set_amount_of_days">Block all uninstall attempts for a specified number of days.</string>
-    <string name="password_mode">Password Mode</string>
+    <string name="password_mode">Mode Mot de Passe</string>
     <string name="block_all_uninstall_attempts_until_you_remove_anti_uninstall_with_a_password">Block all uninstall attempts until the anti-uninstall protection is removed with a password</string>
     <string name="next">Suivant</string>
     <string name="password_mode_desc">Make sure not to forget this password. You may not be able to exit anti-uninstall without it.</string>
     <string name="turn_on">Démarrer</string>
     <string name="timed_mode_desc">How long would you like to keep anti-uninstall enabled?</string>
-    <string name="turn_on_anti_uninstall">Turn on Anti Uninstall</string>
+    <string name="turn_on_anti_uninstall">Démarrer l'Anti-Désinstaller</string>
     <string name="minutes">minutes</string>
     <string name="app_icon">app_icon</string>
 
@@ -100,12 +100,12 @@
         Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
         \n\n
     </string>
-    <string name="admin_permission_desc">Digipaws Anti-Uninstall</string>
+    <string name="admin_permission_desc">Anti-Désinstaller de Digipaws</string>
     <string name="title">Titre</string>
     <string name="close">Fermer</string>
     <string name="proceed">Procéder</string>
-    <string name="please_enable_device_admin">Please provide device admin permission to access this feature</string>
-    <string name="setup_complete">Setup Complete</string>
+    <string name="please_enable_device_admin">S'il vous plaît, veuillez fournir la permission d'administrateur de l'appareil pour accéder à cette fonctionnalité</string>
+    <string name="setup_complete">Installation Finie</string>
     <string name="enter_setup">Entrer l'installeur</string>
     <string name="enabled">Activé</string>
     <string name="start">Démarrer</string>
@@ -129,7 +129,7 @@
     <string name="reel_count">Compte de Reels</string>
     <string name="short_videos_scrolled">vidéos courtes scrollées</string>
     <string name="seconds_video">secondes/vidéo</string>
-    <string name="app_s_selected">%1$d app(s) selected</string>
+    <string name="app_s_selected">%1$d application(s) selectionnée(s)</string>
     <string name="please_specify_start_time_first">Please Specify Start Time first</string>
     <string name="please_type_a_title">Please type a title</string>
     <string name="please_select_a_start_time">Please Select a start time</string>
@@ -143,7 +143,7 @@
     <string name="from">De</string>
     <string name="end">Fin</string>
     <string name="accept">Accepter</string>
-    <string name="accessibility_perm_desc">DigiPaws uses the Accessibility permission to provide features like app monitoring and usage tracking to enhance your experience. This permission allows DigiPaws to detect app activities and help manage device usage effectively. Rest assured, all data is processed locally on your device and is never sent to any server or third party. Your privacy and data security are our top priorities. \n \n By pressing Accept, you acknowledge and agree to the above .</string>
+    <string name="accessibility_perm_desc">Digipaws utilise la permission d'accessibilité pour fournir des fonctionnalités comme l(app monitoring) and l(usage tracking) pour enrichir votre experience. Cette permission autorise Digipaws à détecter les activités d'applications et aider à gérer l'usage de l'appareil efficacement. Restez assuré, toutes les données sont traités localement sur votre appareil et est jamains envoyé sur un serveur ou à un service tiers. \n \n En appuyant sur Accepter, vous reconnaisez et acceptez le texte au-dessus .</string>
     <string name="reject">Rejeter</string>
     <!-- Important do the ones before -->
     <string name="peel_the_onions">Peel the onions</string>
