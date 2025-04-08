@@ -12,8 +12,8 @@
     <string name="warning_launcher_settings">Set Digipaws as the default launcher to access this option</string>        <!--Later-->
     <string name="select_blocked_apps">Elegir Aplicaciones Bloqueadas</string>
     <string name="start_focus_mode">Iniciar Modo Concentración</string>
-    <string name="warning_general_settings">Enable General Accessibility Service to access this option</string>
-    <string name="manage_warning_screen">Manage Warning Screen</string>
+    <string name="warning_general_settings">Enable General Accessibility Service to access this option</string> <!--Later-->
+    <string name="manage_warning_screen">Administrar Pantalla de Aviso</string>
     <string name="manage_cheat_hours">Manage Cheat Hours</string>
     <string name="warning_app_blocker_settings">Enable App Blocker Accessibility Service to manage app blocking</string>
     <string name="warning_view_blocker_settings">Enable View Blocker Accessibility Service to manage view blocking</string>
