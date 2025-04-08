@@ -9,7 +9,7 @@
     <string name="usage_tracker">Usage Tracker (BETA)</string>
     <string name="disabled">Désactivé</string>
     <string name="select_pinned_apps">Selectionnez les applications épinglées</string>
-    <string name="warning_launcher_settings">Set Digipaws as the default launcher to access this option</string>
+    <string name="warning_launcher_settings">Mettez Digipaws en tant que lanceur par défaut pur accéder à cette option</string>
     <string name="select_blocked_apps">Selectionnez les applications bloquées</string>
     <string name="start_focus_mode">Start focus mode</string>
     <string name="warning_general_settings">Enable General Accessibility Service to access this option</string>
@@ -23,7 +23,7 @@
     <string name="usage_stats">Usage Stats</string>
     <string name="manage_overlay_trackers">Manage Real Time Overlay</string>
     <string name="warning_usage_tracker_settings">Enable Usage Tracker Accessibility Service to manage trackers</string>
-    <string name="remove_anti_uninstall">Remove Anti-Uninstall</string>
+    <string name="remove_anti_uninstall">Enlever l'Anti-Désintaller</string>
     <string name="add_cheat_hours">Add Cheat Hours</string>
     <string name="add">Ajouter</string>
     <string name="save">Sauvegarder</string>
@@ -106,7 +106,7 @@
     <string name="proceed">Procéder</string>
     <string name="please_enable_device_admin">Please provide device admin permission to access this feature</string>
     <string name="setup_complete">Setup Complete</string>
-    <string name="enter_setup">Enter Setup</string>
+    <string name="enter_setup">Entrer l'installeur</string>
     <string name="enabled">Activé</string>
     <string name="start">Démarrer</string>
     <string name="cancel">Annuler</string>
@@ -126,9 +126,9 @@
     <string name="you_scrolled_reels">You scrolled %1$d reels</string>
     <string name="you_had_an_attention_span_of_seconds_video">You had an attention span of %1$.2f seconds/video</string>
     <string name="failed_to_launch_system_digital_wellbeing">Failed to launch system digital wellbeing</string>
-    <string name="reel_count">Reel count</string>
-    <string name="short_videos_scrolled">short videos scrolled</string>
-    <string name="seconds_video">seconds/video</string>
+    <string name="reel_count">Compte de Reels</string>
+    <string name="short_videos_scrolled">vidéos courtes scrollées</string>
+    <string name="seconds_video">secondes/vidéo</string>
     <string name="app_s_selected">%1$d app(s) selected</string>
     <string name="please_specify_start_time_first">Please Specify Start Time first</string>
     <string name="please_type_a_title">Please type a title</string>
@@ -138,15 +138,16 @@
     <string name="cheat_timings">%1$d:%2$d to %3$d:%4$d</string>
     <string name="configure_warning_screen">Warning Screen</string>
     <string name="proceed_in">Please wait %1$d seconds before pressing proceed</string>
-    <string name="to">To</string>
+    <string name="to">À</string>
     <string name="please_specify_time">Please specify time</string>
-    <string name="from">From</string>
-    <string name="end">End</string>
-    <string name="accept">Accept</string>
+    <string name="from">De</string>
+    <string name="end">Fin</string>
+    <string name="accept">Accepter</string>
     <string name="accessibility_perm_desc">DigiPaws uses the Accessibility permission to provide features like app monitoring and usage tracking to enhance your experience. This permission allows DigiPaws to detect app activities and help manage device usage effectively. Rest assured, all data is processed locally on your device and is never sent to any server or third party. Your privacy and data security are our top priorities. \n \n By pressing Accept, you acknowledge and agree to the above .</string>
-    <string name="reject">Reject</string>
+    <string name="reject">Rejeter</string>
+    <!-- Important do the ones before -->
     <string name="peel_the_onions">Peel the onions</string>
-    <string name="fix_your_life">Fix your life</string>
+    <string name="fix_your_life">Réparer votre vie</string>
     <string name="perform_actions_like_a_back_press">Perform actions like a back press</string>
     <string name="read_content_on_screen">Read content on screen</string>
     <string name="this_will_allow_digipaws_to">This will allow digipaws to:</string>
@@ -162,22 +163,22 @@
     <string name="find_digipaws_and_press_enable">Find Digipaws and press enable</string>
     <string name="discard_changes">Discard Changes?</string>
     <string name="are_you_sure_you_want_to_discard_all_changes_and_exit">Are you sure you want to discard all changes and exit?</string>
-    <string name="yes">Yes</string>
-    <string name="join_discord">Join Discord</string>
-    <string name="follow_us_on_instagram">Follow us on Instagram</string>
+    <string name="yes">Oui</string>
+    <string name="join_discord">Rejoindre le Discord</string>
+    <string name="follow_us_on_instagram">Suivez-nous sur Instagram</string>
     <string name="support">Support</string>
     <string name="if_you_enable_this_you_won_t_be_able_to_change_configurations_such_as_adding_blocked_apps_keywords_and_more">If you enable this, you won\'t be able to change configurations such as adding blocked apps, keywords, and more until you remove anti-uninstall. Your existing changes will be used for the entire period.</string>
-    <string name="alert">Alert!!</string>
-    <string name="i_understand">I Understand</string>
+    <string name="alert">Alerte !!</string>
+    <string name="i_understand">Je comprends</string>
     <string name="are_you_sure_you_want_to_turn_on_anti_uninstall_there_is_no_turning_back">ARE YOU SURE YOU WANT TO TURN ON ANTI UNINSTALL? There is no turning back...</string>
     <string name="about_view_blocker">About View Blocker</string>
     <string name="this_option_has_the_ability_to_block_youtube_shorts_and_instagram_reels_while_allowing_access_to_other_app_features">This option has the ability to block YouTube Shorts and Instagram Reels while allowing access to other app features.</string>
-    <string name="configure_blocker">Configure Blocker</string>
-    <string name="select_apps">Select Apps</string>
+    <string name="configure_blocker">Configurer le Bloqueur</string>
+    <string name="select_apps">Selectionnez les applications</string>
     <string name="setup_auto_focus">Setup Auto-Focus</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="join_telegram">Join Telegram</string>
+    <string name="join_telegram">Rejoindre le Telegram</string>
     <string name="guide">Guide</string>
     <string name="go_back">Go back</string>
 </resources>
