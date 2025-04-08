@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name" translatable="false">DigiPaws</string>
-    <string name="launcher_options">Launcher Options</string>
+    <string name="launcher_options">Options du lanceur</string>
     <string name="focus_mode">Focus Mode</string>
     <string name="app_blocker">Bloqeur d'applications</string>
     <string name="view_reel_blocker">View/Reel Blocker</string>
-    <string name="keyword_blocker">Keyword Blocker (BETA)</string>
-    <string name="anti_uninstall">Anti Uninstall</string>
+    <string name="keyword_blocker">Bloquer de mots-clés (BETA)</string>
+    <string name="anti_uninstall">Anti Désinstallation</string>
     <string name="usage_tracker">Usage Tracker (BETA)</string>
     <string name="disabled">Désactivé</string>
     <string name="select_pinned_apps">Selectionnez les applications épinglées</string>
     <string name="warning_launcher_settings">Set Digipaws as the default launcher to access this option</string>
-    <string name="select_blocked_apps">Select blocked apps</string>
+    <string name="select_blocked_apps">Selectionnez les applications bloquées</string>
     <string name="start_focus_mode">Start focus mode</string>
     <string name="warning_general_settings">Enable General Accessibility Service to access this option</string>
     <string name="manage_warning_screen">Manage Warning Screen</string>
@@ -35,7 +35,7 @@
     <string name="average_attention_span">Average Attention Span</string>
     <string name="apps">Applications:</string>
     <string name="remove">Enlever</string>
-    <string name="write_down_a_keyword">Write down a keyword</string>
+    <string name="write_down_a_keyword">Écrivez un mot clé</string>
     <string name="select_start_time">Select Start Time</string>
     <string name="select_end_time">Select End Time</string>
     <string name="select_apps_to_unblock">Select Apps to unblock</string>
@@ -56,7 +56,7 @@
     <string name="block_all_uninstall_attempts_until_you_remove_anti_uninstall_with_a_password">Block all uninstall attempts until the anti-uninstall protection is removed with a password</string>
     <string name="next">Suivant</string>
     <string name="password_mode_desc">Make sure not to forget this password. You may not be able to exit anti-uninstall without it.</string>
-    <string name="turn_on">Turn On</string>
+    <string name="turn_on">Démarrer</string>
     <string name="timed_mode_desc">How long would you like to keep anti-uninstall enabled?</string>
     <string name="turn_on_anti_uninstall">Turn on Anti Uninstall</string>
     <string name="minutes">minutes</string>
