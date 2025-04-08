@@ -63,15 +63,19 @@ Click on any image to enlarge it.
 - [x] Customisable warning screen
 - [x] Track App Usage Stats
 - [x] Homescreen widgets
-- [x] track how many tiktoks you scroll everyday 
-- [ ] track attention span
+- [x] Track how many TikToks you scroll everyday 
+- [ ] Track attention span
 - [ ] Quests and gamified mode
-- [ ] Api for other developers to transform their existing apps into digipaw quests!
+- [ ] API for other developers to transform their existing apps into digipaw quests!
 - [ ] Geoblocker (basically block things when a certain area is entered, like workplace)
 - [x] Block custom user defined keywords
-- [x] redirect to a different website when a blocked keyword is found
+- [x] Redirect to a different website when a blocked keyword is found
 - [ ] Modular and downloadable view blockers
-- [ ] expand the app to ios and desktop.
+- [ ] Expand the app to iOS and Desktop.
+
+## Ideas
+- [ ] Include more languages (https://github.com/nethical6/digipaws/issues/106, https://github.com/nethical6/digipaws/pull/109, https://github.com/nethical6/digipaws/pull/107)
+- [ ] Credits menu with all GitHub collaborators
 
 ## Modes
 
