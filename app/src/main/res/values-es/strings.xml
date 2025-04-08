@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name" translatable="false">DigiPaws</string>
-    <string name="launcher_options">Launcher Options</string>
-    <string name="focus_mode">Focus Mode</string>
-    <string name="app_blocker">App Blocker</string>
-    <string name="view_reel_blocker">View/Reel Blocker</string>
-    <string name="keyword_blocker">Keyword Blocker (BETA)</string>
-    <string name="anti_uninstall">Anti Uninstall</string>
-    <string name="usage_tracker">Usage Tracker (BETA)</string>
-    <string name="disabled">Disabled</string>
-    <string name="select_pinned_apps">Select pinned apps</string>
-    <string name="warning_launcher_settings">Set Digipaws as the default launcher to access this option</string>
-    <string name="select_blocked_apps">Select blocked apps</string>
-    <string name="start_focus_mode">Start focus mode</string>
+    <string name="launcher_options">Launcher Options</string>       <!--Later-->
+    <string name="focus_mode">Modo Concentración</string>
+    <string name="app_blocker">Bloquear Aplicaciones</string>
+    <string name="view_reel_blocker">View/Reel Blocker</string>     <!--Later-->
+    <string name="keyword_blocker">Bloquear Palabras Clave (BETA)</string>
+    <string name="anti_uninstall">Anti Desinstalación</string>
+    <string name="usage_tracker">Seguimiento de Uso (BETA)</string>
+    <string name="disabled">Desactivado</string>
+    <string name="select_pinned_apps">Elegir Aplicaciones Fijadas</string>
+    <string name="warning_launcher_settings">Set Digipaws as the default launcher to access this option</string>        <!--Later-->
+    <string name="select_blocked_apps">Elegir Aplicaciones Bloqueadas</string>
+    <string name="start_focus_mode">Iniciar Modo Concentración</string>
     <string name="warning_general_settings">Enable General Accessibility Service to access this option</string>
     <string name="manage_warning_screen">Manage Warning Screen</string>
     <string name="manage_cheat_hours">Manage Cheat Hours</string>
