@@ -2,11 +2,11 @@
     <string name="app_name" translatable="false">DigiPaws</string>
     <string name="launcher_options">Options du lanceur</string>
     <string name="focus_mode">Focus Mode</string>
-    <string name="app_blocker">Bloqeur d'applications</string>
+    <string name="app_blocker">Bloqeur d\'applications</string>
     <string name="view_reel_blocker">View/Reel Blocker</string>
     <string name="keyword_blocker">Bloquer de mots-clés (BETA)</string>
     <string name="anti_uninstall">Anti Désinstallation</string>
-    <string name="usage_tracker">Usage Tracker (BETA)</string>
+    <string name="usage_tracker">Suivi d\'utilisation (BETA)</string>
     <string name="disabled">Désactivé</string>
     <string name="select_pinned_apps">Selectionnez les applications épinglées</string>
     <string name="warning_launcher_settings">Mettez Digipaws en tant que lanceur par défaut pur accéder à cette option</string>
@@ -23,7 +23,7 @@
     <string name="usage_stats">Usage Stats</string>
     <string name="manage_overlay_trackers">Manage Real Time Overlay</string>
     <string name="warning_usage_tracker_settings">Enable Usage Tracker Accessibility Service to manage trackers</string>
-    <string name="remove_anti_uninstall">Enlever l'Anti-Désintaller</string>
+    <string name="remove_anti_uninstall">Enlever l\'Anti-Désintaller</string>
     <string name="add_cheat_hours">Add Cheat Hours</string>
     <string name="add">Ajouter</string>
     <string name="save">Sauvegarder</string>
@@ -36,8 +36,8 @@
     <string name="apps">Applications:</string>
     <string name="remove">Enlever</string>
     <string name="write_down_a_keyword">Écrivez un mot clé</string>
-    <string name="select_start_time">Selectionnez l'heure de début</string>
-    <string name="select_end_time">Selectionnez l'heure de fin</string>
+    <string name="select_start_time">Selectionnez l\'heure de début</string>
+    <string name="select_end_time">Selectionnez l\'heure de fin</string>
     <string name="select_apps_to_unblock">Selectionnez des applications à débloquer</string>
     <string name="disable_proceed_button">Disable Proceed Button </string>
     <string name="display_time_elapsed">Display Time Elapsed</string>
@@ -58,7 +58,7 @@
     <string name="password_mode_desc">Make sure not to forget this password. You may not be able to exit anti-uninstall without it.</string>
     <string name="turn_on">Démarrer</string>
     <string name="timed_mode_desc">How long would you like to keep anti-uninstall enabled?</string>
-    <string name="turn_on_anti_uninstall">Démarrer l'Anti-Désinstaller</string>
+    <string name="turn_on_anti_uninstall">Démarrer l\'Anti-Désinstaller</string>
     <string name="minutes">minutes</string>
     <string name="app_icon">app_icon</string>
 
