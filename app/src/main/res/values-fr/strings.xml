@@ -63,49 +63,49 @@
     <string name="app_icon">app_icon</string>
 
     <string name="accessibility_permission_app_blocker">
-	L'activation de cette option débloquerait le suivant dans Digipaws:\n1. Bloquage d'application.\,2, Mode Focus \n\n
-	Digipaws à besoin de l'accès au données d'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
-	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d'écran.\n\n
-	Restez assurés, toutes les données d'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	L\'activation de cette option débloquerait le suivant dans Digipaws:\n1. Bloquage d'application.\,2, Mode Focus \n\n
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
     </string>
     <string name="accessibility_permission_view_blocker">
-        Enabling this would unlock the following in DigiPaws:\n1. View Blocking\n2. Block Instagram reels,Tikok and Youtube shorts\n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
+	L\'activation de cette option débloquerait le suivant dans DigiPaws:\n1. Bloquage de vue\n2. Bloquer les Reels Instagram, Tiktok and Youtube Shorts\n\n
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
     </string>
     <string name="accessibility_permission_usage_tracker">
-        THIS FEATURE REQUIRES DISPLAY OVER OTHER APPS (DRAW OVER OTHER APPS) PERMISSION TO WORK. PLEASE ENABLE IT FIRST AND THEN ENABLE THIS. RESTART IF SERVICE MALFUNCTIONS.\n\n
-
-        Enabling this would unlock the following in DigiPaws:\n1. Count number of reels/tiktoks scrolled\n2. A floating overlay that shows time elapsed\n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
+	CETTE FONCTIONALITÉE REQUIERT LA PERMISSION AFFICHER SUR D\'AUTRES APPLICATIONS (DRAW OVER OTHER APPS/DISPLAY OVER OTHER APPS) POUR FONCTIONNER. S\'IL VOUS PLAÎT ACTIVEZ-LE EN PREMIER PUIS ACTIVEZ CECI. REDÉMARREZ SI LE SERVICE MALFONCTIONNE.
+	
+	L\'activation de cette option débloquerait le suivant dans DigiPaws:\n1. Compter le nombre de Reels/Tiktoks scrollés\n2. Une superposition flottante qui montre le temps écoulé\n\n
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
     </string>
     <string name="accessibility_permission_keyword_blocker">
-        Enabling this would unlock the following in DigiPaws:\n1. Block custom keywords\n2. Block content like adult material\n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
+	L\'activation de cette option débloquerait le suivant dans DigiPaws:\n1. Bloquer des mots clés personnalisés\n2. Bloquer du contenu comme matériel adulte.
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
     </string>
 
     <string name="accessibility_permission_general_features">
-        Enabling this would unlock the following in DigiPaws:\n1. Anti-Uninstall (Setup required to run)\n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helendping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
+	L\'activation de cette option débloquerait le suivant dans Digipaws:\n1. Anti-Désinstaller (Installeur requis pour démarrer)\n\
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
     </string>
     <string name="admin_permission_desc">Anti-Désinstaller de Digipaws</string>
     <string name="title">Titre</string>
     <string name="close">Fermer</string>
     <string name="proceed">Procéder</string>
-    <string name="please_enable_device_admin">S'il vous plaît, veuillez fournir la permission d'administrateur de l'appareil pour accéder à cette fonctionnalité</string>
+    <string name="please_enable_device_admin">S\'il vous plaît, veuillez fournir la permission d\'administrateur de l\'appareil pour accéder à cette fonctionnalité</string>
     <string name="setup_complete">Installation Finie</string>
-    <string name="enter_setup">Entrer l'installeur</string>
+    <string name="enter_setup">Entrer l\'installeur</string>
     <string name="enabled">Activé</string>
     <string name="start">Démarrer</string>
     <string name="cancel">Annuler</string>
