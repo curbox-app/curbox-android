@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">DigiPaws</string>
     <string name="launcher_options">Options du lanceur</string>
-    <string name="focus_mode">Focus Mode</string>
+    <string name="focus_mode">Mode Focus</string>
     <string name="app_blocker">Bloqeur d\'applications</string>
     <string name="view_reel_blocker">View/Reel Blocker</string>
     <string name="keyword_blocker">Bloquer de mots-clés (BETA)</string>
@@ -11,12 +11,12 @@
     <string name="select_pinned_apps">Selectionnez les applications épinglées</string>
     <string name="warning_launcher_settings">Mettez Digipaws en tant que lanceur par défaut pur accéder à cette option</string>
     <string name="select_blocked_apps">Selectionnez les applications bloquées</string>
-    <string name="start_focus_mode">Start focus mode</string>
-    <string name="warning_general_settings">Enable General Accessibility Service to access this option</string>
+    <string name="start_focus_mode">Start mode focus</string>
+    <string name="warning_general_settings">Activez le Service Général d'Accesibilité pour accéder cette option</string>
     <string name="manage_warning_screen">Manage Warning Screen</string>
     <string name="manage_cheat_hours">Manage Cheat Hours</string>
-    <string name="warning_app_blocker_settings">Enable App Blocker Accessibility Service to manage app blocking</string>
-    <string name="warning_view_blocker_settings">Enable View Blocker Accessibility Service to manage view blocking</string>
+    <string name="warning_app_blocker_settings">Activez le Service d'Accesibilité Bloqueur d'Application pour gérer le blocage d'applications</string>
+    <string name="warning_view_blocker_settings">Activez le Service d'Accesibilité Bloqueur de Vue pour gérer le blocage de vue</string>
     <string name="add_custom_keywords">Ajouter des mots-clés personnalisés</string>
     <string name="manage_keyword_packs">Manage Keyword Packs</string>
     <string name="warning_keywords_settings">Enable Keyword Blocker Accessibility Service to manage blocked keywords</string>
@@ -29,28 +29,28 @@
     <string name="save">Sauvegarder</string>
     <string name="todays_stats">Today\'s Stats</string>
     <string name="you_scrolled_2_d_reels">You scrolled %2$d reels</string>
-    <string name="your_average_attention_span_was_2_d_mins">Your average attention span was %2$d mins</string>
+    <string name="your_average_attention_span_was_2_d_mins">Votre capacité d'attention moyenne était de %2$d minutes</string>
     <string name="view_more">Voir plus</string>
-    <string name="number_of_reels_scrolled">Number of Reels Scrolled</string>
-    <string name="average_attention_span">Average Attention Span</string>
+    <string name="number_of_reels_scrolled">Nombres de Reels scrollés</string>
+    <string name="average_attention_span">Capacité d'attention moyenne</string>
     <string name="apps">Applications:</string>
     <string name="remove">Enlever</string>
     <string name="write_down_a_keyword">Écrivez un mot clé</string>
     <string name="select_start_time">Selectionnez l\'heure de début</string>
     <string name="select_end_time">Selectionnez l\'heure de fin</string>
     <string name="select_apps_to_unblock">Selectionnez des applications à débloquer</string>
-    <string name="disable_proceed_button">Disable Proceed Button </string>
-    <string name="display_time_elapsed">Display Time Elapsed</string>
+    <string name="disable_proceed_button">Désactiver le bouton Procéder </string>
+    <string name="display_time_elapsed">Temps d'écran écoulé</string>
     <string name="display_number_of_reels_scrolled">Display number of reels scrolled</string>
     <string name="specify_duration_of_focus_mode_in_mins">Specify duration of focus mode in mins</string>
     <string name="block_adult_keywords">Bloquer des mots clés Adultes</string>
     <string name="password">Mot de passe</string>
     <string name="specify_cooldown_interval_in_minutes">Specify cooldown interval in minutes</string>
-    <string name="warning_message">Warning message</string>
+    <string name="warning_message">Message d'avertissement</string>
     <string name="allow_viewing_instagram_reels_sent_in_instagram_inbox">Allow viewing instagram reels sent in Instagram inbox</string>
     <string name="allow_opening_the_first_reel_in_feed">Allow opening the first reel in feed</string>
     <string name="in_warning_changeable_cooldown">in-warning changeable cooldown</string>
-    <string name="timed_mode">Timed Mode</string>
+    <string name="timed_mode">Mode chronométré</string>
     <string name="block_all_uninstall_attempts_for_a_set_amount_of_days">Block all uninstall attempts for a specified number of days.</string>
     <string name="password_mode">Mode Mot de Passe</string>
     <string name="block_all_uninstall_attempts_until_you_remove_anti_uninstall_with_a_password">Block all uninstall attempts until the anti-uninstall protection is removed with a password</string>
@@ -63,11 +63,10 @@
     <string name="app_icon">app_icon</string>
 
     <string name="accessibility_permission_app_blocker">
-        Enabling this would unlock the following in DigiPaws:\n1. App Blocking\n2, Focus Mode \n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
+	    L'activation de cette option débloquerait le suivant dans Digipaws:\n1. Bloquage d'application.\,2, Mode Focus \n\n
+	    Digipaws à besoin de l'accès au données d'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	    Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d'écran.\n\n
+	    Restez assurés, toutes les données d'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
     </string>
     <string name="accessibility_permission_view_blocker">
         Enabling this would unlock the following in DigiPaws:\n1. View Blocking\n2. Block Instagram reels,Tikok and Youtube shorts\n\n
