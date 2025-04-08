@@ -17,7 +17,7 @@
     <string name="manage_cheat_hours">Manage Cheat Hours</string>
     <string name="warning_app_blocker_settings">Enable App Blocker Accessibility Service to manage app blocking</string>
     <string name="warning_view_blocker_settings">Enable View Blocker Accessibility Service to manage view blocking</string>
-    <string name="add_custom_keywords">Add Custom Keywords</string>
+    <string name="add_custom_keywords">Ajouter des mots-clés personnalisés</string>
     <string name="manage_keyword_packs">Manage Keyword Packs</string>
     <string name="warning_keywords_settings">Enable Keyword Blocker Accessibility Service to manage blocked keywords</string>
     <string name="usage_stats">Usage Stats</string>
@@ -36,9 +36,9 @@
     <string name="apps">Applications:</string>
     <string name="remove">Enlever</string>
     <string name="write_down_a_keyword">Écrivez un mot clé</string>
-    <string name="select_start_time">Select Start Time</string>
-    <string name="select_end_time">Select End Time</string>
-    <string name="select_apps_to_unblock">Select Apps to unblock</string>
+    <string name="select_start_time">Selectionnez l'heure de début</string>
+    <string name="select_end_time">Selectionnez l'heure de fin</string>
+    <string name="select_apps_to_unblock">Selectionnez des applications à débloquer</string>
     <string name="disable_proceed_button">Disable Proceed Button </string>
     <string name="display_time_elapsed">Display Time Elapsed</string>
     <string name="display_number_of_reels_scrolled">Display number of reels scrolled</string>
