@@ -63,10 +63,10 @@
     <string name="app_icon">app_icon</string>
 
     <string name="accessibility_permission_app_blocker">
-	    L'activation de cette option débloquerait le suivant dans Digipaws:\n1. Bloquage d'application.\,2, Mode Focus \n\n
-	    Digipaws à besoin de l'accès au données d'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
-	    Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d'écran.\n\n
-	    Restez assurés, toutes les données d'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	L'activation de cette option débloquerait le suivant dans Digipaws:\n1. Bloquage d'application.\,2, Mode Focus \n\n
+	Digipaws à besoin de l'accès au données d'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d'écran.\n\n
+	Restez assurés, toutes les données d'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
     </string>
     <string name="accessibility_permission_view_blocker">
         Enabling this would unlock the following in DigiPaws:\n1. View Blocking\n2. Block Instagram reels,Tikok and Youtube shorts\n\n
