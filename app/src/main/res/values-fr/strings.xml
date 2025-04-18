@@ -1,0 +1,184 @@
+<resources>
+	<string name="app_name" translatable="false">DigiPaws</string>
+	<string name="launcher_options">Options du lanceur</string>
+	<string name="focus_mode">Mode Focus</string>
+	<string name="app_blocker">Bloqeur d\'applications</string>
+	<string name="view_reel_blocker">Bloqueur de Vue/Reel</string>
+	<string name="keyword_blocker">Bloquer de mots-clés (BETA)</string>
+	<string name="anti_uninstall">Anti Désinstallation</string>
+	<string name="usage_tracker">Suivi d\'utilisation (BETA)</string>
+	<string name="disabled">Désactivé</string>
+	<string name="select_pinned_apps">Selectionnez les applications épinglées</string>
+	<string name="warning_launcher_settings">Mettez Digipaws en tant que lanceur par défaut pur accéder à cette option</string>
+	<string name="select_blocked_apps">Selectionnez les applications bloquées</string>
+	<string name="start_focus_mode">Démarrer mode focus</string>
+	<string name="warning_general_settings">Activez le Service Général d\'Accesibilité pour accéder cette option</string>
+	<string name="manage_warning_screen">Gérer l\'écran d\'avertissement</string>
+	<string name="manage_cheat_hours">Gérer les heures de triche</string>
+	<string name="warning_app_blocker_settings">Activez le Service d\'Accesibilité Bloqueur d\'Application pour gérer le blocage d\'applications</string>
+	<string name="warning_view_blocker_settings">Activez le Service d\'Accesibilité Bloqueur de Vue pour gérer le blocage de vue</string>
+	<string name="add_custom_keywords">Ajouter des mots-clés personnalisés</string>
+	<string name="manage_keyword_packs">Gérer les packs de mots clés</string>
+	<string name="warning_keywords_settings">Activez le service d\'accessibilité Bloqueur de mots clés pour gérer les mots clés bloqués</string>
+	<string name="usage_stats">Statistiqes d\'utilisation</string>
+	<string name="manage_overlay_trackers">Gérer une superpostion flottante en temps réel</string>
+	<string name="warning_usage_tracker_settings">Activez le service d\'accessibilité Usage Tracker pour gérer les trackers</string>
+	<string name="remove_anti_uninstall">Enlever l\'Anti-Désintaller</string>
+	<string name="add_cheat_hours">Ajouter des heures de triche</string>
+	<string name="add">Ajouter</string>
+	<string name="save">Sauvegarder</string>
+	<string name="todays_stats">Statistiques d\'aujourd\'hui</string>
+	<string name="you_scrolled_2_d_reels">Vous avez scrollé %2$d reels</string>
+	<string name="your_average_attention_span_was_2_d_mins">Votre capacité d\'attention moyenne était de %2$d minutes</string>
+	<string name="view_more">Voir plus</string>
+	<string name="number_of_reels_scrolled">Nombres de Reels scrollés</string>
+	<string name="average_attention_span">Capacité d\'attention moyenne</string>
+	<string name="apps">Applications:</string>
+	<string name="remove">Enlever</string>
+	<string name="write_down_a_keyword">Écrivez un mot clé</string>
+	<string name="select_start_time">Selectionnez l\'heure de début</string>
+	<string name="select_end_time">Selectionnez l\'heure de fin</string>
+	<string name="select_apps_to_unblock">Selectionnez des applications à débloquer</string>
+	<string name="disable_proceed_button">Désactiver le bouton Procéder </string>
+	<string name="display_time_elapsed">Temps d\'écran écoulé</string>
+	<string name="display_number_of_reels_scrolled">Montrer le nombre de reels scrollés</string>
+	<string name="specify_duration_of_focus_mode_in_mins">Spécifiez la duration du mode Focus en minutes</string>
+	<string name="block_adult_keywords">Bloquer des mots clés Adultes</string>
+	<string name="password">Mot de passe</string>
+	<string name="specify_cooldown_interval_in_minutes">Specifiez l\'intervalle de temps de recharge en minutes</string>
+	<string name="warning_message">Message d\'avertissement</string>
+	<string name="allow_viewing_instagram_reels_sent_in_instagram_inbox">Autoriser la vue des reels Instagram envoyés dans la messagerie</string>
+	<string name="allow_opening_the_first_reel_in_feed">Autoriser l\'ouverture du premier reel dans le flux</string>
+	<string name="in_warning_changeable_cooldown">temps de recharge modifiable en cas d\'avertissement</string>
+	<string name="timed_mode">Mode chronométré</string>
+	<string name="block_all_uninstall_attempts_for_a_set_amount_of_days">Bloquez tout les essais de désinstallation pour un nombrbe spécifié de jours.</string>
+	<string name="password_mode">Mode Mot de Passe</string>
+	<string name="block_all_uninstall_attempts_until_you_remove_anti_uninstall_with_a_password">Bloquez toutes les tentatives de désinstallation jusqu\'à ce que la protection anti-désinstallation soit supprimée avec un mot de passe</string>
+	<string name="next">Suivant</string>
+	<string name="password_mode_desc">Soyez sur de ne pas oublier ce mot de passe. You ne pourrez surement pas quitter le mode Anti-Désinstallation.</string>
+	<string name="turn_on">Démarrer</string>
+	<string name="timed_mode_desc">Combien de temps voulez-vous que Anti-Désinstallation reste activé ?</string>
+	<string name="turn_on_anti_uninstall">Démarrer l\'Anti-Désinstaller</string>
+	<string name="minutes">minutes</string>
+	<string name="app_icon">app_icon</string>
+
+	<string name="accessibility_permission_app_blocker">
+	L\'activation de cette option débloquerait le suivant dans Digipaws:\n1. Bloquage d\'application.\,2, Mode Focus \n\n
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	</string>
+	<string name="accessibility_permission_view_blocker">
+	L\'activation de cette option débloquerait le suivant dans DigiPaws:\n1. Bloquage de vue\n2. Bloquer les Reels Instagram, Tiktok and Youtube Shorts\n\n
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
+	</string>
+	<string name="accessibility_permission_usage_tracker">
+	CETTE FONCTIONALITÉE REQUIERT LA PERMISSION AFFICHER SUR D\'AUTRES APPLICATIONS (DRAW OVER OTHER APPS/DISPLAY OVER OTHER APPS) POUR FONCTIONNER. S\'IL VOUS PLAÎT ACTIVEZ-LE EN PREMIER PUIS ACTIVEZ CECI. REDÉMARREZ SI LE SERVICE MALFONCTIONNE.
+    
+	L\'activation de cette option débloquerait le suivant dans DigiPaws:\n1. Compter le nombre de Reels/Tiktoks scrollés\n2. Une superposition flottante qui montre le temps écoulé\n\n
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
+	</string>
+	<string name="accessibility_permission_keyword_blocker">
+	L\'activation de cette option débloquerait le suivant dans DigiPaws:\n1. Bloquer des mots clés personnalisés\n2. Bloquer du contenu comme matériel adulte.
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
+	</string>
+
+	<string name="accessibility_permission_general_features">
+	L\'activation de cette option débloquerait le suivant dans Digipaws:\n1. Anti-Désinstaller (Installeur requis pour démarrer)\n\
+	Digipaws à besoin de l\'accès au données d\'accessibilité pour savoir quand vous ouvrez une fonctionnalité spécifique dans une application, comme un flux de réseau social, ou un jeu.
+	Cela permet à DigiPaws de bloquer ces fonctionnalités pour vous basé sur vos préférences, vous aidant à rester concentré et réduire les distractions d\'écran.\n\n
+	Restez assurés, toutes les données d\'accesibilités reste en toute sécurité sur votre appareil-jamais nous partageons ou transmet vos données, assurant que votre confidentalité est toujours protégée.
+	\n\n
+	</string>
+	<string name="admin_permission_desc">Anti-Désinstaller de Digipaws</string>
+	<string name="title">Titre</string>
+	<string name="close">Fermer</string>
+	<string name="proceed">Procéder</string>
+	<string name="please_enable_device_admin">S\'il vous plaît, veuillez fournir la permission d\'administrateur de l\'appareil pour accéder à cette fonctionnalité</string>
+	<string name="setup_complete">Installation Finie</string>
+	<string name="enter_setup">Entrer l\'installeur</string>
+	<string name="enabled">Activé</string>
+	<string name="start">Démarrer</string>
+	<string name="cancel">Annuler</string>
+	<string name="manage_keyword_blockers">Gérer les bloqueurs de mots-clés</string>
+	<string name="ok">OK</string>
+	<string name="anti_uninstall_removed">Anti-Désinstallation enlevé</string>
+	<string name="failed">Échoué</string>
+	<string name="incorrect_password_please_try_again">"Mot de passe incorrect. Veuillez réésayez. "</string>
+	<string name="retry">Réésayer</string>
+	<string name="start_time">Temps de début: %1$d:%2$d</string>
+	<string name="end_time_must_be_after_start_time_has_passed">Temps de fin doit être après que le temps de début soit passé!</string>
+	<string name="end_time">Temps de fin: %02d:%02d</string>
+	<string name="start_time_02d_02d">Temps de début: %02d:%02d</string>
+	<string name="specify_cheat_hours">Specifiez les heures de triche</string>
+	<string name="remaining_time_anti_uninstall">Vous avez encore %1$d jours avant de débloquer l\'Anti-Désinstaller</string>
+	<string name="add_a_new_keyword">Ajouter un nouveau mot-clé</string>
+	<string name="you_scrolled_reels">You scrolled %1$d reels</string>
+	<string name="you_had_an_attention_span_of_seconds_video">Vous avez eu une capacité d\'attention de %1$.2f secondes/vidéo</string>
+	<string name="failed_to_launch_system_digital_wellbeing">Échec du lancement du système de bien-être numérique</string>
+	<string name="reel_count">Compte de Reels</string>
+	<string name="short_videos_scrolled">vidéos courtes scrollées</string>
+	<string name="seconds_video">secondes/vidéo</string>
+	<string name="app_s_selected">%1$d application(s) selectionnée(s)</string>
+	<string name="please_specify_start_time_first">S\'il-vous-plaît, spécifiez the temps de début en premier</string>
+	<string name="please_type_a_title">S\'il-vous-plaît, mettez un titre</string>
+	<string name="please_select_a_start_time">S\'il-vous-plaît, mettez un temps de début</string>
+	<string name="please_select_an_end_time">S\'il-vous-plaît, mettez un temps de fin</string>
+	<string name="please_select_a_few_apps">S\'il-vous-plaît, sélectionnez un peu d\'applications</string>
+	<string name="cheat_timings">%1$d:%2$d à %3$d:%4$d</string>
+	<string name="configure_warning_screen">Écran d\'avertissement</string>
+	<string name="proceed_in">S\'il-vous-plaît, attendez %1$d secondes avant d\'appuyer sur procéder</string>
+	<string name="to">À</string>
+	<string name="please_specify_time">S\'il vous plaît, spécifiez le temps</string>
+	<string name="from">De</string>
+	<string name="end">Fin</string>
+	<string name="accept">Accepter</string>
+	<string name="accessibility_perm_desc">Digipaws utilise la permission d\'accessibilité pour fournir des fonctionnalités comme la surveillance des applications and le suivi de l\'utilisation pour enrichir votre experience. Cette permission autorise Digipaws à détecter les activités d\'applications et aider à gérer l\'usage de l\'appareil efficacement. Restez assuré, toutes les données sont traités localement sur votre appareil et est jamains envoyé sur un serveur ou à un service tiers. \n \n En appuyant sur Accepter, vous reconnaisez et acceptez le texte au-dessus .</string>
+	<string name="reject">Rejeter</string>
+	<string name="peel_the_onions">éplucher les oignons</string>
+	<string name="fix_your_life">Réparer votre vie</string>
+	<string name="perform_actions_like_a_back_press">Faire des comme un retour en arrière</string>
+	<string name="read_content_on_screen">Read content on screen</string>
+	<string name="this_will_allow_digipaws_to">Cela va autoriser DigiPaws à:</string>
+	<string name="enable_2">"Activer %1$s"</string>
+	<string name="device_admin_perm">DigiPaws utilise les autorisations d\'administrateur pour renforcer la sécurité et bloquer la désinstallation de DigiPaws pendant une période donnée. Toutes les données restent stockées en toute sécurité sur votre appareil et ne sont jamais partagées avec des tiers.</string>
+	<string name="prevent_uninstallation_attempts_until_a_set_condition_is_met">Eviter la désinstallation tant qu\'une condition est remplie</string>
+
+	<string name="device_perm_draw_over_other_apps">DigiPaws utilise l\'autorisation « Afficher par-dessus d\'autres applications » pour afficher une petite superposition flottante à l\'écran. Cette superposition enregistre le nombre de vidéos regardées et le temps passé, permettant aux utilisateurs de mieux suivre leur utilisation en temps réel.</string>
+	<string name="show_time_elapsed_on_phone">Montrer le temps passé sur le téléphone</string>
+	<string name="calculate_how_many_reels_tiktok_short_videos_you_scroll_per_day">Calculer combien de reels/ tiktok/ vidéos courtes vous scrollez par jour</string>
+	<string name="plan_a_robbery">Planifier un braquage</string>
+	<string name="please_provide_display_over_other_apps_permission_to_access_this_feature">Veuillez autoriser l\'affichage sur d\'autres applications pour accéder à cette fonctionnalité.</string>
+	<string name="find_digipaws_and_press_enable">Trouvez DigiPaws et appuyez sur Activer</string>
+	<string name="discard_changes">Ignorer les modifications ?</string>
+	<string name="are_you_sure_you_want_to_discard_all_changes_and_exit">Êtes-vous sur que vous voulez ignorer toutes les modifications et quitter?</string>
+	<string name="yes">Oui</string>
+	<string name="join_discord">Rejoindre le Discord</string>
+	<string name="follow_us_on_instagram">Suivez-nous sur Instagram</string>
+	<string name="support">Support</string>
+	<string name="if_you_enable_this_you_won_t_be_able_to_change_configurations_such_as_adding_blocked_apps_keywords_and_more">Si vous activez cette option, vous ne pourrez plus modifier les configurations, telles que l\'ajout d\'applications bloquées, de mots-clés, etc., tant que vous n\'aurez pas supprimé l\'anti-désinstallation. Vos modifications existantes seront utilisées pendant toute la période.</string>
+	<string name="alert">Alerte !!</string>
+	<string name="i_understand">Je comprends</string>
+	<string name="are_you_sure_you_want_to_turn_on_anti_uninstall_there_is_no_turning_back">ÊTES VOUS SUR DE VOULOIR ACTIVER L\'ANTI-DESINSTALLATION? Il n\'y a pas de retour en arrière...</string>
+	<string name="about_view_blocker">About View Blocker</string>
+	<string name="this_option_has_the_ability_to_block_youtube_shorts_and_instagram_reels_while_allowing_access_to_other_app_features">Cette option permet de bloquer les courts métrages YouTube et les Reels Instagram tout en autorisant l\'accès à d\'autres fonctionnalités de l\'application.</string>
+	<string name="configure_blocker">Configurer le Bloqueur</string>
+	<string name="select_apps">Selectionnez les applications</string>
+	<string name="setup_auto_focus">Setup Auto-Focus</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="join_telegram">Rejoindre le Telegram</string>
+	<string name="guide">Guide</string>
+	<string name="go_back">Retour en arrière</string>
+</resources>
+
+
