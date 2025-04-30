@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 import nethical.digipaws.utils.SavedPreferencesLoader
 import nl.joery.timerangepicker.TimeRangePicker
 
-open class BaseDialog(val savedPreferencesLoader: SavedPreferencesLoader? = null) :
+open class SelectLang(val savedPreferencesLoader: SavedPreferencesLoader? = null) :
     DialogFragment() {
     fun sendRefreshRequest(action: String) {
         val intent = Intent(action)
