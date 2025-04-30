@@ -66,8 +66,13 @@ class AppBlockerService : BaseBlockingService() {
 
         lastPackage = packageName
         Log.d("AppBlockerService", "Switched to app $packageName")
+
+        val focusModeResult = focusModeBlocker.doesAppNeedToBeBlocked(packageName)
+        if (focusModeResult.isBlocked) {
+            handleFocusModeBlockerResult(focusModeResult)
+            return
+        }
         handleAppBlockerResult(appBlocker.doesAppNeedToBeBlocked(packageName), packageName)
-        handleFocusModeBlockerResult(focusModeBlocker.doesAppNeedToBeBlocked(packageName))
     }
 
 
@@ -93,15 +98,8 @@ class AppBlockerService : BaseBlockingService() {
         Thread.sleep(300)
         val dialogIntent = Intent(this, WarningActivity::class.java)
         dialogIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        dialogIntent.putExtra("warning_message", appBlockerWarning.message)
         dialogIntent.putExtra("mode", Constants.WARNING_SCREEN_MODE_APP_BLOCKER)
-        dialogIntent.putExtra(
-            "is_dynamic_timing",
-            appBlockerWarning.isDynamicIntervalSettingAllowed
-        )
         dialogIntent.putExtra("result_id", packageName)
-        dialogIntent.putExtra("default_cooldown", appBlockerWarning.timeInterval / 60000)
-        dialogIntent.putExtra("is_proceed_disabled", appBlockerWarning.isProceedDisabled)
         startActivity(dialogIntent)
 
     }

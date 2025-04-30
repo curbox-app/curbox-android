@@ -9,6 +9,7 @@ import android.graphics.Color
 import android.util.Log
 import android.widget.RemoteViews
 import nethical.digipaws.R
+import nethical.digipaws.ui.activity.UsageMetricsActivity
 import nethical.digipaws.utils.SavedPreferencesLoader
 import nethical.digipaws.utils.TimeTools
 
@@ -124,6 +125,16 @@ class ReelsWidgetProvider : AppWidgetProvider() {
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
                 )
                 setOnClickPendingIntent(R.id.refresh_stats, pendingIntent)
+
+                val intent = Intent(context, UsageMetricsActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                val openIntent = PendingIntent.getActivity(
+                    context,
+                    0,
+                    intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                setOnClickPendingIntent(R.id.reels_bg, openIntent)
             }
 
             appWidgetManager.updateAppWidget(widgetId, views)

@@ -3,6 +3,8 @@ package nethical.digipaws.ui.dialogs
 import android.animation.LayoutTransition
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
+import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import nethical.digipaws.R
 import nethical.digipaws.databinding.DialogTweakBlockerWarningBinding
@@ -27,8 +29,8 @@ class TweakAppBlockerWarning(savedPreferencesLoader: SavedPreferencesLoader) : B
             val viewsToToggle = listOf(
                 binding.cbDynamicWarning,
                 binding.selectMins,
-                binding.textInputLayout2,
-                binding.info
+                binding.info,
+                binding.proceedDelay
             )
             viewsToToggle.forEach { it.animateVisibility(!isChecked) }
 
@@ -40,14 +42,30 @@ class TweakAppBlockerWarning(savedPreferencesLoader: SavedPreferencesLoader) : B
                 binding.selectMins,
                 binding.textInputLayout2,
                 binding.info,
-                binding.cbProceedBtn
+                binding.cbProceedBtn,
+                binding.proceedDelay
             )
             viewsToToggle.forEach { it.animateVisibility(!isChecked) }
         }
 
-
         // Load previous data from preferences
         val previousData = savedPreferencesLoader!!.loadAppBlockerWarningInfo()
+        var proceedDelay = previousData.proceedDelayInSecs
+
+        when (proceedDelay) {
+            3 -> binding.proceedDelayChips.check(R.id.three_sec_chip)
+            9 -> binding.proceedDelayChips.check(R.id.nine_sec_chip)
+            30 -> binding.proceedDelayChips.check(R.id.thirty_sec_chip)
+            15 -> binding.proceedDelayChips.check(R.id.fifteen_sec_chip)
+        }
+
+        binding.proceedDelayChips.setOnCheckedStateChangeListener { group, checkedIds ->
+
+            val chip = group.findViewById<Chip>(checkedIds[0])
+            proceedDelay = chip.text.toString().slice(IntRange(0, 1)).trim().toInt()
+            Log.d("proceedDelay", "onCreateDialog: $proceedDelay")
+        }
+
         previousData.let {
             binding.selectMins.setValue(it.timeInterval / 60000)
             binding.warningMsgEdit.setText(it.message)
@@ -71,7 +89,8 @@ class TweakAppBlockerWarning(savedPreferencesLoader: SavedPreferencesLoader) : B
                         selectedMinInMs,
                         binding.cbDynamicWarning.isChecked,
                         binding.cbProceedBtn.isChecked,
-                        binding.cbBackWithoutWarning.isChecked
+                        binding.cbBackWithoutWarning.isChecked,
+                        proceedDelay
                     )
                 )
                 sendRefreshRequest(AppBlockerService.INTENT_ACTION_REFRESH_APP_BLOCKER)

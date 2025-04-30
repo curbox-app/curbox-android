@@ -1041,11 +1041,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     data class WarningData(
-        val message: String = "",
+        val message: String = "You can setup a custom message to appear here!",
         val timeInterval: Int = 120000, // default cooldown period
         val isDynamicIntervalSettingAllowed: Boolean = false,
         val isProceedDisabled: Boolean = false,
-        val isWarningDialogHidden:Boolean = false // perform back/home action directly without showing warning screen
+        val isWarningDialogHidden: Boolean = false, // perform back/home action directly without showing warning screen
+        val proceedDelayInSecs: Int = 15
     )
 
 

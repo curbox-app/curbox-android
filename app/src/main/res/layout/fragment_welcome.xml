@@ -15,7 +15,6 @@
         android:overScrollMode="never"
         android:padding="24dp"
         android:paddingBottom="88dp"
-        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/bottomContainer"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -74,6 +73,17 @@
                 android:gravity="center"
                 android:text="Read Terms and Conditions" />
 
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cb_tos"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="By pressing Next, you agree to our Terms and Conditions"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="visible" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -85,20 +95,6 @@
         android:elevation="8dp"
         android:padding="24dp"
         app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/cb_tos"
-            style="@style/Widget.Material3.CompoundButton.CheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="By pressing Next, you agree to our Terms and Conditions"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/btn_next"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_next" />
 
         <!-- Standardized next button -->
         <com.google.android.material.button.MaterialButton

@@ -12,6 +12,7 @@ import nethical.digipaws.R
 import nethical.digipaws.databinding.DialogWarningOverlayBinding
 import nethical.digipaws.services.AppBlockerService
 import nethical.digipaws.services.ViewBlockerService
+import nethical.digipaws.utils.SavedPreferencesLoader
 
 
 class WarningActivity : AppCompatActivity() {
@@ -20,8 +21,16 @@ class WarningActivity : AppCompatActivity() {
     private var dialog: AlertDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val savedPreferencesLoader = SavedPreferencesLoader(this)
+
 
         val mode = intent.getIntExtra("mode", 0)
+        val warningScreenConfig = if (mode == Constants.WARNING_SCREEN_MODE_VIEW_BLOCKER) {
+            savedPreferencesLoader.loadViewBlockerWarningInfo()
+        } else {
+            savedPreferencesLoader.loadAppBlockerWarningInfo()
+
+        }
         val binding = DialogWarningOverlayBinding.inflate(layoutInflater)
         val isHomePressRequested = intent.getBooleanExtra("is_press_home", false)
         binding.minsPicker.setValue(3)
@@ -29,12 +38,13 @@ class WarningActivity : AppCompatActivity() {
         val isDialogCancelable =
             mode != Constants.WARNING_SCREEN_MODE_APP_BLOCKER || isHomePressRequested
 
-        if (intent.getBooleanExtra("is_proceed_disabled", false)) {
+        if (warningScreenConfig.isProceedDisabled) {
             binding.btnProceed.visibility = View.GONE
             binding.proceedSeconds.visibility = View.GONE
 
         } else {
-            proceedTimer = object : CountDownTimer(15000, 1000) {
+            proceedTimer =
+                object : CountDownTimer(warningScreenConfig.proceedDelayInSecs * 1000L, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     binding.proceedSeconds.text =
                         getString(R.string.proceed_in, millisUntilFinished / 1000)
@@ -43,7 +53,7 @@ class WarningActivity : AppCompatActivity() {
                 override fun onFinish() {
                     binding.btnProceed.let { button ->
                         button.isEnabled = true
-                        if (intent.getBooleanExtra("is_dynamic_timing", false)) {
+                        if (warningScreenConfig.isDynamicIntervalSettingAllowed) {
                             binding.minsPicker.visibility = View.VISIBLE
                         }
                         button.setText(R.string.proceed)
@@ -60,8 +70,8 @@ class WarningActivity : AppCompatActivity() {
                 finishAffinity()
             }
             .show()
-        binding.warningMsg.text = intent.getStringExtra("warning_message")
-        binding.minsPicker.setValue(intent.getIntExtra("default_cooldown", 1))
+        binding.warningMsg.text = warningScreenConfig.message
+        binding.minsPicker.setValue(warningScreenConfig.timeInterval / 60000)
         binding.btnCancel.setOnClickListener {
             if (mode == Constants.WARNING_SCREEN_MODE_APP_BLOCKER || isHomePressRequested) {
                 val intent = Intent(Intent.ACTION_MAIN)

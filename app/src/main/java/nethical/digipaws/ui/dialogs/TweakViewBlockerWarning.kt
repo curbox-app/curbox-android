@@ -6,7 +6,9 @@ import android.app.Dialog
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import nethical.digipaws.R
 import nethical.digipaws.databinding.DialogTweakBlockerWarningBinding
@@ -37,8 +39,8 @@ class TweakViewBlockerWarning(
             val viewsToToggle = listOf(
                 binding.cbDynamicWarning,
                 binding.selectMins,
-                binding.textInputLayout2,
-                binding.info
+                binding.info,
+                binding.proceedDelay
             )
             viewsToToggle.forEach { it.animateVisibility(!isChecked) }
         }
@@ -49,14 +51,30 @@ class TweakViewBlockerWarning(
                 binding.selectMins,
                 binding.textInputLayout2,
                 binding.info,
-                binding.cbProceedBtn
+                binding.cbProceedBtn,
+                binding.proceedDelay
             )
             viewsToToggle.forEach { it.animateVisibility(!isChecked) }
         }
 
+        // Load previous data from preferences
+        val previousData = savedPreferencesLoader!!.loadViewBlockerWarningInfo()
+        var proceedDelay = previousData.proceedDelayInSecs
+
+        when (proceedDelay) {
+            3 -> binding.proceedDelayChips.check(R.id.three_sec_chip)
+            9 -> binding.proceedDelayChips.check(R.id.nine_sec_chip)
+            30 -> binding.proceedDelayChips.check(R.id.thirty_sec_chip)
+            15 -> binding.proceedDelayChips.check(R.id.fifteen_sec_chip)
+        }
+        binding.proceedDelayChips.setOnCheckedStateChangeListener { group, checkedIds ->
+
+            val chip = group.findViewById<Chip>(checkedIds[0])
+            proceedDelay = chip.text.toString().slice(IntRange(0, 1)).trim().toInt()
+            Log.d("proceedDelay", "onCreateDialog: $proceedDelay")
+        }
 
         // Load saved preferences
-        val previousData = savedPreferencesLoader!!.loadViewBlockerWarningInfo()
         binding.selectMins.setValue(previousData.timeInterval / 60000)
         binding.warningMsgEdit.setText(previousData.message)
         binding.cbDynamicWarning.isChecked =
@@ -89,7 +107,8 @@ class TweakViewBlockerWarning(
                         selectedMinInMs,
                         binding.cbDynamicWarning.isChecked,
                         binding.cbProceedBtn.isChecked,
-                        binding.cbBackWithoutWarning.isChecked
+                        binding.cbBackWithoutWarning.isChecked,
+                        proceedDelay
                     )
                 )
 

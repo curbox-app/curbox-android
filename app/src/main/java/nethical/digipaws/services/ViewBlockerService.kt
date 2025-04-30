@@ -57,12 +57,8 @@ class ViewBlockerService : BaseBlockingService() {
         if(warningScreenConfig.isWarningDialogHidden) return
         val dialogIntent = Intent(this, WarningActivity::class.java)
         dialogIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        dialogIntent.putExtra("warning_message", warningScreenConfig.message)
         dialogIntent.putExtra("mode", Constants.WARNING_SCREEN_MODE_VIEW_BLOCKER)
-        dialogIntent.putExtra("is_dynamic_timing", warningScreenConfig.isDynamicIntervalSettingAllowed)
         dialogIntent.putExtra("result_id", result.viewId)
-        dialogIntent.putExtra("default_cooldown", warningScreenConfig.timeInterval / 60000)
-        dialogIntent.putExtra("is_proceed_disabled", warningScreenConfig.isProceedDisabled)
         dialogIntent.putExtra("is_press_home", result.requestHomePressInstead)
         startActivity(dialogIntent)
     }

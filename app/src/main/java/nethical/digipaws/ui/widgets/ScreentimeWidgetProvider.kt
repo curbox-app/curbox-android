@@ -8,6 +8,7 @@ import android.content.Intent
 import android.util.Log
 import android.widget.RemoteViews
 import nethical.digipaws.R
+import nethical.digipaws.ui.activity.FragmentActivity
 import nethical.digipaws.ui.fragments.usage.AllAppsUsageFragment
 import nethical.digipaws.utils.SavedPreferencesLoader
 import nethical.digipaws.utils.TimeTools
@@ -106,6 +107,17 @@ class ScreentimeWidgetProvider : AppWidgetProvider() {
                         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
                     )
                     setOnClickPendingIntent(R.id.refresh_stats_screentime, pendingIntent)
+
+                    val intent = Intent(context, FragmentActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    intent.putExtra("fragment", AllAppsUsageFragment.FRAGMENT_ID)
+                    val openIntent = PendingIntent.getActivity(
+                        context,
+                        0,
+                        intent,
+                        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                    )
+                    setOnClickPendingIntent(R.id.widget_bg_app_stats, openIntent)
                 }
             }
 

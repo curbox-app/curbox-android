@@ -30,7 +30,6 @@ class FragmentActivity : AppCompatActivity() {
                 ChooseModeFragment.FRAGMENT_ID -> {
                     fragment = ChooseModeFragment()
                 }
-
                 AllAppsUsageFragment.FRAGMENT_ID -> {
                     fragment = AllAppsUsageFragment()
                 }

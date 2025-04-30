@@ -1,0 +1,42 @@
+name: Feature Request
+description: Suggest a new feature or improvement for DigiPaws.
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a feature. Please describe it clearly and explain the problem it would solve.
+
+  - type: input
+    id: feature
+    attributes:
+      label: Feature Summary
+      description: A clear and concise summary of the feature.
+      placeholder: e.g., "Add challenge mode that unlocks apps after completing a quiz."
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Describe the problem this feature would address.
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you would like the feature to work.
+
+  - type: input
+    id: user-impact
+    attributes:
+      label: Target Users
+      description: Who will benefit from this feature?
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (optional)
+      description: Any other information, mockups, or references.

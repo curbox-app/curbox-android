@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -26,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="How long should the cooldown be after pressing the proceed button?" />
+            android:text="How long to unlock for after proceeding?" />
 
         <nethical.digipaws.views.HorizontalNumberPicker
         android:id="@+id/select_mins"
@@ -62,6 +63,61 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:text="Press back directly without showing a warning screen" />
+
+        <LinearLayout
+            android:id="@+id/proceed_delay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/info2"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="How long to wait before being able to press the proceed button. Prevents from instantly pressing the button without reading the message." />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/proceed_delay_chips"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:checkedChip="@id/fifteen_sec_chip"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/three_sec_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="3 sec" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/nine_sec_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="9 sec" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/fifteen_sec_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="15 sec" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/thirty_sec_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="30 sec" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"

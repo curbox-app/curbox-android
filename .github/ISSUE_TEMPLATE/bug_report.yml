@@ -1,0 +1,53 @@
+name: Bug Report
+description: Report a reproducible bug or unexpected behavior in DigiPaws.
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue. Please provide as much detail as possible to help us investigate.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: A short description of the issue.
+      placeholder: e.g., "Focus Mode timer does not start on Android 14."
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Clear steps to reproduce the issue.
+      placeholder: |
+        1. Go to Focus Mode
+        2. Set timer
+        3. Observe that timer does not start
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: Describe what you expected to happen.
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: Describe what actually happened.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Device model, OS version, DigiPaws version.
+      placeholder: e.g., OnePlus 9, Android 14, DigiPaws 1.2.1
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (optional)
+      description: Add logs, screenshots, or any other helpful information.
