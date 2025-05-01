@@ -25,49 +25,49 @@ class SelectLang(
 
         // Load tracker preferences
         trackerPreferences =
-            requireContext().getSharedPreferences("grayscale", Context.MODE_PRIVATE)
-        val getMode = trackerPreferences.getInt("mode",Constants.GRAYSCALE_MODE_ONLY_SELECTED)
+            requireContext().getSharedPreferences("lang", Context.MODE_PRIVATE)
+        val getMode = trackerPreferences.getInt("language",Constants.GRAYSCALE_MODE_ONLY_SELECTED)
 
 
 
         when(getMode){
-            Constants.GRAYSCALE_MODE_ONLY_SELECTED -> {
-                dialogGrayscaleBinding.blockSelected.isChecked = true
+            Constants.FR_SELECTED -> {
+                dialogSelectLangBinding.fr_lang.isChecked = true
             }
-            Constants.GRAYSCALE_MODE_ALL -> {
-                dialogGrayscaleBinding.blockAll.isChecked = true
+            Constants.EN_SELECTED -> {
+                dialogSelectLangBinding.en_lang.isChecked = true
             }
-            Constants.GRAYSCALE_MODE_ALL_EXCEPT_SELECTED -> {
-                dialogGrayscaleBinding.blockExceptSelected.isChecked = true
+            Constants.HELLO -> {
+                dialogSelectLangBinding.hello.isChecked = true
             }
         }
 
         // Build and display dialog
         return MaterialAlertDialogBuilder(requireContext())
             .setView(dialogGrayscaleBinding.root)
-            .setCancelable(false)
+            .setCancelable(trye)
             .setPositiveButton(getString(R.string.apply)) { dialog, _ ->
-                when(dialogGrayscaleBinding.modeType.checkedRadioButtonId){
-                    dialogGrayscaleBinding.blockAll.id -> {
-                        trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_ALL).commit()
-                        val grayscaleControl = GrayscaleControl()
-                        grayscaleControl.enableGrayscale()
+                when(dialogSelectLangBinding.modeType.checkedRadioButtonId){
+                    dialogSelectLangBinding.fr_lanh.id -> {
+                        trackerPreferences.edit().putInt("language",Constants.FR_SELECTED).commit()
+                        // val grayscaleControl = GrayscaleControl()
+                        // grayscaleControl.enableGrayscale()
                     }
-                    dialogGrayscaleBinding.turnOff.id -> {
-                        trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_OFF).commit()
+                    dialogSelectLangBinding.en_lang.id -> {
+                        trackerPreferences.edit().putInt("language",Constants.EN_SELECTED).commit()
                         val grayscaleControl = GrayscaleControl()
                         grayscaleControl.disableGrayscale()
                     }
-                    dialogGrayscaleBinding.blockSelected.id -> {
-                        trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_ONLY_SELECTED).commit()
-                    }
-                    dialogGrayscaleBinding.blockExceptSelected.id -> {
-                        trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_ALL_EXCEPT_SELECTED).commit()
-                    }
+                    // dialogSelectLangBinding.blockSelected.id -> {
+                    //     trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_ONLY_SELECTED).commit()
+                    // }
+                    // dialogGrayscaleBinding.blockExceptSelected.id -> {
+                    //     trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_ALL_EXCEPT_SELECTED).commit()
+                    // }
 
                 }
                 // Send broadcast to refresh UsageTrackingService
-                sendRefreshRequest(GeneralFeaturesService.INTENT_ACTION_REFRESH_GRAYSCALE)
+                // sendRefreshRequest(GeneralFeaturesService.INTENT_ACTION_REFRESH_GRAYSCALE)
                 dialog.dismiss()
             }
             .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
