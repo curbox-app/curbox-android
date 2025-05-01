@@ -19,5 +19,10 @@ class Constants {
         const val GRAYSCALE_MODE_ONLY_SELECTED = 2 // apply to only selected
         const val GRAYSCALE_MODE_ALL_EXCEPT_SELECTED = 3 // apply to all except selected
         const val GRAYSCALE_MODE_OFF = 4 // turned off
+
+        // availabe types for the language selector
+        const val EN_SELECTED = 1
+        const val FR_SELECTED = 2
+        const val HELLO = 3
     }
 }
