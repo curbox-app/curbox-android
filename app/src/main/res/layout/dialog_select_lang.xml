@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Select Language"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/mode_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Select your preference" />
+
+        <RadioButton
+            android:id="@+id/fr_lang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="French language" />
+
+        <RadioButton
+            android:id="@+id/en_lang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English Language" />
+
+        <RadioButton
+            android:id="@+id/hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello" />
+
+        <RadioButton
+            android:id="@+id/world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="world" />
+    </RadioGroup>
+</LinearLayout>
