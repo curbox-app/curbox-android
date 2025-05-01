@@ -157,6 +157,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent, options.toBundle())
         }
         showDonationDialog()
+
+        binding.langSelect.setOnClickListener {
+            Toast.makeText(applicationContext, "hey", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroy() {
