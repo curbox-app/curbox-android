@@ -26,7 +26,7 @@ class SelectLang(
         // Load tracker preferences
         trackerPreferences =
             requireContext().getSharedPreferences("lang", Context.MODE_PRIVATE)
-        val getMode = trackerPreferences.getInt("language",Constants.EN_LANG)
+        val getMode = trackerPreferences.getInt("language",Constants.EN_SELECTED)
 
 
 
