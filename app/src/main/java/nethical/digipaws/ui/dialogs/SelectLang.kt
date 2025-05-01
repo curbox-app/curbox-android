@@ -55,8 +55,8 @@ class SelectLang(
                     }
                     dialogSelectLangBinding.en_lang.id -> {
                         trackerPreferences.edit().putInt("language",Constants.EN_SELECTED).commit()
-                        val grayscaleControl = GrayscaleControl()
-                        grayscaleControl.disableGrayscale()
+                        // val grayscaleControl = GrayscaleControl()
+                        // grayscaleControl.disableGrayscale()
                     }
                     // dialogSelectLangBinding.blockSelected.id -> {
                     //     trackerPreferences.edit().putInt("mode",Constants.GRAYSCALE_MODE_ONLY_SELECTED).commit()
