@@ -58,7 +58,7 @@ import nethical.digipaws.ui.dialogs.TweakKeywordPack
 import nethical.digipaws.ui.dialogs.TweakUsageTracker
 import nethical.digipaws.ui.dialogs.TweakViewBlockerCheatHours
 import nethical.digipaws.ui.dialogs.TweakViewBlockerWarning
-import nethical.digipaws.ui.dialog.SelectLang
+import nethical.digipaws.ui.dialogs.SelectLang
 import nethical.digipaws.ui.fragments.anti_uninstall.ChooseModeFragment
 import nethical.digipaws.ui.fragments.installation.AccessibilityGuide
 import nethical.digipaws.ui.fragments.installation.WelcomeFragment
