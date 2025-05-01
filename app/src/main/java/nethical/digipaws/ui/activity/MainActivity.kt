@@ -262,6 +262,9 @@ class MainActivity : AppCompatActivity() {
         // click listener for select lang button
         binding.langSelect.setOnClickListener {
             Toast.makeText(applicationContext, "hey", Toast.LENGTH_SHORT).show()
+            val dialog = MaterialAlertDialogBuilder(this)
+                         .setView(dialogSelectLang.root)
+                         .show()
         }
         
         // click listeners for configuration options
