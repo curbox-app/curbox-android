@@ -26,7 +26,7 @@ class SelectLang(
         // Load tracker preferences
         trackerPreferences =
             requireContext().getSharedPreferences("lang", Context.MODE_PRIVATE)
-        val getMode = trackerPreferences.getInt("language",Constants.GRAYSCALE_MODE_ONLY_SELECTED)
+        val getMode = trackerPreferences.getInt("language",Constants.EN_LANG)
 
 
 
@@ -44,11 +44,11 @@ class SelectLang(
 
         // Build and display dialog
         return MaterialAlertDialogBuilder(requireContext())
-            .setView(dialogGrayscaleBinding.root)
-            .setCancelable(trye)
+            .setView(dialogSelectLangBinding.root)
+            .setCancelable(true)
             .setPositiveButton(getString(R.string.apply)) { dialog, _ ->
                 when(dialogSelectLangBinding.modeType.checkedRadioButtonId){
-                    dialogSelectLangBinding.fr_lanh.id -> {
+                    dialogSelectLangBinding.fr_lang.id -> {
                         trackerPreferences.edit().putInt("language",Constants.FR_SELECTED).commit()
                         // val grayscaleControl = GrayscaleControl()
                         // grayscaleControl.enableGrayscale()
