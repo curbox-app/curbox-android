@@ -158,9 +158,7 @@ class MainActivity : AppCompatActivity() {
         }
         showDonationDialog()
 
-        binding.langSelect.setOnClickListener {
-            Toast.makeText(applicationContext, "hey", Toast.LENGTH_SHORT).show()
-        }
+        
     }
 
     override fun onDestroy() {
@@ -261,6 +259,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupClickListeners() {
+        // click listener for select lang button
+        binding.langSelect.setOnClickListener {
+            Toast.makeText(applicationContext, "hey", Toast.LENGTH_SHORT).show()
+        }
+        
         // click listeners for configuration options
         binding.selectPinnedApps.setOnClickListener {
             val intent = Intent(this, SelectAppsActivity::class.java)
