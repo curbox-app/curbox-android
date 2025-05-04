@@ -44,6 +44,7 @@ import nethical.digipaws.R
 import nethical.digipaws.databinding.ActivityMainBinding
 import nethical.digipaws.databinding.DialogPermissionInfoBinding
 import nethical.digipaws.databinding.DialogRemoveAntiUninstallBinding
+import nethical.digipaws.databinding.DialogSelectLang
 import nethical.digipaws.receivers.AdminReceiver
 import nethical.digipaws.services.AppBlockerService
 import nethical.digipaws.services.GeneralFeaturesService
