@@ -62,7 +62,7 @@ Click on any image to enlarge it.
 - [x] Customisable warning screen
 - [x] Track App Usage Stats
 - [x] Homescreen widgets
-- [x] track how many tiktoks you scroll everyday 
+- [x] Track how many tiktoks you scroll everyday 
 - [ ] Track attention span
 - [ ] Geoblocker (basically block things when a certain area is entered, like workplace)
 - [x] Block custom user defined keywords
