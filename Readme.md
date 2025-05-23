@@ -17,7 +17,7 @@
         src="https://f-droid.org/badge/get-it-on.png" />
 </a>
 </div>
-DigiPaws is an open-source Android productivity utility designed to help users reduce screen addiction by regulating app usage through a gamified experience. The application offers two modes namely the Base mode and the Gamified mode
+DigiPaws is an open-source Android productivity utility designed to help users reduce screen addiction by regulating app usage through a gamified experience. The application offers two modes namely the Base mode and the Gamified mode (The gamification mode is being separated and developed as a new app.)
 
 > [!CAUTION]
 > This project is experimental and not yet ready for full production. [Donate](https://digipaws.life/donate)
@@ -29,7 +29,6 @@ DigiPaws is an open-source Android productivity utility designed to help users r
 
 ## Features
 
-- **Gamified Challenges**: Earn coins, perform quests and more!
 - **Open Source**: Fully transparent and free to use, with the source code available for community contributions.
 - **Productivity Enhancement**: Helps build healthier digital habits and reduce screen addiction.
 - **Versatile Blockers**: Take control of your digital environment by blocking apps, keywords, and unwanted in-app screens (e.g., YouTube shorts, comments).
@@ -64,14 +63,12 @@ Click on any image to enlarge it.
 - [x] Track App Usage Stats
 - [x] Homescreen widgets
 - [x] track how many tiktoks you scroll everyday 
-- [ ] track attention span
-- [ ] Quests and gamified mode
-- [ ] Api for other developers to transform their existing apps into digipaw quests!
+- [ ] Track attention span
 - [ ] Geoblocker (basically block things when a certain area is entered, like workplace)
 - [x] Block custom user defined keywords
-- [x] redirect to a different website when a blocked keyword is found
+- [x] Redirect to a different website when a blocked keyword is found
 - [ ] Modular and downloadable view blockers
-- [ ] expand the app to ios and desktop.
+- [ ] Expand the app to iOS and desktop.
 
 ## Modes
 
@@ -151,7 +148,7 @@ For questions, suggestions, or feedback, please open an issue on the [GitHub rep
 
 ### Q: I am unable to turn on accessibility settings. It says to enable "Restricted Settings"
 
-**A:** Try downloading the app directly from fdroid app, instead of an .apk file. Read more on this
+**A:** Try downloading the app directly from f-droid app, instead of an .apk file. Read more on this
 forum -> https://forum.f-droid.org/t/cant-activate-permissions-for-digipaws-on-android-14/30539
 
 
