@@ -175,6 +175,8 @@
     <string name="configure_blocker">Configure Blocker</string>
     <string name="select_apps">Select Apps</string>
     <string name="setup_auto_focus">Setup Auto-Focus</string>
+    <string name="select_all">Select all</string>
+    <string name="clear_all"> Clear all</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="join_telegram">Join Telegram</string>

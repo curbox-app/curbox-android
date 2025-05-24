@@ -35,11 +35,30 @@ class SelectAppsActivity : AppCompatActivity() {
 
     private var appItemList: MutableList<AppItem> = mutableListOf()
     @SuppressLint("NotifyDataSetChanged")
+
+    //change selectAll's text from "Select all" to "Clear all" and vice-versa
+    private var allAppsSelected = false
+    private fun updateSelectAllButton() {
+
+        val adapter = binding.appList.adapter as? ApplicationAdapter
+
+        // Check if every app currently in the adapter's list is present in selectedAppList
+        allAppsSelected = adapter?.apps?.all { appItem ->
+            selectedAppList.contains(appItem.packageName)
+        } == true
+
+        if (allAppsSelected) {
+            binding.selectAll.text = getString(R.string.clear_all)
+            allAppsSelected = true
+        } else {
+            binding.selectAll.text = getString(R.string.select_all)
+            allAppsSelected = false
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySelectAppsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         selectedAppList =
             intent.getStringArrayListExtra("PRE_SELECTED_APPS")?.toHashSet() ?: HashSet()
         Log.d("pre-selected-apps", selectedAppList.toString())
@@ -81,6 +100,22 @@ class SelectAppsActivity : AppCompatActivity() {
             popupMenu.show()
         }
 
+        //manages the behaviour of the select all button
+        binding.selectAll.setOnClickListener {
+            val currentListAdapter = binding.appList.adapter as? ApplicationAdapter
+            currentListAdapter?.let { adapter ->
+                adapter.apps.forEach { appItem ->
+                    if(allAppsSelected) {
+                        selectedAppList.remove(appItem.packageName)
+                    }
+                    else {
+                        selectedAppList.add(appItem.packageName)
+                    }
+                }
+                adapter.notifyDataSetChanged() // To update checkboxes
+            }
+            updateSelectAllButton()
+        }
         if (intent.hasExtra("APP_LIST")) {
             val appList = intent.getStringArrayListExtra("APP_LIST")
             appList?.forEach { packageName ->
@@ -135,6 +170,7 @@ class SelectAppsActivity : AppCompatActivity() {
             }
 
             appItemList.sortBy { it.displayName.lowercase() }
+            updateSelectAllButton()
         }
 
         binding.confirmSelection.setOnClickListener {
@@ -169,6 +205,7 @@ class SelectAppsActivity : AppCompatActivity() {
                 return true
             }
         })
+        updateSelectAllButton()
     }
 
     fun sortSelectedItemsToTop(appItemList: List<AppItem>): List<AppItem> {
@@ -186,7 +223,8 @@ class SelectAppsActivity : AppCompatActivity() {
     }
 
     inner class ApplicationAdapter(
-        private var apps: List<AppItem>,
+        var apps: List<AppItem>,
+
         private val selectedAppList: HashSet<String>
     ) : RecyclerView.Adapter<ApplicationViewHolder>() {
 
@@ -226,6 +264,7 @@ class SelectAppsActivity : AppCompatActivity() {
 
             holder.itemView.setOnClickListener {
                 holder.checkbox.isChecked = !holder.checkbox.isChecked
+                updateSelectAllButton()
             }
         }
 
