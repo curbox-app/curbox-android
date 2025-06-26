@@ -1,0 +1,184 @@
+<resources>
+    <string name="app_name" translatable="false">DigiPaws</string>
+    <string name="launcher_options">Başlatıcı Seçenekleri</string>
+    <string name="focus_mode">Odak Modu</string>
+    <string name="app_blocker">Uygulama Engelleyici</string>
+    <string name="view_reel_blocker">Görünüm/Reel Engelleyici</string>
+    <string name="keyword_blocker">Anahtar Kelime Engelleyici (BETA)</string>
+    <string name="anti_uninstall">Kaldırma Koruması</string>
+    <string name="usage_tracker">Kullanım Takibi (BETA)</string>
+    <string name="disabled">Devre Dışı</string>
+    <string name="select_pinned_apps">Sabitlenmiş uygulamaları seçin</string>
+    <string name="warning_launcher_settings">Bu seçeneğe erişmek için Digipaws\'ı varsayılan başlatıcı olarak ayarlayın</string>
+    <string name="select_blocked_apps">Engellenmiş uygulamaları seçin</string>
+    <string name="start_focus_mode">Odak modunu başlat</string>
+    <string name="warning_general_settings">Bu seçeneğe erişmek için Genel Erişilebilirlik Servisi\'ni etkinleştirin</string>
+    <string name="manage_warning_screen">Uyarı Ekranını Yönet</string>
+    <string name="manage_cheat_hours">Kaçamak Saatlerini Yönet</string>
+    <string name="warning_app_blocker_settings">Uygulama engellemeyi yönetmek için Uygulama Engelleyici Erişilebilirlik Servisi\'ni etkinleştirin</string>
+    <string name="warning_view_blocker_settings">Görünüm engellemeyi yönetmek için Görünüm Engelleyici Erişilebilirlik Servisi\'ni etkinleştirin</string>
+    <string name="add_custom_keywords">Özel Anahtar Kelimeler Ekle</string>
+    <string name="manage_keyword_packs">Anahtar Kelime Paketlerini Yönet</string>
+    <string name="warning_keywords_settings">Engellenen anahtar kelimeleri yönetmek için Anahtar Kelime Engelleyici Erişilebilirlik Servisi\'ni etkinleştirin</string>
+    <string name="usage_stats">Kullanım İstatistikleri</string>
+    <string name="manage_overlay_trackers">Gerçek Zamanlı Arayüzü Yönet</string>
+    <string name="warning_usage_tracker_settings">Takipçileri yönetmek için Kullanım Takibi Erişilebilirlik Servisi\'ni etkinleştirin</string>
+    <string name="remove_anti_uninstall">Kaldırma Korumasını Kaldır</string>
+    <string name="add_cheat_hours">Kaçamak Saatleri Ekle</string>
+    <string name="add">Ekle</string>
+    <string name="save">Kaydet</string>
+    <string name="todays_stats">Bugünün İstatistikleri</string>
+    <string name="you_scrolled_2_d_reels">%2$d adet reel kaydırdınız</string>
+    <string name="your_average_attention_span_was_2_d_mins">Ortalama dikkat süreniz %2$d dakikaydı</string>
+    <string name="view_more">Daha Fazla Görüntüle</string>
+    <string name="number_of_reels_scrolled">Kaydırılan Reel Sayısı</string>
+    <string name="average_attention_span">Ortalama Dikkat Süresi</string>
+    <string name="apps">Uygulamalar:</string>
+    <string name="remove">Kaldır</string>
+    <string name="write_down_a_keyword">Bir anahtar kelime yazın</string>
+    <string name="select_start_time">Başlangıç Zamanını Seç</string>
+    <string name="select_end_time">Bitiş Zamanını Seç</string>
+    <string name="select_apps_to_unblock">Kilidi açılacak uygulamaları seçin</string>
+    <string name="disable_proceed_button">"Devam Et" Düğmesini Devre Dışı Bırak </string>
+    <string name="display_time_elapsed">Geçen Süreyi Göster</string>
+    <string name="display_number_of_reels_scrolled">Kaydırılan reel sayısını göster</string>
+    <string name="specify_duration_of_focus_mode_in_mins">Odak modunun süresini dakika cinsinden belirtin</string>
+    <string name="block_adult_keywords">Yetişkinlere Yönelik Anahtar Kelimeleri Engelle</string>
+    <string name="password">Parola</string>
+    <string name="specify_cooldown_interval_in_minutes">Bekleme süresini dakika cinsinden belirtin</string>
+    <string name="warning_message">Uyarı mesajı</string>
+    <string name="allow_viewing_instagram_reels_sent_in_instagram_inbox">Instagram gelen kutusuna gönderilen Instagram reel\'lerini görüntülemeye izin ver</string>
+    <string name="allow_opening_the_first_reel_in_feed">Akıştaki ilk reel\'i açmaya izin ver</string>
+    <string name="in_warning_changeable_cooldown">uyarı içi değiştirilebilir bekleme süresi</string>
+    <string name="timed_mode">Zamanlı Mod</string>
+    <string name="block_all_uninstall_attempts_for_a_set_amount_of_days">Belirtilen gün sayısı boyunca tüm kaldırma denemelerini engelleyin.</string>
+    <string name="password_mode">Parola Modu</string>
+    <string name="block_all_uninstall_attempts_until_you_remove_anti_uninstall_with_a_password">Kaldırma koruması bir parolayla kaldırılana kadar tüm kaldırma denemelerini engelleyin</string>
+    <string name="next">İleri</string>
+    <string name="password_mode_desc">Bu parolayı unutmadığınızdan emin olun. Bu parola olmadan kaldırma korumasından çıkamayabilirsiniz.</string>
+    <string name="turn_on">Aç</string>
+    <string name="timed_mode_desc">Kaldırma korumasını ne kadar süreyle etkin tutmak istersiniz?</string>
+    <string name="turn_on_anti_uninstall">Kaldırma Korumasını Aç</string>
+    <string name="minutes">dakika</string>
+    <string name="app_icon">uygulama_simgesi</string>
+
+    <string name="accessibility_permission_app_blocker">
+        Bunu etkinleştirmek DigiPaws\'ta şunların kilidini açacaktır:\n1. Uygulama Engelleme\n2. Odak Modu \n\n
+        DigiPaws, bir uygulama içinde sosyal medya akışı veya oyun gibi belirli bir özelliği ne zaman açtığınızı anlamak için erişilebilirlik verilerine ihtiyaç duyar.
+        Bu, DigiPaws\'ın tercihlerinize göre bu özellikleri sizin için engellemesine olanak tanır, böylece odaklanmanıza ve ekran dikkat dağıtıcılarını azaltmanıza yardımcı olur.\n\n
+        İçiniz rahat olsun, tüm erişilebilirlik verileri cihazınızda güvenli bir şekilde kalır—verilerinizi asla paylaşmaz veya aktarmayız, gizliliğinizin her zaman korunduğundan emin oluruz.
+        \n\n
+    </string>
+    <string name="accessibility_permission_view_blocker">
+        Bunu etkinleştirmek DigiPaws\'ta şunların kilidini açacaktır:\n1. Görünüm Engelleme\n2. Instagram reel\'lerini, TikTok ve YouTube short\'larını engelleme\n\n
+        DigiPaws, bir uygulama içinde sosyal medya akışı veya oyun gibi belirli bir özelliği ne zaman açtığınızı anlamak için erişilebilirlik verilerine ihtiyaç duyar.
+        Bu, DigiPaws\'ın tercihlerinize göre bu özellikleri sizin için engellemesine olanak tanır, böylece odaklanmanıza ve ekran dikkat dağıtıcılarını azaltmanıza yardımcı olur.\n\n
+        İçiniz rahat olsun, tüm erişilebilirlik verileri cihazınızda güvenli bir şekilde kalır—verilerinizi asla paylaşmaz veya aktarmayız, gizliliğinizin her zaman korunduğundan emin oluruz.
+        \n\n
+    </string>
+    <string name="accessibility_permission_usage_tracker">
+        BU ÖZELLİĞİN ÇALIŞMASI İÇİN DİĞER UYGULAMALARIN ÜZERİNDE GÖSTERME (DRAW OVER OTHER APPS) İZNİ GEREKMEKTEDİR. LÜTFEN ÖNCE BU İZNİ, SONRA BU ÖZELLİĞİ ETKİNLEŞTİRİN. SERVİS HATALI ÇALIŞIRSA YENİDEN BAŞLATIN.\n\n
+
+        Bunu etkinleştirmek DigiPaws\'ta şunların kilidini açacaktır:\n1. Kaydırılan reel/tiktok sayısını sayma\n2. Geçen süreyi gösteren bir kayan arayüz\n\n
+        DigiPaws, bir uygulama içinde sosyal medya akışı veya oyun gibi belirli bir özelliği ne zaman açtığınızı anlamak için erişilebilirlik verilerine ihtiyaç duyar.
+        Bu, DigiPaws\'ın tercihlerinize göre bu özellikleri sizin için engellemesine olanak tanır, böylece odaklanmanıza ve ekran dikkat dağıtıcılarını azaltmanıza yardımcı olur.\n\n
+        İçiniz rahat olsun, tüm erişilebilirlik verileri cihazınızda güvenli bir şekilde kalır—verilerinizi asla paylaşmaz veya aktarmayız, gizliliğinizin her zaman korunduğundan emin oluruz.
+        \n\n
+    </string>
+    <string name="accessibility_permission_keyword_blocker">
+        Bunu etkinleştirmek DigiPaws\'ta şunların kilidini açacaktır:\n1. Özel anahtar kelimeleri engelleme\n2. Yetişkinlere yönelik materyaller gibi içerikleri engelleme\n\n
+        DigiPaws, bir uygulama içinde sosyal medya akışı veya oyun gibi belirli bir özelliği ne zaman açtığınızı anlamak için erişilebilirlik verilerine ihtiyaç duyar.
+        Bu, DigiPaws\'ın tercihlerinize göre bu özellikleri sizin için engellemesine olanak tanır, böylece odaklanmanıza ve ekran dikkat dağıtıcılarını azaltmanıza yardımcı olur.\n\n
+        İçiniz rahat olsun, tüm erişilebilirlik verileri cihazınızda güvenli bir şekilde kalır—verilerinizi asla paylaşmaz veya aktarmayız, gizliliğinizin her zaman korunduğundan emin oluruz.
+        \n\n
+    </string>
+
+    <string name="accessibility_permission_general_features">
+        Bunu etkinleştirmek DigiPaws\'ta şunların kilidini açacaktır:\n1. Kaldırma Koruması (Çalışması için kurulum gerekir)\n\n
+        DigiPaws, bir uygulama içinde sosyal medya akışı veya oyun gibi belirli bir özelliği ne zaman açtığınızı anlamak için erişilebilirlik verilerine ihtiyaç duyar.
+        Bu, DigiPaws\'ın tercihlerinize göre bu özellikleri sizin için engellemesine olanak tanır, böylece odaklanmanıza ve ekran dikkat dağıtıcılarını azaltmanıza yardımcı olur.\n\n
+        İçiniz rahat olsun, tüm erişilebilirlik verileri cihazınızda güvenli bir şekilde kalır—verilerinizi asla paylaşmaz veya aktarmayız, gizliliğinizin her zaman korunduğundan emin oluruz.
+        \n\n
+    </string>
+    <string name="admin_permission_desc">Digipaws Kaldırma Koruması</string>
+    <string name="title">Başlık</string>
+    <string name="close">Kapat</string>
+    <string name="proceed">Devam Et</string>
+    <string name="please_enable_device_admin">Bu özelliğe erişmek için lütfen Cihaz Yöneticisi iznini verin</string>
+    <string name="setup_complete">Kurulum Tamamlandı</string>
+    <string name="enter_setup">Kuruluma Gir</string>
+    <string name="enabled">Etkin</string>
+    <string name="start">Başlat</string>
+    <string name="cancel">İptal</string>
+    <string name="manage_keyword_blockers">Anahtar Kelime Engelleyicilerini Yönet</string>
+    <string name="ok">Tamam</string>
+    <string name="anti_uninstall_removed">Kaldırma Koruması kaldırıldı</string>
+    <string name="failed">Başarısız</string>
+    <string name="incorrect_password_please_try_again">"Yanlış parola. Lütfen tekrar deneyin. "</string>
+    <string name="retry">Tekrar Dene</string>
+    <string name="start_time">Başlangıç Zamanı: %1$d:%2$d</string>
+    <string name="end_time_must_be_after_start_time_has_passed">Bitiş saati, başlangıç saatinden sonra olmalıdır!</string>
+    <string name="end_time">Bitiş Zamanı: %02d:%02d</string>
+    <string name="start_time_02d_02d">Başlangıç Zamanı: %02d:%02d</string>
+    <string name="specify_cheat_hours">Kaçamak Saatlerini Belirt</string>
+    <string name="remaining_time_anti_uninstall">Kaldırma korumasının kilidini açmadan önce %1$d gününüz daha var</string>
+    <string name="add_a_new_keyword">Yeni bir anahtar kelime ekle</string>
+    <string name="you_scrolled_reels">%1$d adet reel kaydırdınız</string>
+    <string name="you_had_an_attention_span_of_seconds_video">Video başına %1$.2f saniye dikkat süreniz vardı</string>
+    <string name="failed_to_launch_system_digital_wellbeing">Sistem dijital denge aracı başlatılamadı</string>
+    <string name="reel_count">Reel sayısı</string>
+    <string name="short_videos_scrolled">kaydırılan kısa video</string>
+    <string name="seconds_video">saniye/video</string>
+    <string name="app_s_selected">%1$d uygulama seçildi</string>
+    <string name="please_specify_start_time_first">Lütfen önce Başlangıç Zamanını belirtin</string>
+    <string name="please_type_a_title">Lütfen bir başlık yazın</string>
+    <string name="please_select_a_start_time">Lütfen bir başlangıç zamanı seçin</string>
+    <string name="please_select_an_end_time">Lütfen bir bitiş zamanı seçin</string>
+    <string name="please_select_a_few_apps">Lütfen birkaç uygulama seçin</string>
+    <string name="cheat_timings">%1$d:%2$d ile %3$d:%4$d arası</string>
+    <string name="configure_warning_screen">Uyarı Ekranı</string>
+    <string name="proceed_in">Devam etmeden önce lütfen %1$d saniye bekleyin</string>
+    <string name="to">Bitiş</string>
+    <string name="please_specify_time">Lütfen zaman belirtin</string>
+    <string name="from">Başlangıç</string>
+    <string name="end">Bitir</string>
+    <string name="accept">Kabul Et</string>
+    <string name="accessibility_perm_desc">DigiPaws, deneyiminizi geliştirmek için uygulama izleme ve kullanım takibi gibi özellikler sağlamak amacıyla Erişilebilirlik iznini kullanır. Bu izin, DigiPaws\'ın uygulama etkinliklerini algılamasına ve cihaz kullanımını etkili bir şekilde yönetmenize yardımcı olmasına olanak tanır. İçiniz rahat olsun, tüm veriler cihazınızda yerel olarak işlenir ve asla herhangi bir sunucuya veya üçüncü tarafa gönderilmez. Gizliliğiniz ve veri güvenliğiniz en önemli önceliklerimizdir. \n \n Kabul Et\'e basarak yukarıdakileri anladığınızı ve kabul ettiğinizi beyan edersiniz.</string>
+    <string name="reject">Reddet</string>
+    <string name="peel_the_onions">Soğanları soy</string>
+    <string name="fix_your_life">Hayatını düzelt</string>
+    <string name="perform_actions_like_a_back_press">Geri tuşuna basma gibi eylemler gerçekleştirme</string>
+    <string name="read_content_on_screen">Ekrandaki içeriği okuma</string>
+    <string name="this_will_allow_digipaws_to">Bu, Digipaws\'a şu yetkileri verecektir:</string>
+    <string name="enable_2">"%1$s\'i Etkinleştir"</string>
+    <string name="device_admin_perm">DigiPaws, güvenliği artırmak ve belirli bir süreye kadar Digipaws\'ın kaldırılmasını engellemek için Cihaz Yöneticisi iznini kullanır. Tüm veriler cihazınızda güvenli bir şekilde saklanır ve asla dışarıyla paylaşılmaz.</string>
+    <string name="prevent_uninstallation_attempts_until_a_set_condition_is_met">Belirlenen bir koşul karşılanana kadar kaldırma denemelerini önleme</string>
+
+    <string name="device_perm_draw_over_other_apps">DigiPaws, ekran üzerinde küçük bir kayan arayüz göstermek için "Diğer uygulamaların üzerinde gösterme" iznini kullanır. Bu arayüz, izlenen reel sayısını ve harcanan zamanı takip ederek kullanıcıların kullanımlarını gerçek zamanlı olarak daha fazla fark etmelerine yardımcı olur.</string>
+    <string name="show_time_elapsed_on_phone">Telefonda geçen süreyi göster</string>
+    <string name="calculate_how_many_reels_tiktok_short_videos_you_scroll_per_day">Günde kaç adet reel/tiktok/kısa video kaydırdığınızı hesapla</string>
+    <string name="plan_a_robbery">Bir soygun planla</string>
+    <string name="please_provide_display_over_other_apps_permission_to_access_this_feature">Bu özelliğe erişmek için lütfen diğer uygulamaların üzerinde gösterme iznini verin</string>
+    <string name="find_digipaws_and_press_enable">Digipaws\'ı bulun ve etkinleştir\'e basın</string>
+    <string name="discard_changes">Değişiklikler Silinsin mi?</string>
+    <string name="are_you_sure_you_want_to_discard_all_changes_and_exit">Tüm değişiklikleri silip çıkmak istediğinizden emin misiniz?</string>
+    <string name="yes">Evet</string>
+    <string name="join_discord">Discord\'a Katıl</string>
+    <string name="follow_us_on_instagram">Bizi Instagram\'da Takip Edin</string>
+    <string name="support">Destek</string>
+    <string name="if_you_enable_this_you_won_t_be_able_to_change_configurations_such_as_adding_blocked_apps_keywords_and_more">Bunu etkinleştirirseniz, kaldırma korumasını kaldırana kadar engellenen uygulamaları, anahtar kelimeleri ve daha fazlasını eklemek gibi yapılandırmaları değiştiremezsiniz. Mevcut değişiklikleriniz tüm süre boyunca kullanılacaktır.</string>
+    <string name="alert">Uyarı!!</string>
+    <string name="i_understand">Anladım</string>
+    <string name="are_you_sure_you_want_to_turn_on_anti_uninstall_there_is_no_turning_back">KALDIRMA KORUMASINI AÇMAK İSTEDİĞİNİZE EMİN MİSİNİZ? Geri dönüşü yok...</string>
+    <string name="about_view_blocker">Görünüm Engelleyici Hakkında</string>
+    <string name="this_option_has_the_ability_to_block_youtube_shorts_and_instagram_reels_while_allowing_access_to_other_app_features">Bu seçenek, diğer uygulama özelliklerine erişime izin verirken YouTube Shorts ve Instagram Reels\'i engelleme yeteneğine sahiptir.</string>
+    <string name="configure_blocker">Engelleyiciyi Yapılandır</string>
+    <string name="select_apps">Uygulamaları Seç</string>
+    <string name="setup_auto_focus">Otomatik Odaklamayı Ayarla</string>
+    <string name="select_all">Tümünü seç</string>
+    <string name="clear_all"> Tümünü temizle</string>
+    <string name="hello_blank_fragment">Merhaba boş fragment</string>
+    <string name="join_telegram">Telegram\'a Katıl</string>
+    <string name="guide">Rehber</string>
+    <string name="go_back">Geri dön</string>
+</resources>
