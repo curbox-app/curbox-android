@@ -1,0 +1,181 @@
+<resources>
+    <string name="app_name" translatable="false">DigiPaws</string>
+    <string name="launcher_options">Launcher Options</string>
+    <string name="focus_mode">专注模式</string>
+    <string name="app_blocker">阻止使用</string>
+    <string name="view_reel_blocker">阻止短视频</string>
+    <string name="keyword_blocker">关键词屏蔽(BETA)</string>
+    <string name="anti_uninstall">阻止卸载</string>
+    <string name="usage_tracker">时间追踪(BETA)</string>
+    <string name="disabled">未启用</string>
+    <string name="select_pinned_apps">Select pinned apps</string>
+    <string name="warning_launcher_settings">Set Digipaws as the default launcher to access this option</string>
+    <string name="select_blocked_apps">选择阻止应用</string>
+    <string name="start_focus_mode">开启专注</string>
+    <string name="warning_general_settings">请先启用General Accessibility无障碍功能</string>
+    <string name="manage_warning_screen">警告弹窗设置</string>
+    <string name="manage_cheat_hours">设置例外时间段</string>
+    <string name="warning_app_blocker_settings">请先启用App Blocker无障碍服务</string>
+    <string name="warning_view_blocker_settings">请先启用 View Blocke无障碍服务</string>
+    <string name="add_custom_keywords">添加关键词</string>
+    <string name="manage_keyword_packs">管理默认关键词</string>
+    <string name="warning_keywords_settings">请先启用Keyword Blocker 无障碍服务</string>
+    <string name="grayscale_filter">黑白模式</string>
+    <string name="setup_filter">设置过滤器</string>
+    <string name="usage_stats">使用通知</string>
+    <string name="manage_overlay_trackers">Manage Real Time Overlay</string>
+    <string name="warning_usage_tracker_settings">请先启用Usage Tracker 无障碍服务</string>
+    <string name="remove_anti_uninstall">取消防卸载</string>
+    <string name="add_cheat_hours">例外时间</string>
+    <string name="add">添加</string>
+    <string name="save">保存</string>
+    <string name="todays_stats">今日用量</string>
+    <string name="you_scrolled_2_d_reels">你刷了 %2$d 视频</string>
+    <string name="your_average_attention_span_was_2_d_mins">你的平均专注时长为 %2$d 分钟</string>
+    <string name="view_more">更多</string>
+    <string name="number_of_reels_scrolled">视频数量</string>
+    <string name="average_attention_span">平均专注时长</string>
+    <string name="apps">应用:</string>
+    <string name="remove">删除</string>
+    <string name="write_down_a_keyword">输入关键词</string>
+    <string name="select_start_time">选择开始时间</string>
+    <string name="select_end_time">选择结束时间</string>
+    <string name="select_apps_to_unblock">选择禁用应用</string>
+    <string name="disable_proceed_button">关闭继续按钮</string>
+    <string name="display_time_elapsed">显示已用时长</string>
+    <string name="display_number_of_reels_scrolled">显示已刷视频数量</string>
+    <string name="specify_duration_of_focus_mode_in_mins">Specify duration of focus mode in mins</string>
+    <string name="block_adult_keywords">成人关键词</string>
+    <string name="password">密码</string>
+    <string name="specify_cooldown_interval_in_minutes">Specify cooldown interval in minutes</string>
+    <string name="warning_message">警告信息</string>
+    <string name="allow_viewing_instagram_reels_sent_in_instagram_inbox">允许查看 Instagram 收件箱发送的视频</string>
+    <string name="allow_opening_the_first_reel_in_feed">Allow opening the first reel in feed</string>
+    <string name="in_warning_changeable_cooldown">警告弹窗中可设置使用时长</string>
+    <string name="timed_mode">时间模式</string>
+    <string name="block_all_uninstall_attempts_for_a_set_amount_of_days">指定时间防卸载</string>
+    <string name="password_mode">密码模式</string>
+    <string name="block_all_uninstall_attempts_until_you_remove_anti_uninstall_with_a_password">设置防卸载密码</string>
+    <string name="next">Next</string>
+    <string name="password_mode_desc">Make sure not to forget this password. You may not be able to exit anti-uninstall without it.</string>
+    <string name="turn_on">启用</string>
+    <string name="timed_mode_desc">设置防卸载持续时间</string>
+    <string name="turn_on_anti_uninstall">启用防卸载</string>
+    <string name="minutes">minutes</string>
+
+    <string name="app_icon">应用图标</string>
+    <string name="accessibility_permission_app_blocker">
+        Enabling this would unlock the following in DigiPaws:\n1. App Blocking\n2, Focus Mode \n\n
+        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
+        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
+        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
+        \n\n
+    </string>
+    <string name="accessibility_permission_view_blocker">
+        Enabling this would unlock the following in DigiPaws:\n1. View Blocking\n2. Block Instagram reels,Tikok and Youtube shorts\n\n
+        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
+        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
+        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
+        \n\n
+    </string>
+    <string name="accessibility_permission_usage_tracker">
+        THIS FEATURE REQUIRES DISPLAY OVER OTHER APPS (DRAW OVER OTHER APPS) PERMISSION TO WORK. PLEASE ENABLE IT FIRST AND THEN ENABLE THIS. RESTART IF SERVICE MALFUNCTIONS.\n\n
+
+        Enabling this would unlock the following in DigiPaws:\n1. Count number of reels/tiktoks scrolled\n2. A floating overlay that shows time elapsed\n\n
+        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
+        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
+        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
+        \n\n
+    </string>
+    <string name="accessibility_permission_keyword_blocker">
+        Enabling this would unlock the following in DigiPaws:\n1. Block custom keywords\n2. Block content like adult material\n\n
+        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
+        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
+        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
+        \n\n
+    </string>
+
+    <string name="accessibility_permission_general_features">"         Enabling this would unlock the following in DigiPaws: 1. Anti-Uninstall (Setup required to run)           DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.         This lets DigiPaws block those features for you based on your preferences, helendping you stay focused and reduce screen distractions.           Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.                "</string>
+    <string name="admin_permission_desc">Digipaws 防卸载l</string>
+    <string name="title">Title</string>
+    <string name="close">关闭</string>
+    <string name="proceed">继续</string>
+    <string name="please_enable_device_admin">Please provide device admin permission to access this feature</string>
+    <string name="setup_complete">Setup Complete</string>
+    <string name="enter_setup">Enter Setup</string>
+    <string name="enabled">已启用</string>
+    <string name="start">Start</string>
+    <string name="cancel">取消</string>
+    <string name="manage_keyword_blockers">Manage Keyword Blockers</string>
+    <string name="ok">OK</string>
+    <string name="anti_uninstall_removed">Anti Uninstall removed</string>
+    <string name="failed">Failed</string>
+    <string name="incorrect_password_please_try_again">"Incorrect password. Please try again. "</string>
+    <string name="retry">Retry</string>
+    <string name="start_time">Start Time: %1$d:%2$d</string>
+    <string name="end_time_must_be_after_start_time_has_passed">End time must be after start time has passed!</string>
+    <string name="end_time">End Time: %02d:%02d</string>
+    <string name="start_time_02d_02d">Start Time: %02d:%02d</string>
+    <string name="specify_cheat_hours">Specify Cheat Hours</string>
+    <string name="remaining_time_anti_uninstall">%1$d 天后你才能关闭防卸载</string>
+    <string name="add_a_new_keyword">添加新关键词</string>
+    <string name="you_scrolled_reels">你刷了 %1$d 视频</string>
+    <string name="you_had_an_attention_span_of_seconds_video">You had an attention span of %1$.2f seconds/video</string>
+    <string name="failed_to_launch_system_digital_wellbeing">Failed to launch system digital wellbeing</string>
+    <string name="reel_count">Reel count</string>
+    <string name="short_videos_scrolled">short videos scrolled</string>
+    <string name="seconds_video">seconds/video</string>
+    <string name="app_s_selected">%1$d app(s) selected</string>
+    <string name="please_specify_start_time_first">Please Specify Start Time first</string>
+    <string name="please_type_a_title">Please type a title</string>
+    <string name="please_select_a_start_time">Please Select a start time</string>
+    <string name="please_select_an_end_time">Please Select an end time</string>
+    <string name="please_select_a_few_apps">Please select a few apps</string>
+    <string name="cheat_timings">%1$d:%2$d to %3$d:%4$d</string>
+    <string name="configure_warning_screen">警告弹窗</string>
+    <string name="proceed_in">等待 %1$d 秒 才能继续</string>
+    <string name="to">To</string>
+    <string name="please_specify_time">Please specify time</string>
+    <string name="from">From</string>
+    <string name="end">End</string>
+    <string name="accept">接受</string>
+    <string name="accessibility_perm_desc">DigiPaws 使用“辅助功能”权限来提供应用监控和使用情况追踪等功能，以提升您的体验。此权限允许 DigiPaws 检测应用活动并帮助有效管理设备使用情况。请放心，所有数据均在您的设备本地处理，绝不会发送到任何服务器或第三方。您的隐私和数据安全是我们的首要任务。点击“接受”即表示您确认并同意上述条款。</string>
+    <string name="reject">Reject</string>
+    <string name="peel_the_onions">Peel the onions</string>
+    <string name="fix_your_life">Fix your life</string>
+    <string name="perform_actions_like_a_back_press">Perform actions like a back press</string>
+    <string name="read_content_on_screen">Read content on screen</string>
+    <string name="this_will_allow_digipaws_to">This will allow digipaws to:</string>
+    <string name="enable_2">"Enable %1$s"</string>
+    <string name="device_admin_perm">DigiPaws 使用设备管理员权限来增强安全性，并在特定时间段内阻止卸载 digipaws。所有数据都将安全地存储在您的设备上，绝不会与外部共享。</string>
+    <string name="prevent_uninstallation_attempts_until_a_set_condition_is_met">Prevent uninstallation attempts until a set condition is met</string>
+
+    <string name="device_perm_draw_over_other_apps">DigiPaws 使用悬浮窗权限，在屏幕上显示一个小型叠加层。此叠加层会跟踪用户观看的短视频数量和使用时间。</string>
+    <string name="show_time_elapsed_on_phone">Show time elapsed on phone</string>
+    <string name="calculate_how_many_reels_tiktok_short_videos_you_scroll_per_day">计算每日平均短视频数量</string>
+    <string name="plan_a_robbery">Plan a robbery</string>
+    <string name="please_provide_display_over_other_apps_permission_to_access_this_feature">Please provide display over other apps permission to access this feature</string>
+    <string name="find_digipaws_and_press_enable">找到 Digipaws 并启用</string>
+    <string name="discard_changes">Discard Changes?</string>
+    <string name="are_you_sure_you_want_to_discard_all_changes_and_exit">不保存并返回?</string>
+    <string name="yes">是</string>
+    <string name="join_discord">Join Discord</string>
+    <string name="follow_us_on_instagram">Follow us on Instagram</string>
+    <string name="support">支持</string>
+    <string name="if_you_enable_this_you_won_t_be_able_to_change_configurations_such_as_adding_blocked_apps_keywords_and_more">如果启用此功能，则在移除防卸载功能之前，您将无法更改配置，例如添加阻止应用、关键字等。更改将立即生效。</string>
+    <string name="alert">注意!!</string>
+    <string name="i_understand">我明白</string>
+    <string name="are_you_sure_you_want_to_turn_on_anti_uninstall_there_is_no_turning_back">你确定要开启防卸载? There is no turning back...</string>
+    <string name="about_view_blocker">About View Blocker</string>
+    <string name="this_option_has_the_ability_to_block_youtube_shorts_and_instagram_reels_while_allowing_access_to_other_app_features">此选项可以阻止 YouTube Shorts 和 Instagram Reels，同时允许访问其他应用功能。</string>
+    <string name="configure_blocker">Configure Blocker</string>
+    <string name="select_apps">选择应用</string>
+    <string name="setup_auto_focus">计划专注</string>
+    <string name="select_all">全选</string>
+    <string name="clear_all">清空</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="join_telegram">Join Telegram</string>
+    <string name="guide">指南</string>
+    <string name="go_back">返回</string>
+</resources>

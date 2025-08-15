@@ -20,6 +20,8 @@
     <string name="add_custom_keywords">Add Custom Keywords</string>
     <string name="manage_keyword_packs">Manage Keyword Packs</string>
     <string name="warning_keywords_settings">Enable Keyword Blocker Accessibility Service to manage blocked keywords</string>
+    <string name="grayscale_filter">Grayscale Filter</string>
+    <string name="setup_filter">Setup Filter</string>">
     <string name="usage_stats">Usage Stats</string>
     <string name="manage_overlay_trackers">Manage Real Time Overlay</string>
     <string name="warning_usage_tracker_settings">Enable Usage Tracker Accessibility Service to manage trackers</string>
@@ -85,21 +87,9 @@
         Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
         \n\n
     </string>
-    <string name="accessibility_permission_keyword_blocker">
-        Enabling this would unlock the following in DigiPaws:\n1. Block custom keywords\n2. Block content like adult material\n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
-    </string>
+    <string name="accessibility_permission_keyword_blocker">"         Enabling this would unlock the following in DigiPaws: 1. Block custom keywords 2. Block content like adult material           DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.         This lets DigiPaws block those features for you based on your preferences, helping you stay focused and reduce screen distractions.           Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.                "</string>
 
-    <string name="accessibility_permission_general_features">
-        Enabling this would unlock the following in DigiPaws:\n1. Anti-Uninstall (Setup required to run)\n\n
-        DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.
-        This lets DigiPaws block those features for you based on your preferences, helendping you stay focused and reduce screen distractions.\n\n
-        Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.
-        \n\n
-    </string>
+    <string name="accessibility_permission_general_features">"         Enabling this would unlock the following in DigiPaws: 1. Anti-Uninstall (Setup required to run)           DigiPaws needs access to accessibility data to know when you open a specific feature within an app, like a social media feed or a game.         This lets DigiPaws block those features for you based on your preferences, helendping you stay focused and reduce screen distractions.           Rest assured, all accessibility data stays securely on your device—we never share or transmit your data, ensuring your privacy is always protected.                "</string>
     <string name="admin_permission_desc">Digipaws Anti-Uninstall</string>
     <string name="title">Title</string>
     <string name="close">Close</string>
@@ -143,7 +133,7 @@
     <string name="from">From</string>
     <string name="end">End</string>
     <string name="accept">Accept</string>
-    <string name="accessibility_perm_desc">DigiPaws uses the Accessibility permission to provide features like app monitoring and usage tracking to enhance your experience. This permission allows DigiPaws to detect app activities and help manage device usage effectively. Rest assured, all data is processed locally on your device and is never sent to any server or third party. Your privacy and data security are our top priorities. \n \n By pressing Accept, you acknowledge and agree to the above .</string>
+    <string name="accessibility_perm_desc">DigiPaws uses the Accessibility permission to provide features like app monitoring and usage tracking to enhance your experience. This permission allows DigiPaws to detect app activities and help manage device usage effectively. Rest assured, all data is processed locally on your device and is never sent to any server or third party. Your privacy and data security are our top priorities.     By pressing Accept, you acknowledge and agree to the above .</string>
     <string name="reject">Reject</string>
     <string name="peel_the_onions">Peel the onions</string>
     <string name="fix_your_life">Fix your life</string>

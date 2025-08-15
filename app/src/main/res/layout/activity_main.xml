@@ -10,17 +10,17 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="32dp"
         android:orientation="vertical"
+        android:paddingBottom="32dp"
         tools:context=".ui.activity.MainActivity">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/launcher_card"
-            android:visibility="gone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
+            android:visibility="gone"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -190,7 +190,7 @@
                         style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Grayscale Filter"
+                        android:text="@string/grayscale_filter"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -224,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:enabled="false"
-                    android:text="Setup Filter" />
+                    android:text="@string/setup_filter" />
 
                 <TextView
                     android:id="@+id/monochrome_warning"
