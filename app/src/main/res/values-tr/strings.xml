@@ -118,8 +118,8 @@
     <string name="retry">Tekrar Dene</string>
     <string name="start_time">Başlangıç Zamanı: %1$d:%2$d</string>
     <string name="end_time_must_be_after_start_time_has_passed">Bitiş saati, başlangıç saatinden sonra olmalıdır!</string>
-    <string name="end_time">Bitiş Zamanı: %02d:%02d</string>
-    <string name="start_time_02d_02d">Başlangıç Zamanı: %02d:%02d</string>
+    <string name="end_time">Bitiş Zamanı: %1$02d:%2$02d</string>
+    <string name="start_time_02d_02d">Başlangıç Zamanı: %1$02d:%2$02d</string>
     <string name="specify_cheat_hours">Kaçamak Saatlerini Belirt</string>
     <string name="remaining_time_anti_uninstall">Kaldırma korumasının kilidini açmadan önce %1$d gününüz daha var</string>
     <string name="add_a_new_keyword">Yeni bir anahtar kelime ekle</string>

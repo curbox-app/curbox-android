@@ -114,8 +114,8 @@
     <string name="retry">Retry</string>
     <string name="start_time">Start Time: %1$d:%2$d</string>
     <string name="end_time_must_be_after_start_time_has_passed">End time must be after start time has passed!</string>
-    <string name="end_time">End Time: %02d:%02d</string>
-    <string name="start_time_02d_02d">Start Time: %02d:%02d</string>
+    <string name="end_time">End Time: %1$02d:%2$02d</string>
+    <string name="start_time_02d_02d">Start Time: %1$02d:%2$02d</string>
     <string name="specify_cheat_hours">Specify Cheat Hours</string>
     <string name="remaining_time_anti_uninstall">%1$d 天后你才能关闭防卸载</string>
     <string name="add_a_new_keyword">添加新关键词</string>

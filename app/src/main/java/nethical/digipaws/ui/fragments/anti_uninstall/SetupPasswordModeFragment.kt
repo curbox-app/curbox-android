@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import nethical.digipaws.Constants
@@ -31,12 +32,36 @@ class SetupPasswordModeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnNextPass.setOnClickListener {
+            val password = binding.password.text.toString()
+            val confirmPassword = binding.confirmPassword.text.toString()
+
+            if (password.isEmpty()) {
+                binding.textInputLayout3.error = getString(R.string.password_cannot_be_empty)
+                return@setOnClickListener
+            } else {
+                binding.textInputLayout3.error = null
+            }
+
+            if (confirmPassword.isEmpty()) {
+                binding.confirmPasswordLayout.error = getString(R.string.confirm_password_cannot_be_empty)
+                return@setOnClickListener
+            } else {
+                binding.confirmPasswordLayout.error = null
+            }
+
+            if (password != confirmPassword) {
+                binding.confirmPasswordLayout.error = getString(R.string.passwords_do_not_match)
+                return@setOnClickListener
+            } else {
+                binding.confirmPasswordLayout.error = null
+            }
+
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(getString(R.string.alert))
                 .setMessage(getString(R.string.are_you_sure_you_want_to_turn_on_anti_uninstall_there_is_no_turning_back))
 
                 .setPositiveButton(getString(R.string.i_understand)) { _, _ ->
-                    setupPasswordMode()
+                    setupPasswordMode(password)
                 }
                 .setNegativeButton(getString(R.string.cancel)) { _, dialog ->
                     requireActivity().finish()
@@ -56,12 +81,12 @@ class SetupPasswordModeFragment : Fragment() {
 
     }
 
-    private fun setupPasswordMode() {
+    private fun setupPasswordMode(password: String) {
         val editor =
             activity?.getSharedPreferences("anti_uninstall", Context.MODE_PRIVATE)?.edit()
         editor?.apply() {
             putBoolean("is_anti_uninstall_on", true)
-            putString("password", binding.password.text.toString())
+            putString("password", password)
             putInt("mode", Constants.ANTI_UNINSTALL_PASSWORD_MODE)
             putBoolean("is_configuring_blocked", binding.cbBlockChanges.isChecked)
             commit()

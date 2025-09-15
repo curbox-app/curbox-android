@@ -115,8 +115,8 @@ Ativar isso desbloquearia o seguinte no DigiPaws:\n1. Contar o número de reels/
     <string name="retry">Repetir</string>
     <string name="start_time">Hora de início: %1$d:%2$d</string>
     <string name="end_time_must_be_after_start_time_has_passed">A hora de término deve ser depois que a hora de início tiver passado!</string>
-    <string name="end_time">Hora de término: %02d:%02d</string>
-    <string name="start_time_02d_02d">Hora de início: %02d:%02d</string>
+    <string name="end_time">Hora de término: %1$02d:%2$02d</string>
+    <string name="start_time_02d_02d">Hora de início: %1$02d:%2$02d</string>
     <string name="specify_cheat_hours">Especificar horas de trapaça</string>
     <string name="remaining_time_anti_uninstall">Você ainda tem %1$d dias para desbloquear o anti-uninstall</string>
     <string name="add_a_new_keyword">Adicionar uma nova palavra-chave</string>

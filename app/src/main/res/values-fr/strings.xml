@@ -117,8 +117,8 @@
 	<string name="retry">Réésayer</string>
 	<string name="start_time">Temps de début: %1$d:%2$d</string>
 	<string name="end_time_must_be_after_start_time_has_passed">Temps de fin doit être après que le temps de début soit passé!</string>
-	<string name="end_time">Temps de fin: %02d:%02d</string>
-	<string name="start_time_02d_02d">Temps de début: %02d:%02d</string>
+	<string name="end_time">Temps de fin: %1$02d:%2$02d</string>
+	<string name="start_time_02d_02d">Temps de début: %1$02d:%2$02d</string>
 	<string name="specify_cheat_hours">Specifiez les heures de triche</string>
 	<string name="remaining_time_anti_uninstall">Vous avez encore %1$d jours avant de débloquer l\'Anti-Désinstaller</string>
 	<string name="add_a_new_keyword">Ajouter un nouveau mot-clé</string>
