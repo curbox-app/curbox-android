@@ -110,7 +110,10 @@ class KeywordBlocker(val service: AccessibilityService) : BaseBlocker() {
 
             try {
                 recursionResultNodes.forEach { node ->
-                    val word = containsBlockedKeyword(node.text.toString())
+                    // Guard against null text
+                    val nodeText = node.text?.toString() ?: ""
+                    if (nodeText.isEmpty()) return@forEach
+                    val word = containsBlockedKeyword(nodeText)
                     if (word != null) {
                         detectedAdultKeyword = word
                         return@forEach
@@ -135,10 +138,10 @@ class KeywordBlocker(val service: AccessibilityService) : BaseBlocker() {
 
 
         if (detectedAdultKeyword == null) {
-
-            detectedAdultKeyword = searchKeywordsInWebViewTitle(rootNode) ?: containsBlockedKeyword(
-                displayUrlTextNode?.text.toString()
-            ) ?: return KeywordBlockerResult()
+            // Safely handle possible nulls from searchKeywordsInWebViewTitle and displayUrlTextNode.text
+            val webViewKeyword = searchKeywordsInWebViewTitle(rootNode)
+            val displayText = displayUrlTextNode?.text?.toString() ?: ""
+            detectedAdultKeyword = webViewKeyword ?: (if (displayText.isNotEmpty()) containsBlockedKeyword(displayText) else null) ?: return KeywordBlockerResult()
 
         }
         performSmallUpwardScroll()
@@ -187,7 +190,11 @@ class KeywordBlocker(val service: AccessibilityService) : BaseBlocker() {
 
         Log.d("Keyword Blocker", "Webview title $resultWord")
 
-        return containsBlockedKeyword(resultWord.toString())
+        // Guard against null text on webview
+        val titleText = resultWord?.toString() ?: ""
+        if (titleText.isEmpty()) return null
+
+        return containsBlockedKeyword(titleText)
 
     }
 
