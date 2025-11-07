@@ -959,11 +959,18 @@ class MainActivity : AppCompatActivity() {
                 selectedDate.set(
                     Integer.parseInt(parts[2]),  // Year
                     Integer.parseInt(parts[0]) - 1,  // Month (0-based)
-                    Integer.parseInt(parts[1])  // Day
+                    Integer.parseInt(parts[1]),  // Day
+                    0,  // Hour
+                    0,  // Minute
+                    0   // Second
                 )
-
+                selectedDate.set(Calendar.MILLISECOND, 0)
 
                 val today = Calendar.getInstance()
+                today.set(Calendar.HOUR_OF_DAY, 0)
+                today.set(Calendar.MINUTE, 0)
+                today.set(Calendar.SECOND, 0)
+                today.set(Calendar.MILLISECOND, 0)
 
                 val daysDiff =
                     (selectedDate.timeInMillis - today.timeInMillis) / (1000 * 60 * 60 * 24)
