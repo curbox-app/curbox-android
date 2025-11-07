@@ -19,6 +19,10 @@ class KeywordBlocker(val service: AccessibilityService) : BaseBlocker() {
                 displayUrlBarId = "url_bar",
                 browserSugggestionBoxId = "omnibox_suggestions_dropdown"
             ),
+            "app.vanadium.browser" to BrowserUrlBarInfo(
+                displayUrlBarId = "url_bar",
+                browserSugggestionBoxId = "omnibox_suggestions_dropdown"
+            ),
             "com.brave.browser" to BrowserUrlBarInfo(
                 displayUrlBarId = "url_bar",
                 browserSugggestionBoxId = "omnibox_suggestions_dropdown"
