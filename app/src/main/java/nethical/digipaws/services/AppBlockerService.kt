@@ -91,10 +91,13 @@ class AppBlockerService : BaseBlockingService() {
 
         if (appBlockerWarning.isWarningDialogHidden) {
             pressHome()
+            lastPackage = ""
             return
         }
 
         pressHome()
+        lastPackage = ""
+
         Thread.sleep(300)
         val dialogIntent = Intent(this, WarningActivity::class.java)
         dialogIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -112,6 +115,7 @@ class AppBlockerService : BaseBlockingService() {
         if (!result.isBlocked) return
 
         pressHome()
+        lastPackage = ""
         Toast.makeText(this, "This app is currently under focus mode", Toast.LENGTH_LONG).show()
     }
 
