@@ -19,8 +19,17 @@ class StartFocusMode(savedPreferencesLoader: SavedPreferencesLoader,private val 
         // Inflate the custom dialog layout
         val dialogFocusModeBinding = DialogFocusModeBinding.inflate(layoutInflater)
         val previousData = savedPreferencesLoader?.getFocusModeData()
-        dialogFocusModeBinding.focusModeMinsPicker.setValue(3)
-        dialogFocusModeBinding.focusModeMinsPicker.minValue = 2
+
+        // Initialize hours and minutes pickers
+        dialogFocusModeBinding.focusModeHoursPicker.minValue = 0
+        dialogFocusModeBinding.focusModeHoursPicker.maxValue = 99
+        dialogFocusModeBinding.focusModeHoursPicker.setValue(0)
+        dialogFocusModeBinding.focusModeHoursPicker.setUnit("hours")
+
+        dialogFocusModeBinding.focusModeMinsPicker.minValue = 0
+        dialogFocusModeBinding.focusModeMinsPicker.maxValue = 59
+        dialogFocusModeBinding.focusModeMinsPicker.setValue(25)
+        dialogFocusModeBinding.focusModeMinsPicker.setUnit("mins")
 
         var selectedMode = previousData?.modeType
         if (previousData != null) {
@@ -45,7 +54,11 @@ class StartFocusMode(savedPreferencesLoader: SavedPreferencesLoader,private val 
         return MaterialAlertDialogBuilder(requireContext())
             .setView(dialogFocusModeBinding.root)
             .setPositiveButton(getString(R.string.start)) { _, _ ->
-                val totalMillis = dialogFocusModeBinding.focusModeMinsPicker.getValue() * 60000
+                val totalMinsMillis = dialogFocusModeBinding.focusModeMinsPicker.getValue() * 60000
+                val totalHoursMillis = dialogFocusModeBinding.focusModeHoursPicker.getValue() * 3600000
+                val totalMillis = totalMinsMillis + totalHoursMillis
+                println("The minute millis is: $totalMinsMillis")
+                println("The hours millis is: $totalHoursMillis")
                 savedPreferencesLoader?.saveFocusModeData(
                     FocusModeBlocker.FocusModeData(
                         true,

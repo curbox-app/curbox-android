@@ -46,7 +46,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:lines="1"
-            android:text="mins"
             android:textStyle="bold" />
 
     </LinearLayout>

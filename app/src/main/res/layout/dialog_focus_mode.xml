@@ -28,6 +28,14 @@
             android:text="How long do you want the session to last?" />
 
         <nethical.digipaws.views.HorizontalNumberPicker
+            android:id="@+id/focus_mode_hours_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+        </nethical.digipaws.views.HorizontalNumberPicker>
+
+        <nethical.digipaws.views.HorizontalNumberPicker
             android:id="@+id/focus_mode_mins_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
