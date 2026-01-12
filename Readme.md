@@ -53,7 +53,7 @@ Click on any image to enlarge it.
 ## ToDo
 - [x] Block reels
 - [x] Block comments
-- [x] Block explicit context
+- [x] Block explicit content
 - [x] App blockers
 - [x] Focus Mode
 - [x] Turn selected apps black and white to make them boring
