@@ -65,7 +65,8 @@ class UsageTrackingService : BaseBlockingService() {
             "com.google.android.youtube" to 2,
             "app.revanced.android.youtube" to 2,
             "com.facebook.katana" to 2,
-            "com.instagram.android" to 2
+            "com.instagram.android" to 2,
+            "com.myinsta.android" to 2
 
         )
 
@@ -75,6 +76,7 @@ class UsageTrackingService : BaseBlockingService() {
             "com.ss.android.ugc.aweme",
 
             "com.instagram.android",
+            "com.myinsta.android",
             "com.google.android.youtube",
             "app.revanced.android.youtube",
             "com.facebook.katana"
@@ -304,6 +306,17 @@ class UsageTrackingService : BaseBlockingService() {
                             "com.instagram.android:id/root_clips_layout"
                         )
                         if (reelView != null) handleScrollEvent("com.instagram.android") 
+                        else hideReelTrackingView()
+                    }
+
+                    // handle MyInsta scrolls
+                    event.source?.className == "androidx.viewpager.widget.ViewPager" && 
+                    event.packageName == "com.myinsta.android" -> {
+                        val reelView = ViewBlocker.findElementById(
+                            rootInActiveWindow,
+                            "com.myinsta.android:id/root_clips_layout"
+                        )
+                        if (reelView != null) handleScrollEvent("com.myinsta.android") 
                         else hideReelTrackingView()
                     }
 

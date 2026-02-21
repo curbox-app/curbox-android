@@ -27,6 +27,7 @@ class ViewBlocker : BaseBlocker() {
         )
         val BLOCKED_VIEW_ID_LIST = mutableListOf(
             "com.instagram.android:id/root_clips_layout",
+            "com.myinsta.android:id/root_clips_layout",
             "com.google.android.youtube:id/reel_recycler",
             "app.revanced.android.youtube:id/reel_recycler"
         )
