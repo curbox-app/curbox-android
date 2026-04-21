@@ -65,6 +65,7 @@ class ReelBlocker : BaseBlocker() {
     private var timeBAsedConfig : ReelTimeConfig? = null
     private var countBasedConfig : ReelCountConfig? = null
     private var currentDailyCount: Int = 0
+    private var currentCountDate: String? = null
     private var settingsJob: Job? = null
     private var countJob: Job? = null
     
@@ -144,6 +145,7 @@ class ReelBlocker : BaseBlocker() {
                 }
                 ReelBlockingType.USAGE -> TODO()
                 ReelBlockingType.REEL_COUNT -> {
+                    ensureCountFlowForToday()
                     val limit = getDailyReelCountLimit()
                     if (limit != null && limit > 0 && currentDailyCount >= limit) {
                         showWarningScreen(viewId)
@@ -192,9 +194,28 @@ class ReelBlocker : BaseBlocker() {
             }
         }
 
+        launchCountFlow(TimeTools.getCurrentDate())
+    }
+
+    /**
+     * Re-subscribes currentDailyCount to today's row. Room's flow only emits when the
+     * queried row changes, so a subscription bound to yesterday's date never sees today's
+     * writes — without this, yesterday's cap keeps blocking after midnight.
+     */
+    private fun ensureCountFlowForToday() {
+        val today = TimeTools.getCurrentDate()
+        if (today != currentCountDate) {
+            currentDailyCount = 0
+            launchCountFlow(today)
+        }
+    }
+
+    private fun launchCountFlow(date: String) {
+        countJob?.cancel()
+        currentCountDate = date
         val db = AppDatabase.getInstance(service)
         countJob = CoroutineScope(Dispatchers.IO).launch {
-            db.reelStatsDao().getCountFlow(TimeTools.getCurrentDate()).collectLatest { count ->
+            db.reelStatsDao().getCountFlow(date).collectLatest { count ->
                 currentDailyCount = count ?: 0
             }
         }
