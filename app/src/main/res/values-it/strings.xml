@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="focus_mode">Modalità Focus</string>
+    <string name="add">Aggiungi</string>
+    <string name="save">Salva</string>
+    <string name="write_down_a_keyword">Scrivi una parola chiave</string>
+    <string name="warning_message">Messaggio di avviso</string>
+    <string name="minutes">minuti</string>
+    <string name="app_icon">app_icon</string>
+
+    <string name="accessibility_permission_app_blocker">
+        Abilitando questa opzione, sbloccherai le seguenti funzionalità in Curbox:\n1. Blocco app\n2. Modalità Focus \n\n
+        Curbox necessita dell'accesso ai dati di accessibilità per sapere quando apri una funzionalità specifica all'interno di un'app, come un feed social o un gioco.
+        Questo permette a Curbox di bloccare tali funzionalità in base alle tue preferenze, aiutandoti a mantenere la concentrazione e ridurre le distrazioni digitali.\n\n
+        Stai tranquillo: tutti i dati di accessibilità rimangono al sicuro sul tuo dispositivo — non condividiamo né trasmettiamo mai i tuoi dati, garantendo sempre la tua privacy.
+        \n\n
+    </string>
+
+    <string name="accessibility_permission_usage_tracker">
+        QUESTA FUNZIONALITÀ RICHIEDE L'AUTORIZZAZIONE “MOSTRA SOPRA ALTRE APP” (DRAW OVER OTHER APPS) PER FUNZIONARE. ABILITALA PRIMA E POI ATTIVA QUESTA OPZIONE. RIAVVIA L'APP SE IL SERVIZIO NON FUNZIONA CORRETTAMENTE.\n\n
+
+        Abilitando questa opzione, sbloccherai le seguenti funzionalità in Curbox:\n1. Conteggio dei reel/TikTok visualizzati\n2. Overlay flottante che mostra il tempo trascorso\n\n
+        Curbox necessita dell'accesso ai dati di accessibilità per sapere quando apri una funzionalità specifica all'interno di un'app, come un feed social o un gioco.
+        Questo permette a Curbox di bloccare tali funzionalità in base alle tue preferenze, aiutandoti a mantenere la concentrazione e ridurre le distrazioni digitali.\n\n
+        Stai tranquillo: tutti i dati di accessibilità rimangono al sicuro sul tuo dispositivo — non condividiamo né trasmettiamo mai i tuoi dati, garantendo sempre la tua privacy.
+        \n\n
+    </string>
+
+    <string name="admin_permission_desc">Protezione anti-disinstallazione di Curbox</string>
+    <string name="close">Chiudi</string>
+    <string name="proceed">Continua</string>
+    <string name="cancel">Annulla</string>
+    <string name="configure_warning_screen">Schermata di avviso</string>
+    <string name="proceed_in">Attendi %1$d secondi prima di premere continua</string>
+    <string name="select_all">Seleziona tutto</string>
+    <string name="clear_all">Deseleziona tutto</string>
+    <string name="focus_ready">Pronto a concentrarti?</string>
+    <string name="focus_subtitle_minimal">Seleziona la durata, poi avvia.</string>
+    <string name="focus_start">Fammi concentrare</string>
+    <string name="focus_create_group">Crea gruppo Focus</string>
+    <string name="focus_active">La modalità Focus è attiva</string>
+    <string name="focus_end_session">Termina sessione</string>
+    <string name="focus_group">Gruppo Focus</string>
+    <string name="focus_new_group">Crea nuovo gruppo</string>
+    <string name="focus_stats">Statistiche Focus</string>
+    <string name="focus_sessions_label">Sessioni</string>
+    <string name="focus_total_time_label">Tempo totale</string>
+    <string name="focus_streak_label">Serie consecutiva</string>
+    <string name="focus_avg_duration">Durata media sessione</string>
+    <string name="focus_completion_rate">Completate</string>
+    <string name="focus_top_tags">Tag principali</string>
+    <string name="quick_setup_guide">Guida rapida alla configurazione</string>
+    <string name="curbox_needs_accessibility_permissions_to_help">
+        Curbox necessita dei permessi di accessibilità per aiutarti a monitorare il tempo trascorso sullo schermo. Il processo di configurazione varia in base a come hai installato l'app.
+    </string>
+    <string name="fdroid_installation">Installazione F-Droid</string>
+    <string name="installed_via_fdroid_appnyoure_all_set">
+        ✅ Installato tramite l'app F-Droid?\nÈ tutto pronto! Segui semplicemente la configurazione dell'accessibilità nel passaggio successivo.\n\n⚠️ Hai scaricato l'app dal sito web di F-Droid?\nInstalla invece tramite l'app F-Droid per evitare problemi di autorizzazioni.
+    </string>
+    <string name="apk_installation">Installazione APK</string>
+    <string name="if_you_installed_from_an_apk">
+        Se hai installato l'app tramite APK, segui questi passaggi:\n\n1️⃣ Apri Impostazioni → App → Curbox\n\n2️⃣ Tocca Permessi → Accesso speciale app → Accessibilità → Abilita Curbox\n\n3️⃣ Torna alle informazioni dell'app Curbox → Scorri verso il basso → Tocca Impostazioni limitate → Consenti\n\n💡 Consiglio: installa tramite l'app F-Droid per una configurazione più semplice! 🚀
+    </string>
+    <string name="usage_timeline">Cronologia utilizzo</string>
+    <string name="screentime">Tempo di utilizzo</string>
+    <string name="app_opens">Aperture app</string>
+    <string name="add_to_blocked_apps">Aggiungi alle app bloccate</string>
+    <string name="label_empty_dash">-</string>
+    <string name="value_zero">0</string>
+    <string name="label_add_plus">+</string>
+    <string name="screen_time">Tempo sullo schermo</string>
+    <string name="value_zero_time">0h 0m</string>
+    <string name="sample_usage_1h">1h App</string>
+    <string name="reels_today">Reel oggi</string>
+    <string name="sample_reels_count">1.3k</string>
+    <string name="sample_percentage_increase">+100%</string>
+    <string name="blocker_tools">Confini della concentrazione</string>
+    <string name="app_blocker">App</string>
+    <string name="restrict_access_to_distracting_apps">Silenzia temporaneamente le app</string>
+    <string name="reels_blocker">Contenuti video brevi</string>
+    <string name="disable_shortform_video_feeds">
+        Nascondi i video brevi per aiutarti a mantenere la capacità di attenzione.
+    </string>
+    <string name="auto_dnd">DND automatico</string>
+    <string name="turn_on_focus_mode_between_set">
+        Attiva automaticamente la modalità Non disturbare secondo il tuo programma giornaliero.
+    </string>
+    <string name="blocked_keywords">Parole chiave e siti web</string>
+    <string name="filter_specific_words_across_apps">
+        Mantieni il tuo spazio digitale più sereno filtrando argomenti specifici.
+    </string>
+    <string name="stimulation_reducers">Promemoria consapevoli</string>
+    <string name="on_screen_reminder">Suggerimenti delicati</string>
+    <string name="put_in_messages_and_counters_floating">
+        Piccoli segnali a schermo per aiutarti a rimanere presente e concentrato.
+    </string>
+    <string name="reel_counter">Contatore video brevi</string>
+    <string name="track_the_number_of_reels_consumed">
+        Monitora e analizza il numero di contenuti brevi visualizzati
+    </string>
+    <string name="grayscale_filter">Filtro scala di grigi</string>
+    <string name="reduce_visual_stimulation">Riduci la stimolazione visiva</string>
+    <string name="fuel_the_developer">Offri un caffè allo sviluppatore ☕</string>
+    <string name="hello_this_is_nethical_the_creator">
+        Ciao, sono Nethical, il creatore di Curbox. Ho 17 anni e frequento il liceo, con una grande passione per la tecnologia e i computer. Qualche anno fa non riuscivo a trovare una soluzione gratuita per bloccare le app che soddisfacesse davvero le mie esigenze, quindi ho deciso di crearne una io stesso. Se trovi Curbox utile, considera anche una piccola donazione per supportarne lo sviluppo continuo. Grazie!
+    </string>
+    <string name="support_the_project">Supporta il progetto ↗</string>
+    <string name="join_the_focus_pack">Unisciti al Focus Pack 🐾</string>
+    <string name="dont_fix_your_screen_time_alone">
+        Non affrontare da solo il problema del tempo sullo schermo. Unisciti al nostro Discord di persone con gli stessi obiettivi, che si aiutano a vicenda e condividono strategie per migliorare la concentrazione.
+    </string>
+    <string name="join_the_discord">Unisciti a Discord</string>
+    <string name="system_diagnostics">Diagnostica di sistema</string>
+    <string name="view_and_share_application_crash_logs">
+        Visualizza e condividi i log di crash dell'applicazione per aiutare a migliorare Curbox.
+    </string>
+    <string name="view_crash_logs">Visualizza log di crash</string>
+</resources>
