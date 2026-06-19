@@ -8,7 +8,7 @@
 
 </div>
 
-Curbox (formerly Digipaws) is a powerful open source utility for Android built to help you reclaim your time and master your digital habits. It provides a suite of tools designed to break the cycle of screen addiction through granular control and deep insights.
+Curbox (formerly Digipauwse) is a powerful open source utility for Android built to help you reclaim your time and master your digital habits. It provides a suite of tools designed to break the cycle of screen addiction through granular control and deep insights.
 
 ### Screenshots
 Click on any image to enlarge it.
