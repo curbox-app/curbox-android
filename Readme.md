@@ -8,10 +8,11 @@
 
 </div>
 
-Curbox (formerly digipauwse) is a powerful open source utility for Android built to help you reclaim your time and master your digital habits. It provides a suite of tools designed to break the cycle of screen addiction through granular control and deep insights.
+Curbox (formerly Digipaws) is a powerful open source utility for Android built to help you reclaim your time and master your digital habits. It provides a suite of tools designed to break the cycle of screen addiction through granular control and deep insights.
 
 ### Screenshots
 Click on any image to enlarge it.
+
 <div align="center">
 <table>
 	<tr>
@@ -22,7 +23,6 @@ Click on any image to enlarge it.
 	</tr>
 </table>
 </div>
-
 
 ### Why Curbox Stands Out
 
@@ -48,7 +48,7 @@ Because there is no cloud connection, you are the sole owner of your statistics.
 * **Techy Marathi (723k followers):** [Instagram Reel](https://www.instagram.com/reel/DJjcOc8yKOR/)
 * **Sillycorns (700k followers):** [Top 10 Coolest Android Apps of 2025!](https://youtu.be/FWn5ZEyqdvQ?t=273&si=hocsC2GTdYPPmNRK)
 
-  Please open an issue if your review is not included, Thank you so much!)
+Please open an issue if your review is not included, Thank you so much!
 
 
 ### In-Depth Feature Analysis
@@ -86,7 +86,8 @@ Define what happens when you try to open an app outside its allowed schedule:
 - **Unlock Limits:** Set how many subsequent unlocks you can perform every X hours.
 
 ### How to install
-App can be downloaded from [Releases](https://github.com/nethical6/curbox/releases)
+
+App can be downloaded from [GitHub Releases](https://github.com/nethical6/curbox/releases)
 
 ### Contributing
 
@@ -107,6 +108,7 @@ for a new browser, etc.
 
 
 ### Special Thanks
+
 * All my beloved donors and sponsors
 * Digipaws: Inspiration for the entire code structure and working mechanism
 * Usage Direct: For help with app usage statistics.
@@ -123,4 +125,4 @@ Curbox is licensed under the GPL 3 or later license. You are free to use, modify
 For questions or feedback, please open an issue on the GitHub repository or reach out:
 * Discord: @nethical
 * Telegram: @nethicalps
-* Email: aguptaq88@gmail.com
+* Email: [aguptaq88@gmail.com](aguptaq88@gmail.com)
