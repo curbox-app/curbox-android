@@ -67,7 +67,7 @@ jobs:
           echo "commit_author=$COMMIT_AUTHOR" >> $GITHUB_OUTPUT
 
       - name: VirusTotal Scan
-        uses: crazy-max/ghaction-virustotal@v4
+        uses: crazy-max/ghaction-virustotal@v5
         id: vt
         with:
           vt_api_key: ${{ secrets.VT_API_KEY }}
