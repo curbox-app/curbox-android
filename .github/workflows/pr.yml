@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew assembleFdroidDebug
 
       - name: Upload Fdroid Debug APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: fdroid-debug-apk
           path: app/build/outputs/apk/fdroid/debug

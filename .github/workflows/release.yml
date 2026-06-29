@@ -146,7 +146,7 @@ jobs:
             "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendDocument"
 
       - name: Upload Signed Fdroid Release APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: fdroid-release-apk
           path: ${{ steps.sign_app_fdroid.outputs.signedReleaseFile }}
