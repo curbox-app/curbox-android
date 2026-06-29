@@ -54,7 +54,7 @@ jobs:
           java-version: '21'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@v4
 
       - name: Install Android Build Tools
         run: sdkmanager "build-tools;29.0.3"
