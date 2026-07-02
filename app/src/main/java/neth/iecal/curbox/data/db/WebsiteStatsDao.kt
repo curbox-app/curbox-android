@@ -13,12 +13,10 @@ interface WebsiteStatsDao {
     @Query("SELECT * FROM website_stats WHERE date = :date")
     suspend fun getStatsForDate(date: String): List<WebsiteStatsEntity>
 
-<<<<<<< HEAD
     @Query("SELECT * FROM website_stats WHERE date = :date")
     fun observeStatsForDate(date: String): Flow<List<WebsiteStatsEntity>>
-    
-=======
->>>>>>> origin/kt-rewrite
+
+
     @Query("SELECT * FROM website_stats WHERE date = :date AND packageName = :packageName AND urlIdentifier = :urlIdentifier")
     suspend fun getStat(date: String, packageName: String, urlIdentifier: String): WebsiteStatsEntity?
 
