@@ -64,10 +64,13 @@ class OnboardingFragment : Fragment() {
     private class BlurFadePageTransformer : ViewPager2.PageTransformer {
         override fun transformPage(page: View, position: Float) {
             val absPos = Math.abs(position)
+            // ViewPager2 mirrors its layout offsets in RTL, so the counteraction must flip sign too
+            val isRtl = page.layoutDirection == View.LAYOUT_DIRECTION_RTL
+            val slideSign = if (isRtl) 1f else -1f
 
             page.apply {
                 // Keep pages overlapping by counteracting the default slide
-                translationX = -position * width
+                translationX = slideSign * position * width
 
                 // Fade out as it moves from center
                 alpha = 1f - absPos
@@ -104,6 +107,8 @@ class OnboardingFragment : Fragment() {
             val viewPager = binding.viewPager
             val width = viewPager.width
             val duration = 750L
+            // Fake drag direction is mirrored in RTL, so flip the sign to advance forward
+            val dragSign = if (viewPager.layoutDirection == View.LAYOUT_DIRECTION_RTL) 1f else -1f
 
             if (width > 0) {
                 val animator = android.animation.ValueAnimator.ofFloat(0f, width.toFloat())
@@ -112,7 +117,7 @@ class OnboardingFragment : Fragment() {
                     val currentValue = valueAnimator.animatedValue as Float
                     val delta = currentValue - previousValue
                     if (!viewPager.isFakeDragging) viewPager.beginFakeDrag()
-                    viewPager.fakeDragBy(-delta)
+                    viewPager.fakeDragBy(dragSign * delta)
                     previousValue = currentValue
                 }
                 animator.addListener(object : android.animation.AnimatorListenerAdapter() {

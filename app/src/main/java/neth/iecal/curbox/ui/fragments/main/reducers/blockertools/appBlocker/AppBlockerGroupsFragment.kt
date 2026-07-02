@@ -13,7 +13,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -24,11 +26,20 @@ import neth.iecal.curbox.R
 import neth.iecal.curbox.data.models.AppBlockingType
 import neth.iecal.curbox.data.models.AppGroup
 import neth.iecal.curbox.ui.activity.FragmentActivity
+import neth.iecal.curbox.utils.TimeTools
 
 class AppBlockerGroupsFragment : Fragment() {
 
     companion object {
         const val FRAGMENT_ID = "app_blocker_groups"
+
+        private val DIFF = object : DiffUtil.ItemCallback<AppGroup>() {
+            override fun areItemsTheSame(oldItem: AppGroup, newItem: AppGroup) =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: AppGroup, newItem: AppGroup) =
+                oldItem == newItem
+        }
     }
 
     private lateinit var rvGroups: RecyclerView
@@ -36,6 +47,7 @@ class AppBlockerGroupsFragment : Fragment() {
     private lateinit var fabAddGroup: FloatingActionButton
 
     private val viewModel: AppBlockerSettingViewModel by activityViewModels()
+    private val adapter = AppGroupAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,7 +72,8 @@ class AppBlockerGroupsFragment : Fragment() {
         }
 
         rvGroups.layoutManager = LinearLayoutManager(requireContext())
-        
+        rvGroups.adapter = adapter
+
         return view
     }
 
@@ -70,25 +83,21 @@ class AppBlockerGroupsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.groups.collectLatest { groups ->
-                    if (groups.isEmpty()) {
-                        tvEmptyState.visibility = View.VISIBLE
-                        rvGroups.visibility = View.GONE
-                    } else {
-                        tvEmptyState.visibility = View.GONE
-                        rvGroups.visibility = View.VISIBLE
-                        rvGroups.adapter = AppGroupAdapter(groups)
-                    }
+                    tvEmptyState.visibility = if (groups.isEmpty()) View.VISIBLE else View.GONE
+                    rvGroups.visibility = if (groups.isEmpty()) View.GONE else View.VISIBLE
+                    adapter.submitList(groups)
                 }
             }
         }
     }
 
-    inner class AppGroupAdapter(private val groupList: List<AppGroup>) :
-        RecyclerView.Adapter<AppGroupAdapter.ViewHolder>() {
+    inner class AppGroupAdapter :
+        ListAdapter<AppGroup, AppGroupAdapter.ViewHolder>(DIFF) {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val tvName: TextView = view.findViewById(R.id.tv_group_name)
             val tvDetails: TextView = view.findViewById(R.id.tv_group_details)
+            val tvRemaining: TextView = view.findViewById(R.id.tv_group_remaining)
             val switchActive: SwitchMaterial = view.findViewById(R.id.switch_group_active)
         }
 
@@ -99,19 +108,34 @@ class AppBlockerGroupsFragment : Fragment() {
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val group = groupList[position]
+            val group = getItem(position)
             holder.tvName.text = group.name
-            
+
             val typeText = if (group.blockingType == AppBlockingType.Timed) "Time Based" else "Usage Based"
             holder.tvDetails.text = "${group.selectedPackages.size} Apps • $typeText"
-            
+
+            holder.tvRemaining.visibility = View.GONE
+            holder.tvRemaining.tag = group.id
+            viewLifecycleOwner.lifecycleScope.launch {
+                val remaining = viewModel.getRemainingUsageMillis(group)
+                if (holder.tvRemaining.tag != group.id) return@launch
+                if (remaining == null) {
+                    holder.tvRemaining.visibility = View.GONE
+                } else {
+                    holder.tvRemaining.text = if (remaining <= 0L) "No time left today"
+                        else "${TimeTools.formatTimeForWidget(remaining)} left today"
+                    holder.tvRemaining.visibility = View.VISIBLE
+                }
+            }
+
             holder.switchActive.setOnCheckedChangeListener(null)
             holder.switchActive.isChecked = group.isActive
-            
+
             holder.switchActive.setOnCheckedChangeListener { _, isChecked ->
-                viewModel.updateGroupActiveState(position, isChecked)
+                val pos = holder.adapterPosition
+                if (pos != RecyclerView.NO_POSITION) viewModel.updateGroupActiveState(pos, isChecked)
             }
-            
+
             holder.itemView.setOnClickListener {
                 val intent = Intent(requireContext(), FragmentActivity::class.java).apply {
                     putExtra("fragment", CreateAppGroupFragment.FRAGMENT_ID)
@@ -120,7 +144,5 @@ class AppBlockerGroupsFragment : Fragment() {
                 startActivity(intent)
             }
         }
-
-        override fun getItemCount() = groupList.size
     }
 }

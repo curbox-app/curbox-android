@@ -74,7 +74,7 @@ class WebsiteUsageFragment : Fragment() {
             adapter.updateData(stats)
         }
         viewModel.totalTime.observe(viewLifecycleOwner) { totalMs ->
-            binding.totalUsage.text = TimeTools.formatTimeForWidget(totalMs)
+            binding.totalUsage.text = TimeTools.formatDuration(totalMs)
         }
         viewModel.weekRangeLabel.observe(viewLifecycleOwner) { label ->
             binding.tvWeekRange.text = label
@@ -122,7 +122,7 @@ class WebsiteUsageFragment : Fragment() {
     inner class WebsiteDomainViewHolder(private val binding: WebsiteUsageDomainItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(domain: String, stats: List<WebsiteStatsEntity>, isExpanded: Boolean, onToggle: () -> Unit) {
             binding.domainName.text = domain
-            binding.totalTime.text = TimeTools.formatTimeForWidget(stats.sumOf { it.totalTime })
+            binding.totalTime.text = TimeTools.formatDuration(stats.sumOf { it.totalTime })
             
             binding.pathContainer.removeAllViews()
             val displayStats = if (isExpanded) stats else stats.take(1)
@@ -134,7 +134,7 @@ class WebsiteUsageFragment : Fragment() {
                 
                 val tv = TextView(binding.root.context).apply {
                     val path = stat.urlIdentifier.removePrefix(domain)
-                    text = "$prefix  ${if (path.isEmpty()) "/" else path} • ${TimeTools.formatTimeForWidget(stat.totalTime)}"
+                    text = "$prefix  ${if (path.isEmpty()) "/" else path} • ${TimeTools.formatDuration(stat.totalTime)}"
                     textSize = 13f
                     setPadding(0, 8, 0, 8)
                     setTextColor(MaterialColors.getColor(this, com.google.android.material.R.attr.colorOnSurfaceVariant))

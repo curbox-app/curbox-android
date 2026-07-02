@@ -10,6 +10,18 @@ body:
       value: |
         Thank you for suggesting a feature. Please describe it clearly and explain the problem it would solve.
 
+        > [!IMPORTANT]
+        > Donators get priority support.
+
+  - type: checkboxes
+    id: contributor_info
+    attributes:
+      label: Contributor Information
+      description: Please let us know if you've supported the project.
+      options:
+        - label: Starred the repo
+        - label: Donator
+
   - type: input
     id: feature
     attributes:

@@ -9,8 +9,15 @@ import android.os.Build
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.app.NotificationCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import neth.iecal.curbox.R
 import neth.iecal.curbox.utils.DataStoreManager
+import neth.iecal.curbox.utils.ServiceProtectionManager
 import kotlin.lazy
 
 @SuppressLint("AccessibilityPolicy")
@@ -20,6 +27,11 @@ open class BaseBlockingService : AccessibilityService() {
         DataStoreManager(this)
     }
 
+    /** Overridden as true by AppBlockerService so the heartbeat knows which side it is. */
+    protected open val isAppBlockerService: Boolean = false
+
+    private val protectionScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    private var lastHeartbeatMs = 0L
 
     var lastBackPressTimeStamp: Long =
         SystemClock.uptimeMillis() // prevents repetitive global actions
@@ -27,6 +39,52 @@ open class BaseBlockingService : AccessibilityService() {
     override fun onServiceConnected() {
         super.onServiceConnected()
         startForegroundService()
+        protectionScope.launch { setupProtectionOnConnect() }
+    }
+
+    private suspend fun setupProtectionOnConnect() {
+        try {
+            val config = dataStoreManager.settings.first().serviceProtectionConfig
+            if (config.isEnabled) {
+                ServiceWatchdogJob.schedule(this)
+                ServiceProtectionManager.reinforceBackgroundExecution(this)
+            }
+        } catch (_: Exception) {
+        }
+    }
+
+    /**
+     * Writes this service's "alive" stamp and, if its partner in the other process has been switched
+     * off, repairs both through Shizuku. Throttled so it runs at most twice a minute.
+     */
+    private fun maybeHeartbeat() {
+        val now = SystemClock.uptimeMillis()
+        if (now - lastHeartbeatMs < 30_000L) return
+        lastHeartbeatMs = now
+        protectionScope.launch { runHeartbeat() }
+    }
+
+    private suspend fun runHeartbeat() {
+        try {
+            val config = dataStoreManager.settings.first().serviceProtectionConfig
+            if (!config.isEnabled) return
+
+            val nowMs = System.currentTimeMillis()
+            dataStoreManager.updateServiceProtectionConfig {
+                if (isAppBlockerService) it.copy(appBlockerLastAliveMs = nowMs)
+                else it.copy(usageTrackerLastAliveMs = nowMs)
+            }
+
+            val partnerEnabled = if (isAppBlockerService) {
+                ServiceProtectionManager.isUsageTrackerEnabled(this)
+            } else {
+                ServiceProtectionManager.isAppBlockerEnabled(this)
+            }
+            if (!partnerEnabled && config.selfHealWithShizuku && ServiceProtectionManager.canSelfHeal()) {
+                ServiceProtectionManager.healNow(this)
+            }
+        } catch (_: Exception) {
+        }
     }
 
     private fun startForegroundService() {
@@ -63,10 +121,15 @@ open class BaseBlockingService : AccessibilityService() {
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
+        maybeHeartbeat()
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        try {
+            protectionScope.cancel()
+        } catch (_: Exception) {
+        }
     }
 
     override fun onInterrupt() {

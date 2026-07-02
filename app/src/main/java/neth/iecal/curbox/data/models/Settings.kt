@@ -19,5 +19,7 @@ data class Settings(
     val mindfulMessageConfig: MindfulMessageConfig = MindfulMessageConfig(),
     val uiHiderConfig: UiHiderConfig = UiHiderConfig(),
     val reelCounterOverlayConfig: ReelCounterOverlayConfig = ReelCounterOverlayConfig(),
-    val nextWebsiteRecheckTime: Long = 0L
+    val nextWebsiteRecheckTime: Long = 0L,
+    val antiUninstallConfig: AntiUninstallConfig = AntiUninstallConfig(),
+    val serviceProtectionConfig: ServiceProtectionConfig = ServiceProtectionConfig()
 )

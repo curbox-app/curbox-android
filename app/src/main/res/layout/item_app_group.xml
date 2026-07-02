@@ -37,6 +37,16 @@
                 android:text="@string/desc_10_apps_usage_based"
                 android:textColor="@color/md_theme_onSurfaceVariant"
                 android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_group_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
         </LinearLayout>
 
         <com.google.android.material.switchmaterial.SwitchMaterial

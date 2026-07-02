@@ -10,6 +10,15 @@
 
 Curbox (formerly Digipauwse) is a powerful open source utility for Android built to help you reclaim your time and master your digital habits. It provides a suite of tools designed to break the cycle of screen addiction through granular control and deep insights.
 
+<div align="center">
+<table>
+	<tr>
+		<td><a href="https://trendshift.io/repositories/14634?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-14634" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/14634" alt="curbox-app%2Fcurbox-android | Trendshift" width="250" height="55"/></a></td>
+		<td><a href="https://trendshift.io/repositories/14634?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-14634" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/14634/daily?language=Kotlin" alt="curbox-app%2Fcurbox-android | Trendshift" width="250" height="55"/></a></td>
+	</tr>
+</table>
+</div>
+
 ### Screenshots
 Click on any image to enlarge it.
 
@@ -37,6 +46,17 @@ Because there is no cloud connection, you are the sole owner of your statistics.
 - Android (this repository)
 - [Web Extension Repository](https://github.com/curbox-app/curbox-extension)
 - IOS (comming soon)
+
+
+### How to install
+[Please read the docs for step by step instructions](https://curbox.app/docs)
+
+
+ <p>
+    <a href="https://f-droid.org/packages/neth.iecal.curbox"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
+    <a href="https://github.com/curbox-app/curbox-android/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
+   </p>
+
 
 ### Independent Reviews & Endorsements
 
@@ -91,11 +111,6 @@ Define what happens when you try to open an app outside its allowed schedule:
 
 #### For Developers
 - **[Curbox API](CURBOX_API.md):** Let your apps directly interact with curbox and start focus modes, change settings, get usage stats, etc. Requires user permission
-
-### How to install
-[Read the documentation to get the step by step instructions](https://curbox.app/docs)
-
-App can be downloaded from (still highly recommended to read docs) [GitHub Releases](https://github.com/nethical6/curbox/releases)
 
 ### Contributing
 

@@ -569,6 +569,7 @@ class AllAppsUsageFragment : Fragment() {
                     }
                     .sortedByDescending { it.second }
 
+                Log.d("website stats", browserWebsites.toString())
                 if (browserWebsites.isNotEmpty()) {
                     binding.threadContainer.visibility = View.VISIBLE
                     val top5 = browserWebsites.take(5)
@@ -577,7 +578,7 @@ class AllAppsUsageFragment : Fragment() {
                         val prefix =
                             if (i == top5.size - 1 && browserWebsites.size <= 5) "└" else "├"
                         val tv = TextView(binding.root.context).apply {
-                            text = "$prefix  $domain • ${TimeTools.formatTimeForWidget(time)}"
+                            text = "$prefix  $domain • ${TimeTools.formatDuration(time)}"
                             textSize = 12f
                             setTextColor(
                                 MaterialColors.getColor(

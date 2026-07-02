@@ -99,6 +99,20 @@ class TimeTools {
             }.trim()
         }
 
+        // Like formatTimeForWidget but keeps seconds when under an hour, so short
+        // sessions (e.g. website visits) stay visible instead of collapsing to "1m".
+        fun formatDuration(timeInMillis: Long): String {
+            val hours = timeInMillis / (1000 * 60 * 60)
+            val minutes = (timeInMillis % (1000 * 60 * 60)) / (1000 * 60)
+            val seconds = (timeInMillis % (1000 * 60)) / 1000
+
+            return buildString {
+                if (hours > 0) append("${hours}h ")
+                if (minutes > 0L) append("${minutes}m ")
+                if (hours == 0L && seconds > 0L) append("${seconds}s")
+            }.trim().ifEmpty { "0s" }
+        }
+
 
     }
 }

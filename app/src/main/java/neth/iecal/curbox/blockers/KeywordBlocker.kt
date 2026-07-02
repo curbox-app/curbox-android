@@ -35,6 +35,7 @@ import neth.iecal.curbox.data.models.FocusBlockMode
 import neth.iecal.curbox.data.models.KeywordGroup
 import neth.iecal.curbox.services.BaseBlockingService
 import neth.iecal.curbox.ui.activity.WarningActivity
+import neth.iecal.curbox.utils.KeywordMatcher
 import neth.iecal.curbox.utils.TimeTools
 import java.util.Calendar
 import java.util.Locale
@@ -55,103 +56,29 @@ class KeywordBlocker : BaseBlocker() {
     // Maps group ID → (compiled regexes, lowercase literal keywords)
     private var groupPatternMap = mutableMapOf<String, Pair<List<Regex>, List<String>>>()
 
-    private val detectionCache = LruCache<String, KeywordGroup>(200)
+    private val detectionCache = LruCache<String, List<KeywordGroup>>(200)
     private var isTurnedOn = false
     private var isUnsupportedBrowserBlockingOn = false
     private var lastpkg = ""
     private var cooldownGroupsList = HashMap<String, Long>()
     private var observationJob: Job? = null
 
-    /**
-     * Compiles a collection of keyword patterns into pre-built regexes and literals.
-     *
-     * Pattern types:
-     *   r:<expr>   – raw regex (e.g. r:(?:shorts|reels))
-     *   *  / ?     – glob wildcard (* = any chars, ? = one char)
-     *   otherwise  – URL-aware literal (domain, path, or plain word)
-     */
-    fun compileKeywords(keywords: Collection<String>): Pair<List<Regex>, List<String>> {
-        val regexes = mutableListOf<Regex>()
-        val literals = mutableListOf<String>()
-        for (kw in keywords) {
-            val lower = kw.lowercase(Locale.ROOT)
-            when {
-                lower.startsWith("r:") ->
-                    runCatching { Regex(lower.removePrefix("r:")) }.getOrNull()
-                        ?.let { regexes.add(it) }
-                lower.contains('*') || lower.contains('?') ->
-                    regexes.add(wildcardToRegex(lower))
-                else -> literals.add(lower)
-            }
+    fun compileKeywords(keywords: Collection<String>): Pair<List<Regex>, List<String>> =
+        KeywordMatcher.compileKeywords(keywords)
+
+    private fun matchesPatterns(patterns: Pair<List<Regex>, List<String>>, urlIdentifier: String): Boolean =
+        KeywordMatcher.matchesPatterns(patterns, urlIdentifier)
+
+    // Returns every active group whose keywords match, preserving activeGroups order so the
+    // first group in the list wins the tie-break when more than one would block.
+    private fun findMatchingGroups(urlIdentifier: String): List<KeywordGroup> {
+        detectionCache.get(urlIdentifier)?.let { return it }   // empty list = cached "no match"
+
+        val matches = activeGroups.filter { group ->
+            groupPatternMap[group.id]?.let { matchesPatterns(it, urlIdentifier) } == true
         }
-        return regexes to literals
-    }
-
-    private fun wildcardToRegex(pattern: String): Regex {
-        val escaped = pattern
-            .replace(Regex("""[.+^$()|\[\]{}\\]"""), """\\$0""")
-            .replace("?", ".")
-            .replace("*", ".*")
-        // Prepend optional scheme/www only when the pattern looks like a bare domain
-        val prefix = if (!pattern.startsWith("http") && !pattern.startsWith("*") &&
-                        !pattern.startsWith("/") && !pattern.startsWith("?")) {
-            """(?:https?://)?(?:www\.)?"""
-        } else ""
-        return Regex(prefix + escaped)
-    }
-
-    /**
-     * URL-aware literal match. [keyword] must already be lowercase.
-     * [urlIdentifier] is a domain+path string like "youtube.com/shorts".
-     *
-     * Handles:
-     *   - Exact domain match:   "youtube.com"  → "youtube.com"
-     *   - Domain prefix:        "youtube.com"  → "youtube.com/shorts"
-     *   - www normalisation:    "www.x.com"    → "x.com/..." and vice-versa
-     *   - Path segment:         "/shorts"      → "youtube.com/shorts"
-     *   - Domain word:          "youtube"      → "youtube.com", "m.youtube.com"
-     */
-    private fun matchesLiteral(keyword: String, urlIdentifier: String): Boolean {
-        val url = urlIdentifier.lowercase(Locale.ROOT)
-        val urlNoWww = url.removePrefix("www.")
-        val kwNoWww = keyword.removePrefix("www.")
-
-        if (url == keyword || urlNoWww == kwNoWww) return true
-
-        if (url.startsWith("$keyword/") || url.startsWith("$keyword?") ||
-            urlNoWww.startsWith("$kwNoWww/") || urlNoWww.startsWith("$kwNoWww?")) return true
-
-        if (keyword.startsWith("/") && url.contains(keyword)) return true
-
-        if (!keyword.contains('.') && !keyword.contains('/')) {
-            val domain = url.substringBefore('/')
-            if (domain.split('.').any { it == keyword }) return true
-        }
-
-        return false
-    }
-
-    private fun matchesPatterns(patterns: Pair<List<Regex>, List<String>>, urlIdentifier: String): Boolean {
-        val lower = urlIdentifier.lowercase(Locale.ROOT)
-        val (regexes, literals) = patterns
-        return regexes.any { it.containsMatchIn(lower) } ||
-               literals.any { matchesLiteral(it, urlIdentifier) }
-    }
-
-    private fun findMatchingGroup(urlIdentifier: String): KeywordGroup? {
-        val cached = detectionCache.get(urlIdentifier)
-        if (cached != null) return if (cached.id == "SAFE") null else cached
-
-        for (group in activeGroups) {
-            val patterns = groupPatternMap[group.id] ?: continue
-            if (matchesPatterns(patterns, urlIdentifier)) {
-                detectionCache.put(urlIdentifier, group)
-                return group
-            }
-        }
-
-        detectionCache.put(urlIdentifier, KeywordGroup(id = "SAFE"))
-        return null
+        detectionCache.put(urlIdentifier, matches)
+        return matches
     }
 
     private fun matchesGroup(group: KeywordGroup, urlIdentifier: String): Boolean {
@@ -226,18 +153,34 @@ class KeywordBlocker : BaseBlocker() {
     }
 
     private fun evaluateAndBlock(entry: WebsiteStatsEntity) {
-        val matchedGroup = findMatchingGroup(entry.urlIdentifier) ?: return
+        val matched = findMatchingGroups(entry.urlIdentifier)
+        if (matched.isEmpty()) return
+        val now = System.currentTimeMillis()
 
-        val cooldownEnd = cooldownGroupsList[matchedGroup.id]
-        if (cooldownEnd != null) {
-            if (cooldownEnd > System.currentTimeMillis()) return
-            else removeCooldownFrom(matchedGroup.id)
+        // Block if any matched group demands it; the first group in list order wins its warning screen.
+        // A group in cooldown is skipped so the others can still decide.
+        for (group in matched) {
+            val cooldownEnd = cooldownGroupsList[group.id]
+            if (cooldownEnd != null) {
+                if (cooldownEnd > now) continue
+                else removeCooldownFrom(group.id)
+            }
+            if (isBlocked(group)) {
+                handleBlocking(group)
+                return
+            }
         }
 
-        if (isBlocked(matchedGroup, entry.packageName)) {
-            handleBlocking(matchedGroup)
-        } else {
-            calculateAndSetNextRecheck(matchedGroup, entry.packageName)
+        // None blocked → schedule the soonest re-check across the matched groups
+        var soonest = 0L
+        for (group in matched) {
+            val recheck = computeNextRecheck(group)
+            if (recheck > now && (soonest == 0L || recheck < soonest)) soonest = recheck
+        }
+        if (soonest > now) {
+            CoroutineScope(Dispatchers.IO).launch {
+                service.dataStoreManager.updateNextWebsiteRecheckTime(soonest)
+            }
         }
     }
 
@@ -256,9 +199,9 @@ class KeywordBlocker : BaseBlocker() {
         }, 300)
     }
 
-    private fun isBlocked(group: KeywordGroup, packageName: String): Boolean =
+    private fun isBlocked(group: KeywordGroup): Boolean =
         if (group.blockingType == AppBlockingType.Timed) isTimedBlockActive(group)
-        else isUsageLimitExceeded(group, packageName)
+        else isUsageLimitExceeded(group)
 
     // Intervals describe the ALLOWED time. Keywords are blocked whenever the
     // current time falls outside every allowed interval (matching the app blocker).
@@ -282,7 +225,7 @@ class KeywordBlocker : BaseBlocker() {
         return true
     }
 
-    private fun isUsageLimitExceeded(group: KeywordGroup, packageName: String): Boolean {
+    private fun isUsageLimitExceeded(group: KeywordGroup): Boolean {
         val config = Gson().fromJson(group.setting, AppUsageConfig::class.java) ?: return false
         val limit = (if (config.isDailyUniform) config.uniformLimit else {
             config.dailyLimits[Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1]
@@ -290,17 +233,24 @@ class KeywordBlocker : BaseBlocker() {
 
         if (limit <= 0) return true
 
+        return groupUsage(group) >= limit
+    }
+
+    // Combined usage of every keyword in the group across all browsers, so the
+    // limit applies to the group as a whole rather than each browser separately.
+    private fun groupUsage(group: KeywordGroup): Long {
         val date = TimeTools.getCurrentDate()
-        val totalUsage = runBlocking(Dispatchers.IO) {
+        return runBlocking(Dispatchers.IO) {
             AppDatabase.getInstance(service).websiteStatsDao()
-                .getStatsForPackage(date, packageName)
+                .getStatsForDate(date)
                 .filter { matchesGroup(group, it.urlIdentifier) }
                 .sumOf { it.totalTime }
         }
-        return totalUsage >= limit
     }
 
-    private fun calculateAndSetNextRecheck(group: KeywordGroup, packageName: String) {
+    // Returns when this group should next be re-checked (0 if no re-check is needed). The caller is
+    // responsible for persisting the soonest value across all matched groups.
+    private fun computeNextRecheck(group: KeywordGroup): Long {
         val now = System.currentTimeMillis()
         var nextRecheck = 0L
 
@@ -311,14 +261,7 @@ class KeywordBlocker : BaseBlocker() {
                     config.dailyLimits[Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1]
                 }) * 60_000L
                 if (limit > 0) {
-                    val date = TimeTools.getCurrentDate()
-                    val totalUsage = runBlocking(Dispatchers.IO) {
-                        AppDatabase.getInstance(service).websiteStatsDao()
-                            .getStatsForPackage(date, packageName)
-                            .filter { matchesGroup(group, it.urlIdentifier) }
-                            .sumOf { it.totalTime }
-                    }
-                    val remaining = limit - totalUsage
+                    val remaining = limit - groupUsage(group)
                     if (remaining > 0) nextRecheck = now + remaining + 1000
                 }
             }
@@ -361,11 +304,7 @@ class KeywordBlocker : BaseBlocker() {
             if (nextRecheck == 0L || cooldownEnd < nextRecheck) nextRecheck = cooldownEnd + 500
         }
 
-        if (nextRecheck > now) {
-            CoroutineScope(Dispatchers.IO).launch {
-                service.dataStoreManager.updateNextWebsiteRecheckTime(nextRecheck)
-            }
-        }
+        return nextRecheck
     }
 
     private var configJob: Job? = null
