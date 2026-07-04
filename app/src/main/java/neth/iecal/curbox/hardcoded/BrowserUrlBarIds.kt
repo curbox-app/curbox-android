@@ -24,6 +24,9 @@ val URL_BAR_ID_LIST = mapOf(
     "org.mozilla.firefox" to BrowserUrlBarInfo(
         displayUrlBarId = "ADDRESSBAR_URL_BOX",
     ),
+    "org.mozilla.focus" to BrowserUrlBarInfo(
+        displayUrlBarId = "ADDRESSBAR_URL_BOX",
+    ),
     "org.mozilla.fennec_fdroid" to BrowserUrlBarInfo(
         displayUrlBarId = "ADDRESSBAR_URL_BOX",
     ),
