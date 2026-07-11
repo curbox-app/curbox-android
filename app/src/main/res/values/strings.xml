@@ -1462,6 +1462,7 @@
     <string name="warning_cancelled">Cancelled</string>
     <string name="warning_invalid_qr">Invalid QR Code - Pattern does not match</string>
     <string name="warning_proceed_limit_reached">Proceed limit of %1$d per %2$d minutes has been reached. Try again in %3$d minutes.</string>
+    <string name="warning_proceeds_left">You have %1$d of %2$d opens left</string>
     <string name="warning_typing_quote">\"%1$s\"</string>
     <string name="warning_scan_qr_code">Scan QR Code</string>
 
