@@ -145,8 +145,19 @@ class WarningActivity : AppCompatActivity() {
                                 button.isEnabled = false
                                 button.setText(R.string.proceed)
 
+                                val minLength = warningScreenConfig.minIntentLength.coerceAtLeast(1)
                                 binding.intentInputEdit.doAfterTextChanged { s ->
-                                    button.isEnabled = s?.toString()?.trim()?.isNotEmpty() == true
+                                    val length = s?.toString()?.trim()?.length ?: 0
+                                    button.isEnabled = length >= minLength
+                                    if (length < minLength) {
+                                        binding.intentInputLayout.helperText = getString(
+                                            R.string.warning_intent_chars_needed,
+                                            minLength,
+                                            minLength - length
+                                        )
+                                    } else {
+                                        binding.intentInputLayout.helperText = null
+                                    }
                                 }
                             } else if (warningScreenConfig.isTypingRequirementEnabled) {
                                 binding.typingTargetSentence.visibility = View.VISIBLE
@@ -225,6 +236,9 @@ class WarningActivity : AppCompatActivity() {
 
             if (warningScreenConfig.isIntentRequirementEnabled) {
                 val intentText = binding.intentInputEdit.text.toString().trim()
+                if (intentText.length < warningScreenConfig.minIntentLength.coerceAtLeast(1)) {
+                    return@setOnClickListener
+                }
                 val pkg = targetId
                 val time = binding.minsPicker.getValue() * 60_000L
                 

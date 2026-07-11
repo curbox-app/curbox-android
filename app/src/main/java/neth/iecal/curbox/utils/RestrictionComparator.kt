@@ -263,9 +263,14 @@ object RestrictionComparator {
         }
         val typingOk = !o.isTypingRequirementEnabled || n.isTypingRequirementEnabled
         val intentOk = !o.isIntentRequirementEnabled || n.isIntentRequirementEnabled
+        val intentMinLengthOk = when {
+            !o.isIntentRequirementEnabled || !n.isIntentRequirementEnabled -> true
+            else -> n.minIntentLength >= o.minIntentLength
+        }
 
         return cooldownOk && dynamicIntervalOk && proceedDisabledOk && dialogHiddenOk &&
-            proceedDelayOk && vibrateOk && proceedLimitOk && qrOk && typingOk && intentOk
+            proceedDelayOk && vibrateOk && proceedLimitOk && qrOk && typingOk && intentOk &&
+            intentMinLengthOk
     }
 
     private inline fun <reified T> parse(json: String): T? =
