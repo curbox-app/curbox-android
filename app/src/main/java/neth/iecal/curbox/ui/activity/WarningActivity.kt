@@ -102,7 +102,6 @@ class WarningActivity : AppCompatActivity() {
                 timeUntilNextProceedMn = (expirationTime - nowTime + 59_999) / 60_000L
             } else {
                 proceedsLeft = warningScreenConfig.allowedProceeds - validHistory.size
-                android.util.Log.d("WarningActivity", "proceedsLeft=$proceedsLeft validHistorySize=${validHistory.size}")
             }
         }
 
