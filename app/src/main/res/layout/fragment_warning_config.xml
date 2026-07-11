@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -267,7 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/warning_intent_min_length" />
+                    tools:text="Minimum character: 1" />
 
                 <com.google.android.material.slider.Slider
                     android:id="@+id/intent_min_length_slider"

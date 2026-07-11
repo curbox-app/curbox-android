@@ -146,19 +146,23 @@ class WarningActivity : AppCompatActivity() {
                                 button.setText(R.string.proceed)
 
                                 val minLength = warningScreenConfig.minIntentLength.coerceAtLeast(1)
-                                binding.intentInputEdit.doAfterTextChanged { s ->
-                                    val length = s?.toString()?.trim()?.length ?: 0
+                                fun updateIntentInputState(length: Int) {
                                     button.isEnabled = length >= minLength
-                                    if (length < minLength) {
-                                        binding.intentInputLayout.helperText = getString(
-                                            R.string.warning_intent_chars_needed,
+                                    binding.intentInputLayout.helperText = if (length < minLength) {
+                                        resources.getQuantityString(
+                                            R.plurals.warning_intent_chars_needed,
+                                            minLength,
                                             minLength,
                                             minLength - length
                                         )
                                     } else {
-                                        binding.intentInputLayout.helperText = null
+                                        null
                                     }
                                 }
+                                binding.intentInputEdit.doAfterTextChanged { s ->
+                                    updateIntentInputState(s?.toString()?.trim()?.length ?: 0)
+                                }
+                                updateIntentInputState(binding.intentInputEdit.text.toString().trim().length)
                             } else if (warningScreenConfig.isTypingRequirementEnabled) {
                                 binding.typingTargetSentence.visibility = View.VISIBLE
                                 binding.typingTargetSentence.text = getString(R.string.warning_typing_quote, warningScreenConfig.typingSentence)

@@ -402,8 +402,14 @@
     <string name="label_typing_desc">Enter the sentence the user must type exactly to bypass the block:</string>
     <string name="label_intent_auth">Intent unlock length</string>
     <string name="label_intent_min_desc">I choose how many characters someone must write before they can continue.</string>
-    <string name="warning_intent_min_length">Minimum characters: %1$d</string>
-    <string name="warning_intent_chars_needed">Write at least %1$d characters (%2$d more to go)</string>
+    <plurals name="warning_intent_min_length">
+        <item quantity="one">Minimum character: %1$d</item>
+        <item quantity="other">Minimum characters: %1$d</item>
+    </plurals>
+    <plurals name="warning_intent_chars_needed">
+        <item quantity="one">Write at least %1$d character (%2$d more to go)</item>
+        <item quantity="other">Write at least %1$d characters (%2$d more to go)</item>
+    </plurals>
     <string name="label_limit_unlock_frequency">Limit unlock frequency</string>
     <string name="label_allowed_proceeds">Allowed proceeds: 3</string>
     <string name="label_time_window">Time window: 60 mins</string>

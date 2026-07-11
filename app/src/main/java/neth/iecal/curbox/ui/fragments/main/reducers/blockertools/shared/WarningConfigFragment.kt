@@ -163,8 +163,11 @@ class WarningConfigFragment : Fragment() {
         binding.typingSentenceEdit.setText(config.typingSentence)
 
         binding.intentMinLengthSlider.value = config.minIntentLength.toFloat().coerceIn(1f, 100f)
-        binding.intentMinLengthTitle.text =
-            getString(R.string.warning_intent_min_length, binding.intentMinLengthSlider.value.toInt())
+        binding.intentMinLengthTitle.text = resources.getQuantityString(
+            R.plurals.warning_intent_min_length,
+            binding.intentMinLengthSlider.value.toInt(),
+            binding.intentMinLengthSlider.value.toInt()
+        )
 
         binding.fixedTimeSlider.value = (config.timeInterval / 60000).toFloat().coerceIn(1f, 120f)
         binding.timingTitle.text = getString(R.string.warning_fixed_unlock_duration, binding.fixedTimeSlider.value.toInt())
@@ -254,7 +257,11 @@ class WarningConfigFragment : Fragment() {
         }
 
         binding.intentMinLengthSlider.addOnChangeListener { _, value, _ ->
-            binding.intentMinLengthTitle.text = getString(R.string.warning_intent_min_length, value.toInt())
+            binding.intentMinLengthTitle.text = resources.getQuantityString(
+                R.plurals.warning_intent_min_length,
+                value.toInt(),
+                value.toInt()
+            )
         }
 
         binding.advancedSettingsHeader.setOnClickListener {

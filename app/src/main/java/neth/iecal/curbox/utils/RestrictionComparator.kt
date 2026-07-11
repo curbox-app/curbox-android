@@ -265,7 +265,7 @@ object RestrictionComparator {
         val intentOk = !o.isIntentRequirementEnabled || n.isIntentRequirementEnabled
         val intentMinLengthOk = when {
             !o.isIntentRequirementEnabled || !n.isIntentRequirementEnabled -> true
-            else -> n.minIntentLength >= o.minIntentLength
+            else -> n.minIntentLength.coerceAtLeast(1) >= o.minIntentLength.coerceAtLeast(1)
         }
 
         return cooldownOk && dynamicIntervalOk && proceedDisabledOk && dialogHiddenOk &&
