@@ -88,6 +88,44 @@ class ScriptLanguageTest {
         assertEquals("ok\n", run(src).log.toString())
     }
 
+    @Test fun elseIfChainSelectsMatchingBranch() {
+        val src = """
+            if false { log("a") }
+            else if true { log("b") }
+            else { log("c") }
+        """.trimIndent()
+        assertEquals("b\n", run(src).log.toString())
+    }
+
+    // Reproduces #328: find() returning null used to throw on .visible and abort
+    // the script before later else-if arms (or later top-level ifs) could run.
+    @Test fun nullPropertyAccessDoesNotAbortElseIf() {
+        val src = """
+            x = null
+            if x.visible == true { log("first") }
+            else if true { log("second") }
+        """.trimIndent()
+        assertEquals("second\n", run(src).log.toString())
+    }
+
+    @Test fun nullPropertyAccessDoesNotAbortLaterIf() {
+        val src = """
+            x = null
+            if x.visible == true { log("first") }
+            if true { log("second") }
+        """.trimIndent()
+        assertEquals("second\n", run(src).log.toString())
+    }
+
+    @Test fun nullMethodCallIsNoOp() {
+        val src = """
+            x = null
+            x.click()
+            log("ok")
+        """.trimIndent()
+        assertEquals("ok\n", run(src).log.toString())
+    }
+
     @Test fun stringConcatAndBuiltins() {
         assertEquals("v=3\n", run("""log("v=" + 3)""").log.toString())
         assertEquals("7\n", run("log(max(3, 7, 2))").log.toString())

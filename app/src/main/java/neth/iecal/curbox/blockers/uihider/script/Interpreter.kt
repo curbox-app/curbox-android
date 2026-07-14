@@ -209,6 +209,7 @@ class Interpreter(
     private fun evalMember(expr: Expr.Member, env: Environment): Any? {
         val target = evaluate(expr.target, env)
         return when (target) {
+            null -> null
             is ScriptNode -> target.prop(expr.name)
             is Map<*, *> -> {
                 if (!target.containsKey(expr.name)) throw ScriptError("unknown property '${expr.name}'", expr.line)
@@ -226,6 +227,7 @@ class Interpreter(
         // Method call: obj.method(...)
         if (callee is Expr.Member) {
             val target = evaluate(callee.target, env)
+            if (target == null) return null
             if (target is ScriptNode) return target.call(callee.name, args, named)
             throw ScriptError("cannot call '.${callee.name}()' on ${Values.typeName(target)}", expr.line)
         }
