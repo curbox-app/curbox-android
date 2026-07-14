@@ -122,6 +122,7 @@ class WarningActivity : AppCompatActivity() {
 
         if (warningScreenConfig.isProceedDisabled || isProceedLimitExceeded) {
             binding.btnProceed.visibility = View.GONE
+            binding.btnCancel.setText(R.string.okay)
             if (isProceedLimitExceeded) {
                 binding.proceedSeconds.visibility = View.VISIBLE
                 binding.proceedSeconds.text = getString(R.string.warning_proceed_limit_reached, warningScreenConfig.allowedProceeds, warningScreenConfig.proceedsTimeWindowMn, timeUntilNextProceedMn)
