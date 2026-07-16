@@ -37,6 +37,11 @@ class UiHiderRuntime(
     companion object {
         // Resolved foreign-app string resources, cached across runs (key = "package:resName").
         private val appStringCache = java.util.concurrent.ConcurrentHashMap<String, String>()
+        // Compiled patterns are immutable and safe to reuse across short-lived runtime instances.
+        private val regexCache = java.util.concurrent.ConcurrentHashMap<String, Regex>()
+
+        private const val MAX_SUBTREE_DEPTH = 64
+        private const val MAX_SUBTREE_CHARS = 100_000
     }
 
     override fun provideGlobals(): Map<String, Any?> = globals
@@ -52,6 +57,13 @@ class UiHiderRuntime(
             "home" -> { service.pressHome(); null }
             "log" -> { output.append(args.joinToString(" ") { Values.stringify(it) }).append('\n'); null }
             "appString" -> resolveAppString(args.getOrNull(0))
+            "subtreeText" -> {
+                val target = args.getOrNull(0)
+                if (target !is NodeHandle) {
+                    throw ScriptError("subtreeText() expects a node, got ${Values.typeName(target)}")
+                }
+                target.collectSubtreeText(args.drop(1))
+            }
             "save" -> {
                 val value = args.getOrNull(1)
                 assertStorable(value)
@@ -62,7 +74,7 @@ class UiHiderRuntime(
             "has" -> store.has(scriptId, storeKey(args, "has"))
             "remove" -> { store.remove(scriptId, storeKey(args, "remove")); null }
             else -> {
-                val result = Builtins.tryCall(name, args)
+                val result = Builtins.tryCall(name, args, budget, regexCache)
                 if (result === Builtins.UNKNOWN) throw ScriptError("unknown function '$name'")
                 result
             }
@@ -205,7 +217,70 @@ class UiHiderRuntime(
             "children" -> (0 until node.childCount).mapNotNull { i -> node.getChild(i)?.let { wrap(it) } }
             "parent" -> node.parent?.let { wrap(it) }
             "hide" -> { emitDraw(Rect(bounds), named); null }
+            "subtreeText" -> collectSubtreeText(args)
             else -> throw ScriptError("unknown node method '$name'")
+        }
+
+        fun collectSubtreeText(args: List<Any?>): String {
+            val maxDepth = boundedSubtreeArg(args, 0, "maxDepth", MAX_SUBTREE_DEPTH)
+            val maxChars = boundedSubtreeArg(args, 1, "maxChars", MAX_SUBTREE_CHARS)
+            if (maxChars == 0) return ""
+
+            val out = StringBuilder(minOf(maxChars, 1024))
+            budget.countNode()
+            appendNodeText(node, out, maxChars)
+            if (out.length >= maxChars || maxDepth == 0) return out.toString()
+
+            fun visit(parent: AccessibilityNodeInfo, depth: Int) {
+                if (depth > maxDepth || out.length >= maxChars) return
+                for (i in 0 until parent.childCount) {
+                    if (out.length >= maxChars) break
+                    budget.countNode()
+                    val child = parent.getChild(i) ?: continue
+                    try {
+                        appendNodeText(child, out, maxChars)
+                        if (depth < maxDepth && out.length < maxChars) visit(child, depth + 1)
+                    } finally {
+                        recycle(child)
+                    }
+                }
+            }
+
+            visit(node, 1)
+            return out.toString()
+        }
+
+        private fun boundedSubtreeArg(
+            args: List<Any?>,
+            index: Int,
+            label: String,
+            hardMax: Int
+        ): Int {
+            val raw = args.getOrNull(index)
+                ?: throw ScriptError("subtreeText() requires $label")
+            val value = Values.asInt(raw, 0)
+            if (value < 0) throw ScriptError("subtreeText() $label must be non-negative")
+            if (value > hardMax) {
+                throw ScriptError("subtreeText() $label exceeds maximum $hardMax")
+            }
+            return value
+        }
+
+        private fun appendNodeText(target: AccessibilityNodeInfo, out: StringBuilder, maxChars: Int) {
+            appendTextPart(target.text?.toString(), out, maxChars)
+            val desc = target.contentDescription?.toString()
+            if (desc != target.text?.toString()) appendTextPart(desc, out, maxChars)
+        }
+
+        private fun appendTextPart(value: String?, out: StringBuilder, maxChars: Int) {
+            val text = value?.trim().orEmpty()
+            if (text.isEmpty() || out.length >= maxChars) return
+            if (out.isNotEmpty()) {
+                if (out.length >= maxChars) return
+                out.append('\n')
+            }
+            val remaining = maxChars - out.length
+            if (remaining > 0) out.append(text, 0, minOf(text.length, remaining))
         }
     }
 
