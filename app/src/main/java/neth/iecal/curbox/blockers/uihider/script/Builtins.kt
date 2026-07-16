@@ -1,5 +1,7 @@
 package neth.iecal.curbox.blockers.uihider.script
 
+import java.util.concurrent.ConcurrentHashMap
+
 import kotlin.math.abs
 import kotlin.math.ceil
 import kotlin.math.floor
@@ -17,8 +19,15 @@ object Builtins {
     val UNKNOWN = Any()
 
     private const val MAX_RANGE = 100_000
+    private const val MAX_REGEX_LENGTH = 16_384
+    private const val REGEX_CHARS_PER_OPERATION = 16
 
-    fun tryCall(name: String, args: List<Any?>): Any? = when (name) {
+    fun tryCall(
+        name: String,
+        args: List<Any?>,
+        budget: Budget? = null,
+        regexCache: ConcurrentHashMap<String, Regex>? = null
+    ): Any? = when (name) {
         "abs" -> abs(num(name, args, 0))
         "floor" -> floor(num(name, args, 0))
         "ceil" -> ceil(num(name, args, 0))
@@ -37,6 +46,12 @@ object Builtins {
             else -> throw ScriptError("len() expects a string or list, got ${Values.typeName(x)}")
         }
         "str" -> Values.stringify(arg(name, args, 0))
+        "lower" -> stringArg(name, args, 0).lowercase()
+        "containsIgnoreCase" -> stringArg(name, args, 0).contains(
+            stringArg(name, args, 1),
+            ignoreCase = true
+        )
+        "matchesRegex" -> matchesRegex(args, budget, regexCache)
         "int" -> when (val x = arg(name, args, 0)) {
             is Double -> x.toLong().toDouble()
             is Boolean -> if (x) 1.0 else 0.0
@@ -46,6 +61,49 @@ object Builtins {
         }
         "range" -> range(args)
         else -> UNKNOWN
+    }
+
+
+    private fun matchesRegex(
+        args: List<Any?>,
+        budget: Budget?,
+        regexCache: ConcurrentHashMap<String, Regex>?
+    ): Boolean {
+        val input = stringArg("matchesRegex", args, 0)
+        val pattern = stringArg("matchesRegex", args, 1)
+        val flags = if (args.size >= 3) stringArg("matchesRegex", args, 2) else ""
+
+        if (pattern.length > MAX_REGEX_LENGTH) {
+            throw ScriptError("matchesRegex() pattern too long (max $MAX_REGEX_LENGTH characters)")
+        }
+
+        val options = LinkedHashSet<RegexOption>()
+        for (flag in flags) {
+            when (flag.lowercaseChar()) {
+                'i' -> options.add(RegexOption.IGNORE_CASE)
+                'm' -> options.add(RegexOption.MULTILINE)
+                's' -> options.add(RegexOption.DOT_MATCHES_ALL)
+                'u' -> Unit // Kotlin/JVM regexes are Unicode-aware; accepted for API familiarity.
+                else -> throw ScriptError("matchesRegex() unknown flag '$flag'")
+            }
+        }
+
+        // Approximate regex work by the amount of input and pattern data examined. The runtime's
+        // hard time deadline remains the final guard against unexpectedly expensive expressions.
+        val charge = maxOf(1, (input.length + pattern.length + REGEX_CHARS_PER_OPERATION - 1) /
+            REGEX_CHARS_PER_OPERATION)
+        budget?.chargeOperations(charge)
+
+        val optionKey = options.map { it.name }.sorted().joinToString(",")
+        val cacheKey = "$optionKey\u0000$pattern"
+        val regex = try {
+            regexCache?.get(cacheKey) ?: Regex(pattern, options).also {
+                regexCache?.putIfAbsent(cacheKey, it)
+            }
+        } catch (e: IllegalArgumentException) {
+            throw ScriptError("matchesRegex() invalid pattern: ${e.message ?: "syntax error"}")
+        }
+        return regex.containsMatchIn(input)
     }
 
     private fun range(args: List<Any?>): List<Any?> {
@@ -80,4 +138,10 @@ object Builtins {
 
     private fun num(name: String, args: List<Any?>, i: Int): Double =
         Values.asNumber(arg(name, args, i), 0)
+
+    private fun stringArg(name: String, args: List<Any?>, i: Int): String {
+        val value = arg(name, args, i)
+        return value as? String
+            ?: throw ScriptError("$name() expects argument ${i + 1} to be a string, got ${Values.typeName(value)}")
+    }
 }
