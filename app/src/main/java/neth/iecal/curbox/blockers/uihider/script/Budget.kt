@@ -28,6 +28,18 @@ class Budget(
         if (++nodes > maxNodes) throw ScriptError("script visited too many nodes ($maxNodes)")
     }
 
+    /** Charge a bounded amount of host-side work (for example regex input scanning). */
+    fun chargeOperations(amount: Int) {
+        if (amount <= 0) return
+        if (amount > maxOps - ops) {
+            throw ScriptError("script exceeded operation budget ($maxOps)")
+        }
+        ops += amount
+        if (System.nanoTime() > deadlineNs) {
+            throw ScriptError("script exceeded time budget")
+        }
+    }
+
     fun enterCall() {
         if (++depth > maxDepth) throw ScriptError("call depth exceeded ($maxDepth)")
     }
