@@ -12,10 +12,11 @@ import org.junit.Test
 class ScriptLanguageTest {
 
     /** Captures `log()`/`draw()`, backs `save`/`load`, routes everything else to [Builtins]. */
-    private class StubApi : RuntimeApi {
+    private class StubApi(val budget: Budget = Budget()) : RuntimeApi {
         val log = StringBuilder()
         val draws = ArrayList<List<Any?>>()
         val store = HashMap<String, Any?>()
+        val regexCache = java.util.concurrent.ConcurrentHashMap<String, Regex>()
 
         override fun provideGlobals(): Map<String, Any?> = mapOf(
             "app" to "com.test.app",
@@ -31,16 +32,16 @@ class ScriptLanguageTest {
             "has" -> store.containsKey(args[0] as String)
             "remove" -> { store.remove(args[0] as String); null }
             else -> {
-                val r = Builtins.tryCall(name, args)
+                val r = Builtins.tryCall(name, args, budget, regexCache)
                 if (r === Builtins.UNKNOWN) throw ScriptError("unknown function '$name'")
                 r
             }
         }
     }
 
-    private fun run(source: String): StubApi {
-        val api = StubApi()
-        Interpreter(api, Budget()).run(Parser.parse(source))
+    private fun run(source: String, budget: Budget = Budget()): StubApi {
+        val api = StubApi(budget)
+        Interpreter(api, budget).run(Parser.parse(source))
         return api
     }
 
@@ -181,6 +182,69 @@ class ScriptLanguageTest {
         } finally {
             file.delete()
         }
+    }
+
+
+    @Test fun contextualStringBuiltinsHandleUnicodeAndExceptions() {
+        val src = """
+            text = "Çıplaklık hakkında hukuki destek ve mağdur yardımı"
+            risk = matchesRegex(text, "çıplaklık", "iu")
+            protected = matchesRegex(text, "hukuki|mağdur yardımı", "iu")
+            log(risk and protected)
+            log(containsIgnoreCase(text, "HUKUKİ DESTEK"))
+            log(lower("ABCÇĞÖŞÜ"))
+        """.trimIndent()
+        val output = run(src).log.toString().lines()
+        assertEquals("true", output[0])
+        assertEquals("true", output[1])
+        assertEquals("abcçğöşü", output[2])
+    }
+
+    @Test fun matchesRegexSupportsCommonFlags() {
+        val src = """
+            log(matchesRegex("First\\nSECOND", "^second$", "imu"))
+            log(matchesRegex("a\\nb", "a.b", "su"))
+        """.trimIndent()
+        assertEquals("true\ntrue\n", run(src).log.toString())
+    }
+
+    @Test fun matchesRegexRejectsInvalidPatternsAndFlags() {
+        try {
+            run("log(matchesRegex(\"text\", \"[\", \"iu\"))")
+            fail("expected invalid regex to fail")
+        } catch (e: ScriptError) {
+            assertTrue(e.message!!.contains("invalid pattern"))
+        }
+
+        try {
+            run("log(matchesRegex(\"text\", \"text\", \"x\"))")
+            fail("expected unknown regex flag to fail")
+        } catch (e: ScriptError) {
+            assertTrue(e.message!!.contains("unknown flag"))
+        }
+    }
+
+    @Test fun regexWorkIsChargedAgainstOperationBudget() {
+        val tinyBudget = Budget(maxOps = 2, timeBudgetMs = 10_000)
+        try {
+            run(
+                "log(matchesRegex(\"${"x".repeat(1000)}\", \"x+\", \"\"))",
+                tinyBudget
+            )
+            fail("expected regex work to exhaust operation budget")
+        } catch (e: ScriptError) {
+            assertTrue(e.message!!.contains("operation budget"))
+        }
+    }
+
+    @Test fun regexCacheCanBeReusedAcrossCalls() {
+        val cache = java.util.concurrent.ConcurrentHashMap<String, Regex>()
+        val budget = Budget(timeBudgetMs = 10_000)
+        assertEquals(true, Builtins.tryCall("matchesRegex", listOf("ABC", "abc", "iu"), budget, cache))
+        val sizeAfterFirst = cache.size
+        assertEquals(true, Builtins.tryCall("matchesRegex", listOf("abc", "abc", "iu"), budget, cache))
+        assertEquals(sizeAfterFirst, cache.size)
+        assertEquals(1, cache.size)
     }
 
     @Test fun syntaxErrorReportsLine() {
