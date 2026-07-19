@@ -14,6 +14,8 @@ enum class GatedSettingsField {
     GRAYSCALE_GROUPS,
     MINDFUL_MESSAGES,
     UI_HIDER,
+    APP_USAGE_TRACKING,
+    WEBSITE_USAGE_TRACKING,
     CHANGE_DELAY
 }
 

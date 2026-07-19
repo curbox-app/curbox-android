@@ -84,6 +84,13 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
     private val focusGroupShadow = HashMap<String, String>()
     private val pushedHashes = HashMap<String, Int>()
     private var observersStarted = false
+    private var devices: List<SyncDevice> = emptyList()
+
+    private fun preferences() = SyncPreferences(
+        usageStats = keys.syncUsageStats,
+        reducerConfigs = keys.syncReducerConfigs,
+        usageDeviceIds = keys.usageDeviceIds,
+    )
 
     private val _status = MutableStateFlow(SyncStatus())
     override val status: StateFlow<SyncStatus> = _status
@@ -286,11 +293,11 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
     }
 
     override suspend fun remoteWebsiteUsage(dateIso: String): Map<String, Long> = withContext(Dispatchers.IO) {
-        RemoteUsageStore(context).websiteTotals(dateIso)
+        if (!keys.syncUsageStats) emptyMap() else RemoteUsageStore(context).websiteTotals(dateIso, keys.usageDeviceIds)
     }
 
     override suspend fun remoteAppUsage(dateIso: String): Map<String, Long> = withContext(Dispatchers.IO) {
-        RemoteUsageStore(context).appTotals(dateIso)
+        if (!keys.syncUsageStats) emptyMap() else RemoteUsageStore(context).appTotals(dateIso, keys.usageDeviceIds)
     }
 
     override suspend fun pushNow() = withContext(Dispatchers.IO) {
@@ -298,6 +305,34 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
         ensureFreshToken()
         pushConfig()
         pushUsage()
+    }
+
+    override suspend fun setDeviceName(name: String) = withContext(Dispatchers.IO) {
+        val label = name.trim().take(60)
+        require(label.isNotEmpty()) { "Enter a device name" }
+        val s = requireSession()
+        keys.deviceName = label
+        rest.upsertDevice(s, keys.deviceId, "android", label, keys.fcmToken)
+        refreshDevices(s)
+        publishStatus()
+    }
+
+    override suspend fun setPreferences(preferences: SyncPreferences) = withContext(Dispatchers.IO) {
+        keys.syncUsageStats = preferences.usageStats
+        keys.syncReducerConfigs = preferences.reducerConfigs
+        keys.usageDeviceIds = preferences.usageDeviceIds
+        keys.cursor = "1970-01-01T00:00:00Z"
+        // Rebuild the cache so a device removed from the selection cannot keep
+        // contributing stale totals.
+        RemoteUsageStore(context).clear()
+        pullSinceCursor()
+        if (keys.syncReducerConfigs) {
+            pushConfig()
+            runCatching { pushFocusGroups(dataStore.data.first()) }
+            runCatching { pushFocusFrom(dataStore.data.first()) }
+        }
+        if (keys.syncUsageStats) pushUsage()
+        publishStatus()
     }
 
     private fun requireSession(): SupabaseRest.Session = session ?: throw IllegalStateException("sign in first")
@@ -325,7 +360,8 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
     private suspend fun onSignedIn() {
         val s = session ?: return
         try {
-            rest.upsertDevice(s, keys.deviceId, "android", "android", keys.fcmToken)
+            rest.upsertDevice(s, keys.deviceId, "android", keys.deviceName, keys.fcmToken)
+            refreshDevices(s)
         } catch (_: Exception) {
         }
         registerFcmToken()
@@ -336,12 +372,20 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
             if (!neth.iecal.curbox.BuildConfig.SYNC_USE_FCM) startRealtime()
             startSafetyPoll()
             pullSinceCursor()
-            pushConfig()
-            runCatching { pushFocusGroups(dataStore.data.first()) }
-            pushUsage()
-            runCatching { pushFocusFrom(dataStore.data.first()) }
+            if (keys.syncReducerConfigs) {
+                pushConfig()
+                runCatching { pushFocusGroups(dataStore.data.first()) }
+                runCatching { pushFocusFrom(dataStore.data.first()) }
+            }
+            if (keys.syncUsageStats) pushUsage()
         }
         publishStatus()
+    }
+
+    private fun refreshDevices(s: SupabaseRest.Session) {
+        devices = rest.devices(s).map {
+            SyncDevice(it.id, it.platform, it.label.ifBlank { it.platform }, it.lastSeen, it.id == keys.deviceId)
+        }
     }
 
     private fun startRealtime() {
@@ -369,7 +413,7 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
         keys.fcmToken = token
         scope.launch {
             val s = session ?: return@launch
-            runCatching { rest.upsertDevice(s, keys.deviceId, "android", "android", token) }
+            runCatching { rest.upsertDevice(s, keys.deviceId, "android", keys.deviceName, token) }
         }
     }
 
@@ -378,7 +422,7 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
             val token = runCatching { FcmPush.token(context) }.getOrNull() ?: return@launch
             keys.fcmToken = token
             val s = session ?: return@launch
-            runCatching { rest.upsertDevice(s, keys.deviceId, "android", "android", token) }
+            runCatching { rest.upsertDevice(s, keys.deviceId, "android", keys.deviceName, token) }
         }
     }
 
@@ -420,32 +464,32 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
             dataStore.data.debounce(1500).collect { settings ->
                 if (dek == null || !entitled) return@collect
                 val norm = normalize(settings)
-                if (norm != lastConfig) {
+                if (keys.syncReducerConfigs && norm != lastConfig) {
                     lastConfig = norm
                     runCatching { pushConfigJson(gson.toJson(norm)) }.onFailure { publishStatus(error = it.message) }
                 }
-                runCatching { pushFocusGroups(settings) }
+                if (keys.syncReducerConfigs) runCatching { pushFocusGroups(settings) }
             }
         }
         scope.launch {
             dataStore.data
                 .distinctUntilChangedBy { it.activeManualFocusGroupId }
                 .collect { settings ->
-                    if (dek != null && entitled) runCatching { pushFocusFrom(settings) }
+                    if (dek != null && entitled && keys.syncReducerConfigs) runCatching { pushFocusFrom(settings) }
                 }
         }
         scope.launch {
             currentDayFlow().flatMapLatest { native ->
                 db.websiteStatsDao().observeStatsForDate(native).map { native to it }
             }.sample(USAGE_PUSH_SAMPLE_MS).collect { (native, rows) ->
-                if (dek != null && entitled) runCatching { pushWebRows(isoFor(native), rows) }
+                if (dek != null && entitled && keys.syncUsageStats) runCatching { pushWebRows(isoFor(native), rows) }
             }
         }
         scope.launch {
             currentDayFlow().flatMapLatest { native ->
                 db.appUsageDao().observeForDate(native).map { native to it }
             }.sample(USAGE_PUSH_SAMPLE_MS).collect { (native, rows) ->
-                if (dek != null && entitled) runCatching { pushAppRows(isoFor(native), rows) }
+                if (dek != null && entitled && keys.syncUsageStats) runCatching { pushAppRows(isoFor(native), rows) }
             }
         }
     }
@@ -470,6 +514,7 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
         )
 
     private suspend fun pushConfig() {
+        if (!keys.syncReducerConfigs) return
         val settings = dataStore.data.first()
         val norm = normalize(settings)
         if (norm == lastConfig) return
@@ -487,6 +532,7 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
     }
 
     private suspend fun pushUsage() {
+        if (!keys.syncUsageStats) return
         val native = todayNative()
         val iso = todayIso()
         runCatching { pushWebRows(iso, db.websiteStatsDao().getStatsForDate(native)) }
@@ -581,6 +627,7 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
     ): String = "$active|$groupId|$endsAt|$mode|$exitable|${domains.sorted()}|${packages.sorted()}"
 
     private fun pushFocusFrom(settings: Settings) {
+        if (!keys.syncReducerConfigs) return
         if (!entitled) return
         val s = session ?: return
         val d = dek ?: return
@@ -668,6 +715,7 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
     }
 
     private fun pushFocusGroups(settings: Settings) {
+        if (!keys.syncReducerConfigs) return
         if (!entitled) return
         val s = session ?: return
         val d = dek ?: return
@@ -743,12 +791,14 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
             for (row in rows) {
                 runCatching {
                     when {
-                        row.namespace == NS_ANDROID_CONFIG && row.deviceId != keys.deviceId -> configRow = row
-                        row.namespace == NS_FOCUS && row.deviceId != keys.deviceId -> focusRow = row
-                        row.namespace == NS_FOCUS_GROUPS && row.deviceId != keys.deviceId -> focusGroupRows.add(row)
-                        row.namespace == NS_USAGE_WEB && row.deviceId != keys.deviceId ->
+                        keys.syncReducerConfigs && row.namespace == NS_ANDROID_CONFIG && row.deviceId != keys.deviceId -> configRow = row
+                        keys.syncReducerConfigs && row.namespace == NS_FOCUS && row.deviceId != keys.deviceId -> focusRow = row
+                        keys.syncReducerConfigs && row.namespace == NS_FOCUS_GROUPS && row.deviceId != keys.deviceId -> focusGroupRows.add(row)
+                        keys.syncUsageStats && row.namespace == NS_USAGE_WEB && row.deviceId != keys.deviceId &&
+                            (keys.usageDeviceIds.isEmpty() || row.deviceId in keys.usageDeviceIds) ->
                             applyUsageRow(d, s, row, remoteUsage ?: RemoteUsageStore(context).also { remoteUsage = it }, web = true)
-                        row.namespace == NS_USAGE_APP && row.deviceId != keys.deviceId ->
+                        keys.syncUsageStats && row.namespace == NS_USAGE_APP && row.deviceId != keys.deviceId &&
+                            (keys.usageDeviceIds.isEmpty() || row.deviceId in keys.usageDeviceIds) ->
                             applyUsageRow(d, s, row, remoteUsage ?: RemoteUsageStore(context).also { remoteUsage = it }, web = false)
                         else -> {}
                     }
@@ -800,6 +850,8 @@ class PlaystoreSyncProvider(private val context: Context) : SyncProvider {
             lastSync = lastSync,
             error = error,
             pendingEmail = pendingEmail,
+            devices = devices,
+            preferences = preferences(),
         )
     }
 

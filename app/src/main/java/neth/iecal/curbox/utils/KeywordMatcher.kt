@@ -20,32 +20,53 @@ object KeywordMatcher {
     fun compileKeywords(keywords: Collection<String>): Pair<List<Regex>, List<String>> {
         val regexes = mutableListOf<Regex>()
         val literals = mutableListOf<String>()
-        for (kw in keywords) {
-            val lower = kw.lowercase(Locale.ROOT)
+        for (input in keywords) {
+            val keyword = input.trim()
+            if (keyword.isEmpty()) continue
+
             when {
-                lower.startsWith("r:") ->
-                    runCatching { Regex(lower.removePrefix("r:")) }.getOrNull()
+                keyword.startsWith("r:", ignoreCase = true) ->
+                    runCatching { Regex(keyword.substring(2), RegexOption.IGNORE_CASE) }.getOrNull()
                         ?.let { regexes.add(it) }
-                lower.contains('*') || lower.contains('?') ->
-                    regexes.add(wildcardToRegex(lower))
-                else -> literals.add(lower)
+                keyword.contains('*') || keyword.contains('?') ->
+                    regexes.add(wildcardToRegex(normalize(keyword)))
+                else -> literals.add(normalize(keyword))
             }
         }
         return regexes to literals
     }
 
     private fun wildcardToRegex(pattern: String): Regex {
-        val escaped = pattern
-            .replace(Regex("""[.+^$()|\[\]{}\\]"""), """\\$0""")
-            .replace("?", ".")
-            .replace("*", ".*")
-        // Prepend optional scheme/www only when the pattern looks like a bare domain
-        val prefix = if (!pattern.startsWith("http") && !pattern.startsWith("*") &&
-                        !pattern.startsWith("/") && !pattern.startsWith("?")) {
-            """(?:https?://)?(?:www\.)?"""
-        } else ""
-        return Regex(prefix + escaped)
+        val optionalSubdomain = pattern.startsWith("*.")
+        val glob = if (optionalSubdomain) pattern.removePrefix("*.") else pattern
+        val escaped = buildString {
+            glob.forEach { character ->
+                append(
+                    when (character) {
+                        '*' -> ".*"
+                        '?' -> "."
+                        else -> Regex.escape(character.toString())
+                    }
+                )
+            }
+        }
+        val prefix = when {
+            optionalSubdomain -> "^(?:[^/]+\\.)?"
+            pattern.startsWith("/") -> "^[^/]+"
+            pattern.substringBefore('/').contains('.') -> "^"
+            else -> ""
+        }
+        val suffix = if (optionalSubdomain && !pattern.contains('/')) "(?=$|[/?#])" else ""
+        return Regex(prefix + escaped + suffix, RegexOption.IGNORE_CASE)
     }
+
+    private fun normalize(value: String): String = value
+        .trim()
+        .lowercase(Locale.ROOT)
+        .removePrefix("https://")
+        .removePrefix("http://")
+        .removePrefix("www.")
+        .trimEnd('/')
 
     /**
      * URL-aware literal match. [keyword] must already be lowercase.
@@ -59,19 +80,21 @@ object KeywordMatcher {
      *   - Domain word:          "youtube"      → "youtube.com", "m.youtube.com"
      */
     private fun matchesLiteral(keyword: String, urlIdentifier: String): Boolean {
-        val url = urlIdentifier.lowercase(Locale.ROOT)
-        val urlNoWww = url.removePrefix("www.")
-        val kwNoWww = keyword.removePrefix("www.")
+        val url = normalize(urlIdentifier)
 
-        if (url == keyword || urlNoWww == kwNoWww) return true
+        if (keyword.startsWith("/")) {
+            val pathStart = url.indexOf('/')
+            if (pathStart < 0) return false
+            val path = url.substring(pathStart)
+            return path == keyword || path.startsWith("$keyword/") ||
+                path.startsWith("$keyword?") || path.startsWith("$keyword#")
+        }
 
-        if (url.startsWith("$keyword/") || url.startsWith("$keyword?") ||
-            urlNoWww.startsWith("$kwNoWww/") || urlNoWww.startsWith("$kwNoWww?")) return true
-
-        if (keyword.startsWith("/") && url.contains(keyword)) return true
+        if (url == keyword || url.startsWith("$keyword/") ||
+            url.startsWith("$keyword?") || url.startsWith("$keyword#")) return true
 
         if (!keyword.contains('.') && !keyword.contains('/')) {
-            val domain = url.substringBefore('/')
+            val domain = url.substringBefore('/').substringBefore('?').substringBefore('#')
             if (domain.split('.').any { it == keyword }) return true
         }
 
@@ -79,9 +102,9 @@ object KeywordMatcher {
     }
 
     fun matchesPatterns(patterns: Pair<List<Regex>, List<String>>, urlIdentifier: String): Boolean {
-        val lower = urlIdentifier.lowercase(Locale.ROOT)
+        val normalizedUrl = normalize(urlIdentifier)
         val (regexes, literals) = patterns
-        return regexes.any { it.containsMatchIn(lower) } ||
-               literals.any { matchesLiteral(it, urlIdentifier) }
+        return regexes.any { it.containsMatchIn(normalizedUrl) } ||
+               literals.any { matchesLiteral(it, normalizedUrl) }
     }
 }

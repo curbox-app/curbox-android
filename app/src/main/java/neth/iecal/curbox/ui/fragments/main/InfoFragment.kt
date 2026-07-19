@@ -22,11 +22,14 @@ import neth.iecal.curbox.databinding.FragmentInfoBinding
 import neth.iecal.curbox.ui.activity.FragmentActivity
 import neth.iecal.curbox.ui.fragments.main.reducers.sync.SyncFragment
 import neth.iecal.curbox.utils.LanguageUtils
+import neth.iecal.curbox.utils.DataStoreManager
 
 class InfoFragment : Fragment() {
 
     private var _binding: FragmentInfoBinding? = null
     private val binding get() = _binding!!
+    private val dataStore by lazy { DataStoreManager(requireContext()) }
+    private var renderingTrackingSettings = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,8 +43,32 @@ class InfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupAccountSection()
+        setupUsageTrackingSettings()
         setupClickListeners()
         LanguageUtils.bindLanguageSelector(binding.languageSelector, binding.textCurrentLanguage)
+    }
+
+    private fun setupUsageTrackingSettings() {
+        binding.switchAppUsageTracking.setOnCheckedChangeListener { _, checked ->
+            if (!renderingTrackingSettings) viewLifecycleOwner.lifecycleScope.launch {
+                dataStore.updateAppUsageTrackingEnabled(checked)
+            }
+        }
+        binding.switchWebsiteUsageTracking.setOnCheckedChangeListener { _, checked ->
+            if (!renderingTrackingSettings) viewLifecycleOwner.lifecycleScope.launch {
+                dataStore.updateWebsiteUsageTrackingEnabled(checked)
+            }
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                dataStore.settings.collect { settings ->
+                    renderingTrackingSettings = true
+                    binding.switchAppUsageTracking.isChecked = settings.isAppUsageTrackingEnabled
+                    binding.switchWebsiteUsageTracking.isChecked = settings.isWebsiteUsageTrackingEnabled
+                    renderingTrackingSettings = false
+                }
+            }
+        }
     }
 
     // Account and sync live here in the Play Store build only. F-Droid stays

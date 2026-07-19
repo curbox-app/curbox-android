@@ -113,6 +113,14 @@ class DataStoreManager(private val context: Context) {
         settingsDataStore.updateData { it.copy(usageTrackerIgnoredApps = newApps) }
     }
 
+    suspend fun updateAppUsageTrackingEnabled(isEnabled: Boolean) {
+        updateGated(GatedSettingsField.APP_USAGE_TRACKING) { isEnabled }
+    }
+
+    suspend fun updateWebsiteUsageTrackingEnabled(isEnabled: Boolean) {
+        updateGated(GatedSettingsField.WEBSITE_USAGE_TRACKING) { isEnabled }
+    }
+
     suspend fun updateMindfulMessageConfig(config: neth.iecal.curbox.data.models.MindfulMessageConfig) {
         updateGated(GatedSettingsField.MINDFUL_MESSAGES) { config }
     }
@@ -264,6 +272,12 @@ class DataStoreManager(private val context: Context) {
                 )
                 GatedSettingsField.UI_HIDER -> settings.copy(
                     uiHiderConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.UiHiderConfig::class.java)
+                )
+                GatedSettingsField.APP_USAGE_TRACKING -> settings.copy(
+                    isAppUsageTrackingEnabled = gson.fromJson(valueJson, Boolean::class.java)
+                )
+                GatedSettingsField.WEBSITE_USAGE_TRACKING -> settings.copy(
+                    isWebsiteUsageTrackingEnabled = gson.fromJson(valueJson, Boolean::class.java)
                 )
                 GatedSettingsField.CHANGE_DELAY -> {
                     val prefs = gson.fromJson(valueJson, SettingsChangeDelayPrefs::class.java)

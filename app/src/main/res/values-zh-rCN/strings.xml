@@ -7,14 +7,6 @@
     <string name="warning_message">提示信息</string>
     <string name="minutes">分钟</string>
     <string name="app_icon">应用图标</string>
-    <string name="accessibility_permission_app_blocker">#CURBOX_TRIGGER#
-        这个功能需要“显示在其他应用上层”的权限才能使用。请先开启这个权限，再开启这个功能。如果之后出现问题，请重启应用。\n\n
-        开启后，Curbox 可以帮你做到这些事：\n1. 拦截应用\n2. 拦截短视频\n3. 拦截网站和关键词\n4. 专注模式\n5. 隐藏应用界面中让你分心的部分\n6. 查看你在每个应用上花了多少时间\n7. 统计你刷了多少短视频，并在悬浮窗里显示\n8. 查看你访问了哪些网站，停留了多久\n\n
-        Curbox 需要无障碍权限，这样才能知道你正在使用哪个应用、网站或界面，从而按你的设置进行拦截并记录使用数据。没有这个权限，这些功能都无法工作。\n\n
-        Curbox 会把所有数据安全地保存在你的手机上，绝不会分享或上传你的数据，你的隐私始终受到保护。
-        $CURBOX_TRIGGER$
-        \n\n
-    </string>
     <string name="admin_permission_desc">Curbox 防拆保护</string>
     <string name="close">关闭</string>
     <string name="proceed">继续</string>

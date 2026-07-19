@@ -43,6 +43,7 @@ class AppUsageTracker {
     private var sessionStartWall = 0L
     private var lastCommitElapsed = 0L
     private var screenOn = true
+    @Volatile private var trackingEnabled = true
 
     fun setup(service: BaseBlockingService) {
         this.service = service
@@ -51,9 +52,17 @@ class AppUsageTracker {
         val powerManager = service.getSystemService(Context.POWER_SERVICE) as PowerManager
         screenOn = powerManager.isInteractive
         registerScreenReceiver()
+        scope.launch {
+            service.dataStoreManager.settings.collect { settings ->
+                val enabled = settings.isAppUsageTrackingEnabled
+                trackingEnabled = enabled
+                if (!enabled) mainHandler.post { discardCurrentSession() }
+            }
+        }
     }
 
     fun onEvent(event: AccessibilityEvent?) {
+        if (!trackingEnabled) return
         if (event == null || event.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
         if (!screenOn) return
 
@@ -71,6 +80,7 @@ class AppUsageTracker {
     }
 
     private fun switchTo(packageName: String) {
+        if (!trackingEnabled) return
         endCurrentSession()
 
         val nowElapsed = SystemClock.elapsedRealtime()
@@ -90,6 +100,11 @@ class AppUsageTracker {
         stopHeartbeat()
     }
 
+    private fun discardCurrentSession() {
+        currentPackage = null
+        stopHeartbeat()
+    }
+
     private fun commit(nowElapsed: Long) {
         val packageName = currentPackage ?: return
         if (nowElapsed <= lastCommitElapsed) return
@@ -100,6 +115,7 @@ class AppUsageTracker {
 
         val segments = splitIntoHourlySegments(startWall, endWall)
         scope.launch {
+            if (!trackingEnabled) return@launch
             segments.forEach { addUsage(it.date, packageName, it.hour, it.durationMs, it.endWall) }
         }
     }
@@ -107,6 +123,7 @@ class AppUsageTracker {
     private fun recordLaunch(packageName: String, wall: Long) {
         val date = TimeTools.dayKey(LocalDate.now())
         scope.launch {
+            if (!trackingEnabled) return@launch
             val existing = dao.get(date, packageName)
             dao.upsert(
                 existing?.copy(
@@ -123,7 +140,7 @@ class AppUsageTracker {
     }
 
     private suspend fun addUsage(date: String, packageName: String, hour: Int, durationMs: Long, wall: Long) {
-        if (durationMs <= 0) return
+        if (durationMs <= 0 || !trackingEnabled) return
         val existing = dao.get(date, packageName)
         val hourly = parseHourly(existing?.hourlyUsage)
         hourly[hour] += durationMs
@@ -166,6 +183,7 @@ class AppUsageTracker {
 
     private val heartbeat = object : Runnable {
         override fun run() {
+            if (!trackingEnabled) return
             commit(SystemClock.elapsedRealtime())
             mainHandler.postDelayed(this, HEARTBEAT_MS)
         }
@@ -197,7 +215,7 @@ class AppUsageTracker {
     }
 
     private fun resumeForegroundApp() {
-        if (!screenOn || currentPackage != null) return
+        if (!trackingEnabled || !screenOn || currentPackage != null) return
         val active = try {
             service.rootInActiveWindow?.packageName?.toString()
         } catch (_: Exception) {
@@ -218,7 +236,7 @@ class AppUsageTracker {
 
     fun onDestroy() {
         stopHeartbeat()
-        val packageName = currentPackage
+        val packageName = currentPackage.takeIf { trackingEnabled }
         if (packageName != null) {
             val startWall = sessionStartWall + (lastCommitElapsed - sessionStartElapsed)
             val endWall = sessionStartWall + (SystemClock.elapsedRealtime() - sessionStartElapsed)

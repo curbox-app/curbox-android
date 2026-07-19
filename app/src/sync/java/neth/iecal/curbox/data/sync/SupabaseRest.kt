@@ -39,6 +39,8 @@ class SupabaseRest(
         val updatedAt: String,
     )
 
+    data class DeviceRow(val id: String, val platform: String, val label: String, val lastSeen: String?)
+
     private fun parseSession(body: JsonObject): Session? {
         val token = body.get("access_token")?.takeIf { !it.isJsonNull }?.asString ?: return null
         val user = body.getAsJsonObject("user")
@@ -178,6 +180,19 @@ class SupabaseRest(
             if (fcmToken != null) addProperty("fcm_token", fcmToken)
         }
         authedPost(session, "devices?on_conflict=id", "[$obj]", "resolution=merge-duplicates,return=minimal")
+    }
+
+    fun devices(session: Session): List<DeviceRow> {
+        val text = authedGet(session, "devices?user_id=eq.${session.userId}&select=id,platform,label,last_seen&order=last_seen.desc")
+        return gson.fromJson(text, com.google.gson.JsonArray::class.java).map { el ->
+            val o = el.asJsonObject
+            DeviceRow(
+                id = o.get("id").asString,
+                platform = o.get("platform")?.asString ?: "device",
+                label = o.get("label")?.takeIf { !it.isJsonNull }?.asString.orEmpty(),
+                lastSeen = o.get("last_seen")?.takeIf { !it.isJsonNull }?.asString,
+            )
+        }
     }
 
     fun clearDeviceToken(session: Session, id: String) {

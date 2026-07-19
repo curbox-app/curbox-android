@@ -162,6 +162,13 @@ class WarningConfigFragment : Fragment() {
         
         binding.typingSentenceEdit.setText(config.typingSentence)
 
+        binding.intentMinLengthSlider.value = config.minIntentLength.toFloat().coerceIn(1f, 100f)
+        binding.intentMinLengthTitle.text = resources.getQuantityString(
+            R.plurals.warning_intent_min_length,
+            binding.intentMinLengthSlider.value.toInt(),
+            binding.intentMinLengthSlider.value.toInt()
+        )
+
         binding.fixedTimeSlider.value = (config.timeInterval / 60000).toFloat().coerceIn(1f, 120f)
         binding.timingTitle.text = getString(R.string.warning_fixed_unlock_duration, binding.fixedTimeSlider.value.toInt())
 
@@ -279,6 +286,14 @@ class WarningConfigFragment : Fragment() {
             updateProceedWindowTitle(position, currentVal.toInt())
         }
 
+        binding.intentMinLengthSlider.addOnChangeListener { _, value, _ ->
+            binding.intentMinLengthTitle.text = resources.getQuantityString(
+                R.plurals.warning_intent_min_length,
+                value.toInt(),
+                value.toInt()
+            )
+        }
+
         binding.advancedSettingsHeader.setOnClickListener {
             val isCurrentlyVisible = binding.advancedSettingsContent.isVisible
             TransitionManager.beginDelayedTransition(binding.mainContentContainer, AutoTransition())
@@ -367,6 +382,7 @@ class WarningConfigFragment : Fragment() {
                 isTypingRequirementEnabled = isTypingRequirementEnabled,
                 typingSentence = binding.typingSentenceEdit.text.toString(),
                 isIntentRequirementEnabled = isIntentRequirementEnabled,
+                minIntentLength = binding.intentMinLengthSlider.value.toInt(),
                 proceedDelayInSecs = binding.proceedDelaySlider.value.toInt(),
                 vibrateAndIncBrightness = binding.switchVibrateBrightness.isChecked,
                 proceedLimitEnabled = binding.proceedLimitSwitch.isChecked,
@@ -447,6 +463,7 @@ class WarningConfigFragment : Fragment() {
             
             qrSetupContainer.visibility = if (challengeIndex == 1 && secondaryIndex == 0) View.VISIBLE else View.GONE
             typingSetupContainer.visibility = if (challengeIndex == 1 && secondaryIndex == 1) View.VISIBLE else View.GONE
+            intentSetupContainer.visibility = if (challengeIndex == 1 && secondaryIndex == 2) View.VISIBLE else View.GONE
         }
     }
     

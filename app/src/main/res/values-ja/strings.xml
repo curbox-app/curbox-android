@@ -7,14 +7,6 @@
     <string name="warning_message">警告メッセージ</string>
     <string name="minutes">分</string>
     <string name="app_icon">アプリアイコン</string>
-    <string name="accessibility_permission_app_blocker">#CURBOX_TRIGGER#
-        この機能を使うには「他のアプリの上に表示」の権限が必要です。先にこの権限をオンにしてから、この機能をオンにしてください。何か動かなくなったら、アプリを再起動してください。\n\n
-        これをオンにすると、Curboxは次のことができるようになります。\n1. アプリをブロック\n2. ショート動画をブロック\n3. ウェブサイトとキーワードをブロック\n4. フォーカスモード\n5. 気が散るアプリ画面の一部を隠す\n6. 各アプリで過ごした時間を確認\n7. 見たショート動画の本数を数え、フローティング表示で表示\n8. 訪れたウェブサイトとその滞在時間を確認\n\n
-        Curboxがどのアプリ、ウェブサイト、画面を使っているかを知るには、ユーザー補助の権限が必要です。それによって、あなたの設定どおりにブロックし、利用状況を記録できます。これがないと、これらの機能は一切動きません。\n\n
-        Curboxはすべてのデータをあなたのスマートフォン内だけに安全に保存します。データを共有したり送信したりすることは決してないので、プライバシーは常に守られます。
-        $CURBOX_TRIGGER$
-        \n\n
-    </string>
     <string name="admin_permission_desc">Curboxの改ざん防止保護</string>
     <string name="close">閉じる</string>
     <string name="proceed">続ける</string>

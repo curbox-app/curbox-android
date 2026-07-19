@@ -7,14 +7,6 @@
     <string name="warning_message">Mensagem de aviso</string>
     <string name="minutes">minutos</string>
     <string name="app_icon">Ícone do app</string>
-    <string name="accessibility_permission_app_blocker">#CURBOX_TRIGGER#
-        Esse recurso precisa da permissão Exibir sobre outros apps para funcionar. Ative essa permissão primeiro e depois ative esse recurso. Se algo parar de funcionar, reinicie o app.\n\n
-        Ao ativar isso, o Curbox poderá fazer o seguinte por você:\n1. Bloquear apps\n2. Bloquear vídeos curtos\n3. Bloquear sites e palavras-chave\n4. Modo Foco\n5. Ocultar partes da tela de um app que te distraem\n6. Ver quanto tempo você passa em cada app\n7. Contar quantos vídeos curtos você assiste, e mostrar essa contagem em uma janela flutuante\n8. Ver quais sites você visita e por quanto tempo\n\n
-        O Curbox precisa da permissão de acessibilidade para saber em qual app, site ou tela você está, e assim poder bloquear conforme suas configurações e guardar suas estatísticas de uso. Sem isso, nada disso funciona.\n\n
-        O Curbox guarda tudo com segurança no seu celular. Ele nunca compartilha nem envia seus dados, então sua privacidade está sempre protegida.
-        $CURBOX_TRIGGER$
-        \n\n
-    </string>
     <string name="admin_permission_desc">Proteção contra desinstalação do Curbox</string>
     <string name="close">Fechar</string>
     <string name="proceed">Continuar</string>

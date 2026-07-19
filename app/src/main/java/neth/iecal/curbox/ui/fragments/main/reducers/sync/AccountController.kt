@@ -2,6 +2,8 @@ package neth.iecal.curbox.ui.fragments.main.reducers.sync
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.CheckBox
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,6 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.materialswitch.MaterialSwitch
 import com.google.zxing.BarcodeFormat
 import com.journeyapps.barcodescanner.BarcodeEncoder
 import kotlinx.coroutines.CancellationException
@@ -20,6 +23,7 @@ import neth.iecal.curbox.R
 import neth.iecal.curbox.data.sync.SyncBillingStatus
 import neth.iecal.curbox.data.sync.SyncGateway
 import neth.iecal.curbox.data.sync.SyncStatus
+import neth.iecal.curbox.data.sync.SyncPreferences
 
 /**
  * Drives the whole account experience over a view_account layout: sign in, sign
@@ -58,6 +62,12 @@ class AccountController(
     private val newPassword = root.findViewById<TextInputEditText>(R.id.input_new_password)
     private val passphrase = root.findViewById<TextInputEditText>(R.id.input_passphrase)
     private val pairInput = root.findViewById<TextInputEditText>(R.id.input_pair)
+    private val deviceName = root.findViewById<TextInputEditText>(R.id.input_device_name)
+    private val syncUsage = root.findViewById<MaterialSwitch>(R.id.switch_sync_usage)
+    private val syncConfigs = root.findViewById<MaterialSwitch>(R.id.switch_sync_configs)
+    private val deviceFilterBlock = root.findViewById<View>(R.id.device_filter_block)
+    private val deviceFilterList = root.findViewById<LinearLayout>(R.id.device_filter_list)
+    private var applyingControls = false
 
     private val sectionPaywall = root.findViewById<View>(R.id.section_paywall)
     private val paywallPrice = root.findViewById<TextView>(R.id.text_paywall_price)
@@ -131,6 +141,17 @@ class AccountController(
         }
         root.findViewById<View>(R.id.btn_force_sync).setOnClickListener { btn ->
             submit(toast = fragment.getString(R.string.account_msg_syncing), button = btn) { provider.pushNow(); provider.refresh() }
+        }
+        root.findViewById<View>(R.id.btn_save_device_name).setOnClickListener { btn ->
+            submit(toast = fragment.getString(R.string.account_save_device_name), button = btn) {
+                provider.setDeviceName(text(deviceName))
+            }
+        }
+        syncUsage.setOnCheckedChangeListener { _, checked ->
+            if (!applyingControls) savePreferences(last.preferences.copy(usageStats = checked))
+        }
+        syncConfigs.setOnCheckedChangeListener { _, checked ->
+            if (!applyingControls) savePreferences(last.preferences.copy(reducerConfigs = checked))
         }
         root.findViewById<View>(R.id.btn_signout).setOnClickListener { btn -> submit(button = btn) { provider.signOut() } }
 
@@ -212,6 +233,8 @@ class AccountController(
             passphraseBtn.text = fragment.getString(if (last.hasVault) R.string.account_unlock_data else R.string.account_turn_on_sync)
         }
 
+        if (unlocked) applySyncControls()
+
         title.text = when {
             unlocked -> fragment.getString(R.string.account_title_sync_on)
             signedIn -> fragment.getString(if (last.hasVault) R.string.account_unlock_data else R.string.account_make_secret_phrase)
@@ -236,6 +259,46 @@ class AccountController(
         val msg = last.error
         message.visibility = if (msg != null) View.VISIBLE else View.GONE
         if (msg != null) message.text = msg
+    }
+
+    private fun applySyncControls() {
+        applyingControls = true
+        val current = last.devices.firstOrNull { it.current }
+        if (!deviceName.hasFocus() && current != null && text(deviceName) != current.label) {
+            deviceName.setText(current.label)
+        }
+        syncUsage.isChecked = last.preferences.usageStats
+        syncConfigs.isChecked = last.preferences.reducerConfigs
+        deviceFilterBlock.visibility = vis(last.preferences.usageStats && last.devices.any { !it.current })
+        deviceFilterList.removeAllViews()
+
+        val ctx = fragment.context
+        if (ctx != null && deviceFilterBlock.visibility == View.VISIBLE) {
+            deviceFilterList.addView(CheckBox(ctx).apply {
+                text = fragment.getString(R.string.account_all_devices)
+                isChecked = last.preferences.usageDeviceIds.isEmpty()
+                setOnCheckedChangeListener { _, checked ->
+                    if (checked && !applyingControls) savePreferences(last.preferences.copy(usageDeviceIds = emptySet()))
+                }
+            })
+            last.devices.filterNot { it.current }.forEach { device ->
+                deviceFilterList.addView(CheckBox(ctx).apply {
+                    text = "${device.label} · ${device.platform}"
+                    isChecked = device.id in last.preferences.usageDeviceIds
+                    setOnCheckedChangeListener { _, checked ->
+                        if (applyingControls) return@setOnCheckedChangeListener
+                        val ids = last.preferences.usageDeviceIds.toMutableSet()
+                        if (checked) ids.add(device.id) else ids.remove(device.id)
+                        savePreferences(last.preferences.copy(usageDeviceIds = ids))
+                    }
+                })
+            }
+        }
+        applyingControls = false
+    }
+
+    private fun savePreferences(preferences: SyncPreferences) = submit {
+        provider.setPreferences(preferences)
     }
 
     private fun vis(show: Boolean) = if (show) View.VISIBLE else View.GONE

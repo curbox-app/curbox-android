@@ -16,6 +16,8 @@ data class Settings(
     val isReelCounterOn: Boolean = true,
     val grayscaleGroups: List<GrayscaleGroup> = listOf(),
     val usageTrackerIgnoredApps: List<String> = listOf(),
+    val isAppUsageTrackingEnabled: Boolean = true,
+    val isWebsiteUsageTrackingEnabled: Boolean = true,
     val mindfulMessageConfig: MindfulMessageConfig = MindfulMessageConfig(),
     val uiHiderConfig: UiHiderConfig = UiHiderConfig(),
     val reelCounterOverlayConfig: ReelCounterOverlayConfig = ReelCounterOverlayConfig(),

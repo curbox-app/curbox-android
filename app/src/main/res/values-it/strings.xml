@@ -8,14 +8,6 @@
     <string name="minutes">minuti</string>
     <string name="app_icon">app_icon</string>
 
-    <string name="accessibility_permission_app_blocker">
-        Abilitando questa opzione, sbloccherai le seguenti funzionalità in Curbox:\n1. Blocco app\n2. Modalità Focus \n\n
-        Curbox necessita dell\'accesso ai dati di accessibilità per sapere quando apri una funzionalità specifica all\'interno di un\'app, come un feed social o un gioco.
-        Questo permette a Curbox di bloccare tali funzionalità in base alle tue preferenze, aiutandoti a mantenere la concentrazione e ridurre le distrazioni digitali.\n\n
-        Stai tranquillo: tutti i dati di accessibilità rimangono al sicuro sul tuo dispositivo — non condividiamo né trasmettiamo mai i tuoi dati, garantendo sempre la tua privacy.
-        \n\n
-    </string>
-
     <string name="admin_permission_desc">Protezione anti-disinstallazione di Curbox</string>
     <string name="close">Chiudi</string>
     <string name="proceed">Continua</string>

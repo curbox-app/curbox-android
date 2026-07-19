@@ -20,10 +20,15 @@ val URL_BAR_ID_LIST = mapOf(
         displayUrlBarId = "com.vivaldi.browser:id/url_bar",
     ),
 
+    
+    "org.mozilla.focus" to BrowserUrlBarInfo(
+        displayUrlBarId = "org.mozilla.focus:id/mozac_browser_toolbar_url_view",
+    ),
 
     "org.mozilla.firefox" to BrowserUrlBarInfo(
         displayUrlBarId = "ADDRESSBAR_URL_BOX",
     ),
+
     "org.mozilla.fennec_fdroid" to BrowserUrlBarInfo(
         displayUrlBarId = "ADDRESSBAR_URL_BOX",
     ),

@@ -1,0 +1,9 @@
+- fix website blocker not working properly
+- make both website usage tracker and app usage tracker turnoffable
+- remove pm suspend from focus mode (it was buggy asf)
+- add support for firefox focus browser @arlohb
+- Show remaining opens in warning overlay @binayshaw7777
+- now warning screen unlock duration is applied to entire app/website group instead of one
+- add timer notification for keyword blocker
+- Add minimum character setting for intent unlock @ompug
+- Label the only warning screen button Okay when proceed is hidden @hdodenhof

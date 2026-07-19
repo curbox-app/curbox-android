@@ -44,6 +44,22 @@ class SecureKeyStore(context: Context) {
             prefs.edit().putString("device_id", it).apply()
         }
 
+    var deviceName: String
+        get() = prefs.getString("device_name", "Android")!!
+        set(v) = prefs.edit().putString("device_name", v).apply()
+
+    var syncUsageStats: Boolean
+        get() = prefs.getBoolean("sync_usage_stats", true)
+        set(v) = prefs.edit().putBoolean("sync_usage_stats", v).apply()
+
+    var syncReducerConfigs: Boolean
+        get() = prefs.getBoolean("sync_reducer_configs", true)
+        set(v) = prefs.edit().putBoolean("sync_reducer_configs", v).apply()
+
+    var usageDeviceIds: Set<String>
+        get() = prefs.getStringSet("usage_device_ids", emptySet())?.toSet().orEmpty()
+        set(v) = prefs.edit().putStringSet("usage_device_ids", v).apply()
+
     fun clear() {
         prefs.edit().remove("dek").remove("access_token").remove("refresh_token").remove("cursor").remove("fcm_token").apply()
     }

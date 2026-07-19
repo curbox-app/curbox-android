@@ -7,13 +7,11 @@
     <string name="warning_message">Warning message</string>
     <string name="minutes">minutes</string>
     <string name="app_icon">app_icon</string>
-    <string name="accessibility_permission_app_blocker">
-        #CURBOX_TRIGGER#
+    <string name="accessibility_permission_app_blocker" translatable="false">
         This feature needs the Display over other apps permission to work. Please turn that on first, then turn this on. If something stops working, restart the app.\n\n
         Turning this on lets Curbox do these things for you:\n1. Block apps\n2. Block short form content\n3. Block websites and keywords\n4. Focus Mode\n5. Hide parts of an app\'s screen that distract you\n6. See how long you spend in each app\n7. Count how much short form content you scroll, and show the count in a floating overlay\n8. See which websites you visit and for how long\n\n
         Curbox needs accessibility access to see which app, website, or screen you are on, so it can block it the way you set and keep your usage stats. Without this, none of it can work.\n\n
-        Curbox keeps everything safely on your phone. It never shares or sends your data, so your privacy is always safe.
-        $CURBOX_TRIGGER$
+        Curbox never shares anything without your permission.
         \n\n
     </string>
     <string name="admin_permission_desc">Curbox Tamper Protection</string>
@@ -346,7 +344,7 @@
     <string name="pairing_code_warning_message">This code holds the secret key that unlocks all your synced data. Anyone who snaps a photo of it can read your data. Please do not screenshot or share it. The code hides itself after one minute.</string>
     <string name="pairing_code_show">Show code</string>
     <string name="dnd_access_dialog_title">Do Not Disturb</string>
-    <string name="dnd_access_dialog_message">Curbox needs this to turn on Do Not Disturb for you, so it can mute calls and alerts while you focus. Without it, Curbox cannot silence distractions on its own.\n\n🔒 100% Private: Curbox does not collect, send, or store any of your data on a server. Everything stays on your phone.\n\n🛡️ Curbox respects your peace: It uses this only to mute distractions when you ask it to.</string>
+    <string name="dnd_access_dialog_message">Curbox needs this to turn on Do Not Disturb for you, so it can mute calls and alerts while you focus. Without it, Curbox cannot silence distractions on its own.\n\n🔒 Curbox does not collect, send, or store any of your data on a server without your permission.\n\n🛡️ Curbox respects your peace: It uses this only to mute distractions when you ask it to.</string>
     <string name="picker_dialog_block_element">Block This Element</string>
     <string name="picker_dialog_generated_rule">Generated Rule:</string>
     <string name="picker_dialog_rule_desc">Auto-generated from your selection. Toggle chips below to customize.</string>
@@ -400,6 +398,16 @@
     <string name="label_configured_qr">Configured QR/Barcodes:</string>
     <string name="label_typing_auth">Typing Authentication</string>
     <string name="label_typing_desc">Enter the sentence the user must type exactly to bypass the block:</string>
+    <string name="label_intent_auth">Intent unlock length</string>
+    <string name="label_intent_min_desc">I choose how many characters someone must write before they can continue.</string>
+    <plurals name="warning_intent_min_length">
+        <item quantity="one">Minimum character: %1$d</item>
+        <item quantity="other">Minimum characters: %1$d</item>
+    </plurals>
+    <plurals name="warning_intent_chars_needed">
+        <item quantity="one">Write at least %1$d character (%2$d more to go)</item>
+        <item quantity="other">Write at least %1$d characters (%2$d more to go)</item>
+    </plurals>
     <string name="label_limit_unlock_frequency">Limit unlock frequency</string>
     <string name="label_allowed_proceeds">Allowed proceeds: 3</string>
     <string name="label_time_window">Time window: 60 mins</string>
@@ -1370,6 +1378,14 @@
     <string name="account_pairing_warning">Anyone who sees this code can read your data, so only show it to your own devices.</string>
     <string name="account_sync_now">Sync now</string>
     <string name="account_sign_out">Sign out of this device</string>
+    <string name="account_device_name">This device</string>
+    <string name="account_save_device_name">Save name</string>
+    <string name="account_what_syncs">WHAT SYNCS</string>
+    <string name="account_sync_usage_stats">Usage stats</string>
+    <string name="account_sync_reducer_configs">Reducer configs</string>
+    <string name="account_usage_shown_from">USAGE SHOWN FROM</string>
+    <string name="account_usage_filter_desc">Choose which other devices contribute to combined usage.</string>
+    <string name="account_all_devices">All devices</string>
     <string name="account_create_account_action">Create account</string>
     <string name="account_already_have_account">"Already have an account? "</string>
     <string name="account_unlock_data">Unlock my data</string>
@@ -1421,7 +1437,7 @@
     <string name="onboarding_perm_accessibility_rationale">Curbox needs this to notice when you open a blocked app and show the blocker screen. It also uses it to count your screen time and how many reels you scroll. Without it, Curbox cannot work at all.</string>
     <string name="onboarding_perm_accessibility_opensource">🛡️ Transparency for Deep Access: This is a powerful permission, which is why being open source matters so much. You do not have to take Curbox at its word. The global community has reviewed its public code and confirmed it only blocks apps and tracks usage.</string>
     <string name="onboarding_read_documentation">Read Documentation</string>
-    <string name="onboarding_privacy_note">"\n\n🔒 100% Private: Curbox does not collect, send, or store any of your data on a server. Everything stays on your phone.\n\n"</string>
+    <string name="onboarding_privacy_note">"\n\n🔒 Curbox does not collect, send, or store any of your data on a server without your permission. Everything stays on your phone.\n\n"</string>
     <string name="onboarding_granting_permissions">Granting Permissions…</string>
     <string name="onboarding_permissions_granted">Permissions Granted!</string>
     <string name="onboarding_error_tap_retry">Error, Tap to Retry</string>
@@ -1462,6 +1478,7 @@
     <string name="warning_cancelled">Cancelled</string>
     <string name="warning_invalid_qr">Invalid QR Code - Pattern does not match</string>
     <string name="warning_proceed_limit_reached">Proceed limit of %1$d per %2$d minutes has been reached. Try again in %3$d minutes.</string>
+    <string name="warning_proceeds_left">You have %1$d of %2$d opens left</string>
     <string name="warning_typing_quote">\"%1$s\"</string>
     <string name="warning_scan_qr_code">Scan QR Code</string>
 
@@ -1525,6 +1542,11 @@
     <!-- Service notifications -->
     <string name="notification_remaining_usage_lockdown">Remaining usage before lockdown</string>
     <string name="notification_remaining_usage_reels_lockdown">Remaining usage before reels lockdown</string>
+    <string name="usage_tracking_settings">Usage tracking</string>
+    <string name="usage_tracking_settings_description">Choose which usage data the accessibility service saves on this device.</string>
+    <string name="app_usage_tracking">App Usage Tracking</string>
+    <string name="website_usage_tracking">Website Usage Tracking</string>
+    <string name="usage_tracking_disabled_warning">Warning: Usage Based blocking options will not work for a tracking type while it is turned off.</string>
 
     <!-- Units -->
     <string name="unit_minutes">Minutes</string>

@@ -10,7 +10,7 @@ object AppSuspendHelper {
 
     // Todo: Sometimes user start focus mode, apps get suspended but in midst of that, they turn off shizuku. This creates a forever suspend bug
     fun suspendApps(packages: List<String>) {
-        executePmCommand(packages, "suspend")
+//        executePmCommand(packages, "suspend")
     }
 
     fun unsuspendApps(packages: List<String>) {

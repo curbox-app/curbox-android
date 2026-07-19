@@ -10,7 +10,10 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
 
-class TimerNotification(private val context: Context) {
+class TimerNotification(
+    private val context: Context,
+    private val notificationId: Int = 1001
+) {
 
     enum class TimerState { IDLE, RUNNING, FINISHED }
 
@@ -23,7 +26,6 @@ class TimerNotification(private val context: Context) {
     companion object {
         private const val TAG = "NotificationTimerMgr"
         private const val CHANNEL_ID = "TimerNotificationChannel"
-        private const val NOTIFICATION_ID = 1001
     }
 
     private val notificationManager: NotificationManager by lazy {
@@ -156,14 +158,14 @@ class TimerNotification(private val context: Context) {
                 .setContentInfo(timeString)
                 .build()
 
-            notificationManager.notify(NOTIFICATION_ID, notification)
+            notificationManager.notify(notificationId, notification)
         }.onFailure { exception ->
             Log.e(TAG, "Failed to show notification: ${exception.message}", exception)
         }
     }
 
     private fun dismissNotification() {
-        runCatching { notificationManager.cancel(NOTIFICATION_ID) }
+        runCatching { notificationManager.cancel(notificationId) }
     }
 
     private fun createNotificationChannel() {

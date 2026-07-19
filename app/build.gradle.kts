@@ -42,7 +42,7 @@ androidComponents {
 
 android {
     namespace = "neth.iecal.curbox"
-    compileSdk = 34
+    compileSdk = 35
     flavorDimensions += "version"
 
     lint {
@@ -53,9 +53,9 @@ android {
     defaultConfig {
         applicationId = "neth.iecal.curbox"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 2
-        versionName = "2"
+        targetSdk = 35
+        versionCode = 3
+        versionName = "3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         resValue("string", "app_name", "Curbox")
 

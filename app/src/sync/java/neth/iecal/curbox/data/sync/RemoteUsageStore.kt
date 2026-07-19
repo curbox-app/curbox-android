@@ -55,10 +55,11 @@ class RemoteUsageStore(context: Context) {
         runCatching { if (file.exists()) file.delete() }
     }
 
-    fun appTotals(date: String): Map<String, Long> {
+    fun appTotals(date: String, deviceIds: Set<String> = emptySet()): Map<String, Long> {
         val out = HashMap<String, Long>()
         for ((key, json) in records) {
             if (!key.startsWith("usage_app/")) continue
+            if (deviceIds.isNotEmpty() && deviceIds.none { key.startsWith("usage_app/$it:") }) continue
             val o = JSONObject(json)
             if (o.optString("date") != date) continue
             val apps = o.optJSONObject("apps") ?: continue
@@ -72,10 +73,11 @@ class RemoteUsageStore(context: Context) {
         return out
     }
 
-    fun websiteTotals(date: String): Map<String, Long> {
+    fun websiteTotals(date: String, deviceIds: Set<String> = emptySet()): Map<String, Long> {
         val out = HashMap<String, Long>()
         for ((key, json) in records) {
             if (!key.startsWith("usage_web/")) continue
+            if (deviceIds.isNotEmpty() && deviceIds.none { key.startsWith("usage_web/$it:") }) continue
             val o = JSONObject(json)
             if (o.optString("date") != date) continue
             val domains = o.optJSONObject("domains") ?: continue

@@ -19,7 +19,6 @@ import neth.iecal.curbox.hardcoded.URL_BAR_ID_LIST
 import neth.iecal.curbox.services.BaseBlockingService
 import neth.iecal.curbox.utils.AccessibilityHelper
 import neth.iecal.curbox.utils.TimeTools
-import java.util.regex.Pattern
 import kotlin.text.endsWith
 import kotlin.text.substring
 
@@ -46,6 +45,7 @@ class WebsiteUsageTracker {
     private var domainStartTimeMs: Long = 0L
 
     private var recheckJob: Job? = null
+    @Volatile private var trackingEnabled = true
 
     private val heartbeat = object : Runnable {
         override fun run() {
@@ -65,6 +65,9 @@ class WebsiteUsageTracker {
     private fun startObservingRecheckTime() {
         scope.launch {
             service.dataStoreManager.settings.collect { settings ->
+                val enabled = settings.isWebsiteUsageTrackingEnabled
+                trackingEnabled = enabled
+                if (!enabled) mainHandler.post { discardSession() }
                 val nextRecheck = settings.nextWebsiteRecheckTime
                 if (nextRecheck > System.currentTimeMillis()) {
                     scheduleRecheck(nextRecheck)
@@ -88,23 +91,35 @@ class WebsiteUsageTracker {
     private fun filterOutUrlFromPlainText(inputText: String?): String? {
         if (inputText.isNullOrBlank()) return null
 
-        val urlRegex = """(?:https?://|www\.)?[a-zA-Z0-9][a-zA-Z0-9\-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}(?:[/\?#][a-zA-Z0-9\-._~:/?#\[\]@!${'$'}&'()*+,;=%]*)?"""
-        val pattern = Pattern.compile(urlRegex, Pattern.CASE_INSENSITIVE)
-        val matcher = pattern.matcher(inputText)
+        Log.d("website", "filtering url $inputText")
+        val urlRegex = Regex(
+            pattern = """(?:https?://|www\.)?[^\s<>\"']+""",
+            option = RegexOption.IGNORE_CASE
+        )
 
-        if (matcher.find()) {
-            var cleanUrl = matcher.group(0) ?: return null
+        for (match in urlRegex.findAll(inputText)) {
+            val cleanUrl = match.value
+                .trimStart('(', '[', '{')
+                .trimEnd('.', ',', ')', ']', '}', '!', ';', ':')
+            val uriText = if (cleanUrl.startsWith("http://", ignoreCase = true) ||
+                cleanUrl.startsWith("https://", ignoreCase = true)
+            ) cleanUrl else "https://$cleanUrl"
 
-            // Strip trailing punctuation unlikely to be part of the URL
-            cleanUrl = cleanUrl.trimEnd('.', ',', ')', ']', '\'', '"', '>')
+            val uri = runCatching { java.net.URI(uriText) }.getOrNull() ?: continue
+            val host = uri.host ?: continue
+            if (!host.contains('.')) continue
 
-            return cleanUrl
+            val normalizedHost = host.removePrefix("www.")
+            val path = uri.rawPath.orEmpty().let { if (it == "/") "" else it }
+            val query = uri.rawQuery?.let { "?$it" }.orEmpty()
+            val fragment = uri.rawFragment?.let { "#$it" }.orEmpty()
+            return "$normalizedHost$path$query$fragment"
         }
 
         return null
     }
     fun onEvent(event: AccessibilityEvent?) {
-        if (event == null) return
+        if (event == null || !trackingEnabled) return
         
         val packageName = event.packageName?.toString() ?: return
         
@@ -174,17 +189,13 @@ class WebsiteUsageTracker {
             val uri = java.net.URI(url)
             val domain = (uri.host ?: urlText).lowercase().removePrefix("www.")
 
-            // Keep only the first path segment so deep links and query changes
-            // within the same section collapse to one stable identifier
-            // (e.g. "youtube.com/shorts/abc?v=1" -> "youtube.com/shorts").
-            // Firefox shows the full URL in its address bar, so without this the
-            // identifier would change constantly and reset the usage timer.
-            val firstSegment = uri.path
-                ?.split('/')
-                ?.firstOrNull { it.isNotEmpty() }
-                ?.let { "/$it" }
-                .orEmpty()
-            val identifier = if (firstSegment.isEmpty()) domain else "$domain$firstSegment"
+            // Keep the complete URL identifier because keyword rules can target
+            // nested paths, query values, or fragments. Usage limits aggregate
+            // every matching identifier later, so URL changes remain combined.
+            val path = uri.rawPath.orEmpty().let { if (it == "/") "" else it }
+            val query = uri.rawQuery?.let { "?$it" }.orEmpty()
+            val fragment = uri.rawFragment?.let { "#$it" }.orEmpty()
+            val identifier = "$domain$path$query$fragment"
 
             SiteInfo(domain, identifier)
         } catch (e: Exception) {
@@ -194,6 +205,7 @@ class WebsiteUsageTracker {
 
 
     private fun saveInitialSession() {
+        if (!trackingEnabled) return
         val domain = currentDomain
         val identifier = currentUrlIdentifier
         val packageName = currentPackage
@@ -202,6 +214,7 @@ class WebsiteUsageTracker {
             val date = TimeTools.getCurrentDate()
             val wallNow = System.currentTimeMillis()
             scope.launch {
+                if (!trackingEnabled) return@launch
                 try {
                     // Make the row visible immediately without ever touching
                     // totalTime, so an in flight time increment is never clobbered.
@@ -224,6 +237,7 @@ class WebsiteUsageTracker {
     }
 
     private fun saveSession() {
+        if (!trackingEnabled) return
         val domain = currentDomain
         val identifier = currentUrlIdentifier
         val packageName = currentPackage
@@ -245,6 +259,7 @@ class WebsiteUsageTracker {
         val date = TimeTools.getCurrentDate()
         val wallNow = System.currentTimeMillis()
         scope.launch {
+            if (!trackingEnabled) return@launch
             try {
                 val entity = WebsiteStatsEntity(
                     date = date,
@@ -269,5 +284,12 @@ class WebsiteUsageTracker {
     fun onDestroy() {
         recheckJob?.cancel()
         saveSession()
+    }
+
+    private fun discardSession() {
+        currentPackage = null
+        currentDomain = null
+        currentUrlIdentifier = null
+        domainStartTimeMs = 0L
     }
 }

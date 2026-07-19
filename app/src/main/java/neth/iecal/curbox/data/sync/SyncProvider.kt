@@ -49,6 +49,8 @@ interface SyncProvider {
     suspend fun pairWithCode(payload: String)
     suspend fun refresh()
     suspend fun pushNow()
+    suspend fun setDeviceName(name: String)
+    suspend fun setPreferences(preferences: SyncPreferences)
 
     /** Website usage synced from other devices (e.g. the browser extension), domain to milliseconds, for an ISO date. */
     suspend fun remoteWebsiteUsage(dateIso: String): Map<String, Long>
@@ -71,6 +73,23 @@ data class SyncStatus(
     // Set after a sign up (or a sign in for an unconfirmed account) so the UI can
     // ask for the emailed code.
     val pendingEmail: String? = null,
+    val devices: List<SyncDevice> = emptyList(),
+    val preferences: SyncPreferences = SyncPreferences(),
+)
+
+data class SyncDevice(
+    val id: String,
+    val platform: String,
+    val label: String,
+    val lastSeen: String?,
+    val current: Boolean,
+)
+
+data class SyncPreferences(
+    val usageStats: Boolean = true,
+    val reducerConfigs: Boolean = true,
+    /** Empty means every other device, matching desktop and extension. */
+    val usageDeviceIds: Set<String> = emptySet(),
 )
 
 /** Used by the F-Droid flavor. */
@@ -92,6 +111,8 @@ object NoopSyncProvider : SyncProvider {
     override suspend fun pairWithCode(payload: String) = unsupported()
     override suspend fun refresh() {}
     override suspend fun pushNow() {}
+    override suspend fun setDeviceName(name: String) = unsupported()
+    override suspend fun setPreferences(preferences: SyncPreferences) = unsupported()
     override suspend fun remoteWebsiteUsage(dateIso: String): Map<String, Long> = emptyMap()
     override suspend fun remoteAppUsage(dateIso: String): Map<String, Long> = emptyMap()
 
