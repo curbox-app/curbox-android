@@ -1447,7 +1447,7 @@
     <string name="warning_fixed_unlock_duration_lower">Fixed unlock duration: %1$d mins</string>
     <string name="warning_wait_before_unlock">Wait before unlocking: %1$ds</string>
     <string name="warning_allowed_proceeds">Allowed proceeds: %1$d</string>
-    <string name="warning_time_window">Time window: %1$d mins</string>
+    <string name="warning_time_window">Time window: %1$d %2$s</string>
     <string name="warning_qr_generated_title">QR/Barcode Generated</string>
     <string name="warning_qr_generated_message">Please save or print this QR/Barcode. You will need it to unlock.</string>
     <string name="warning_save_to_gallery">Save to Gallery</string>
@@ -1525,4 +1525,9 @@
     <!-- Service notifications -->
     <string name="notification_remaining_usage_lockdown">Remaining usage before lockdown</string>
     <string name="notification_remaining_usage_reels_lockdown">Remaining usage before reels lockdown</string>
+
+    <!-- Units -->
+    <string name="unit_minutes">Minutes</string>
+    <string name="unit_hours">Hours</string>
+    <string name="unit_days">Days</string>
 </resources>

@@ -695,7 +695,7 @@
     <string name="warning_fixed_unlock_duration_lower">固定解锁时长：%1$d分钟</string>
     <string name="warning_wait_before_unlock">解锁前等待：%1$d秒</string>
     <string name="warning_allowed_proceeds">允许继续次数：%1$d</string>
-    <string name="warning_time_window">时间窗口：%1$d分钟</string>
+    <string name="warning_time_window">时间窗口：%1$d%2$s</string>
     <string name="warning_qr_generated_title">二维码/条形码已生成</string>
     <string name="warning_qr_generated_message">请保存或打印这个二维码/条形码，解锁时会用到它。</string>
     <string name="warning_save_to_gallery">保存到相册</string>
@@ -765,4 +765,9 @@
     <plurals name="anti_uninstall_timed_confirm">
         <item quantity="other">保护将在 %1$d 天后自动关闭。一旦开始等待，就无法停止。</item>
     </plurals>
+
+    <!-- Units -->
+    <string name="unit_minutes">分钟</string>
+    <string name="unit_hours">小时</string>
+    <string name="unit_days">天</string>
 </resources>

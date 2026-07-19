@@ -695,7 +695,7 @@
     <string name="warning_fixed_unlock_duration_lower">مدة إلغاء القفل الثابتة: %1$d دقيقة</string>
     <string name="warning_wait_before_unlock">الانتظار قبل إلغاء القفل: %1$d ثانية</string>
     <string name="warning_allowed_proceeds">مرات المتابعة المسموحة: %1$d</string>
-    <string name="warning_time_window">النافذة الزمنية: %1$d دقيقة</string>
+    <string name="warning_time_window">النافذة الزمنية: %1$d %2$s</string>
     <string name="warning_qr_generated_title">تم إنشاء رمز الاستجابة السريعة/الباركود</string>
     <string name="warning_qr_generated_message">يُرجى حفظ هذا الرمز أو طباعته. ستحتاج إليه لإلغاء القفل.</string>
     <string name="warning_save_to_gallery">حفظ في المعرض</string>
@@ -773,4 +773,9 @@
         <item quantity="many">ستُغلق الحماية تلقائيًا خلال %1$d يومًا. بمجرد بدء الانتظار، لا يمكن إيقافه.</item>
         <item quantity="other">ستُغلق الحماية تلقائيًا خلال %1$d يوم. بمجرد بدء الانتظار، لا يمكن إيقافه.</item>
     </plurals>
+
+    <!-- Units -->
+    <string name="unit_minutes">دقائق</string>
+    <string name="unit_hours">ساعات</string>
+    <string name="unit_days">أيام</string>
 </resources>

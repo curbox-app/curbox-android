@@ -695,7 +695,7 @@
     <string name="warning_fixed_unlock_duration_lower">Duração fixa de desbloqueio: %1$d min</string>
     <string name="warning_wait_before_unlock">Espera antes de desbloquear: %1$d s</string>
     <string name="warning_allowed_proceeds">Continuações permitidas: %1$d</string>
-    <string name="warning_time_window">Janela de tempo: %1$d min</string>
+    <string name="warning_time_window">Janela de tempo: %1$d %2$s</string>
     <string name="warning_qr_generated_title">QR code/código de barras gerado</string>
     <string name="warning_qr_generated_message">Salve ou imprima esse QR code/código de barras. Você vai precisar dele para desbloquear.</string>
     <string name="warning_save_to_gallery">Salvar na galeria</string>
@@ -767,4 +767,9 @@
         <item quantity="one">A proteção vai se desligar sozinha em %1$d dia. Assim que a espera começar, ela não pode ser interrompida.</item>
         <item quantity="other">A proteção vai se desligar sozinha em %1$d dias. Assim que a espera começar, ela não pode ser interrompida.</item>
     </plurals>
+
+    <!-- Units -->
+    <string name="unit_minutes">Minutos</string>
+    <string name="unit_hours">Horas</string>
+    <string name="unit_days">Dias</string>
 </resources>

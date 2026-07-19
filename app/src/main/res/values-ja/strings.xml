@@ -695,7 +695,7 @@
     <string name="warning_fixed_unlock_duration_lower">固定のロック解除時間：%1$d分</string>
     <string name="warning_wait_before_unlock">ロック解除前の待機時間：%1$d秒</string>
     <string name="warning_allowed_proceeds">許可される継続回数：%1$d</string>
-    <string name="warning_time_window">時間枠：%1$d分</string>
+    <string name="warning_time_window">時間枠：%1$d%2$s</string>
     <string name="warning_qr_generated_title">QRコード/バーコードを生成しました</string>
     <string name="warning_qr_generated_message">このQRコード/バーコードを保存または印刷してください。ロック解除に必要になります。</string>
     <string name="warning_save_to_gallery">ギャラリーに保存</string>
@@ -765,4 +765,9 @@
     <plurals name="anti_uninstall_timed_confirm">
         <item quantity="other">保護は%1$d日後に自動的にオフになります。待機が始まると、止めることはできません。</item>
     </plurals>
+
+    <!-- Units -->
+    <string name="unit_minutes">分</string>
+    <string name="unit_hours">時間</string>
+    <string name="unit_days">日</string>
 </resources>

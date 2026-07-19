@@ -174,8 +174,25 @@ class WarningConfigFragment : Fragment() {
         binding.allowedProceedsSlider.value = config.allowedProceeds.toFloat().coerceIn(1f, 20f)
         binding.allowedProceedsTitle.text = getString(R.string.warning_allowed_proceeds, binding.allowedProceedsSlider.value.toInt())
 
-        binding.proceedWindowSlider.value = config.proceedsTimeWindowMn.toFloat().coerceIn(1f, 240f)
-        binding.proceedWindowTitle.text = getString(R.string.warning_time_window, binding.proceedWindowSlider.value.toInt())
+        val unitOptions = listOf(
+            getString(R.string.unit_minutes),
+            getString(R.string.unit_hours),
+            getString(R.string.unit_days)
+        )
+        val unitAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, unitOptions)
+        binding.proceedWindowUnitDropdown.setAdapter(unitAdapter)
+
+        val totalMins = config.proceedsTimeWindowMn
+        val (initialUnitIdx, initialSliderValue) = when {
+            totalMins > 0 && totalMins % 1440 == 0 -> 2 to (totalMins / 1440).toFloat().coerceIn(1f, 30f)
+            totalMins > 0 && totalMins % 60 == 0 -> 1 to (totalMins / 60).toFloat().coerceIn(1f, 24f)
+            else -> 0 to totalMins.toFloat().coerceIn(1f, 60f)
+        }
+
+        binding.proceedWindowUnitDropdown.setText(unitOptions[initialUnitIdx], false)
+        updateProceedWindowSliderBounds(initialUnitIdx)
+        binding.proceedWindowSlider.value = initialSliderValue
+        updateProceedWindowTitle(initialUnitIdx, initialSliderValue.toInt())
 
         binding.warningMsgEdit.setText(config.message)
         binding.switchVibrateBrightness.isChecked = config.vibrateAndIncBrightness
@@ -246,7 +263,20 @@ class WarningConfigFragment : Fragment() {
         }
 
         binding.proceedWindowSlider.addOnChangeListener { _, value, _ ->
-            binding.proceedWindowTitle.text = getString(R.string.warning_time_window, value.toInt())
+            val unitStr = binding.proceedWindowUnitDropdown.text.toString()
+            val unitOptions = listOf(
+                getString(R.string.unit_minutes),
+                getString(R.string.unit_hours),
+                getString(R.string.unit_days)
+            )
+            val unitIdx = unitOptions.indexOf(unitStr).coerceAtLeast(0)
+            updateProceedWindowTitle(unitIdx, value.toInt())
+        }
+
+        binding.proceedWindowUnitDropdown.setOnItemClickListener { _, _, position, _ ->
+            updateProceedWindowSliderBounds(position)
+            val currentVal = binding.proceedWindowSlider.value
+            updateProceedWindowTitle(position, currentVal.toInt())
         }
 
         binding.advancedSettingsHeader.setOnClickListener {
@@ -341,7 +371,21 @@ class WarningConfigFragment : Fragment() {
                 vibrateAndIncBrightness = binding.switchVibrateBrightness.isChecked,
                 proceedLimitEnabled = binding.proceedLimitSwitch.isChecked,
                 allowedProceeds = binding.allowedProceedsSlider.value.toInt(),
-                proceedsTimeWindowMn = binding.proceedWindowSlider.value.toInt(),
+                proceedsTimeWindowMn = run {
+                    val unitStr = binding.proceedWindowUnitDropdown.text.toString()
+                    val unitOptions = listOf(
+                        getString(R.string.unit_minutes),
+                        getString(R.string.unit_hours),
+                        getString(R.string.unit_days)
+                    )
+                    val unitIdx = unitOptions.indexOf(unitStr).coerceAtLeast(0)
+                    val sliderVal = binding.proceedWindowSlider.value.toInt()
+                    when (unitIdx) {
+                        1 -> sliderVal * 60
+                        2 -> sliderVal * 1440
+                        else -> sliderVal
+                    }
+                },
                 isOnOpenConfig = arguments?.getBoolean(ARG_IS_ON_OPEN) == true
             )
             
@@ -510,6 +554,31 @@ class WarningConfigFragment : Fragment() {
                 binding.qrListContainer.addView(itemView)
             }
         }
+    }
+
+    private fun updateProceedWindowSliderBounds(unitIdx: Int) {
+        val (minVal, maxVal) = when (unitIdx) {
+            1 -> 1f to 24f  // Hours
+            2 -> 1f to 30f  // Days
+            else -> 1f to 60f // Minutes
+        }
+        val currentVal = binding.proceedWindowSlider.value
+        val newVal = currentVal.coerceIn(minVal, maxVal)
+        if (binding.proceedWindowSlider.value < minVal || binding.proceedWindowSlider.value > maxVal) {
+            binding.proceedWindowSlider.value = minVal
+        }
+        binding.proceedWindowSlider.valueFrom = minVal
+        binding.proceedWindowSlider.valueTo = maxVal
+        binding.proceedWindowSlider.value = newVal
+    }
+
+    private fun updateProceedWindowTitle(unitIdx: Int, value: Int) {
+        val unitOptions = listOf(
+            getString(R.string.unit_minutes),
+            getString(R.string.unit_hours),
+            getString(R.string.unit_days)
+        )
+        binding.proceedWindowTitle.text = getString(R.string.warning_time_window, value, unitOptions[unitIdx])
     }
 
     override fun onDestroyView() {

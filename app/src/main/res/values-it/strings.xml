@@ -105,4 +105,9 @@
         Visualizza e condividi i log di crash dell\'applicazione per aiutare a migliorare Curbox.
     </string>
     <string name="view_crash_logs">Visualizza log di crash</string>
+
+    <!-- Units -->
+    <string name="unit_minutes">Minuti</string>
+    <string name="unit_hours">Ore</string>
+    <string name="unit_days">Giorni</string>
 </resources>

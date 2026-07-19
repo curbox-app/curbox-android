@@ -695,7 +695,7 @@
     <string name="warning_fixed_unlock_duration_lower">Фиксированное время разблокировки: %1$d мин</string>
     <string name="warning_wait_before_unlock">Ожидание перед разблокировкой: %1$d с</string>
     <string name="warning_allowed_proceeds">Разрешено продолжений: %1$d</string>
-    <string name="warning_time_window">Временное окно: %1$d мин</string>
+    <string name="warning_time_window">Временное окно: %1$d %2$s</string>
     <string name="warning_qr_generated_title">QR-код/штрихкод создан</string>
     <string name="warning_qr_generated_message">Пожалуйста, сохраните или распечатайте этот QR-код/штрихкод. Он понадобится вам для разблокировки.</string>
     <string name="warning_save_to_gallery">Сохранить в галерею</string>
@@ -771,4 +771,9 @@
         <item quantity="many">Защита отключится сама через %1$d дней. Как только начнётся ожидание, его нельзя будет остановить.</item>
         <item quantity="other">Защита отключится сама через %1$d дня. Как только начнётся ожидание, его нельзя будет остановить.</item>
     </plurals>
+
+    <!-- Units -->
+    <string name="unit_minutes">Минуты</string>
+    <string name="unit_hours">Часы</string>
+    <string name="unit_days">Дни</string>
 </resources>
