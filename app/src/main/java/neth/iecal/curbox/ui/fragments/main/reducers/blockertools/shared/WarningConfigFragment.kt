@@ -186,8 +186,6 @@ class WarningConfigFragment : Fragment() {
             getString(R.string.unit_hours),
             getString(R.string.unit_days)
         )
-        val unitAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, unitOptions)
-        binding.proceedWindowUnitDropdown.setAdapter(unitAdapter)
 
         val totalMins = config.proceedsTimeWindowMn
         val (initialUnitIdx, initialSliderValue) = when {
@@ -196,7 +194,7 @@ class WarningConfigFragment : Fragment() {
             else -> 0 to totalMins.toFloat().coerceIn(1f, 60f)
         }
 
-        binding.proceedWindowUnitDropdown.setText(unitOptions[initialUnitIdx], false)
+        binding.proceedWindowUnitBtn.text = unitOptions[initialUnitIdx]
         updateProceedWindowSliderBounds(initialUnitIdx)
         binding.proceedWindowSlider.value = initialSliderValue
         updateProceedWindowTitle(initialUnitIdx, initialSliderValue.toInt())
@@ -270,7 +268,7 @@ class WarningConfigFragment : Fragment() {
         }
 
         binding.proceedWindowSlider.addOnChangeListener { _, value, _ ->
-            val unitStr = binding.proceedWindowUnitDropdown.text.toString()
+            val unitStr = binding.proceedWindowUnitBtn.text.toString()
             val unitOptions = listOf(
                 getString(R.string.unit_minutes),
                 getString(R.string.unit_hours),
@@ -280,10 +278,25 @@ class WarningConfigFragment : Fragment() {
             updateProceedWindowTitle(unitIdx, value.toInt())
         }
 
-        binding.proceedWindowUnitDropdown.setOnItemClickListener { _, _, position, _ ->
-            updateProceedWindowSliderBounds(position)
-            val currentVal = binding.proceedWindowSlider.value
-            updateProceedWindowTitle(position, currentVal.toInt())
+        binding.proceedWindowUnitBtn.setOnClickListener { btn ->
+            val unitOptions = listOf(
+                getString(R.string.unit_minutes),
+                getString(R.string.unit_hours),
+                getString(R.string.unit_days)
+            )
+            val popup = androidx.appcompat.widget.PopupMenu(requireContext(), btn)
+            unitOptions.forEachIndexed { index, option ->
+                popup.menu.add(0, index, index, option)
+            }
+            popup.setOnMenuItemClickListener { menuItem ->
+                val selectedUnitIdx = menuItem.itemId
+                binding.proceedWindowUnitBtn.text = menuItem.title
+                updateProceedWindowSliderBounds(selectedUnitIdx)
+                val currentVal = binding.proceedWindowSlider.value
+                updateProceedWindowTitle(selectedUnitIdx, currentVal.toInt())
+                true
+            }
+            popup.show()
         }
 
         binding.intentMinLengthSlider.addOnChangeListener { _, value, _ ->
@@ -388,7 +401,7 @@ class WarningConfigFragment : Fragment() {
                 proceedLimitEnabled = binding.proceedLimitSwitch.isChecked,
                 allowedProceeds = binding.allowedProceedsSlider.value.toInt(),
                 proceedsTimeWindowMn = run {
-                    val unitStr = binding.proceedWindowUnitDropdown.text.toString()
+                    val unitStr = binding.proceedWindowUnitBtn.text.toString()
                     val unitOptions = listOf(
                         getString(R.string.unit_minutes),
                         getString(R.string.unit_hours),

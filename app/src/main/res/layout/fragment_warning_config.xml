@@ -388,20 +388,15 @@
                                 android:layout_weight="1"
                                 android:text="@string/label_time_window" />
 
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/proceed_window_unit_layout"
-                                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                                android:layout_width="140dp"
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/proceed_window_unit_btn"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp">
-
-                                <AutoCompleteTextView
-                                    android:id="@+id/proceed_window_unit_dropdown"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textSize="14sp"
-                                    android:inputType="none" />
-                            </com.google.android.material.textfield.TextInputLayout>
+                                android:layout_marginStart="8dp"
+                                app:icon="@drawable/ic_chevron_down"
+                                app:iconGravity="textEnd"
+                                app:iconPadding="4dp" />
                         </LinearLayout>
 
                         <com.google.android.material.slider.Slider
