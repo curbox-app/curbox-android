@@ -43,4 +43,7 @@ val URL_BAR_ID_LIST = mapOf(
     "com.opera.browser" to BrowserUrlBarInfo(
         displayUrlBarId = "com.opera.browser:id/url_field",
     ),
+    "io.github.jqssun.helium" to BrowserUrlBarInfo(
+        displayUrlBarId = "io.github.jqssun.helium:id/url_bar",
+    ),
 )
