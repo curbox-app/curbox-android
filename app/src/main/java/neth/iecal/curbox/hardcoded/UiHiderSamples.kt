@@ -25,14 +25,18 @@ val DEFAULT_UIHIDER_SCRIPTS: List<UiHiderScript> = listOf(
             top = find(desc="reels tray container")
             nav = find(id="com.instagram.android:id/feed_tab")
 
-            if top != null and top.visible and nav != null and nav.visible {
-                # Ensure anchors are within the visible screen bounds
+            if nav != null and nav.visible and nav.selected {
+                y = load("feed_top")
+                if top != null and top.visible {
                     y = top.bottom
+                    save("feed_top", y)
+                }
+                if y != null {
                     height = nav.top - y
                     if height > 0 {
                         draw(0, y, screen.width, height)
                     }
-                
+                }
             }
         """.trimIndent()
     ),
