@@ -45,7 +45,7 @@ class AutoDndFragment : Fragment() {
         }
 
         binding.btnHelp.setOnClickListener {
-            ViewUtils.showHelpPopup(it, "Automatically silence notifications during your focus sessions.", "https://curbox.app/docs/reducers/auto-dnd/")
+            ViewUtils.showHelpPopup(it, getString(R.string.autodnd_help_popup), "https://curbox.app/docs/reducers/auto-dnd/")
         }
 
         binding.rvAutodndGroups.layoutManager = LinearLayoutManager(requireContext())

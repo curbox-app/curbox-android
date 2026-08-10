@@ -1,0 +1,9 @@
+Dikkat: Engelleyici yapılandırmaları değişti; mevcut uygulama, web ve kısa video kurallarını gözden geçir. Kaldırma Koruması ile Ayar Değişikliği Gecikmesi’ni yeniden ayarla.
+
+YENİ:
+• Kısa videolarda izleme süresi takibi ve kullanıma göre engelleme
+• NFC ile kilit açma ve Odak Modu kontrolü
+• Uyarlanabilir matematik ve odak şartlı kilit açma
+• TikTok, Instagram Lite ve Pinterest desteği
+• Grupları geçici kapatma
+• Program, Arayüz Gizleyici ve engelleme düzeltmeleri

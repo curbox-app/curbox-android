@@ -1,0 +1,8 @@
+• Curbox API: Onaylı uygulamalar Curbox’tan öğeleri engellemesini isteyebilir.
+• Zayıflatıcı ayar değişiklikleri artık gecikmeli uygulanıyor.
+• Kaldırma koruması güçlendirildi.
+• Snapchat Spotlight ve hikâye engelleme eklendi.
+• Gri tonlama artık WRITE_SECURE_SETTINGS kullanıyor.
+• Dil seçiciye Arapça, Çince, Japonca, Portekizce ve Rusça eklendi.
+• Vivaldi, IronFox ve Iceraven desteği eklendi.
+• Kullanım istatistikleri, anahtar kelimeler ve Arayüz Gizleyicide hatalar düzeltildi.

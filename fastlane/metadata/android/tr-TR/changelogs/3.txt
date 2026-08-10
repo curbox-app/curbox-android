@@ -1,0 +1,9 @@
+• Web sitesi engelleyicideki hata düzeltildi.
+• Web ve uygulama kullanım takibi ayrı kapatılabilir.
+• Hatalı pm suspend Odak Modu’ndan kaldırıldı.
+• Firefox Focus desteği eklendi. @arlohb
+• Kalan açma hakkı uyarı ekranında gösteriliyor. @binayshaw7777
+• Kilit açma süresi artık tüm gruba uygulanıyor.
+• Anahtar kelime engelleyiciye zamanlayıcı eklendi.
+• Kilit gerekçesine minimum karakter ayarı eklendi. @ompug
+• Tek uyarı düğmesi gerektiğinde “Tamam” gösteriliyor. @hdodenhof

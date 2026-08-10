@@ -7,7 +7,7 @@
     <string name="warning_message">Warning message</string>
     <string name="minutes">minutes</string>
     <string name="app_icon">app_icon</string>
-    <string name="accessibility_permission_app_blocker" translatable="false">
+    <string name="accessibility_permission_app_blocker">
         This feature needs the Display over other apps permission to work. Please turn that on first, then turn this on. If something stops working, restart the app.\n\n
         Turning this on lets Curbox do these things for you:\n1. Block apps\n2. Block short form content\n3. Block websites and keywords\n4. Focus Mode\n5. Hide parts of an app\'s screen that distract you\n6. See how long you spend in each app\n7. Count how much short form content you scroll, and show the count in a floating overlay\n8. See which websites you visit and for how long\n\n
         Curbox needs accessibility access to see which app, website, or screen you are on, so it can block it the way you set and keep your usage stats. Without this, none of it can work.\n\n
@@ -37,6 +37,13 @@
     <string name="focus_avg_duration">Avg Session</string>
     <string name="focus_completion_rate">Completed</string>
     <string name="focus_top_tags">Top Tags</string>
+    <string name="focus_duration_minutes_short">%1$d min</string>
+    <string name="focus_duration_hours_short">%1$d hr</string>
+    <string name="focus_duration_hours_minutes_short">%1$d hr %2$d min</string>
+    <plurals name="focus_top_tag_sessions">
+        <item quantity="one">• %1$s (%2$d session)</item>
+        <item quantity="other">• %1$s (%2$d sessions)</item>
+    </plurals>
     <string name="quick_setup_guide">Quick Setup Guide</string>
     <string name="curbox_needs_accessibility_permissions_to_help">Curbox needs Accessibility permissions to help you track your screen time. The setup process varies based on how you installed the app.</string>
     <string name="fdroid_installation">F-Droid Installation</string>
@@ -62,6 +69,7 @@
     <string name="reels_blocker">Short-Form Video</string>
     <string name="disable_shortform_video_feeds">Hide short-form videos to help maintain your attention span.</string>
     <string name="auto_dnd">Auto DND</string>
+    <string name="autodnd_help_popup">Automatically silence notifications during your focus sessions.</string>
     <string name="turn_on_focus_mode_between_set">Automatically turn on Do Not Disturb in your daily schedule.</string>
     <string name="blocked_keywords">Keywords And Websites</string>
     <string name="filter_specific_words_across_apps">Keep your digital space peaceful by filtering out specific topics.</string>

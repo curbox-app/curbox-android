@@ -25,7 +25,7 @@ internal class WarningUnlockTimingDialog(
             setPadding(48, 24, 48, 24)
         }
         val switchDynamic = SwitchMaterial(context).apply {
-            text = "Use dynamic timing (User selects time during unlock)"
+            text = fragment.getString(R.string.warning_option_choose_time)
             isChecked = true
         }
         val pickerInnerContainer = LinearLayout(context).apply {
@@ -39,7 +39,7 @@ internal class WarningUnlockTimingDialog(
             }
         }
         val timeLabel = TextView(context).apply {
-            text = "Fixed unlock duration: 5 mins"
+            text = fragment.getString(R.string.warning_fixed_unlock_duration_lower, 5)
             setPadding(8, 8, 8, 8)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,

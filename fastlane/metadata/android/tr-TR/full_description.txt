@@ -1,0 +1,49 @@
+Curbox (eski adıyla Digipauwse), dijital denge için geliştirilmiş ücretsiz ve açık kaynaklı bir uygulama engelleyici ve ekran süresi takip aracıdır. Uygulamaları, web sitelerini, Reels ve Shorts akışlarını engelle; ekran süreni azaltıp odağını geri kazan.
+
+<b>Uygulamaları ve web sitelerini engelle</b>
+
+• <b>Uygulama ve Web Sitesi Engelleyici</b>: Dikkatini dağıtan herhangi bir uygulamayı veya web sitesini tamamen engelle.
+• <b>URL Yolu Engelleme</b>: YouTube’un geri kalanı çalışmaya devam ederken yalnızca m.youtube.com/shorts gibi belirli bir site bölümünü engelle.
+• <b>Kısa Video Engelleyici</b>: Instagram Reels ve YouTube Shorts akışlarını kapat; akışın seni yeniden içine çekmesini durdur.
+• <b>Kaldırma Koruması</b>: Curbox’u kaldırmayı veya engelleme hizmetini kapatmayı zorlaştır.
+• <b>Ayar Değişikliği Gecikmesi</b>: Kuralları zayıflatan değişiklikleri uygulanmadan önce bekletir ve kararını yeniden değerlendirmen için sana zaman verir.
+
+<b>Yalnızca dikkatini dağıtan bölümleri gizle</b>
+
+Ayrıntılı Arayüz Gizleme, tüm uygulamayı engellemeden dikkat dağıtan bölümleri gizler. Curbox seçtiğin alanı sade bir katmanla kapatır, geri kalanı çalışmaya devam eder. Örneğin YouTube ana akışını veya Instagram Keşfet’i gizlerken arama ve arkadaş gönderilerini kullanmaya devam edebilirsin. Ne göreceğine sen karar verirsin.
+
+<b>Odağını koru</b>
+
+• <b>Odak Modu</b>: Ders çalışmak veya sakin biçimde işine odaklanmak için uygulamaları ve web sitelerini belirlediğin süre boyunca duraklat.
+• <b>Programlı Rahatsız Etmeyin</b>: Belirlediğin saatlerde Rahatsız Etmeyin modunu otomatik aç.
+• <b>Uygulamaya Özel Gri Tonlama</b>: Kamera renkli kalırken Instagram’ın renklerini soldur; uygulamaların görsel çekiciliğini azalt.
+• <b>Programlı Kullanım Sınırları</b>: Bir grubun ne zaman etkin olacağını ve bu süre içinde ne kadar kullanılabileceğini belirle.
+• <b>Bilinçli Mesajlar</b>: Bir uygulamayı kullanırken ekranın üzerinde nazik hatırlatmalar göster.
+• <b>Dikkat Süresi Takibi</b>: Bir sonraki kısa videoya geçmeden önce ne kadar izlediğini gör.
+
+<b>Zamanını gör</b>
+
+• <b>Kullanım Analizi</b>: Her uygulamada ve web sitesinde ne kadar zaman geçirdiğini açık bir dökümle gör.
+• <b>Odak İstatistikleri</b>: Odak oturumlarını ve zaman içindeki ilerlemeni takip et.
+• <b>Canlı Kaydırma Sayacı</b>: Kaç kısa video kaydırdığını gerçek zamanlı olarak gör.
+• <b>Oturum Zamanlayıcısı</b>: Açık uygulamanın ne kadar süredir kullanıldığını canlı olarak takip et.
+• <b>Ana Ekran Widget’ları</b>: İstatistiklerine ve hızlı kontrollere ana ekranından ulaş.
+
+<b>Dürtüye kapılmayı ne kadar zorlaştıracağını seç</b>
+
+Bir programdaki tüm kullanım süren dolduğunda yeniden erişim kazanmak için ne yapman gerektiğine sen karar verirsin.
+
+• <b>Tam engelleme</b>: Hiçbir şekilde erişim verilmez.
+• <b>Süreli Kilit Açma</b>: Her kilit açma, örneğin beş dakika gibi kısa ve sabit bir süre boyunca geçerli olur.
+• <b>Değişken Kilit Açma</b>: Erişim süresini her seferinde kendin seç.
+• <b>QR veya Barkodla Kilit Açma</b>: Ayağa kalkıp hareket etmeni gerektirecek şekilde, örneğin bir kitabın üzerindeki gerçek barkodu tara.
+• <b>Cümle yazarak kilit açma</b>: Uygulama açılmadan önce tam bir cümleyi yeniden yaz.
+• <b>Kilit Açma Sınırları</b>: Belirli bir zaman aralığında kaç kez erişim kazanabileceğini sınırla.
+• <b>NFC ile Kilit Açma</b>: Kilidi açmayı bilinçli bir eyleme dönüştürmek için fiziksel bir NFC etiketi kullan.
+• <b>Uyarlanabilir Matematik</b>: Kilidi açmadan önce zorluğu değişen bir matematik sorusunu çöz.
+
+<b>Geliştiriciler için tasarlandı</b>
+
+<b>Curbox API</b>, onay verdiğin uygulamaların Odak Modu’nu başlatmasına, Curbox ayarlarını değiştirmesine ve kullanım istatistiklerini okumasına izin verir. Hangi uygulamaların erişim alacağına sen karar verirsin.
+
+Curbox; dikkat dağıtan uygulamaları ve web sitelerini engellemek, ekran süresini azaltmak ve odağını geri kazanmak isteyen herkes için geliştirildi. Ücretsiz, açık kaynaklı ve reklamsız.

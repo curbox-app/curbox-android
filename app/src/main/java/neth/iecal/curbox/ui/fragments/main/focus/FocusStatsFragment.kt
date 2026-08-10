@@ -71,7 +71,7 @@ class FocusStatsFragment : Fragment() {
         
         binding.spinGroups.setOnItemClickListener { _, _, position, _ ->
             val allGroups = mutableListOf<Pair<String?, String>>()
-            allGroups.add(null to "All Groups")
+            allGroups.add(null to getString(R.string.all_groups))
             viewModel.groups.value.forEach { allGroups.add(it.groupId to it.groupName) }
             viewModel.autoDndGroups.value.forEach { allGroups.add(it.groupId to it.groupName) }
             
@@ -86,7 +86,8 @@ class FocusStatsFragment : Fragment() {
     }
     
     private fun updateSpinner() {
-        val names = mutableListOf("All Groups")
+        val allGroupsLabel = getString(R.string.all_groups)
+        val names = mutableListOf(allGroupsLabel)
         viewModel.groups.value.forEach { names.add(it.groupName) }
         viewModel.autoDndGroups.value.forEach { names.add(it.groupName) }
         
@@ -95,10 +96,10 @@ class FocusStatsFragment : Fragment() {
         val adapter = android.widget.ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, names)
         binding.spinGroups.setAdapter(adapter)
         
-        val selectedName = if (selectedGroupId == null) "All Groups" else {
+        val selectedName = if (selectedGroupId == null) allGroupsLabel else {
             viewModel.groups.value.find { it.groupId == selectedGroupId }?.groupName
                 ?: viewModel.autoDndGroups.value.find { it.groupId == selectedGroupId }?.groupName
-                ?: "All Groups"
+                ?: allGroupsLabel
         }
         binding.spinGroups.setText(selectedName, false)
     }
@@ -179,10 +180,16 @@ class FocusStatsFragment : Fragment() {
 
     private fun formatDuration(millis: Long): String {
         val totalMinutes = millis / 60_000L
-        if (totalMinutes < 60) return "${totalMinutes}m"
+        if (totalMinutes < 60) {
+            return getString(R.string.focus_duration_minutes_short, totalMinutes)
+        }
         val hours = totalMinutes / 60
         val mins = totalMinutes % 60
-        return if (mins > 0) "${hours}h ${mins}m" else "${hours}h"
+        return if (mins > 0) {
+            getString(R.string.focus_duration_hours_minutes_short, hours, mins)
+        } else {
+            getString(R.string.focus_duration_hours_short, hours)
+        }
     }
     
     private fun computeStreak(sessions: List<FocusStatsEntity>): Int {
@@ -264,7 +271,12 @@ class FocusStatsFragment : Fragment() {
             }
             
             val tv = TextView(requireContext()).apply {
-                text = "• $name ($count sessions)"
+                text = resources.getQuantityString(
+                    R.plurals.focus_top_tag_sessions,
+                    count,
+                    name,
+                    count
+                )
                 textSize = 15f
                 layoutParams = android.widget.LinearLayout.LayoutParams(
                     android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
