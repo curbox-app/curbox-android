@@ -110,8 +110,13 @@
 
                         <TextView
                             android:id="@+id/tvTotalDuration"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:autoSizeMaxTextSize="22sp"
+                            android:autoSizeMinTextSize="16sp"
+                            android:autoSizeStepGranularity="1sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
                             android:text="@string/value_zero_minutes"
                             android:textColor="?attr/colorPrimary"
                             android:textSize="22sp"
@@ -186,8 +191,13 @@
 
                         <TextView
                             android:id="@+id/tvAvgDuration"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:autoSizeMaxTextSize="22sp"
+                            android:autoSizeMinTextSize="16sp"
+                            android:autoSizeStepGranularity="1sp"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
                             android:text="@string/value_zero_minutes"
                             android:textColor="?attr/colorTertiary"
                             android:textSize="22sp"
