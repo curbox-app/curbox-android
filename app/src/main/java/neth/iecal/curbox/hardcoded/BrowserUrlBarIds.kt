@@ -19,6 +19,9 @@ val URL_BAR_ID_LIST = mapOf(
     "com.vivaldi.browser" to BrowserUrlBarInfo(
         displayUrlBarId = "com.vivaldi.browser:id/url_bar",
     ),
+    "org.calyxos.chromium" to BrowserUrlBarInfo(
+        displayUrlBarId = "org.calyxos.chromium:id/url_bar",
+    ),
 
     
     "org.mozilla.focus" to BrowserUrlBarInfo(
