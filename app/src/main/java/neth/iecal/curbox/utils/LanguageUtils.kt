@@ -22,6 +22,7 @@ object LanguageUtils {
         Locale.forLanguageTag("pt-BR"),
         Locale.forLanguageTag("ru"),
         Locale.forLanguageTag("zh-CN"),
+        Locale.forLanguageTag("vi")
     )
 
     fun currentLocale(): Locale {

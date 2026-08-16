@@ -1,0 +1,1700 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="focus_mode">Chế độ lấy nét</string>
+    <string name="add">Thêm vào</string>
+    <string name="save">Cứu</string>
+    <string name="write_down_a_keyword">Viết ra một từ khóa</string>
+    <string name="warning_message">Thông báo cảnh báo</string>
+    <string name="minutes">phút</string>
+    <string name="app_icon">biểu tượng ứng dụng</string>
+    <string name="accessibility_permission_app_blocker" translatable="false">
+        This feature needs the Display over other apps permission to work. Please turn that on first, then turn this on. If something stops working, restart the app.\n\n
+        Turning this on lets Curbox do these things for you:\n1. Block apps\n2. Block short form content\n3. Block websites and keywords\n4. Focus Mode\n5. Hide parts of an app\'s screen that distract you\n6. See how long you spend in each app\n7. Count how much short form content you scroll, and show the count in a floating overlay\n8. See which websites you visit and for how long\n\n
+        Curbox needs accessibility access to see which app, website, or screen you are on, so it can block it the way you set and keep your usage stats. Without this, none of it can work.\n\n
+        Curbox never shares anything without your permission.
+        \n\n
+    </string>
+    <string name="admin_permission_desc">Bảo vệ chống giả mạo Curbox</string>
+    <string name="close">Đóng</string>
+    <string name="proceed">Tiếp tục</string>
+    <string name="cancel">Hủy bỏ</string>
+    <string name="configure_warning_screen">Màn hình cảnh báo</string>
+    <string name="proceed_in">Vui lòng đợi %1$d giây trước khi nhấn tiếp tục</string>
+    <string name="select_all">Chọn tất cả</string>
+    <string name="clear_all">Xóa tất cả</string>
+    <string name="focus_ready">Sẵn sàng để tập trung?</string>
+    <string name="focus_subtitle_minimal">Chọn thời lượng, sau đó bắt đầu.</string>
+    <string name="focus_start">Kiềm chế tôi</string>
+    <string name="focus_create_group">Tạo nhóm tập trung</string>
+    <string name="focus_active">Chế độ lấy nét đang hoạt động</string>
+    <string name="focus_end_session">Kết thúc phiên</string>
+    <string name="focus_group">Nhóm tập trung</string>
+    <string name="focus_new_group">Tạo nhóm mới</string>
+    <string name="focus_stats">Thống kê tập trung</string>
+    <string name="focus_sessions_label">Phiên</string>
+    <string name="focus_total_time_label">Tổng thời gian</string>
+    <string name="focus_streak_label">Vệt</string>
+    <string name="focus_avg_duration">Phiên trung bình</string>
+    <string name="focus_completion_rate">Hoàn thành</string>
+    <string name="focus_top_tags">Thẻ hàng đầu</string>
+    <string name="quick_setup_guide">Hướng dẫn thiết lập nhanh</string>
+    <string name="curbox_needs_accessibility_permissions_to_help">Curbox cần có quyền Trợ năng để giúp bạn theo dõi thời gian sử dụng thiết bị của mình. Quá trình thiết lập khác nhau tùy theo cách bạn cài đặt ứng dụng.</string>
+    <string name="fdroid_installation">Cài đặt F-Droid</string>
+    <string name="installed_via_fdroid_appnyoure_all_set">✅ Đã cài đặt qua ứng dụng F-Droid?\nBạn đã hoàn tất! Chỉ cần làm theo thiết lập trợ năng ở bước tiếp theo.\n\n⚠️ Bạn đã tải xuống từ trang web F-Droid?\nHãy cài đặt thông qua ứng dụng F-Droid để tránh các vấn đề về quyền.</string>
+    <string name="apk_installation">Cài đặt APK</string>
+    <string name="if_you_installed_from_an_apk">Nếu bạn đã cài đặt từ APK, hãy làm theo các bước sau:\n\n1️⃣ Mở Cài đặt → Ứng dụng → Curbox\n\n2️⃣ Nhấn vào Quyền → Truy cập ứng dụng đặc biệt → Trợ năng → Bật Curbox\n\n3️⃣ Quay lại Thông tin ứng dụng Curbox → Cuộn xuống → Nhấn vào Cài đặt hạn chế → Cho phép\n\n💡 Mẹo chuyên nghiệp: Cài đặt qua ứng dụng F-Droid để thiết lập mượt mà hơn! 🚀</string>
+    <string name="usage_timeline">Dòng thời gian sử dụng</string>
+    <string name="screentime">Thời gian chiếu phim</string>
+    <string name="app_opens">Mở ứng dụng</string>
+    <string name="add_to_blocked_apps">Thêm vào ứng dụng bị chặn</string>
+    <string name="label_empty_dash" />
+    <string name="value_zero">0</string>
+    <string name="label_add_plus" />
+    <string name="screen_time">Thời gian sử dụng màn hình</string>
+    <string name="value_zero_time">0 giờ 0 phút</string>
+    <string name="sample_usage_1h">Ứng dụng 1h</string>
+    <string name="reels_today">Câu chuyện hôm nay</string>
+    <string name="sample_reels_count">1,3k</string>
+    <string name="sample_percentage_increase">+100%</string>
+    <string name="blocker_tools">Ranh giới tập trung</string>
+    <string name="app_blocker">Ứng dụng</string>
+    <string name="restrict_access_to_distracting_apps">Tạm thời tắt tiếng ứng dụng</string>
+    <string name="reels_blocker">Video dạng ngắn</string>
+    <string name="disable_shortform_video_feeds">Ẩn các video dạng ngắn để giúp duy trì khoảng chú ý của bạn.</string>
+    <string name="auto_dnd">DND tự động</string>
+    <string name="turn_on_focus_mode_between_set">Tự động bật Không làm phiền trong lịch trình hàng ngày của bạn.</string>
+    <string name="blocked_keywords">Từ khóa và trang web</string>
+    <string name="filter_specific_words_across_apps">Giữ không gian kỹ thuật số của bạn yên bình bằng cách lọc ra các chủ đề cụ thể.</string>
+    <string name="stimulation_reducers">Những cú huých chánh niệm</string>
+    <string name="on_screen_reminder">Lời nhắc nhẹ nhàng</string>
+    <string name="put_in_messages_and_counters_floating">Những tín hiệu tinh tế trên màn hình sẽ giúp bạn tập trung vào hiện tại.</string>
+    <string name="reel_counter">Bộ đếm video dạng ngắn</string>
+    <string name="track_the_number_of_reels_consumed">Theo dõi và phân tích số lượng nội dung dạng ngắn được sử dụng</string>
+    <string name="grayscale_filter">Bộ lọc thang độ xám</string>
+    <string name="reduce_visual_stimulation">Giảm kích thích thị giác</string>
+    <string name="fuel_the_developer">Giới thiệu về Nhà phát triển ☕</string>
+    <string name="hello_this_is_nethical_the_creator">Này, tôi là Nethical, người đứng sau Curbox. Tôi 18 tuổi, mới ra trường trung học và hơi bị ám ảnh bởi công nghệ, nghệ thuật và việc xây dựng những thứ hay ho từ đầu. Cách đây một thời gian, tôi đã tìm kiếm một trình chặn ứng dụng miễn phí thực sự làm được những gì tôi muốn. Không có gì đến gần, vì vậy tôi đã tự xây dựng. Curbox là ứng dụng đó và tôi đã sử dụng nó hầu như hàng ngày trong hơn hai năm nay. Rất vui vì bạn ở đây. Tôi hy vọng nó sẽ giúp bạn lấy lại thời gian.</string>
+    <string name="support_the_project">Hỗ trợ dự án ↗</string>
+    <string name="join_the_focus_pack">Tham gia gói tập trung</string>
+    <string name="dont_fix_your_screen_time_alone">Đừng cố định thời gian sử dụng thiết bị của bạn một mình. Tham gia Discord của chúng tôi với những người cùng chí hướng, giúp nhau có trách nhiệm và chia sẻ các chiến lược tập trung để cải thiện bản thân.</string>
+    <string name="join_the_discord">Tham gia vào sự bất hòa</string>
+    <string name="curboxapp">\@curb.me</string>
+    <string name="follow_curbox">Theo dõi Curbox</string>
+    <string name="label_instagram">Instagram</string>
+    <string name="label_github">GitHub</string>
+    <string name="curbox_github_repo">lề đường-android</string>
+    <string name="curbox_also_on">Curbox cũng bật</string>
+    <string name="label_browser_extension">Tiện ích mở rộng trình duyệt</string>
+    <string name="curbox_extension_repo">phần mở rộng lề đường</string>
+    <string name="about_the_developer">Giới thiệu về nhà phát triển</string>
+    <string name="view_on_github">Xem trên GitHub ↗</string>
+    <string name="donate_title">Quyên tặng</string>
+    <string name="donate_pitch">Tôi đã dành hơn 1500 giờ vào Curbox, xây dựng nó cùng với việc học tập, thi cử và học tập để tiết kiệm hàng triệu phút trên toàn thế giới. Hãy quyên góp để giúp tôi giữ nó miễn phí và phát triển cho mọi người.</string>
+    <string name="btn_donate">Đóng góp ❤</string>
+    <string name="cannot_donate_share">Không thể quyên góp? Chia sẻ dự án cũng hữu ích!</string>
+    <string name="donate_prompt_title">Tôi có thể nhờ bạn một việc được không?</string>
+    <string name="donate_prompt_value">Bạn đã làm việc với Curbox được một thời gian và điều đó có ý nghĩa rất lớn đối với tôi.</string>
+    <string name="donate_prompt_footer">Không có áp lực nào cả. Curbox vẫn miễn phí cho bạn dù thế nào đi nữa.</string>
+    <string name="donate_prompt_give">Tôi sẽ góp sức ❤</string>
+    <string name="donate_prompt_share">Thay vào đó tôi sẽ chia sẻ nó</string>
+    <string name="donate_prompt_later">Có lẽ sau này</string>
+    <string name="share_curbox_message">Tôi đang sử dụng Curbox để lấy lại quyền kiểm soát thời gian sử dụng thiết bị của mình. Nó miễn phí, hãy dùng thử: https://curbox.app</string>
+    <string name="system_diagnostics">Chẩn đoán hệ thống</string>
+    <string name="view_and_share_application_crash_logs">Xem và chia sẻ nhật ký sự cố của ứng dụng để giúp cải thiện Curbox.</string>
+    <string name="view_crash_logs">Xem nhật ký sự cố</string>
+    <string name="group_name">Tên</string>
+    <string name="group_name_required">Vui lòng nhập tên nhóm</string>
+    <string name="desc_10_apps_usage_based">10 ứng dụng • Dựa trên mức sử dụng</string>
+    <string name="no_app_groups_yet_create_one">Chưa có nhóm ứng dụng nào. Tạo một cái!</string>
+    <string name="create_group">Tạo nhóm</string>
+    <string name="apps_to_block">ỨNG DỤNG ĐỂ CHẶN</string>
+    <string name="select_apps_0">Chọn Ứng dụng (0)</string>
+    <string name="blocking_configuration">CẤU HÌNH CHẶN</string>
+    <string name="group_limits">GIỚI HẠN</string>
+    <string name="configure_group_schedule">Giờ hoạt động</string>
+    <string name="configure_group_usage">Giới hạn sử dụng trong giờ hoạt động</string>
+    <string name="configure_reel_count_limit">Định cấu hình giới hạn số lượng cuộn</string>
+    <string name="schedule_section_title">LỊCH TRÌNH</string>
+    <string name="schedule_mode_title">Giờ hoạt động</string>
+    <string name="schedule_mode_all_day">Cả ngày</string>
+    <string name="schedule_mode_daily">Hằng ngày</string>
+    <string name="schedule_mode_custom">Phong tục</string>
+    <string name="schedule_summary_all_day">Cả ngày, mỗi ngày</string>
+    <string name="schedule_summary_daily">Hàng ngày, %1$s đến %2$s</string>
+    <string name="schedule_summary_weekdays">Thứ Hai đến Thứ Sáu, %1$s đến %2$s</string>
+    <string name="schedule_summary_custom">Lịch trình tùy chỉnh</string>
+    <string name="schedule_overlap_not_saved">Phạm vi thời gian chồng chéo không được lưu</string>
+    <string name="schedule_no_room_for_range">Không còn chỗ cho khoảng thời gian khác</string>
+    <string name="schedule_conflict_title">Lên lịch xung đột</string>
+    <string name="schedule_conflict_item">Các ứng dụng này cũng có trong %2$s trong cùng thời gian: %1$s. Cả hai quy tắc sẽ được áp dụng.</string>
+    <string name="schedule_conflict_edit_apps">Chỉnh sửa ứng dụng</string>
+    <string name="schedule_conflict_edit_schedule">Chỉnh sửa lịch trình</string>
+    <string name="schedule_conflict_keep_both">Giữ cả hai</string>
+    <string name="schedule_conflict_edit_group">Chỉnh sửa nhóm</string>
+    <string name="schedule_conflict_cancel">Hủy bỏ</string>
+    <string name="warning_section_title">KHI KÍCH HOẠT CHẶN</string>
+    <string name="select_start_time">Chọn thời gian bắt đầu</string>
+    <string name="select_end_time">Chọn thời gian kết thúc</string>
+    <string name="usage_based">Dựa trên cách sử dụng</string>
+    <string name="time_based">Dựa trên thời gian</string>
+    <string name="configure_settings">Định cấu hình lịch trình được phép</string>
+    <string name="configure_warning_screen_1">Định cấu hình màn hình cảnh báo</string>
+    <string name="link_time_group">Giới hạn trong một nhóm thời gian</string>
+    <string name="no_time_group">Không có nhóm thời gian (cả ngày)</string>
+    <string name="linked_time_group">Nhóm thời gian: %1$s</string>
+    <string name="linked_warning_managed">Màn hình cảnh báo được quản lý bởi nhóm sử dụng đã liên kết</string>
+    <string name="done">Xong</string>
+    <string name="set_limits_for_each_day">Đặt giới hạn cho mỗi ngày</string>
+    <string name="hours">Giờ</string>
+    <string name="minutes_1">Phút</string>
+    <string name="its_a_temporary_block_that_appears">Đó là một khối tạm thời xuất hiện khi hết thời gian. Thay vì chỉ khóa bạn, nó cho bạn lựa chọn: đóng ứng dụng ngay lập tức hoặc &amp;quot;mượn&amp;quot; vài phút nữa trước khi lời nhắc xuất hiện trở lại.</string>
+    <string name="skip_this_screen_and_go_back">Bỏ qua màn hình này và quay lại ngay</string>
+    <string name="let_me_decide_how_many_extra">Hãy để tôi quyết định xem tôi cần thêm bao nhiêu phút nữa</string>
+    <string name="use_a_predefined_limit_like_5">Sử dụng giới hạn được xác định trước, chẳng hạn như 5 phút, mỗi lần</string>
+    <string name="show_me_the_warning_screen_but">Cho tôi xem màn hình cảnh báo nhưng không để tôi tiếp tục</string>
+    <string name="how_long_to_unlock_for_after">Bao lâu để mở khóa sau khi tiếp tục?</string>
+    <string name="how_long_to_wait_before_being">Phải đợi bao lâu mới có thể nhấn nút tiếp tục. Ngăn chặn việc nhấn nút ngay lập tức mà không đọc tin nhắn.</string>
+    <string name="duration_3_seconds">3 giây</string>
+    <string name="duration_9_seconds">9 giây</string>
+    <string name="duration_15_seconds">15 giây</string>
+    <string name="duration_30_seconds">30 giây</string>
+    <string name="allowed_time_ranges">Phạm vi thời gian được phép</string>
+    <string name="apply_to_every_day">Áp dụng vào mỗi ngày</string>
+    <string name="add_time_range">Thêm phạm vi thời gian</string>
+    <string name="save_time_ranges">Lưu phạm vi thời gian</string>
+    <string name="monday">Thứ hai</string>
+    <string name="sample_start_time">09:00 sáng</string>
+    <string name="to">ĐẾN</string>
+    <string name="sample_end_time">05:00 chiều</string>
+    <string name="all_groups">Tất cả các nhóm</string>
+    <string name="value_zero_minutes">0m</string>
+    <string name="value_zero_percent">0%</string>
+    <string name="a_few_final_steps">Một vài bước cuối cùng</string>
+    <string name="select_what_apps_youd_like_to">Chọn ứng dụng bạn muốn chặn</string>
+    <string name="create_a_new_group">Tạo một nhóm mới</string>
+    <string name="use_a_focus_group_to_instantly">Sử dụng Nhóm tập trung để khởi chạy ngay phiên tập trung với các ứng dụng và trang web bạn đã chọn.</string>
+    <string name="enter_group_name">Nhập tên nhóm</string>
+    <string name="select_apps">Chọn ứng dụng</string>
+    <string name="selected_0">Đã chọn: 0</string>
+    <string name="what_action_would_you_like_to">Chọn điều gì sẽ xảy ra khi bạn mở một ứng dụng hoặc trang web</string>
+    <string name="block_selected">Khối đã chọn</string>
+    <string name="block_all_except_selected">Chặn tất cả ngoại trừ đã chọn</string>
+    <string name="let_me_quit_midsessions">Hãy để tôi bỏ cuộc giữa buổi</string>
+    <string name="save_group">Lưu nhóm</string>
+    <string name="reel_blocker">Trình chặn cuộn</string>
+    <string name="enable_reel_blocker">Bật Trình chặn cuộn phim</string>
+    <string name="warning_screen">Màn hình cảnh báo</string>
+    <string name="blocking_basis">Cơ sở chặn</string>
+    <string name="reel_count_based">Dựa trên số lượng cuộn</string>
+    <string name="configure_limits">Định cấu hình giới hạn</string>
+    <string name="reel_limits">Giới hạn cuộn</string>
+    <string name="apply_same_limit_to_every_day">Áp dụng cùng một giới hạn cho mỗi ngày</string>
+    <string name="maximum_reels_allowed">Số cuộn tối đa được phép</string>
+    <string name="save_limits">Lưu giới hạn</string>
+    <string name="keyword_blocker">Trình chặn từ khóa</string>
+    <string name="enable_keyword_blocker">Bật Trình chặn từ khóa</string>
+    <string name="enter_a_keyword">Nhập từ khóa hoặc trang web</string>
+    <string name="redirection">Chuyển hướng</string>
+    <string name="redirection_url">URL chuyển hướng</string>
+    <string name="configuration">Cấu hình</string>
+    <string name="search_recursively_for_blocked_keywords_on">Tìm kiếm đệ quy các từ khóa bị chặn trên mọi trường văn bản trên màn hình</string>
+    <string name="block_all_browsers_except_supported_ones">Chặn trình duyệt không được hỗ trợ</string>
+    <string name="select_ignored_apps">Chọn ứng dụng bị bỏ qua</string>
+    <string name="activity_powered_by">ĐƯỢC CUNG CẤP BỞI CURBOX</string>
+    <string name="your_digital_wellbeing">Sức khỏe kỹ thuật số của bạn</string>
+    <string name="total_today">TỔNG HÔM NAY</string>
+    <string name="most_used">ĐƯỢC SỬ DỤNG NHIỀU NHẤT</string>
+    <string name="crunching_numbers">Những con số khủng khiếp...</string>
+    <string name="usage_welcome_title">Xin chào người dùng thân yêu</string>
+    <string name="usage_welcome_message">Số liệu thống kê ứng dụng của bạn sẽ hiển thị ngay tại đây. Tôi bắt đầu theo dõi thời điểm bạn cài đặt tôi. Vui lòng đọc tài liệu để bạn có thể sử dụng Curbox một cách đầy đủ nhất.</string>
+    <string name="usage_welcome_read_docs">Đọc tài liệu</string>
+    <string name="usage_welcome_star_repo">Gắn dấu sao kho lưu trữ của chúng tôi</string>
+    <string name="whats_new_title">Có gì mới</string>
+    <string name="whats_new_dismiss">Hiểu rồi</string>
+    <string name="no_auto_dnd_groups_yet_create">Chưa có nhóm Auto DND nào. Tạo một cái!</string>
+    <string name="desc_10_apps_included">10 ứng dụng • Đã bao gồm</string>
+    <string name="create_autodnd_group">Tạo nhóm DND tự động</string>
+    <string name="apps_to_blockallow">ỨNG DỤNG ĐỂ CHẶN/ CHO PHÉP</string>
+    <string name="blocking_mode">CHẾ ĐỘ CHẶN</string>
+    <string name="configure_schedule">Định cấu hình lịch trình</string>
+    <string name="exitable">Có thể thoát</string>
+    <string name="allow_focus_mode_to_be_exited">Cho phép thoát chế độ lấy nét theo cách thủ công</string>
+    <string name="save_schedule">Lưu lịch trình</string>
+    <string name="track_the_number_of_short_videos">Theo dõi số lượng video ngắn bạn cuộn</string>
+    <string name="grayscale_filter_setup">Thiết lập bộ lọc thang độ xám</string>
+    <string name="no_grayscale_groups_yet_create_one">Chưa có nhóm thang độ xám nào. Tạo một cái!</string>
+    <string name="desc_10_apps">10 ứng dụng</string>
+    <string name="create_grayscale_group">Tạo nhóm thang độ xám</string>
+    <string name="apps_to_greyscale">ỨNG DỤNG ĐẾN QUY MÔ XÁM</string>
+    <string name="duration_25_minutes">25</string>
+    <string name="duration_15_minutes">15</string>
+    <string name="duration_30_minutes">30</string>
+    <string name="duration_60_minutes">60</string>
+    <string name="duration_120_minutes">120</string>
+    <string name="time_zero">00:00</string>
+    <string name="your_phone_is_designed_to_be">của bạn
+        điện thoại
+        là
+        được thiết kế
+        được
+        gây nghiện</string>
+    <string name="you_arent_lazy_and_your_willpower">Bạn không lười biếng và ý chí của bạn không bị suy giảm. Bạn chỉ đang đấu tranh với các thuật toán do hàng nghìn nhà tâm lý học xây dựng để giúp bạn tiếp tục cuộn.</string>
+    <string name="lets_level_the_playing_field">Giảm gánh nặng cho ý chí của tôi.</string>
+    <string name="lets_look_at_the_numbers">Hãy nhìn vào những con số.</string>
+    <string name="how_many_hours_a_day_do">Bạn cuộn bao nhiêu một ngày?</string>
+    <string name="sample_usage_4_hours">4 giờ</string>
+    <string name="over_a_year_that_is_60">Đó là trọn 1 tuần trong cuộc đời bạn nhìn chằm chằm vào màn hình mỗi năm.</string>
+    <string name="i_want_my_time_back">Tôi muốn thời gian của tôi quay trở lại.</string>
+    <string name="what_are_you_making_room_for">Bạn đang nhường chỗ cho điều gì?</string>
+    <string name="mindless_scrolling_leaves_us_with_brain">Việc cuộn chuột không suy nghĩ khiến chúng ta bị sương mù não thay vì thực sự nghỉ ngơi. Bạn muốn làm gì hơn với những giờ phục hồi đó?</string>
+    <string name="focusing_on_deep_workstudying">Tập trung vào làm việc/học tập sâu</string>
+    <string name="learning_a_new_skill_like_guitar">Học một kỹ năng mới (như ghi-ta hoặc viết mã)</string>
+    <string name="being_present_with_friends_and_family">Có mặt cùng bạn bè và gia đình</string>
+    <string name="getting_actual_restful_sleep">Có được giấc ngủ thực sự và thư thái</string>
+    <string name="commit_to_these_goals">Cam kết thực hiện những mục tiêu này.</string>
+    <string name="willpower_isnt_enough_we_use_friction">Ý chí là không đủ. Chúng tôi sử dụng ma sát.</string>
+    <string name="we_dont_just_block_your_apps">Chúng tôi không chỉ chặn ứng dụng của bạn. Chúng tôi làm gián đoạn trí nhớ cơ bắp của bạn. Khi bạn vô thức nhấn vào Instagram hoặc YouTube, chúng tôi sẽ khiến bạn tạm dừng, hít thở và chủ động chọn xem liệu điều đó có xứng đáng hay không.</string>
+    <string name="make_me_pause">Làm tôi phải tạm dừng.</string>
+    <string name="choose_your_first_target">Chọn mục tiêu đầu tiên của bạn.</string>
+    <string name="dont_try_to_change_everything_at">Đừng cố gắng thay đổi mọi thứ cùng một lúc. Chọn một ứng dụng tiêu hao năng lượng của bạn nhiều nhất.</string>
+    <string name="instagram">Instagram</string>
+    <string name="tiktok">TikTok</string>
+    <string name="youtube">YouTube</string>
+    <string name="reddit">Reddit</string>
+    <string name="other_select_later">Khác (Chọn sau)</string>
+    <string name="daily_limit">Giới hạn hàng ngày</string>
+    <string name="limit_15_min">15 phút</string>
+    <string name="limit_30_min">30 phút</string>
+    <string name="limit_1_hour">1 giờ</string>
+    <string name="limit_2_hours">2 giờ</string>
+    <string name="add_friction_to_this_app">Thêm ma sát vào ứng dụng này</string>
+    <string name="skip_choosing_a_target_app">Tôi sẽ chọn cái này sau</string>
+    <string name="give_us_the_keys">Đưa chìa khóa cho chúng tôi.</string>
+    <string name="to_create_friction_and_give_you">Để tạo ra xích mích và giúp bạn lấy lại thời gian, chúng tôi cần quyền truy cập sâu vào hệ thống.</string>
+    <string name="display_over_other_apps">Hiển thị trên các ứng dụng khác</string>
+    <string name="usage_access">Quyền truy cập sử dụng</string>
+    <string name="send_notifications">Gửi thông báo</string>
+    <string name="app_blocker_accessibility">Trình chặn ứng dụng (Khả năng truy cập)</string>
+    <string name="do_you_want_to_restore_a">Bạn có muốn khôi phục bản sao lưu đã lưu trước đó không? Bạn sẽ không được phép khôi phục sau này.</string>
+    <string name="restore_backup">Khôi phục bản sao lưu</string>
+    <string name="enable_permissions">Bật quyền</string>
+    <string name="add_widget_to_homescreen">Thêm Widget vào Màn hình chính</string>
+    <string name="refresh_usage_stats">Làm cho khỏe lại</string>
+    <string name="export_data_as_csv">Xuất dữ liệu dưới dạng CSV</string>
+    <string name="usage">Cách sử dụng</string>
+    <string name="focus">Tập trung</string>
+    <string name="reducers">Bộ giảm tốc</string>
+    <string name="info">Thông tin</string>
+    <string name="settings">Cài đặt</string>
+    <string name="log_in">Đăng nhập</string>
+    <string name="sync_across_devices">Đồng bộ hóa trên các thiết bị của tôi</string>
+    <string name="sync_across_devices_pitch">Tôi lưu giữ từng bước cài đặt và thống kê thời gian của bạn trên mọi điện thoại và trình duyệt, được khóa bằng một chiếc chìa khóa chỉ bạn giữ.</string>
+    <string name="sync_finish_setup_pitch">Bạn đã đăng nhập. Một bước nữa sẽ bật đồng bộ hóa và mở khóa dữ liệu của bạn trên thiết bị này.</string>
+    <string name="finish_sync_setup">Hoàn tất thiết lập</string>
+    <string name="sync_is_on">Đồng bộ hóa đang bật</string>
+    <string name="sync_is_on_pitch">Cài đặt và số liệu thống kê thời gian của bạn luôn được cập nhật trên mọi thiết bị. Nhấn để quản lý đồng bộ hóa hoặc đăng xuất.</string>
+    <string name="manage_sync">Quản lý đồng bộ hóa</string>
+    <string name="this_app_is_currently_under_focus">Ứng dụng này hiện đang ở chế độ lấy nét</string>
+    <string name="blocked_keyword_word_was_found">Đã tìm thấy từ khóa -word bị chặn.</string>
+    <string name="please_provide_draw_over_other_apps">Vui lòng cung cấp quyền \'Vẽ lên các ứng dụng khác\' để dịch vụ này hoạt động bình thường.</string>
+    <string name="added_successfully">Đã thêm thành công</string>
+    <string name="package_already_exists">Gói đã tồn tại</string>
+    <string name="data_exported_successfully">Dữ liệu được xuất thành công</string>
+    <string name="failed_to_export_data">Không thể xuất dữ liệu</string>
+    <string name="pinning_widgets_is_not_supported_on">Ghim tiện ích không được hỗ trợ trên trình khởi chạy này</string>
+    <string name="generating_analysis_csv">Đang tạo CSV phân tích...</string>
+    <string name="crash_logs_cleared">Đã xóa nhật ký sự cố</string>
+    <string name="nothing_to_share">Không có gì để chia sẻ.</string>
+    <string name="group_deleted">Đã xóa nhóm</string>
+    <string name="please_select_at_least_one_app">Vui lòng chọn ít nhất một ứng dụng</string>
+    <string name="group_saved_successfully">Đã lưu nhóm thành công</string>
+    <string name="warning_link_blocker_may_not_work">CẢNH BÁO: Trình chặn liên kết có thể không hoạt động ở mọi nơi.</string>
+    <string name="active_reducers">Giảm hoạt động</string>
+    <string name="add_a_reducer">Thêm bộ giảm tốc</string>
+    <string name="mindful_messages">Tin nhắn chánh niệm</string>
+    <string name="enable_mindful_messages">Kích hoạt tin nhắn chánh niệm</string>
+    <string name="target_apps">ỨNG DỤNG MỤC TIÊU</string>
+    <string name="messages_label">TIN NHẮN</string>
+    <string name="messages_hint">Một trên mỗi dòng. Các biến: {app_usage_today}, {screentime_today}, {live_session_duration}, {reel_count}</string>
+    <string name="overlay_position">VỊ TRÍ LỚP PHỦ</string>
+    <string name="position_top">Đứng đầu</string>
+    <string name="position_center">Trung tâm</string>
+    <string name="position_bottom">Đáy</string>
+
+    <string name="default_rules">Quy tắc mặc định</string>
+    <string name="custom_rules">Quy tắc tùy chỉnh</string>
+    <string name="custom_rule_hint">Gợi ý quy tắc tùy chỉnh</string>
+    <string name="pick_element">Chọn phần tử</string>
+
+    <string name="picker_channel_name">Bộ chọn phần tử</string>
+    <string name="picker_channel_description">Thông báo cho Bộ chọn phần tử</string>
+    <string name="picker_notification_title">Bộ chọn phần tử đã sẵn sàng</string>
+    <string name="picker_notification_text">Nhấn để bắt đầu chọn một phần tử</string>
+    <string name="picker_active_title">Bộ chọn phần tử đang hoạt động</string>
+    <string name="picker_active_text">Nhấn vào các thành phần trên màn hình để chọn chúng</string>
+
+    <string name="appearance">Vẻ bề ngoài</string>
+    <string name="btn_set_position">Đặt vị trí</string>
+    <string name="text_size_label">Kích thước văn bản: 14sp</string>
+    <string name="text_size_value">Kích thước văn bản: %dsp</string>
+    <string name="background_color">Màu nền</string>
+    <string name="opacity_label">Độ mờ: 37%</string>
+    <string name="opacity_value">Độ mờ: %d%%</string>
+    <string name="text_opacity_label">Độ mờ văn bản: 100%</string>
+    <string name="text_opacity_value">Độ mờ văn bản: %d%%</string>
+    <string name="position_label">Chức vụ</string>
+    <string name="position_hint">Kéo chỉ báo để đặt vị trí lớp phủ xuất hiện</string>
+
+    
+    <string name="dialog_question_mark" />
+    <string name="blocking_service_channel_name">Dịch vụ chặn</string>
+    <string name="blocking_service_channel_description">Chạy ở chế độ nền để bảo vệ bạn</string>
+    <string name="blocking_service_notification_title">Hộp giới hạn %1$s đang hoạt động</string>
+    <string name="blocking_service_notification_text">Bảo vệ phúc lợi kỹ thuật số của bạn</string>
+    <string name="picker_no_element_found">Không tìm thấy phần tử nào tại thời điểm đó</string>
+    <string name="picker_no_element_selected">Không có phần tử nào được chọn</string>
+    <string name="picker_default_text">Chữ</string>
+    <string name="dialog_title_select_date_range">Chọn phạm vi ngày</string>
+    <string name="dialog_title_select_export_range">Chọn phạm vi xuất</string>
+    <string name="toast_unsupported_browser">Trình duyệt không được hỗ trợ</string>
+    <string name="notification_title_remaining_usage">Mức sử dụng còn lại trước khi khóa</string>
+    <string name="notification_title_focus_mode_on">Chế độ lấy nét đang bật</string>
+
+    <string name="nfc_focus_started">Đã bắt đầu tập trung: %1$s (%2$d phút)</string>
+    <string name="nfc_focus_stopped">Đã dừng lấy nét</string>
+    <string name="nfc_focus_no_group">Không tìm thấy nhóm tập trung nào để bắt đầu</string>
+    <string name="nfc_focus_not_exitable">Phiên tập trung này không thể kết thúc sớm</string>
+    <string name="nfc_tag_unrecognized">Thẻ NFC Curbox không được nhận dạng</string>
+
+    <string name="onboarding_non_session_title">Đã phát hiện cài đặt không dựa trên phiên</string>
+    <string name="onboarding_restricted_settings_desc">Android 13+ hạn chế các dịch vụ Hỗ trợ tiếp cận đối với các ứng dụng được cài đặt bên ngoài cửa hàng ứng dụng (như F-Droid hoặc Play Store). Để bật quyền, bạn cần phải cho phép \'Cài đặt bị hạn chế\' theo cách thủ công đối với Curbox. Ngoài ra, hãy cài đặt qua ứng dụng F-Droid (không phải trang web) để tránh điều này.</string>
+    <string name="onboarding_show_tutorial">Hiển thị hướng dẫn để kích hoạt quyền</string>
+    <string name="onboarding_shizuku_grant">Cấp mọi quyền với Shizuku</string>
+    <string name="sync_paywall_title">Đồng bộ hóa cao cấp</string>
+    <string name="sync_paywall_subtitle">Luôn cập nhật dữ liệu Curbox của bạn trên mọi thiết bị.</string>
+    <string name="sync_paywall_body">Đồng bộ hóa cài đặt, phiên tập trung và thống kê thời gian của bạn trên các trình duyệt và điện thoại. Dữ liệu của bạn luôn được mã hóa từ đầu đến cuối.</string>
+    <string name="sync_paywall_price">%1$s/năm</string>
+    <string name="sync_paywall_price_fallback">$25</string>
+    <string name="sync_paywall_subscribe">Đặt mua</string>
+    <string name="sync_paywall_restore">Tôi đã đăng ký rồi</string>
+    <string name="sync_paywall_checking">Đang kiểm tra đăng ký của bạn</string>
+    <string name="pairing_code_warning_title">Giữ mã này ở chế độ riêng tư</string>
+    <string name="pairing_code_warning_message">Mã này chứa khóa bí mật mở khóa tất cả dữ liệu đã đồng bộ hóa của bạn. Bất cứ ai chụp ảnh nó đều có thể đọc dữ liệu của bạn. Vui lòng không chụp màn hình hoặc chia sẻ nó. Mã sẽ tự ẩn sau một phút.</string>
+    <string name="pairing_code_show">Hiển thị mã</string>
+    <string name="dnd_access_dialog_title">Đừng làm phiền</string>
+    <string name="dnd_access_dialog_message">Curbox cần điều này để bật chế độ Không làm phiền cho bạn, nhờ đó nó có thể tắt tiếng cuộc gọi và cảnh báo trong khi bạn tập trung. Không có nó, Curbox không thể tự mình tắt tiếng những phiền nhiễu.\n\n🔒 Curbox không thu thập, gửi hoặc lưu trữ bất kỳ dữ liệu nào của bạn trên máy chủ mà không có sự cho phép của bạn.\n\n🛡️ Curbox tôn trọng sự yên bình của bạn: Curbox chỉ sử dụng điều này để tắt tiếng những phiền nhiễu khi bạn yêu cầu.</string>
+    <string name="picker_dialog_block_element">Chặn phần tử này</string>
+    <string name="picker_dialog_generated_rule">Quy tắc được tạo:</string>
+    <string name="picker_dialog_rule_desc">Được tạo tự động từ lựa chọn của bạn. Chuyển đổi các chip bên dưới để tùy chỉnh.</string>
+    <string name="picker_dialog_element_properties">⊕ Thuộc tính phần tử</string>
+    <string name="picker_dialog_properties_desc">Điều gì xác định yếu tố này? Chuyển đổi để thêm/xóa khỏi quy tắc.</string>
+    <string name="picker_dialog_blocking_action">⚡ Hành động chặn</string>
+    <string name="picker_dialog_action_desc">Điều gì xảy ra khi phần tử này được tìm thấy?</string>
+    <string name="picker_dialog_advanced">⚙ Nâng cao</string>
+    <string name="picker_dialog_advanced_desc">Tinh chỉnh hành vi phù hợp.</string>
+    <string name="picker_dialog_label_optional">💬 Nhãn (tùy chọn)</string>
+    <string name="dialog_add_websites">Thêm trang web</string>
+    <string name="dialog_selected_count">Đã chọn: %1$d</string>
+    <string name="dialog_turn_on_dnd">Bật không làm phiền</string>
+    <string name="reel_blocker_title">Chặn nội dung dạng ngắn</string>
+    <string name="reel_blocker_allowed_apps_zero">Ứng dụng được phép (0)</string>
+    <string name="reel_blocker_allowed_apps_count">Ứng dụng được phép (%1$d)</string>
+    <string name="label_show_more">Hiển thị thêm</string>
+    <string name="label_all_time">mọi lúc</string>
+    <string name="btn_clear_filters">Xóa bộ lọc</string>
+    <string name="empty_intents_title">Không tìm thấy ý định nào.</string>
+    <string name="empty_intents_desc">Hãy thử điều chỉnh bộ lọc của bạn hoặc mở khóa một ứng dụng.</string>
+    <string name="grayscale_shizuku_title">Cần có sự cho phép của Shizuku</string>
+    <string name="grayscale_shizuku_desc">Tính năng này cần có sự cho phép của Shizuku để áp dụng bộ lọc thang độ xám một cách chính xác.</string>
+    <string name="grayscale_secure_settings_desc">Curbox cần có quyền một lần để thay đổi màu màn hình của bạn. Hãy chấp nhận nó một lần với Shizuku. Sau đó thang độ xám đó sẽ tự hoạt động, ngay cả sau khi bạn khởi động lại điện thoại.</string>
+    <string name="btn_grant_permission">Cấp quyền</string>
+    <string name="picker_control_tap_to_select">Nhấn vào một phần tử để chọn nó</string>
+    <string name="btn_deeper">sâu hơn</string>
+    <string name="btn_parent">cha mẹ</string>
+    <string name="btn_block">Khối</string>
+    <string name="btn_all">Tất cả</string>
+    <string name="btn_move">Di chuyển</string>
+    <string name="label_group_name">Tên nhóm</string>
+    <string name="label_app_blocker">Trình chặn ứng dụng</string>
+    <string name="default_focus_duration_value">25</string>
+    <string name="label_mins">phút</string>
+    <string name="create_keyword_group_title">Tạo nhóm từ khóa</string>
+    <string name="label_keywords_to_block">Từ khóa cần chặn</string>
+    <string name="label_unlock_behavior">Mở khóa hành vi</string>
+    <string name="label_url_redirection">Chuyển hướng URL</string>
+    <string name="label_show_warning_screen">Hiển thị màn hình cảnh báo</string>
+    <string name="label_keyword_blocker_title">Trình chặn từ khóa</string>
+    <string name="label_no_keyword_groups">Chưa có nhóm từ khóa nào. Tạo một cái!</string>
+    <string name="btn_undo">HOÀN TÁC</string>
+    <string name="label_loading">Đang tải</string>
+    <string name="warning_config_title">Cấu hình màn hình cảnh báo</string>
+    <string name="warning_config_desc">Đặt điều gì sẽ xảy ra khi giới hạn của bạn được đáp ứng.</string>
+    <string name="label_fixed_unlock_duration">Thời lượng mở khóa cố định: 5 phút</string>
+    <string name="label_wait_before_unlocking">Đợi trước khi mở khóa: 15s</string>
+    <string name="label_wait_desc">Buộc bạn phải suy nghĩ trước khi vượt qua khối.</string>
+    <string name="label_qr_auth">Xác thực QR/Mã vạch</string>
+    <string name="btn_generate_new">Tạo mới</string>
+    <string name="btn_scan_existing">Quét hiện có</string>
+    <string name="label_configured_qr">Mã QR/Mã vạch được định cấu hình:</string>
+    <string name="label_nfc_auth">Xác thực NFC</string>
+    <string name="label_configured_nfc">Thẻ NFC được định cấu hình:</string>
+    <string name="label_typing_auth">Xác thực gõ</string>
+    <string name="label_typing_desc">Nhập câu người dùng phải gõ chính xác để bỏ chặn:</string>
+    <string name="label_intent_auth">Độ dài mở khóa ý định</string>
+    <string name="label_intent_min_desc">Tôi chọn số lượng ký tự mà ai đó phải viết trước khi họ có thể tiếp tục.</string>
+    <plurals name="warning_intent_min_length">
+        <item quantity="one">Minimum character: %1$d</item>
+        <item quantity="other">Minimum characters: %1$d</item>
+    </plurals>
+    <plurals name="warning_intent_chars_needed">
+        <item quantity="one">Write at least %1$d character (%2$d more to go)</item>
+        <item quantity="other">Write at least %1$d characters (%2$d more to go)</item>
+    </plurals>
+    <string name="label_limit_unlock_frequency">Giới hạn tần suất mở khóa</string>
+    <string name="label_allowed_proceeds">Số tiền được phép: 3</string>
+    <string name="label_time_window">Khoảng thời gian: 60 phút</string>
+    <string name="label_vibrate_brightness">Rung \u0026 độ sáng tối đa khi cảnh báo</string>
+    <string name="label_reducer_analytics">Phân tích giảm tốc</string>
+    <string name="label_logged_intents">Ý định được ghi lại</string>
+    <string name="label_logged_intents_desc">Xem lại lý do mở khóa trước đây của bạn.</string>
+    <string name="label_app_pause">Tạm dừng ứng dụng</string>
+    <string name="label_rather_spend_time">Tôi thà dành thời gian này...</string>
+    <string name="label_recommended">Khuyến khích</string>
+    <string name="crash_title">Ối! Curbox đã bị hỏng</string>
+    <string name="crash_desc">Đã xảy ra lỗi. Vui lòng chia sẻ những nhật ký này với nhà phát triển để giúp khắc phục sự cố.</string>
+    <string name="btn_clear">Thông thoáng</string>
+    <string name="btn_restart">Khởi động lại</string>
+    <string name="btn_share">Chia sẻ</string>
+    <string name="focus_add_websites_desc">Nhập các trang web cụ thể (ví dụ: facebook.com/*) hoặc sử dụng từ khóa để chặn hoặc cho phép trong phiên tập trung này.</string>
+    <string name="create_app_group_title">Tạo nhóm ứng dụng</string>
+    <string name="label_on_each_open">Mỗi lần mở</string>
+    <string name="label_configure_allowed_schedule">Định cấu hình lịch trình được phép</string>
+
+    <string name="hint_picker_query">pkg:com.app id:btn</string>
+    <string name="hint_picker_label">ví dụ. Ẩn câu chuyện, chặn quảng cáo...</string>
+    <string name="hint_type_sentence">Nhập chính xác câu trên</string>
+    <string name="hint_unlock_reason">Tại sao bạn cần sử dụng ứng dụng này?</string>
+    <string name="hint_search_intents">Mục đích tìm kiếm hoặc ứng dụng...</string>
+    <string name="hint_unlock_challenge">Mở khóa thử thách</string>
+    <string name="hint_unlock_method">Phương pháp mở khóa</string>
+    <string name="hint_required_sentence">Câu bắt buộc</string>
+    <string name="hint_custom_warning">Thông báo cảnh báo tùy chỉnh</string>
+    <string name="hint_add_website">Thêm trang web hoặc từ khóa</string>
+    <string name="desc_previous_week">Tuần trước</string>
+    <string name="desc_next_week">Tuần tới</string>
+    <string name="desc_edit_group">Chỉnh sửa nhóm</string>
+    <string name="desc_delete_group">Xóa nhóm</string>
+    <string name="desc_refresh_stats">Làm mới số liệu thống kê</string>
+    <string name="desc_delete">Xóa bỏ</string>
+    <string name="desc_add_group">Thêm nhóm</string>
+    <string name="desc_remove">Di dời</string>
+    <string name="desc_remove_interval">Xóa khoảng thời gian</string>
+
+    <string name="ascii_coolstars" translatable="false">"\n
+⠀⠀⠀⠀⠀⠳⣄⣀⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⣸⢀⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡸⠢⣽⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠙⢄⡠⠖⢋⡏⠀⠀⠀⠀⠀⠀⢀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠦⠞⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⡿⣿⡄⠈⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠸⠁⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠃⠀⢠⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠨⠀⠁⠁⠈⠀⠁⠒⣄⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⡤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⢸⡈⠓⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⢠⣖⣉⣀⣀⡀⠀⠀⠀⠘⢦⠀⠀⠀⠀⠀⣰⠓⡄⠀⠀⠀⠀⠀⢠⡏⢧⠀⠀⠀⠀⠀⠀⠀
+⠘⠤⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡖⢳⡤⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢈⠳⣄⠀⠀⠀⠀⠓⠢⣵⣎⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢰⠋⠓⠲⠤⠷⠀⠀⠀⠠⠈⠋⠁⠀⠀⠀⠀⠀⢸⠀⠈⢧⡠⠤⠖⢒⠟⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣏⡉⠉⠀⠀⠼⢥⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢢⣀⣀⡀⠘⠉⢹⠑⠠⠀⠀⠀⠀⠀⠀⠀⠀⢸⡧⠃⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠰⢶⣂⠈⠉⠉⠀⣀⠀⠀⣠⠚⠁⠀⠀
+⠀⠀⠀⠀⣆⠀⠀⠰⠆⠀⠀⠀⠀⠀⠀⢰⠋⠀⠀⢀⣀⣠⠇⠀⠀⠀⠀⠀⠀⢦⠀⡴⠀⠀⠀⡤⠖⠚⢉⠉⡏⠉⠉⠙⠓⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠈⠙⠒⡄⠀⠈⠀⠈⢧⡀⠀⠀⠀
+⠀⠀⠀⠀⡟⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠒⠛⣆⢸⠀⠀⠀⠀⠀⠀⠀⠘⢂⡈⣾⠀⡀⠀⠀⠀⠀⣀⠀⢀⠃⠀⠀⠀⠀⠀⠙⣀⡖⢲⡀⠀⠀⠂⠀⠐⠁⠈⠐⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⢸⠁⢀⠚⠑⣆⠀⢳⡀⠀⠀
+⠀⠀⠀⠀⡇⠸⡄⣀⡠⢤⡶⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⢀⡀⠀⠀⠀⠀⠠⠔⠋⡟⠫⡀⠀⠀⡀⠀⠀⢀⡞⠀⠀⠀⠀⠀⠀⠀⡏⠲⠄⢹⠀⠀⠈⠀⢀⠤⠴⣄⠈⠀⠀⠀⠀⠀⠀⠘⢿⠃⠀⠀⠀⠀⠀⠀⡼⡠⠋⠀⠀⠀⠉⠒⠳⠀⠀
+⣤⠖⠒⠚⡗⠛⣻⡋⡠⠋⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⣠⣄⠀⠀⠈⠒⠖⠋⠠⠀⠀⠀⡏⠀⠶⠈⡇⠁⠀⠀⠀⠀⠀⠀⠐⣠⠀⠀⠀⠀⠀⠀⠛⠁⠀⣠⡀⠀⠀⠀⠀⠀⠀
+⠀⠉⠑⢺⡧⢎⣠⠛⣄⠀⠀⠀⠀⠀⠸⠼⠇⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠖⠋⠀⠀⠀⠀⠀⠀⠣⠼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⠤⠚⠀⠄⠀⠀⠀⠀⠀⠀⢠⢫⡷⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⢀⡀⠀⠀
+⠀⠀⠀⢸⠀⡴⠃⠉⠛⠧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠤⠇⠀⠀⠀⣀⣠⠤⠖⠚⠉⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠤⣤⣶⣞⣶⣽⣄⣠⣤⢤⣄⠀⠀⠀⠀⠀⠀⢀⣸⢳⣀⣤
+⠀⠀⠀⢸⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠒⠀⠀⠀⠀⠀⣠⠴⠚⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠣⣤⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠁⠀⠀⠀⠈⠳⣜⡹⣺⡯⡟⢉⣩⠕⠋⠀⣀⠀⠀⠀⠀⠯⣍⡀⠀⢠⠋
+⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠊⠌⠀⠀⠀⣠⠔⠋⠁⠀⠀⠀⠀⠀⠀⠳⢦⡀⢀⠤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⣘⣀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢿⢉⣙⠿⣿⡀⠀⠀⠀⠉⠀⠀⠀⠀⠀⢠⣇⠞⠢⠧
+⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠄⢠⢁⠀⠀⠀⣠⠞⠁⠀⠀⠀⢀⡀⠀⠀⠀⢀⡥⠀⠈⠁⣸⠁⠀⠀⠀⠀⠀⠀⣀⣠⣀⣀⣼⢙⡁⣧⣁⣀⣀⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢠⣫⠽⠋⠈⠳⣌⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀
+⠀⠀⠀⠀⢯⣹⠇⠀⠀⠀⠀⠐⠀⡀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⣏⣹⠀⠀⠸⠥⣄⠀⠀⠀⠙⢆⠀⠀⠀⠀⠀⠀⠙⢿⣿⡭⣟⣟⣛⣭⢂⠖⣨⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⡀⡀⠀⠈⠻⡆⠀⠀⠀⣖⢳⠄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠃⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡰⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⣙⡯⣮⣿⡿⠹⡴⠊⠀⠐⠆⠀⠐⠀⠀⡤⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⡠⣀⣀⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⣇⢴⡛⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⡞⢟⡭⠒⢼⣱⣹⡄⠀⠀⠀⠀⠄⠀⠀⠙⠚⠁⠀⠀⠀⠀⠅⠀⠀⠐⠰⣄⠀⠀⠀⠀⠀⠀⢠⠞⠻⠁⠉⣠⣜⡀
+⣤⡀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠈⠻⠗⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠤⠀⠘⠛⠁⠀⠀⠀⠉⠳⠇⠀⠀⠀⠈⠀⠀⡀⢀⡀⠀⠀⠀⠀⠂⠀⢴⡆⠀⠂⠀⡙⢆⠀⠀⠀⠀⠈⣳⠄⠀⠀⠀⢤⡜
+⡛⠈⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠛⠃⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⡀⠀⠀⠂⠘⠀⠀⢀⣀⣀⣀⣀⣀⠁⠀⠀⠀⠀⠀⣤⠀⠀⠌⢣⡀⠀⠀⠀⠧⠠⣆⠀⣦⠤⠇
+⠘⡞⠉⠁⠀⢀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡠⠚⠉⠀⠀⠉⢢⠀⠀⠈⠋⠀⠀⠀⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠐⠂⠁⣀⡠⠴⠚⠋⠉⠉⠀⢀⠄⠀⠈⠉⠙⠒⢤⣀⠀⠀⠀⠀⠈⡀⢳⠀⠀⠀⠀⠀⠈⠛⠁⠀⠀
+⠀⠁⠀⠀⠀⠘⠦⣄⡀⠀⢠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⣰⠃⠀⢠⠔⠒⢦⠈⡆⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠂⠁⢀⡤⠖⠋⠁⠀⠀⠀⠉⠀⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⢦⡀⠀⠀⠀⢁⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣁⡷⠤⠀⣄⣀⠀⠀⠀⠀⠠⠀⡇⠀⠀⢹⠘⠤⠜⢀⠆⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠁⠀⣀⠴⠊⠁⠀⠀⠀⠰⠿⠀⠀⠀⠀⠀⠀⠀⢀⡤⢒⡒⣄⠀⠀⠀⠙⢆⠀⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⡤⢤
+⢀⡀⠀⠀⠀⠀⠀⢀⡔⠋⠹⡅⠀⠀⠀⠀⠀⠀⠀⠀⠐⠂⣧⠀⠀⠀⠓⠶⠒⠋⠀⠀⠀⠀⠀⢞⣹⠆⠀⠀⠀⠀⠀⣠⠴⠋⠀⠀⠄⠀⠀⠀⠀⠀⠀⢰⠄⠀⠀⠀⠀⢠⠏⠀⢧⣃⠜⠀⠀⠀⠀⠈⢳⠀⠀⠁⢸⠀⠀⠀⠀⠀⠀⠀⠑⠚
+⡁⢈⠆⠀⠀⠀⠔⠁⠀⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠘⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⠋⠁⠀⠀⠀⠁⡔⠁⢀⠤⠤⢄⠀⠀⠀⠀⠈⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⡼⢩⡧⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⢀⡫⡍⣳⠀⠈⠓⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠒⠉⠀⠀⠀⠀⠀⠀⠐⠀⡇⠀⢯⣀⡄⠈⡆⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠤⠄⠴⠃⠀⠀⠀⠀⠀⣠⠤⢄⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⡀⠀⠀⠀⠀⠉⣡⠃⠀⠀⠀⠀⠈⠙⠒⠒⠒⠒⠒⠚⠉⠁⠀⠀⠀⠀⠀⠀⣠⣄⠀⠀⠀⠡⠘⠦⣀⣀⣀⠜⢁⠀⠀⠀⠀⠆⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢡⡶⡄⡁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠏⠉⠑⠤⠤⠤⠊⠁⠀⠀⠀⠀⠀⠄⠀⠀⠀⠸⠆⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠣⡼⠃⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⢹⡀⠀⠀⠀⣞⢙⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠓⠒⢁⠇
+⠀⠀⠀⠀⢀⠁⢠⣦⠀⢀⠀⠀⠀⠣⣤⠝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠂⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⠀⢣⡀⢀⠀⠀⠁⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀
+⠞⢉⡉⢦⠀⡄⠀⡀⢀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⡜⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢰⠀⡔⠀⠀⠀⠀⠀⠀⣀⡤⣄⡀⠀⠀⠀⢀⡤⡄⠀⠀⠀⠄⠀⠱⣄⠀⠂⡀⠀⠀⠀⡏⢠⡍⠆⠀⠀⠀⠀⠀⠀⣀⠔⠁⠀⠀
+⣆⠓⢀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢤⡀⠀⠀⠀⢙⣾⣿⡔⠒⠀⠀⠀⠀⠀⡇⠀⢀⡇⠀⠀⠀⠹⠤⠃⠀⠀⠀⠀⠀⠀⠈⠓⢄⡀⠀⠀⠀⠓⠤⠔⠃⠀⠀⠀⢀⡤⠚⠁⠀⠀⠀⠀
+⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠶⠶⠦⠼⠀⠀⠘⠒⠒⠓⢘⡆⠀⠀⠀⠀⠀⠙⠒⠁⠀⠀⠀⠀⡞⠹⡈⠁⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠒⠦⠤⠤⠤⠤⠔⠒⠉⠁⠀⠀⠀⢠⠤⡄⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣠⣄⠀⠀⠀⠀⠙⠲⣄⡀⠀⠀⠀⠀⠀⣀⠴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠤⠒⠒⠶⠤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠜⠀
+⡔⢄⠀⠀⠀⠀⠀⡏⠠⠀⣷⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠔⢢⠀⠀⠀⠀⠀⠉⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠛⠃⠀⠀⠀⠀⠀⠻⠤⠤⠃⠀⠀⠀⠀⠀⢸⠃⠀⣠⠻⢇⡀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⣧⠀⠀⠀⠀⠀⠀⠘⠧⣠⠜⠀⠀⠀⠀⠘⠀⠀⠻⡄⠀⠀⣼⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⢻⡤⠞⠀⠀⠀⠙⠲⠒⠀⠀⠀⠀⠀⠀⠤⣤⠏⢳⠞⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⡜⠀⢸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡀⠂⠈⡛⠁⠀⠀⠀⠀⡶⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡷⠛⠷⠀⠀⠀⠀⠀⠘⢧⡉⠉⠉⠀⠀⠀⠧⠤⠤⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠴⠀⠁⠀⠀⠀⠀⠀⡇⢱⡀⠀⠀⢀⠀⠀⠀
+⠀⢀⠔⢢⡀⠀⢀⡤⠒⠉⠉⠉⠉⠲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⡦⠀⠀⠀⠀⢀⣠⠴⠊⠁⠀⠀⠀⠀⠀⠀⠀⢠⠀⡠⡄⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠤⠖⠃⠀⠉⣉⡭⠟⠋⠀⠀
+⠀⢸⡘⠚⣠⠞⠁⠀⠀⠀⠀⢀⢤⡄⠈⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⣀⡀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠤⢷⠁⢹⣀⣄⡀⠀⠀⠀⠀⠙⠒⠒⠒⡆⠀⣤⡀⠱⡄⠀⠀⠀⠀
+⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⣇⠘⠊⢀⡞⠀⠀⠀⠀⠀⠀⠹⣗⡦⠎⣼⣀⡀⠀⠀⠀⠀⣀⢄⡀⠀⠀⠀⠀⠀⠀⠼⠤⠒⠉⠀⠙⣄⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢢⡄⠀⠀⣤⠒⠁⠀⠀⠀⠀⠀⠀⠀⢀⡇⢰⠃⠙⢦⡘⢆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠚⠉⠀⠀⠀⠀⠀⠀⠀⢀⣴⣻⡖⡗⠒⠛⠁⠀⠀⠀⠳⠤⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠁⠀⠀⢠⠴⢤⠀⠀⠀⠀⠀⣸⡠⠞⠢⣜⡆⠀⠀⠀⠀⣀⡀⠀⠀⢸⣇⠏⠀⠀⠀⠈⠺⠆⠀⠀
+        "</string>
+    <string name="ascii_coolflower" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡱⡌⠳⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⡝⣦⠀⠹⢷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣾⣷⡀⠈⢻⣆⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣄⢂⠘⡄⠀⠀⢀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣧⡇⠀⣰⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⣿⡅⢠⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠹⣽⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⢷⣄⠀⠙⣿⢠⠎⠉⠓⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠚⠉⠉⠉⠉⠉⠙⠻⣿⣷⡀⢸⠃⠀⠀⠐⣿⣷⠀⢿⣤⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠠⠐⠒⠒⠂⠀⠀⠀⠀⠀⠹⣷⡞⠀⠀⠐⠈⣿⠃⣴⣾⣿⣏⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠂⢤⡀⠀⠀⠨⠉⠐⡀⠀⠸⣇⣠⢐⡤⢠⢏⣾⡷⠟⠿⠛⠀⠀⢉⡉⠒⠤⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣷⡤⠀⠒⠠⢤⡀⠀⣯⣇⣿⢃⣾⣿⢟⣔⠁⠆⠀⣂⡀⠀⠀⠀⣀⡀⢢⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⢀⡠⠖⠲⠀⢠⠋⠀⠀⠀⠀⠀⡙⣆⢹⣿⡇⣸⣫⡿⣿⣿⣿⠊⠍⠒⠂⠀⢀⠉⠀⠛⠹⣆⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⡠⠂⠀⢣⠀⠀⢀⠔⠁⣠⡆⢰⠁⡆⠀⠀⠐⠀⠁⠀⠀⣽⠼⣿⣷⣿⡿⡿⢧⠿⠥⠶⠤⢥⣀⠀⠀⠀⢀⣀⢤⣝⣄
+⠀⠀⠀⠀⠀⠀⠀⠀⡠⠁⠀⠀⠀⡬⡄⣠⠂⠀⠰⡜⠀⡏⠀⡇⢠⠀⡀⠘⠃⠀⠈⠋⡂⢿⣿⠋⡉⠒⢮⣑⡊⢄⠀⠀⠀⠙⢏⠁⠀⠀⠀⡻⠋
+⠀⠀⠀⠀⠀⠀⠀⢠⠁⠀⠀⡄⠀⣱⣿⠁⠀⢠⠁⠀⢰⠀⠀⢃⠀⠀⠀⠀⠀⠀⠠⠆⠐⢀⢈⢦⠁⠀⠀⠈⠺⠦⢍⢆⠀⠀⠀⢡⡀⠀⠀⠁⠀
+⠀⠀⠀⠀⢠⠦⢶⣼⠀⣶⣄⣰⣚⣳⠇⢀⠀⠌⠀⠀⣼⣀⣤⣤⣭⣉⠉⠉⢲⣦⣥⣄⣀⣠⣤⣾⣷⣌⠀⠄⠀⠀⠀⠑⠕⠀⠀⠀⠃⠀⠀⠀⠀
+⠀⠀⢀⡠⠂⢀⣌⠻⣧⡙⢟⢣⢛⣾⠀⡉⣾⠃⠀⢠⠁⠀⠀⠈⠙⠻⣧⠀⢸⢸⣿⣿⣿⠿⠿⠿⠛⠛⠳⢄⡀⠀⠀⠀⠈⠔⡄⠀⢰⠀⠀⠀⠀
+⠀⠀⢧⠀⠀⠘⣿⡶⢿⣿⣮⠞⡇⣿⢰⣿⡟⠀⠀⣾⠷⠞⠀⣒⡠⠀⠈⢳⠘⢾⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠉⠐⠒⠲⡀⠈⢰⠀⣸⠀⠀⠀⠀
+⠀⠀⠀⠑⢄⣨⣺⣿⣮⣷⣮⣻⣷⣽⣼⣿⡁⢀⣼⡿⢀⡠⠤⠔⠴⣤⣄⢈⡇⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠰⠁⠀⠀⠀⠀
+⠀⠀⣠⠖⠋⠉⢉⣛⠿⢽⣷⣿⣿⣿⣿⣿⣶⡿⢟⠋⠀⠀⠀⠀⠀⠙⣿⣿⣷⡏⠀⢀⠄⠒⠒⢠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⡞⠁⡀⠔⡊⠵⠲⠽⠋⠋⢁⣠⣿⣿⣿⡇⠀⠈⢢⠴⡾⠉⠱⡀⠀⠘⣿⣿⡠⠊⠀⠀⢀⠄⠀⢈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠸⡀⠈⠀⠈⠀⠀⠀⢀⣤⣶⣿⡏⠻⠍⠘⠗⡄⠀⠀⢧⢱⠀⠀⠈⢦⠀⣼⠟⠀⠀⠀⢄⠈⠀⢠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡇⣀⣠⡤⠤⢲⢿⠟⠍⣷⣿⣿⡄⠀⠀⠀⠃⠀⠀⠘⡌⠚⡄⠀⠀⠣⠏⠀⠀⠀⢎⠃⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⣷⣿⣿⣧⡀⢸⠈⠐⢖⣟⢿⡿⡳⡄⠀⠀⠀⠀⠀⠀⣷⠰⡡⢀⣤⡄⢦⡀⠀⠀⡜⠀⠀⠰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠙⠛⠉⠁⠀⡀⠀⠀⡎⢀⢟⡜⠀⠀⠀⠀⠀⠀⢂⢀⣿⡆⢠⣿⡟⠁⠀⢣⠀⢂⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢡⠀⠀⠀⠀⡌⠀⠀⠀⠀⠈⢐⠤⣰⣿⣿⣿⣦⡀⣷⣴⡄⠘⣇⡎⠀⢀⢃⡠⠤⠒⠒⠒⠤⠤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠢⠀⠀⠰⠁⠀⠀⠀⠀⠒⠀⣗⡻⣿⣿⣿⣿⣿⣿⣿⠇⢀⡿⠁⢀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠂⢤⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢿⠋⠀⠀⠀⠀⠀⠀⠘⣿⡄⠀⠙⢿⣿⣷⡿⢰⣸⢃⣴⠟⠀⢀⣤⠖⠁⠀⠀⠀⠈⠁⠀⠀⡀⢀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠲⠤⠭⠥⠤⠭⠗⠢⢤⣘⠻⣿⣿⣿⣿⣿⣛⣴⡶⠏⠉⠀⠀⠀⠀⣀⠀⠤⠤⠤⣈⠨⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠄⠁⠀⠀⠀⠀⠀⠀⠁⠈⠈⠑⠠⢙⣺⣿⣿⡿⠛⠛⠻⢝⠀⢀⣀⡤⠐⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⠄⠤⠠⠤⠄⣀⣀⣀⣀⣤⣤⠼⠾⣿⣿⢛⣿⣗⠀⠀⠀⠀⠻⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡔⡩⠀⠁⣴⡿⠟⡟⠀⠜⢻⣂⠀⡀⡀⠀⠰⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⡏⠀⠄⠀⠜⠉⠀⢰⡇⢀⠄⠀⠊⠃⠠⠀⠀⠀⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⣰⡿⢇⠀⠀⠂⠀⠐⡀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠋⠁⢀⠃⠀⠀⠀⠀⠀⡰⣿⡷⠛⡄⠀⠈⠁⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠁⠀⠀⠸⠀⠀⡆⠀⠀⡰⣹⡿⠁⠀⠈⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠁⠀⠀⠐⣄⠅⠠⢁⡀⢠⣱⣿⣵⣾⣿⣷⣤⡈⠢⡀⠀⠀⠀⠀⠀⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣧⠀⡀⢠⢃⣿⣿⣿⣿⣿⣯⣉⠛⠦⡉⠦⡀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣧⡧⠃⣾⠛⠛⠛⢿⣿⣿⣿⣿⣦⡄⠂⠈⠓⠤⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣿⣿⡇⢹⣿⠀⣼⠏⠀⠀⠀⠀⠉⠻⢷⣝⢿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⡇⠀⠟⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠹⣟⢿⣵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⡇⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡇⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠇⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_brain" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠤⠤⠤⣄⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⡊⠉⠉⣉⣱⡷⠶⢢⣠⢴⣶⡝⠒⠉⢉⣭⡽⠟⢉⣀⡀⠹⢭⠒⢤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⢚⣩⡽⠿⠊⢉⣉⡂⣀⣩⠭⢴⠟⠋⠉⠉⠉⠛⠳⢦⣬⣤⡴⠞⠛⠁⠛⠳⣾⣧⠀⠟⠀⠉⠲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢚⠁⠀⠰⠋⢡⠄⠀⠞⣫⢟⡥⠒⠉⠹⣿⡀⠀⠀⢦⡀⠀⠀⠀⠈⠻⡧⡀⠀⠀⠀⠀⠈⠻⣗⡶⠶⠶⢤⡀⠱⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢮⣤⡾⠀⠀⣠⡴⠋⠀⡠⣚⠥⠒⢛⡲⠄⠀⠈⢻⡆⠀⠀⠻⣦⣀⠀⠀⠀⣿⠻⣦⣀⣴⠶⠂⠀⠘⣷⡄⠀⠀⢀⣴⡿⠈⠢⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡠⠖⣉⣁⡀⠀⢀⣾⠋⠴⢿⣽⠋⠀⠞⢉⣉⣽⣳⣄⣀⠀⠋⠀⠀⠀⠈⠙⣷⡄⠀⠁⠀⠙⢤⣯⡀⠀⠀⠀⣼⡇⠀⡾⠋⠁⠀⠳⣄⠘⢆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡰⠋⠰⠛⢻⡞⢉⣠⣼⡇⢀⣴⠟⠛⠒⣴⠟⠋⠉⠀⠀⢀⣀⣀⡀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠳⣄⠀⠉⢿⣄⠀⢰⣿⣧⡀⠀⣴⠶⠶⣦⡼⢧⠈⢣⠀⠀⠀⠀
+⠀⠀⠀⢀⡞⣡⣶⡄⠀⡟⣳⠿⠋⠙⡍⡽⠁⣀⣤⣤⣿⡄⠀⠀⠀⠀⡿⡉⣀⣀⣤⣤⣤⣴⠾⠥⠽⣦⣄⠀⠉⠻⢶⡼⢻⠀⠈⠇⠘⡷⡄⠘⠂⠀⢀⡍⠻⣷⣄⡇⠀⠀⠀
+⠀⠀⠀⠘⣺⠏⢸⢃⣼⠟⢁⡤⠀⣠⢟⡷⠟⢋⣉⣤⡿⠇⠀⠀⠀⢰⣣⠞⠋⠉⠉⠁⡀⠀⠀⠀⠀⠀⠙⢷⣄⠀⠀⢹⣾⠀⠀⠀⠀⢸⡇⠀⣀⡀⣾⠀⠀⠈⢻⡁⢦⠀⠀
+⠀⠀⣠⢚⣵⣄⠈⣼⡇⠀⢸⠧⢞⡵⠋⠠⠚⠉⠉⠀⠀⢀⡇⠀⣰⣟⣁⣀⠀⠀⠀⠀⠉⠒⠶⣤⣤⣀⠀⠀⠙⠀⠀⢸⡇⢰⣟⠛⢶⡋⣇⠀⠉⠻⡟⡄⠀⢀⢀⣿⠀⢧⠀
+⠀⣰⠃⢸⠁⣿⠀⠸⣧⠀⢸⢣⠋⠀⣠⣤⠶⢶⢒⣤⣔⣻⠣⢼⠟⠁⠀⠙⢷⡄⠀⠀⢀⠀⠀⠀⠈⠓⢟⢦⠀⠀⠀⢸⡇⠈⠻⣦⡀⠈⠻⣷⣄⠀⠘⣿⠀⠸⣿⣇⣀⢸⠀
+⠀⡇⠀⠀⣼⠇⠀⢀⣿⠀⣇⣇⣴⠟⠋⢠⣾⠟⠉⠀⠀⠈⠳⣼⠀⠀⠀⠀⠀⠳⠀⠀⠈⢳⣄⠀⠀⠀⢸⣼⠀⠀⠀⠈⡟⢆⠀⠈⢻⡀⠀⠈⢻⣆⠀⣻⠃⠀⠀⢹⡟⠻⡀
+⠀⢧⡆⣼⠏⠀⣾⠟⠁⢰⠃⡵⠃⢀⣴⡿⠁⠀⡀⠀⠀⠀⠀⠹⣧⡀⠰⣦⡀⠀⠀⠀⠀⠀⣻⢦⣀⣠⡾⣇⠀⠀⢀⣰⠟⠙⢷⣄⠀⠀⠀⠀⠀⣿⠀⠉⢠⠄⠀⣼⡇⠀⢧
+⢀⠞⢡⡟⠀⠀⣿⠀⢀⡏⡼⠁⣴⠟⠁⠀⠀⠀⣿⠀⣀⣀⢀⣴⠘⣷⡀⠈⢻⣦⣀⠀⢀⣾⠟⠉⠀⠀⠉⠻⣷⣄⠀⠀⠀⠀⠀⠙⢷⡄⠀⠀⠀⠉⠀⣠⡟⠀⣼⣟⠀⠀⢸
+⢸⠀⠘⣧⠀⡴⠛⠳⢸⢰⠁⢰⠏⠀⠀⠀⢀⣼⡯⠟⠋⠙⠻⣷⡀⠘⠀⠀⠀⠈⠉⠻⣿⠁⠀⠀⢰⡟⠉⠀⠈⢻⣦⠀⠀⠀⣄⠀⠀⡗⠀⢸⡇⣠⣾⠟⢀⣾⠋⠹⣷⢀⡇
+⠈⢆⠀⠹⢷⣤⣀⣠⠎⡇⠀⠸⠀⠀⢀⣴⠟⠉⠀⠀⠀⢄⠀⠹⣧⡀⠀⠀⣀⡀⠀⠀⣿⠀⠀⠀⠘⣿⡄⠀⠀⠀⢹⣦⡀⠀⢿⣄⠀⢀⣠⡿⠽⣯⡁⠀⠸⠃⠀⠀⡏⠉⠀
+⠀⢠⢷⣄⠀⠈⣉⣉⢢⢳⡀⠀⠀⠀⣾⡏⠀⠀⠠⣀⡤⢿⠀⠀⠙⠷⠶⠛⠉⠈⠀⣰⠟⠀⠀⠀⠀⠘⣷⡀⠀⠠⠛⠉⠉⠀⢈⣯⠗⠛⠁⠀⠀⠈⠃⠀⢀⣴⠇⢠⠇⠀⠀
+⠀⢸⡀⠻⣧⠈⠉⠹⣏⢀⣑⠤⣀⣀⠼⠳⣄⠀⠀⠀⠙⠺⠖⣦⣤⠤⣀⡀⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⢸⢧⡀⠀⠀⢀⣀⢴⣿⣅⡀⠠⠶⢿⢦⣀⣠⣴⠟⠃⡠⠋⠀⠀⠀
+⠀⠀⠳⡀⠘⠃⠀⡤⠸⣼⠀⠉⠛⠋⠉⠉⠙⠻⣦⣄⠀⠀⠀⠀⠈⠉⠙⠻⣦⠀⠀⠀⠀⡀⠀⠀⠀⢀⣾⠖⠚⠛⠛⠛⠋⠁⠀⠙⣷⠀⠀⣸⡴⠛⠉⢁⡤⠊⠁⠀⠀⠀⠀
+⠀⠀⠀⠘⢦⡀⠸⣧⠀⢻⢇⠀⠳⡤⣤⠆⠀⠀⠈⢻⡇⠀⠀⠀⢰⡄⠀⠀⣿⡇⢀⡾⠛⠛⠻⡝⣲⠟⠋⠀⢀⡄⠀⠀⠀⣀⡄⠀⠋⢀⡴⣻⡄⣤⡶⡍⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠙⠁⠉⠉⠈⠣⡀⠹⣇⠀⠀⠀⠀⠘⠀⠀⠀⢀⡾⢳⡶⠾⠋⠀⠈⠃⠀⠀⣠⠟⢄⣀⣠⡴⠋⠀⠀⠀⣼⢻⣤⣴⠶⠟⠋⣡⡷⣏⢿⡧⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⢫⣲⣤⣀⣀⣀⣀⣤⣶⣻⠋⠛⠷⣦⣤⣤⣄⡤⢤⣺⠕⠋⠉⠉⠁⠀⠀⣀⣤⣾⠏⢩⠀⠀⢀⣤⣾⠛⣧⢻⣼⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠮⢭⣉⣉⡩⠥⠚⠈⢇⠀⢠⡄⠀⠉⠉⠙⣿⠀⢠⠶⠖⢫⣩⠟⠛⠛⠉⠀⣠⣿⣦⠶⠿⣭⣸⣇⡿⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣌⡿⣄⠀⠒⠚⠋⠀⠀⠀⣠⡾⠃⠀⢀⣀⠴⠚⠉⠣⢍⣛⣶⡶⠝⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠒⠂⠀⠒⠒⠉⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="ascii_pill" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡤⡤⠤⠤⢤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠻⠛⠉⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠶⣄⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡾⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠟⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⡾⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠟⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣀⣤⣾⣿⣯⣬⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⣿⣿⣿⣿⣿⣟⣿⡿⣿⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⣿⣿⣿⣿⢿⡿⣟⣿⢿⣿⣿⣽⣯⢿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣿⣿⣿⣿⡿⣿⣻⣽⣯⢿⣻⣽⣻⢷⡿⣿⣟⣿⡾⣟⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⡏
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⣿⣿⣿⣿⢿⣿⣻⣽⡷⣟⣷⢯⣿⢯⣷⢿⣯⣿⣷⡿⣿⢽⡻⣜⢯⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⣿⣿⣿⢿⣟⣯⣿⢾⣽⣳⣿⣻⢾⡿⣽⣻⣾⡿⣿⡽⣞⡽⣎⢷⣫⡝⡾⣜⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠃⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⡿⣟⣾⢿⣽⡾⣽⣯⣟⣷⢯⣟⣯⣿⡿⡿⣝⣯⢳⣝⢮⡳⣝⢮⡳⣝⣳⢯⣞⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠋⠀⠀
+⠀⠀⠀⠀⠀⣰⣾⣿⣿⣿⣿⣿⣟⣾⣽⢿⣽⣻⣾⡽⣟⣾⣽⣾⣿⢿⣻⣳⢻⣝⡳⣎⠿⣜⢧⣛⣮⢷⣻⣽⣯⣟⣯⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⣰⣳⠟⠁⠀⠀⠀
+⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣻⢾⣽⡾⣯⢿⣞⣿⡾⣟⡿⣽⣯⢷⣏⡟⡶⣭⢳⣎⠷⣭⣻⢮⣟⣽⣞⣯⣷⣿⣳⣯⣟⡾⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢄⣎⣦⡿⠋⠁⠀⠀⠀⠀⠀
+⠀⠀⢠⣿⣿⣿⣿⣿⣟⣾⢯⣿⣳⢿⣻⣿⡿⣭⠳⡍⠞⡥⣛⣿⡼⣹⢳⡭⣗⡾⣫⢷⣯⣿⣾⢿⣻⢯⣟⣾⣽⣳⣿⣻⣽⣿⠤⠀⠀⠀⠀⠀⠀⢀⠠⣄⣳⣼⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣾⣿⣿⣿⣿⣟⣯⡿⣯⣷⢿⣻⢿⣿⢳⡌⡑⠈⠐⠠⢃⠞⣷⣯⣳⢟⡾⣽⣿⡿⣯⣷⣟⡿⣯⡿⣯⣟⣾⣽⡾⣽⣻⣿⡇⠀⠀⢀⠀⢤⣘⣴⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢸⣿⣿⣿⣿⣿⣿⣻⣽⡷⣯⡿⣯⣿⣿⡳⡔⢡⠀⠂⡁⢌⢺⡱⣿⣽⣿⣻⣟⡷⣿⣽⡾⣽⣻⢷⡿⣽⣾⣻⢾⣽⣟⣿⣿⢹⢀⠎⣴⣽⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⢼⣿⣿⣿⣿⣿⣿⣟⣷⡿⣿⣽⣷⣻⢿⣿⣝⢦⡘⡔⣰⢊⣧⣻⣽⣿⣞⣷⣟⣿⣳⣯⣟⡿⣽⣻⣽⣟⣾⣽⣿⡿⣿⣿⣏⣶⡿⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣾⣿⣿⣿⣿⣿⣿⣿⣽⢿⣷⣻⡷⣟⣯⡿⣿⣿⣷⣽⣮⣟⣾⡿⣟⣷⣻⣾⣽⢾⣯⢷⣻⢿⣽⣯⣷⣿⣯⣿⣿⣿⣿⠟⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡸⣿⣿⣿⣿⣿⣿⣯⣿⣿⣻⣽⣟⣯⣿⡽⣷⢯⡿⣽⢯⣟⣯⡿⣯⣟⣷⣻⢾⣟⣾⣟⣿⣻⣿⣾⣿⣿⣿⡿⠟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣻⣿⣯⣿⣟⣾⣽⣟⣯⣿⣻⢯⣟⣷⢿⣽⡾⣯⣟⣿⣾⢿⣾⣿⣿⣿⣿⠿⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠐⢻⣿⣿⣿⣿⣿⣿⣿⣿⣽⣾⣿⣻⣾⢯⣷⢿⣽⣻⣟⣾⣟⣷⡿⣿⣽⣿⣻⣿⣿⡿⠟⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣻⣿⣯⣿⣾⢿⣾⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠐⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_sharks" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⠄⠀⠀⠀⣠⡶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⢤⠀⢤⠹⡌⠃⠀⠂⠀⠀⠀⠀⠀⠀⣠⠃⠘⣇⠀⠀⠁⠈⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠳⠼⠃⠢⠦⠙⠙⠀⠀⠀⠀⠀⢀⣤⠖⡧⠐⠚⠙⠳⠤⢀⢀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢠⣄⣄⡀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⢠⣾⠫⠇⠀⠀⠰⠒⠂⠀⠀⠈⠒⣭⣿⡧⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣼⡅⠐⠐⠻⠶⠶⠖⠋⣉⡿⠃⠀⠀⠀⠀⠹⢿⣇⣆⣀⣠⡀⠔⢾⣿⠋⠈⠙⢝⣾⠿⢹⣟⢶⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠙⢧⡀⠀⠄⢠⣆⣌⢸⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢆⠀⢱⠀⠀⠀⠀⠈⠀⠀⠉⢺⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠙⣇⢀⠀⠉⠳⠷⣿⣦⣤⣴⣶⡄⠀⣀⠀⠀⡀⣠⣄⣀⣀⡙⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠉⠘⠓⣀⠤⣤⡀⠀⠀⢀⠀⣀
+⠀⠀⠀⡏⠘⣻⣷⠶⠶⣲⣬⣬⣥⣤⠄⣀⣤⠼⠟⠋⠉⠁⠀⠉⠉⠟⠛⠻⢶⣤⡀⠀⠀⠀⡀⢤⣄⠀⠀⠉⠚⠛⠓⠒⠟⠋⠀
+⠀⠀⠀⣿⣷⠋⠀⠀⠀⠀⠀⠙⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠢⡀⠀⠙⠙⠊⠠⠲⣢⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⣁⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠀⠀⠀⠀⠤⠳⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠑⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_lotus" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠤⣄⠀⢀⠔⠱⢦⡀⢠⡞⠤⠽⢦⠀⢀⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠒⣄⡈⣷⠞⠀⠀⠀⣹⠏⠀⠐⠈⣼⠗⢩⣤⣾⢹⡄⣠⣖⠇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡯⠂⢙⢿⠀⠀⠀⡰⡍⠀⠀⠠⣡⡎⡌⣭⠃⡇⣷⠟⠁⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢰⡩⠐⣤⡀⡾⣡⢃⢧⠀⡰⣴⡀⢀⣶⣹⠟⣶⢆⣴⣷⢠⣼⢿⡖⢱⠃⢠⠔⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⠤⡤⣗⡃⣴⣯⣿⡕⣺⡞⣾⡧⠛⠫⣯⡿⠛⢙⢿⠿⣼⡿⠋⢹⡚⡠⢸⣄⠚⠴⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⡞⠄⠉⡣⣿⣾⢿⡂⠉⢷⢪⣰⠆⠀⠉⠑⡴⠉⠀⠀⢈⢣⡀⡾⣎⠀⢨⡏⠠⢁⠃⠀⣀⣠⢤⣦⡄⠤⠤⣤
+⡖⠖⠼⢦⣀⠀⠫⡱⢬⣻⣆⠙⢣⣊⣴⡈⢀⢸⠔⠠⠀⠀⠀⠘⣹⠏⠄⣤⣔⡷⣡⠞⣺⠽⢒⣪⣟⡟⠀⢀⣷⠋
+⠘⢅⡢⠈⢗⠀⠘⢻⣶⡨⡰⢦⣄⠠⠶⠈⠠⠘⠀⠀⠀⠀⢐⢺⠁⠀⠈⡆⡛⡵⠟⣊⠔⡪⢞⣥⡾⡀⣴⠟⠁⠀
+⠀⠀⠙⠷⣄⡓⢄⠘⣿⣿⣦⡠⢀⠑⢤⣰⠔⠊⠉⠑⠤⢀⢈⢇⠀⠀⠀⣨⠮⠒⣉⠔⠛⣢⣞⣡⠴⠊⠀⠀⠀⠀
+⠀⠀⠀⣀⣀⡙⠳⢿⣞⣿⣿⣿⣮⣵⣂⢗⠀⢄⠀⠀⠀⠀⠹⠀⢀⠄⠪⠐⡒⢈⣠⠴⠾⠚⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠻⣿⣿⣿⣿⣿⡉⢍⠉⠉⢟⠫⢭⡿⡶⠄⢀⣀⠀⣠⠾⢒⠁⠵⣆⠷⢿⡟⡛⠛⠱⠲⠶⢠⣤⣄⣀⣀⠀⠀
+⠀⠀⠀⠀⠉⠛⠛⢛⣻⣾⣦⣦⣤⣁⣂⣑⣿⣿⣿⣿⣷⣾⣶⣿⣿⠟⠁⠀⠀⠀⠉⠒⠫⠄⡀⠀⠀⠉⣉⡿⠛⠀
+⠀⠀⢀⣠⡤⠶⣿⣿⣿⣿⣿⡿⣿⡿⠿⣟⣝⠾⠿⢿⣿⠿⢿⢻⣿⠳⣶⣤⣀⡀⠀⠀⠀⠀⠀⠙⠛⠥⡀⠀⠀⠀
+⠀⠸⠯⠄⣀⠀⠠⠤⠔⠒⠛⠉⠁⠀⠐⡟⠈⠁⠀⠀⠀⠀⠎⣺⠏⠀⠀⠉⠙⠛⠳⠶⠶⢄⣤⣠⡤⠞⠃⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠀⠀⢀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_jellyfish" translatable="false">"\n
+⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⢀⠀⡂⣂⣤⣤⣦⣶⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠅⠁⢀⠂⣅⣤⡾⠏⢋⡍⡬⠾⠽⢽⢷⡿⣯⣻⢶⣄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢴⡕⣥⣟⢁⠀⡞⡏⠁⠠⠀⠀⣸⣎⢷⣗⣏⡻⡝⣿⣄⠀⠀
+⠀⠀⠀⠀⠀⠀⣮⣾⣿⠕⢜⠀⢑⠻⠿⠷⠛⠋⠋⠁⡻⡃⠹⣧⡂⣧⣻⡆⠀
+⠀⠀⠀⠄⣒⡱⢗⣻⣃⡔⢁⡦⢖⠀⠀⢀⠀⠀⠀⠀⣚⡧⡀⣽⣧⠀⢯⣿⡄
+⠀⠂⡡⠂⡐⠀⣠⡿⢯⣿⣾⣅⠃⠀⠴⠠⠔⠀⠀⠀⠘⢯⣷⣿⡟⠄⠈⣿⠋
+⠀⠉⠀⡌⣀⡶⡛⡀⠰⢙⣿⣯⣿⡶⣷⣦⣃⣀⡔⠀⡂⣤⠋⡩⠁⣀⢠⣿⠀
+⠀⠀⠀⠁⣶⢁⡂⠀⣂⣼⣷⡃⡹⡳⣽⣾⡏⣙⡟⣫⢷⢷⢤⡦⠤⡦⣿⡷⠌
+⠀⠀⠀⣞⣭⣤⣷⠶⠋⣽⠋⢰⠇⣽⣳⠁⣻⠗⣻⡟⠦⣷⡽⡻⡧⣿⢗⠝⠀
+⠀⢀⣴⣿⡯⠃⢪⣰⠞⠑⣴⣯⣿⠃⣏⡀⢹⠀⡻⡇⠀⢸⡆⠀⣃⣯⠅⠀⠀
+⢀⣽⢻⣒⣡⡴⣟⢁⣠⡞⢻⡿⠁⢲⡇⠀⢹⣄⡅⢷⠀⠸⣇⠤⠃⠄⡅⠀⠀
+⢸⢇⣴⡿⠋⠄⣼⣿⠁⠀⣾⠅⢐⠸⡇⠀⠂⢿⡌⠙⣆⠉⠹⣦⠀⣱⠀⠀⠀
+⢰⣾⠏⡧⠈⢠⣿⠌⠀⠀⣿⡍⠀⠂⢿⠀⠅⠈⣷⡄⠹⣧⠀⠙⢷⣍⠀⠀⠀
+⢸⣟⠠⢷⡀⢹⣿⡂⠀⠀⢹⣧⠀⠀⠸⣷⠀⠀⠸⣷⡀⠹⣦⢀⡒⠻⣧⠀⠀
+⢸⡇⠑⢠⣙⣶⣿⡦⠀⠀⠒⣿⣧⠀⠀⢻⡆⠀⠀⠹⣧⠀⣹⣇⠀⠀⢻⣧⠀
+⢸⣇⠀⠀⠀⠈⠘⣿⣶⠀⡀⠈⠹⣧⠀⠘⣿⠀⠀⠀⣿⡗⠁⢿⣄⠀⠀⣿⡇
+⢘⣿⡄⡂⣀⢀⠠⠜⣿⣇⠀⠐⠀⡈⠧⡀⢿⡆⠀⠀⣿⠃⠀⠘⣿⡀⠀⢸⡇
+⠀⠘⣃⡠⡐⠌⠂⠁⠈⢿⣧⢀⠀⠀⠐⡅⣸⣷⣀⡼⠃⠀⠀⠀⣿⡇⠀⢸⡇
+⠀⠀⠈⠀⠆⠀⠀⠀⠀⠀⠙⣯⣪⢐⠪⡂⢸⣿⠈⠀⠀⠀⠀⠀⣿⡇⠀⡾⠀
+⠀⠀⠀⠀⠀⠉⠁⠂⢀⠀⠀⡈⢻⣅⠌⠀⣸⡏⠀⠀⠀⠀⠀⣸⡟⠀⠀⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⠀⣸⠂⠀⢀⡿⠀⠀⠀⠀⢀⣴⠟⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡋⠀⢀⡾⠃⠀⠀⢄⣠⠞⢁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠊⠋⠀⠀⡞⠁⠀⠀⠂⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_god" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠤⠄⠀⡀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠈⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠠⠤⠅⠡⡴⡁⣥⠀⠀⢈⠀⠀⠀⠀⠀⠀⠀⠈⠢⠀⠀⠀⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠊⠀⠂⠀⠀⣼⣿⣿⣿⣿⡓⠰⠄⠠⠄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⣶⠾⣭⣥⣿⣿⣷⠀⠀⠁⢄⢀⠀⠀⠀⠀⠀⠀⢱⠀⠀⢣⠀⠀⣒⠁⠀⢀⠀⠀⠀⡰⠁⠀⠀⢀⠠⠁⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢛⣿⣿⣿⣿⣿⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⣠⣶⢮⢴⣾⣿⣿⣿⣿⣿⠢⠀⠀⠈⠢⠀⠀⠀⢤⠀⠘⠠⢇⠀⠀⠀⠀⠂⠀⠀⠠⠀⠆⣖⡁⠀⢀⠔⠉⠀⠀⠀⠀⠂⠁⠀⠀⠀⠀⠀⠀⠀⢀⢣⠾⢫⠹⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⣾⡿⡡⢴⣿⣿⣿⣿⡿⣿⣿⡷⠀⠀⠀⠈⢇⠀⠠⠀⠁⠀⠘⠁⠀⠀⠠⠀⢀⠀⠀⠀⠀⠀⠀⠃⠔⠁⠀⠀⢀⠤⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢂⣆⢖⣥⡶⡜⣿⣿⣿⣿⡄⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠄⣺⣿⣯⠚⣤⡟⢙⣿⣿⣰⣼⣿⣿⡇⠀⠀⠀⠀⠀⠀⠿⣰⠀⡀⠁⠀⡀⡨⢠⣄⠀⡰⠒⠂⠀⠀⠀⠀⠀⠀⣢⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⣴⡿⣧⢏⢺⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢈⣺⣿⣿⣷⣵⠏⣀⢪⣿⣿⢸⢼⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠁⠀⠐⣀⡈⡨⢘⣛⣤⡤⠃⠲⡥⠆⠀⠀⠀⠠⠞⠓⠀⠀⠀⠀⣀⠀⠄⠀⠀⠀⠀⠀⠀⠈⣼⣿⡽⣫⢯⣿⣿⣿⡿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⢔⠄⠈⣠⣿⣿⣿⣿⣽⠋⣨⠦⣿⣿⣿⡁⣼⠈⢿⣷⠄⠤⣦⣤⢄⡤⠀⠀⠈⠀⠈⣛⢛⣉⣖⣠⠂⢫⣥⣦⣄⢡⡍⠁⠀⠀⠀⠀⠐⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡄⣿⣽⣫⣿⣿⣿⣿⣇⡝⢿⣿⢤⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠊⡰⠣⣪⣾⣿⠿⢿⣷⢋⡝⢁⣵⣿⡿⣽⡟⢑⣣⢰⣿⣿⡄⠀⠀⠀⠀⠃⠀⠀⠀⠀⡻⣧⠻⣿⣿⣿⣷⣄⠶⠬⣍⠀⠞⢀⠀⠀⠀⢠⠠⡄⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⣾⣀⣿⢡⡏⣿⣿⣿⣿⡇⢸⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢟⢽⣵⣿⣿⡟⢸⡿⠃⢚⣴⡞⣿⠏⡇⡿⢃⢀⢲⣾⣿⡿⢃⠀⠀⠀⠀⠀⠀⢈⠁⠘⡙⠰⠾⠛⣉⠁⠭⠉⠉⠹⠀⡶⡀⠘⢀⠀⠀⠈⠂⠀⠁⠀⠀⠀⠀⠀⠒⠀⢠⣾⡏⣼⣿⡸⠀⣿⣿⣿⣿⣿⠸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣰⣷⣽⣿⣿⣿⠟⢡⣌⣵⣿⣿⣿⣇⡏⡄⣷⠃⠾⢙⡤⡿⣿⡓⠀⠀⠀⠁⠀⠃⠀⠀⢠⠘⠀⢰⣶⣾⣿⠐⣿⣿⣂⠂⢩⣿⠌⠄⠺⠥⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⡞⣿⣿⣷⣦⡛⢛⣿⣿⣿⢦⢻⣿⣿⣧⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⢀⣶⣿⣿⣿⡿⠛⣿⠿⢢⣿⣿⣿⡿⠿⣿⣻⢱⣧⢟⡀⢁⡬⢁⣃⡜⠁⠪⠖⠑⣀⠀⠀⠀⠀⠎⠃⡄⠈⣿⣿⣏⣈⣼⣷⣿⣆⢈⠿⡸⠌⢠⡉⠀⠀⠋⢦⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⢿⣿⣿⣿⣿⡏⢻⣿⣿⢸⡞⣿⣿⣿⡆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠘⠀⣰⣿⣿⣿⠟⢁⣤⡾⢃⣴⣶⠋⣿⡟⡀⣸⢁⣣⢾⡏⣲⢨⣼⡿⠟⠉⡊⠁⢢⠦⠀⠀⢀⠀⠀⠀⠐⣀⣶⡀⠘⢟⡥⣤⣝⣿⣿⠃⠀⣿⡖⠇⠁⢠⠁⠀⠀⠀⠀⠀⠀⢀⠀⠀⢢⢺⣿⣫⣿⢸⠃⣿⠃⣿⡇⣼⠏⣿⡸⣿⢸⣿⣿⣷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⢠⣾⣿⣿⡿⡣⣨⡾⡋⡡⢫⢎⡏⢶⣿⡽⡱⣣⣿⡟⣱⠀⣿⢸⡇⡇⣬⡖⡅⠐⠋⠀⠂⠆⠠⠁⠀⠀⠂⠡⠋⢧⠀⠈⠛⠛⠉⠉⠁⠀⠤⡇⣻⡜⢁⠹⡉⠀⠠⠀⠀⠀⠀⠀⡀⢡⣶⡟⡡⢹⠇⠞⠈⡿⠀⠛⠁⠘⠠⢻⡇⣿⡏⣿⣿⢩⣷⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⠋⢠⣾⢟⠅⣞⣱⡇⣼⠇⡾⢈⣭⠶⣿⣿⢸⡏⡖⣿⠟⣥⡇⡿⣱⠓⠃⢉⠀⠐⠚⢄⡀⠀⠀⠀⠀⢁⡀⠀⠀⠀⢴⢀⣤⠀⢐⣔⡝⠘⠅⠂⠄⣡⣥⡄⠐⢆⠀⠠⢊⠀⠋⡜⣱⡫⠛⣂⣰⣦⡥⠠⣾⡩⢰⠀⣸⣧⢻⡗⣿⣿⡎⣿⣇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⢤⣾⣿⣿⠟⢁⣵⣿⠃⣪⣾⠛⡿⢠⡿⡸⣑⣿⠃⣣⡿⣣⣿⠘⣾⠟⣾⣿⢸⠱⢁⡕⢃⠂⡑⠃⠀⠈⠈⠓⢀⠠⠞⢈⡘⠠⠀⠀⣚⡎⣿⡳⣸⡜⣎⣠⢃⠂⢠⠑⣹⣿⢈⢀⡥⢞⠁⢋⠚⠛⡌⣱⡞⣿⣿⣿⠇⣀⣷⣇⡇⠀⢨⡄⢼⡇⣿⣿⣇⢿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠋⣴⣿⣿⠟⢅⣴⣿⡟⣡⣾⡿⠃⡪⡐⣼⠰⣶⡷⣶⢨⢹⡿⣸⣿⣾⢇⡇⣿⡟⡀⢞⢈⣶⣃⡾⢡⡄⠀⠂⠀⠀⡤⠺⠾⣿⣷⠾⣯⣵⣾⡿⠜⠷⢎⢫⡏⠎⠀⣺⣆⠲⠄⠂⣉⡀⠰⠿⢗⡳⠶⠔⠾⠿⣧⣿⣿⠏⢰⣸⣼⢙⠀⠐⣾⠂⣼⢳⣿⣿⣿⣻⣿⡇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢃⣾⣿⡟⠋⣠⡾⣉⡍⣼⣿⣯⢠⢆⡱⣱⡿⣱⡱⣸⢃⣿⠬⢡⣿⣿⡿⢘⣼⡿⢐⡌⢔⡟⣼⣏⣴⡟⠀⡀⠈⢀⠠⠹⣸⣧⡿⢿⡇⢠⣙⠻⣿⣷⢸⡀⠾⠷⠘⢃⢠⣍⠭⣡⡬⠉⣁⠀⠀⠀⠨⡘⢸⣷⣯⣸⠻⣿⢀⡟⢏⣇⡇⠈⣠⣿⠀⣿⣿⣿⣿⣿⣿⢋⢱⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⣰⣿⣿⠿⠀⣾⢏⣾⢏⣾⣿⣿⡏⢸⡄⣱⣿⢳⡵⣱⢏⣾⢡⠂⣽⣿⡿⢡⢸⡟⣠⠟⢨⣾⢣⡎⣿⠛⡐⡼⠁⢠⣾⡟⢣⣟⢙⣷⢠⡃⡌⢻⣧⣿⣿⡞⠡⠼⠃⢃⣼⣯⣦⠜⢈⠔⠼⠃⡀⠸⣕⣀⠈⠸⣿⡇⠛⡄⠁⢹⡇⣼⣸⠇⠄⣿⡇⠁⣿⣾⣿⣿⣧⢻⢸⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣎⣽⠿⣿⡏⣼⡿⣱⠿⣳⣿⣿⡿⠟⢵⣬⢰⣿⡇⠟⣴⢣⠻⢏⣴⣧⡛⣩⣶⣫⡜⠘⡱⢨⣿⢏⡦⣇⡾⣀⡜⢠⠀⠸⣿⠿⡚⠃⢾⣿⡆⣧⢻⣎⠙⢻⣽⣿⣿⣿⠈⣰⣞⢏⡡⢞⣳⡛⠀⠀⣴⣶⣿⡿⡄⠀⢻⡧⠃⣁⡄⣿⡇⡛⣿⠠⢸⣿⠀⠠⣽⢺⣿⣿⡇⣿⠸⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢡⣾⡟⢸⡿⣸⢟⡼⠃⣼⣿⣿⡿⠁⣿⣷⣭⡬⢭⣶⣿⣶⣿⣿⡿⢋⢿⣿⣿⡟⡤⠀⣾⢃⣚⡡⣿⣷⠉⡚⠀⠀⡄⡄⢐⡉⠑⠀⠹⢹⣿⡿⣨⡀⢻⣦⡁⢝⠻⠿⠁⣸⠹⠃⠈⠁⠦⠭⡄⠀⢰⣿⣿⣿⠂⢰⣆⠘⢁⢀⠈⢁⢹⠃⣸⡿⠀⣿⣿⠘⢸⣿⢹⣿⣿⣯⣿⠁⣾⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠁⢼⣿⠀⡟⣱⠫⡾⠁⣼⣿⣿⡟⠀⣼⣿⣿⡏⠖⣾⣿⡟⢡⣸⡟⣱⢸⣹⢻⣿⢃⠀⢰⢃⣾⡟⢹⡿⡇⣴⠱⠀⡘⡥⣾⢯⣻⠚⠆⠲⢸⣿⣷⠰⣧⣠⡹⣝⠢⣶⠖⢋⡁⢆⠆⢾⡇⠋⡉⠬⢠⡿⠋⢀⡄⡀⢀⣿⡄⠏⠀⠀⠠⣿⣾⡟⠇⢱⣿⠃⢸⠨⢱⣿⣿⣿⣧⣿⠠⢹⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠟⣠⠸⢃⣦⣾⠁⠀⢅⣾⣿⣿⡟⣼⡂⢿⣿⡿⢡⡇⣿⣿⠁⣣⢏⣴⡟⣰⡆⣸⠁⠀⠀⢈⡞⢛⡀⠌⠁⢅⡧⡇⠢⡘⣷⣎⠓⢽⣷⠑⠜⠘⣿⣿⡄⠹⠇⠁⣴⣶⣎⢬⠣⣍⠼⢰⡀⢥⣶⡄⠓⠃⢀⣴⢻⠐⡔⠃⢀⠃⠄⠀⠀⡀⠽⡟⢐⠠⢸⡿⠐⡚⢰⣾⣿⣿⣿⢻⣿⡄⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⣰⣿⣶⣿⣿⢁⠿⢏⣾⣿⣿⠟⢸⣿⣧⢌⣩⣴⢸⣿⣌⡓⢀⣵⣿⠏⠄⠛⠁⠋⡄⢠⡾⠿⠁⢋⠃⣆⠂⣼⢙⠐⠟⠛⣿⣿⣷⣦⠙⣦⢸⡆⣿⣿⣷⣠⣄⠠⡀⠈⠉⠦⠇⢈⡉⠋⠣⠀⠏⢈⣷⣿⣾⡶⢖⡌⠀⡴⠈⡐⣰⡖⠀⠃⢀⢁⡛⡀⢘⠇⣿⡇⣿⣿⣿⣿⣿⣹⣿⣇⠸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡀⡟⢰⣿⣿⣿⣿⠃⣼⠃⣼⢏⢸⣿⢃⣿⣿⢋⣾⣿⣿⠇⣭⡭⢶⣷⣭⣵⡣⠄⢠⡾⡇⢧⡄⠁⠀⠀⠋⠀⠛⠐⣨⡀⠠⣰⣔⠙⢿⢿⡟⠠⣋⢸⡧⠙⠒⣨⡝⢩⣦⠇⠁⣤⠘⢤⡌⠀⢰⠠⠐⡄⠉⠙⠫⡁⠠⠤⠂⢤⠀⣠⢃⢻⠁⠀⠀⢀⡿⡄⠀⣸⢰⣿⠃⣿⣿⣿⣿⣿⣽⣿⣿⠀⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⡆⠈⠀⣿⣿⣿⣿⡏⠀⢇⡿⡇⣸⢸⡇⣸⣿⠇⢸⣿⣿⡇⣾⣿⣇⣾⣿⢿⣿⠇⢀⡎⠀⠁⣾⡇⢀⠀⠀⠈⠀⠀⣀⣾⡇⣸⣿⣿⣿⣿⡆⠀⣷⢱⠉⣿⠆⠀⠀⢹⣇⡆⢁⣾⠸⡀⠀⠉⠇⠁⡇⡆⣶⡿⡇⢀⣷⡶⠿⣆⠹⡆⠁⢸⡀⠀⠁⡇⢹⣷⠇⣶⡿⣸⣿⠀⣿⣿⣿⣿⣿⣾⣿⠀⡆⠇⠀
+⠀⠀⠀⠀⠀⠀⠰⠀⠀⣸⣿⣿⣿⠋⠀⡸⡸⠝⢰⡇⠟⢠⣿⡟⡰⣿⣿⢈⣴⢫⡻⣿⢟⣵⣷⠉⠀⠈⠀⠀⢠⡟⠒⠋⠀⠀⠀⠀⣰⠿⣀⣀⡀⠹⣿⣿⠟⠠⡀⠻⠰⠺⡏⠜⡢⡙⠖⠆⣶⡮⠈⠃⠩⣒⡟⡴⠀⢇⢏⠯⣓⡃⠼⠃⣐⢣⡠⠴⠂⡀⠀⠷⡀⢲⠁⣼⡾⢠⡟⡀⢃⣿⡄⣿⣿⣿⣿⣿⣿⣻⠀⡡⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡱⣿⣿⡿⠃⣾⣀⠣⣼⣿⡜⢟⡰⣜⠿⢃⣅⣛⣵⡿⢱⡎⡏⣏⡾⠛⢋⠀⠀⠀⠀⠁⡎⠀⠀⠐⠐⡉⠄⠐⢉⢺⣟⡛⢿⣦⣹⡏⢀⠴⡄⢡⠐⠀⢿⣤⠿⠘⠠⢜⠷⠉⠺⠖⠀⠉⠙⣄⣀⠾⣅⡍⠒⠠⠤⠌⠹⣷⣦⠃⠡⠁⠀⠀⢒⡘⠀⢹⠧⣾⣿⠀⣸⣏⢸⣿⣿⣿⣿⣿⣽⣿⠀⢧⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⢳⣿⡿⣡⡺⡋⡋⡆⣾⡿⠙⣿⢏⣶⡊⢹⡿⣁⣭⣶⢸⣳⡇⠋⠀⠀⢈⢰⠃⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⢄⣤⣟⣿⣏⠀⠘⢓⡵⢃⡆⠇⢿⡄⢮⠤⠃⠔⠋⣠⡄⠄⠀⠀⢠⣁⣀⣉⡀⣤⠆⠐⠘⠋⠱⣶⡉⠓⠈⣿⡄⠀⠀⠀⡈⠠⡇⠀⢀⠀⠻⢠⠚⢻⣽⢺⣿⣿⣿⣿⣿⣿⡇⠆⠸⠀⡄
+⠀⠀⠀⠀⠀⠠⢰⡏⣿⣿⣇⣿⡟⡼⣸⠅⣿⠇⢲⢏⣾⣿⡟⣬⡎⡇⣿⡟⣾⢇⠾⠿⠀⠀⠀⠏⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⡗⡀⢙⣦⠈⡄⠀⠸⣿⣦⣠⢶⠮⡁⢠⣴⣦⠰⣇⠀⠀⠚⠉⢛⣠⡌⢉⣉⡉⢒⣉⣽⡀⠀⢸⠂⠀⠀⠰⠁⡄⠀⠀⠀⠆⡆⢀⠷⢵⢸⣹⣿⣿⣿⣿⣿⣿⠸⠁⠂⠀⡇
+⠀⠀⠀⠀⠀⠄⣿⣸⣿⡿⠩⡛⣼⢣⣿⣇⠻⢠⣾⣿⠏⣾⢣⣿⢸⢵⡿⡸⢣⠂⠀⠀⠁⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⣀⣼⣿⣿⣿⣿⠟⢩⡴⠒⠀⣿⡆⢱⠀⣿⣿⣿⠋⣪⡞⣵⣿⣿⡟⣃⠁⠀⠥⣔⢒⣪⠙⣇⠺⡲⠸⢤⠏⠚⡇⠀⢨⠀⠀⠀⠙⠐⠃⠀⠠⠀⠸⠐⡼⡀⡿⣼⣹⣽⣿⣿⣿⣿⡿⠀⠄⡁⠀⡁
+⠀⠀⠀⠀⠐⠀⢁⡏⡿⣱⢧⣰⡿⣼⣿⣿⣷⡘⡿⠁⣰⡏⢟⣅⡟⢬⠔⠀⣋⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⠟⣉⠀⠈⠀⠀⢰⣚⢤⡯⢆⣿⡿⠃⠀⣀⢾⣿⣿⣿⣿⠋⣰⠋⡴⣇⡌⠉⠁⠘⢆⢝⣃⠈⠓⢹⣧⠀⠀⠀⠀⠀⠀⠀⠂⠁⠐⠆⠀⣱⢱⡇⠄⣿⢼⣿⣿⣿⣿⠟⡧⢈⠐⡀⠀⡄
+⠀⠀⠀⠀⠀⠰⣼⣈⣵⣿⢸⣿⢣⣿⣿⣿⣿⣿⠗⠀⣴⢹⣻⢉⣾⡇⠀⣾⡇⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⡿⠫⠈⠀⢋⣄⠀⠀⠀⡯⢧⢲⠀⣴⣾⠏⣰⠏⣼⠟⡿⢟⠕⢀⣜⡒⠒⠉⡍⠐⠒⢦⠈⢒⠍⠠⠀⠃⢈⡁⠀⠀⠀⠀⠀⠀⠀⠀⣼⠁⠁⡀⣾⠙⣠⠈⢸⣿⣿⣿⣿⣾⡗⢀⠂⠄⠀⡇
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⡿⠀⣿⣼⣿⣿⣿⡿⢡⡆⢸⣿⢸⠁⢰⣿⠀⠁⡿⠆⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⡿⠋⠀⠀⠀⠰⢸⣿⡀⠀⠀⠐⡋⣡⣾⣿⣜⢓⢋⢚⡋⡖⠵⠃⢀⣿⣿⡇⠀⠉⠆⠢⢤⠎⢀⡼⢺⡟⠤⣈⣿⣿⠀⠀⡐⠀⠀⠀⠀⢀⡏⠀⢀⢀⢁⠄⠨⠀⣼⣿⣿⣿⡏⣿⡇⡀⠈⠂⠀⡇
+⠀⠀⠀⠀⠀⢸⣿⣿⣿⡇⢾⡇⣿⠟⠉⣿⠇⠘⠠⢼⡟⢎⡀⡸⠇⠀⡐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⢻⡇⠀⠀⠀⣴⣿⣿⢻⣿⠸⢸⠨⠆⡠⣢⠮⠘⠋⣿⡗⣀⠈⠌⠙⠒⠒⠀⠀⡨⣀⠀⠀⢻⡇⠀⡆⡅⠀⠀⠀⠀⠜⡡⠀⠀⠱⣸⠀⠀⣾⣿⣿⣿⣿⡇⣿⠃⣀⠠⠁⠀⡅
+⠀⠀⠀⠀⠰⢺⣿⣿⣿⢰⢼⢹⡏⠀⠀⠟⠀⠀⡎⠘⡇⣬⢰⠁⠀⠐⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣹⠋⠀⠀⠀⠀⠀⠀⠀⠀⠈⠡⠇⠀⠸⠿⠛⠛⢋⣿⣦⣽⣾⣜⠅⠙⡱⣫⠆⣿⡧⠟⠀⠀⢈⠀⣐⣀⠰⣀⠴⠿⢃⠘⠇⠀⠇⡆⠀⠀⠀⠀⠋⠁⠀⡃⠅⠃⢀⠘⠋⠙⡜⣿⣿⢧⡟⠀⠀⠀⠀⠀⡆
+⠀⠀⠀⠀⡞⢸⣿⣿⣿⠈⡎⣿⠃⡀⠀⣠⣴⡆⠀⠈⢡⡏⡋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⢨⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠡⡀⢰⠈⢁⣵⣿⣿⣿⣿⠿⢋⣥⣬⣾⡧⣤⣿⡗⠀⠀⢰⠇⠠⣟⢈⠆⠘⠆⣉⢀⢲⡇⠨⠁⠀⡅⠀⠀⠀⠀⠀⠰⢀⠀⣸⣹⠇⡇⢐⠇⣸⣿⢸⢃⠀⡄⠀⠀⠀⠁
+⠀⠀⠀⢰⡧⣾⣿⣿⡏⡀⠛⢉⡾⠈⣸⡏⠛⠃⠀⠀⣼⢠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⣼⣿⣿⡿⠟⡉⢀⣴⣿⠟⠉⡀⣀⢀⣶⣷⠀⡀⡈⠆⣉⣤⣤⠂⣘⠶⣿⣿⠰⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⢆⠏⣰⡇⡰⣠⣿⡿⡹⠆⠸⠀⠀⠀⠀⠀
+⠀⠀⠀⠘⢰⢻⣿⣿⡏⢸⣿⠀⠆⠀⠛⣿⠆⢠⠀⠀⠈⠂⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠋⠁⠠⣀⣴⠿⠋⣡⠎⠀⣄⠿⢸⣿⣿⡇⢠⠣⡀⠉⠄⢢⠅⠀⠀⣂⣽⡧⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⢁⣰⢀⢻⣇⢑⣿⣿⢇⣇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠘⣸⣿⣿⢇⢸⣿⡄⠀⡇⠀⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⣿⠟⠀⠑⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡛⢉⣤⣶⠿⠋⠁⠀⢠⣏⡀⡞⠈⠈⠁⢻⣿⡇⠈⠃⠀⣙⡁⠎⠡⠀⠀⣿⢸⠃⠀⢀⠀⠀⠐⠀⠀⢀⠀⠀⠌⠀⠄⢫⠏⡁⢎⣽⣿⣿⢸⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣬⢼⣿⣿⢸⢸⣿⣿⠀⠁⡇⠀⡀⢸⠀⠠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠁⠀⢀⣀⢻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠵⠟⢉⠠⢒⣤⡞⢁⣬⣾⠗⠀⣤⡷⠶⢸⣿⡃⢸⡄⠀⡜⢧⠰⢲⢸⠀⡟⠡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠒⢢⣴⢃⣼⣿⣿⣇⣿⠊⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⡻⣼⣿⣿⠈⣾⠻⠏⡠⠰⠃⠹⢣⡌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⣴⠋⣘⡈⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣵⣾⣿⣫⡾⢟⠛⣡⣴⠿⠫⠄⠸⡌⢿⣿⠈⣷⡇⠃⠘⠀⠘⠀⠀⠡⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢔⡿⡃⣾⣿⣿⡿⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⠇⣿⣿⣟⡰⣷⠘⠀⠁⠀⠀⠊⠂⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⣩⠈⠈⢃⠀⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⠟⡋⠡⣰⠟⡋⢁⢰⠆⠀⡆⠱⢨⣿⡅⣟⠇⢈⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢐⢠⡿⡱⣹⣿⣿⢋⣵⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⠇⣿⣿⡏⢧⠿⠅⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡇⠹⣄⠀⣸⠂⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⠟⣋⢠⣢⠖⡊⢔⣠⢾⡏⠏⠀⣀⣀⠄⠀⢿⣷⠨⠃⠈⠀⠀⢃⠀⡈⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⢀⠘⠄⢰⣿⣿⢣⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣼⡞⣿⣿⡇⠸⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢁⣀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠐⢪⡴⠋⠔⢉⣴⣿⠃⠈⡀⣠⡞⠹⣿⡀⠀⢺⡇⠀⢀⠀⠀⢰⠈⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⡆⠈⢀⣼⣿⢏⣾⡿⠀⠀⠰⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠂⠀⣿⢿⣿⣿⡇⢀⠀⠀⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⣿⣽⣰⣾⣿⡿⠋⠀⢁⠂⡟⠀⢸⡽⠅⠃⠨⣷⠈⢸⠀⠀⣼⠄⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⣼⠃⢠⣾⣿⣏⣼⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣿⣸⣿⡣⠇⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠿⢿⣿⠿⠁⡁⢸⣷⡿⢠⡗⠂⡇⢢⢠⢰⠄⢺⣦⠀⢌⢃⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠃⡴⣼⣿⡟⣼⠋⠀⠀⠀⢀⠂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣿⣿⣽⠃⠄⡏⢀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢠⢰⣔⠈⠀⡁⢾⢟⣵⢺⡇⠁⣇⢸⡏⠠⡄⠈⣶⡆⣄⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⡐⣴⣿⣯⠚⠁⠌⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢱⣿⣸⠀⠁⡇⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠈⠿⡘⠃⢁⣴⣿⣿⡌⣿⡆⢹⠀⣗⡂⣇⡁⣄⢨⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠏⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⣿⢸⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⠠⢀⠱⣴⠛⠿⣿⣿⣿⣧⣄⣾⠃⡻⣧⢿⡿⠀⡒⡄⡄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠂⠐⠀⡀⣼⣿⡏⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡄⠸⡏⡇⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠘⠌⢿⣠⣾⣿⣿⣿⣿⣿⣿⣿⣆⢿⡸⣧⠀⠇⢃⠀⠘⡀⡂⠀⠀⠀⠀⠀⠀⠀⠀⠁⢤⡎⠼⣾⣿⡿⢁⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢱⠀⡇⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡄⠀⠈⢻⣿⡿⣿⣿⣿⡇⣿⣿⣿⣼⡇⣿⣇⠚⡈⡜⣦⠡⡅⠀⠀⠀⠀⠀⠀⠀⡠⢠⡆⢠⠞⣛⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡃⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠸⣟⣽⣿⣿⣿⡇⢿⣿⣿⡏⣧⢿⢷⠠⢙⢧⢿⠰⣡⠀⠀⠀⠀⠀⠀⠀⣠⢇⡘⢋⣴⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣸⠿⣹⣿⣿⠃⢻⣿⣿⣷⣿⡞⠾⢎⠼⣌⡜⡜⠦⢃⠀⠀⠀⠠⠁⠖⢩⡎⡵⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_phone" translatable="false">"\n
+⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⡿⠿⢿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢻⣿⣿⠀⠀⠹⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣸⣿⡟⠀⠀⢀⣽⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣹⣿⣏⠠⣶⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣹⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⢺⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢹⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀
+⢿⣿⣿⠈⠻⣿⣿⣿⣿⣿⣿⣿⡿⠉⡀⠀⠀⢀⣠⣄⣀⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀
+⣿⣿⣿⠀⠀⠈⠻⣿⣿⣿⡿⠟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀
+⢹⣿⣧⠀⠀⣠⣤⣿⣿⣷⣦⣤⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀
+⢸⣿⣯⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⣺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄
+⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢺⣿⣼⣿⢢⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷
+⣸⣿⣿⠀⠙⢿⣿⣿⣿⣿⣿⣿⠟⠁⠀⣿⡏⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇
+⣹⣿⡿⠀⠀⠀⢻⣿⣿⣿⡟⠊⠀⠀⠀⠙⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢾⣿⡇⠀⢀⣴⣿⣿⣿⣿⣿⣶⡄⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣸⣿⣷⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
+⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠻⣿⣿⣿⣿⣿⣿⣿⣿⠟
+⠀⠀⠀⠁⠉⠀⠉⠉⠁⠉⠁⠀⠀⠁⠀⠁⠉⠈⠁⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀
+        "</string>
+
+    <string name="ascii_chillguy" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣷⣄⠀⠀⠀⣀⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⠏⠀⠀⣿⠀⢀⡾⠛⠋⠀⣾⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⡏⠀⠀⠀⣿⢀⣾⠁⠀⣰⠆⢹⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⣧⠀⠀⢠⡟⢸⡇⠀⣰⠟⠀⣼⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣹⣆⢀⣸⣇⣸⠃⢠⡏⠀⣸⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣴⣶⣶⣶⠾⠟⠛⠉⠉⠉⠈⠉⠉⠛⠁⢾⠁⣴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣶⣶⠾⠟⠛⠛⣻⣿⣙⡁⠀⠀⢾⣶⣾⣷⣿⣶⣄⠀⠀⠀⠀⠰⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣠⣴⣶⣶⠾⠟⠛⠉⠉⠉⠀⠀⠀⠀⠀⣿⣻⣟⣻⣿⡦⠀⠘⣿⣿⣛⡿⢶⡇⠀⠀⠀⠀⠀⠀⢻⣆⠀⠀⠀⠀⠀⠀⠀⠀
+⣠⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡟⠙⣿⣿⡗⠀⠀⠿⠉⣿⣿⣿⣶⠀⠀⠀⠀⠀⠀⠈⢿⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠳⣄⣿⡿⠁⠀⠀⠘⢦⣿⣿⠇⠟⠁⠀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⡇⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣇⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢤⣤⡀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠙⢿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡾⠟⠛⠆⠀⠀⠀⠀⠀⢀⢻⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠙⠿⣿⣭⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⠾⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣾⠇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠷⠶⢶⣶⣦⣤⣴⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣌⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⣤⣴⣾⣿⣿⣿⣓⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣷⣦⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣤⣶⣾⣟⣯⣽⠟⠋⠀⠉⠳⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⢇⠀⠉⠛⠷⣮⣍⣩⡍⢻⡟⠉⣉⢹⡏⠉⣿⣹⣷⣦⣿⠿⠟⠉⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⢸⠇⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⢠⣠⡶⠀⠀⠀⠀⠘⣧⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠟⠁⠀⠀⠀⠀⠀⠘⣆⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣇⡀⠀⠀⠀⠀⠀⠀⢹⡆⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣾⠀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣥⢠⣤⠼⠇⠀⠀⠘⣿⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣽⡄⠈⢿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠿⠾⠷⠄⠀⠀⠀⢀⣿⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠸⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣾⠋⠀⠀⠀⠀⠀⠀⢰⣾⡿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣦⣠⣿⣿⣶⣶⣤⣤⣄⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣴⣿⣇⠀⠀⠀⠀⠀⠀⠀⣸⡟⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⠀⠉⠛⢿⣿⣯⣿⡟⢿⠻⣿⢻⣿⢿⣿⣿⣿⣿⣿⠿⠟⠹⣟⢷⣄⠀⠀⠀⢀⣼⠟⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣄⠀⠀⠘⢷⣌⡻⠿⣿⣛⣿⣟⣛⣛⣋⣉⣉⣉⣀⡀⠀⠀⠈⠻⢿⣷⣶⣶⢛⣧⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣏⠀⠀⠀⠀⠹⢯⣟⣛⢿⣿⣽⣅⣀⡀⠀⣀⡀⠀⠀⠀⠠⢦⣀⠰⡦⠀⢸⠀⣏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡀⠀⠀⠀⠀⠀⠀⠈⠉⢻⣿⡟⠛⠉⠉⠁⠀⠀⠀⠀⠀⠀⠈⠛⠷⠀⣸⠀⣿⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢿⠀⠀⢦⡀⡀⠀⠀⠀⠀⢹⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡄⡏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⠀⠈⠳⣝⠦⢄⠀⠀⠀⣟⣷⠀⠀⠀⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⣷⡀⠀⠀⠈⠙⠂⠀⠀⠀⢸⣿⡄⠀⠀⠘⢦⡙⢦⡀⠀⠀⠀⠀⢰⣷⣷⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡿⢧⣤⣀⡀⠀⠀⠀⠀⠀⠀⢿⣷⣄⠀⠀⠀⠁⠋⠀⠀⠀⠀⠀⢸⣿⣿⣇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⡀⠈⠉⠛⠛⠛⠛⠛⠛⠛⠛⢿⡍⠛⠳⠶⣶⣤⣤⣤⣤⣤⣤⠼⠟⡟⢿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣾⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣿⣷⣶⣶⣶⣶⣶⣶⣦⣀⣀⣀⣻⡀⠀⠀⠀⣀⣀⠀⡀⠀⠀⠀⢀⣼⣿⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠉⠁⠀⠀⠈⠻⣿⡆⢹⣯⣽⣿⣿⠟⠋⠙⣿⣶⣿⣿⣿⣿⣾⣿⣿⣿⣟⠋⠉⣇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⡀⠀⠀⠀⠈⢻⣆⣿⠀⠀⠀⢁⣶⣿⠿⠟⠛⠷⣶⣽⣿⣿⣻⣏⠙⠃⣴⢻⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⣀⠀⠀⠉⠀⠀⠀⠀⠀⢹⣿⠀⣀⣴⣿⠋⠀⠀⠀⠀⠀⠀⠉⠻⣿⣧⣿⢀⣰⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣶⣶⣤⣤⣤⣤⣤⣤⣾⣿⣟⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣅⣾⢿⣵⠇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠉⠉⠉⠁⢹⣜⠷⠦⠤⠤⠤⠤⠤⠴⠶⠛⣉⣱⠿⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⠷⣦⣤⣤⣄⣠⣤⣤⡶⠟⠁⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_aim" translatable="false">"\n
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡂⠈⠁⠀⠘⣮⣓⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⢾⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠈⠐⠚⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⠿⠛⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡷⠀⠀⠀⠀⠢⣼⣬⣢⠀⠀⠀⠀⠀⠀⠀⣠⣴⡿⠛⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠡⠀⠀⠀⠀⠈⠃⣄⠱⠠⢖⡶⢖⣤⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣥⠂⢀⡀⠀⡒⠛⠃⠺⠧⣯⣴⡿⣏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠘⡡⠄⠂⠁⠰⠈⣀⡴⢞⣟⣟⣿⢾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣐⠿⢷⣶⣗⠀⠀⠀⠀⠀⠙⠫⣖⣷⣿⡻⠟⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠊⠀⠀⠀⡀⠈⢑⡀⠀⢀⣂⣿⣿⣫⠝⠏⠀⠀⠀⡘⢄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠐⠈⠀⠀⣠⠰⣺⡤⠻⢀⣼⣄⣷⡮⠿⢿⠋⠀⠈⠉⠁⠲⠐⠁⢁⠡⢄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠐⠈⠀⠀⠀⠀⣴⢺⡽⠗⣫⣵⣾⣻⡿⠟⠉⠀⠀⠀⠑⢄⡀⠐⠀⠀⠀⠐⠀⠰⣏⢣⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡤⡄⠀⣀⣐⠈⠁⠀⠀⡀⣤⡀⢻⡔⢘⣭⣾⣟⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⢄⠀⠠⠀⠀⠀⠈⢿⣳⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢏⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠻⠛⠒⣾⠿⢄⠀⠠⣔⣌⣿⠉⠛⠈⢀⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⢌⡂⢈⠔⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠈⢆⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠄⠪⠅⡀⠂⢍⠂⡕⢔⠃⠀⠟⠋⠀⢀⣠⣶⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠘⡄⡈⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⢠⣖⣶⣿⣧⠔⠂⣁⠆⠀⠀⠀⠀⠑⡄⠑⡘⣆⡀⢔⣬⣴⢾⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⢱⠘⣄⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣴⣿⣯⣯⣿⣿⣿⣿⣿⠤⠊⠀⠀⠀⠀⠀⠀⠀⠘⡄⢱⢹⣰⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠸⠀⠀⣇⠀⢢⡘⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣴⣾⠿⠚⠋⣉⠙⠛⠛⠛⠙⣹⠟⢳⣔⢄⠀⠀⠀⠀⠀⠀⢀⡠⣷⣾⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⢀⠡⠀⢸⡀⠀⢤⠀⢣⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣶⣯⣶⠤⢀⡀⠀⣠⡴⠋⠀⠀⡀⠘⣦⢢⠀⠀⣀⣴⣾⣼⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠅⠆⠂⢧⠉⠀⡙⣄⠑⡄⠀⠀⠀⠀⠸⣿⡿⠿⣿⣿⣛⣯⢳⢮⣮⢟⣅⢀⡀⠀⠀⢻⠢⢸⡿⢴⣸⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠁⠀⡈⠀⠸⡄⠄⢤⣺⣷⢼⢆⢀⡠⠔⠪⢁⣤⣾⡶⢛⢬⣪⡿⠋⢥⠽⣝⣎⠿⠂⠀⢀⣀⢸⣯⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡇⠀⠀⠱⡖⠙⠗⢤⢈⣓⠭⡲⡯⢅⡶⣮⢝⡳⢌⣠⣲⣷⣟⣱⣦⣽⢾⣿⣿⣿⠀⠀⣰⣿⣯⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣡⠰⠨⠰⢃⣸⠭⢥⣿⠶⢒⣩⣶⠿⣞⣻⣮⣻⣽⣿⣿⣶⠿⢯⣹⢾⣷⢿⣿⣿⣠⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⢁⡠⣖⡯⣐⡴⠞⣋⣵⣺⡿⢛⣹⣼⣀⣼⣿⣿⣿⣿⣿⣧⣿⣯⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠷⣋⡵⢚⣡⣶⡿⠟⣋⢵⣺⢗⣿⣾⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠶⣫⡵⢛⣡⣶⡿⢟⣩⣴⣿⣿⣯⣿⣿⣻⣯⣿⣽⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⢛⡵⢚⣡⣶⡿⢟⣩⣶⣿⣿⠿⣽⣧⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⡿⣟⡯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠞⣨⠞⣉⣴⡿⢟⣥⣶⣿⢟⣛⣥⡾⡿⣭⣿⣿⣿⣿⢿⣿⣿⣿⡿⢟⣫⣴⠿⠋⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡾⣫⠴⣋⣴⡾⢿⣭⣿⡿⡿⣝⡬⠿⣿⣺⣿⣿⣿⣿⣻⣹⣿⣿⣿⡿⢡⣿⡿⣿⣡⢘⠤⣆⠳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⠖⢉⡽⢞⣷⣾⣟⣿⣾⣽⠏⣧⢷⢻⣯⡷⣾⣿⣿⣿⣿⣿⢿⣿⠿⢛⣡⣾⣷⣝⣛⣯⢳⡝⣾⢳⣌⠢⡙⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡠⡾⣳⣶⣫⣾⢿⣭⠿⣯⣟⡵⠷⣻⣷⣾⢿⣭⣶⣟⣩⣿⣿⣿⠿⠋⣥⣶⣿⣿⣟⣽⡞⡽⣎⢷⣫⢗⢯⣞⣧⠡⣈⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣴⣮⣿⣾⣷⣟⡯⠟⠋⠄⣢⣬⣿⡖⢯⣿⠔⣿⣯⣵⣿⣿⣿⠟⠋⠁⠀⠀⠈⠉⠛⠻⠽⣏⣿⢳⣛⣮⡗⢮⡳⣎⣿⡆⠥⢆⡱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣾⣿⣿⣿⣿⢿⡋⢀⣰⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠷⢏⣌⠳⣙⢦⠱⣌⠢⢵⡘⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠠⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠚⠢⢌⣓⡒⠿⣤⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢟⢗⡱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠙⠛⠛⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢞⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_key" translatable="false">"\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡀⠀⡖⢉⢲⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣏⠰⠎⢀⣣⣈⣁⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠍⠟⠉⣩⠖⠉⠁⠀⠈⠙⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⣼⠃⠀⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⢸⣏⠀⠀⠀⢠⣤⣤⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⠘⠂⣸⠇⠀⢀⡿⣀⠤⢀⠖⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣦⣤⣤⡶⠋⠀⣠⣾⣿⡵⠦⢡⡬⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⣤⣶⡲⡲⡤⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⢀⣴⣿⠋⡟⢧⠈⢂⡐⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⠖⠉⠀⠀⠀⠈⠉⠪⢦⡙⢷⡄⠀⠀⢠⠜⠃⡠⠀⠀⣠⣾⠟⠁⠀⠈⠂⡆⠂⣀⣀⠀⠀⠀⠀⠀⠀
+⢀⡜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠺⡐⢍⢆⠀⠀⠇⠢⠆⢀⣴⡿⠋⡠⠔⠒⠦⡄⠀⠀⠜⠻⠁⠀⠀⠀⠀⠀
+⡜⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠘⢮⢑⢆⠀⠀⠀⣴⡿⠋⠀⢰⠀⠠⢄⢀⠹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡇⠀⠀⠀⢀⣾⡿⠛⠛⠷⣄⠀⠀⠀⠈⢮⡘⡄⠀⣼⢿⡇⠅⠀⠈⠳⠦⠊⡀⢰⠤⠶⢶⣦⡄⠀⠀⠀⠀⠀
+⢧⠀⠀⠀⠸⣿⠁⢀⠀⠀⠘⡆⠀⠀⢀⠈⢎⢇⣸⠃⠂⠹⣄⡁⠂⠠⠀⢂⠔⠁⢀⠤⠀⣿⣿⠀⠀⠀⠀⠀
+⠘⣆⠀⠀⠀⠈⠒⠚⠀⠀⠀⡇⠀⠘⠻⠀⠘⣿⡏⠈⣠⠤⢬⣝⠛⠛⠉⢁⡀⠀⠘⢶⣶⡿⠃⠀⠀⠀⠀⠀
+⠀⠘⣆⠀⠀⠀⠀⠀⠀⢀⡴⠁⢀⠀⠀⢀⠀⣿⣡⠎⢀⠔⣤⠈⡇⠀⢄⠈⠑⢐⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠷⣄⣀⢀⣀⣠⠏⠀⠀⣄⠀⢌⠸⠀⣿⣿⠀⠈⠄⠡⠌⠀⠀⡈⣀⡀⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠄⡃⠩⡆⡁⠠⣿⣏⠀⠀⣠⠶⠶⡄⠀⠁⢀⣈⣃⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢗⠉⠉⠄⢸⡿⢻⡀⠀⢿⣄⠇⡹⢠⣶⡿⠛⠛⠻⢿⣦⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠆⡈⣄⢴⠂⠃⠀⠀⠀⠠⣿⠰⠙⣦⠤⠤⠊⢰⣿⠃⠀⠀⣀⠀⠀⠘⢿⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢙⣻⡾⡛⠩⠉⠍⠙⡳⢦⡀⢻⡨⠁⠈⠳⡀⠀⢸⣿⡀⠀⢸⣋⠻⡄⠀⠘⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡴⢁⠁⠀⠀⠀⠀⠀⠀⠂⠙⢾⣇⠂⡎⣙⡟⡄⠀⢻⣧⠀⠀⠀⡰⠁⠀⢠⠇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡸⠡⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠹⣦⡱⢬⡤⠇⠀⠀⠉⠛⠒⠉⠀⠀⣠⠎⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣏⡇⠀⠀⢀⡜⠉⠀⠀⠙⢆⠀⠀⠀⠹⣟⠢⣀⡀⠀⠀⠀⠀⢀⣀⡤⠞⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠣⡹⡄⠀⠘⣄⠀⠈⡁⠀⢸⡆⠀⠀⠀⠙⣎⢃⠊⠋⢍⣸⣉⡉⠁⢤⣴⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⡂⢝⢦⣀⠈⠛⠈⠀⠀⡜⠀⣘⠂⢚⠀⠈⢧⡡⠠⠏⠱⣲⠙⡄⠉⠛⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠑⡡⡪⡫⡓⡦⠤⡄⠊⠀⠈⠁⢂⠊⠁⠀⠀⠹⣄⢇⡘⢶⣞⣁⣀⣤⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠑⠚⠒⠊⠁⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠈⠳⣌⠉⠁⢠⢒⣦⠀⢡⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠏⣤⣸⠇⠀⠀⠈⠣⡀⢹⣌⣁⣠⠎⡴⠚⠉⠑⢦⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣄⣀⣀⣀⣠⡴⢶⡶⠾⣦⡈⠉⠀⠸⣅⢠⡄⠀⢈⡆
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⢀⠊⣀⡂⡀⠈⠢⢄⡀⠈⠉⠀⣀⣾⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢆⣃⡼⠀⠀⠈⠀⠉⠛⠲⠟⠋⠁⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="ascii_meditate" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⣀⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣴⣿⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣦⣈⣉⣁⣴⣷⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣀⣀⡀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⣀⣀⣀⠀⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣿⣿⣿⣿⠂⠀⠀
+⠀⠀⠀⠀⠈⠙⠛⠿⣿⣿⡿⠁⢹⣿⣿⣿⣿⣿⡏⠙⢿⣿⣿⠿⠛⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣠⣿⣿⣿⣿⣿⣿⣷⣄⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⠛⠿⢿⣿⣿⣿⠿⠟⢻⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣷⣶⣤⣄⣁⠀⠐⠶⢿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣌⡉⠛⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣶⡦⠄⠀⠉⠉⠉⠙⠛⠻⠿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_star1" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⢞⣟⣯⠶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢖⡛⠥⠒⠋⠉⠀⠈⢻⡫⣧⠀⠀⠀⠀⠀⠀⠀⢄⠀⠀⠀⢠⢄⠀⠀⠀⠇⠀⢀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣥⠋⠀⢠⢾⠿⠿⢿⢳⡀⢳⡽⣇⠀⠀⠀⠀⠀⢀⠈⠢⡄⠀⠼⠏⢧⡀⡼⢀⡔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡧⠇⠀⣏⡧⡴⢳⡄⣾⡇⠀⢣⡺⡆⠀⠀⠀⠀⠀⠈⠲⢌⠃⡟⠀⠪⠳⠥⡥⣤⣤⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣼⡀⠈⠙⠓⣋⡰⢙⡇⠀⠀⡧⢻⡄⠀⠀⢠⡶⣦⠶⠒⠘⣡⣦⣴⠢⡌⠁⡡⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢯⣜⣶⣯⠵⠖⠒⠋⠀⣠⠔⣩⡞⠃⠀⠀⠀⠉⠓⠦⣄⠐⢧⡘⠬⠟⣹⠆⡇⢀⠀⠐⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢛⣸⠼⠃⠀⠀⠀⠀⠤⠤⠤⢘⡘⡇⠀⠻⣤⠿⠃⠀⠘⢇⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠒⠁⡰⢀⣀⡤⠚⡖⠦⣤⣠⢊⡧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡯⠟⠉⠀⢡⠘⡀⠀⠉⠉⠛⠝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠳⡠⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇⠀⠄⠊⡱⢄⠀⠀⠀⢠⠀⢠⠁⠀⠀⠀⠀⠀⢀⡀⢤⠀⡄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠣⠀⠀⠀⠀⠊⠱⣄⠀⡼⠀⡈⠀⢀⣀⣴⠲⢉⠉⠀⠐⠀⡈⡇⠀⠀⠀⠀⢀⡠⢶⣚⠭⠚⠋⣁⡠⡶⢤⣄⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⢰⣶⣄⠀⠀⣟⢷⡇⣠⣦⠚⠍⠂⠀⣤⣴⣶⢿⡄⠀⣈⠅⠀⠀⠀⠀⢹⡅⡏⠀⠀⡴⡫⠑⣩⣬⣑⡚⠼⡛⢶
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣄⠀⣿⣿⣽⣷⣄⡟⠙⠁⠛⠁⠀⣠⣴⣿⢿⠻⣧⡿⠀⠨⡝⠀⠀⠀⠀⠀⢸⠆⡇⠀⢼⢏⠀⢞⡕⢒⠺⡏⡧⠘⢸
+⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⡄⠀⠀⢻⡯⠖⣏⠻⠷⣄⣀⣠⣴⠿⣟⠩⢦⠪⣞⡿⠁⠀⢰⠁⠀⠀⠀⠀⠀⢸⡇⡇⠀⠘⡊⡌⠶⣍⠽⠁⡇⡇⠈⣸
+⠀⠀⠀⠀⠄⡀⠈⠀⠠⣀⠁⣷⣆⡀⢸⣿⣿⢷⣄⠜⠆⣉⠁⣴⣷⣿⠎⡄⣂⣿⠃⠀⠈⡞⠀⠀⠀⠀⠀⠀⠨⡇⢁⠀⠀⠱⡝⠠⠤⣤⣰⣼⠁⠧⡇
+⠀⠀⠀⠀⠀⠀⠈⠐⠠⣀⡝⠧⣤⠁⢺⣿⣹⡾⠋⠷⣼⢤⠟⠒⢛⡾⡡⣵⣿⢃⣀⣤⣼⠤⠐⠀⠂⠀⠀⠀⠀⠸⣬⣓⠤⡄⣨⣛⣛⣉⢁⣀⠜⣸⠁
+⠀⠀⠀⠀⢀⣠⢴⡲⠉⠀⠉⠳⢈⣠⣿⠓⠈⣇⠀⠀⠀⠀⠀⠀⣰⡇⡼⣽⠃⣋⣉⣭⡇⠠⠠⠄⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠲⠷⠾⠭⠶⠚⠁⠀
+⠀⢀⣤⡶⠓⠉⠀⣀⣤⣶⣶⢿⡟⡯⣀⣣⣶⠏⠀⠀⠀⠀⠀⠀⢾⣅⠶⣿⣦⣭⣭⠼⠷⡄⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡜⡛⡂⡀⠀⠀⠘⢿⣿⡷⣟⣯⣋⢖⡿⠽⠏⠶⡆⠀⠀⣠⣤⣀⣀⣚⣳⣜⢋⡿⣦⣀⠀⠊⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠉⠛⠶⠴⣠⣀⠀⠀⠀⠉⠉⢛⠻⠿⢶⣛⡎⡩⢿⣐⣾⠓⣡⢀⣬⡩⣩⣙⠄⢊⡽⣻⢶⡀⠁⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠂⠊⢧⣦⡞⢋⣤⠄⠀⢿⣮⠵⡘⢿⡟⣵⣺⣿⠟⠓⣿⠾⣟⣾⣾⣽⣳⣟⣦⠈⡚⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⢠⠛⡇⢰⡄⠈⣷⣯⢱⠘⣮⣯⡟⠁⢸⣧⢹⣶⠀⠀⠉⠛⢻⣯⣽⣿⠈⠊⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⠀⢸⡟⠁⠀⠹⣿⣹⣲⣿⡿⠁⠹⣦⠿⡍⠙⠗⠒⠦⣤⢀⡀⢉⠉⠀⠀⡓⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⢡⠂⠀⠀⣿⣷⣿⡯⠀⠠⣠⡟⡄⠙⡀⠈⠂⠀⠀⠈⠉⠒⠢⠬⠴⠤⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⠀⠀⠀⢳⡀⠀⠘⢿⡟⠁⠀⣸⠏⠀⠀⡀⠑⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣏⠀⠀⠀⠀⢀⣰⠏⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⢢⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣆⡆⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="ascii_star2" translatable="false">"\n
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⠤⢤⣀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠐⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠴⠒⢋⣉⣀⣠⣄⣀⣈⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠄⠀⠀⠀⠀⠀⠀⠀⠀⣸⡆⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⣠⣴⣾⣯⠴⠚⠉⠉⠀⠀⠀⠀⣤⠏⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⣄⠀⠀⠀⠀⠀⠀⡿⡇⠁⠀⠀⠀⠀⠀⠀⠀⡀⠂⠀⠀⠀⠀⣠⣴⡿⠿⢛⠁⠁⣸⠀⠀⠀⠀⠀⣤⣾⠵⠚⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⢄⠀⠀⣠⠀⡇⢧⠀⠀⠀⠀⠀⠀⠖⠁⠀⠀⠀⣠⣴⠿⠋⠁⠀⠀⠀⠀⠘⣿⠀⣀⡠⠞⠛⠁⠂⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⣻⡦⣞⡿⣷⠸⣄⣠⢶⡟⠁⠀⠀⠀⣀⣴⠟⠋⠁⠀⠀⠀⠀⠐⠠⡤⣾⣙⣶⡶⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣂⡷⠰⣔⣾⣖⣾⡷⢿⣀⣀⣀⣤⢾⣋⠁⠀⠀⠀⣀⢀⣀⣀⣀⣀⠀⢀⢿⠑⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠠⡦⠴⠴⠤⠦⠤⠤⠤⠤⠤⠴⠶⢾⣽⣙⠒⢺⣿⣿⣿⣿⢾⠶⣧⡼⢏⠑⠚⠋⠉⠉⡉⡉⠉⠉⠹⠈⠁⠉⠀⠨⢾⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠂⠐⠀⠀⠀⠈⣇⡿⢯⢻⣟⣇⣷⣞⡛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣆⠀⠀⠀⠀⢠⡷⡛⣛⣼⣿⠟⢙⣧⠇⡄⠀⠀⠀⠀⠀⠀⠰⡆⠀⠀⠀⠀⢠⣾⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⢶⠏⠉⠀⠀⠀⠀⠀⠿⢠⣴⡟⡗⡾⡒⡿⠯⢏⡅⠀⠀⠀⠀⣀⢀⣠⣧⣀⣀⠀⠀⠀⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⢴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⣠⣷⢿⣫⡽⡿⠿⠗⢷⠀⠀⠑⣗⡀⠀⠀⠀⠈⠙⣿⢭⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⡴⢏⡵⠛⠀⠀⠀⠀⠀⠀⠀⣀⣴⠞⠛⠀⠰⡟⣿⠀⡌⠀⠀⠀⠀⠀⠀⠁⠢⡀⠀⠀⠂⢿⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣀⣼⠛⣲⡏⠁⠀⠀⠀⠀⠀⢀⣠⡾⠋⠉⠀⠀⠀⠀⣧⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡴⠟⠀⢰⡯⠄⠀⠀⠀⠀⣠⢴⠟⠉⠀⠀⠀⠀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡾⠁⠁⠀⠘⠧⠤⢤⣤⠶⠏⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠘⣇⠂⢀⣀⣀⠤⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"</string>
+    
+    <string name="ascii_kitty" translatable="false">"\n
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠋⠉⠳⡄⠀⠀⠀⠀⢠⠴⠒⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⡶⢶⡀⠀⠀⠀⠀⠀⠀⠀⢠⠏⠀⠀⠀⠀⢹⡄⠀⠀⣰⠋⠀⠀⠀⠸⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣀⡼⠀⠀⠛⠒⠒⡦⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⣷⠀⢰⡏⠀⠀⠀⠀⠀⣹⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣏⠁⠀⠀⠀⠀⠀⣼⠁⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⣹⠀⢸⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠉⡶⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⢽⠀⢸⠀⠀⠀⠀⠀⠀⣽⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢷⡤⠞⠉⠉⠉⠁⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⢸⡆⢸⠀⠀⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣆⠀⠀⠀⠀⠀⠈⠛⠋⠀⠀⢀⠄⡀⣸⠃⡀⠠⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠀⠀⠠⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠲⢀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠁⠀⠜⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠠⠳⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⣠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠀⠀⠀⠀⠀⣰⠀⠐⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⠁⠈⣧⠀⠰⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⡇⠀⠘⠁⠀⠘⠲⢤⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⣠⠤⠤⠄⠙⡇⠀⠀⢨⠷⢶⡋⠀⠀⠀⠀⠀⢀⣴⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⢷⣀⡴⠂⢠⣇⡀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣴⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠤⣤⣤⡴⠋⠀⠹⣽⣛⣛⣿⠋⠉⠉⢁⡴⢋⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⡀⠀⠀⠉⠁⠀⠀⠀⣠⡞⠓⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡍⠓⠦⢤⠤⠴⠶⣺⠟⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⡰⢲⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠒⠛⠲⠶⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠘⣏⠉⠁⠈⠲⣤
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⣀⡀⠀⡞⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠈⠙⠁⠀
+        "</string>
+    <string name="ascii_star3" translatable="false">"\n
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢤⣶⣾⣿⣤⣴⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⣱⣿⣟⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣧⡀⠀⠀⠀⠀⠀⠀⠟⠃⠀⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣆⠀⠀⠀⠀⠀⠀⣀⣀⡄⠀⠀⠐⢶⣦⣤⣤⣤⣴⡿⢻⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⢻⣷⣄⣤⣶⣾⣿⣿⠋⠀⠀⠀⠀⠀⠙⢿⣏⡉⠉⠁⠘⠛⠿⣿⣿⣷⣶⠶⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣀⣤⣿⣷⠀⠙⠛⠋⢈⣽⡿⠋⠀⠀⠀⠀⠀⠀⠀⢨⣿⠟⠀⠀⠀⣾⡿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣀⣴⣶⣿⣿⣟⣛⠉⠁⠀⠀⠀⠠⣻⣿⡁⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣾⠿⣿⣆⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⠉⠛⠛⠻⢿⣿⡀⠀⣠⣄⣈⢻⣷⣦⠀⠀⠀⠀⠀⡼⠟⠋⡉⠀⠀⠈⠻⣿⡧⠀⣴⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡇⣼⣿⠛⠿⠿⣟⣿⣷⣄⠀⠀⠀⠀⠀⢠⣿⡄⠀⠀⠀⠈⢳⣾⣿⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠐⣿⣿⡿⠃⠀⠀⠀⠀⠈⠉⠛⠓⠀⠀⠙⠻⣿⣿⣿⠿⠛⠁⣠⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠁⠀⠀⠀⠀⠀⢦⣤⣀⡀⠀⠀⠀⣰⠿⠓⢿⡇⢀⣼⣿⡿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠀⠀⠀⠀⠀⠀⠀⠈⠿⣿⣷⣶⣦⣤⣭⣀⣀⠈⢃⣼⣿⡿⠃⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⡿⠿⣿⣿⣿⣿⣿⠏⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣦⠀⠀⠈⠻⣿⣿⣆⠀⠀⠉⠙⠃⠀⠀⠀⣿⣿⣿⣶⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣤⣤⣾⣿⣤⣤⡤⠀⠘⢿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠻⢿⣿⣿⣿⣿⣶⣦⣤⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⣿⣿⣯⠁⠀⠀⠀⣰⣿⣿⠏⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣶⣿⣿⣿⠿⠟⠋⠉⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠁⠈⠙⠇⠀⢀⣼⣿⡿⠃⠀⠀⣀⣀⠀⠀⠀⣿⣿⡿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣟⣠⣤⣶⣿⣿⣿⣧⡀⠀⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⠿⠟⠛⠉⠉⠻⣿⣿⣆⢽⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_star4" translatable="false">"\n
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠉⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠀⡄⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠉⠀⠀⠀⠀⡰⢳⡀⠈⠉⠀⠀⠒⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⠀⠈⠫⡅⠀⠀⢈⠽⠋⠀⡠⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⢀⣇⠤⠤⣺⠀⠰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠈⠀⣠⢄⠈⠁⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠊⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠤⠒⠉⠀⠀⠁⠢⠀⠜⠀⠀⠀⡖⠐⠂⠠⠄⣀⠀⠀⠀⠀⠀⠀⡠⠊⠀⡠⠊⡇⠀⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡀⠀⢤⢀⣀⠀⠁⠐⠂⠠⠎⠀⡠⠊⠀⠀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡄⠈⢆⠀⠉⠑⠒⠠⠤⡠⠞⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠄⠈⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠘⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢄⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠒⠤⣀⠀⠁⠂⠄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠔⠂⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡨⠂⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⢤⡀⠀⠉⠂⡄
+⠀⠀⠀⠀⠀⠀⢀⠀⢀⠈⠢⠀⠀⠀⠀⠀⠀⠀⡀⠤⠀⢄⠀⠀⠀⠀⠀⡔⠁⢠⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠠⠔⠒⠉⠁⣀⠤⠄⠒⠁
+⠀⠀⠀⠀⠀⠀⢸⠀⢸⠳⢄⠀⠑⠄⠤⠐⠈⠁⢀⠀⢀⠎⠀⠀⠀⢀⠎⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠉⢀⡀⠤⠐⠂⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⠀⢸⠀⠀⠑⢄⣀⡠⠤⠒⢩⠃⠀⡌⠀⠀⠀⡠⠃⢀⣞⣀⠤⠤⠔⠒⠒⠉⠲⡀⠀⠀⠀⢠⠇⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡀⠜⠀⢀⠀⠀⠀⠀⠀⠀⠀⢀⠆⠀⡜⠀⠀⠀⠔⠀⠀⠀⢀⣀⡀⠤⠄⠐⠒⠢⡀⠈⢆⠀⠀⢸⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⠠⠒⠉⢀⡠⠔⠉⠀⠀⠀⠀⠀⠀⠀⣎⠀⠸⡁⠀⠀⠀⠈⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⢄⠀⠱⡄⠘⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡎⠀⠀⠐⠪⠥⣀⣐⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⡀⠈⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡀⠈⠇⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠀⠒⠀⠤⢀⣀⠀⠉⢱⠀⠀⠀⢀⠤⠤⠀⣀⣘⣄⠀⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢂⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⡆⠀⡠⠃⢀⡀⢀⣀⡀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢃⠀⢡⡐⠁⢠⠎⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠈⠀⡠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⡔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_star5" translatable="false">"\n
+
+⣿⣿⣯⠀⠀⠀⠀⠀⠀⣰⢋⣺⢫⣹⢮⡷⠀⣠⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠊⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠱⢤⣉⣁⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿
+⠻⠿⠿⠀⠀⠀⠀⠀⠀⠸⢿⣍⠙⠓⠋⠀⣠⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣟⣿⣿⢿⣿⣻⣿⡿⣿⡇⠀⠀⠀⠀⠀⢀⣾⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣿⠿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠺⠦⠶⠞⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡤⣤⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣻⣿⣿⡿⣿⣿⣻⠟⠀⠀⠀⠀⠀⠀⠈⠙⠏⠋⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣠⢤⣤⢴⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢴⡿⠋⢀⢀⣀⠙⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣟⣷⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣻⡆⠐⠉⠀⢨⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠯⠁⢠⡾⡿⣯⢷⠀⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠿⠁⠀⠀⠀⠈⢻⣦⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⣿⣷⣴⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢯⡙⠒⡋⣰⡟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⢾⣆⠀⣦⡗⠛⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠸⠿⣿⡿⣯⣇⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠉⠉⠀⠀⠀⠀⠀⢀⣀⣀⢄⡶⠖⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠷⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⠻⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠻⠋⠉⠉⠀⠀⠀⠀⣀⡤⢴⠋⠉⢙⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⡵⡈⠉⠈⠀⢿⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠉⠳⠒⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠃⠀⠀⠀⡀⣘⣇⠀⠀⠀⠀⠀⠀⠀⠀⡯⣅⡀⠀⠰⡯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣟⣾⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠑⠶⢤⣀⣠⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠤⠤⣦⢀⢠⡟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡤⠞⠓⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⣴⣾⣷⠀⠀⠀⠀⠀⠀⠀⠉⠹⠞⠉⠀⠀⠀⠀⠀⠀⠀⢸⣾⣧⠀⠀⠀
+⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣦⣄⠀⠀⠈⠙⠃⠀⠀⠀
+⠁⠀⠀⠀⠀⣴⣷⡦⠀⠀⠐⢿⣿⣻⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠉⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣟⣿⣿⠿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠹⠏⠛⠀⠀⠀⠈⠉⠋⠀⠀⠀⠀⠀⠀⠀⠀⣴⠚⣩⣙⢲⡀⠀⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠙⢿⣿⡇⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⡇⠸⣕⣜⡼⠃⠠⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠳⣜⡺⣤⢤⣤⣀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⢦⣀⡁⣀⣠⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⡞⣭⢓⢧⡛⡴⣋⢖⡟⠀⠀⠀⠀⣄⡾⠋⠉⠻⣦⠶⠦⣔⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠢⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣠⣤⣀⣴⣾⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣙⢦⢫⠖⣭⠳⡭⣎⠀⠀⠀⠀⠀⢿⡌⠀⠀⠀⠀⠀⠀⠈⣏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀⠘⠛⠋⠉⣳⠂⠀⠀⠀⠀⠀⠀⠀⢠
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⢸⣏⠮⣝⣲⣙⠶⣹⠆⠀⠀⠀⠀⠈⠳⣦⡀⠀⠀⠀⢀⡶⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠖⠋⠁⠀⠀⠀⠀⠀⢰⠟⠀⠀⠀⠀⠀⠀⠠⣼⣿
+⣿⣿⣿⣯⣿⣿⣷⣿⢿⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣆⡄⠀⠀⠙⠏⠁⠀⠀⠀⠀⠀⠀⠀⠫⠾⠊⠁⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠉⢷⡤⠶⠚⠉⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠳⣄⣀⠀⠀⠀⠀⠀⠈⣆⠀⠀⠀⠀⠀⠀⠸⣿⣿
+⣿⣿⣿⣽⣿⣷⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠟⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣿⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⣷⠂⠀⣀⣦⣀⣀⡽⠀⠀⠀⠀⠀⠀⠀⠹⣿
+⠉⠛⠿⢿⣟⣿⡽⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠏⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣞⠻⠳⠴⡖⢲⡆⠀⠀⠀⠀⠀⠀⠀⢰⣦⡴⣆⠀⠀⠀⢰⣿⣻⡽⣿⢶⡶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠖⠒⠲⢤⣄⠀⠀⠀⠀⠀⠀⠀⠴⣿⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠁⠀⠀⠀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠚⠷⣹⠛⠀⠀⠀⠸⣟⣷⣻⡽⣯⣟⣷⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠏⢀⣤⣶⡤⡀⢹⡀⠀⠀⠀⠀⠀⠀⠀⠉⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢷⣀⡀⠀⠀⡀⠘⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⣾⣳⣟⡷⣯⡷⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⢸⡇⠯⡧⠇⣸⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢰⣞⢻⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⣀⡴⠏⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠉⠉⠀⠀⠀⠀⠀⠀⠀⢰⣿⣶⣤⣴⣶⡄⠀⠀⠀⠀⠿⣄⠀⠈⠓⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠸⠿⠆⠀⠀⠀⠀⠀⢀⣀⡀⣠⣴⣶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠘⠛⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠈⠻⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣻⣿⣟⣿⣿⢷⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠚⠓⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣿⣿⡿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣳⣯⣟⣾⣳⢯⣯⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀
+⣷⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⢀⣶⡖⣦⢘⡆⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣷⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⡿⠋⠉⠁⠀⠀⠀⠀⠀⠀⠠⣾⣤⠀⠀⠀⠀⠀⡀⠀⢀⣠⣶⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠿⣮⣟⡯⠃⠀⠀⠀⠀⠀⠀⣶⣆⠀⠀⠐⣾
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠸⢎⣓⣋⡴⠇⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⣞⢻⠺⣍⡞⣹⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠩⣧⣄⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢟⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣶⡄⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣷⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⢮⣓⢏⠶⣩⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠖⠲⠶⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⠋⠀⠀⠀⠀⠀⠀⠀⠻⠿⠿⣿⣿⣿⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠒⠦⣆⣀⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⠀⠀⠀⠉⠋⠀⠀⠈⢳⠀⠀⠀⠀⠀⠀⠀⣶⣿⣷⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠃⠀⠘⠻⠚⠲⢶⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⣼⡓⠀⠀⠀⠀⠀⠀⠘⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⠀⠀⠀⠀⠀⠀⠈⣹⡆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡄⠀⠀⠀⠀⣠⡼⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣦⣅⠀⠀⠀⣀⡴⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣺⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠶⠟⠳⠾⠉⠛⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⣠⠴⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣞⢗⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠖⠚⠉⠁⠀⠀⠀⠀⠀⠀
+⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⣅⠀⠀⠀⠀⣀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣼⢚⡼⣜⢳⡒⡶⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⡿⠿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣤⣠⠴⠛⠀⠀⠀⠀⠀⠀⠀⣤⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣯⠳⣬⢣⡽⣌⢧⡹⣜⠏⠀⠀⠀⠀⠠⣾⣦⠀⠀⠀⠀⢠⣾⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠁⠀⠀⠀⠀⠀⠀⠀⠘⢿⡿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠻⡴⢳⡜⣜⡲⣕⣳⡀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢿
+⠘⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣟⢧⣚⡬⠷⣌⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡴⠶⢦⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⢻⠷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀
+⠂⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣤⣾⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡈⠙⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢶⠿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⣶⡻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣴⣶⡀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⡿⣟⣿⣿⡦⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⣯⣽⣷⠢⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣟⠛⠋⠈⠛⢺⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⠆⠁⢭⣿⠄⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⣠⠤⢤⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⢿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⡄⠳⠯⠞⢀⡾⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⢃⢀⠀⢰⠚⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢳⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢲⠛⠙⠓⠚⠁⠀⠈⡄
+⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠳⠦⠶⠻⠁⠀⠀⠀⠀⠀⡰⣄⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠚⠙⠶⠾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⣦⠀⠀⠀⠀⠀⠀⠑
+⣀⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡼⠇⠈⠉⣹⠇⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⠤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠀⠀⠀⠀⠀⠀⠀
+⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢗⡆⢀⣀⣹⡄⠀⠀⠀⠀⠀⠀⢠⡾⢉⣼⡟⣦⢳⡌⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⢀⠀⡀⢀⣤⣶⣤⡀⠀⠀⠀⠀⠀⠉⠿⠉⠁⠀⠀⠀⠀⠀⠀⢀⠀⡀⠀⠀⠀⠀⠀⠧⣄⣀⣤⡀⠀⠀⡘⠉
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣧⠘⠳⣟⡭⠞⠀⢀⣾⠇⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⣤⠇⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠘⢻⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠯⣆⣅⣀⣄⣴⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠶⣻⢯⡶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠿⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠛⠙⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠅⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠚⠛⠓⠲⢤⡀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡹⣌⠻⣝⢳⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠋⠀⣠⠤⠦⣄⠀⢿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿
+⣿⣿⣿⡷⠀⠀⠀⠀⠀⢀⣠⠶⣛⡓⢶⡄⠀⠠⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢷⣸⡹⢬⣣⠟⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣶⣄⣠⣴⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⢞⡩⣸⠆⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+<string name="ascii_hello" translatable="false">"\n
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⢠⠿⠷⣭⣶⣯⣥⣶⣾⣿⠀⠀⠀⠀⢠⠖⣒⡒⢢⣄⡴⠒⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⠷⣾⣿⡀⢠⡿⠑⠀⠀⢸⣿⡿⡄⠀⠀⠀⢸⢼⣍⠙⠛⠙⢷⡀⠀⣷⠒⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣼⡟⣭⣻⢿⣧⡀⠀⣰⡿⠛⣫⣽⠀⠀⢠⠃⠈⢾⣄⠀⠀⢸⣷⡶⠓⢷⣄⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡏⠀⠈⠀⠙⣿⣴⡿⠁⠀⠁⢸⠂⠀⢸⠀⠀⠀⢫⣆⣰⡟⠁⠀⠀⢈⣿⠃⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⠀⠀⠀⠀⠘⣿⡇⠀⠀⢀⡟⠀⠀⠘⡆⠀⠀⠀⣿⡏⠀⠀⠀⠀⣸⡏⠀⠀⣾⣿⣿⣿⣶⣾⡝⡆⣀⡀
+⠀⠀⠀⠀⠀⢀⡠⣤⠤⡀⠈⢧⡀⠀⠀⠀⣻⡇⠀⣠⠞⠀⠀⠀⠀⠙⢄⡀⠀⣿⠁⠀⠀⠀⣰⠋⠀⠀⡰⣿⢿⣏⠀⠹⣷⣿⣿⣿⣿
+⠀⠀⡞⠉⢱⡾⠾⠛⣷⠷⡀⠀⠙⠦⠤⢤⣿⣿⠟⠀⠀⠀⠀⠀⢀⣴⣀⠭⢶⣿⣤⣄⠤⠞⠁⠀⠀⠀⣿⣿⠎⢿⣦⣾⠟⠏⠾⣿⡇
+⡖⢒⣇⡀⣿⠀⠀⢠⡟⠀⠘⡆⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⣠⣿⣿⡇⠀⢰⡏⠀⠈⠑⠢⣄⡀⠀⠀⢻⡹⠀⢸⡿⠁⠀⠂⣰⡟⠀
+⠱⣼⠋⠉⠛⠷⣤⣼⠁⠀⠀⢱⠀⠀⠀⠀⠀⢹⡇⠀⠀⡠⢺⣿⣿⣿⡇⠀⣼⠇⠀⠀⠀⠀⠀⣭⠲⢄⡀⠙⢦⣼⣧⠄⢀⡴⠋⠀⠀
+⠀⠻⣆⠀⠀⠀⠈⢻⡄⠀⢀⠆⠀⠀⠀⣰⡄⠘⣷⢀⡜⠁⣾⣿⣿⣿⡇⢀⡿⠀⠀⠀⣴⣧⢸⣿⣧⠀⠉⠲⢄⣿⠋⠉⠉⠀⠀⠀⠀
+⠀⠀⠙⢦⡀⠀⠀⠀⣧⣴⠋⠀⠀⠀⢠⣿⣿⡄⢿⡎⠀⢸⣿⣿⣿⣿⡇⢸⡇⠀⢀⣾⣿⣿⣾⣿⣿⡇⠀⠀⢸⠏⠑⠢⣀⣤⡶⠀⠀
+⠀⠀⠀⠀⠈⠁⠒⠈⠙⣯⠀⠀⠀⠀⣼⣿⣿⣿⣼⡇⠀⣿⣿⣿⣿⣿⠃⣾⠃⢀⣿⣿⣿⡇⣿⣿⣿⣧⠀⢀⡿⠀⢀⣴⣿⣿⡇⠀⠀
+⠀⠀⠀⢀⣀⠀⠀⠀⠀⠘⣷⠀⠀⠀⣿⣿⣿⣿⣟⡇⢠⣿⣿⣿⣿⡟⢀⣿⢀⣾⣿⣿⣿⠇⢿⣿⣿⣿⠀⣸⠇⢠⣾⣿⣿⠏⢣⠀⠀
+⠀⠀⠀⠈⢿⣿⣦⣄⠀⠀⠘⣧⠀⢀⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⡿⠁⢸⡏⣸⣿⣿⣿⡟⠀⠸⣿⣿⣿⢀⡿⢠⣿⣿⣿⠏⠀⠀⡇⠀
+⠀⠀⠀⠀⠈⢿⣿⣿⣷⣄⠀⣸⣷⠉⣿⣿⣿⣿⣿⢹⣸⣿⣿⡿⠁⠀⢸⣇⣿⣿⣿⡟⠀⠀⠀⠹⣿⣿⣼⢧⣿⣿⠟⠁⢀⢔⡫⠆⠀
+⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣄⠹⡆⢹⣿⣿⣿⡟⢸⣿⡿⠋⡀⠀⠀⣿⢹⣿⣿⠏⢀⣴⣿⠀⠀⠙⢿⣿⠛⠋⢁⡠⣺⠔⠉⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⠟⢿⣿⣿⣿⣧⣹⡜⣿⣿⣿⠇⢸⣧⠀⢰⣿⡀⠀⣿⠸⠟⠁⠀⣾⣿⡟⠀⠀⠀⢸⣇⡠⢖⡭⠊⠀⠀⠀⠀⡄⠀
+⠀⠀⠀⠀⠀⠀⢾⠭⢒⡿⠿⢿⣿⣿⣿⣿⣿⠏⠀⠸⣿⠀⣿⣿⣷⢰⣿⠀⠀⠀⣼⣿⣿⠇⠀⢀⡤⣞⠭⠚⢹⠀⠀⠀⠀⠀⠀⠇⠀
+⠀⠀⠀⠀⠀⠀⢸⡀⠀⠘⡏⠒⠪⠭⣛⡿⠯⣀⡀⠀⣿⠀⣿⣿⣿⣸⡿⠀⠀⢰⣿⣿⣿⠴⣪⠕⠊⠁⠀⠀⠚⠀⠀⠀⠀⠀⢀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢳⠀⠀⠀⠀⠉⠑⢲⡪⠭⣛⡓⠿⢿⣿⣿⣇⠀⣀⠼⢛⡩⠒⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠉⢁⡐⠖⠈⠩⠔⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠘⣆⠀⠀⢀⡀⠠⠼⠓⠂⠩⠑⠒⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⡙⠂⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⡀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠘⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠁⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡏⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡄⠀⢱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢆⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢾⠃⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢦⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠏⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡶⠋⠉⠓⢦⣄⢣⡈⢧⠀⠀⠀⠀⠀⠀⠀⠀⢰⡛⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣦⣄⡀⠀⠙⢷⣷⠀⢧⠀⠀⠀⠀⠀⠀⢀⣣⡵⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠷⣦⣤⣹⣟⣈⣇⣀⡠⠤⠖⠛⠉⣁⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠋⣉⣽⠿⢻⣿⣧⣤⣤⡶⠶⠛⠋⠁⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠷⠶⠛⠉⠁⢀⣿⡞⣧⠐⠀⠀⠀⢸⢸⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⡟⡇⢻⡆⠀⠀⠀⠀⠏⡄⠀⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⠃⡇⠀⣿⠀⣀⠀⠀⠸⠃⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠏⠀⠃⠀⢸⡇⢸⠀⠀⠀⢀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠛⠦⣀⣀⠀⠀⡇⠈⡇⠀⠀⠈⡀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⠋⠀⠀⠀⠈⢸⠀⠀⢹⠀⢣⢀⡀⠤⠒⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="learn_more">Tìm hiểu thêm</string>
+    <string name="help">Giúp đỡ</string>
+    <string name="more_options">Nhiều lựa chọn hơn</string>
+    <string name="import_keywords">Nhập từ khóa</string>
+    <string name="export_keywords">Xuất từ ​​khóa</string>
+    <string name="download_keyword_list">Tải xuống danh sách từ khóa</string>
+    <string name="delete_group">Xóa nhóm</string>
+    <string name="advanced">Trình độ cao</string>
+
+    
+    <string name="delete">Xóa bỏ</string>
+    <string name="ui_hider_title">UI Hider (tập lệnh)</string>
+    <string name="ui_hider_desc">Viết các tập lệnh nhỏ để phân tích giao diện người dùng của ứng dụng và vẽ lớp phủ, nhấn quay lại hoặc nhấn home. Trình độ cao; để người dùng cảm thấy thoải mái với kịch bản đơn giản và phát triển Android. \nChúng tôi thực sự khuyên bạn nên tham gia bất hòa của chúng tôi để khám phá và yêu cầu thêm tập lệnh.</string>
+    <string name="enable_ui_hider">Bật UI Hider</string>
+    <string name="ui_hider_enable_subtitle">Chạy tập lệnh của bạn trên các ứng dụng được hỗ trợ</string>
+    <string name="ui_hider_scripts">Tập lệnh</string>
+    <string name="ui_hider_add_script">Thêm tập lệnh</string>
+    <string name="ui_hider_editor_title">Chỉnh sửa tập lệnh</string>
+    <string name="ui_hider_package_hint">Gói ứng dụng (ví dụ: com.instagram.android)</string>
+    <string name="ui_hider_label_hint">Nhãn (tùy chọn)</string>
+    <string name="ui_hider_script_label">KỊCH BẢN</string>
+    <string name="ui_hider_source_hint">nếu ứng dụng != \"com.instagram.android\" { return }\n…</string>
+    <string name="ui_hider_preset_note">Cài đặt trước này đi kèm với ứng dụng. Bạn có thể đọc nó ở đây và bật hoặc tắt nó, nhưng bạn không thể thay đổi nó.</string>
+
+    <string name="node_picker_start">Bắt đầu bộ chọn nút</string>
+    <string name="node_picker_channel_name">Bộ chọn nút</string>
+    <string name="node_picker_notif_title">Bộ chọn nút</string>
+    <string name="node_picker_notif_text">Nhấn để mở bộ chọn</string>
+    <string name="node_picker_stop">Dừng lại</string>
+    <string name="node_picker_started_hint">Tôi đã sẵn sàng. Mở ứng dụng bạn muốn xem, sau đó nhấn vào thông báo của tôi để bắt đầu chọn.</string>
+    <string name="node_picker_need_accessibility">Vui lòng bật dịch vụ trợ năng của tôi trước.</string>
+    <string name="node_picker_need_overlay">Vui lòng để tôi vẽ lên các ứng dụng khác trước.</string>
+    <string name="node_picker_hint">Nhấn vào bất kỳ yếu tố nào trên màn hình để xem nó</string>
+    <string name="node_picker_copied">Đã sao chép vào bảng nhớ tạm</string>
+    <string name="node_picker_up">Hướng lên</string>
+    <string name="node_picker_deeper">sâu hơn</string>
+    <string name="node_picker_move">Di chuyển</string>
+    <string name="node_picker_info">Thông tin</string>
+    <string name="node_picker_copy">Sao chép</string>
+    <string name="node_picker_hide">Trốn</string>
+    <string name="node_picker_show">Hiển thị bảng điều khiển</string>
+    <string name="node_picker_close">Đóng</string>
+
+    <string name="terms_consent_title">Một điều nhanh chóng</string>
+    <string name="terms_consent_body">Trước khi bắt đầu, vui lòng đọc Điều khoản và Điều kiện cũng như Chính sách quyền riêng tư của chúng tôi.</string>
+    <string name="terms_consent_footer">Nhấn vào \"Tôi đồng ý\" có nghĩa là bạn chấp nhận cả hai.</string>
+    <string name="terms_consent_terms_link">Đọc các điều khoản và điều kiện</string>
+    <string name="terms_consent_privacy_link">Đọc Chính sách quyền riêng tư</string>
+    <string name="terms_consent_agree">tôi đồng ý</string>
+    <string name="terms_consent_exit">Không phải bây giờ</string>
+    <string name="terms_url" translatable="false">https://curbox.app/terms.html</string>
+    <string name="privacy_url" translatable="false">https://curbox.app/privacy.html</string>
+
+    
+    <string name="label_automation">TỰ ĐỘNG</string>
+    <string name="api_screen_title">API hộp giới hạn</string>
+    <string name="api_card_subtitle">Cho phép các ứng dụng khác kiểm soát Curbox</string>
+    <string name="api_screen_subtitle">Các ứng dụng khác có thể yêu cầu bắt đầu chế độ lấy nét, chặn lật và đọc số liệu thống kê của bạn. Bạn quyết định ai được vào.</string>
+    <string name="api_enable_title">Cho phép các ứng dụng khác</string>
+    <string name="api_enable_subtitle">Khi tính năng này tắt, không ứng dụng nào có thể kiểm soát Curbox, ngay cả những ứng dụng bạn đã cho phép trước đó.</string>
+    <string name="api_connected_title">Ứng dụng được kết nối</string>
+    <string name="api_no_apps">Không có ứng dụng nào được kết nối. Curbox sẽ yêu cầu bạn phê duyệt khi ứng dụng yêu cầu quyền truy cập, sau đó liệt kê các ứng dụng được phê duyệt tại đây.</string>
+    <string name="api_revoke">Di dời</string>
+    <string name="api_how_title">Nó hoạt động như thế nào</string>
+    <string name="api_how_body">Khi một ứng dụng khác yêu cầu quyền truy cập, Curbox sẽ hiển thị tên của ứng dụng đó và yêu cầu bạn chấp thuận. Ứng dụng được phê duyệt có thể chạy lệnh cho đến khi bạn xóa ứng dụng đó. Việc xóa ứng dụng sẽ chấm dứt quyền truy cập của ứng dụng đó ngay lập tức.</string>
+    <string name="api_help_popup">Các ứng dụng khác có thể yêu cầu kiểm soát Curbox. Bạn cho phép hoặc từ chối từng cái và bạn có thể xóa quyền truy cập bất cứ lúc nào.</string>
+
+    
+    <string name="service_protection_title">Giữ Curbox chạy</string>
+    <string name="service_protection_card_subtitle">Giúp trình chặn Curbox tiếp tục hoạt động</string>
+    <string name="service_protection_subtitle">Một số điện thoại dừng Curbox ở chế độ nền để tiết kiệm pin. Các tùy chọn này giúp duy trì hoạt động của các trình chặn và khởi động lại chúng nếu chúng dừng. Không có tùy chọn nào có thể đảm bảo rằng Curbox sẽ luôn chạy.</string>
+    <string name="service_protection_master_title">Sự bảo vệ</string>
+    <string name="service_protection_master_desc">Bật tất cả các lớp bên dưới</string>
+    <string name="service_protection_status_header">Những gì đang làm việc bây giờ</string>
+    <string name="service_protection_row_services_title">Bộ chặn Curbox</string>
+    <string name="service_protection_services_on">Trình chặn đang chạy</string>
+    <string name="service_protection_services_off">Trình chặn không chạy</string>
+    <string name="service_protection_row_battery_title">Tự do sử dụng pin</string>
+    <string name="service_protection_battery_ok">Cài đặt pin cho phép Curbox duy trì hoạt động</string>
+    <string name="service_protection_battery_bad">Cài đặt pin có thể dừng Curbox để tiết kiệm pin</string>
+    <string name="service_protection_row_autostart_title">Tự động khởi động</string>
+    <string name="service_protection_row_autostart_desc">Một số điện thoại yêu cầu cài đặt riêng để Curbox tự động khởi động. Vui lòng cho phép tự động bắt đầu.</string>
+    <string name="service_protection_row_shizuku_title">Sửa chữa ô tô</string>
+    <string name="service_protection_shizuku_on">Curbox có thể tự động khởi động lại trình chặn của nó</string>
+    <string name="service_protection_shizuku_off">Thiết lập Shizuku để Curbox có thể khởi động lại các trình chặn của nó</string>
+    <string name="service_protection_fix">Sửa chữa</string>
+    <string name="service_protection_open">Mở</string>
+    <string name="service_protection_setup">Cài đặt</string>
+    <string name="service_protection_shizuku_not_installed">Shizuku không chạy. Khai trương trang web của nó.</string>
+    <string name="service_protection_repair_now">Sửa chữa ngay bây giờ</string>
+    <string name="service_protection_repair_started">Đang cố gắng khởi động lại trình chặn Curbox</string>
+    <string name="service_protection_no_screen">Màn hình cài đặt này không khả dụng trên điện thoại này</string>
+    <string name="service_protection_autostart_manual">Vui lòng mở cài đặt điện thoại của bạn và cho phép Curbox tự động khởi động.</string>
+    <string name="service_protection_advanced_header">Trình độ cao</string>
+    <string name="service_protection_device_owner">Đặt Curbox làm chủ sở hữu thiết bị</string>
+    <string name="service_protection_device_owner_warning">Đây là lựa chọn mạnh nhất. Nó vẫn hoạt động ngay cả sau khi buộc dừng và chặn hoàn toàn việc gỡ cài đặt. Nó chỉ hoạt động trên điện thoại chưa thêm tài khoản và rất khó để hoàn tác sau này. Chỉ làm điều này nếu bạn chắc chắn.</string>
+    <string name="service_protection_cancel">Hủy bỏ</string>
+    <string name="service_protection_continue">Tiếp tục</string>
+    <string name="service_protection_help_popup">Điện thoại thường dừng các ứng dụng chạy nền để tiết kiệm pin. Màn hình này giúp Curbox luôn hoạt động với khả năng truy cập pin, tự động khởi động, kiểm tra thường xuyên và phục hồi tùy chọn thông qua Shizuku. Các tùy chọn này khiến Curbox khó dừng hơn nhưng không thể đảm bảo rằng nó sẽ luôn chạy.</string>
+    <string name="service_protection_channel_name">Bảo vệ dịch vụ</string>
+    <string name="service_protection_down_title">Trình chặn Curbox đã dừng</string>
+    <string name="service_protection_down_text">Nhấn để bật lại chúng để các khối của bạn tiếp tục hoạt động.</string>
+
+    
+    <string name="anti_uninstall_title">Bảo vệ giả mạo</string>
+    <string name="anti_uninstall_card_subtitle">Làm cho việc gỡ bỏ Curbox trở nên khó khăn hơn</string>
+    <string name="anti_uninstall_subtitle">Khi tính năng này được bật, bạn không thể gỡ cài đặt Curbox cho đến khi bạn tắt nó theo cách bạn đã chọn. Hãy coi nó như một chiếc dây an toàn cho ý chí của bạn.</string>
+    <string name="anti_uninstall_limits_warning">Điều này không có nghĩa là không thể gỡ cài đặt Curbox. Nó chỉ làm cho việc gỡ cài đặt trở nên khó khăn hơn.</string>
+    <string name="anti_uninstall_disable_warning">Curbox tự cài đặt để bảo vệ sự tập trung của bạn. Trước tiên hãy tắt tính năng bảo vệ chống giả mạo bên trong ứng dụng.</string>
+    <string name="anti_uninstall_setup_again">Đã xảy ra lỗi. Vui lòng chọn lại phương pháp mở khóa của bạn.</string>
+    <string name="anti_uninstall_admin_explanation">Curbox sử dụng tính năng này để ngăn việc tự gỡ cài đặt khi tính năng bảo vệ được bật.</string>
+    <string name="anti_uninstall_admin_needed">Cần có sự cho phép này để duy trì cài đặt Curbox.</string>
+    <string name="anti_uninstall_help_popup">Khi tính năng này được bật, bạn không thể gỡ cài đặt Curbox và không thể tắt các dịch vụ của nó cho đến khi bạn tắt nó bằng phương pháp bạn đã chọn: mật khẩu, chờ vài ngày hoặc thời gian hồi chiêu một ngày mà bạn có thể dừng bất cứ lúc nào.</string>
+
+    <string name="anti_uninstall_status_off_title">Bảo vệ đã tắt</string>
+    <string name="anti_uninstall_status_off_body">Curbox có thể được gỡ cài đặt ngay bây giờ.</string>
+    <string name="anti_uninstall_status_on_title">Bảo vệ đang bật</string>
+    <string name="anti_uninstall_status_unlocking_title">Tắt sớm</string>
+    <string name="anti_uninstall_status_unlocking_body">Tính năng bảo vệ sẽ tắt sau %1$s.</string>
+
+    <string name="anti_uninstall_summary_password">Mật khẩu của bạn là cần thiết để tắt bảo vệ.</string>
+    <plurals name="anti_uninstall_summary_timed">
+        <item quantity="one">After you request it, protection turns off in %1$d day.</item>
+        <item quantity="other">After you request it, protection turns off in %1$d days.</item>
+    </plurals>
+    <string name="anti_uninstall_summary_cooldown">Cần phải chờ một ngày để tắt tính năng bảo vệ. Yêu cầu có thể bị hủy bất cứ lúc nào.</string>
+
+    <string name="anti_uninstall_pick_mode">Nên tắt tính năng bảo vệ như thế nào?</string>
+    <string name="anti_uninstall_mode_password_title">Mật khẩu</string>
+    <string name="anti_uninstall_mode_password_desc">Tắt bảo vệ ngay lập tức bằng mật khẩu.</string>
+    <string name="anti_uninstall_mode_timed_title">Đã hẹn giờ</string>
+    <string name="anti_uninstall_mode_timed_desc">Tự tắt sau một số ngày nhất định.</string>
+    <string name="anti_uninstall_mode_cooldown_title">Chờ một ngày</string>
+    <string name="anti_uninstall_mode_cooldown_desc">Yêu cầu tắt bảo vệ, sau đó đợi một ngày. Yêu cầu có thể bị hủy bất cứ lúc nào.</string>
+    <string name="anti_uninstall_days_hint">Những ngày chờ đợi</string>
+    <string name="anti_uninstall_days_error">Nhập ít nhất một ngày.</string>
+
+    <string name="anti_uninstall_turn_on">Bật bảo vệ</string>
+    <string name="anti_uninstall_turn_off">Tắt bảo vệ</string>
+    <string name="anti_uninstall_keep_on">Tiếp tục bảo vệ</string>
+    <string name="anti_uninstall_turned_on">Bảo vệ đang bật.</string>
+    <string name="anti_uninstall_start">Bắt đầu</string>
+    <string name="anti_uninstall_cancel">Hủy bỏ</string>
+    <string name="anti_uninstall_save">Cứu</string>
+
+    <string name="anti_uninstall_set_password_title">Đặt mật khẩu</string>
+    <string name="anti_uninstall_enter_password_title">Nhập mật khẩu của bạn</string>
+    <string name="anti_uninstall_password_hint">Mật khẩu</string>
+    <string name="anti_uninstall_password_confirm_hint">Hãy gõ lại lần nữa</string>
+    <string name="anti_uninstall_password_too_short">Chọn một mật khẩu có ít nhất bốn chữ cái.</string>
+    <string name="anti_uninstall_password_mismatch">Hai mật khẩu không khớp nhau.</string>
+    <string name="anti_uninstall_wrong_password">Mật khẩu đó sai.</string>
+
+    <plurals name="anti_uninstall_timed_confirm">
+        <item quantity="one">Protection will turn off on its own in %1$d day. Once the wait starts, it cannot be stopped.</item>
+        <item quantity="other">Protection will turn off on its own in %1$d days. Once the wait starts, it cannot be stopped.</item>
+    </plurals>
+    <string name="anti_uninstall_cooldown_confirm">Tính năng bảo vệ sẽ tắt sau một ngày. Bạn có thể ngừng chờ đợi bất cứ lúc nào trước đó.</string>
+
+    <string name="anti_uninstall_remaining">%1$dh %2$dm %3$ds</string>
+    <string name="anti_uninstall_remaining_with_days">%1$dd %2$dh %3$dm %4$ds</string>
+
+    
+    <string name="change_delay_title">Độ trễ thay đổi cài đặt</string>
+    <string name="change_delay_card_subtitle">Cài đặt yếu hơn hãy đợi trước khi áp dụng</string>
+    <string name="change_delay_subtitle">Điều này giúp ngăn chặn những thay đổi bốc đồng làm suy yếu các quy tắc của bạn. Những thay đổi chặt chẽ hơn sẽ được áp dụng ngay lập tức. Những thay đổi yếu hơn sẽ chờ bộ đếm thời gian và có thể bị hủy trước khi áp dụng.</string>
+    <string name="change_delay_master_title">Bật độ trễ thay đổi</string>
+    <string name="change_delay_master_desc">Tắt tính năng này hoặc chọn thời gian chờ ngắn hơn cũng phải chờ hết độ trễ.</string>
+    <string name="change_delay_tamper_lock_title">Cũng yêu cầu tắt tính năng chống giả mạo</string>
+    <string name="change_delay_tamper_lock_desc">Những thay đổi yếu hơn vẫn đang chờ xử lý trong khi tính năng chống giả mạo được bật, ngay cả sau khi hết giờ. Tắt tính năng chống giả mạo để áp dụng chúng.</string>
+    <string name="change_delay_duration_header">Những thay đổi yếu hơn phải đợi bao lâu?</string>
+    <string name="change_delay_none">Không có</string>
+    <string name="change_delay_10m">10 phút</string>
+    <string name="change_delay_1h">1 giờ</string>
+    <string name="change_delay_4h">4 giờ</string>
+    <string name="change_delay_12h">12 giờ</string>
+    <string name="change_delay_1d">1 ngày</string>
+    <string name="change_delay_2d">2 ngày</string>
+    <string name="change_delay_pending_header">Những thay đổi đang chờ áp dụng</string>
+    <string name="change_delay_pending_empty">Không có gì đang chờ đợi ngay bây giờ.</string>
+    <string name="change_delay_applies_in">Bắt đầu làm việc sau %1$s</string>
+    <string name="change_delay_blocked_by_tamper">Đang chờ tính năng chống giả mạo tắt</string>
+    <string name="change_delay_deferred_toast">Lưu lại sau này. Thay đổi này bắt đầu có hiệu lực sau %1$s. Bạn có thể hủy nó trong phần Trì hoãn thay đổi cài đặt.</string>
+    <string name="change_delay_tamper_gated_toast">Lưu lại sau này. Thay đổi này sẽ không áp dụng cho đến khi tắt tính năng chống giả mạo.</string>
+    <string name="change_delay_cancelled_toast">Thay đổi đang chờ đã bị hủy. Không có gì thay đổi.</string>
+    <string name="change_delay_pending_note">Nếu bạn thực hiện một thay đổi chặt chẽ hơn đối với cùng một công cụ trong khi thay đổi đang chờ thì thay đổi đang chờ sẽ bị xóa.</string>
+    <string name="change_delay_help_popup">Khi được bật, những thay đổi làm suy yếu quy tắc sẽ chờ trước khi áp dụng. Điều này cho bạn thời gian để xem xét lại chúng.</string>
+    <string name="change_delay_field_app_groups">Trình chặn ứng dụng</string>
+    <string name="change_delay_field_auto_dnd">DND tự động</string>
+    <string name="change_delay_field_reel_blocker">Trình chặn cuộn</string>
+    <string name="change_delay_field_keyword_blocker">Trình chặn từ khóa</string>
+    <string name="change_delay_field_reel_counter">Bộ đếm cuộn</string>
+    <string name="change_delay_field_grayscale">Thang độ xám</string>
+    <string name="change_delay_field_mindful_messages">Thông điệp chánh niệm</string>
+    <string name="change_delay_field_ui_hider">giao diện người dùng ẩn</string>
+    <string name="change_delay_field_change_delay">Độ trễ thay đổi cài đặt</string>
+    <string name="change_delay_review_title">Giữ lấy</string>
+    <string name="change_delay_review_message">Thay đổi này làm suy yếu các quy tắc %1$s nên nó sẽ không được áp dụng ngay lập tức. Nó áp dụng trong %2$s. Các quy tắc hiện tại vẫn có hiệu lực cho đến lúc đó.</string>
+    <string name="change_delay_review_message_no_timer">Thay đổi này làm suy yếu các quy tắc %1$s nên nó sẽ không được áp dụng ngay lập tức. Các quy tắc hiện tại vẫn có hiệu lực cho đến khi được phép thay đổi.</string>
+    <string name="change_delay_review_tamper_note">Nó sẽ không áp dụng cho đến khi tắt tính năng chống giả mạo.</string>
+    <string name="change_delay_review_replaced_note">Một sự thay đổi cho công cụ này đã được chờ đợi. Cái mới này thay thế nó và bộ đếm thời gian bắt đầu lại.</string>
+    <string name="change_delay_review_keep">Cứ chờ đi</string>
+    <string name="change_delay_review_undo">Hoàn tác thay đổi này</string>
+    <string name="change_delay_dropped_toast">Sự thay đổi chặt chẽ hơn đang hoạt động. Thay đổi đang chờ xử lý cho %1$s đã bị xóa.</string>
+    <string name="temporary_disable_title">Tạm thời vô hiệu hóa %1$s</string>
+    <string name="temporary_disable_5m">5 phút</string>
+    <string name="temporary_disable_15m">15 phút</string>
+    <string name="temporary_disable_1h">1 giờ</string>
+    <string name="temporary_disable_until_enabled">Cho đến khi bạn bật lại</string>
+    <string name="temporary_disable_custom">Phút tùy chỉnh</string>
+    <string name="temporary_disable_custom_hint">Phút</string>
+    <string name="temporary_disable_action">Tắt tạm thời</string>
+    <string name="temporary_disable_invalid">Nhập thời lượng từ 1 đến 43.200 phút.</string>
+    <string name="temporary_disable_until">Tạm thời bị vô hiệu hóa trong %1$s</string>
+    <string name="temporary_disable_until_manually_enabled">Đã tắt cho đến khi bạn bật lại</string>
+
+    
+    <string name="api_permission_title">Cho phép truy cập?</string>
+    <string name="api_permission_message">%1$s muốn kiểm soát Curbox. Nó có thể bắt đầu các phiên tập trung, bật hoặc tắt trình chặn và đọc thời gian sử dụng thiết bị của bạn. Bạn có thể loại bỏ điều này bất cứ lúc nào.</string>
+    <string name="api_permission_allow">Cho phép</string>
+    <string name="api_permission_deny">Từ chối</string>
+
+    
+    <string name="common_back">Mặt sau</string>
+    <string name="common_mins">phút</string>
+    <string name="common_continue">Tiếp tục</string>
+    <string name="okay">Đồng ý</string>
+    <string name="share">Chia sẻ</string>
+    <string name="clear">Thông thoáng</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="selected_count">Đã chọn: %1$d</string>
+    <string name="select_apps_count">Chọn ứng dụng (%1$d)</string>
+    <string name="group_type_time_based">Dựa trên thời gian</string>
+    <string name="group_type_usage_based">Dựa trên cách sử dụng</string>
+    <string name="group_details_apps">%1$d Ứng dụng • %2$s</string>
+    <string name="group_details_keywords">%1$d Từ khóa • %2$s</string>
+    <string name="group_details_keywords_only">%1$d Từ khóa</string>
+    <string name="group_details_apps_only">Ứng dụng %1$d</string>
+    <string name="group_no_usage_left">Không còn thời gian trong lịch trình này</string>
+    <string name="group_usage_left">Còn lại %1$s trong lịch trình này</string>
+    <string name="warning_show_on_each_open">Hiển thị màn hình này mỗi lần tôi mở ứng dụng đã chọn</string>
+    <string name="warning_current_app_session">Phiên ứng dụng hiện tại</string>
+
+    
+    <string name="account_sync_title">Đồng bộ hóa trên các thiết bị của tôi</string>
+    <string name="account_sync_desc">Tôi luôn cập nhật các cài đặt và thống kê thời gian của bạn trên mọi trình duyệt và điện thoại. Mọi thứ đều được khóa bằng chìa khóa chỉ bạn giữ, nên không ai khác có thể đọc được.</string>
+    <string name="account_hint_email">E-mail</string>
+    <string name="account_hint_password">Mật khẩu</string>
+    <string name="account_hint_email_code">Mã email</string>
+    <string name="account_hint_new_password">Mật khẩu mới</string>
+    <string name="account_hint_secret_phrase">Cụm từ bí mật</string>
+    <string name="account_hint_paste_code">Dán mã ghép nối</string>
+    <string name="account_pairing_code_desc">Mã ghép nối</string>
+    <string name="account_sign_in">Đăng nhập</string>
+    <string name="account_forgot_password">Quên mật khẩu?</string>
+    <string name="account_new_here">"Mới ở đây à?"</string>
+    <string name="account_create_account">Tạo một tài khoản</string>
+    <string name="account_verify_continue">Xác minh và tiếp tục</string>
+    <string name="account_send_new_code">Gửi mã mới</string>
+    <string name="account_send_reset_code">Gửi mã đặt lại</string>
+    <string name="account_back_to_sign_in">Quay lại để đăng nhập</string>
+    <string name="account_set_new_password">Đặt mật khẩu mới</string>
+    <string name="account_turn_on_sync">Bật đồng bộ hóa</string>
+    <string name="account_pair_desc">Khi thiết bị khác của tôi tiện dụng thì đây là cách dễ dàng. Mở Đồng bộ hóa ở đó và hiển thị mã của nó.</string>
+    <string name="account_scan_code">Quét mã</string>
+    <string name="account_use_pasted_code">Sử dụng mã đã dán</string>
+    <string name="account_show_pairing_code">Hiển thị mã ghép nối cho thiết bị khác</string>
+    <string name="account_pairing_warning">Bất kỳ ai nhìn thấy mã này đều có thể đọc dữ liệu của bạn, vì vậy, chỉ hiển thị mã đó trên thiết bị của riêng bạn.</string>
+    <string name="account_sync_now">Đồng bộ hóa ngay bây giờ</string>
+    <string name="account_sign_out">Đăng xuất khỏi thiết bị này</string>
+    <string name="account_device_name">Thiết bị này</string>
+    <string name="account_save_device_name">Lưu tên</string>
+    <string name="account_what_syncs">ĐỒNG BỘ GÌ</string>
+    <string name="account_sync_usage_stats">Số liệu thống kê sử dụng</string>
+    <string name="account_sync_reducer_configs">Cấu hình giảm tốc</string>
+    <string name="account_usage_shown_from">SỬ DỤNG ĐƯỢC HIỂN THỊ TỪ</string>
+    <string name="account_usage_filter_desc">Chọn những thiết bị khác góp phần vào việc sử dụng kết hợp.</string>
+    <string name="account_all_devices">Tất cả các thiết bị</string>
+    <string name="account_create_account_action">Tạo tài khoản</string>
+    <string name="account_already_have_account">"Đã có tài khoản?"</string>
+    <string name="account_unlock_data">Mở khóa dữ liệu của tôi</string>
+    <string name="account_make_secret_phrase">Tạo một cụm từ bí mật</string>
+    <string name="account_title_sync_on">Đồng bộ hóa đang bật</string>
+    <string name="account_title_check_email">Kiểm tra email của bạn</string>
+    <string name="account_title_reset_password">Đặt lại mật khẩu</string>
+    <string name="account_title_choose_new_password">Chọn mật khẩu mới</string>
+    <string name="account_title_create_account">Tạo tài khoản của bạn</string>
+    <string name="account_title_welcome_back">Chào mừng trở lại</string>
+    <string name="account_sub_sync_on">Cài đặt và số liệu thống kê thời gian của bạn luôn được cập nhật trên mọi thiết bị.</string>
+    <string name="account_sub_unlock">Nhập cụm từ bí mật bạn đã thực hiện trên thiết bị đầu tiên của mình. Hoặc nếu thiết bị đó ở gần, hãy nhấn vào Quét mã bên dưới để đưa mã này vào mà không cần nhập bất cứ thứ gì.</string>
+    <string name="account_sub_make_phrase">Cụm từ này sẽ mở khóa dữ liệu của bạn trên mọi thiết bị. Tôi không bao giờ gửi nó đi bất cứ đâu, vì vậy hãy chọn thứ gì đó bạn sẽ nhớ và giữ nó an toàn. Nếu bạn quên nó, dữ liệu của bạn sẽ không thể mở lại được.</string>
+    <string name="account_sub_verify">Tôi đã gửi mã tới %1$s. Nhập nó bên dưới để hoàn tất thiết lập.</string>
+    <string name="account_sub_forgot">Hãy cho tôi biết email của bạn và tôi sẽ gửi cho bạn mã để đặt mật khẩu mới.</string>
+    <string name="account_sub_reset">Nhập mã tôi đã gửi qua email cho bạn và mật khẩu mới của bạn.</string>
+    <string name="account_sub_sign_up">Tạo một tài khoản để các cài đặt và số liệu thống kê có thể đồng hành cùng bạn.</string>
+    <string name="account_sub_sign_in">Đăng nhập để duy trì cài đặt và thống kê thời gian của bạn trên mọi thiết bị, được mã hóa từ đầu đến cuối.</string>
+    <string name="account_msg_new_code_sent">Tôi đã gửi mã mới tới %1$s</string>
+    <string name="account_msg_reset_code_sent">Tôi đã gửi mã đặt lại tới %1$s</string>
+    <string name="account_msg_phrase_too_short">Vui lòng chọn một cụm từ bí mật có ít nhất 8 chữ cái.</string>
+    <string name="account_msg_phrase_too_long">Cụm từ bí mật đó quá dài.</string>
+    <string name="account_err_sync_data_invalid">Không thể đọc được một số dữ liệu đã đồng bộ hóa.</string>
+    <string name="account_msg_syncing">Đang đồng bộ hóa dữ liệu mới nhất của bạn ngay bây giờ</string>
+    <string name="account_err_generic">Đã xảy ra lỗi. Vui lòng thử lại.</string>
+    <string name="account_err_invalid_login">Email hoặc mật khẩu đó không khớp. Vui lòng thử lại.</string>
+    <string name="account_err_already_registered">Bạn đã có tài khoản với email này. Vui lòng đăng nhập thay thế.</string>
+    <string name="account_err_email_not_confirmed">Vui lòng xác nhận email của bạn trước. Tôi có thể gửi cho bạn một mã mới.</string>
+    <string name="account_err_bad_code">Mã đó không hoạt động. Kiểm tra nó hoặc yêu cầu tôi cho một cái mới.</string>
+    <string name="account_err_rate_limit">Vui lòng đợi một lát rồi thử lại.</string>
+    <string name="account_err_weak_password">Vui lòng sử dụng mật khẩu có ít nhất 6 chữ cái hoặc số.</string>
+    <string name="account_err_no_network">Tôi không thể truy cập internet ngay bây giờ. Hãy kiểm tra kết nối của bạn và thử lại.</string>
+
+    
+    <string name="language">Ngôn ngữ</string>
+
+    
+    <string name="info_official_documentation">Tài liệu chính thức</string>
+    <string name="crash_logs_title">Nhật ký sự cố</string>
+    <string name="crash_logs_none_available">Không có nhật ký sự cố có sẵn.</string>
+
+    
+    <string name="onboarding_app_limit_group_name">Giới hạn %1$s</string>
+    <string name="onboarding_perm_overlay_title">Lớp phủ màn hình</string>
+    <string name="onboarding_perm_overlay_rationale">Curbox cần điều này để hiển thị màn hình tạm dừng êm dịu bên trên các ứng dụng gây mất tập trung khi bạn mở chúng. Không có nó, Curbox không thể đặt bất cứ thứ gì lên các ứng dụng đó để giúp bạn dừng lại và suy nghĩ.</string>
+    <string name="onboarding_perm_overlay_opensource">🛡️ Mã nguồn mở: Hãy coi Curbox giống như một nhà hàng có bếp biểu diễn. Toàn bộ cơ sở mã đều được công khai nên bất kỳ ai cũng có thể kiểm tra xem Curbox có làm điều gì lén lút hay không. Ở đây không có cánh cửa đóng kín.</string>
+    <string name="onboarding_perm_notif_title">Thông báo</string>
+    <string name="onboarding_perm_notif_rationale">Curbox cần điều này để tiếp tục chạy ở chế độ nền để các khối của bạn tiếp tục hoạt động và nhẹ nhàng nhắc nhở bạn về các mục tiêu của mình. Nếu không có nó, Android có thể dừng Curbox và các khối của bạn có thể bị lỗi.</string>
+    <string name="onboarding_perm_notif_opensource">🛡️ Không phải là Nhà môi giới dữ liệu: Nhiều ứng dụng ẩn mã vì chúng kiếm tiền bằng cách thu thập dữ liệu của bạn. Curbox giữ tất cả mã của nó ở chế độ công khai, vì vậy bạn có thể tự kiểm tra xem không có gì đang âm thầm gửi thông tin của bạn đi.</string>
+    <string name="onboarding_perm_accessibility_title">Trình chặn ứng dụng (API trợ năng)</string>
+    <string name="onboarding_perm_accessibility_rationale">Curbox cần thông báo này khi bạn mở một ứng dụng bị chặn và hiển thị màn hình trình chặn. Nó cũng sử dụng nó để đếm thời gian sử dụng thiết bị của bạn và số lượng cuộn phim bạn cuộn. Không có nó, Curbox không thể hoạt động được.</string>
+    <string name="onboarding_perm_accessibility_opensource">🛡️ Tính minh bạch cho quyền truy cập sâu: Đây là một sự cho phép mạnh mẽ, đó là lý do tại sao nguồn mở lại quan trọng đến vậy. Bạn không cần phải tin lời Curbox. Cộng đồng toàn cầu đã xem xét mã công khai của nó và xác nhận rằng nó chỉ chặn các ứng dụng và theo dõi việc sử dụng.</string>
+    <string name="onboarding_read_documentation">Đọc tài liệu</string>
+    <string name="onboarding_privacy_note">"\n\n🔒 Curbox không thu thập, gửi hoặc lưu trữ bất kỳ dữ liệu nào của bạn trên máy chủ mà không có sự cho phép của bạn. Mọi thứ vẫn ở trên điện thoại của bạn.\n\n"</string>
+    <string name="onboarding_granting_permissions">Đang cấp quyền…</string>
+    <string name="onboarding_permissions_granted">Đã cấp quyền!</string>
+    <string name="onboarding_error_tap_retry">Lỗi, Nhấn để thử lại</string>
+    <string name="onboarding_curb_me">Kiềm chế tôi đi!</string>
+    <string name="onboarding_need_more_permissions">Tôi vẫn cần thêm quyền</string>
+    <string name="screen_time_hours">%1$d giờ</string>
+    <string name="screen_time_reality">Đó là %1$d cả tuần trong cuộc đời bạn nhìn chằm chằm vào màn hình mỗi năm.</string>
+
+    
+    <string name="focus_unknown_group">Nhóm không xác định</string>
+    <string name="focus_delete_group_title">Xóa nhóm tập trung</string>
+    <string name="focus_delete_group_message">Bạn có chắc chắn muốn xóa nhóm này? Tất cả số liệu thống kê tiêu điểm liên quan cũng sẽ bị xóa.</string>
+    <string name="focus_no_browser_title">Không có trình duyệt nào được chọn</string>
+    <string name="focus_no_browser_allow_message">Bạn đã đặt một số trang web ở chế độ được phép nhưng không có trình duyệt nào được hỗ trợ trong danh sách \'Ứng dụng được phép\' của bạn. \n\nĐể truy cập các trang web này, vui lòng thêm trình duyệt (như Chrome hoặc Firefox) vào các ứng dụng đã chọn.</string>
+    <string name="focus_add_browser">Thêm trình duyệt</string>
+    <string name="focus_save_anyway">Vẫn lưu</string>
+    <string name="focus_block_notice_title">Thông báo chặn trang web</string>
+    <string name="focus_block_notice_message">Bạn đã đặt chặn một số trang web nhưng không có trình duyệt nào trong danh sách \'Ứng dụng bị chặn\' của bạn. \n\nLưu ý rằng tính năng chặn trang web chỉ hoạt động trên các trình duyệt được hỗ trợ (như Chrome hoặc Firefox). Bất kỳ trình duyệt nào khác vẫn có thể truy cập các trang web này. Hãy cân nhắc việc chặn các trình duyệt không được hỗ trợ nếu cần.</string>
+    <string name="focus_add_websites_title">Thêm trang web/từ khóa</string>
+
+    
+    <string name="warning_fixed_unlock_duration">Thời lượng mở khóa cố định: %1$d phút</string>
+    <string name="warning_fixed_unlock_duration_lower">Thời lượng mở khóa cố định: %1$d phút</string>
+    <string name="warning_wait_before_unlock">Đợi trước khi mở khóa: %1$ds</string>
+    <string name="warning_allowed_proceeds">Số tiền được phép: %1$d</string>
+    <string name="warning_time_window">Khoảng thời gian: %1$d %2$s</string>
+    <string name="warning_fixed_unlock_duration_input">Đã sửa lỗi thời gian mở khóa</string>
+    <string name="warning_wait_before_unlock_input">Chờ trước khi mở khóa</string>
+    <string name="warning_intent_min_length_input">Ký tự tối thiểu</string>
+    <string name="warning_math_question_count_input">Câu hỏi bắt buộc</string>
+    <string name="warning_math_starting_level_input">Cấp độ bắt đầu</string>
+    <string name="warning_focus_goal_minutes_input">Thời gian lấy nét cần thiết</string>
+    <string name="warning_allowed_proceeds_input">Số tiền được phép</string>
+    <string name="warning_time_window_input">Cửa sổ thời gian</string>
+    <string name="warning_numeric_value_minimum">Nhập %1$d trở lên.</string>
+    <string name="warning_numeric_value_too_large">Con số này quá lớn.</string>
+    <string name="unit_seconds">Giây</string>
+    <string name="warning_qr_generated_title">Đã tạo mã QR/mã vạch</string>
+    <string name="warning_qr_generated_message">Vui lòng lưu hoặc in mã QR/Mã vạch này. Bạn sẽ cần nó để mở khóa.</string>
+    <string name="warning_save_to_gallery">Lưu vào Thư viện</string>
+    <string name="warning_qr_generate_failed">Không tạo được hình ảnh QR</string>
+    <string name="warning_saved_to_gallery">Đã lưu vào Thư viện!</string>
+    <string name="warning_save_image_failed">Không lưu được hình ảnh</string>
+    <string name="warning_mediastore_failed">Không tạo được mục MediaStore</string>
+    <string name="warning_qr_timing_title">Mở khóa thời gian</string>
+    <string name="warning_qr_timing_message">Định cấu hình hành vi thời gian cho phương pháp mở khóa này trước khi tiếp tục.</string>
+    <string name="warning_qr_saved">Mã QR đã được lưu thành công!</string>
+    <string name="warning_scan_cancelled">Đã hủy quét</string>
+    <string name="warning_cancelled">Đã hủy</string>
+    <string name="warning_invalid_qr">Mã QR không hợp lệ - Mẫu không khớp</string>
+    <string name="warning_proceed_limit_reached">Đã đạt đến giới hạn tiến hành %1$d mỗi %2$d phút. Hãy thử lại sau %3$d phút.</string>
+    <string name="warning_proceeds_left">Bạn còn %1$d trong số %2$d mở</string>
+    <string name="warning_typing_quote">\"%1$s\"</string>
+    <string name="warning_scan_qr_code">Quét mã QR</string>
+    <string name="warning_scan_nfc_tag">Quét thẻ NFC</string>
+    <string name="warning_math_problem">Giải quyết %1$s</string>
+    <string name="warning_math_progress">Đã giải quyết được %1$d trong tổng số %2$d</string>
+    <string name="warning_math_answer_hint">Trả lời</string>
+    <string name="warning_math_check_answer">Kiểm tra câu trả lời</string>
+    <string name="warning_math_answer_required">Nhập một số</string>
+    <string name="warning_math_incorrect">Câu trả lời sai. Hãy thử câu hỏi tiếp theo.</string>
+    <string name="warning_option_never_unlock">Không bao giờ mở khóa</string>
+    <string name="warning_option_never_unlock_desc">Khóa hoàn toàn. Không được phép bỏ qua.</string>
+    <string name="warning_option_require_effort">Đòi hỏi nỗ lực để mở khóa</string>
+    <string name="warning_option_require_effort_desc">Trong tâm lý học hành vi, việc thêm vào những va chạm vật lý sẽ phá vỡ vòng lặp thói quen tự động, giúp não bạn có thời gian tạm dừng cần thiết để xem xét lại.</string>
+    <string name="warning_option_wait">Chờ để mở khóa</string>
+    <string name="warning_option_wait_desc">Cho phép truy cập ngay lập tức sau một thời gian chờ đợi ngắn.</string>
+    <string name="warning_option_qr">Mở khóa yêu cầu quét mã QR/mã vạch</string>
+    <string name="warning_option_qr_desc">Quét bất kỳ mã nào (như hộp sản phẩm) để mở khóa.</string>
+    <string name="warning_option_typing">Mở khóa yêu cầu gõ một câu</string>
+    <string name="warning_option_typing_desc">Gõ chính xác một câu dài để chứng minh trọng tâm.</string>
+    <string name="warning_option_intent">Mở khóa yêu cầu nêu rõ ý định</string>
+    <string name="warning_option_intent_desc">Mô tả ngắn gọn mục tiêu của bạn trước khi truy cập.</string>
+    <string name="warning_option_nfc">Mở khóa yêu cầu quét thẻ NFC</string>
+    <string name="warning_option_nfc_desc">Nhấn vào thẻ NFC vật lý để mở khóa.</string>
+    <string name="warning_option_adaptive_math">Toán học thích ứng</string>
+    <string name="warning_option_adaptive_math_desc">Giải quyết các câu hỏi có độ khó thích ứng.</string>
+    <string name="label_adaptive_math">Toán học thích ứng</string>
+    <string name="label_adaptive_math_desc">Chọn số lượng câu trả lời đúng được yêu cầu.</string>
+    <string name="warning_math_starting_level">Cấp độ bắt đầu: %1$d</string>
+    <string name="label_adaptive_math_level_desc">Cấp độ 1 sử dụng số học đơn giản. Cấp độ 10 kết hợp số thập phân, phân số, căn, lũy thừa và thứ tự thực hiện các phép tính.</string>
+    <plurals name="warning_math_question_count">
+        <item quantity="one">Question required: %1$d</item>
+        <item quantity="other">Questions required: %1$d</item>
+    </plurals>
+    <string name="label_focus_goal_unlock">Yêu cầu tập trung hàng ngày</string>
+    <string name="label_focus_goal_unlock_desc">Việc mở khóa được cho phép sau khi thời gian lấy nét đã chọn hoàn tất hôm nay.</string>
+    <string name="hint_focus_group">Nhóm tập trung</string>
+    <string name="warning_focus_goal_group_required">Chọn một nhóm tập trung</string>
+    <plurals name="warning_focus_goal_minutes">
+        <item quantity="one">Required focus time: %1$d minute</item>
+        <item quantity="other">Required focus time: %1$d minutes</item>
+    </plurals>
+    <string name="warning_focus_goal_checking">Kiểm tra tiến trình lấy nét</string>
+    <string name="warning_focus_goal_complete">Mục tiêu tập trung đã hoàn thành cho %1$s.</string>
+    <string name="warning_focus_goal_not_met">Mục tiêu tập trung không được đáp ứng. %1$d phút còn lại trong %2$s.</string>
+    <string name="warning_focus_goal_unavailable">Nhóm tiêu điểm đã chọn không có sẵn. Việc mở khóa bị hạn chế.</string>
+    <string name="warning_focus_goal_check_failed">Không thể kiểm tra tiến trình tập trung. Việc mở khóa bị hạn chế.</string>
+    <string name="warning_option_choose_time">Hỏi tôi cần bao nhiêu thời gian</string>
+    <string name="warning_option_choose_time_desc">Bạn chọn thời lượng trong mỗi lần mở khóa.</string>
+    <string name="warning_option_fixed_time">Chỉ cho tôi một khoảng thời gian cố định</string>
+    <string name="warning_option_fixed_time_desc">Tự động khóa sau một khoảng thời gian đã đặt.</string>
+    <string name="warning_invalid_nfc">Thẻ NFC này chưa được đăng ký</string>
+    <string name="nfc_tap_title">Nhấn vào thẻ NFC của bạn</string>
+    <string name="nfc_tap_message">Giữ thẻ NFC của bạn vào mặt sau của điện thoại.</string>
+    <string name="nfc_unavailable">NFC bị tắt hoặc không khả dụng trên thiết bị này</string>
+    <string name="nfc_tag_saved">Đã đăng ký thẻ NFC</string>
+    <string name="nfc_write_failed">Không thể ghi vào thẻ. Sử dụng thẻ NFC có thể ghi được.</string>
+    <string name="nfc_write_success">Tag được viết và đăng ký</string>
+    <string name="nfc_already_registered">Thẻ đó đã được đăng ký</string>
+    <string name="focus_nfc_write_title">Viết thẻ NFC tập trung</string>
+    <string name="focus_nfc_write_button">Viết thẻ</string>
+    <string name="focus_nfc_no_groups">Trước tiên hãy tạo một nhóm tập trung</string>
+    <string name="focus_nfc_pick_group">Nhóm tập trung</string>
+    <string name="focus_nfc_pick_action">Khi gõ</string>
+    <string name="focus_nfc_unnamed_group">Nhóm không tên</string>
+    <string name="focus_nfc_action_toggle">Chuyển đổi tiêu điểm</string>
+    <string name="focus_nfc_action_start">Bắt đầu tập trung</string>
+    <string name="focus_nfc_action_stop">Dừng lấy nét</string>
+    <string name="focus_nfc_duration_input_hint">Khoảng thời gian</string>
+    <string name="focus_nfc_load_button">Tải từ thẻ</string>
+    <string name="focus_nfc_load_title">Nhấn vào thẻ để tải</string>
+    <string name="focus_nfc_loaded">Các giá trị được tải từ thẻ</string>
+    <string name="focus_nfc_load_invalid">Thẻ đó không phải là thẻ tiêu điểm Curbox</string>
+
+    
+    <string name="app_group_edit_title">Chỉnh sửa nhóm ứng dụng</string>
+    <string name="grayscale_group_edit_title">Chỉnh sửa nhóm thang độ xám</string>
+    <string name="autodnd_group_edit_title">Chỉnh sửa nhóm Auto DND</string>
+    <string name="keyword_group_edit_title">Chỉnh sửa nhóm từ khóa</string>
+    <string name="autodnd_scheduled">Đã lên lịch</string>
+
+    
+    <string name="keyword_imported_count">Đã nhập %1$d từ khóa</string>
+    <string name="keyword_no_new_import">No new keywords to import</string>
+    <string name="keyword_import_failed">Không thể nhập từ khóa</string>
+    <string name="keyword_export_success">Keywords exported successfully</string>
+    <string name="keyword_export_failed">Failed to export keywords</string>
+    <string name="keyword_add_at_least_one">Thêm ít nhất một từ khóa</string>
+
+    
+    <string name="usage_disable_everyday_granular">Disable everyday to add granular changes</string>
+    <string name="time_disable_everyday_granular">Tắt hàng ngày để đặt phạm vi chi tiết</string>
+    <string name="time_overnight_split">Phạm vi qua đêm chia làm hai (đến nửa đêm và từ nửa đêm)</string>
+    <string name="uihider_enter_package">Nhập tên gói</string>
+
+    
+    <string name="intent_unlocked_for">Đã mở khóa trong %1$d phút</string>
+
+    
+    <string name="usage_export_daily_breakdown">Daily Breakdown (Time Series)</string>
+    <string name="usage_export_total_summary">Tổng hợp tóm tắt</string>
+    <string name="usage_export_both">Cả hai</string>
+    <string name="usage_export_format_title">Chọn định dạng dữ liệu</string>
+    <string name="usage_widget_screentime">Thống kê thời gian sàng lọc</string>
+    <string name="usage_widget_reels">Thống kê cuộn</string>
+    <string name="usage_short_form_videos_scrolled">Short form videos scrolled • %1$d</string>
+    <string name="usage_short_form_video_duration">Thời lượng • %1$s</string>
+    <string name="usage_short_form_video_average_attention">Average attention span • %1$s</string>
+    <string name="usage_widget_pin_title">Chọn tiện ích để ghim</string>
+    <string name="usage_ignore_title">Thêm vào các gói bị bỏ qua?</string>
+    <string name="usage_ignore_message">This action will cause the tracker to not display any stats from this app.</string>
+    <string name="rule_type_app_blocker">Trình chặn ứng dụng</string>
+    <string name="rule_type_grayscale">Thang độ xám</string>
+    <string name="create_new_rule_title">Tạo quy tắc mới</string>
+    <string name="synced_browsing">Duyệt web được đồng bộ hóa</string>
+    <string name="synced_other_devices">THIẾT BỊ KHÁC</string>
+
+    
+    <string name="app_category_audio">Âm thanh</string>
+    <string name="app_category_games">Trò chơi</string>
+    <string name="app_category_images">Hình ảnh</string>
+    <string name="app_category_maps">Bản đồ</string>
+    <string name="app_category_news">Tin tức</string>
+    <string name="app_category_productivity">Năng suất</string>
+    <string name="app_category_social">Xã hội</string>
+    <string name="app_category_video">Băng hình</string>
+    <string name="app_category_undefined">Không xác định</string>
+    <string name="select_apps_auto_select">Auto Select %1$s</string>
+    <string name="select_apps_category_fallback">Category %1$d</string>
+    <string name="select_apps_add_custom_menu">Thêm gói Android tùy chỉnh</string>
+    <string name="select_apps_import_from_group">── Nhập từ nhóm ──</string>
+    <string name="select_apps_custom_hint">com.real.android.app</string>
+    <string name="select_apps_add_custom_title">Thêm gói tùy chỉnh</string>
+
+    
+    <string name="notification_remaining_usage_lockdown">Mức sử dụng còn lại trước khi khóa</string>
+    <string name="notification_remaining_usage_reels_lockdown">Mức sử dụng còn lại trước khi khóa cuộn</string>
+    <string name="usage_tracking_settings">Theo dõi sử dụng</string>
+    <string name="usage_tracking_settings_description">Chọn dữ liệu sử dụng mà dịch vụ trợ năng lưu trên thiết bị này.</string>
+    <string name="app_usage_tracking">Theo dõi sử dụng ứng dụng</string>
+    <string name="website_usage_tracking">Theo dõi việc sử dụng trang web</string>
+    <string name="usage_tracking_disabled_warning">Cảnh báo: Tùy chọn chặn Dựa trên Mức sử dụng sẽ không hoạt động đối với loại theo dõi khi nó bị tắt.</string>
+
+    
+    <string name="unit_minutes">Phút</string>
+    <string name="unit_hours">Giờ</string>
+    <string name="unit_days">Ngày</string>
+</resources>
