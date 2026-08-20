@@ -106,41 +106,57 @@ class FocusModeBlocker : BaseBlocker() {
     }
 
     fun doFocusModeCheck(event: AccessibilityEvent?) {
-        val packageName = event?.packageName?.toString() ?: return
-        if (packageName == service.packageName) return
+        val primaryPackage = event?.packageName?.toString() ?: ""
+        val visiblePackages = service.getVisiblePackages(event)
+        
+        if (primaryPackage == service.packageName) return
         if (!service.isDelayOver(1000)) return
 
         if (focusModeData != null) {
-            if (lastPackage != packageName) {
-                lastPackage = packageName
+            var packageBlocked = ""
+            for (packageName in visiblePackages) {
+                if (packageName == service.packageName) continue
                 when (focusModeData!!.focusGroupData.blockMode) {
                     FocusBlockMode.BLOCK_SELECTED -> {
                         if (focusModeData!!.focusGroupData.packages.contains(packageName)) {
-                            service.pressHome()
-
-                            Log.d("focus mode","home pressed $packageName")
-                            return
+                            packageBlocked = packageName
+                            break
                         }
                     }
                     FocusBlockMode.BLOCK_ALL_EXCEPT_SELECTED -> {
-                        if (!focusModeData!!.focusGroupData.packages.contains(packageName)) {
-                            service.pressHome()
-                            Log.d("focus mode","home pressed $packageName")
-
-                            return
+                        if (!focusModeData!!.focusGroupData.packages.contains(packageName) && packageName != "com.android.systemui" && !packageName.startsWith("com.miui")) {
+                            packageBlocked = packageName
+                            break
                         }
                     }
                 }
             }
 
+            if (packageBlocked.isNotEmpty()) {
+                if (lastPackage != packageBlocked) {
+                    lastPackage = packageBlocked
+                    service.pressHome()
+                    Log.d("focus mode","home pressed $packageBlocked")
+                    
+                    if (packageBlocked != primaryPackage) {
+                        val launchIntent = service.packageManager.getLaunchIntentForPackage(packageBlocked)
+                        launchIntent?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        try { service.startActivity(launchIntent) } catch (_: Exception) {}
+                    }
+                    return
+                }
+            } else if (primaryPackage.isNotEmpty()) {
+                lastPackage = primaryPackage
+            }
+
             if (focusModeData!!.focusGroupData.keywords.isNotEmpty() &&
-                URL_BAR_ID_LIST.containsKey(packageName)) {
+                URL_BAR_ID_LIST.containsKey(primaryPackage)) {
 
                 val now = System.currentTimeMillis()
                 // Throttle website checks to every 400ms within the same app to preserve performance
                 if (now - lastWebsiteCheckTime > 400) {
                     lastWebsiteCheckTime = now
-                    if (keywordBlocker.isFocusWebsiteBlocked(packageName, focusKeywordsPatterns, focusModeData!!.focusGroupData.blockMode)) {
+                    if (keywordBlocker.isFocusWebsiteBlocked(primaryPackage, focusKeywordsPatterns, focusModeData!!.focusGroupData.blockMode)) {
                         if (now - lastBlockTime > 1500) {
                             service.pressBack()
                             Log.d("focus mode","back pressed")

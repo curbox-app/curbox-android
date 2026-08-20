@@ -143,4 +143,20 @@ open class BaseBlockingService : AccessibilityService() {
             lastBackPressTimeStamp = SystemClock.uptimeMillis()
 
     }
+
+    fun getVisiblePackages(event: AccessibilityEvent?): Set<String> {
+        val packages = mutableSetOf<String>()
+        event?.packageName?.toString()?.let { packages.add(it) }
+        
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                windows?.forEach { window ->
+                    window.root?.packageName?.toString()?.let { packages.add(it) }
+                }
+            }
+        } catch (_: Exception) {}
+        
+        return packages
+    }
 }
+

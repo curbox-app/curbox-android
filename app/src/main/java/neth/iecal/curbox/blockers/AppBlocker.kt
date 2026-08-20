@@ -91,93 +91,108 @@ class AppBlocker : BaseBlocker() {
     fun doAppBlockerCheck(event: AccessibilityEvent?) {
         if (event == null || (event.eventType and TARGET_EVENTS_MASK) == 0) return
 
-        val packageName = event.packageName?.toString() ?: return
-
-        if (lastPackage == packageName || packageName == service.packageName || ignoredApps.contains(packageName)) {
-            return
+        val primaryPackage = event.packageName?.toString() ?: ""
+        val visiblePackages = service.getVisiblePackages(event)
+        
+        if (primaryPackage.isNotEmpty() && primaryPackage != lastPackage && primaryPackage != service.packageName && !ignoredApps.contains(primaryPackage)) {
+            clearFinishedOnEachOpenSessions(primaryPackage)
+            lastPackage = primaryPackage
         }
 
-        clearFinishedOnEachOpenSessions(packageName)
-
         val now = System.currentTimeMillis()
+        var minRemainingForAll = Long.MAX_VALUE
+        var anyBlocked = false
+        var packageBlocked = ""
 
-        blockedAppsList[packageName]?.let { entries ->
-            for (entry in entries) {
-                if (!entry.warningConfig.isOnOpenConfig ||
-                    isGroupInCooldown(entry.groupId, now)
-                ) {
-                    continue
-                }
-                val activeWindow = entry.config.schedule.activeWindow(now)
-                if (activeWindow == null) {
-                    entry.config.schedule.nextChangeAfter(now)?.let { nextChange ->
-                        setUpForcedRefreshChecker(
-                            "schedule:${entry.groupId}:$packageName",
-                            nextChange
-                        )
+        for (packageName in visiblePackages) {
+            if (packageName == service.packageName || ignoredApps.contains(packageName)) continue
+
+            val entries = blockedAppsList[packageName]
+            if (entries != null) {
+                var isThisPackageBlocked = false
+                for (entry in entries) {
+                    if (!entry.warningConfig.isOnOpenConfig || isGroupInCooldown(entry.groupId, now)) continue
+                    val activeWindow = entry.config.schedule.activeWindow(now)
+                    if (activeWindow == null) {
+                        entry.config.schedule.nextChangeAfter(now)?.let { nextChange ->
+                            setUpForcedRefreshChecker("schedule:${entry.groupId}:$packageName", nextChange)
+                        }
+                        continue
                     }
-                    continue
-                }
-
-                notificationManager.stopTimer()
-                showWarningScreen(packageName, entry.groupId, entry.warningConfig)
-                return
-            }
-
-            var minRemaining = Long.MAX_VALUE
-            for (entry in entries) {
-                if (entry.warningConfig.isOnOpenConfig) continue
-                if (isGroupInCooldown(entry.groupId, now)) continue
-                val activeWindow = entry.config.schedule.activeWindow(now)
-                if (activeWindow == null) {
-                    entry.config.schedule.nextChangeAfter(now)?.let { nextChange ->
-                        setUpForcedRefreshChecker(
-                            "schedule:${entry.groupId}:$packageName",
-                            nextChange
-                        )
-                    }
-                    continue
-                }
-
-                val currentUsage = runBlocking {
-                    usageStats.getForegroundUsageBetween(
-                        entry.groupPackages.toSet(),
-                        activeWindow.startMs,
-                        minOf(now, activeWindow.endMs)
-                    )
-                }
-                val usageLimitMillis = getUsageLimitForToday(entry.config.usage) * 60_000L
-                val remainingUsage = usageLimitMillis - currentUsage
-
-                if (remainingUsage <= 0) {
                     notificationManager.stopTimer()
                     showWarningScreen(packageName, entry.groupId, entry.warningConfig)
-                    return
+                    isThisPackageBlocked = true
+                    anyBlocked = true
+                    packageBlocked = packageName
+                    break
                 }
-                if (remainingUsage < minRemaining) minRemaining = remainingUsage
-                setUpForcedRefreshChecker(
-                    "schedule:${entry.groupId}:$packageName",
-                    activeWindow.endMs
-                )
-            }
+                
+                if (isThisPackageBlocked) break
 
-            if (minRemaining != Long.MAX_VALUE) {
-                notificationManager.startTimer(
-                    totalMillis = minRemaining,
-                    timerId = packageName,
-                    title = service.getString(R.string.notification_title_remaining_usage)
-                )
-                setUpForcedRefreshChecker("usage:$packageName", System.currentTimeMillis() + minRemaining)
-            } else {
-                showNextCooldownNotification()
+                var minRemainingForPackage = Long.MAX_VALUE
+                for (entry in entries) {
+                    if (entry.warningConfig.isOnOpenConfig) continue
+                    if (isGroupInCooldown(entry.groupId, now)) continue
+                    val activeWindow = entry.config.schedule.activeWindow(now)
+                    if (activeWindow == null) {
+                        entry.config.schedule.nextChangeAfter(now)?.let { nextChange ->
+                            setUpForcedRefreshChecker("schedule:${entry.groupId}:$packageName", nextChange)
+                        }
+                        continue
+                    }
+
+                    val currentUsage = runBlocking {
+                        usageStats.getForegroundUsageBetween(
+                            entry.groupPackages.toSet(),
+                            activeWindow.startMs,
+                            minOf(now, activeWindow.endMs)
+                        )
+                    }
+                    val usageLimitMillis = getUsageLimitForToday(entry.config.usage) * 60_000L
+                    val remainingUsage = usageLimitMillis - currentUsage
+
+                    if (remainingUsage <= 0) {
+                        notificationManager.stopTimer()
+                        showWarningScreen(packageName, entry.groupId, entry.warningConfig)
+                        isThisPackageBlocked = true
+                        anyBlocked = true
+                        packageBlocked = packageName
+                        break
+                    }
+                    if (remainingUsage < minRemainingForPackage) minRemainingForPackage = remainingUsage
+                    setUpForcedRefreshChecker("schedule:${entry.groupId}:$packageName", activeWindow.endMs)
+                }
+
+                if (isThisPackageBlocked) break
+
+                if (minRemainingForPackage != Long.MAX_VALUE) {
+                    if (minRemainingForPackage < minRemainingForAll) minRemainingForAll = minRemainingForPackage
+                    if (packageName == primaryPackage) {
+                        notificationManager.startTimer(
+                            totalMillis = minRemainingForPackage,
+                            timerId = packageName,
+                            title = service.getString(R.string.notification_title_remaining_usage)
+                        )
+                    }
+                    setUpForcedRefreshChecker("usage:$packageName", System.currentTimeMillis() + minRemainingForPackage)
+                }
             }
-            lastPackage = packageName
+            if (anyBlocked) break
+        }
+
+        if (anyBlocked) {
+            // Expand the PiP window if it's not the primary package
+            if (packageBlocked.isNotEmpty() && packageBlocked != primaryPackage) {
+                val launchIntent = service.packageManager.getLaunchIntentForPackage(packageBlocked)
+                launchIntent?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                try {
+                    service.startActivity(launchIntent)
+                } catch (_: Exception) {}
+            }
             return
         }
 
         showNextCooldownNotification()
-
-        lastPackage = packageName
     }
 
     /**

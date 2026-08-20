@@ -44,15 +44,12 @@ class GrayScaleFilter : BaseBlocker() {
     fun doGrayscaleCheck(event: AccessibilityEvent?) {
         if (event == null || (event.eventType and TARGET_EVENTS_MASK) == 0) return
 
-        val currentPackageName = event.packageName?.toString() ?: return
+        val primaryPackage = event.packageName?.toString() ?: ""
+        val visiblePackages = service.getVisiblePackages(event)
         
-        // Skip check if it's the same package or system UI or keyboard
-        // We don't skip Curbox here because we want to disable grayscale when user is in the app
-        if (currentPackageName == lastPackageName || 
-            currentPackageName == "com.android.systemui" ||
-            ignoredGrayScalePackages.contains(currentPackageName)) return
-
-        lastPackageName = currentPackageName
+        if (primaryPackage.isNotEmpty() && primaryPackage != lastPackageName && primaryPackage != "com.android.systemui" && !ignoredGrayScalePackages.contains(primaryPackage)) {
+            lastPackageName = primaryPackage
+        }
 
         val now = Calendar.getInstance()
         val calDay = now.get(Calendar.DAY_OF_WEEK)
@@ -61,8 +58,11 @@ class GrayScaleFilter : BaseBlocker() {
         val currentMinutes = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE)
 
         var shouldGrayscale = false
+        var packageGrayscaled = ""
 
-        // Don't grayscale Curbox itself to ensure usability
+        for (currentPackageName in visiblePackages) {
+            if (currentPackageName == "com.android.systemui" || ignoredGrayScalePackages.contains(currentPackageName)) continue
+
             for (group in grayscaleGroups) {
                 if (!group.isActive) continue
 
@@ -76,22 +76,26 @@ class GrayScaleFilter : BaseBlocker() {
 
                     if (intervals == null || intervals.isEmpty()) {
                         shouldGrayscale = true
+                        packageGrayscaled = currentPackageName
                         break
                     } else {
                         val isInInterval = intervals.any { isWithinInterval(currentMinutes, it) }
                         if (isInInterval) {
                             shouldGrayscale = true
+                            packageGrayscaled = currentPackageName
                             break
                         }
                     }
                 }
             }
+            if (shouldGrayscale) break
+        }
 
         if (shouldGrayscale) {
-            Log.d("GrayScaleFilter", "Enabling monochrome for $currentPackageName")
+            Log.d("GrayScaleFilter", "Enabling monochrome for $packageGrayscaled")
             grayscaleControl.enableGrayscale(service)
         } else {
-            Log.d("GrayScaleFilter", "Disabling monochrome for $currentPackageName")
+            Log.d("GrayScaleFilter", "Disabling monochrome")
             grayscaleControl.disableGrayscale(service)
         }
     }
