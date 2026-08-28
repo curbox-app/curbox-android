@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="focus_mode">Fokusmodus</string>
+    <string name="add">Hinzufügen</string>
+    <string name="save">Speichern</string>
+    <string name="write_down_a_keyword">Ein Stichwort aufschreiben</string>
+    <string name="warning_message">Warnungsnachricht</string>
+    <string name="minutes">Minuten</string>
+    <string name="app_icon">app_logo</string>
+    <string name="accessibility_permission_app_blocker">
+        Dieses Feature benötigt die Berechtigung, über anderen Apps dargestellt werden zu können, um zu funktionieren. Bitte aktiviere das zuerst, bevor du dieses aktivierst. Sollte etwas aufhören zu funktionieren, starte die App neu.\n\n
+        Durch Aktivierung kann Curbox folgendes für dich tun:\n1. Apps blockieren\n2. Kurzforminhalte blockieren\n3. Webseiten und Stichpunkte blockieren\n4. Fokusmodus\n5. Teile einer App verstecken, die dich ablenken\n6. Sehen, wie viel Zeit du in welcher App verbringst\n7. Zählen, wie viele Kurzformvideos du scrollst und die Zahl schwebend in App anzeigen\n8. Sehen welche Webseiten du besuchst und für wie lang\n\n
+        Curbox benötigt barrierefreien Zugang umd zu sehen, auf welcher App, Webseite oder Bildschirm du bist, sodass es nach deinen Wünschen blockiert werden kann und deine Nutzungsdaten behalten werden können. Ohne das wird nichts davon funktionieren.\n\n
+        Curbox teilt niemald irgendetwas ohne deine Zustimmung.
+        \n\n
+    </string>
+    <string name="admin_permission_desc">Curbox Manipulationsschutz>
+    <string name="close">Schließen</string>
+    <string name="proceed">Fortfahren</string>
+    <string name="cancel">Abbruch</string>
+    <string name="configure_warning_screen">Warnungsbildschirm</string>
+    <string name="proceed_in">Bitte warte %1$d bis du fortfahren kannst.</string>
+    <string name="select_all">Alle auswählen</string>
+    <string name="clear_all">Alle löschen</string>
+    <string name="focus_ready">Bereit dich zu fokussieren?</string>
+    <string name="focus_subtitle_minimal">Zeit auswählen, dann starten</string>
+    <string name="focus_start">Zügle mich</string>
+    <string name="focus_create_group">Fokusgruppe erstellen</string>
+    <string name="focus_active">Fokusmodus ist aktiv</string>
+    <string name="focus_end_session">Sitzung beenden</string>
+    <string name="focus_group">Fokusgruppe</string>
+    <string name="focus_new_group">Neue Gruppe erstellen</string>
+    <string name="focus_stats">Fokusstatistiken</string>
+    <string name="focus_sessions_label">Sitzungen</string>
+    <string name="focus_total_time_label">Gesamtzeit</string>
+    <string name="focus_streak_label">Strähne</string>
+    <string name="focus_avg_duration">Durchschn. Dauer</string>
+    <string name="focus_completion_rate">Vollendet</string>
+    <string name="focus_top_tags">Top Tags</string>
+    <string name="focus_duration_minutes_short">%1$d min</string>
+    <string name="focus_duration_hours_short">%1$d hr</string>
+    <string name="focus_duration_hours_minutes_short">%1$d hr %2$d min</string>
+    <plurals name="focus_top_tag_sessions">
+        <item quantity="one">• %1$s (%2$d Sitzung)</item>
+        <item quantity="other">• %1$s (%2$d Sitzungen)</item>
+    </plurals>
+    <string name="quick_setup_guide">Schnelleinrichtung</string>
+    <string name="curbox_needs_accessibility_permissions_to_help">Curbox benötigt Berechtigung für Bedieungshilfen um dir beim verfolgen deiner Bilschirmzeit zu helfen. Der Einrichtungsprozess hängt davon ab, wie du die App installiert hast.</string>
+    <string name="fdroid_installation">F-Droid Installation</string>
+    <string name="installed_via_fdroid_appnyoure_all_set">✅ Über F-Droid installiert?\nAlles klar! Folge einfach den Anweisungen im nächsten Schritt.\n\n⚠️ Von der F-Droid Website installiert?\nBitte intalliere Curbox durch die F-Droid App um Berechtigungsprobleme zu vermeiden.</string>
+    <string name="apk_installation">APK Installation</string>
+    <string name="if_you_installed_from_an_apk">Wenn du aus eine APK installiert hast, folge den Schritten:\n\n1️⃣ Einstellungen öffnen → Apps → Curbox\n\n2️⃣ Klicke auf Berechtigungen → Spezieller App Zugriff → Barrierefreiheit → Curbox aktivieren\n\n3️⃣ Zurückkehren zur Curbox App Info → Scrolle nach unten → Klicke eingeschränkte Einstellungen → Erlauben\n\n💡 Pro Tipp: Installiere via F-Droid App für eine einfachere Einrichtung! 🚀</string>
+    <string name="usage_timeline">Nutzungszeitstrahl</string>
+    <string name="screentime">Bildschirmzeit</string>
+    <string name="app_opens">Appöffnungen</string>
+    <string name="add_to_blocked_apps">Zu blockierten Apps hinzufügen</string>
+    <string name="label_empty_dash">-</string>
+    <string name="value_zero">0</string>
+    <string name="label_add_plus">+</string>
+    <string name="screen_time">Bildschirmzeit</string>
+    <string name="value_zero_time">0h 0m</string>
+    <string name="sample_usage_1h">1h App</string>
+    <string name="reels_today">Reels heute</string>
+    <string name="sample_reels_count">1.3k</string>
+    <string name="sample_percentage_increase">+100%</string>
+    <string name="blocker_tools">Fokusgrenzen</string>
+    <string name="app_blocker">Apps</string>
+    <string name="restrict_access_to_distracting_apps">Temporär Apps stummschalten</string>
+    <string name="reels_blocker">Kurzformvideos</string>
+    <string name="disable_shortform_video_feeds">Verstecke Kurzforminhalte, um deine Aufmerksamkeitsspanne zu beschützen</string>
+    <string name="auto_dnd">Auto BNS</string>
+    <string name="autodnd_help_popup">Autmatisch Benachrichtigungen in deinen Fokussitzungen stummschalten</string>
+    <string name="turn_on_focus_mode_between_set">Bitte nicht stören automatisch täglich aktivieren</string>
+    <string name="blocked_keywords">Stichwörter und Webseiten</string>
+    <string name="filter_specific_words_across_apps">Halte deinen digitalen Raum friedlich, indem du bestimmte Wörter filterst.</string>
+    <string name="stimulation_reducers">Achtsame Impulse</string>
+    <string name="on_screen_reminder">Sanfte Aufforderungen</string>
+    <string name="reel_counter">Short-Form Video Counter</string>
+    <string name="put_in_messages_and_counters_floating">Subtile Hinweise auf dem Bildschirm, um dich im hier und jetzt zu verankern.</string>
+    <string name="track_the_number_of_reels_consumed">Deine Nutzung von Kurzforminhalten messen und analysieren</string>
+    <string name="grayscale_filter">Grautonfilter</string>
+    <string name="reduce_visual_stimulation">Visuelle Stimulation reduzieren</string>
+    <string name="fuel_the_developer">Über den Entwickler ☕</string>
+    <string name="hello_this_is_nethical_the_creator">Hey, I\'m Nethical, the person behind Curbox. I\'m 18, fresh out of high school, and a little obsessed with tech, art, and building cool things from scratch. A while back I went looking for a free app blocker that actually did what I wanted. Nothing came close, so I built my own. Curbox is that app, and I\'ve been pouring into it almost every day for over two years now. So happy you\'re here. I hope it helps you take your time back.</string>
+    <string name="support_the_project">Das Projekt unterstützen ↗</string>
+    <string name="join_the_focus_pack">Werde Teil der Fokus Gemeinschaft</string>
+    <string name="dont_fix_your_screen_time_alone">Repariere deine Bilschirmzeit nicht alleine. Tritt unserem Discord bei um Gleichgesinnte zu treffen, die sich gegenseitig unterstützen und Strategien teilen, um sich selbst zu verbessern.</string>
+    <string name="join_the_discord">Tritt dem Discord bei</string>
+    <string name="curboxapp">\@curb.me</string>
+    <string name="follow_curbox">Folge Curbox</string>
+    <string name="label_instagram">Instagram</string>
+    <string name="label_github">GitHub</string>
+    <string name="curbox_github_repo">curbox-android</string>
+    <string name="curbox_also_on">Curbox auch hier</string>
+    <string name="label_browser_extension">Browsererweiterung</string>
+    <string name="curbox_extension_repo">curbox-extension</string>
+    <string name="about_the_developer">Über den Entwickler</string>
+    <string name="view_on_github">Auf GitHub ansehen ↗</string>
+    <string name="donate_title">Spenden</string>
+    <string name="donate_pitch">Ich habe 1500+ Stunden in Curbox investiert, es neben der Schule, Prüfungen und Lernen gebaut um Millionen von Minuten weltweit zu retten. Spenden hilft mir, es kostenlos zu halten und für alle weiterzuentwickeln.</string>
+    <string name="btn_donate">Spenden ❤</string>
+    <string name="cannot_donate_share">Du kannst nichts spenden? Das Projekt zu teilen hilft bereits!</string>
+    <string name="donate_prompt_title">Darf ich dich um einen Gefallen bitten?</string>
+    <string name="donate_prompt_value">Du bist jetzt schon eine Weile bei Curbox und das bedeutet mir die Welt.</string>
+    <string name="donate_prompt_footer">Absolut kein Druck. Curbox bleibt kostenlos</string>
+    <string name="donate_prompt_give">Ich steuere etwas bei ❤</string>
+    <string name="donate_prompt_share">Ich teile es stattdessen</string>
+    <string name="donate_prompt_later">Vielleicht später</string>
+    <string name="share_curbox_message">Ich benutze Curbox, um die Kontrolle über meine Bildschirmzeit zurückzugewinnen. Es ist kostenlos, prober es aus: https://curbox.app</string>
+    <string name="system_diagnostics">Systemdiagnosen</string>
+    <string name="view_and_share_application_crash_logs">Betrachte und teile Absturzberichte, um zu helfen, Curbox zu verbessern</string>
+    <string name="view_crash_logs">Absturzberichte ansehen</string>
+    <string name="group_name">Name</string>
+    <string name="group_name_required">Bitte gib einen Gruppennamen ein</string>
+    <string name="desc_10_apps_usage_based">10 Apps • Basierend auf Benutzung</string>
+    <string name="no_app_groups_yet_create_one">Noch keine App Gruppen, erstelle eine!</string>
+    <string name="create_group">Gruppe erstellen</string>
+    <string name="apps_to_block">ZU BLOCKIERENDE APPS</string>
+    <string name="select_apps_0">Apps auswählen (0)</string>
+    <string name="blocking_configuration">BLOCKIERUNGSKONFIGURATION</string>
+    <string name="configure_group_schedule">Aktive Stunden</string>
+    <string name="configure_group_usage">Benutzungsgrenze in aktiven Stunden</string>
+    <string name="configure_reel_count_limit">Konfiguriere Reel-Grenze</string>
+    <string name="schedule_section_title">ZEITPLAN</string>
+    <string name="schedule_mode_title">Aktive Stunden</string>
+    <string name="schedule_mode_all_day">Ganzer Tag</string>
+    <string name="schedule_mode_daily">Täglich</string>
+    <string name="schedule_mode_custom">Individuell</string>
+    <string name="schedule_summary_all_day">Den ganzen Tag, jeden Tag</string>
+    <string name="schedule_summary_daily">Täglich, %1$s bis %2$s</string>
+    <string name="schedule_summary_weekdays">Montag bis Freitag, %1$s bis %2$s</string>
+    <string name="schedule_summary_custom">Individueller Zeitplan</string>
+    <string name="schedule_overlap_not_saved">Sich überschneidende Zeitspannen wurden nicht gespeichert</string>
+    <string name="schedule_no_room_for_range">Kein Platz mehr für noch eine Zeitspanne</string>
+    <string name="schedule_conflict_title">Zeitplankonflikt</string>
+    <string name="schedule_conflict_item">These apps are also in %2$s during the same time: %1$s. Both rules will apply.</string>
+    <string name="schedule_conflict_item">Diese Apps sind auch in %2$s in der selben Zeit: %1$s. Beide Regeln werden angewandt.</string>
+    <string name="schedule_conflict_edit_apps">Apps bearbeiten</string>
+    <string name="schedule_conflict_edit_schedule">Zeitplan bearbeiten</string>
+    <string name="schedule_conflict_keep_both">Beide behalten</string>
+    <string name="schedule_conflict_edit_group">Gruppe bearbeiten</string>
+    <string name="schedule_conflict_cancel">Abbrechen</string>
+    <string name="warning_section_title">WENN BLOCK AUSGELÖST</string>
+    <string name="select_start_time">Startzeit auswählen</string>
+    <string name="select_end_time">Endzeit auswählen</string>
+    <string name="usage_based">Basierend auf Nutzung</string>
+    <string name="time_based">Basierend auf Zeit</string>
+    <string name="configure_settings">Erlaubten Zeitplan konfigurieren</string>
+    <string name="configure_warning_screen_1">Warnbildschirm konfigurieren</string>
+    <string name="link_time_group">Eine Zeitgruppe limitieren</string>
+    <string name="no_time_group">Keine Zeitgruppe (den ganzen Tag)</string>
+    <string name="linked_time_group">Zeitgruppe: %1$s</string>
+    <string name="linked_warning_managed">Warning screen is managed by the linked usage group</string>
+    <string name="linked_warning_managed">Warnbildschirm wird von verlinkter Benutzungsgruppe verwaltet</string>
+    <string name="done">Fertig</string>
+    <string name="set_limits_for_each_day">Zeitgrenzen für jeden Tag setzen</string>
+    <string name="hours">Stunden</string>
+    <string name="minutes_1">Minuten</string>
+    <string name="its_a_temporary_block_that_appears">Es ist eine vorübergehende Sperre, die auftaucht wenn deine Zeit vorbei ist. Statt dich einfach auszusperren gibt es dir die Wahl: App direkt schließen oder &amp;quot;borrow&amp;quot; ein paar Minuten mehr bevor die Erinnerung wieder auftaucht.</string>
+    <string name="skip_this_screen_and_go_back">Diesen Bildschirm überspringen und direkt zurück gehen</string>
+    <string name="let_me_decide_how_many_extra">Lass mich dann entscheiden wie viele extra Minuten ich brauche</string>
+    <string name="use_a_predefined_limit_like_5">Verwende eine vorgegebene Zeit, z.B. 5 min</string>
+    <string name="show_me_the_warning_screen_but">Zeig mir einen Warnbildschirm aber lass mich nicht fortfahren</string>
+    <string name="how_long_to_unlock_for_after">Wie lange Freischalten nach Fortfahren?</string>
+    <string name="how_long_to_wait_before_being">Wie lange warten bevor der weiter-Knopf gedrückt werden kann. Verhindert, direkt den Knopf zu drücken ohne die Nachricht gelesen zu haben.</string>
+    <string name="duration_3_seconds">3 sek</string>
+    <string name="duration_9_seconds">9 sek</string>
+    <string name="duration_15_seconds">15 sek</string>
+    <string name="duration_30_seconds">30 sek</string>
+    <string name="allowed_time_ranges">Erlaubte Zeitspannen</string>
+    <string name="apply_to_every_day">Auf jeden Tag anwenden</string>
+    <string name="add_time_range">Zeitspanne hinzufügen</string>
+    <string name="save_time_ranges">Zeitspannen speichern</string>
+    <string name="monday">Montag</string>
+    <string name="sample_start_time">09:00 AM</string>
+    <string name="to">bis</string>
+    <string name="sample_end_time">05:00 PM</string>
+    <string name="all_groups">Alle Gruppen</string>
+    <string name="value_zero_minutes">0m</string>
+    <string name="value_zero_percent">0%</string>
+    <string name="a_few_final_steps">Ein paar finale Schritte</string>
+    <string name="select_what_apps_youd_like_to">Wähle aus welche Apps du einschränken willst</string>
+    <string name="create_a_new_group">Neue Gruppe erstellen</string>
+    <string name="use_a_focus_group_to_instantly">Verwende Fokusgruppen um direkt Fokussitzungen starten zu können mit den ausgewählten Apps und Webseiten</string>
+    <string name="enter_group_name">Gruppenname wählen</string>
+    <string name="select_apps">Apps auswählen</string>
+    <string name="selected_0">Ausgewählt: 0</string>
+    <string name="what_action_would_you_like_to">Wähle aus was passiert, wenn du eine App oder Website öffnest</string>
+    <string name="block_selected">Ausgewählte blockieren</string>
+    <string name="block_all_except_selected">Alle bis auf Ausgewählte blockieren</string>
+    <string name="let_me_quit_midsessions">Lass mich die Fokussitzung abbrechen</string>
+    <string name="save_group">Gruppe speichern</string>
+    <string name="reel_blocker">Reel Sperre</string>
+    <string name="enable_reel_blocker">Reel Sperre aktivieren</string>
+    <string name="warning_screen">Warnungsbildschirm</string>
+    <string name="blocking_basis">Sperrungsbasis</string>
+    <string name="reel_count_based">Reel-Anzahl basiert</string>
+    <string name="configure_limits">Grenzen konfigurieren</string>
+    <string name="reel_limits">Reel Grenzen</string>
+    <string name="apply_same_limit_to_every_day">Selbe Grenze jeden Tag anwenden</string>
+    <string name="maximum_reels_allowed">Maximal erlaubte Reels</string>
+    <string name="save_limits">Grenzen Speichern</string>
+    <string name="keyword_blocker">Stichwortsperre</string>
+    <string name="enable_keyword_blocker">Stichwortsperre aktivieren</string>
+    <string name="enter_a_keyword">Ein Stichwort oder eine Website eingeben</string>
+    <string name="redirection">Weiterleitung</string>
+    <string name="redirection_url">Weiterleitungs-URL</string>
+    <string name="configuration">Konfiguration</string>
+    <string name="search_recursively_for_blocked_keywords_on">Rekursiv nach gesperrten Stichwörtern in allen Texten auf dem Bildschirm suchen</string>
+    <string name="block_all_browsers_except_supported_ones">Nicht unterstützte Browser blockieren</string>
+    <string name="select_ignored_apps">Ignorierte Apps auswählen</string>
+    <string name="activity_powered_by">BETRIEBEN VON CURBOX</string>
+    <string name="your_digital_wellbeing">Dein digitales Wohlbefinden</string>
+    <string name="total_today">SUMME HEUTE</string>
+    <string name="most_used">AM MEISTEN VERWENDET</string>
+    <string name="crunching_numbers">Zahlen werden ausgewertet...</string>
+    <string name="usage_welcome_title">Hallo lieber Nutzer</string>
+    <string name="usage_welcome_message">Deine Appstatistiken werden genau hier erscheinen. Ich habe angefangen mitzustoppen, als du mich installiert hast. Bitte lies die Dokumentation, sodass du Curbox\' volles Potenzial ausschöpfen kannst.</string>
+    <string name="usage_welcome_read_docs">Dokumentation lesen</string>
+    <string name="usage_welcome_star_repo">Gib uns einen Stern</string>
+    <string name="whats_new_title">Was ist neu?</string>
+    <string name="whats_new_dismiss">Verstanden</string>
+    <string name="no_auto_dnd_groups_yet_create">Noch keine auto-BNS Gruppen. Erstelle eine!</string>
+    <string name="desc_10_apps_included">10 Apps • Beinhaltet</string>
+    <string name="create_autodnd_group">Auto-BNS Gruppe erstellen</string>
+    <string name="apps_to_blockallow">APPS SPERREN/ERLAUBEN</string>
+    <string name="blocking_mode">SPERRMODUS</string>
+    <string name="configure_schedule">Zeitplan konfigurieren</string>
+    <string name="exitable">Schließbar</string>
+    <string name="allow_focus_mode_to_be_exited">Fokusmodus erlauben, automatisch zu verlassen.</string>
+    <string name="save_schedule">Zeitplan speichern</string>
+    <string name="track_the_number_of_short_videos">Miss die Anzahl von Kurzvideos, durch die du scrollst.</string>
+    <string name="grayscale_filter_setup">Graustufeneinrichtung</string>
+    <string name="no_grayscale_groups_yet_create_one">Noch keine Graustufengruppen. Erstelle eine!</string>
+    <string name="desc_10_apps">10 Apps</string>
+    <string name="create_grayscale_group">Graustufengruppe erstellen</string>
+    <string name="apps_to_greyscale">APPS, DIE EINGEGRAUT WERDEN</string>
+    <string name="duration_25_minutes">25</string>
+    <string name="duration_15_minutes">15</string>
+    <string name="duration_30_minutes">30</string>
+    <string name="duration_60_minutes">60</string>
+    <string name="duration_120_minutes">120</string>
+    <string name="time_zero">00:00</string>
+    <string name="your_phone_is_designed_to_be">Dein
+        Handy
+        ist
+        gebaut
+        um dich
+        zu fesseln</string>
+    <string name="you_arent_lazy_and_your_willpower">Du bist nicht faul und dein Wille ist nicht gebrochen. Du kämpfst nur gegen Algorithmen, die von tausenden Psychologen gebaut wurden, um dich ans Handy zu fesseln.</string>
+    <string name="lets_level_the_playing_field">Befreie auf meine Willenskraft</string>
+    <string name="lets_look_at_the_numbers">Lass uns auf die Zahlen schauen</string>
+    <string name="how_many_hours_a_day_do">Wie viel scrollst du am Tag?</string>
+    <string name="sample_usage_4_hours">4 std</string>
+    <string name="over_a_year_that_is_60">Das ist 1 Woche deines Lebens, die du pro Jahr auf einen Bildschirm starrst</string>
+    <string name="i_want_my_time_back">Ich will meine Zeit zurück</string>
+    <string name="what_are_you_making_room_for">Wofür schaffst du Raum?</string>
+    <string name="mindless_scrolling_leaves_us_with_brain">Gedankenloses Scrollen hinterlässt uns vernebelt anstatt uns auszuruhen. Was würdest du lieber mit der zurückgewonnenen Zeit tun?</string>
+    <string name="focusing_on_deep_workstudying">Auf tiefe Arbeit/Lernen konzentrieren</string>
+    <string name="learning_a_new_skill_like_guitar">Eine neue Fähigkeit erlernen (Gitarre oder programmieren)</string>
+    <string name="being_present_with_friends_and_family">Präsent sein mit Freunden und Familie</string>
+    <string name="getting_actual_restful_sleep">Wirklich guten und erholsamen Schlaf bekommen</string>
+    <string name="commit_to_these_goals">Verpflichte dich diesen Zielen gegenüber</string>
+    <string name="willpower_isnt_enough_we_use_friction">Willenskraft ist nicht genug. Wir verwenden Widerstand</string>
+    <string name="we_dont_just_block_your_apps">Wir blockieren nicht einfach deine Apps. Wir unterbrechen dein muscle memory. Wenn du gedankenlos auf Insta oder YouTube konsumierst, zwingen wir dich zum durchatmen und aktiv wählen, ob es deine Zeit wert ist.</string>
+    <string name="make_me_pause">Zwing mich, zu stoppen</string>
+    <string name="choose_your_first_target">Wähle dein erstes Ziel</string>
+    <string name="dont_try_to_change_everything_at">Versuche nicht, alles auf einen Schlag anzugehen. Wähle die eine App, die dich am ehesten fesselt</string>
+    <string name="instagram">Instagram</string>
+    <string name="tiktok">TikTok</string>
+    <string name="youtube">YouTube</string>
+    <string name="reddit">Reddit</string>
+    <string name="other_select_later">Andere (später auswählen)</string>
+    <string name="daily_limit">Tägliche Grenze</string>
+    <string name="limit_15_min">15 min</string>
+    <string name="limit_30_min">30 min</string>
+    <string name="limit_1_hour">1 std</string>
+    <string name="limit_2_hours">2 std</string>
+    <string name="add_friction_to_this_app">Dieser App Widerstand hinzufügen</string>
+    <string name="skip_choosing_a_target_app">Ich wähle das später aus</string>
+    <string name="give_us_the_keys">Gib die Werkzeuge</string>
+    <string name="to_create_friction_and_give_you">Um Widerstand zu erzeugen und dir deine Zeit zurückzugeben benötigen wir tiefe Systemrechte.</string>
+    <string name="display_over_other_apps">Über anderen Apps anzeigen</string>
+    <string name="usage_access">Benutzungszugriff</string>
+    <string name="send_notifications">Benachrichtigungen senden</string>
+    <string name="app_blocker_accessibility">Appsperre (Zugriff)</string>
+    <string name="do_you_want_to_restore_a">Willst du ein vorher erstelltest Backup laden? Das kannst du später nicht nochmal tun.</string>
+    <string name="restore_backup">Backup wiederherstellen</string>
+    <string name="enable_permissions">Berechtigungen aktivieren</string>
+    <string name="add_widget_to_homescreen">Widget zum Startbildschirm hinzufügen</string>
+    <string name="refresh_usage_stats">Neu laden</string>
+    <string name="export_data_as_csv">Daten als CSV exportieren</string>
+    <string name="usage">Verwendung</string>
+    <string name="focus">Fokus</string>
+    <string name="reducers">Verringerer</string>
+    <string name="info">Info</string>
+    <string name="settings">Einstellungen</string>
+    <string name="log_in">Anmelden</string>
+    <string name="sync_across_devices">Zwischen Geräten synchronisieren</string>
+    <string name="sync_across_devices_pitch">Ich behalte deine Einstellungen und Zeitstatistiken lokal auf deinem Handy oder Browser, verschlüsselt mit einem Schlüssel den nur du besitzt.</string>
+    <string name="sync_finish_setup_pitch">Du bist angemeldet. Ein letzter Schritt aktiviert die Synchronisation und aktiviert die Zeitmessung auf diesem Gerät</string>
+    <string name="finish_sync_setup">Einrichtung abschließen</string>
+    <string name="sync_is_on">Synchronisation ist an</string>
+    <string name="sync_is_on_pitch">Deine Einstellungen und Zeitstatistiken bleiben auf deinem Gerät. Klicke um die Synchronisation zu verwalten oder dich abzumelden.</string>
+    <string name="manage_sync">Synchronisation verwalten</string>
+    <string name="this_app_is_currently_under_focus">Diese App ist momentan unter dem Fokusmodus</string>
+    <string name="blocked_keyword_word_was_found">Blockiertes Stickwort -word wurde gefunden</string>
+    <string name="please_provide_draw_over_other_apps">Bitte aktiviere \'Über anderen Apps anzeigen\', um diese Funktion richtig funktionieren zu lassen.</string>
+    <string name="added_successfully">Erfolgreich hinzugefügt</string>
+    <string name="package_already_exists">Paket existiert bereits</string>
+    <string name="data_exported_successfully">Daten erfolgreich exportiert</string>
+    <string name="failed_to_export_data">Exportieren der Daten fehlgeschlagen</string>
+    <string name="pinning_widgets_is_not_supported_on">Das Anheften von Widgets ist in diesem Launcher nicht unterstützt</string>
+    <string name="generating_analysis_csv">Generiere Analyse-CSV</string>
+    <string name="crash_logs_cleared">Absturzberichte gelöscht</string>
+    <string name="nothing_to_share">Nichts zu teilen</string>
+    <string name="group_deleted">Gruppe gelöscht</string>
+    <string name="please_select_at_least_one_app">Bitte wähle mindestens eine App aus</string>
+    <string name="group_saved_successfully">Gruppe erfolgreich gespeichert</string>
+    <string name="warning_link_blocker_may_not_work">WARNUNG: Blockieren von Links funknktioniert eventuell nicht überall.</string>
+    <string name="active_reducers">Aktive Reduzierer</string>
+    <string name="add_a_reducer">Einen Reduzierer hinzufügen</string>
+    <string name="mindful_messages">Achtsame Nachrichten</string>
+    <string name="enable_mindful_messages">Achtsame Nachrichten aktivieren</string>
+    <string name="target_apps">ZIELAPPS</string>
+    <string name="messages_label">NACHRICHTEN</string>
+    <string name="messages_hint">Eins pro Zeile. Variabeln: {app_usage_today}, {screentime_today}, {live_session_duration}, {reel_count}</string>
+    <string name="overlay_position">Postion des Textes</string>
+    <string name="position_top">Oben</string>
+    <string name="position_center">Zentrum</string>
+    <string name="position_bottom">Unten</string>
+
+    <string name="default_rules">Standardregeln</string>
+    <string name="custom_rules">Individuelle Regeln</string>
+    <string name="custom_rule_hint">Hinweis für individuelle Regeln</string>
+    <string name="pick_element">Element auswählen</string>
+
+    <string name="picker_channel_name">Elementwähler</string>
+    <string name="picker_channel_description">Benachrichtigungen für den Elementwähler</string>
+    <string name="picker_notification_title">Elementwähler bereit</string>
+    <string name="picker_notification_text">Klicke um ein Element auszuwählen</string>
+    <string name="picker_active_title">Elementwähler aktiv</string>
+    <string name="picker_active_text">Klicke auf Elemente auf dem Bilschirm um sie auszuwählen</string>
+
+    <string name="appearance">Erscheinungsbild</string>
+    <string name="btn_set_position">Setze Position</string>
+    <string name="text_size_label">Textgröße: 14sp</string>
+    <string name="text_size_value">Textgröße: %dsp</string>
+    <string name="background_color">Hintergrundfarbe</string>
+    <string name="opacity_label">Deckkraft: 37%</string>
+    <string name="opacity_value">Deckkraft: %d%%</string>
+    <string name="text_opacity_label">Textdeckkraft: 100%</string>
+    <string name="text_opacity_value">Textdeckkraft: %d%%</string>
+    <string name="position_label">Position</string>
+    <string name="position_hint">Drag the indicator to set where the overlay appears</string>
+    <string name="position_hint">Ziehe den Indikator, bis die Überlagerung erscheint</string>
+
+    <!-- Extracted Strings -->
+    <string name="dialog_question_mark">?</string>
+    <string name="blocking_service_channel_name">Sperrservice</string>
+    <string name="blocking_service_channel_description">Läuft im Hintergrund um dich zu schützen</string>
+    <string name="blocking_service_notification_title">Curbox %1$s ist aktiv</string>
+    <string name="blocking_service_notification_text">Beschütze dein digitales Wohlbefinden</string>
+    <string name="picker_no_element_found">Kein Element gefunden an diesem Punkt</string>
+    <string name="picker_no_element_selected">Kein Element ausgewählt</string>
+    <string name="picker_default_text">Text</string>
+    <string name="dialog_title_select_date_range">Datumsspanne auswählen</string>
+    <string name="dialog_title_select_export_range">Exportspanne auswählen</string>
+    <string name="toast_unsupported_browser">Nicht unterstützter Browser</string>
+    <string name="notification_title_remaining_usage">Überbliebene Nutzung vor Sperrung</string>
+    <string name="notification_title_focus_mode_on">Fokusmodus ist an</string>
+
+    <string name="nfc_focus_started">Fokus startete: %1$s (%2$d min)</string>
+    <string name="nfc_focus_stopped">Fokus stoppte</string>
+    <string name="nfc_focus_no_group">Keine Fokusgruppe zum Starten gefunden</string>
+    <string name="nfc_focus_not_exitable">Diese Fokussitzung kann nicht früher beendet werden</string>
+    <string name="nfc_tag_unrecognized">Unbekannter Curbox NFC-Tag</string>
+
+    <string name="onboarding_non_session_title">Nicht sitzungsbasierte Installation erkannt</string>
+    <string name="onboarding_restricted_settings_desc">Android 13+ schränkt Zugriffsdienste für Apps, die nicht aus App Stores (wie F-Droid oder Play Store) kommen ein. Um Berechtigungen zu aktivieren musst du \'Eingeschränkte Einstellungen\' manuell für Curbox aktivieren. Alternativ installire via F-Droid App (nicht Webseite), um dies zu vermeiden.</string>
+    <string name="onboarding_show_tutorial">Anleitung um Berechtigungen zu aktivieren anzeigen</string>
+    <string name="onboarding_shizuku_grant">Gewähre alle Berechtigungen mit Shizuku</string>
+    <string name="sync_paywall_title">Stelle die Einrichtung der Synchronisation fertig.</string>
+    <string name="sync_paywall_subtitle">Dein Account ist bereit. Wähle den jährlichen Plan um fortzufahren.</string>
+    <string name="sync_paywall_body">Ein Plan. Alles unten geschriebene ist darin enthalten</string>
+    <string name="sync_paywall_feature_devices">✓ Synchronisiere jedes Handy und jeden Browser</string>
+    <string name="sync_paywall_feature_private">✓ Halte deine Daten sicher mit einem persönlichen Passwort</string>
+    <string name="sync_paywall_feature_cancel">✓ Kündige vor der nächsten Erneuerung</string>
+    <string name="sync_paywall_price">%1$s pro Jahr</string>
+    <string name="sync_paywall_price_fallback">$25</string>
+    <string name="sync_paywall_subscribe">Abonniere</string>
+    <string name="sync_paywall_subscribe_price">Fortfahren für %1$s</string>
+    <string name="sync_paywall_restore">Mein Abo wiederherstellen</string>
+    <string name="sync_paywall_checking">Prüfe dein Abo</string>
+    <string name="sync_paywall_renewal_note">Erneuert sich jedes Jahr bis du abbrichst.</string>
+    <string name="sync_paywall_signed_in_as">Angemeldet als %1$s</string>
+    <string name="sync_paywall_your_account">dein Account</string>
+    <string name="pairing_code_warning_title">Halte diesen Code privat</string>
+    <string name="pairing_code_warning_message">Dieser Code beinhaltet den geheimen Schlüssel, der all deine synchronisierten Daten freischaltet. Jeder, der ein Foto davon macht, kann deine Daten lesen. Bitte mach keine Screenshots und teile ihn auf keinen Fall. Der Code versteckt sich selbst nach einer Minute.</string>
+    <string name="pairing_code_show">Code anzeigen</string>
+    <string name="dnd_access_dialog_title">Bitte nicht stören</string>
+    <string name="dnd_access_dialog_message">Curbox benötigt dies, um Bitte nicht stören für dich zu aktivieren, sodass du Anrufe und Wecker stummschalten kannst während du dich fokussierst. Ohne kann Curbox Ablenkungen nicht stummschalten.\n\n🔒 Curbox sammelt, sendet oder speichert niemals deine Daten auf einem Server ohne deine Zustimmung.\n\n🛡️ Curbox respektiert deinen Frieden: Es benutzt dies nur um Ablenkungen stummzuschalten wenn du danach fragst.</string>
+    <string name="picker_dialog_block_element">Dieses Element blockieren</string>
+    <string name="picker_dialog_generated_rule">Generierte Regel:</string>
+    <string name="picker_dialog_rule_desc">Auto-generiert aus deiner Auswahl. Wechsle zwischen Chips unten um anzupassen.</string>
+    <string name="picker_dialog_element_properties">⊕ Eigenschaften des Elements</string>
+    <string name="picker_dialog_properties_desc">Was identifiziert dieses Element? Schalte um, um das Element dieser Regel hinzuzufügen/zu entfernen.</string>
+    <string name="picker_dialog_blocking_action">⚡ Blockiere Aktion</string>
+    <string name="picker_dialog_action_desc">Was passiert wenn dieses Element nicht gefunden wird?</string>
+    <string name="picker_dialog_advanced">⚙ Fortgeschritten</string>
+    <string name="picker_dialog_advanced_desc">Zuteilungsverhalten wird angepasst</string>
+    <string name="picker_dialog_label_optional">💬 Markierung (optional)</string>
+    <string name="dialog_add_websites">Webseiten hinzufügen</string>
+    <string name="dialog_selected_count">Ausgewählt: %1$d</string>
+    <string name="dialog_turn_on_dnd">Bitte nicht stören aktivieren</string>
+    <string name="reel_blocker_title">Kurzforminhalte sperren</string>
+    <string name="reel_blocker_allowed_apps_zero">Erlaubte Apps (0)</string>
+    <string name="reel_blocker_allowed_apps_count">Erlaubte Apps (%1$d)</string>
+    <string name="label_show_more">Mehr anzeigen</string>
+    <string name="label_all_time">Immer</string>
+    <string name="btn_clear_filters">Filter leeren</string>
+    <string name="empty_intents_title">Keine Inhalte gefunden</string>
+    <string name="empty_intents_desc">Versuche filter anzupassen oder eine App zu entsperren</string>
+    <string name="grayscale_shizuku_title">Shizuku Erlaubnis benötigt</string>
+    <string name="grayscale_shizuku_desc">Diese Funktion benötigt Shizuku Berechtiungen um den Graustufenfilter korrekt anzuwenden.</string>
+    <string name="grayscale_secure_settings_desc">Curbox benötigt eine einmalige Berechtigung, deine Bilschirmfarben zu verändern. Erteile diese mit Shizuku. Danach funktionieren die Graustufen von selbst, auch wenn du dein Handy neu startest.</string>
+    <string name="btn_grant_permission">Berechtigungen erteilen</string>
+    <string name="picker_control_tap_to_select">Klicke auf ein Element um es auszuwählen</string>
+    <string name="btn_deeper">Tiefer</string>
+    <string name="btn_parent">Eltern</string>
+    <string name="btn_block">Block</string>
+    <string name="btn_all">Alle</string>
+    <string name="btn_move">Bewegen</string>
+    <string name="label_group_name">Gruppenname</string>
+    <string name="label_app_blocker">Appsperre</string>
+    <string name="default_focus_duration_value">25</string>
+    <string name="label_mins">mins</string>
+    <string name="create_keyword_group_title">Stichwortgruppe erstellen</string>
+    <string name="label_keywords_to_block">Zu sperrende Stichwörter</string>
+    <string name="label_unlock_behavior">Verhalten bei Entsperrung</string>
+    <string name="label_url_redirection">URL Weiterleitung</string>
+    <string name="label_show_warning_screen">Warnungbildschirm anzeigen</string>
+    <string name="label_keyword_blocker_title">Stichwortsperre</string>
+    <string name="label_no_keyword_groups">Noch keine Stichwörtergruppen. Erstelle eine!</string>
+    <string name="btn_undo">RÜCKGÄNGIG</string>
+    <string name="label_loading">Lädt </string>
+    <string name="warning_config_title">Warnungsbildschirmskonfiguration</string>
+    <string name="warning_config_desc">Stell ein was passiert, wenn du deine Grenze erreichst.</string>
+    <string name="label_fixed_unlock_duration">Festgelegte Entsperrdauer: 5 mins</string>
+    <string name="label_wait_before_unlocking">Warten vor Ensperrung: 15s</string>
+    <string name="label_wait_desc">Zwingt dich, nachzudenken bevor zu die Sperre umgehst</string>
+    <string name="label_qr_auth">QR-/Barcodeauthentifizierung</string>
+    <string name="btn_generate_new">Neu generieren</string>
+    <string name="btn_scan_existing">Existierendes scannen</string>
+    <string name="label_configured_qr">Eingestellte QR-/Barcodes:</string>
+    <string name="label_nfc_auth">NFC Authentifizierung</string>
+    <string name="label_configured_nfc">Konfigurierte NFC-Tags:</string>
+    <string name="label_typing_auth">Freischalten durch Tippen</string>
+    <string name="label_typing_desc">Schreib den Satz, den der Nutzer genau abtippen muss, um die Sperre zu umgehen:</string>
+    <string name="label_intent_auth">Länge der Freischaltephrase</string>
+    <string name="label_intent_min_desc">Ich wähle aus wie viele Zeichen jemand tippen muss bevor er fortfahren kann.</string>
+    <plurals name="warning_intent_min_length">
+        <item quantity="one">Minimum an Zeichen: %1$d</item>
+        <item quantity="other">Minimum an Zeichen: %1$d</item>
+    </plurals>
+    <plurals name="warning_intent_chars_needed">
+        <item quantity="one">Schreib mindestens %1$d Zeichen (%2$d mehr)</item>
+        <item quantity="other">Schreibe mindestens %1$d Zeichen (%2$d mehr)</item>
+    </plurals>
+    <string name="label_limit_unlock_frequency">Freichalteintervall beschränken</string>
+    <string name="label_allowed_proceeds">Erlaubte Prozesse: 3</string>
+    <string name="label_time_window">Zeitfenster: 60 mins</string>
+    <string name="label_vibrate_brightness">Vibriere \u0026 max Helligkeit bei Warnung</string>
+    <string name="label_reducer_analytics">Verringererstatistiken</string>
+    <string name="label_logged_intents">Dokumentierte Versuche</string>
+    <string name="label_logged_intents_desc">Betrachte deine letzten Entsperrgründe</string>
+    <string name="label_app_pause">App-Pause</string>
+    <string name="label_rather_spend_time">Ich würde in dieser Zeit lieber...</string>
+    <string name="label_recommended">Empfohlen</string>
+    <string name="crash_title">Oops! Curbox ist abgestürzt</string>
+    <string name="crash_desc">Etwas ist schief gelaufen. Bitte teile die Absturzberichte mit dem Entwickler, damit das Problem behoben werden kann.</string>
+    <string name="btn_clear">Löschen</string>
+    <string name="btn_restart">Neustarten</string>
+    <string name="btn_share">Teilen</string>
+    <string name="focus_add_websites_desc">Gib spezifische Webseiten (z.B. facebook.com/*) oder verwende andere Stickpunkte zum Blockieren oder Erlauben während der Fokussitzung.</string>
+    <string name="create_app_group_title">Appgruppe erstellen</string>
+    <string name="label_on_each_open">Bei jedem Öffnen</string>
+    <string name="label_configure_allowed_schedule">Konfiguriere erlaubten Zeitplan</string>
+
+    <string name="hint_picker_query">pkg:com.app id:btn</string>
+    <string name="hint_picker_label">z.B. verstecke Reels, blockiere Werbung...</string>
+    <string name="hint_type_sentence">Tippe exakt den Satz von oben</string>
+    <string name="hint_unlock_reason">Warum musst du diese App jetzt benutzen?</string>
+    <string name="hint_search_intents">Suche Gründe oder Apps</string>
+    <string name="hint_unlock_challenge">Schalte die Challenge frei</string>
+    <string name="hint_unlock_method">Entsperrmethode</string>
+    <string name="hint_required_sentence">Benötigter Satz</string>
+    <string name="hint_custom_warning">Individueller Warnbildschirm</string>
+    <string name="hint_add_website">Webseite oder Stickwort hinzufügen</string>
+    <string name="desc_previous_week">Letzte Woche</string>
+    <string name="desc_next_week">Nächte Woche</string>
+    <string name="desc_edit_group">Gruppe bearbeiten</string>
+    <string name="desc_delete_group">Gruppe löschen</string>
+    <string name="desc_refresh_stats">Statistiken neu laden</string>
+    <string name="desc_delete">Löschen</string>
+    <string name="desc_add_group">Gruppe hinzufügen</string>
+    <string name="desc_remove">Löschen</string>
+    <string name="desc_remove_interval">Intervall löschen</string>
+
+    <string name="ascii_coolstars" translatable="false">"\n
+⠀⠀⠀⠀⠀⠳⣄⣀⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⣸⢀⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡸⠢⣽⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠙⢄⡠⠖⢋⡏⠀⠀⠀⠀⠀⠀⢀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠦⠞⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⡿⣿⡄⠈⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠸⠁⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠃⠀⢠⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠨⠀⠁⠁⠈⠀⠁⠒⣄⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⡤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⢸⡈⠓⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⢠⣖⣉⣀⣀⡀⠀⠀⠀⠘⢦⠀⠀⠀⠀⠀⣰⠓⡄⠀⠀⠀⠀⠀⢠⡏⢧⠀⠀⠀⠀⠀⠀⠀
+⠘⠤⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡖⢳⡤⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢈⠳⣄⠀⠀⠀⠀⠓⠢⣵⣎⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢰⠋⠓⠲⠤⠷⠀⠀⠀⠠⠈⠋⠁⠀⠀⠀⠀⠀⢸⠀⠈⢧⡠⠤⠖⢒⠟⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣏⡉⠉⠀⠀⠼⢥⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢢⣀⣀⡀⠘⠉⢹⠑⠠⠀⠀⠀⠀⠀⠀⠀⠀⢸⡧⠃⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠰⢶⣂⠈⠉⠉⠀⣀⠀⠀⣠⠚⠁⠀⠀
+⠀⠀⠀⠀⣆⠀⠀⠰⠆⠀⠀⠀⠀⠀⠀⢰⠋⠀⠀⢀⣀⣠⠇⠀⠀⠀⠀⠀⠀⢦⠀⡴⠀⠀⠀⡤⠖⠚⢉⠉⡏⠉⠉⠙⠓⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠈⠙⠒⡄⠀⠈⠀⠈⢧⡀⠀⠀⠀
+⠀⠀⠀⠀⡟⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠒⠛⣆⢸⠀⠀⠀⠀⠀⠀⠀⠘⢂⡈⣾⠀⡀⠀⠀⠀⠀⣀⠀⢀⠃⠀⠀⠀⠀⠀⠙⣀⡖⢲⡀⠀⠀⠂⠀⠐⠁⠈⠐⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⢸⠁⢀⠚⠑⣆⠀⢳⡀⠀⠀
+⠀⠀⠀⠀⡇⠸⡄⣀⡠⢤⡶⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⢀⡀⠀⠀⠀⠀⠠⠔⠋⡟⠫⡀⠀⠀⡀⠀⠀⢀⡞⠀⠀⠀⠀⠀⠀⠀⡏⠲⠄⢹⠀⠀⠈⠀⢀⠤⠴⣄⠈⠀⠀⠀⠀⠀⠀⠘⢿⠃⠀⠀⠀⠀⠀⠀⡼⡠⠋⠀⠀⠀⠉⠒⠳⠀⠀
+⣤⠖⠒⠚⡗⠛⣻⡋⡠⠋⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⣠⣄⠀⠀⠈⠒⠖⠋⠠⠀⠀⠀⡏⠀⠶⠈⡇⠁⠀⠀⠀⠀⠀⠀⠐⣠⠀⠀⠀⠀⠀⠀⠛⠁⠀⣠⡀⠀⠀⠀⠀⠀⠀
+⠀⠉⠑⢺⡧⢎⣠⠛⣄⠀⠀⠀⠀⠀⠸⠼⠇⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠖⠋⠀⠀⠀⠀⠀⠀⠣⠼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⠤⠚⠀⠄⠀⠀⠀⠀⠀⠀⢠⢫⡷⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⢀⡀⠀⠀
+⠀⠀⠀⢸⠀⡴⠃⠉⠛⠧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠤⠇⠀⠀⠀⣀⣠⠤⠖⠚⠉⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠤⣤⣶⣞⣶⣽⣄⣠⣤⢤⣄⠀⠀⠀⠀⠀⠀⢀⣸⢳⣀⣤
+⠀⠀⠀⢸⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠒⠀⠀⠀⠀⠀⣠⠴⠚⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠣⣤⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠁⠀⠀⠀⠈⠳⣜⡹⣺⡯⡟⢉⣩⠕⠋⠀⣀⠀⠀⠀⠀⠯⣍⡀⠀⢠⠋
+⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠊⠌⠀⠀⠀⣠⠔⠋⠁⠀⠀⠀⠀⠀⠀⠳⢦⡀⢀⠤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢻⣘⣀⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢿⢉⣙⠿⣿⡀⠀⠀⠀⠉⠀⠀⠀⠀⠀⢠⣇⠞⠢⠧
+⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠄⢠⢁⠀⠀⠀⣠⠞⠁⠀⠀⠀⢀⡀⠀⠀⠀⢀⡥⠀⠈⠁⣸⠁⠀⠀⠀⠀⠀⠀⣀⣠⣀⣀⣼⢙⡁⣧⣁⣀⣀⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢠⣫⠽⠋⠈⠳⣌⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀
+⠀⠀⠀⠀⢯⣹⠇⠀⠀⠀⠀⠐⠀⡀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⣏⣹⠀⠀⠸⠥⣄⠀⠀⠀⠙⢆⠀⠀⠀⠀⠀⠀⠙⢿⣿⡭⣟⣟⣛⣭⢂⠖⣨⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⡀⡀⠀⠈⠻⡆⠀⠀⠀⣖⢳⠄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠃⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡰⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⣙⡯⣮⣿⡿⠹⡴⠊⠀⠐⠆⠀⠐⠀⠀⡤⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⡠⣀⣀⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⣇⢴⡛⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⡞⢟⡭⠒⢼⣱⣹⡄⠀⠀⠀⠀⠄⠀⠀⠙⠚⠁⠀⠀⠀⠀⠅⠀⠀⠐⠰⣄⠀⠀⠀⠀⠀⠀⢠⠞⠻⠁⠉⣠⣜⡀
+⣤⡀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠈⠻⠗⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠤⠀⠘⠛⠁⠀⠀⠀⠉⠳⠇⠀⠀⠀⠈⠀⠀⡀⢀⡀⠀⠀⠀⠀⠂⠀⢴⡆⠀⠂⠀⡙⢆⠀⠀⠀⠀⠈⣳⠄⠀⠀⠀⢤⡜
+⡛⠈⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠛⠃⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⡀⠀⠀⠂⠘⠀⠀⢀⣀⣀⣀⣀⣀⠁⠀⠀⠀⠀⠀⣤⠀⠀⠌⢣⡀⠀⠀⠀⠧⠠⣆⠀⣦⠤⠇
+⠘⡞⠉⠁⠀⢀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡠⠚⠉⠀⠀⠉⢢⠀⠀⠈⠋⠀⠀⠀⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠐⠂⠁⣀⡠⠴⠚⠋⠉⠉⠀⢀⠄⠀⠈⠉⠙⠒⢤⣀⠀⠀⠀⠀⠈⡀⢳⠀⠀⠀⠀⠀⠈⠛⠁⠀⠀
+⠀⠁⠀⠀⠀⠘⠦⣄⡀⠀⢠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⣰⠃⠀⢠⠔⠒⢦⠈⡆⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠂⠁⢀⡤⠖⠋⠁⠀⠀⠀⠉⠀⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⢦⡀⠀⠀⠀⢁⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣁⡷⠤⠀⣄⣀⠀⠀⠀⠀⠠⠀⡇⠀⠀⢹⠘⠤⠜⢀⠆⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠁⠀⣀⠴⠊⠁⠀⠀⠀⠰⠿⠀⠀⠀⠀⠀⠀⠀⢀⡤⢒⡒⣄⠀⠀⠀⠙⢆⠀⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⡤⢤
+⢀⡀⠀⠀⠀⠀⠀⢀⡔⠋⠹⡅⠀⠀⠀⠀⠀⠀⠀⠀⠐⠂⣧⠀⠀⠀⠓⠶⠒⠋⠀⠀⠀⠀⠀⢞⣹⠆⠀⠀⠀⠀⠀⣠⠴⠋⠀⠀⠄⠀⠀⠀⠀⠀⠀⢰⠄⠀⠀⠀⠀⢠⠏⠀⢧⣃⠜⠀⠀⠀⠀⠈⢳⠀⠀⠁⢸⠀⠀⠀⠀⠀⠀⠀⠑⠚
+⡁⢈⠆⠀⠀⠀⠔⠁⠀⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠘⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⠋⠁⠀⠀⠀⠁⡔⠁⢀⠤⠤⢄⠀⠀⠀⠀⠈⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⡼⢩⡧⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⢀⡫⡍⣳⠀⠈⠓⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠒⠉⠀⠀⠀⠀⠀⠀⠐⠀⡇⠀⢯⣀⡄⠈⡆⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠤⠄⠴⠃⠀⠀⠀⠀⠀⣠⠤⢄⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⡀⠀⠀⠀⠀⠉⣡⠃⠀⠀⠀⠀⠈⠙⠒⠒⠒⠒⠒⠚⠉⠁⠀⠀⠀⠀⠀⠀⣠⣄⠀⠀⠀⠡⠘⠦⣀⣀⣀⠜⢁⠀⠀⠀⠀⠆⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢡⡶⡄⡁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠏⠉⠑⠤⠤⠤⠊⠁⠀⠀⠀⠀⠀⠄⠀⠀⠀⠸⠆⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠣⡼⠃⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⢹⡀⠀⠀⠀⣞⢙⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠓⠒⢁⠇
+⠀⠀⠀⠀⢀⠁⢠⣦⠀⢀⠀⠀⠀⠣⣤⠝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠂⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⠀⢣⡀⢀⠀⠀⠁⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀
+⠞⢉⡉⢦⠀⡄⠀⡀⢀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⡜⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢰⠀⡔⠀⠀⠀⠀⠀⠀⣀⡤⣄⡀⠀⠀⠀⢀⡤⡄⠀⠀⠀⠄⠀⠱⣄⠀⠂⡀⠀⠀⠀⡏⢠⡍⠆⠀⠀⠀⠀⠀⠀⣀⠔⠁⠀⠀
+⣆⠓⢀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢤⡀⠀⠀⠀⢙⣾⣿⡔⠒⠀⠀⠀⠀⠀⡇⠀⢀⡇⠀⠀⠀⠹⠤⠃⠀⠀⠀⠀⠀⠀⠈⠓⢄⡀⠀⠀⠀⠓⠤⠔⠃⠀⠀⠀⢀⡤⠚⠁⠀⠀⠀⠀
+⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠶⠶⠦⠼⠀⠀⠘⠒⠒⠓⢘⡆⠀⠀⠀⠀⠀⠙⠒⠁⠀⠀⠀⠀⡞⠹⡈⠁⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠒⠦⠤⠤⠤⠤⠔⠒⠉⠁⠀⠀⠀⢠⠤⡄⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣠⣄⠀⠀⠀⠀⠙⠲⣄⡀⠀⠀⠀⠀⠀⣀⠴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠤⠒⠒⠶⠤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠜⠀
+⡔⢄⠀⠀⠀⠀⠀⡏⠠⠀⣷⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠔⢢⠀⠀⠀⠀⠀⠉⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠛⠃⠀⠀⠀⠀⠀⠻⠤⠤⠃⠀⠀⠀⠀⠀⢸⠃⠀⣠⠻⢇⡀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⣧⠀⠀⠀⠀⠀⠀⠘⠧⣠⠜⠀⠀⠀⠀⠘⠀⠀⠻⡄⠀⠀⣼⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⢻⡤⠞⠀⠀⠀⠙⠲⠒⠀⠀⠀⠀⠀⠀⠤⣤⠏⢳⠞⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⡜⠀⢸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡀⠂⠈⡛⠁⠀⠀⠀⠀⡶⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡷⠛⠷⠀⠀⠀⠀⠀⠘⢧⡉⠉⠉⠀⠀⠀⠧⠤⠤⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠴⠀⠁⠀⠀⠀⠀⠀⡇⢱⡀⠀⠀⢀⠀⠀⠀
+⠀⢀⠔⢢⡀⠀⢀⡤⠒⠉⠉⠉⠉⠲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⡦⠀⠀⠀⠀⢀⣠⠴⠊⠁⠀⠀⠀⠀⠀⠀⠀⢠⠀⡠⡄⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠤⠖⠃⠀⠉⣉⡭⠟⠋⠀⠀
+⠀⢸⡘⠚⣠⠞⠁⠀⠀⠀⠀⢀⢤⡄⠈⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⣀⡀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠤⢷⠁⢹⣀⣄⡀⠀⠀⠀⠀⠙⠒⠒⠒⡆⠀⣤⡀⠱⡄⠀⠀⠀⠀
+⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⣇⠘⠊⢀⡞⠀⠀⠀⠀⠀⠀⠹⣗⡦⠎⣼⣀⡀⠀⠀⠀⠀⣀⢄⡀⠀⠀⠀⠀⠀⠀⠼⠤⠒⠉⠀⠙⣄⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢢⡄⠀⠀⣤⠒⠁⠀⠀⠀⠀⠀⠀⠀⢀⡇⢰⠃⠙⢦⡘⢆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠚⠉⠀⠀⠀⠀⠀⠀⠀⢀⣴⣻⡖⡗⠒⠛⠁⠀⠀⠀⠳⠤⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠁⠀⠀⢠⠴⢤⠀⠀⠀⠀⠀⣸⡠⠞⠢⣜⡆⠀⠀⠀⠀⣀⡀⠀⠀⢸⣇⠏⠀⠀⠀⠈⠺⠆⠀⠀
+        "</string>
+    <string name="ascii_coolflower" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡱⡌⠳⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⡝⣦⠀⠹⢷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣾⣷⡀⠈⢻⣆⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣄⢂⠘⡄⠀⠀⢀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣧⡇⠀⣰⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⣿⡅⢠⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠹⣽⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⢷⣄⠀⠙⣿⢠⠎⠉⠓⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠚⠉⠉⠉⠉⠉⠙⠻⣿⣷⡀⢸⠃⠀⠀⠐⣿⣷⠀⢿⣤⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠠⠐⠒⠒⠂⠀⠀⠀⠀⠀⠹⣷⡞⠀⠀⠐⠈⣿⠃⣴⣾⣿⣏⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠂⢤⡀⠀⠀⠨⠉⠐⡀⠀⠸⣇⣠⢐⡤⢠⢏⣾⡷⠟⠿⠛⠀⠀⢉⡉⠒⠤⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣷⡤⠀⠒⠠⢤⡀⠀⣯⣇⣿⢃⣾⣿⢟⣔⠁⠆⠀⣂⡀⠀⠀⠀⣀⡀⢢⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⢀⡠⠖⠲⠀⢠⠋⠀⠀⠀⠀⠀⡙⣆⢹⣿⡇⣸⣫⡿⣿⣿⣿⠊⠍⠒⠂⠀⢀⠉⠀⠛⠹⣆⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⡠⠂⠀⢣⠀⠀⢀⠔⠁⣠⡆⢰⠁⡆⠀⠀⠐⠀⠁⠀⠀⣽⠼⣿⣷⣿⡿⡿⢧⠿⠥⠶⠤⢥⣀⠀⠀⠀⢀⣀⢤⣝⣄
+⠀⠀⠀⠀⠀⠀⠀⠀⡠⠁⠀⠀⠀⡬⡄⣠⠂⠀⠰⡜⠀⡏⠀⡇⢠⠀⡀⠘⠃⠀⠈⠋⡂⢿⣿⠋⡉⠒⢮⣑⡊⢄⠀⠀⠀⠙⢏⠁⠀⠀⠀⡻⠋
+⠀⠀⠀⠀⠀⠀⠀⢠⠁⠀⠀⡄⠀⣱⣿⠁⠀⢠⠁⠀⢰⠀⠀⢃⠀⠀⠀⠀⠀⠀⠠⠆⠐⢀⢈⢦⠁⠀⠀⠈⠺⠦⢍⢆⠀⠀⠀⢡⡀⠀⠀⠁⠀
+⠀⠀⠀⠀⢠⠦⢶⣼⠀⣶⣄⣰⣚⣳⠇⢀⠀⠌⠀⠀⣼⣀⣤⣤⣭⣉⠉⠉⢲⣦⣥⣄⣀⣠⣤⣾⣷⣌⠀⠄⠀⠀⠀⠑⠕⠀⠀⠀⠃⠀⠀⠀⠀
+⠀⠀⢀⡠⠂⢀⣌⠻⣧⡙⢟⢣⢛⣾⠀⡉⣾⠃⠀⢠⠁⠀⠀⠈⠙⠻⣧⠀⢸⢸⣿⣿⣿⠿⠿⠿⠛⠛⠳⢄⡀⠀⠀⠀⠈⠔⡄⠀⢰⠀⠀⠀⠀
+⠀⠀⢧⠀⠀⠘⣿⡶⢿⣿⣮⠞⡇⣿⢰⣿⡟⠀⠀⣾⠷⠞⠀⣒⡠⠀⠈⢳⠘⢾⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠉⠐⠒⠲⡀⠈⢰⠀⣸⠀⠀⠀⠀
+⠀⠀⠀⠑⢄⣨⣺⣿⣮⣷⣮⣻⣷⣽⣼⣿⡁⢀⣼⡿⢀⡠⠤⠔⠴⣤⣄⢈⡇⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠰⠁⠀⠀⠀⠀
+⠀⠀⣠⠖⠋⠉⢉⣛⠿⢽⣷⣿⣿⣿⣿⣿⣶⡿⢟⠋⠀⠀⠀⠀⠀⠙⣿⣿⣷⡏⠀⢀⠄⠒⠒⢠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⡞⠁⡀⠔⡊⠵⠲⠽⠋⠋⢁⣠⣿⣿⣿⡇⠀⠈⢢⠴⡾⠉⠱⡀⠀⠘⣿⣿⡠⠊⠀⠀⢀⠄⠀⢈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠸⡀⠈⠀⠈⠀⠀⠀⢀⣤⣶⣿⡏⠻⠍⠘⠗⡄⠀⠀⢧⢱⠀⠀⠈⢦⠀⣼⠟⠀⠀⠀⢄⠈⠀⢠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡇⣀⣠⡤⠤⢲⢿⠟⠍⣷⣿⣿⡄⠀⠀⠀⠃⠀⠀⠘⡌⠚⡄⠀⠀⠣⠏⠀⠀⠀⢎⠃⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⣷⣿⣿⣧⡀⢸⠈⠐⢖⣟⢿⡿⡳⡄⠀⠀⠀⠀⠀⠀⣷⠰⡡⢀⣤⡄⢦⡀⠀⠀⡜⠀⠀⠰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠙⠛⠉⠁⠀⡀⠀⠀⡎⢀⢟⡜⠀⠀⠀⠀⠀⠀⢂⢀⣿⡆⢠⣿⡟⠁⠀⢣⠀⢂⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢡⠀⠀⠀⠀⡌⠀⠀⠀⠀⠈⢐⠤⣰⣿⣿⣿⣦⡀⣷⣴⡄⠘⣇⡎⠀⢀⢃⡠⠤⠒⠒⠒⠤⠤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠢⠀⠀⠰⠁⠀⠀⠀⠀⠒⠀⣗⡻⣿⣿⣿⣿⣿⣿⣿⠇⢀⡿⠁⢀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠂⢤⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢿⠋⠀⠀⠀⠀⠀⠀⠘⣿⡄⠀⠙⢿⣿⣷⡿⢰⣸⢃⣴⠟⠀⢀⣤⠖⠁⠀⠀⠀⠈⠁⠀⠀⡀⢀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠲⠤⠭⠥⠤⠭⠗⠢⢤⣘⠻⣿⣿⣿⣿⣿⣛⣴⡶⠏⠉⠀⠀⠀⠀⣀⠀⠤⠤⠤⣈⠨⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠄⠁⠀⠀⠀⠀⠀⠀⠁⠈⠈⠑⠠⢙⣺⣿⣿⡿⠛⠛⠻⢝⠀⢀⣀⡤⠐⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⠄⠤⠠⠤⠄⣀⣀⣀⣀⣤⣤⠼⠾⣿⣿⢛⣿⣗⠀⠀⠀⠀⠻⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡔⡩⠀⠁⣴⡿⠟⡟⠀⠜⢻⣂⠀⡀⡀⠀⠰⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⡏⠀⠄⠀⠜⠉⠀⢰⡇⢀⠄⠀⠊⠃⠠⠀⠀⠀⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⣰⡿⢇⠀⠀⠂⠀⠐⡀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠋⠁⢀⠃⠀⠀⠀⠀⠀⡰⣿⡷⠛⡄⠀⠈⠁⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠁⠀⠀⠸⠀⠀⡆⠀⠀⡰⣹⡿⠁⠀⠈⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠁⠀⠀⠐⣄⠅⠠⢁⡀⢠⣱⣿⣵⣾⣿⣷⣤⡈⠢⡀⠀⠀⠀⠀⠀⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣧⠀⡀⢠⢃⣿⣿⣿⣿⣿⣯⣉⠛⠦⡉⠦⡀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣧⡧⠃⣾⠛⠛⠛⢿⣿⣿⣿⣿⣦⡄⠂⠈⠓⠤⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣿⣿⡇⢹⣿⠀⣼⠏⠀⠀⠀⠀⠉⠻⢷⣝⢿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⡇⠀⠟⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠹⣟⢿⣵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⡇⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡇⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠇⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_brain" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠤⠤⠤⣄⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⡊⠉⠉⣉⣱⡷⠶⢢⣠⢴⣶⡝⠒⠉⢉⣭⡽⠟⢉⣀⡀⠹⢭⠒⢤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⢚⣩⡽⠿⠊⢉⣉⡂⣀⣩⠭⢴⠟⠋⠉⠉⠉⠛⠳⢦⣬⣤⡴⠞⠛⠁⠛⠳⣾⣧⠀⠟⠀⠉⠲⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢚⠁⠀⠰⠋⢡⠄⠀⠞⣫⢟⡥⠒⠉⠹⣿⡀⠀⠀⢦⡀⠀⠀⠀⠈⠻⡧⡀⠀⠀⠀⠀⠈⠻⣗⡶⠶⠶⢤⡀⠱⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢮⣤⡾⠀⠀⣠⡴⠋⠀⡠⣚⠥⠒⢛⡲⠄⠀⠈⢻⡆⠀⠀⠻⣦⣀⠀⠀⠀⣿⠻⣦⣀⣴⠶⠂⠀⠘⣷⡄⠀⠀⢀⣴⡿⠈⠢⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡠⠖⣉⣁⡀⠀⢀⣾⠋⠴⢿⣽⠋⠀⠞⢉⣉⣽⣳⣄⣀⠀⠋⠀⠀⠀⠈⠙⣷⡄⠀⠁⠀⠙⢤⣯⡀⠀⠀⠀⣼⡇⠀⡾⠋⠁⠀⠳⣄⠘⢆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡰⠋⠰⠛⢻⡞⢉⣠⣼⡇⢀⣴⠟⠛⠒⣴⠟⠋⠉⠀⠀⢀⣀⣀⡀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠳⣄⠀⠉⢿⣄⠀⢰⣿⣧⡀⠀⣴⠶⠶⣦⡼⢧⠈⢣⠀⠀⠀⠀
+⠀⠀⠀⢀⡞⣡⣶⡄⠀⡟⣳⠿⠋⠙⡍⡽⠁⣀⣤⣤⣿⡄⠀⠀⠀⠀⡿⡉⣀⣀⣤⣤⣤⣴⠾⠥⠽⣦⣄⠀⠉⠻⢶⡼⢻⠀⠈⠇⠘⡷⡄⠘⠂⠀⢀⡍⠻⣷⣄⡇⠀⠀⠀
+⠀⠀⠀⠘⣺⠏⢸⢃⣼⠟⢁⡤⠀⣠⢟⡷⠟⢋⣉⣤⡿⠇⠀⠀⠀⢰⣣⠞⠋⠉⠉⠁⡀⠀⠀⠀⠀⠀⠙⢷⣄⠀⠀⢹⣾⠀⠀⠀⠀⢸⡇⠀⣀⡀⣾⠀⠀⠈⢻⡁⢦⠀⠀
+⠀⠀⣠⢚⣵⣄⠈⣼⡇⠀⢸⠧⢞⡵⠋⠠⠚⠉⠉⠀⠀⢀⡇⠀⣰⣟⣁⣀⠀⠀⠀⠀⠉⠒⠶⣤⣤⣀⠀⠀⠙⠀⠀⢸⡇⢰⣟⠛⢶⡋⣇⠀⠉⠻⡟⡄⠀⢀⢀⣿⠀⢧⠀
+⠀⣰⠃⢸⠁⣿⠀⠸⣧⠀⢸⢣⠋⠀⣠⣤⠶⢶⢒⣤⣔⣻⠣⢼⠟⠁⠀⠙⢷⡄⠀⠀⢀⠀⠀⠀⠈⠓⢟⢦⠀⠀⠀⢸⡇⠈⠻⣦⡀⠈⠻⣷⣄⠀⠘⣿⠀⠸⣿⣇⣀⢸⠀
+⠀⡇⠀⠀⣼⠇⠀⢀⣿⠀⣇⣇⣴⠟⠋⢠⣾⠟⠉⠀⠀⠈⠳⣼⠀⠀⠀⠀⠀⠳⠀⠀⠈⢳⣄⠀⠀⠀⢸⣼⠀⠀⠀⠈⡟⢆⠀⠈⢻⡀⠀⠈⢻⣆⠀⣻⠃⠀⠀⢹⡟⠻⡀
+⠀⢧⡆⣼⠏⠀⣾⠟⠁⢰⠃⡵⠃⢀⣴⡿⠁⠀⡀⠀⠀⠀⠀⠹⣧⡀⠰⣦⡀⠀⠀⠀⠀⠀⣻⢦⣀⣠⡾⣇⠀⠀⢀⣰⠟⠙⢷⣄⠀⠀⠀⠀⠀⣿⠀⠉⢠⠄⠀⣼⡇⠀⢧
+⢀⠞⢡⡟⠀⠀⣿⠀⢀⡏⡼⠁⣴⠟⠁⠀⠀⠀⣿⠀⣀⣀⢀⣴⠘⣷⡀⠈⢻⣦⣀⠀⢀⣾⠟⠉⠀⠀⠉⠻⣷⣄⠀⠀⠀⠀⠀⠙⢷⡄⠀⠀⠀⠉⠀⣠⡟⠀⣼⣟⠀⠀⢸
+⢸⠀⠘⣧⠀⡴⠛⠳⢸⢰⠁⢰⠏⠀⠀⠀⢀⣼⡯⠟⠋⠙⠻⣷⡀⠘⠀⠀⠀⠈⠉⠻⣿⠁⠀⠀⢰⡟⠉⠀⠈⢻⣦⠀⠀⠀⣄⠀⠀⡗⠀⢸⡇⣠⣾⠟⢀⣾⠋⠹⣷⢀⡇
+⠈⢆⠀⠹⢷⣤⣀⣠⠎⡇⠀⠸⠀⠀⢀⣴⠟⠉⠀⠀⠀⢄⠀⠹⣧⡀⠀⠀⣀⡀⠀⠀⣿⠀⠀⠀⠘⣿⡄⠀⠀⠀⢹⣦⡀⠀⢿⣄⠀⢀⣠⡿⠽⣯⡁⠀⠸⠃⠀⠀⡏⠉⠀
+⠀⢠⢷⣄⠀⠈⣉⣉⢢⢳⡀⠀⠀⠀⣾⡏⠀⠀⠠⣀⡤⢿⠀⠀⠙⠷⠶⠛⠉⠈⠀⣰⠟⠀⠀⠀⠀⠘⣷⡀⠀⠠⠛⠉⠉⠀⢈⣯⠗⠛⠁⠀⠀⠈⠃⠀⢀⣴⠇⢠⠇⠀⠀
+⠀⢸⡀⠻⣧⠈⠉⠹⣏⢀⣑⠤⣀⣀⠼⠳⣄⠀⠀⠀⠙⠺⠖⣦⣤⠤⣀⡀⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⢸⢧⡀⠀⠀⢀⣀⢴⣿⣅⡀⠠⠶⢿⢦⣀⣠⣴⠟⠃⡠⠋⠀⠀⠀
+⠀⠀⠳⡀⠘⠃⠀⡤⠸⣼⠀⠉⠛⠋⠉⠉⠙⠻⣦⣄⠀⠀⠀⠀⠈⠉⠙⠻⣦⠀⠀⠀⠀⡀⠀⠀⠀⢀⣾⠖⠚⠛⠛⠛⠋⠁⠀⠙⣷⠀⠀⣸⡴⠛⠉⢁⡤⠊⠁⠀⠀⠀⠀
+⠀⠀⠀⠘⢦⡀⠸⣧⠀⢻⢇⠀⠳⡤⣤⠆⠀⠀⠈⢻⡇⠀⠀⠀⢰⡄⠀⠀⣿⡇⢀⡾⠛⠛⠻⡝⣲⠟⠋⠀⢀⡄⠀⠀⠀⣀⡄⠀⠋⢀⡴⣻⡄⣤⡶⡍⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠙⠁⠉⠉⠈⠣⡀⠹⣇⠀⠀⠀⠀⠘⠀⠀⠀⢀⡾⢳⡶⠾⠋⠀⠈⠃⠀⠀⣠⠟⢄⣀⣠⡴⠋⠀⠀⠀⣼⢻⣤⣴⠶⠟⠋⣡⡷⣏⢿⡧⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⢫⣲⣤⣀⣀⣀⣀⣤⣶⣻⠋⠛⠷⣦⣤⣤⣄⡤⢤⣺⠕⠋⠉⠉⠁⠀⠀⣀⣤⣾⠏⢩⠀⠀⢀⣤⣾⠛⣧⢻⣼⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠮⢭⣉⣉⡩⠥⠚⠈⢇⠀⢠⡄⠀⠉⠉⠙⣿⠀⢠⠶⠖⢫⣩⠟⠛⠛⠉⠀⣠⣿⣦⠶⠿⣭⣸⣇⡿⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣌⡿⣄⠀⠒⠚⠋⠀⠀⠀⣠⡾⠃⠀⢀⣀⠴⠚⠉⠣⢍⣛⣶⡶⠝⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠒⠂⠀⠒⠒⠉⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="ascii_pill" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡤⡤⠤⠤⢤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠻⠛⠉⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠶⣄⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡾⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡶⠟⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⡾⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⠟⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣀⣤⣾⣿⣯⣬⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⣿⣿⣿⣿⣿⣟⣿⡿⣿⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⣿⣿⣿⣿⢿⡿⣟⣿⢿⣿⣿⣽⣯⢿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣿⣿⣿⣿⡿⣿⣻⣽⣯⢿⣻⣽⣻⢷⡿⣿⣟⣿⡾⣟⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⡏
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⣿⣿⣿⣿⢿⣿⣻⣽⡷⣟⣷⢯⣿⢯⣷⢿⣯⣿⣷⡿⣿⢽⡻⣜⢯⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⣿⣿⣿⢿⣟⣯⣿⢾⣽⣳⣿⣻⢾⡿⣽⣻⣾⡿⣿⡽⣞⡽⣎⢷⣫⡝⡾⣜⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠃⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⡿⣟⣾⢿⣽⡾⣽⣯⣟⣷⢯⣟⣯⣿⡿⡿⣝⣯⢳⣝⢮⡳⣝⢮⡳⣝⣳⢯⣞⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠋⠀⠀
+⠀⠀⠀⠀⠀⣰⣾⣿⣿⣿⣿⣿⣟⣾⣽⢿⣽⣻⣾⡽⣟⣾⣽⣾⣿⢿⣻⣳⢻⣝⡳⣎⠿⣜⢧⣛⣮⢷⣻⣽⣯⣟⣯⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⣰⣳⠟⠁⠀⠀⠀
+⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣻⢾⣽⡾⣯⢿⣞⣿⡾⣟⡿⣽⣯⢷⣏⡟⡶⣭⢳⣎⠷⣭⣻⢮⣟⣽⣞⣯⣷⣿⣳⣯⣟⡾⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢄⣎⣦⡿⠋⠁⠀⠀⠀⠀⠀
+⠀⠀⢠⣿⣿⣿⣿⣿⣟⣾⢯⣿⣳⢿⣻⣿⡿⣭⠳⡍⠞⡥⣛⣿⡼⣹⢳⡭⣗⡾⣫⢷⣯⣿⣾⢿⣻⢯⣟⣾⣽⣳⣿⣻⣽⣿⠤⠀⠀⠀⠀⠀⠀⢀⠠⣄⣳⣼⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣾⣿⣿⣿⣿⣟⣯⡿⣯⣷⢿⣻⢿⣿⢳⡌⡑⠈⠐⠠⢃⠞⣷⣯⣳⢟⡾⣽⣿⡿⣯⣷⣟⡿⣯⡿⣯⣟⣾⣽⡾⣽⣻⣿⡇⠀⠀⢀⠀⢤⣘⣴⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢸⣿⣿⣿⣿⣿⣿⣻⣽⡷⣯⡿⣯⣿⣿⡳⡔⢡⠀⠂⡁⢌⢺⡱⣿⣽⣿⣻⣟⡷⣿⣽⡾⣽⣻⢷⡿⣽⣾⣻⢾⣽⣟⣿⣿⢹⢀⠎⣴⣽⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⢼⣿⣿⣿⣿⣿⣿⣟⣷⡿⣿⣽⣷⣻⢿⣿⣝⢦⡘⡔⣰⢊⣧⣻⣽⣿⣞⣷⣟⣿⣳⣯⣟⡿⣽⣻⣽⣟⣾⣽⣿⡿⣿⣿⣏⣶⡿⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣾⣿⣿⣿⣿⣿⣿⣿⣽⢿⣷⣻⡷⣟⣯⡿⣿⣿⣷⣽⣮⣟⣾⡿⣟⣷⣻⣾⣽⢾⣯⢷⣻⢿⣽⣯⣷⣿⣯⣿⣿⣿⣿⠟⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡸⣿⣿⣿⣿⣿⣿⣯⣿⣿⣻⣽⣟⣯⣿⡽⣷⢯⡿⣽⢯⣟⣯⡿⣯⣟⣷⣻⢾⣟⣾⣟⣿⣻⣿⣾⣿⣿⣿⡿⠟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣻⣿⣯⣿⣟⣾⣽⣟⣯⣿⣻⢯⣟⣷⢿⣽⡾⣯⣟⣿⣾⢿⣾⣿⣿⣿⣿⠿⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠐⢻⣿⣿⣿⣿⣿⣿⣿⣿⣽⣾⣿⣻⣾⢯⣷⢿⣽⣻⣟⣾⣟⣷⡿⣿⣽⣿⣻⣿⣿⡿⠟⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣻⣿⣯⣿⣾⢿⣾⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠐⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_sharks" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⠄⠀⠀⠀⣠⡶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⢤⠀⢤⠹⡌⠃⠀⠂⠀⠀⠀⠀⠀⠀⣠⠃⠘⣇⠀⠀⠁⠈⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠳⠼⠃⠢⠦⠙⠙⠀⠀⠀⠀⠀⢀⣤⠖⡧⠐⠚⠙⠳⠤⢀⢀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢠⣄⣄⡀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⢠⣾⠫⠇⠀⠀⠰⠒⠂⠀⠀⠈⠒⣭⣿⡧⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣼⡅⠐⠐⠻⠶⠶⠖⠋⣉⡿⠃⠀⠀⠀⠀⠹⢿⣇⣆⣀⣠⡀⠔⢾⣿⠋⠈⠙⢝⣾⠿⢹⣟⢶⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠙⢧⡀⠀⠄⢠⣆⣌⢸⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢆⠀⢱⠀⠀⠀⠀⠈⠀⠀⠉⢺⠿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠙⣇⢀⠀⠉⠳⠷⣿⣦⣤⣴⣶⡄⠀⣀⠀⠀⡀⣠⣄⣀⣀⡙⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠉⠘⠓⣀⠤⣤⡀⠀⠀⢀⠀⣀
+⠀⠀⠀⡏⠘⣻⣷⠶⠶⣲⣬⣬⣥⣤⠄⣀⣤⠼⠟⠋⠉⠁⠀⠉⠉⠟⠛⠻⢶⣤⡀⠀⠀⠀⡀⢤⣄⠀⠀⠉⠚⠛⠓⠒⠟⠋⠀
+⠀⠀⠀⣿⣷⠋⠀⠀⠀⠀⠀⠙⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠢⡀⠀⠙⠙⠊⠠⠲⣢⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⣁⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠀⠀⠀⠀⠤⠳⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠑⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_lotus" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠤⣄⠀⢀⠔⠱⢦⡀⢠⡞⠤⠽⢦⠀⢀⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠒⣄⡈⣷⠞⠀⠀⠀⣹⠏⠀⠐⠈⣼⠗⢩⣤⣾⢹⡄⣠⣖⠇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡯⠂⢙⢿⠀⠀⠀⡰⡍⠀⠀⠠⣡⡎⡌⣭⠃⡇⣷⠟⠁⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢰⡩⠐⣤⡀⡾⣡⢃⢧⠀⡰⣴⡀⢀⣶⣹⠟⣶⢆⣴⣷⢠⣼⢿⡖⢱⠃⢠⠔⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⠤⡤⣗⡃⣴⣯⣿⡕⣺⡞⣾⡧⠛⠫⣯⡿⠛⢙⢿⠿⣼⡿⠋⢹⡚⡠⢸⣄⠚⠴⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⡞⠄⠉⡣⣿⣾⢿⡂⠉⢷⢪⣰⠆⠀⠉⠑⡴⠉⠀⠀⢈⢣⡀⡾⣎⠀⢨⡏⠠⢁⠃⠀⣀⣠⢤⣦⡄⠤⠤⣤
+⡖⠖⠼⢦⣀⠀⠫⡱⢬⣻⣆⠙⢣⣊⣴⡈⢀⢸⠔⠠⠀⠀⠀⠘⣹⠏⠄⣤⣔⡷⣡⠞⣺⠽⢒⣪⣟⡟⠀⢀⣷⠋
+⠘⢅⡢⠈⢗⠀⠘⢻⣶⡨⡰⢦⣄⠠⠶⠈⠠⠘⠀⠀⠀⠀⢐⢺⠁⠀⠈⡆⡛⡵⠟⣊⠔⡪⢞⣥⡾⡀⣴⠟⠁⠀
+⠀⠀⠙⠷⣄⡓⢄⠘⣿⣿⣦⡠⢀⠑⢤⣰⠔⠊⠉⠑⠤⢀⢈⢇⠀⠀⠀⣨⠮⠒⣉⠔⠛⣢⣞⣡⠴⠊⠀⠀⠀⠀
+⠀⠀⠀⣀⣀⡙⠳⢿⣞⣿⣿⣿⣮⣵⣂⢗⠀⢄⠀⠀⠀⠀⠹⠀⢀⠄⠪⠐⡒⢈⣠⠴⠾⠚⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠻⣿⣿⣿⣿⣿⡉⢍⠉⠉⢟⠫⢭⡿⡶⠄⢀⣀⠀⣠⠾⢒⠁⠵⣆⠷⢿⡟⡛⠛⠱⠲⠶⢠⣤⣄⣀⣀⠀⠀
+⠀⠀⠀⠀⠉⠛⠛⢛⣻⣾⣦⣦⣤⣁⣂⣑⣿⣿⣿⣿⣷⣾⣶⣿⣿⠟⠁⠀⠀⠀⠉⠒⠫⠄⡀⠀⠀⠉⣉⡿⠛⠀
+⠀⠀⢀⣠⡤⠶⣿⣿⣿⣿⣿⡿⣿⡿⠿⣟⣝⠾⠿⢿⣿⠿⢿⢻⣿⠳⣶⣤⣀⡀⠀⠀⠀⠀⠀⠙⠛⠥⡀⠀⠀⠀
+⠀⠸⠯⠄⣀⠀⠠⠤⠔⠒⠛⠉⠁⠀⠐⡟⠈⠁⠀⠀⠀⠀⠎⣺⠏⠀⠀⠉⠙⠛⠳⠶⠶⢄⣤⣠⡤⠞⠃⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠀⠀⢀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_jellyfish" translatable="false">"\n
+⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⢀⠀⡂⣂⣤⣤⣦⣶⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠅⠁⢀⠂⣅⣤⡾⠏⢋⡍⡬⠾⠽⢽⢷⡿⣯⣻⢶⣄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢴⡕⣥⣟⢁⠀⡞⡏⠁⠠⠀⠀⣸⣎⢷⣗⣏⡻⡝⣿⣄⠀⠀
+⠀⠀⠀⠀⠀⠀⣮⣾⣿⠕⢜⠀⢑⠻⠿⠷⠛⠋⠋⠁⡻⡃⠹⣧⡂⣧⣻⡆⠀
+⠀⠀⠀⠄⣒⡱⢗⣻⣃⡔⢁⡦⢖⠀⠀⢀⠀⠀⠀⠀⣚⡧⡀⣽⣧⠀⢯⣿⡄
+⠀⠂⡡⠂⡐⠀⣠⡿⢯⣿⣾⣅⠃⠀⠴⠠⠔⠀⠀⠀⠘⢯⣷⣿⡟⠄⠈⣿⠋
+⠀⠉⠀⡌⣀⡶⡛⡀⠰⢙⣿⣯⣿⡶⣷⣦⣃⣀⡔⠀⡂⣤⠋⡩⠁⣀⢠⣿⠀
+⠀⠀⠀⠁⣶⢁⡂⠀⣂⣼⣷⡃⡹⡳⣽⣾⡏⣙⡟⣫⢷⢷⢤⡦⠤⡦⣿⡷⠌
+⠀⠀⠀⣞⣭⣤⣷⠶⠋⣽⠋⢰⠇⣽⣳⠁⣻⠗⣻⡟⠦⣷⡽⡻⡧⣿⢗⠝⠀
+⠀⢀⣴⣿⡯⠃⢪⣰⠞⠑⣴⣯⣿⠃⣏⡀⢹⠀⡻⡇⠀⢸⡆⠀⣃⣯⠅⠀⠀
+⢀⣽⢻⣒⣡⡴⣟⢁⣠⡞⢻⡿⠁⢲⡇⠀⢹⣄⡅⢷⠀⠸⣇⠤⠃⠄⡅⠀⠀
+⢸⢇⣴⡿⠋⠄⣼⣿⠁⠀⣾⠅⢐⠸⡇⠀⠂⢿⡌⠙⣆⠉⠹⣦⠀⣱⠀⠀⠀
+⢰⣾⠏⡧⠈⢠⣿⠌⠀⠀⣿⡍⠀⠂⢿⠀⠅⠈⣷⡄⠹⣧⠀⠙⢷⣍⠀⠀⠀
+⢸⣟⠠⢷⡀⢹⣿⡂⠀⠀⢹⣧⠀⠀⠸⣷⠀⠀⠸⣷⡀⠹⣦⢀⡒⠻⣧⠀⠀
+⢸⡇⠑⢠⣙⣶⣿⡦⠀⠀⠒⣿⣧⠀⠀⢻⡆⠀⠀⠹⣧⠀⣹⣇⠀⠀⢻⣧⠀
+⢸⣇⠀⠀⠀⠈⠘⣿⣶⠀⡀⠈⠹⣧⠀⠘⣿⠀⠀⠀⣿⡗⠁⢿⣄⠀⠀⣿⡇
+⢘⣿⡄⡂⣀⢀⠠⠜⣿⣇⠀⠐⠀⡈⠧⡀⢿⡆⠀⠀⣿⠃⠀⠘⣿⡀⠀⢸⡇
+⠀⠘⣃⡠⡐⠌⠂⠁⠈⢿⣧⢀⠀⠀⠐⡅⣸⣷⣀⡼⠃⠀⠀⠀⣿⡇⠀⢸⡇
+⠀⠀⠈⠀⠆⠀⠀⠀⠀⠀⠙⣯⣪⢐⠪⡂⢸⣿⠈⠀⠀⠀⠀⠀⣿⡇⠀⡾⠀
+⠀⠀⠀⠀⠀⠉⠁⠂⢀⠀⠀⡈⢻⣅⠌⠀⣸⡏⠀⠀⠀⠀⠀⣸⡟⠀⠀⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⠀⣸⠂⠀⢀⡿⠀⠀⠀⠀⢀⣴⠟⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡋⠀⢀⡾⠃⠀⠀⢄⣠⠞⢁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠊⠋⠀⠀⡞⠁⠀⠀⠂⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_god" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠤⠄⠀⡀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠈⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠠⠤⠅⠡⡴⡁⣥⠀⠀⢈⠀⠀⠀⠀⠀⠀⠀⠈⠢⠀⠀⠀⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠊⠀⠂⠀⠀⣼⣿⣿⣿⣿⡓⠰⠄⠠⠄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⣶⠾⣭⣥⣿⣿⣷⠀⠀⠁⢄⢀⠀⠀⠀⠀⠀⠀⢱⠀⠀⢣⠀⠀⣒⠁⠀⢀⠀⠀⠀⡰⠁⠀⠀⢀⠠⠁⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢛⣿⣿⣿⣿⣿⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⣠⣶⢮⢴⣾⣿⣿⣿⣿⣿⠢⠀⠀⠈⠢⠀⠀⠀⢤⠀⠘⠠⢇⠀⠀⠀⠀⠂⠀⠀⠠⠀⠆⣖⡁⠀⢀⠔⠉⠀⠀⠀⠀⠂⠁⠀⠀⠀⠀⠀⠀⠀⢀⢣⠾⢫⠹⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⣾⡿⡡⢴⣿⣿⣿⣿⡿⣿⣿⡷⠀⠀⠀⠈⢇⠀⠠⠀⠁⠀⠘⠁⠀⠀⠠⠀⢀⠀⠀⠀⠀⠀⠀⠃⠔⠁⠀⠀⢀⠤⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢂⣆⢖⣥⡶⡜⣿⣿⣿⣿⡄⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠄⣺⣿⣯⠚⣤⡟⢙⣿⣿⣰⣼⣿⣿⡇⠀⠀⠀⠀⠀⠀⠿⣰⠀⡀⠁⠀⡀⡨⢠⣄⠀⡰⠒⠂⠀⠀⠀⠀⠀⠀⣢⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⣴⡿⣧⢏⢺⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢈⣺⣿⣿⣷⣵⠏⣀⢪⣿⣿⢸⢼⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠁⠀⠐⣀⡈⡨⢘⣛⣤⡤⠃⠲⡥⠆⠀⠀⠀⠠⠞⠓⠀⠀⠀⠀⣀⠀⠄⠀⠀⠀⠀⠀⠀⠈⣼⣿⡽⣫⢯⣿⣿⣿⡿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⢔⠄⠈⣠⣿⣿⣿⣿⣽⠋⣨⠦⣿⣿⣿⡁⣼⠈⢿⣷⠄⠤⣦⣤⢄⡤⠀⠀⠈⠀⠈⣛⢛⣉⣖⣠⠂⢫⣥⣦⣄⢡⡍⠁⠀⠀⠀⠀⠐⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡄⣿⣽⣫⣿⣿⣿⣿⣇⡝⢿⣿⢤⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠊⡰⠣⣪⣾⣿⠿⢿⣷⢋⡝⢁⣵⣿⡿⣽⡟⢑⣣⢰⣿⣿⡄⠀⠀⠀⠀⠃⠀⠀⠀⠀⡻⣧⠻⣿⣿⣿⣷⣄⠶⠬⣍⠀⠞⢀⠀⠀⠀⢠⠠⡄⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⣾⣀⣿⢡⡏⣿⣿⣿⣿⡇⢸⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢟⢽⣵⣿⣿⡟⢸⡿⠃⢚⣴⡞⣿⠏⡇⡿⢃⢀⢲⣾⣿⡿⢃⠀⠀⠀⠀⠀⠀⢈⠁⠘⡙⠰⠾⠛⣉⠁⠭⠉⠉⠹⠀⡶⡀⠘⢀⠀⠀⠈⠂⠀⠁⠀⠀⠀⠀⠀⠒⠀⢠⣾⡏⣼⣿⡸⠀⣿⣿⣿⣿⣿⠸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣰⣷⣽⣿⣿⣿⠟⢡⣌⣵⣿⣿⣿⣇⡏⡄⣷⠃⠾⢙⡤⡿⣿⡓⠀⠀⠀⠁⠀⠃⠀⠀⢠⠘⠀⢰⣶⣾⣿⠐⣿⣿⣂⠂⢩⣿⠌⠄⠺⠥⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⡞⣿⣿⣷⣦⡛⢛⣿⣿⣿⢦⢻⣿⣿⣧⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⢀⣶⣿⣿⣿⡿⠛⣿⠿⢢⣿⣿⣿⡿⠿⣿⣻⢱⣧⢟⡀⢁⡬⢁⣃⡜⠁⠪⠖⠑⣀⠀⠀⠀⠀⠎⠃⡄⠈⣿⣿⣏⣈⣼⣷⣿⣆⢈⠿⡸⠌⢠⡉⠀⠀⠋⢦⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⢿⣿⣿⣿⣿⡏⢻⣿⣿⢸⡞⣿⣿⣿⡆⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠘⠀⣰⣿⣿⣿⠟⢁⣤⡾⢃⣴⣶⠋⣿⡟⡀⣸⢁⣣⢾⡏⣲⢨⣼⡿⠟⠉⡊⠁⢢⠦⠀⠀⢀⠀⠀⠀⠐⣀⣶⡀⠘⢟⡥⣤⣝⣿⣿⠃⠀⣿⡖⠇⠁⢠⠁⠀⠀⠀⠀⠀⠀⢀⠀⠀⢢⢺⣿⣫⣿⢸⠃⣿⠃⣿⡇⣼⠏⣿⡸⣿⢸⣿⣿⣷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⢠⣾⣿⣿⡿⡣⣨⡾⡋⡡⢫⢎⡏⢶⣿⡽⡱⣣⣿⡟⣱⠀⣿⢸⡇⡇⣬⡖⡅⠐⠋⠀⠂⠆⠠⠁⠀⠀⠂⠡⠋⢧⠀⠈⠛⠛⠉⠉⠁⠀⠤⡇⣻⡜⢁⠹⡉⠀⠠⠀⠀⠀⠀⠀⡀⢡⣶⡟⡡⢹⠇⠞⠈⡿⠀⠛⠁⠘⠠⢻⡇⣿⡏⣿⣿⢩⣷⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⠋⢠⣾⢟⠅⣞⣱⡇⣼⠇⡾⢈⣭⠶⣿⣿⢸⡏⡖⣿⠟⣥⡇⡿⣱⠓⠃⢉⠀⠐⠚⢄⡀⠀⠀⠀⠀⢁⡀⠀⠀⠀⢴⢀⣤⠀⢐⣔⡝⠘⠅⠂⠄⣡⣥⡄⠐⢆⠀⠠⢊⠀⠋⡜⣱⡫⠛⣂⣰⣦⡥⠠⣾⡩⢰⠀⣸⣧⢻⡗⣿⣿⡎⣿⣇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⢤⣾⣿⣿⠟⢁⣵⣿⠃⣪⣾⠛⡿⢠⡿⡸⣑⣿⠃⣣⡿⣣⣿⠘⣾⠟⣾⣿⢸⠱⢁⡕⢃⠂⡑⠃⠀⠈⠈⠓⢀⠠⠞⢈⡘⠠⠀⠀⣚⡎⣿⡳⣸⡜⣎⣠⢃⠂⢠⠑⣹⣿⢈⢀⡥⢞⠁⢋⠚⠛⡌⣱⡞⣿⣿⣿⠇⣀⣷⣇⡇⠀⢨⡄⢼⡇⣿⣿⣇⢿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠋⣴⣿⣿⠟⢅⣴⣿⡟⣡⣾⡿⠃⡪⡐⣼⠰⣶⡷⣶⢨⢹⡿⣸⣿⣾⢇⡇⣿⡟⡀⢞⢈⣶⣃⡾⢡⡄⠀⠂⠀⠀⡤⠺⠾⣿⣷⠾⣯⣵⣾⡿⠜⠷⢎⢫⡏⠎⠀⣺⣆⠲⠄⠂⣉⡀⠰⠿⢗⡳⠶⠔⠾⠿⣧⣿⣿⠏⢰⣸⣼⢙⠀⠐⣾⠂⣼⢳⣿⣿⣿⣻⣿⡇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢃⣾⣿⡟⠋⣠⡾⣉⡍⣼⣿⣯⢠⢆⡱⣱⡿⣱⡱⣸⢃⣿⠬⢡⣿⣿⡿⢘⣼⡿⢐⡌⢔⡟⣼⣏⣴⡟⠀⡀⠈⢀⠠⠹⣸⣧⡿⢿⡇⢠⣙⠻⣿⣷⢸⡀⠾⠷⠘⢃⢠⣍⠭⣡⡬⠉⣁⠀⠀⠀⠨⡘⢸⣷⣯⣸⠻⣿⢀⡟⢏⣇⡇⠈⣠⣿⠀⣿⣿⣿⣿⣿⣿⢋⢱⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⣰⣿⣿⠿⠀⣾⢏⣾⢏⣾⣿⣿⡏⢸⡄⣱⣿⢳⡵⣱⢏⣾⢡⠂⣽⣿⡿⢡⢸⡟⣠⠟⢨⣾⢣⡎⣿⠛⡐⡼⠁⢠⣾⡟⢣⣟⢙⣷⢠⡃⡌⢻⣧⣿⣿⡞⠡⠼⠃⢃⣼⣯⣦⠜⢈⠔⠼⠃⡀⠸⣕⣀⠈⠸⣿⡇⠛⡄⠁⢹⡇⣼⣸⠇⠄⣿⡇⠁⣿⣾⣿⣿⣧⢻⢸⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣎⣽⠿⣿⡏⣼⡿⣱⠿⣳⣿⣿⡿⠟⢵⣬⢰⣿⡇⠟⣴⢣⠻⢏⣴⣧⡛⣩⣶⣫⡜⠘⡱⢨⣿⢏⡦⣇⡾⣀⡜⢠⠀⠸⣿⠿⡚⠃⢾⣿⡆⣧⢻⣎⠙⢻⣽⣿⣿⣿⠈⣰⣞⢏⡡⢞⣳⡛⠀⠀⣴⣶⣿⡿⡄⠀⢻⡧⠃⣁⡄⣿⡇⡛⣿⠠⢸⣿⠀⠠⣽⢺⣿⣿⡇⣿⠸⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢡⣾⡟⢸⡿⣸⢟⡼⠃⣼⣿⣿⡿⠁⣿⣷⣭⡬⢭⣶⣿⣶⣿⣿⡿⢋⢿⣿⣿⡟⡤⠀⣾⢃⣚⡡⣿⣷⠉⡚⠀⠀⡄⡄⢐⡉⠑⠀⠹⢹⣿⡿⣨⡀⢻⣦⡁⢝⠻⠿⠁⣸⠹⠃⠈⠁⠦⠭⡄⠀⢰⣿⣿⣿⠂⢰⣆⠘⢁⢀⠈⢁⢹⠃⣸⡿⠀⣿⣿⠘⢸⣿⢹⣿⣿⣯⣿⠁⣾⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠁⢼⣿⠀⡟⣱⠫⡾⠁⣼⣿⣿⡟⠀⣼⣿⣿⡏⠖⣾⣿⡟⢡⣸⡟⣱⢸⣹⢻⣿⢃⠀⢰⢃⣾⡟⢹⡿⡇⣴⠱⠀⡘⡥⣾⢯⣻⠚⠆⠲⢸⣿⣷⠰⣧⣠⡹⣝⠢⣶⠖⢋⡁⢆⠆⢾⡇⠋⡉⠬⢠⡿⠋⢀⡄⡀⢀⣿⡄⠏⠀⠀⠠⣿⣾⡟⠇⢱⣿⠃⢸⠨⢱⣿⣿⣿⣧⣿⠠⢹⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠟⣠⠸⢃⣦⣾⠁⠀⢅⣾⣿⣿⡟⣼⡂⢿⣿⡿⢡⡇⣿⣿⠁⣣⢏⣴⡟⣰⡆⣸⠁⠀⠀⢈⡞⢛⡀⠌⠁⢅⡧⡇⠢⡘⣷⣎⠓⢽⣷⠑⠜⠘⣿⣿⡄⠹⠇⠁⣴⣶⣎⢬⠣⣍⠼⢰⡀⢥⣶⡄⠓⠃⢀⣴⢻⠐⡔⠃⢀⠃⠄⠀⠀⡀⠽⡟⢐⠠⢸⡿⠐⡚⢰⣾⣿⣿⣿⢻⣿⡄⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⣰⣿⣶⣿⣿⢁⠿⢏⣾⣿⣿⠟⢸⣿⣧⢌⣩⣴⢸⣿⣌⡓⢀⣵⣿⠏⠄⠛⠁⠋⡄⢠⡾⠿⠁⢋⠃⣆⠂⣼⢙⠐⠟⠛⣿⣿⣷⣦⠙⣦⢸⡆⣿⣿⣷⣠⣄⠠⡀⠈⠉⠦⠇⢈⡉⠋⠣⠀⠏⢈⣷⣿⣾⡶⢖⡌⠀⡴⠈⡐⣰⡖⠀⠃⢀⢁⡛⡀⢘⠇⣿⡇⣿⣿⣿⣿⣿⣹⣿⣇⠸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡀⡟⢰⣿⣿⣿⣿⠃⣼⠃⣼⢏⢸⣿⢃⣿⣿⢋⣾⣿⣿⠇⣭⡭⢶⣷⣭⣵⡣⠄⢠⡾⡇⢧⡄⠁⠀⠀⠋⠀⠛⠐⣨⡀⠠⣰⣔⠙⢿⢿⡟⠠⣋⢸⡧⠙⠒⣨⡝⢩⣦⠇⠁⣤⠘⢤⡌⠀⢰⠠⠐⡄⠉⠙⠫⡁⠠⠤⠂⢤⠀⣠⢃⢻⠁⠀⠀⢀⡿⡄⠀⣸⢰⣿⠃⣿⣿⣿⣿⣿⣽⣿⣿⠀⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⡆⠈⠀⣿⣿⣿⣿⡏⠀⢇⡿⡇⣸⢸⡇⣸⣿⠇⢸⣿⣿⡇⣾⣿⣇⣾⣿⢿⣿⠇⢀⡎⠀⠁⣾⡇⢀⠀⠀⠈⠀⠀⣀⣾⡇⣸⣿⣿⣿⣿⡆⠀⣷⢱⠉⣿⠆⠀⠀⢹⣇⡆⢁⣾⠸⡀⠀⠉⠇⠁⡇⡆⣶⡿⡇⢀⣷⡶⠿⣆⠹⡆⠁⢸⡀⠀⠁⡇⢹⣷⠇⣶⡿⣸⣿⠀⣿⣿⣿⣿⣿⣾⣿⠀⡆⠇⠀
+⠀⠀⠀⠀⠀⠀⠰⠀⠀⣸⣿⣿⣿⠋⠀⡸⡸⠝⢰⡇⠟⢠⣿⡟⡰⣿⣿⢈⣴⢫⡻⣿⢟⣵⣷⠉⠀⠈⠀⠀⢠⡟⠒⠋⠀⠀⠀⠀⣰⠿⣀⣀⡀⠹⣿⣿⠟⠠⡀⠻⠰⠺⡏⠜⡢⡙⠖⠆⣶⡮⠈⠃⠩⣒⡟⡴⠀⢇⢏⠯⣓⡃⠼⠃⣐⢣⡠⠴⠂⡀⠀⠷⡀⢲⠁⣼⡾⢠⡟⡀⢃⣿⡄⣿⣿⣿⣿⣿⣿⣻⠀⡡⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡱⣿⣿⡿⠃⣾⣀⠣⣼⣿⡜⢟⡰⣜⠿⢃⣅⣛⣵⡿⢱⡎⡏⣏⡾⠛⢋⠀⠀⠀⠀⠁⡎⠀⠀⠐⠐⡉⠄⠐⢉⢺⣟⡛⢿⣦⣹⡏⢀⠴⡄⢡⠐⠀⢿⣤⠿⠘⠠⢜⠷⠉⠺⠖⠀⠉⠙⣄⣀⠾⣅⡍⠒⠠⠤⠌⠹⣷⣦⠃⠡⠁⠀⠀⢒⡘⠀⢹⠧⣾⣿⠀⣸⣏⢸⣿⣿⣿⣿⣿⣽⣿⠀⢧⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⢳⣿⡿⣡⡺⡋⡋⡆⣾⡿⠙⣿⢏⣶⡊⢹⡿⣁⣭⣶⢸⣳⡇⠋⠀⠀⢈⢰⠃⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⢄⣤⣟⣿⣏⠀⠘⢓⡵⢃⡆⠇⢿⡄⢮⠤⠃⠔⠋⣠⡄⠄⠀⠀⢠⣁⣀⣉⡀⣤⠆⠐⠘⠋⠱⣶⡉⠓⠈⣿⡄⠀⠀⠀⡈⠠⡇⠀⢀⠀⠻⢠⠚⢻⣽⢺⣿⣿⣿⣿⣿⣿⡇⠆⠸⠀⡄
+⠀⠀⠀⠀⠀⠠⢰⡏⣿⣿⣇⣿⡟⡼⣸⠅⣿⠇⢲⢏⣾⣿⡟⣬⡎⡇⣿⡟⣾⢇⠾⠿⠀⠀⠀⠏⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⡗⡀⢙⣦⠈⡄⠀⠸⣿⣦⣠⢶⠮⡁⢠⣴⣦⠰⣇⠀⠀⠚⠉⢛⣠⡌⢉⣉⡉⢒⣉⣽⡀⠀⢸⠂⠀⠀⠰⠁⡄⠀⠀⠀⠆⡆⢀⠷⢵⢸⣹⣿⣿⣿⣿⣿⣿⠸⠁⠂⠀⡇
+⠀⠀⠀⠀⠀⠄⣿⣸⣿⡿⠩⡛⣼⢣⣿⣇⠻⢠⣾⣿⠏⣾⢣⣿⢸⢵⡿⡸⢣⠂⠀⠀⠁⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⣀⣼⣿⣿⣿⣿⠟⢩⡴⠒⠀⣿⡆⢱⠀⣿⣿⣿⠋⣪⡞⣵⣿⣿⡟⣃⠁⠀⠥⣔⢒⣪⠙⣇⠺⡲⠸⢤⠏⠚⡇⠀⢨⠀⠀⠀⠙⠐⠃⠀⠠⠀⠸⠐⡼⡀⡿⣼⣹⣽⣿⣿⣿⣿⡿⠀⠄⡁⠀⡁
+⠀⠀⠀⠀⠐⠀⢁⡏⡿⣱⢧⣰⡿⣼⣿⣿⣷⡘⡿⠁⣰⡏⢟⣅⡟⢬⠔⠀⣋⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⠟⣉⠀⠈⠀⠀⢰⣚⢤⡯⢆⣿⡿⠃⠀⣀⢾⣿⣿⣿⣿⠋⣰⠋⡴⣇⡌⠉⠁⠘⢆⢝⣃⠈⠓⢹⣧⠀⠀⠀⠀⠀⠀⠀⠂⠁⠐⠆⠀⣱⢱⡇⠄⣿⢼⣿⣿⣿⣿⠟⡧⢈⠐⡀⠀⡄
+⠀⠀⠀⠀⠀⠰⣼⣈⣵⣿⢸⣿⢣⣿⣿⣿⣿⣿⠗⠀⣴⢹⣻⢉⣾⡇⠀⣾⡇⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⡿⠫⠈⠀⢋⣄⠀⠀⠀⡯⢧⢲⠀⣴⣾⠏⣰⠏⣼⠟⡿⢟⠕⢀⣜⡒⠒⠉⡍⠐⠒⢦⠈⢒⠍⠠⠀⠃⢈⡁⠀⠀⠀⠀⠀⠀⠀⠀⣼⠁⠁⡀⣾⠙⣠⠈⢸⣿⣿⣿⣿⣾⡗⢀⠂⠄⠀⡇
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⡿⠀⣿⣼⣿⣿⣿⡿⢡⡆⢸⣿⢸⠁⢰⣿⠀⠁⡿⠆⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⡿⠋⠀⠀⠀⠰⢸⣿⡀⠀⠀⠐⡋⣡⣾⣿⣜⢓⢋⢚⡋⡖⠵⠃⢀⣿⣿⡇⠀⠉⠆⠢⢤⠎⢀⡼⢺⡟⠤⣈⣿⣿⠀⠀⡐⠀⠀⠀⠀⢀⡏⠀⢀⢀⢁⠄⠨⠀⣼⣿⣿⣿⡏⣿⡇⡀⠈⠂⠀⡇
+⠀⠀⠀⠀⠀⢸⣿⣿⣿⡇⢾⡇⣿⠟⠉⣿⠇⠘⠠⢼⡟⢎⡀⡸⠇⠀⡐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⢻⡇⠀⠀⠀⣴⣿⣿⢻⣿⠸⢸⠨⠆⡠⣢⠮⠘⠋⣿⡗⣀⠈⠌⠙⠒⠒⠀⠀⡨⣀⠀⠀⢻⡇⠀⡆⡅⠀⠀⠀⠀⠜⡡⠀⠀⠱⣸⠀⠀⣾⣿⣿⣿⣿⡇⣿⠃⣀⠠⠁⠀⡅
+⠀⠀⠀⠀⠰⢺⣿⣿⣿⢰⢼⢹⡏⠀⠀⠟⠀⠀⡎⠘⡇⣬⢰⠁⠀⠐⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣹⠋⠀⠀⠀⠀⠀⠀⠀⠀⠈⠡⠇⠀⠸⠿⠛⠛⢋⣿⣦⣽⣾⣜⠅⠙⡱⣫⠆⣿⡧⠟⠀⠀⢈⠀⣐⣀⠰⣀⠴⠿⢃⠘⠇⠀⠇⡆⠀⠀⠀⠀⠋⠁⠀⡃⠅⠃⢀⠘⠋⠙⡜⣿⣿⢧⡟⠀⠀⠀⠀⠀⡆
+⠀⠀⠀⠀⡞⢸⣿⣿⣿⠈⡎⣿⠃⡀⠀⣠⣴⡆⠀⠈⢡⡏⡋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⢨⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠡⡀⢰⠈⢁⣵⣿⣿⣿⣿⠿⢋⣥⣬⣾⡧⣤⣿⡗⠀⠀⢰⠇⠠⣟⢈⠆⠘⠆⣉⢀⢲⡇⠨⠁⠀⡅⠀⠀⠀⠀⠀⠰⢀⠀⣸⣹⠇⡇⢐⠇⣸⣿⢸⢃⠀⡄⠀⠀⠀⠁
+⠀⠀⠀⢰⡧⣾⣿⣿⡏⡀⠛⢉⡾⠈⣸⡏⠛⠃⠀⠀⣼⢠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⣼⣿⣿⡿⠟⡉⢀⣴⣿⠟⠉⡀⣀⢀⣶⣷⠀⡀⡈⠆⣉⣤⣤⠂⣘⠶⣿⣿⠰⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⢆⠏⣰⡇⡰⣠⣿⡿⡹⠆⠸⠀⠀⠀⠀⠀
+⠀⠀⠀⠘⢰⢻⣿⣿⡏⢸⣿⠀⠆⠀⠛⣿⠆⢠⠀⠀⠈⠂⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠋⠁⠠⣀⣴⠿⠋⣡⠎⠀⣄⠿⢸⣿⣿⡇⢠⠣⡀⠉⠄⢢⠅⠀⠀⣂⣽⡧⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⢁⣰⢀⢻⣇⢑⣿⣿⢇⣇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠘⣸⣿⣿⢇⢸⣿⡄⠀⡇⠀⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⣿⠟⠀⠑⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡛⢉⣤⣶⠿⠋⠁⠀⢠⣏⡀⡞⠈⠈⠁⢻⣿⡇⠈⠃⠀⣙⡁⠎⠡⠀⠀⣿⢸⠃⠀⢀⠀⠀⠐⠀⠀⢀⠀⠀⠌⠀⠄⢫⠏⡁⢎⣽⣿⣿⢸⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣬⢼⣿⣿⢸⢸⣿⣿⠀⠁⡇⠀⡀⢸⠀⠠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠁⠀⢀⣀⢻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠵⠟⢉⠠⢒⣤⡞⢁⣬⣾⠗⠀⣤⡷⠶⢸⣿⡃⢸⡄⠀⡜⢧⠰⢲⢸⠀⡟⠡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠒⢢⣴⢃⣼⣿⣿⣇⣿⠊⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⡻⣼⣿⣿⠈⣾⠻⠏⡠⠰⠃⠹⢣⡌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⣴⠋⣘⡈⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣵⣾⣿⣫⡾⢟⠛⣡⣴⠿⠫⠄⠸⡌⢿⣿⠈⣷⡇⠃⠘⠀⠘⠀⠀⠡⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢔⡿⡃⣾⣿⣿⡿⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⠇⣿⣿⣟⡰⣷⠘⠀⠁⠀⠀⠊⠂⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⣩⠈⠈⢃⠀⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⠟⡋⠡⣰⠟⡋⢁⢰⠆⠀⡆⠱⢨⣿⡅⣟⠇⢈⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢐⢠⡿⡱⣹⣿⣿⢋⣵⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⠇⣿⣿⡏⢧⠿⠅⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡇⠹⣄⠀⣸⠂⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⠟⣋⢠⣢⠖⡊⢔⣠⢾⡏⠏⠀⣀⣀⠄⠀⢿⣷⠨⠃⠈⠀⠀⢃⠀⡈⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⢀⠘⠄⢰⣿⣿⢣⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣼⡞⣿⣿⡇⠸⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢁⣀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠐⢪⡴⠋⠔⢉⣴⣿⠃⠈⡀⣠⡞⠹⣿⡀⠀⢺⡇⠀⢀⠀⠀⢰⠈⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⡆⠈⢀⣼⣿⢏⣾⡿⠀⠀⠰⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠂⠀⣿⢿⣿⣿⡇⢀⠀⠀⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⣿⣽⣰⣾⣿⡿⠋⠀⢁⠂⡟⠀⢸⡽⠅⠃⠨⣷⠈⢸⠀⠀⣼⠄⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⣼⠃⢠⣾⣿⣏⣼⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣿⣸⣿⡣⠇⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠿⢿⣿⠿⠁⡁⢸⣷⡿⢠⡗⠂⡇⢢⢠⢰⠄⢺⣦⠀⢌⢃⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠃⡴⣼⣿⡟⣼⠋⠀⠀⠀⢀⠂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣿⣿⣽⠃⠄⡏⢀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢠⢰⣔⠈⠀⡁⢾⢟⣵⢺⡇⠁⣇⢸⡏⠠⡄⠈⣶⡆⣄⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⡐⣴⣿⣯⠚⠁⠌⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢱⣿⣸⠀⠁⡇⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠈⠿⡘⠃⢁⣴⣿⣿⡌⣿⡆⢹⠀⣗⡂⣇⡁⣄⢨⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠏⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⣿⢸⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⠠⢀⠱⣴⠛⠿⣿⣿⣿⣧⣄⣾⠃⡻⣧⢿⡿⠀⡒⡄⡄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠂⠐⠀⡀⣼⣿⡏⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡄⠸⡏⡇⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠘⠌⢿⣠⣾⣿⣿⣿⣿⣿⣿⣿⣆⢿⡸⣧⠀⠇⢃⠀⠘⡀⡂⠀⠀⠀⠀⠀⠀⠀⠀⠁⢤⡎⠼⣾⣿⡿⢁⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢱⠀⡇⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡄⠀⠈⢻⣿⡿⣿⣿⣿⡇⣿⣿⣿⣼⡇⣿⣇⠚⡈⡜⣦⠡⡅⠀⠀⠀⠀⠀⠀⠀⡠⢠⡆⢠⠞⣛⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡃⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠸⣟⣽⣿⣿⣿⡇⢿⣿⣿⡏⣧⢿⢷⠠⢙⢧⢿⠰⣡⠀⠀⠀⠀⠀⠀⠀⣠⢇⡘⢋⣴⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣸⠿⣹⣿⣿⠃⢻⣿⣿⣷⣿⡞⠾⢎⠼⣌⡜⡜⠦⢃⠀⠀⠀⠠⠁⠖⢩⡎⡵⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_phone" translatable="false">"\n
+⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⡿⠿⢿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢻⣿⣿⠀⠀⠹⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣸⣿⡟⠀⠀⢀⣽⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣹⣿⣏⠠⣶⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣹⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⢺⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢹⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀
+⢿⣿⣿⠈⠻⣿⣿⣿⣿⣿⣿⣿⡿⠉⡀⠀⠀⢀⣠⣄⣀⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀
+⣿⣿⣿⠀⠀⠈⠻⣿⣿⣿⡿⠟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀
+⢹⣿⣧⠀⠀⣠⣤⣿⣿⣷⣦⣤⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀
+⢸⣿⣯⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⣺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄
+⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢺⣿⣼⣿⢢⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷
+⣸⣿⣿⠀⠙⢿⣿⣿⣿⣿⣿⣿⠟⠁⠀⣿⡏⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇
+⣹⣿⡿⠀⠀⠀⢻⣿⣿⣿⡟⠊⠀⠀⠀⠙⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢾⣿⡇⠀⢀⣴⣿⣿⣿⣿⣿⣶⡄⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣸⣿⣷⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
+⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠻⣿⣿⣿⣿⣿⣿⣿⣿⠟
+⠀⠀⠀⠁⠉⠀⠉⠉⠁⠉⠁⠀⠀⠁⠀⠁⠉⠈⠁⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀
+        "</string>
+
+    <string name="ascii_chillguy" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣷⣄⠀⠀⠀⣀⣤⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⠏⠀⠀⣿⠀⢀⡾⠛⠋⠀⣾⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⡏⠀⠀⠀⣿⢀⣾⠁⠀⣰⠆⢹⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⣧⠀⠀⢠⡟⢸⡇⠀⣰⠟⠀⣼⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣹⣆⢀⣸⣇⣸⠃⢠⡏⠀⣸⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣴⣶⣶⣶⠾⠟⠛⠉⠉⠉⠈⠉⠉⠛⠁⢾⠁⣴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣶⣶⠾⠟⠛⠛⣻⣿⣙⡁⠀⠀⢾⣶⣾⣷⣿⣶⣄⠀⠀⠀⠀⠰⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣠⣴⣶⣶⠾⠟⠛⠉⠉⠉⠀⠀⠀⠀⠀⣿⣻⣟⣻⣿⡦⠀⠘⣿⣿⣛⡿⢶⡇⠀⠀⠀⠀⠀⠀⢻⣆⠀⠀⠀⠀⠀⠀⠀⠀
+⣠⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡟⠙⣿⣿⡗⠀⠀⠿⠉⣿⣿⣿⣶⠀⠀⠀⠀⠀⠀⠈⢿⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠳⣄⣿⡿⠁⠀⠀⠘⢦⣿⣿⠇⠟⠁⠀⠀⠀⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⡇⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣇⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢤⣤⡀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠙⢿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡾⠟⠛⠆⠀⠀⠀⠀⠀⢀⢻⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠙⠿⣿⣭⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⠾⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣾⠇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠷⠶⢶⣶⣦⣤⣴⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣌⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⣤⣴⣾⣿⣿⣿⣓⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣷⣦⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣤⣶⣾⣟⣯⣽⠟⠋⠀⠉⠳⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⢇⠀⠉⠛⠷⣮⣍⣩⡍⢻⡟⠉⣉⢹⡏⠉⣿⣹⣷⣦⣿⠿⠟⠉⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⢸⠇⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⢠⣠⡶⠀⠀⠀⠀⠘⣧⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠟⠁⠀⠀⠀⠀⠀⠘⣆⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣇⡀⠀⠀⠀⠀⠀⠀⢹⡆⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣾⠀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣥⢠⣤⠼⠇⠀⠀⠘⣿⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣽⡄⠈⢿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠿⠾⠷⠄⠀⠀⠀⢀⣿⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠸⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣾⠋⠀⠀⠀⠀⠀⠀⢰⣾⡿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣦⣠⣿⣿⣶⣶⣤⣤⣄⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣴⣿⣇⠀⠀⠀⠀⠀⠀⠀⣸⡟⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⠀⠉⠛⢿⣿⣯⣿⡟⢿⠻⣿⢻⣿⢿⣿⣿⣿⣿⣿⠿⠟⠹⣟⢷⣄⠀⠀⠀⢀⣼⠟⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣄⠀⠀⠘⢷⣌⡻⠿⣿⣛⣿⣟⣛⣛⣋⣉⣉⣉⣀⡀⠀⠀⠈⠻⢿⣷⣶⣶⢛⣧⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣏⠀⠀⠀⠀⠹⢯⣟⣛⢿⣿⣽⣅⣀⡀⠀⣀⡀⠀⠀⠀⠠⢦⣀⠰⡦⠀⢸⠀⣏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡀⠀⠀⠀⠀⠀⠀⠈⠉⢻⣿⡟⠛⠉⠉⠁⠀⠀⠀⠀⠀⠀⠈⠛⠷⠀⣸⠀⣿⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢿⠀⠀⢦⡀⡀⠀⠀⠀⠀⢹⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡄⡏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⠀⠈⠳⣝⠦⢄⠀⠀⠀⣟⣷⠀⠀⠀⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⣷⡀⠀⠀⠈⠙⠂⠀⠀⠀⢸⣿⡄⠀⠀⠘⢦⡙⢦⡀⠀⠀⠀⠀⢰⣷⣷⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡿⢧⣤⣀⡀⠀⠀⠀⠀⠀⠀⢿⣷⣄⠀⠀⠀⠁⠋⠀⠀⠀⠀⠀⢸⣿⣿⣇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⡀⠈⠉⠛⠛⠛⠛⠛⠛⠛⠛⢿⡍⠛⠳⠶⣶⣤⣤⣤⣤⣤⣤⠼⠟⡟⢿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣾⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣿⣷⣶⣶⣶⣶⣶⣶⣦⣀⣀⣀⣻⡀⠀⠀⠀⣀⣀⠀⡀⠀⠀⠀⢀⣼⣿⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠉⠁⠀⠀⠈⠻⣿⡆⢹⣯⣽⣿⣿⠟⠋⠙⣿⣶⣿⣿⣿⣿⣾⣿⣿⣿⣟⠋⠉⣇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⡀⠀⠀⠀⠈⢻⣆⣿⠀⠀⠀⢁⣶⣿⠿⠟⠛⠷⣶⣽⣿⣿⣻⣏⠙⠃⣴⢻⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⣀⠀⠀⠉⠀⠀⠀⠀⠀⢹⣿⠀⣀⣴⣿⠋⠀⠀⠀⠀⠀⠀⠉⠻⣿⣧⣿⢀⣰⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣶⣶⣤⣤⣤⣤⣤⣤⣾⣿⣟⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣅⣾⢿⣵⠇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠉⠉⠉⠁⢹⣜⠷⠦⠤⠤⠤⠤⠤⠴⠶⠛⣉⣱⠿⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⠷⣦⣤⣤⣄⣠⣤⣤⡶⠟⠁⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_aim" translatable="false">"\n
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡂⠈⠁⠀⠘⣮⣓⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⢾⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠈⠐⠚⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⠿⠛⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡷⠀⠀⠀⠀⠢⣼⣬⣢⠀⠀⠀⠀⠀⠀⠀⣠⣴⡿⠛⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠡⠀⠀⠀⠀⠈⠃⣄⠱⠠⢖⡶⢖⣤⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣥⠂⢀⡀⠀⡒⠛⠃⠺⠧⣯⣴⡿⣏⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠘⡡⠄⠂⠁⠰⠈⣀⡴⢞⣟⣟⣿⢾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣐⠿⢷⣶⣗⠀⠀⠀⠀⠀⠙⠫⣖⣷⣿⡻⠟⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠊⠀⠀⠀⡀⠈⢑⡀⠀⢀⣂⣿⣿⣫⠝⠏⠀⠀⠀⡘⢄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠐⠈⠀⠀⣠⠰⣺⡤⠻⢀⣼⣄⣷⡮⠿⢿⠋⠀⠈⠉⠁⠲⠐⠁⢁⠡⢄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠐⠈⠀⠀⠀⠀⣴⢺⡽⠗⣫⣵⣾⣻⡿⠟⠉⠀⠀⠀⠑⢄⡀⠐⠀⠀⠀⠐⠀⠰⣏⢣⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡤⡄⠀⣀⣐⠈⠁⠀⠀⡀⣤⡀⢻⡔⢘⣭⣾⣟⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⠒⢄⠀⠠⠀⠀⠀⠈⢿⣳⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢏⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠻⠛⠒⣾⠿⢄⠀⠠⣔⣌⣿⠉⠛⠈⢀⣿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⢌⡂⢈⠔⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠈⢆⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠄⠪⠅⡀⠂⢍⠂⡕⢔⠃⠀⠟⠋⠀⢀⣠⣶⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠘⡄⡈⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⢠⣖⣶⣿⣧⠔⠂⣁⠆⠀⠀⠀⠀⠑⡄⠑⡘⣆⡀⢔⣬⣴⢾⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⢱⠘⣄⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣴⣿⣯⣯⣿⣿⣿⣿⣿⠤⠊⠀⠀⠀⠀⠀⠀⠀⠘⡄⢱⢹⣰⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠸⠀⠀⣇⠀⢢⡘⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣴⣾⠿⠚⠋⣉⠙⠛⠛⠛⠙⣹⠟⢳⣔⢄⠀⠀⠀⠀⠀⠀⢀⡠⣷⣾⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⢀⠡⠀⢸⡀⠀⢤⠀⢣⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣶⣯⣶⠤⢀⡀⠀⣠⡴⠋⠀⠀⡀⠘⣦⢢⠀⠀⣀⣴⣾⣼⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠅⠆⠂⢧⠉⠀⡙⣄⠑⡄⠀⠀⠀⠀⠸⣿⡿⠿⣿⣿⣛⣯⢳⢮⣮⢟⣅⢀⡀⠀⠀⢻⠢⢸⡿⢴⣸⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠁⠀⡈⠀⠸⡄⠄⢤⣺⣷⢼⢆⢀⡠⠔⠪⢁⣤⣾⡶⢛⢬⣪⡿⠋⢥⠽⣝⣎⠿⠂⠀⢀⣀⢸⣯⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡇⠀⠀⠱⡖⠙⠗⢤⢈⣓⠭⡲⡯⢅⡶⣮⢝⡳⢌⣠⣲⣷⣟⣱⣦⣽⢾⣿⣿⣿⠀⠀⣰⣿⣯⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣡⠰⠨⠰⢃⣸⠭⢥⣿⠶⢒⣩⣶⠿⣞⣻⣮⣻⣽⣿⣿⣶⠿⢯⣹⢾⣷⢿⣿⣿⣠⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⢁⡠⣖⡯⣐⡴⠞⣋⣵⣺⡿⢛⣹⣼⣀⣼⣿⣿⣿⣿⣿⣧⣿⣯⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠷⣋⡵⢚⣡⣶⡿⠟⣋⢵⣺⢗⣿⣾⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠶⣫⡵⢛⣡⣶⡿⢟⣩⣴⣿⣿⣯⣿⣿⣻⣯⣿⣽⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⢛⡵⢚⣡⣶⡿⢟⣩⣶⣿⣿⠿⣽⣧⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⡿⣟⡯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠞⣨⠞⣉⣴⡿⢟⣥⣶⣿⢟⣛⣥⡾⡿⣭⣿⣿⣿⣿⢿⣿⣿⣿⡿⢟⣫⣴⠿⠋⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡾⣫⠴⣋⣴⡾⢿⣭⣿⡿⡿⣝⡬⠿⣿⣺⣿⣿⣿⣿⣻⣹⣿⣿⣿⡿⢡⣿⡿⣿⣡⢘⠤⣆⠳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⠖⢉⡽⢞⣷⣾⣟⣿⣾⣽⠏⣧⢷⢻⣯⡷⣾⣿⣿⣿⣿⣿⢿⣿⠿⢛⣡⣾⣷⣝⣛⣯⢳⡝⣾⢳⣌⠢⡙⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡠⡾⣳⣶⣫⣾⢿⣭⠿⣯⣟⡵⠷⣻⣷⣾⢿⣭⣶⣟⣩⣿⣿⣿⠿⠋⣥⣶⣿⣿⣟⣽⡞⡽⣎⢷⣫⢗⢯⣞⣧⠡⣈⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣴⣮⣿⣾⣷⣟⡯⠟⠋⠄⣢⣬⣿⡖⢯⣿⠔⣿⣯⣵⣿⣿⣿⠟⠋⠁⠀⠀⠈⠉⠛⠻⠽⣏⣿⢳⣛⣮⡗⢮⡳⣎⣿⡆⠥⢆⡱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣾⣿⣿⣿⣿⢿⡋⢀⣰⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠷⢏⣌⠳⣙⢦⠱⣌⠢⢵⡘⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠠⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠚⠢⢌⣓⡒⠿⣤⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢟⢗⡱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠙⠛⠛⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢞⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+    <string name="ascii_key" translatable="false">"\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡀⠀⡖⢉⢲⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣏⠰⠎⢀⣣⣈⣁⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠍⠟⠉⣩⠖⠉⠁⠀⠈⠙⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⣼⠃⠀⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⢸⣏⠀⠀⠀⢠⣤⣤⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⠘⠂⣸⠇⠀⢀⡿⣀⠤⢀⠖⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣦⣤⣤⡶⠋⠀⣠⣾⣿⡵⠦⢡⡬⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⣤⣶⡲⡲⡤⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⢀⣴⣿⠋⡟⢧⠈⢂⡐⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⠖⠉⠀⠀⠀⠈⠉⠪⢦⡙⢷⡄⠀⠀⢠⠜⠃⡠⠀⠀⣠⣾⠟⠁⠀⠈⠂⡆⠂⣀⣀⠀⠀⠀⠀⠀⠀
+⢀⡜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠺⡐⢍⢆⠀⠀⠇⠢⠆⢀⣴⡿⠋⡠⠔⠒⠦⡄⠀⠀⠜⠻⠁⠀⠀⠀⠀⠀
+⡜⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠘⢮⢑⢆⠀⠀⠀⣴⡿⠋⠀⢰⠀⠠⢄⢀⠹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡇⠀⠀⠀⢀⣾⡿⠛⠛⠷⣄⠀⠀⠀⠈⢮⡘⡄⠀⣼⢿⡇⠅⠀⠈⠳⠦⠊⡀⢰⠤⠶⢶⣦⡄⠀⠀⠀⠀⠀
+⢧⠀⠀⠀⠸⣿⠁⢀⠀⠀⠘⡆⠀⠀⢀⠈⢎⢇⣸⠃⠂⠹⣄⡁⠂⠠⠀⢂⠔⠁⢀⠤⠀⣿⣿⠀⠀⠀⠀⠀
+⠘⣆⠀⠀⠀⠈⠒⠚⠀⠀⠀⡇⠀⠘⠻⠀⠘⣿⡏⠈⣠⠤⢬⣝⠛⠛⠉⢁⡀⠀⠘⢶⣶⡿⠃⠀⠀⠀⠀⠀
+⠀⠘⣆⠀⠀⠀⠀⠀⠀⢀⡴⠁⢀⠀⠀⢀⠀⣿⣡⠎⢀⠔⣤⠈⡇⠀⢄⠈⠑⢐⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠷⣄⣀⢀⣀⣠⠏⠀⠀⣄⠀⢌⠸⠀⣿⣿⠀⠈⠄⠡⠌⠀⠀⡈⣀⡀⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠄⡃⠩⡆⡁⠠⣿⣏⠀⠀⣠⠶⠶⡄⠀⠁⢀⣈⣃⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢗⠉⠉⠄⢸⡿⢻⡀⠀⢿⣄⠇⡹⢠⣶⡿⠛⠛⠻⢿⣦⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠆⡈⣄⢴⠂⠃⠀⠀⠀⠠⣿⠰⠙⣦⠤⠤⠊⢰⣿⠃⠀⠀⣀⠀⠀⠘⢿⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢙⣻⡾⡛⠩⠉⠍⠙⡳⢦⡀⢻⡨⠁⠈⠳⡀⠀⢸⣿⡀⠀⢸⣋⠻⡄⠀⠘⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡴⢁⠁⠀⠀⠀⠀⠀⠀⠂⠙⢾⣇⠂⡎⣙⡟⡄⠀⢻⣧⠀⠀⠀⡰⠁⠀⢠⠇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡸⠡⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠹⣦⡱⢬⡤⠇⠀⠀⠉⠛⠒⠉⠀⠀⣠⠎⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣏⡇⠀⠀⢀⡜⠉⠀⠀⠙⢆⠀⠀⠀⠹⣟⠢⣀⡀⠀⠀⠀⠀⢀⣀⡤⠞⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠣⡹⡄⠀⠘⣄⠀⠈⡁⠀⢸⡆⠀⠀⠀⠙⣎⢃⠊⠋⢍⣸⣉⡉⠁⢤⣴⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⡂⢝⢦⣀⠈⠛⠈⠀⠀⡜⠀⣘⠂⢚⠀⠈⢧⡡⠠⠏⠱⣲⠙⡄⠉⠛⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠑⡡⡪⡫⡓⡦⠤⡄⠊⠀⠈⠁⢂⠊⠁⠀⠀⠹⣄⢇⡘⢶⣞⣁⣀⣤⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠑⠚⠒⠊⠁⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠈⠳⣌⠉⠁⢠⢒⣦⠀⢡⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠏⣤⣸⠇⠀⠀⠈⠣⡀⢹⣌⣁⣠⠎⡴⠚⠉⠑⢦⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣄⣀⣀⣀⣠⡴⢶⡶⠾⣦⡈⠉⠀⠸⣅⢠⡄⠀⢈⡆
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⢀⠊⣀⡂⡀⠈⠢⢄⡀⠈⠉⠀⣀⣾⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢆⣃⡼⠀⠀⠈⠀⠉⠛⠲⠟⠋⠁⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="ascii_meditate" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⣀⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣴⣿⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣦⣈⣉⣁⣴⣷⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣀⣀⡀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⣀⣀⣀⠀⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣿⣿⣿⣿⠂⠀⠀
+⠀⠀⠀⠀⠈⠙⠛⠿⣿⣿⡿⠁⢹⣿⣿⣿⣿⣿⡏⠙⢿⣿⣿⠿⠛⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⢸⣿⣿⣿⣿⣿⡇⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣠⣿⣿⣿⣿⣿⣿⣷⣄⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⠛⠿⢿⣿⣿⣿⠿⠟⢻⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣷⣶⣤⣄⣁⠀⠐⠶⢿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣌⡉⠛⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣶⡦⠄⠀⠉⠉⠉⠙⠛⠻⠿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_star1" translatable="false">"\n
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⢞⣟⣯⠶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢖⡛⠥⠒⠋⠉⠀⠈⢻⡫⣧⠀⠀⠀⠀⠀⠀⠀⢄⠀⠀⠀⢠⢄⠀⠀⠀⠇⠀⢀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣥⠋⠀⢠⢾⠿⠿⢿⢳⡀⢳⡽⣇⠀⠀⠀⠀⠀⢀⠈⠢⡄⠀⠼⠏⢧⡀⡼⢀⡔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡧⠇⠀⣏⡧⡴⢳⡄⣾⡇⠀⢣⡺⡆⠀⠀⠀⠀⠀⠈⠲⢌⠃⡟⠀⠪⠳⠥⡥⣤⣤⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣼⡀⠈⠙⠓⣋⡰⢙⡇⠀⠀⡧⢻⡄⠀⠀⢠⡶⣦⠶⠒⠘⣡⣦⣴⠢⡌⠁⡡⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢯⣜⣶⣯⠵⠖⠒⠋⠀⣠⠔⣩⡞⠃⠀⠀⠀⠉⠓⠦⣄⠐⢧⡘⠬⠟⣹⠆⡇⢀⠀⠐⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢛⣸⠼⠃⠀⠀⠀⠀⠤⠤⠤⢘⡘⡇⠀⠻⣤⠿⠃⠀⠘⢇⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠒⠁⡰⢀⣀⡤⠚⡖⠦⣤⣠⢊⡧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡯⠟⠉⠀⢡⠘⡀⠀⠉⠉⠛⠝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠳⡠⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇⠀⠄⠊⡱⢄⠀⠀⠀⢠⠀⢠⠁⠀⠀⠀⠀⠀⢀⡀⢤⠀⡄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠣⠀⠀⠀⠀⠊⠱⣄⠀⡼⠀⡈⠀⢀⣀⣴⠲⢉⠉⠀⠐⠀⡈⡇⠀⠀⠀⠀⢀⡠⢶⣚⠭⠚⠋⣁⡠⡶⢤⣄⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⢰⣶⣄⠀⠀⣟⢷⡇⣠⣦⠚⠍⠂⠀⣤⣴⣶⢿⡄⠀⣈⠅⠀⠀⠀⠀⢹⡅⡏⠀⠀⡴⡫⠑⣩⣬⣑⡚⠼⡛⢶
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣄⠀⣿⣿⣽⣷⣄⡟⠙⠁⠛⠁⠀⣠⣴⣿⢿⠻⣧⡿⠀⠨⡝⠀⠀⠀⠀⠀⢸⠆⡇⠀⢼⢏⠀⢞⡕⢒⠺⡏⡧⠘⢸
+⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⡄⠀⠀⢻⡯⠖⣏⠻⠷⣄⣀⣠⣴⠿⣟⠩⢦⠪⣞⡿⠁⠀⢰⠁⠀⠀⠀⠀⠀⢸⡇⡇⠀⠘⡊⡌⠶⣍⠽⠁⡇⡇⠈⣸
+⠀⠀⠀⠀⠄⡀⠈⠀⠠⣀⠁⣷⣆⡀⢸⣿⣿⢷⣄⠜⠆⣉⠁⣴⣷⣿⠎⡄⣂⣿⠃⠀⠈⡞⠀⠀⠀⠀⠀⠀⠨⡇⢁⠀⠀⠱⡝⠠⠤⣤⣰⣼⠁⠧⡇
+⠀⠀⠀⠀⠀⠀⠈⠐⠠⣀⡝⠧⣤⠁⢺⣿⣹⡾⠋⠷⣼⢤⠟⠒⢛⡾⡡⣵⣿⢃⣀⣤⣼⠤⠐⠀⠂⠀⠀⠀⠀⠸⣬⣓⠤⡄⣨⣛⣛⣉⢁⣀⠜⣸⠁
+⠀⠀⠀⠀⢀⣠⢴⡲⠉⠀⠉⠳⢈⣠⣿⠓⠈⣇⠀⠀⠀⠀⠀⠀⣰⡇⡼⣽⠃⣋⣉⣭⡇⠠⠠⠄⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠲⠷⠾⠭⠶⠚⠁⠀
+⠀⢀⣤⡶⠓⠉⠀⣀⣤⣶⣶⢿⡟⡯⣀⣣⣶⠏⠀⠀⠀⠀⠀⠀⢾⣅⠶⣿⣦⣭⣭⠼⠷⡄⠤⠤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡜⡛⡂⡀⠀⠀⠘⢿⣿⡷⣟⣯⣋⢖⡿⠽⠏⠶⡆⠀⠀⣠⣤⣀⣀⣚⣳⣜⢋⡿⣦⣀⠀⠊⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠉⠛⠶⠴⣠⣀⠀⠀⠀⠉⠉⢛⠻⠿⢶⣛⡎⡩⢿⣐⣾⠓⣡⢀⣬⡩⣩⣙⠄⢊⡽⣻⢶⡀⠁⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠂⠊⢧⣦⡞⢋⣤⠄⠀⢿⣮⠵⡘⢿⡟⣵⣺⣿⠟⠓⣿⠾⣟⣾⣾⣽⣳⣟⣦⠈⡚⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⢠⠛⡇⢰⡄⠈⣷⣯⢱⠘⣮⣯⡟⠁⢸⣧⢹⣶⠀⠀⠉⠛⢻⣯⣽⣿⠈⠊⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⠀⢸⡟⠁⠀⠹⣿⣹⣲⣿⡿⠁⠹⣦⠿⡍⠙⠗⠒⠦⣤⢀⡀⢉⠉⠀⠀⡓⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⢡⠂⠀⠀⣿⣷⣿⡯⠀⠠⣠⡟⡄⠙⡀⠈⠂⠀⠀⠈⠉⠒⠢⠬⠴⠤⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⠁⠀⠀⠀⢳⡀⠀⠘⢿⡟⠁⠀⣸⠏⠀⠀⡀⠑⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣏⠀⠀⠀⠀⢀⣰⠏⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⢢⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣆⡆⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="ascii_star2" translatable="false">"\n
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⠤⢤⣀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠐⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠴⠒⢋⣉⣀⣠⣄⣀⣈⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠄⠀⠀⠀⠀⠀⠀⠀⠀⣸⡆⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⣠⣴⣾⣯⠴⠚⠉⠉⠀⠀⠀⠀⣤⠏⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⣄⠀⠀⠀⠀⠀⠀⡿⡇⠁⠀⠀⠀⠀⠀⠀⠀⡀⠂⠀⠀⠀⠀⣠⣴⡿⠿⢛⠁⠁⣸⠀⠀⠀⠀⠀⣤⣾⠵⠚⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⢄⠀⠀⣠⠀⡇⢧⠀⠀⠀⠀⠀⠀⠖⠁⠀⠀⠀⣠⣴⠿⠋⠁⠀⠀⠀⠀⠘⣿⠀⣀⡠⠞⠛⠁⠂⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⣻⡦⣞⡿⣷⠸⣄⣠⢶⡟⠁⠀⠀⠀⣀⣴⠟⠋⠁⠀⠀⠀⠀⠐⠠⡤⣾⣙⣶⡶⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣂⡷⠰⣔⣾⣖⣾⡷⢿⣀⣀⣀⣤⢾⣋⠁⠀⠀⠀⣀⢀⣀⣀⣀⣀⠀⢀⢿⠑⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠠⡦⠴⠴⠤⠦⠤⠤⠤⠤⠤⠴⠶⢾⣽⣙⠒⢺⣿⣿⣿⣿⢾⠶⣧⡼⢏⠑⠚⠋⠉⠉⡉⡉⠉⠉⠹⠈⠁⠉⠀⠨⢾⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠂⠐⠀⠀⠀⠈⣇⡿⢯⢻⣟⣇⣷⣞⡛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣆⠀⠀⠀⠀⢠⡷⡛⣛⣼⣿⠟⢙⣧⠇⡄⠀⠀⠀⠀⠀⠀⠰⡆⠀⠀⠀⠀⢠⣾⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⢶⠏⠉⠀⠀⠀⠀⠀⠿⢠⣴⡟⡗⡾⡒⡿⠯⢏⡅⠀⠀⠀⠀⣀⢀⣠⣧⣀⣀⠀⠀⠀⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⢴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⣠⣷⢿⣫⡽⡿⠿⠗⢷⠀⠀⠑⣗⡀⠀⠀⠀⠈⠙⣿⢭⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⡴⢏⡵⠛⠀⠀⠀⠀⠀⠀⠀⣀⣴⠞⠛⠀⠰⡟⣿⠀⡌⠀⠀⠀⠀⠀⠀⠁⠢⡀⠀⠀⠂⢿⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣀⣼⠛⣲⡏⠁⠀⠀⠀⠀⠀⢀⣠⡾⠋⠉⠀⠀⠀⠀⣧⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡴⠟⠀⢰⡯⠄⠀⠀⠀⠀⣠⢴⠟⠉⠀⠀⠀⠀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡾⠁⠁⠀⠘⠧⠤⢤⣤⠶⠏⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠘⣇⠂⢀⣀⣀⠤⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"</string>
+    
+    <string name="ascii_kitty" translatable="false">"\n
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠋⠉⠳⡄⠀⠀⠀⠀⢠⠴⠒⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⡶⢶⡀⠀⠀⠀⠀⠀⠀⠀⢠⠏⠀⠀⠀⠀⢹⡄⠀⠀⣰⠋⠀⠀⠀⠸⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣀⡼⠀⠀⠛⠒⠒⡦⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⣷⠀⢰⡏⠀⠀⠀⠀⠀⣹⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣏⠁⠀⠀⠀⠀⠀⣼⠁⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⣹⠀⢸⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠉⡶⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⢽⠀⢸⠀⠀⠀⠀⠀⠀⣽⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢷⡤⠞⠉⠉⠉⠁⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⢸⡆⢸⠀⠀⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣆⠀⠀⠀⠀⠀⠈⠛⠋⠀⠀⢀⠄⡀⣸⠃⡀⠠⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠀⠀⠠⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠲⢀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠁⠀⠜⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠠⠳⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⣠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠀⠀⠀⠀⠀⣰⠀⠐⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⠁⠈⣧⠀⠰⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⡇⠀⠘⠁⠀⠘⠲⢤⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⣠⠤⠤⠄⠙⡇⠀⠀⢨⠷⢶⡋⠀⠀⠀⠀⠀⢀⣴⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⢷⣀⡴⠂⢠⣇⡀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣴⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠤⣤⣤⡴⠋⠀⠹⣽⣛⣛⣿⠋⠉⠉⢁⡴⢋⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⡀⠀⠀⠉⠁⠀⠀⠀⣠⡞⠓⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡍⠓⠦⢤⠤⠴⠶⣺⠟⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⡰⢲⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠒⠛⠲⠶⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠘⣏⠉⠁⠈⠲⣤
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⣀⡀⠀⡞⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠈⠙⠁⠀
+        "</string>
+    <string name="ascii_star3" translatable="false">"\n
+
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢤⣶⣾⣿⣤⣴⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⣱⣿⣟⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣧⡀⠀⠀⠀⠀⠀⠀⠟⠃⠀⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣆⠀⠀⠀⠀⠀⠀⣀⣀⡄⠀⠀⠐⢶⣦⣤⣤⣤⣴⡿⢻⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⢻⣷⣄⣤⣶⣾⣿⣿⠋⠀⠀⠀⠀⠀⠙⢿⣏⡉⠉⠁⠘⠛⠿⣿⣿⣷⣶⠶⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣀⣤⣿⣷⠀⠙⠛⠋⢈⣽⡿⠋⠀⠀⠀⠀⠀⠀⠀⢨⣿⠟⠀⠀⠀⣾⡿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣀⣴⣶⣿⣿⣟⣛⠉⠁⠀⠀⠀⠠⣻⣿⡁⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣾⠿⣿⣆⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⠉⠛⠛⠻⢿⣿⡀⠀⣠⣄⣈⢻⣷⣦⠀⠀⠀⠀⠀⡼⠟⠋⡉⠀⠀⠈⠻⣿⡧⠀⣴⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡇⣼⣿⠛⠿⠿⣟⣿⣷⣄⠀⠀⠀⠀⠀⢠⣿⡄⠀⠀⠀⠈⢳⣾⣿⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠐⣿⣿⡿⠃⠀⠀⠀⠀⠈⠉⠛⠓⠀⠀⠙⠻⣿⣿⣿⠿⠛⠁⣠⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠁⠀⠀⠀⠀⠀⢦⣤⣀⡀⠀⠀⠀⣰⠿⠓⢿⡇⢀⣼⣿⡿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠀⠀⠀⠀⠀⠀⠀⠈⠿⣿⣷⣶⣦⣤⣭⣀⣀⠈⢃⣼⣿⡿⠃⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⡿⠿⣿⣿⣿⣿⣿⠏⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣦⠀⠀⠈⠻⣿⣿⣆⠀⠀⠉⠙⠃⠀⠀⠀⣿⣿⣿⣶⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣤⣤⣾⣿⣤⣤⡤⠀⠘⢿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠻⢿⣿⣿⣿⣿⣶⣦⣤⡄
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⣿⣿⣯⠁⠀⠀⠀⣰⣿⣿⠏⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣶⣿⣿⣿⠿⠟⠋⠉⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠁⠈⠙⠇⠀⢀⣼⣿⡿⠃⠀⠀⣀⣀⠀⠀⠀⣿⣿⡿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣟⣠⣤⣶⣿⣿⣿⣧⡀⠀⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⠿⠟⠛⠉⠉⠻⣿⣿⣆⢽⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_star4" translatable="false">"\n
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠉⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠀⡄⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠉⠀⠀⠀⠀⡰⢳⡀⠈⠉⠀⠀⠒⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⠀⠈⠫⡅⠀⠀⢈⠽⠋⠀⡠⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⢀⣇⠤⠤⣺⠀⠰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠈⠀⣠⢄⠈⠁⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠊⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠤⠒⠉⠀⠀⠁⠢⠀⠜⠀⠀⠀⡖⠐⠂⠠⠄⣀⠀⠀⠀⠀⠀⠀⡠⠊⠀⡠⠊⡇⠀⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡀⠀⢤⢀⣀⠀⠁⠐⠂⠠⠎⠀⡠⠊⠀⠀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡄⠈⢆⠀⠉⠑⠒⠠⠤⡠⠞⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠄⠈⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠘⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢄⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠒⠤⣀⠀⠁⠂⠄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠔⠂⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡨⠂⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⢤⡀⠀⠉⠂⡄
+⠀⠀⠀⠀⠀⠀⢀⠀⢀⠈⠢⠀⠀⠀⠀⠀⠀⠀⡀⠤⠀⢄⠀⠀⠀⠀⠀⡔⠁⢠⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠠⠔⠒⠉⠁⣀⠤⠄⠒⠁
+⠀⠀⠀⠀⠀⠀⢸⠀⢸⠳⢄⠀⠑⠄⠤⠐⠈⠁⢀⠀⢀⠎⠀⠀⠀⢀⠎⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠉⢀⡀⠤⠐⠂⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⠀⢸⠀⠀⠑⢄⣀⡠⠤⠒⢩⠃⠀⡌⠀⠀⠀⡠⠃⢀⣞⣀⠤⠤⠔⠒⠒⠉⠲⡀⠀⠀⠀⢠⠇⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡀⠜⠀⢀⠀⠀⠀⠀⠀⠀⠀⢀⠆⠀⡜⠀⠀⠀⠔⠀⠀⠀⢀⣀⡀⠤⠄⠐⠒⠢⡀⠈⢆⠀⠀⢸⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⠠⠒⠉⢀⡠⠔⠉⠀⠀⠀⠀⠀⠀⠀⣎⠀⠸⡁⠀⠀⠀⠈⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⢄⠀⠱⡄⠘⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡎⠀⠀⠐⠪⠥⣀⣐⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⡀⠈⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡀⠈⠇⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠀⠒⠀⠤⢀⣀⠀⠉⢱⠀⠀⠀⢀⠤⠤⠀⣀⣘⣄⠀⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢂⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⡆⠀⡠⠃⢀⡀⢀⣀⡀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢃⠀⢡⡐⠁⢠⠎⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠈⠀⡠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⡔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+
+    <string name="ascii_star5" translatable="false">"\n
+
+⣿⣿⣯⠀⠀⠀⠀⠀⠀⣰⢋⣺⢫⣹⢮⡷⠀⣠⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠊⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠱⢤⣉⣁⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿
+⠻⠿⠿⠀⠀⠀⠀⠀⠀⠸⢿⣍⠙⠓⠋⠀⣠⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣟⣿⣿⢿⣿⣻⣿⡿⣿⡇⠀⠀⠀⠀⠀⢀⣾⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣿⠿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠺⠦⠶⠞⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡤⣤⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣻⣿⣿⡿⣿⣿⣻⠟⠀⠀⠀⠀⠀⠀⠈⠙⠏⠋⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣠⢤⣤⢴⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢴⡿⠋⢀⢀⣀⠙⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣟⣷⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣻⡆⠐⠉⠀⢨⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠯⠁⢠⡾⡿⣯⢷⠀⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠿⠁⠀⠀⠀⠈⢻⣦⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⣿⣷⣴⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢯⡙⠒⡋⣰⡟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⢾⣆⠀⣦⡗⠛⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠸⠿⣿⡿⣯⣇⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠉⠉⠀⠀⠀⠀⠀⢀⣀⣀⢄⡶⠖⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠷⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⠻⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠻⠋⠉⠉⠀⠀⠀⠀⣀⡤⢴⠋⠉⢙⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⡵⡈⠉⠈⠀⢿⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠉⠳⠒⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠃⠀⠀⠀⡀⣘⣇⠀⠀⠀⠀⠀⠀⠀⠀⡯⣅⡀⠀⠰⡯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣟⣾⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠑⠶⢤⣀⣠⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠤⠤⣦⢀⢠⡟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡤⠞⠓⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⣴⣾⣷⠀⠀⠀⠀⠀⠀⠀⠉⠹⠞⠉⠀⠀⠀⠀⠀⠀⠀⢸⣾⣧⠀⠀⠀
+⠀⠀⠙⠋⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣦⣄⠀⠀⠈⠙⠃⠀⠀⠀
+⠁⠀⠀⠀⠀⣴⣷⡦⠀⠀⠐⢿⣿⣻⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠉⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣟⣿⣿⠿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠹⠏⠛⠀⠀⠀⠈⠉⠋⠀⠀⠀⠀⠀⠀⠀⠀⣴⠚⣩⣙⢲⡀⠀⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠙⢿⣿⡇⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⡇⠸⣕⣜⡼⠃⠠⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠳⣜⡺⣤⢤⣤⣀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⢦⣀⡁⣀⣠⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⡞⣭⢓⢧⡛⡴⣋⢖⡟⠀⠀⠀⠀⣄⡾⠋⠉⠻⣦⠶⠦⣔⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠢⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣠⣤⣀⣴⣾⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣙⢦⢫⠖⣭⠳⡭⣎⠀⠀⠀⠀⠀⢿⡌⠀⠀⠀⠀⠀⠀⠈⣏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀⠘⠛⠋⠉⣳⠂⠀⠀⠀⠀⠀⠀⠀⢠
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⢸⣏⠮⣝⣲⣙⠶⣹⠆⠀⠀⠀⠀⠈⠳⣦⡀⠀⠀⠀⢀⡶⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠖⠋⠁⠀⠀⠀⠀⠀⢰⠟⠀⠀⠀⠀⠀⠀⠠⣼⣿
+⣿⣿⣿⣯⣿⣿⣷⣿⢿⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣆⡄⠀⠀⠙⠏⠁⠀⠀⠀⠀⠀⠀⠀⠫⠾⠊⠁⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠉⢷⡤⠶⠚⠉⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠳⣄⣀⠀⠀⠀⠀⠀⠈⣆⠀⠀⠀⠀⠀⠀⠸⣿⣿
+⣿⣿⣿⣽⣿⣷⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠟⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣿⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⣷⠂⠀⣀⣦⣀⣀⡽⠀⠀⠀⠀⠀⠀⠀⠹⣿
+⠉⠛⠿⢿⣟⣿⡽⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠏⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣞⠻⠳⠴⡖⢲⡆⠀⠀⠀⠀⠀⠀⠀⢰⣦⡴⣆⠀⠀⠀⢰⣿⣻⡽⣿⢶⡶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠖⠒⠲⢤⣄⠀⠀⠀⠀⠀⠀⠀⠴⣿⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠁⠀⠀⠀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠚⠷⣹⠛⠀⠀⠀⠸⣟⣷⣻⡽⣯⣟⣷⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠏⢀⣤⣶⡤⡀⢹⡀⠀⠀⠀⠀⠀⠀⠀⠉⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢷⣀⡀⠀⠀⡀⠘⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⣾⣳⣟⡷⣯⡷⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⢸⡇⠯⡧⠇⣸⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢰⣞⢻⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⣀⡴⠏⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠉⠉⠀⠀⠀⠀⠀⠀⠀⢰⣿⣶⣤⣴⣶⡄⠀⠀⠀⠀⠿⣄⠀⠈⠓⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠸⠿⠆⠀⠀⠀⠀⠀⢀⣀⡀⣠⣴⣶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠘⠛⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠈⠻⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣻⣿⣟⣿⣿⢷⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠚⠓⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣿⣿⡿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣳⣯⣟⣾⣳⢯⣯⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀
+⣷⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⢀⣶⡖⣦⢘⡆⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣷⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⡿⠋⠉⠁⠀⠀⠀⠀⠀⠀⠠⣾⣤⠀⠀⠀⠀⠀⡀⠀⢀⣠⣶⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠿⣮⣟⡯⠃⠀⠀⠀⠀⠀⠀⣶⣆⠀⠀⠐⣾
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠸⢎⣓⣋⡴⠇⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⣞⢻⠺⣍⡞⣹⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠩⣧⣄⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢟⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣶⡄⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣷⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⢮⣓⢏⠶⣩⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠖⠲⠶⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⠋⠀⠀⠀⠀⠀⠀⠀⠻⠿⠿⣿⣿⣿⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠒⠦⣆⣀⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠃⠀⠀⠀⠉⠋⠀⠀⠈⢳⠀⠀⠀⠀⠀⠀⠀⣶⣿⣷⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠃⠀⠘⠻⠚⠲⢶⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⣼⡓⠀⠀⠀⠀⠀⠀⠘⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⠀⠀⠀⠀⠀⠀⠈⣹⡆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡄⠀⠀⠀⠀⣠⡼⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣦⣅⠀⠀⠀⣀⡴⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣺⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠶⠟⠳⠾⠉⠛⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⣠⠴⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣞⢗⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠖⠚⠉⠁⠀⠀⠀⠀⠀⠀
+⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⣅⠀⠀⠀⠀⣀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣼⢚⡼⣜⢳⡒⡶⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⡿⠿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣤⣠⠴⠛⠀⠀⠀⠀⠀⠀⠀⣤⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣯⠳⣬⢣⡽⣌⢧⡹⣜⠏⠀⠀⠀⠀⠠⣾⣦⠀⠀⠀⠀⢠⣾⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸
+⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠁⠀⠀⠀⠀⠀⠀⠀⠘⢿⡿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠻⡴⢳⡜⣜⡲⣕⣳⡀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⢿
+⠘⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣟⢧⣚⡬⠷⣌⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡴⠶⢦⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⢻⠷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀
+⠂⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣤⣾⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡈⠙⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢶⠿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⣶⡻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣴⣶⡀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⡿⣟⣿⣿⡦⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⣯⣽⣷⠢⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣟⠛⠋⠈⠛⢺⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⠆⠁⢭⣿⠄⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⣠⠤⢤⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⢿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⡄⠳⠯⠞⢀⡾⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⢃⢀⠀⢰⠚⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢳⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢲⠛⠙⠓⠚⠁⠀⠈⡄
+⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠳⠦⠶⠻⠁⠀⠀⠀⠀⠀⡰⣄⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠚⠙⠶⠾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⣦⠀⠀⠀⠀⠀⠀⠑
+⣀⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡼⠇⠈⠉⣹⠇⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⠤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠀⠀⠀⠀⠀⠀⠀
+⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢗⡆⢀⣀⣹⡄⠀⠀⠀⠀⠀⠀⢠⡾⢉⣼⡟⣦⢳⡌⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⢀⠀⡀⢀⣤⣶⣤⡀⠀⠀⠀⠀⠀⠉⠿⠉⠁⠀⠀⠀⠀⠀⠀⢀⠀⡀⠀⠀⠀⠀⠀⠧⣄⣀⣤⡀⠀⠀⡘⠉
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣧⠘⠳⣟⡭⠞⠀⢀⣾⠇⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠦⣤⠇⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠘⢻⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠯⣆⣅⣀⣄⣴⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠶⣻⢯⡶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠿⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠛⠙⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠅⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠚⠛⠓⠲⢤⡀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡹⣌⠻⣝⢳⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠋⠀⣠⠤⠦⣄⠀⢿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿
+⣿⣿⣿⡷⠀⠀⠀⠀⠀⢀⣠⠶⣛⡓⢶⡄⠀⠠⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢷⣸⡹⢬⣣⠟⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣶⣄⣠⣴⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⢞⡩⣸⠆⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        "</string>
+<string name="ascii_hello" translatable="false">"\n
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⢠⠿⠷⣭⣶⣯⣥⣶⣾⣿⠀⠀⠀⠀⢠⠖⣒⡒⢢⣄⡴⠒⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⠷⣾⣿⡀⢠⡿⠑⠀⠀⢸⣿⡿⡄⠀⠀⠀⢸⢼⣍⠙⠛⠙⢷⡀⠀⣷⠒⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣼⡟⣭⣻⢿⣧⡀⠀⣰⡿⠛⣫⣽⠀⠀⢠⠃⠈⢾⣄⠀⠀⢸⣷⡶⠓⢷⣄⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡏⠀⠈⠀⠙⣿⣴⡿⠁⠀⠁⢸⠂⠀⢸⠀⠀⠀⢫⣆⣰⡟⠁⠀⠀⢈⣿⠃⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⠀⠀⠀⠀⠘⣿⡇⠀⠀⢀⡟⠀⠀⠘⡆⠀⠀⠀⣿⡏⠀⠀⠀⠀⣸⡏⠀⠀⣾⣿⣿⣿⣶⣾⡝⡆⣀⡀
+⠀⠀⠀⠀⠀⢀⡠⣤⠤⡀⠈⢧⡀⠀⠀⠀⣻⡇⠀⣠⠞⠀⠀⠀⠀⠙⢄⡀⠀⣿⠁⠀⠀⠀⣰⠋⠀⠀⡰⣿⢿⣏⠀⠹⣷⣿⣿⣿⣿
+⠀⠀⡞⠉⢱⡾⠾⠛⣷⠷⡀⠀⠙⠦⠤⢤⣿⣿⠟⠀⠀⠀⠀⠀⢀⣴⣀⠭⢶⣿⣤⣄⠤⠞⠁⠀⠀⠀⣿⣿⠎⢿⣦⣾⠟⠏⠾⣿⡇
+⡖⢒⣇⡀⣿⠀⠀⢠⡟⠀⠘⡆⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⣠⣿⣿⡇⠀⢰⡏⠀⠈⠑⠢⣄⡀⠀⠀⢻⡹⠀⢸⡿⠁⠀⠂⣰⡟⠀
+⠱⣼⠋⠉⠛⠷⣤⣼⠁⠀⠀⢱⠀⠀⠀⠀⠀⢹⡇⠀⠀⡠⢺⣿⣿⣿⡇⠀⣼⠇⠀⠀⠀⠀⠀⣭⠲⢄⡀⠙⢦⣼⣧⠄⢀⡴⠋⠀⠀
+⠀⠻⣆⠀⠀⠀⠈⢻⡄⠀⢀⠆⠀⠀⠀⣰⡄⠘⣷⢀⡜⠁⣾⣿⣿⣿⡇⢀⡿⠀⠀⠀⣴⣧⢸⣿⣧⠀⠉⠲⢄⣿⠋⠉⠉⠀⠀⠀⠀
+⠀⠀⠙⢦⡀⠀⠀⠀⣧⣴⠋⠀⠀⠀⢠⣿⣿⡄⢿⡎⠀⢸⣿⣿⣿⣿⡇⢸⡇⠀⢀⣾⣿⣿⣾⣿⣿⡇⠀⠀⢸⠏⠑⠢⣀⣤⡶⠀⠀
+⠀⠀⠀⠀⠈⠁⠒⠈⠙⣯⠀⠀⠀⠀⣼⣿⣿⣿⣼⡇⠀⣿⣿⣿⣿⣿⠃⣾⠃⢀⣿⣿⣿⡇⣿⣿⣿⣧⠀⢀⡿⠀⢀⣴⣿⣿⡇⠀⠀
+⠀⠀⠀⢀⣀⠀⠀⠀⠀⠘⣷⠀⠀⠀⣿⣿⣿⣿⣟⡇⢠⣿⣿⣿⣿⡟⢀⣿⢀⣾⣿⣿⣿⠇⢿⣿⣿⣿⠀⣸⠇⢠⣾⣿⣿⠏⢣⠀⠀
+⠀⠀⠀⠈⢿⣿⣦⣄⠀⠀⠘⣧⠀⢀⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⡿⠁⢸⡏⣸⣿⣿⣿⡟⠀⠸⣿⣿⣿⢀⡿⢠⣿⣿⣿⠏⠀⠀⡇⠀
+⠀⠀⠀⠀⠈⢿⣿⣿⣷⣄⠀⣸⣷⠉⣿⣿⣿⣿⣿⢹⣸⣿⣿⡿⠁⠀⢸⣇⣿⣿⣿⡟⠀⠀⠀⠹⣿⣿⣼⢧⣿⣿⠟⠁⢀⢔⡫⠆⠀
+⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣄⠹⡆⢹⣿⣿⣿⡟⢸⣿⡿⠋⡀⠀⠀⣿⢹⣿⣿⠏⢀⣴⣿⠀⠀⠙⢿⣿⠛⠋⢁⡠⣺⠔⠉⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⠟⢿⣿⣿⣿⣧⣹⡜⣿⣿⣿⠇⢸⣧⠀⢰⣿⡀⠀⣿⠸⠟⠁⠀⣾⣿⡟⠀⠀⠀⢸⣇⡠⢖⡭⠊⠀⠀⠀⠀⡄⠀
+⠀⠀⠀⠀⠀⠀⢾⠭⢒⡿⠿⢿⣿⣿⣿⣿⣿⠏⠀⠸⣿⠀⣿⣿⣷⢰⣿⠀⠀⠀⣼⣿⣿⠇⠀⢀⡤⣞⠭⠚⢹⠀⠀⠀⠀⠀⠀⠇⠀
+⠀⠀⠀⠀⠀⠀⢸⡀⠀⠘⡏⠒⠪⠭⣛⡿⠯⣀⡀⠀⣿⠀⣿⣿⣿⣸⡿⠀⠀⢰⣿⣿⣿⠴⣪⠕⠊⠁⠀⠀⠚⠀⠀⠀⠀⠀⢀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢳⠀⠀⠀⠀⠉⠑⢲⡪⠭⣛⡓⠿⢿⣿⣿⣇⠀⣀⠼⢛⡩⠒⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠉⢁⡐⠖⠈⠩⠔⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠘⣆⠀⠀⢀⡀⠠⠼⠓⠂⠩⠑⠒⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⡙⠂⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⡀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠘⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠆⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠁⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡏⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡄⠀⢱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢆⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢾⠃⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢦⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠏⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡶⠋⠉⠓⢦⣄⢣⡈⢧⠀⠀⠀⠀⠀⠀⠀⠀⢰⡛⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣦⣄⡀⠀⠙⢷⣷⠀⢧⠀⠀⠀⠀⠀⠀⢀⣣⡵⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠷⣦⣤⣹⣟⣈⣇⣀⡠⠤⠖⠛⠉⣁⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠋⣉⣽⠿⢻⣿⣧⣤⣤⡶⠶⠛⠋⠁⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠷⠶⠛⠉⠁⢀⣿⡞⣧⠐⠀⠀⠀⢸⢸⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⡟⡇⢻⡆⠀⠀⠀⠀⠏⡄⠀⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⠃⡇⠀⣿⠀⣀⠀⠀⠸⠃⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠏⠀⠃⠀⢸⡇⢸⠀⠀⠀⢀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠛⠦⣀⣀⠀⠀⡇⠈⡇⠀⠀⠈⡀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⠋⠀⠀⠀⠈⢸⠀⠀⢹⠀⢣⢀⡀⠤⠒⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    "</string>
+    <string name="learn_more">Mehr erfahren</string>
+    <string name="help">Hife</string>
+    <string name="more_options">Mehr Optionen</string>
+    <string name="import_keywords">Stichwörter importieren</string>
+    <string name="export_keywords">Stichwörter exportieren</string>
+    <string name="download_keyword_list">Eine Stichwortliste herunterladen</string>
+    <string name="delete_group">Gruppe löschen</string>
+    <string name="advanced">Fortgeschritten</string>
+
+    <!-- UIHider -->
+    <string name="delete">Löschen</string>
+    <string name="ui_hider_title">UI verstecken (Skripte)</string>
+    <string name="ui_hider_desc">Schreibe kleine Skripte, um die UI einer App zu analysieren und sie zu überdecken, zurück oder home drücken zu lassen; Für Nutzer, die bereit sind, einfache Sktipte zu schreiben. \nWir empfehlen , dem Dicord beizutreten um neue Skripte anzufordern oder zu entdecken.</string>
+    <string name="enable_ui_hider">UI verstecken aktivieren</string>
+    <string name="ui_hider_enable_subtitle">Skripte über unterstützte Apps laufen lassen</string>
+    <string name="ui_hider_scripts">Skripte</string>
+    <string name="ui_hider_add_script">Skript hinzufügen</string>
+    <string name="ui_hider_editor_title">Skript bearbeiten</string>
+    <string name="ui_hider_package_hint">App-Paket (z.B. com.instagram.android)</string>
+    <string name="ui_hider_label_hint">Markierung (optional)</string>
+    <string name="ui_hider_script_label">SKRIPT</string>
+    <string name="ui_hider_source_hint">if app != \"com.instagram.android\" { return }\n…</string>
+    <string name="ui_hider_preset_note">Diese Voreinstellung kommt mit der App. Du kannst sie hier lesen und an oder ausschalten, aber nicht bearbeiten.</string>
+
+    <string name="node_picker_start">Knotenauswahl starten</string>
+    <string name="node_picker_channel_name">Knotenauswahl</string>
+    <string name="node_picker_notif_title">Knotenauswahl</string>
+    <string name="node_picker_notif_text">Klicken um Auswahl zu sarten</string>
+    <string name="node_picker_stop">Stopp</string>
+    <string name="node_picker_started_hint">Ich bin bereit. Öffne die App, die du sehen willst, dann klick auf meine Benachrichtigung und fang an auszuwählen.</string>
+    <string name="node_picker_need_accessibility">Bitte aktiviere zuerst meine Zugriffsrechte.</string>
+    <string name="node_picker_need_overlay">Bitte lass mich zuerst über andere Apps schreiben</string>
+    <string name="node_picker_hint">Klicke auf jegliches Element auf dem Bildschirm um es anzusehen</string>
+    <string name="node_picker_copied">In Zwischenablage kopiert</string>
+    <string name="node_picker_up">Hoch</string>
+    <string name="node_picker_deeper">Tiefer</string>
+    <string name="node_picker_move">Bewegen</string>
+    <string name="node_picker_info">Info</string>
+    <string name="node_picker_copy">Kopieren</string>
+    <string name="node_picker_hide">Verstecken</string>
+    <string name="node_picker_show">Panel anzeigen</string>
+    <string name="node_picker_close">Schließen</string>
+
+    <string name="terms_consent_title">Ein schneller Einwurf</string>
+    <string name="terms_consent_body">Bevor du anfängst, bitte ließ unsere Geschäftsbedingungen und Datenschutzrichtlinie.</string>
+    <string name="terms_consent_footer">Auf \"Ich stimme zu\" zu klicken bedeutet, beiden zuzustimmen.</string>
+    <string name="terms_consent_terms_link">Geschäftsbedingungen lesen</string>
+    <string name="terms_consent_privacy_link">Datenschutzrichtlinie lesen</string>
+    <string name="terms_consent_agree">Ich stimme zu</string>
+    <string name="terms_consent_exit">Nicht jetzt</string>
+    <string name="terms_url" translatable="false">https://curbox.app/terms.html</string>
+    <string name="privacy_url" translatable="false">https://curbox.app/privacy.html</string>
+
+    <!-- Curbox API -->
+    <string name="label_automation">AUTOMATISIERUNG</string>
+    <string name="api_screen_title">Curbox API</string>
+    <string name="api_card_subtitle">Lass andere Apps Curbox steuern</string>
+    <string name="api_screen_subtitle">Andere Apps können dich auffordern, Fokusmodus zu starten, Sperren zu aktivieren und deine Daten auszulesen. Du entscheidest, wer Zugriff bekommt.</string>
+    <string name="api_enable_title">Andere Apps zulassen</string>
+    <string name="api_enable_subtitle">Wenn das hier aus ist, kann keine App Curbox steuern, auch wenn du das vorher erlaubt hast.</string>
+    <string name="api_connected_title">Verbundene Apps</string>
+    <string name="api_no_apps">Keine Apps verbunden. Curbox wird nach deiner Zustimmung fragen wenn eine App Zugriff fordert, dann die zugelassenen Apps hier anzeigen.</string>
+    <string name="api_revoke">Löschen</string>
+    <string name="api_how_title">Wie es funktioniert</string>
+    <string name="api_how_body">Wenn eine andere App Zugriff anfordert, zeigt Curbox dir den Namen und fragt nach deiner Zustimmung. Eine zugelassene App kann Befehle ausführen bis du sie entfernst. Eine App zu entfernen beendet ihren Zugriff direkt.</string>
+    <string name="api_help_popup">Andere Apps können danach fragen, Curbox zu kontrollieren. Du kannst jede einzelne zulassen oder ablehnen und du kannst den Zugriff jederzeit sperren.</string>
+
+    <!-- Service protection (keep alive) -->
+    <string name="service_protection_title">Lass Curbox weiterlaufen</string>
+    <string name="service_protection_card_subtitle">Hilf, Curbox\' Sperren weiterlaufen zu lassen</string>
+    <string name="service_protection_subtitle">Manche Handys stoppen Curbox im Hintergrund um Akku zu sparen. Diese Optionen helfen dir, die Sperren laufenzulassen und neu zu starten, wenn sie stoppen. Keine Option kann garantieren, dass Curbox immer laufen wird.</string>
+    <string name="service_protection_master_title">Schutz</string>
+    <string name="service_protection_master_desc">Alle unten aufgeführten Schichten aktivieren</string>
+    <string name="service_protection_status_header">Was arbeitet gerade</string>
+    <string name="service_protection_row_services_title">Curbox\' Sperren</string>
+    <string name="service_protection_services_on">Sperren laufen</string>
+    <string name="service_protection_services_off">Sperren laufen nicht</string>
+    <string name="service_protection_row_battery_title">Akkunutzung</string>
+    <string name="service_protection_battery_ok">Akkueistellungen helfen Curbox, aktiv zu bleiben</string>
+    <string name="service_protection_battery_bad">Akkueinstellungen könnte Curbox stoppen, um Akku zu sparen.</string>
+    <string name="service_protection_row_autostart_title">Autostart</string>
+    <string name="service_protection_row_autostart_desc">Manche Handys benötigen separate Einstellungen um Curbox automatisch starten zu können. Bitte erlaube Autostart</string>
+    <string name="service_protection_row_shizuku_title">Autoreparatur</string>
+    <string name="service_protection_shizuku_on">Curbox kann seine Sperren automatisch neu starten</string>
+    <string name="service_protection_shizuku_off">Richte Shizuku ein, damit Curbox seine Sperren neustarten kann</string>
+    <string name="service_protection_fix">Reparieren</string>
+    <string name="service_protection_open">Öffnen</string>
+    <string name="service_protection_setup">Einrichten</string>
+    <string name="service_protection_shizuku_not_installed">Shizuku läuft nicht. Öffen die Webseite.</string>
+    <string name="service_protection_repair_now">Jetzt reparieren</string>
+    <string name="service_protection_repair_started">Versuche Curbox\' Sperren neuzustarten</string>
+    <string name="service_protection_no_screen">Diese Einstellungen sind auf diesem Handy nicht verfügbar.</string>
+    <string name="service_protection_autostart_manual">Bitte öffne deine Einstellungen und erlaube Curbox, automatisch zu starten</string>
+    <string name="service_protection_advanced_header">Fortgeschritten</string>
+    <string name="service_protection_device_owner">Mach Curbox zum Besitzer des Geräts</string>
+    <string name="service_protection_device_owner_warning">Das ist die stärkste Option. Es bleibt sogar nach einem zwanghaften beenden an und blockiert eine Desinstallation komplett. Es funktioniert nur auf einem Handy ohne Accounts und ist kompliziert, später wieder zu entfernen. Tu dies nur wenn du dir sicher bist.</string>
+    <string name="service_protection_cancel">Abbrechen</string>
+    <string name="service_protection_continue">Fortfahren</string>
+    <string name="service_protection_help_popup">Handy beenden oft Hintergrundapps um Akku zu sparen. Dieser Bildschirm hiflt Curbox, mit Akkuzugriff, Autostart, normalen Checks und optionaler Wiederherstellung durch Shizuku weiterzulaufen. Diese Optionen machen es schwerer, Curbox zu stoppen, aber es kann nicht garantiert werden, dass es immer laufen wird.</string>
+    <string name="service_protection_channel_name">Service-Schutz</string>
+    <string name="service_protection_down_title">Curbox\' Sperren gestoppt</string>
+    <string name="service_protection_down_text">Tippe um sie wieder einzuschalten sodass deine Sperren weiterlaufen</string>
+
+    <!-- Tamper protection -->
+    <string name="anti_uninstall_title">Manipulationsschutz</string>
+    <string name="anti_uninstall_card_subtitle">Mach es schwerer, Curbox zu deinstallieren</string>
+    <string name="anti_uninstall_subtitle">Wenn das hier an ist, kann Curbox nicht deinstalliert werden bis du es manuell ausschaltest. Stell es dir vor wie einen Sicherheitsgurt für deine Willenskraft.</string>
+    <string name="anti_uninstall_limits_warning">Dies macht es nicht unmöglich, Curbox zu installieren. Es macht die Deinstallation nur schwerer.</string>
+    <string name="anti_uninstall_disable_warning">Curbox hälst sich selbst installiert um deinen Fokus zu schützen. Deaktiviere zuerst Manipulationsschutz in der App.</string>
+    <string name="anti_uninstall_setup_again">Etwas ist schiefgelaufen. Bitte wähle deine Authentifizierungsoption nochmal.</string>
+    <string name="anti_uninstall_admin_explanation">Curbox benutzt dies um sich selbst installiert zu halten während der Schutz an ist.</string>
+    <string name="anti_uninstall_admin_needed">Diese Berechtigung ist benötigt um Curbox installiert zu halten.</string>
+    <string name="anti_uninstall_help_popup">Wenn dies an ist, kann Curbox nicht deinstalliert werden und seine Services können nicht deaktiviert werden bis du es deaktivierst mit der von dir gewählten Methode: ein Passwort, ein paar Tage warten oder ein eintägiger Countdown, den du jederzeit stoppen kannst.</string>
+
+    <string name="anti_uninstall_status_off_title">Schutz ist aus</string>
+    <string name="anti_uninstall_status_off_body">Curbox kann grade deinstalliert werden</string>
+    <string name="anti_uninstall_status_on_title">Schutz ist an</string>
+    <string name="anti_uninstall_status_unlocking_title">Wird bald ausgeschaltet</string>
+    <string name="anti_uninstall_status_unlocking_body">Schutz wird in %1$s deaktiviert.</string>
+
+    <string name="anti_uninstall_summary_password">Dein Passwort wird benötigt um den Schutz zu deaktivieren</string>
+    <plurals name="anti_uninstall_summary_timed">
+        <item quantity="one">Nachdem du es forderst wird der Schutz nach %1$d Tag beendet.</item>
+        <item quantity="other">Nachdem du es forderst wird der Schutz nach %1$d Tagen beendet.</item>
+    </plurals>
+    <string name="anti_uninstall_summary_cooldown">Du musst einen Tag warten um den Schutz auszuschalten. Die Anfrage kann jederzeit abgebrochen werden.</string>
+
+    <string name="anti_uninstall_pick_mode">Wie soll der Schutz deaktiviert werden können?</string>
+    <string name="anti_uninstall_mode_password_title">Passwort</string>
+    <string name="anti_uninstall_mode_password_desc">Deaktiviere den Schutz direkt mit einem Passwort</string>
+    <string name="anti_uninstall_mode_timed_title">Warten</string>
+    <string name="anti_uninstall_mode_timed_desc">Nach einer bestimmten Zeit automatisch ausschalten</string>
+    <string name="anti_uninstall_mode_cooldown_title">Einen Tag warten</string>
+    <string name="anti_uninstall_mode_cooldown_desc">Nach Anfrage, den Schutz zu stoppen, muss einen Tag lang gewartet werden. Die Anfrage kann jederzeit abgebrochen werden.</string>
+    <string name="anti_uninstall_days_hint">Zu wartende Tage</string>
+    <string name="anti_uninstall_days_error">Gib mindestens 1 ein.</string>
+
+    <string name="anti_uninstall_turn_on">Schutz aktivieren</string>
+    <string name="anti_uninstall_turn_off">Schutz deaktivieren</string>
+    <string name="anti_uninstall_keep_on">Schutz an behalten</string>
+    <string name="anti_uninstall_turned_on">Schtz ist an</string>
+    <string name="anti_uninstall_start">Start</string>
+    <string name="anti_uninstall_cancel">Abbrechen</string>
+    <string name="anti_uninstall_save">Speichern</string>
+
+    <string name="anti_uninstall_set_password_title">Ein Passwort festlegen</string>
+    <string name="anti_uninstall_enter_password_title">Gib dein Passwort ein</string>
+    <string name="anti_uninstall_password_hint">Passwort</string>
+    <string name="anti_uninstall_password_confirm_hint">Gib es erneut ein</string>
+    <string name="anti_uninstall_password_too_short">Das Passwort muss mindestens vier Zeichen lang sein.</string>
+    <string name="anti_uninstall_password_mismatch">Die Passwörter stimmen nicht überein</string>
+    <string name="anti_uninstall_wrong_password">Das Passwort ist falsch.</string>
+
+    <plurals name="anti_uninstall_timed_confirm">
+        <item quantity="one">Der Schutz wird in %1$d Tag abgeschaltet. Sobald das Warten beginnt kann es nicht abgebrochen werden.</item>
+        <item quantity="other">Der Schutz wird in %1$d Tagen abgeschaltet. Sobald das Warten beginnt kann es nicht abgebrochen werden.</item>
+    </plurals>
+    <string name="anti_uninstall_cooldown_confirm">Der Schutz wird in einem Tag deaktiviert. Du kannst jederzeit abbrechen.</string>
+
+    <string name="anti_uninstall_remaining">%1$dh %2$dm %3$ds</string>
+    <string name="anti_uninstall_remaining_with_days">%1$dd %2$dh %3$dm %4$ds</string>
+
+    <!-- Settings change delay -->
+    <string name="change_delay_title">Verzögerung einstellen</string>
+    <string name="change_delay_card_subtitle">Schwächere Einstellungen warten, bevor sie angewandt werden.</string>
+    <string name="change_delay_subtitle">Das hilft, impulsive Änderungen vorzubeugen, die deine Regeln abschwächen. Härtere Änderungen werden direkt angewandt. Schwächere Änderungen müssen warten und können jederzeit gestoppt werden bevor sie angewandt werden.</string>
+    <string name="change_delay_master_title">Änderungsverzögerung aktivieren</string>
+    <string name="change_delay_master_desc">Das hier auszuschalten oder eine kürzere Wartezeit einzustellen muss auch die gesamte Verzögerung warten.</string>
+    <string name="change_delay_tamper_lock_title">Außerdem Manipulationsschutz benötigen</string>
+    <string name="change_delay_tamper_lock_desc">Schwächere Änderungen bleiben unangewandt, wenn Manipulationsschutz an ist, auch wenn die Verzögerung endet. Schalte Manipulationsschutz aus, um sie anzuwenden.</string>
+    <string name="change_delay_duration_header">Wie lang müssen schwächere Änderungen warten?</string>
+    <string name="change_delay_none">Gar nicht</string>
+    <string name="change_delay_10m">10 Minuten</string>
+    <string name="change_delay_1h">1 Stunde</string>
+    <string name="change_delay_4h">4 Stunden</string>
+    <string name="change_delay_12h">12 Stunden</string>
+    <string name="change_delay_1d">1 Tag</string>
+    <string name="change_delay_2d">2 Tage</string>
+    <string name="change_delay_pending_header">Änderungen warten darauf, angewandt zu werden.</string>
+    <string name="change_delay_pending_empty">Es wird auf nichts gewartet.</string>
+    <string name="change_delay_applies_in">Wird angewandt in %1$s</string>
+    <string name="change_delay_blocked_by_tamper">Warte darauf, dass Manipulationsschutz ausgeschaltet wird.</string>
+    <string name="change_delay_deferred_toast">Für später gespeichert. Diese Änderung fängt bei %1$s an zu funktionieren. Du kannst es unter Einstellungen -> Verzögerung ändern anpassen.</string>
+    <string name="change_delay_tamper_gated_toast">Für später gespeichert. Deise Änderung wird nicht angewandt, bis der Manipulationsschutz ausgeschaltet ist.</string>
+    <string name="change_delay_cancelled_toast">Das Warten für die Änderung wurde abgebrochen. Nichts wird verändert.</string>
+    <string name="change_delay_pending_note">Wenn du eine striktere Änderung an der selben Funktion machst, während eine Änderung wartet, wird die wartende Änderung entfernt.</string>
+    <string name="change_delay_help_popup">Wenn aktiviert, müssen Änderungen, die Regeln lockern warten. Das gibt dir Zeit, noch einmal darüber nachzudenken.</string>
+    <string name="change_delay_field_app_groups">Appsperre</string>
+    <string name="change_delay_field_auto_dnd">Auto BNS</string>
+    <string name="change_delay_field_reel_blocker">Reel-Sperre</string>
+    <string name="change_delay_field_keyword_blocker">Stichwortsperre</string>
+    <string name="change_delay_field_reel_counter">Reel-Zähler</string>
+    <string name="change_delay_field_grayscale">Graustufen</string>
+    <string name="change_delay_field_mindful_messages">Achtsame Nachrichten</string>
+    <string name="change_delay_field_ui_hider">UI verstecken</string>
+    <string name="change_delay_field_change_delay">Verändungsverzögerung anpassen.</string>
+    <string name="change_delay_review_title">Warte kurz</string>
+    <string name="change_delay_review_message">Diese Änderung schwächt die %1$s Regeln, also wird sie nicht direkt angewandt. Sie wird in %2$s angewandt. Die aktuellen Regeln bleiben bis dahin aktiv.</string>
+    <string name="change_delay_review_message_no_timer">Diese Änderung schwächt die %1$s Regeln, also wird sie nicht direkt angewandt. Die aktuellen Regeln bleiben aktiv bis die Änderung zugelassen wird.</string>
+    <string name="change_delay_review_tamper_note">Es wird nichts angewandt, solange der Manipulationsschutz an ist.</string>
+    <string name="change_delay_review_replaced_note">Eine Änderung für diese Funktion wartet bereits. Diese neue nimmt ihren Platz ein und die Verzögerung wird neu gestartet.</string>
+    <string name="change_delay_review_keep">Weiter warten.</string>
+    <string name="change_delay_review_undo">Diese Änderun rückgängig machen.</string>
+    <string name="change_delay_dropped_toast">Die striktere Änderung ist aktiv. Die wartende Änderug für %1$s wurde entfernt.</string>
+    <string name="temporary_disable_title">Temporär %1$s deaktivieren</string>
+    <string name="temporary_disable_5m">5 Minuten</string>
+    <string name="temporary_disable_15m">15 Minuten</string>
+    <string name="temporary_disable_1h">1 Stunde</string>
+    <string name="temporary_disable_until_enabled">Bis du es wieder einschaltest.</string>
+    <string name="temporary_disable_custom">Individuelle Minuten</string>
+    <string name="temporary_disable_custom_hint">Minuten</string>
+    <string name="temporary_disable_action">Temporär deaktivieren</string>
+    <string name="temporary_disable_invalid">Gib eine Wartezeit von 1 bis 43,200 Minuten an.</string>
+    <string name="temporary_disable_until">Temporär deaktiviert für %1$s</string>
+    <string name="temporary_disable_until_manually_enabled">Deaktiviert bis du es wieder aktivierst.</string>
+
+    <!-- Curbox API permission screen -->
+    <string name="api_permission_title">Zugriff erlauben?</string>
+    <string name="api_permission_message">%1$s will Curbox steuern. Es kann Fokussitzungen starten, Sperren an und ausschalten und deine Bilschirmzeit lesen. Du kannst es jederzeit entfernen.</string>
+    <string name="api_permission_allow">Erlauben</string>
+    <string name="api_permission_deny">Ablehnen</string>
+
+    <!-- Common / shared -->
+    <string name="common_back">Zurück</string>
+    <string name="common_mins">mins</string>
+    <string name="common_continue">Fortfahren</string>
+    <string name="okay">Okay</string>
+    <string name="share">Teilen</string>
+    <string name="clear">Löschen</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="selected_count">Ausgewählt: %1$d</string>
+    <string name="select_apps_count">Ausgewählte Apps (%1$d)</string>
+    <string name="group_type_time_based">Zeitbasiert</string>
+    <string name="group_type_usage_based">Nutzungsbasiert</string>
+    <string name="group_details_apps">%1$d Apps • %2$s</string>
+    <string name="group_details_keywords">%1$d Stichwörter • %2$s</string>
+    <string name="group_details_keywords_only">%1$d Stichwörter</string>
+    <string name="group_details_apps_only">%1$d Apps</string>
+    <string name="group_no_usage_left">Keine Zeit übrig in diesem Zeitplan</string>
+    <string name="group_usage_left">%1$s übrig in diesem Zeitplan</string>
+    <string name="warning_show_on_each_open">Zeige diesen Bildschirm immer wenn ich die ausgewählten Apps starte.</string>
+    <string name="warning_current_app_session">Aktuelle Appsitzung</string>
+
+    <!-- Sync account -->
+    <string name="account_sync_title">Zwischen meinen Geräten synchronisieren</string>
+    <string name="account_sync_desc">Ich behalte deine Einstellungen und Zeitstatistiken synchron auf allen Handys und Browsern. Alles ist mit einem Schlüssel gesichert, den nur sie haben und den sonst niemand lesen kann.</string>
+    <string name="account_hint_email">Email</string>
+    <string name="account_hint_password">Passwort</string>
+    <string name="account_hint_email_code">Emailcode</string>
+    <string name="account_hint_new_password">Neues Passwort</string>
+    <string name="account_hint_secret_phrase">Geheime Phrase</string>
+    <string name="account_hint_paste_code">Kopplungscode eingeben</string>
+    <string name="account_pairing_code_desc">Kopplungscode</string>
+    <string name="account_sign_in">Anmelden</string>
+    <string name="account_continue_google">Mit Google fortfahren</string>
+    <string name="account_google_fast_hint">Schnellste Option. Kein Passwort der Code nötig</string>
+    <string name="account_use_email">Alternativ Email verwenden</string>
+    <string name="account_email_section">Email und Passwort</string>
+    <string name="account_use_different_account">Einen andere Account verwenden</string>
+    <string name="account_forgot_password">Passwort vergessen?</string>
+    <string name="account_new_here">Neu hier? </string>
+    <string name="account_create_account">Einen Account erstellen</string>
+    <string name="account_verify_continue">Verifizieren und fortfahren</string>
+    <string name="account_send_new_code">Einen neuen Code senden</string>
+    <string name="account_send_reset_code">Zurücksetzungscode senden</string>
+    <string name="account_back_to_sign_in">Zurück zur Anmeldung</string>
+    <string name="account_set_new_password">Neues Passwort setzen</string>
+    <string name="account_turn_on_sync">Synchronisation aktivieren</string>
+    <string name="account_pair_desc">Wenn du dein anderes Gerät zur Hand hast ist das der einfachste Weg. Öffne dort die Synchronisation und zeig dir dort den Code an.</string>
+    <string name="account_scan_code">Einen Code scannen</string>
+    <string name="account_use_pasted_code">Eingefügten Code verwenden</string>
+    <string name="account_show_pairing_code">Kopplungscode für ein anderes Gerät anzeigen</string>
+    <string name="account_pairing_warning">Jeder der diesen Code sieht kann deine Daten lesen, also zeit ihn nur deinen eigenen Geräten.</string>
+    <string name="account_sync_now">Jetzt synchronisieren</string>
+    <string name="account_sign_out">Aus diesem Gerät abmelden</string>
+    <string name="account_device_name">Dieses Gerät</string>
+    <string name="account_save_device_name">Name speichern</string>
+    <string name="account_what_syncs">WAS SYNCHRONISIERT</string>
+    <string name="account_sync_usage_stats">Nutzerstatistiken</string>
+    <string name="account_sync_reducer_configs">Verringererstatistiken</string>
+    <string name="account_usage_shown_from">NUTZUNG ANZEIGEN VON</string>
+    <string name="account_usage_filter_desc">Wähle aus welche anderen Geräte zur gemeinsamen Nutzung beitragen.</string>
+    <string name="account_all_devices">Alle Geräte</string>
+    <string name="account_create_account_action">Account erstellen</string>
+    <string name="account_already_have_account">Du hast bereits einen Account? </string>
+    <string name="account_unlock_data">Meine Daten freischalten</string>
+    <string name="account_make_secret_phrase">Eine geheime Phrase festlegen</string>
+    <string name="account_title_sync_on">Synchronisierung ist an</string>
+    <string name="account_title_check_email">Prüfe deine Emails</string>
+    <string name="account_title_reset_password">Passwort zurücksetzen</string>
+    <string name="account_title_choose_new_password">Neues Passwort wählen</string>
+    <string name="account_title_create_account">Deinen Account erstellen</string>
+    <string name="account_title_welcome_back">Willkommen zurück</string>
+    <string name="account_title_sign_in">Synchronisation aktivieren</string>
+    <string name="account_sub_sync_on">Your settings and time stats stay in step on every device.</string>
+    <string name="account_sub_unlock">Type the secret phrase you made on your first device. Or if that device is nearby, tap Scan a code below to bring this one in without typing anything.</string>
+    <string name="account_sub_make_phrase">Make one phrase you will remember. It stays on your devices and keeps your synced data private.</string>
+    <string name="account_sub_verify">I sent a code to %1$s. Type it below to finish setting up.</string>
+    <string name="account_sub_forgot">Tell me your email and I will send you a code to set a new password.</string>
+    <string name="account_sub_reset">Type the code I emailed you and your new password.</string>
+    <string name="account_sub_sign_up">Make an account so your settings and stats can travel with you.</string>
+    <string name="account_sub_sign_in">Sign in to keep your settings and time stats in step on every device, end to end encrypted.</string>
+    <string name="account_sub_google_first">Use Google for the quickest setup. Your settings and time stats stay private.</string>
+    <string name="account_msg_new_code_sent">I sent a new code to %1$s</string>
+    <string name="account_msg_reset_code_sent">I sent a reset code to %1$s</string>
+    <string name="account_msg_phrase_too_short">Please pick a secret phrase with at least 8 letters.</string>
+    <string name="account_msg_phrase_too_long">That secret phrase is too long.</string>
+    <string name="account_err_sync_data_invalid">Some synced data could not be read.</string>
+    <string name="account_msg_syncing">Syncing your latest data now</string>
+    <string name="account_err_generic">Something went wrong. Please try again.</string>
+    <string name="account_err_invalid_login">That email or password did not match. Please try again.</string>
+    <string name="account_err_already_registered">You already have an account with this email. Please sign in instead.</string>
+    <string name="account_err_email_not_confirmed">Please confirm your email first. I can send you a new code.</string>
+    <string name="account_err_bad_code">That code did not work. Check it or ask me for a new one.</string>
+    <string name="account_err_rate_limit">Please wait a moment, then try again.</string>
+    <string name="account_err_weak_password">Please use a password with at least 6 letters or numbers.</string>
+    <string name="account_err_no_network">I cannot reach the internet right now. Check your connection and try again.</string>
+    <string name="account_err_google">Google sign in did not work. Please try again or use email.</string>
+    <string name="account_err_google_not_configured">Google sign in is not ready yet. Please use email for now.</string>
+
+    <!-- Language -->
+    <string name="language">Language</string>
+
+    <!-- Info screen -->
+    <string name="info_official_documentation">Official Documentation</string>
+    <string name="crash_logs_title">Crash Logs</string>
+    <string name="crash_logs_none_available">No crash logs available.</string>
+
+    <!-- Onboarding permissions -->
+    <string name="onboarding_app_limit_group_name">%1$s Limits</string>
+    <string name="onboarding_perm_overlay_title">Screen Overlay</string>
+    <string name="onboarding_perm_overlay_rationale">Curbox needs this to show a calm pause screen on top of distracting apps when you open them. Without it, Curbox cannot place anything over those apps to help you stop and think.</string>
+    <string name="onboarding_perm_overlay_opensource">🛡️ Open Source: Think of Curbox like a restaurant with an open kitchen. The whole codebase is public, so anyone can check that Curbox is not doing anything sneaky. There are no closed doors here.</string>
+    <string name="onboarding_perm_notif_title">Notifications</string>
+    <string name="onboarding_perm_notif_rationale">Curbox needs this to stay running in the background so your blocks keep working, and to gently remind you of your goals. Without it, Android can stop Curbox and your blocks may fail.</string>
+    <string name="onboarding_perm_notif_opensource">🛡️ Not a Data Broker: Many apps hide their code because they make money by harvesting your data. Curbox keeps all its code public, so you can check yourself that nothing is quietly sending your information away.</string>
+    <string name="onboarding_perm_accessibility_title">App Blocker (Accessibility API)</string>
+    <string name="onboarding_perm_accessibility_rationale">Curbox needs this to notice when you open a blocked app and show the blocker screen. It also uses it to count your screen time and how many reels you scroll. Without it, Curbox cannot work at all.</string>
+    <string name="onboarding_perm_accessibility_opensource">🛡️ Transparency for Deep Access: This is a powerful permission, which is why being open source matters so much. You do not have to take Curbox at its word. The global community has reviewed its public code and confirmed it only blocks apps and tracks usage.</string>
+    <string name="onboarding_read_documentation">Read Documentation</string>
+    <string name="onboarding_privacy_note">"\n\n🔒 Curbox does not collect, send, or store any of your data on a server without your permission. Everything stays on your phone.\n\n"</string>
+    <string name="onboarding_granting_permissions">Granting Permissions…</string>
+    <string name="onboarding_permissions_granted">Permissions Granted!</string>
+    <string name="onboarding_error_tap_retry">Error, Tap to Retry</string>
+    <string name="onboarding_curb_me">Curb me!</string>
+    <string name="onboarding_need_more_permissions">I still need more permissions</string>
+    <string name="screen_time_hours">%1$d hrs</string>
+    <string name="screen_time_reality">That is %1$d full weeks of your life staring at a screen per year.</string>
+
+    <!-- Focus setup -->
+    <string name="focus_unknown_group">Unknown Group</string>
+    <string name="focus_delete_group_title">Delete Focus Group</string>
+    <string name="focus_delete_group_message">Are you sure you want to delete this group? All associated focus statistics will also be deleted.</string>
+    <string name="focus_no_browser_title">No Browser Selected</string>
+    <string name="focus_no_browser_allow_message">You have set some websites to be allowed, but no supported browser is in your \'Allowed Apps\' list. \n\nTo access these websites, please add a browser (like Chrome or Firefox) to the selected apps.</string>
+    <string name="focus_add_browser">Add Browser</string>
+    <string name="focus_save_anyway">Save Anyway</string>
+    <string name="focus_block_notice_title">Website Blocking Notice</string>
+    <string name="focus_block_notice_message">You have set some websites to be blocked, but no browser is in your \'Blocked Apps\' list. \n\nNote that website blocking only works on supported browsers (like Chrome or Firefox). Any other browser will still be able to access these websites. Consider blocking unsupported browsers if needed.</string>
+    <string name="focus_add_websites_title">Add Websites/Keywords</string>
+
+    <!-- Warning screen config -->
+    <string name="warning_fixed_unlock_duration">Fixed Unlock Duration: %1$d mins</string>
+    <string name="warning_fixed_unlock_duration_lower">Fixed unlock duration: %1$d mins</string>
+    <string name="warning_wait_before_unlock">Wait before unlocking: %1$ds</string>
+    <string name="warning_allowed_proceeds">Allowed proceeds: %1$d</string>
+    <string name="warning_time_window">Time window: %1$d %2$s</string>
+    <string name="warning_fixed_unlock_duration_input">Fixed unlock duration</string>
+    <string name="warning_wait_before_unlock_input">Wait before unlocking</string>
+    <string name="warning_intent_min_length_input">Minimum characters</string>
+    <string name="warning_math_question_count_input">Questions required</string>
+    <string name="warning_math_starting_level_input">Starting level</string>
+    <string name="warning_focus_goal_minutes_input">Required focus time</string>
+    <string name="warning_allowed_proceeds_input">Allowed proceeds</string>
+    <string name="warning_time_window_input">Time window</string>
+    <string name="warning_numeric_value_minimum">Enter %1$d or more.</string>
+    <string name="warning_numeric_value_too_large">This number is too large.</string>
+    <string name="unit_seconds">Seconds</string>
+    <string name="warning_qr_generated_title">QR/Barcode Generated</string>
+    <string name="warning_qr_generated_message">Please save or print this QR/Barcode. You will need it to unlock.</string>
+    <string name="warning_save_to_gallery">Save to Gallery</string>
+    <string name="warning_qr_generate_failed">Failed to generate QR image</string>
+    <string name="warning_saved_to_gallery">Saved to Gallery!</string>
+    <string name="warning_save_image_failed">Failed to save image</string>
+    <string name="warning_mediastore_failed">Failed to create MediaStore entry</string>
+    <string name="warning_qr_timing_title">Unlock Timing</string>
+    <string name="warning_qr_timing_message">Configure the time behavior for this unlock method before continuing.</string>
+    <string name="warning_qr_saved">QR Code Saved Successfully!</string>
+    <string name="warning_scan_cancelled">Scan cancelled</string>
+    <string name="warning_cancelled">Cancelled</string>
+    <string name="warning_invalid_qr">Invalid QR Code - Pattern does not match</string>
+    <string name="warning_proceed_limit_reached">Proceed limit of %1$d per %2$d minutes has been reached. Try again in %3$d minutes.</string>
+    <string name="warning_proceeds_left">You have %1$d of %2$d opens left</string>
+    <string name="warning_typing_quote">\"%1$s\"</string>
+    <string name="warning_scan_qr_code">Scan QR Code</string>
+    <string name="warning_scan_nfc_tag">Scan NFC Tag</string>
+    <string name="warning_math_problem">Solve %1$s</string>
+    <string name="warning_math_progress">%1$d of %2$d solved</string>
+    <string name="warning_math_answer_hint">Answer</string>
+    <string name="warning_math_check_answer">Check answer</string>
+    <string name="warning_math_answer_required">Enter a number</string>
+    <string name="warning_math_incorrect">Incorrect answer. Try the next question.</string>
+    <string name="warning_option_never_unlock">Never Unlock</string>
+    <string name="warning_option_never_unlock_desc">Total lockdown. No bypassing allowed.</string>
+    <string name="warning_option_require_effort">Require effort to unlock</string>
+    <string name="warning_option_require_effort_desc">In behavioral psychology, adding physical friction breaks the automatic habit loop, giving your brain a necessary pause to reconsider.</string>
+    <string name="warning_option_wait">Wait to unlock</string>
+    <string name="warning_option_wait_desc">Allows immediate access after a short wait.</string>
+    <string name="warning_option_qr">Unlock requires QR/Barcode scanning</string>
+    <string name="warning_option_qr_desc">Scan any code (like a product box) to unlock.</string>
+    <string name="warning_option_typing">Unlock requires typing a sentence</string>
+    <string name="warning_option_typing_desc">Precisely type a long sentence to prove focus.</string>
+    <string name="warning_option_intent">Unlock requires stating an intent</string>
+    <string name="warning_option_intent_desc">Briefly describe your goal before accessing.</string>
+    <string name="warning_option_nfc">Unlock requires scanning an NFC tag</string>
+    <string name="warning_option_nfc_desc">Tap a physical NFC tag to unlock.</string>
+    <string name="warning_option_adaptive_math">Adaptive math</string>
+    <string name="warning_option_adaptive_math_desc">Solve questions with adaptive difficulty.</string>
+    <string name="label_adaptive_math">Adaptive math</string>
+    <string name="label_adaptive_math_desc">Choose how many correct answers are required.</string>
+    <string name="warning_math_starting_level">Starting level: %1$d</string>
+    <string name="label_adaptive_math_level_desc">Level 1 uses simple arithmetic. Level 10 combines decimals, fractions, roots, powers, and order of operations.</string>
+    <plurals name="warning_math_question_count">
+        <item quantity="one">Question required: %1$d</item>
+        <item quantity="other">Questions required: %1$d</item>
+    </plurals>
+    <string name="label_focus_goal_unlock">Daily focus requirement</string>
+    <string name="label_focus_goal_unlock_desc">Unlocking is allowed after the selected focus time is completed today.</string>
+    <string name="hint_focus_group">Focus group</string>
+    <string name="warning_focus_goal_group_required">Select a focus group</string>
+    <plurals name="warning_focus_goal_minutes">
+        <item quantity="one">Required focus time: %1$d minute</item>
+        <item quantity="other">Required focus time: %1$d minutes</item>
+    </plurals>
+    <string name="warning_focus_goal_checking">Checking focus progress</string>
+    <string name="warning_focus_goal_complete">Focus goal complete for %1$s.</string>
+    <string name="warning_focus_goal_not_met">Focus goal not met. %1$d minutes remaining for %2$s.</string>
+    <string name="warning_focus_goal_unavailable">The selected focus group is unavailable. Unlocking is restricted.</string>
+    <string name="warning_focus_goal_check_failed">Focus progress could not be checked. Unlocking is restricted.</string>
+    <string name="warning_option_choose_time">Ask me how much time I need</string>
+    <string name="warning_option_choose_time_desc">You choose the duration during each unlock.</string>
+    <string name="warning_option_fixed_time">Only give me a fixed amount of time</string>
+    <string name="warning_option_fixed_time_desc">Automatically locks after a set duration.</string>
+    <string name="warning_invalid_nfc">This NFC tag is not registered</string>
+    <string name="nfc_tap_title">Tap your NFC tag</string>
+    <string name="nfc_tap_message">Hold your NFC tag against the back of your phone.</string>
+    <string name="nfc_unavailable">NFC is off or unavailable on this device</string>
+    <string name="nfc_tag_saved">NFC tag registered</string>
+    <string name="nfc_write_failed">Could not write to tag. Use a writable NFC tag.</string>
+    <string name="nfc_write_success">Tag written and registered</string>
+    <string name="nfc_already_registered">That tag is already registered</string>
+    <string name="focus_nfc_write_title">Write Focus NFC Tag</string>
+    <string name="focus_nfc_write_button">Write Tag</string>
+    <string name="focus_nfc_no_groups">Create a focus group first</string>
+    <string name="focus_nfc_pick_group">Focus group</string>
+    <string name="focus_nfc_pick_action">When tapped</string>
+    <string name="focus_nfc_unnamed_group">Unnamed group</string>
+    <string name="focus_nfc_action_toggle">Toggle focus</string>
+    <string name="focus_nfc_action_start">Start focus</string>
+    <string name="focus_nfc_action_stop">Stop focus</string>
+    <string name="focus_nfc_duration_input_hint">Duration</string>
+    <string name="focus_nfc_load_button">Load from tag</string>
+    <string name="focus_nfc_load_title">Tap a tag to load</string>
+    <string name="focus_nfc_loaded">Loaded values from tag</string>
+    <string name="focus_nfc_load_invalid">That tag is not a Curbox focus tag</string>
+
+    <!-- Group edit titles -->
+    <string name="app_group_edit_title">Edit App Group</string>
+    <string name="grayscale_group_edit_title">Edit Grayscale Group</string>
+    <string name="autodnd_group_edit_title">Edit Auto DND Group</string>
+    <string name="keyword_group_edit_title">Edit Keyword Group</string>
+    <string name="autodnd_scheduled">Scheduled</string>
+
+    <!-- Keyword import/export -->
+    <string name="keyword_imported_count">Imported %1$d keywords</string>
+    <string name="keyword_no_new_import">No new keywords to import</string>
+    <string name="keyword_import_failed">Failed to import keywords</string>
+    <string name="keyword_export_success">Keywords exported successfully</string>
+    <string name="keyword_export_failed">Failed to export keywords</string>
+    <string name="keyword_add_at_least_one">Add at least one keyword</string>
+
+    <!-- Settings toasts -->
+    <string name="usage_disable_everyday_granular">Disable everyday to add granular changes</string>
+    <string name="time_disable_everyday_granular">Disable everyday to set granular ranges</string>
+    <string name="time_overnight_split">Overnight range split into two (up to midnight and from midnight)</string>
+    <string name="uihider_enter_package">Enter a package name</string>
+
+    <!-- Intents log -->
+    <string name="intent_unlocked_for">Unlocked for %1$d mins</string>
+
+    <!-- Usage screen -->
+    <string name="usage_export_daily_breakdown">Daily Breakdown (Time Series)</string>
+    <string name="usage_export_total_summary">Total Summary</string>
+    <string name="usage_export_both">Both</string>
+    <string name="usage_export_format_title">Select Data Format</string>
+    <string name="usage_widget_screentime">Screentime Stats</string>
+    <string name="usage_widget_reels">Reels Stats</string>
+    <string name="usage_short_form_videos_scrolled">Short form videos scrolled • %1$d</string>
+    <string name="usage_short_form_video_duration">Duration • %1$s</string>
+    <string name="usage_short_form_video_average_attention">Average attention span • %1$s</string>
+    <string name="usage_widget_pin_title">Select Widget to Pin</string>
+    <string name="usage_ignore_title">Add to ignored packages?</string>
+    <string name="usage_ignore_message">This action will cause the tracker to not display any stats from this app.</string>
+    <string name="rule_type_app_blocker">App Blocker</string>
+    <string name="rule_type_grayscale">Grayscale</string>
+    <string name="create_new_rule_title">Create New Rule</string>
+    <string name="synced_browsing">Synced browsing</string>
+    <string name="synced_other_devices">OTHER DEVICES</string>
+
+    <!-- Select apps -->
+    <string name="app_category_audio">Audio</string>
+    <string name="app_category_games">Games</string>
+    <string name="app_category_images">Images</string>
+    <string name="app_category_maps">Maps</string>
+    <string name="app_category_news">News</string>
+    <string name="app_category_productivity">Productivity</string>
+    <string name="app_category_social">Social</string>
+    <string name="app_category_video">Video</string>
+    <string name="app_category_undefined">Undefined</string>
+    <string name="select_apps_auto_select">Auto Select %1$s</string>
+    <string name="select_apps_category_fallback">Category %1$d</string>
+    <string name="select_apps_add_custom_menu">Add a custom android package</string>
+    <string name="select_apps_import_from_group">── Import from Group ──</string>
+    <string name="select_apps_custom_hint">com.real.android.app</string>
+    <string name="select_apps_add_custom_title">Add a custom package</string>
+
+    <!-- Service notifications -->
+    <string name="notification_remaining_usage_lockdown">Remaining usage before lockdown</string>
+    <string name="notification_remaining_usage_reels_lockdown">Remaining usage before reels lockdown</string>
+    <string name="usage_tracking_settings">Usage tracking</string>
+    <string name="usage_tracking_settings_description">Choose which usage data the accessibility service saves on this device.</string>
+    <string name="app_usage_tracking">App Usage Tracking</string>
+    <string name="website_usage_tracking">Website Usage Tracking</string>
+    <string name="usage_tracking_disabled_warning">Warning: Usage Based blocking options will not work for a tracking type while it is turned off.</string>
+
+    <!-- Units -->
+    <string name="unit_minutes">Minutes</string>
+    <string name="unit_hours">Hours</string>
+    <string name="unit_days">Days</string>
+</resources>
