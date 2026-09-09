@@ -124,7 +124,7 @@ internal class WarningConfigFormController(
         )
         updateProceedWindowInput(initialInputValue)
 
-        binding.warningMsgEdit.setText(config.message)
+        binding.warningMsgEdit.setText(config.message.joinToString(", "))
         binding.switchVibrateBrightness.isChecked = config.vibrateAndIncBrightness
     }
 
@@ -257,7 +257,11 @@ internal class WarningConfigFormController(
             selectedSecondaryIndex(selectedChallengeIndex())
         )
         return AppBlockerWarningScreenConfig(
-            message = binding.warningMsgEdit.text.toString(),
+            message = binding.warningMsgEdit.text.toString()
+                .split(",")
+                .map { it.trim() }
+                .filter { it.isNotEmpty() },
+
             timeInterval = numericInputValue(binding.fixedTimeInput) * 60_000L,
             isDynamicIntervalSettingAllowed = flags.isDynamicIntervalSettingAllowed,
             isProceedDisabled = flags.isProceedDisabled,

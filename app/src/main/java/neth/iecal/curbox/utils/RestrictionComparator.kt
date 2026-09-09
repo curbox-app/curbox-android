@@ -234,7 +234,7 @@ object RestrictionComparator {
 
     fun warningConfig(o: AppBlockerWarningScreenConfig, n: AppBlockerWarningScreenConfig): Boolean {
         // Message and typing sentence wording never change how strong the block is
-        if (o.copy(message = "", typingSentence = "") == n.copy(message = "", typingSentence = "")) return true
+        if (o.copy(message = listOf(), typingSentence = "") == n.copy(message = listOf(), typingSentence = "")) return true
 
         val onEachOpenOk = !o.isOnOpenConfig || n.isOnOpenConfig
         val cooldownOk = n.isOnOpenConfig || n.timeInterval <= o.timeInterval

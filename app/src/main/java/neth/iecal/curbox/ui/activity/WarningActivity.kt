@@ -280,7 +280,7 @@ class WarningActivity : AppCompatActivity() {
             }
             .show()
 
-        binding.warningMsg.text = warningScreenConfig.message
+        binding.warningMsg.text = warningScreenConfig.message.random()
 
         if (warningScreenConfig.isOnOpenConfig) {
             binding.minsPicker.visibility = View.GONE
