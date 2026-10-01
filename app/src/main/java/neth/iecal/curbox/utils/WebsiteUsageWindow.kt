@@ -7,7 +7,12 @@ import java.time.ZoneId
 import kotlin.math.roundToLong
 
 object WebsiteUsageWindow {
-    fun sum(rows: Collection<WebsiteStatsEntity>, startMs: Long, endMs: Long): Long {
+    fun sum(
+        rows: Collection<WebsiteStatsEntity>,
+        startMs: Long,
+        endMs: Long,
+        nowMs: Long = System.currentTimeMillis()
+    ): Long {
         if (endMs <= startMs) return 0L
         val zone = ZoneId.systemDefault()
         var total = 0.0
@@ -27,11 +32,9 @@ object WebsiteUsageWindow {
                 val bucketStart = date.atTime(hour, 0).atZone(zone).toInstant().toEpochMilli()
                 val bucketEnd = date.atTime(hour, 0).plusHours(1)
                     .atZone(zone).toInstant().toEpochMilli()
-                val overlap = (minOf(endMs, bucketEnd) - maxOf(startMs, bucketStart))
-                    .coerceAtLeast(0L)
-                if (overlap > 0L) {
-                    total += buckets[hour] * (overlap.toDouble() / (bucketEnd - bucketStart))
-                }
+                total += buckets[hour] * HourlyUsageBuckets.shareInWindow(
+                    bucketStart, bucketEnd, startMs, endMs, nowMs
+                )
             }
         }
         return total.roundToLong()

@@ -67,7 +67,8 @@ class UsageStatsHelper(context: Context) {
     suspend fun getForegroundUsageBetween(
         packageNames: Set<String>,
         startMs: Long,
-        endMs: Long
+        endMs: Long,
+        nowMs: Long = System.currentTimeMillis()
     ): Long {
         if (packageNames.isEmpty() || endMs <= startMs) return 0L
         val zone = ZoneId.systemDefault()
@@ -84,11 +85,9 @@ class UsageStatsHelper(context: Context) {
                     val bucketStart = date.atTime(hour, 0).atZone(zone).toInstant().toEpochMilli()
                     val bucketEnd = date.atTime(hour, 0).plusHours(1)
                         .atZone(zone).toInstant().toEpochMilli()
-                    val overlap = (minOf(endMs, bucketEnd) - maxOf(startMs, bucketStart))
-                        .coerceAtLeast(0L)
-                    if (overlap > 0L) {
-                        total += hourly[hour] * (overlap.toDouble() / (bucketEnd - bucketStart))
-                    }
+                    total += hourly[hour] * HourlyUsageBuckets.shareInWindow(
+                        bucketStart, bucketEnd, startMs, endMs, nowMs
+                    )
                 }
             }
         return total.roundToLong()
