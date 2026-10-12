@@ -5,11 +5,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.util.LruCache
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
@@ -32,9 +35,11 @@ import neth.iecal.curbox.data.models.AppUsageConfig
 import neth.iecal.curbox.data.models.FocusBlockMode
 import neth.iecal.curbox.data.models.KeywordGroup
 import neth.iecal.curbox.data.models.upgradeLegacyKeywordGroupConfigs
+import neth.iecal.curbox.hardcoded.URL_BAR_ID_LIST
 import neth.iecal.curbox.services.BaseBlockingService
 import neth.iecal.curbox.trackers.WebsiteObservation
 import neth.iecal.curbox.ui.activity.WarningActivity
+import neth.iecal.curbox.utils.AccessibilityHelper
 import neth.iecal.curbox.utils.ActiveTimeGroupWindow
 import neth.iecal.curbox.utils.KeywordMatcher
 import neth.iecal.curbox.utils.TimerNotification
@@ -55,6 +60,7 @@ class KeywordBlocker : BaseBlocker() {
         private const val TARGET_EVENTS_MASK =
             AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED or AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         private const val BLOCK_SUPPRESSION_MS = 5_000L
+        private const val REPLACEMENT_PAGE = "about:blank"
         private const val COOLDOWN_NOTIFICATION_ID = 1004
     }
 
@@ -164,6 +170,7 @@ class KeywordBlocker : BaseBlocker() {
                 val latest = dao.getStatsForDate(date).maxByOrNull { it.lastVisited }
                 if (latest != null &&
                     latest.lastVisited > (System.currentTimeMillis() - 2500) &&
+                    isShowingNow(latest) &&
                     markSnapshotAsObserved(latest)
                 ) {
                     evaluateAndBlock(latest.packageName, latest.urlIdentifier)
@@ -171,6 +178,18 @@ class KeywordBlocker : BaseBlocker() {
                 }
             }
         }
+    }
+
+    // Saved rows can outlive their page, so only act on one while it is on screen.
+    private fun isShowingNow(snapshot: WebsiteStatsEntity): Boolean {
+        val observation = lastWebsiteObservation ?: return false
+        if (observation.packageName != snapshot.packageName ||
+            observation.urlIdentifier != snapshot.urlIdentifier
+        ) return false
+        val foreground = runCatching {
+            service.rootInActiveWindow?.packageName?.toString()
+        }.getOrNull()
+        return foreground == snapshot.packageName
     }
 
     private fun markSnapshotAsObserved(snapshot: WebsiteStatsEntity): Boolean =
@@ -216,7 +235,7 @@ class KeywordBlocker : BaseBlocker() {
             val window = group.config?.schedule?.activeWindow(now) ?: continue
             if (isUsageLimitExceeded(group, window)) {
                 if (!claimBlock(packageName, urlIdentifier, group.id)) return
-                handleBlocking(group)
+                handleBlocking(group, packageName)
                 return
             }
         }
@@ -253,10 +272,13 @@ class KeywordBlocker : BaseBlocker() {
     private fun blockTarget(packageName: String, urlIdentifier: String, groupId: String): String =
         "$groupId\u0000$packageName\u0000$urlIdentifier"
 
-    private fun handleBlocking(group: KeywordGroup) {
+    private fun handleBlocking(group: KeywordGroup, packageName: String) {
         Thread.sleep(250)
-        service.pressBack()
-        service.pressHome()
+        // Back + Home can leave the tab on the blocked page, so leave it from the URL bar.
+        if (!replaceBlockedPage(packageName)) {
+            service.pressBack()
+            service.pressHome()
+        }
         Thread.sleep(1000)
 
         if (group.warningScreenConfig.isWarningDialogHidden) return
@@ -270,6 +292,28 @@ class KeywordBlocker : BaseBlocker() {
             }
             service.startActivity(intent)
         }, 300)
+    }
+
+    private fun replaceBlockedPage(packageName: String): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
+        if (findMatchingGroups(REPLACEMENT_PAGE).isNotEmpty()) return false
+        val urlBarId = URL_BAR_ID_LIST[packageName]?.displayUrlBarId ?: return false
+        return runCatching {
+            val root = service.rootInActiveWindow ?: return false
+            if (root.packageName?.toString() != packageName) return false
+            val urlBar = AccessibilityHelper.findElementById(root, urlBarId) ?: return false
+            if (!urlBar.isEditable) return false
+            urlBar.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            urlBar.refresh()
+            val text = Bundle().apply {
+                putCharSequence(
+                    AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+                    REPLACEMENT_PAGE
+                )
+            }
+            urlBar.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, text) &&
+                urlBar.performAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_IME_ENTER.id)
+        }.getOrDefault(false)
     }
 
     private fun isUsageLimitExceeded(
