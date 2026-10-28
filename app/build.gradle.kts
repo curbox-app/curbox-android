@@ -76,35 +76,26 @@ android {
     }
 
     productFlavors {
-        // Fully offline, otherwise every feature except cross device sync.
+        // Fully offline.
         create("fdroid") {
             dimension = "version"
             versionNameSuffix = "-fdroid"
             buildConfigField("Boolean", "FDROID_VARIANT", "true")
         }
 
-        // Everything: sync plus all blocker features.
+        // Fully offline.
         create("full") {
             dimension = "version"
             versionNameSuffix = "-full"
-            buildConfigField("Boolean", "FDROID_VARIANT", "false")
-            // Staging switch for the FCM push migration. While false, the realtime
-            // websocket + poll stay on (no regression) and FCM only adds background
-            // delivery. Flip to true once FCM is verified end to end: realtime is
-            // then dropped and the poll slows right down, which is where the memory
-            // and battery win lands.
-            buildConfigField("Boolean", "SYNC_USE_FCM", "true")
-            buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", googleWebClientId.asBuildConfigString())
+            buildConfigField("Boolean", "FDROID_VARIANT", "true")
         }
 
-        // Play Store policy build: keeps sync but strips the UI hider and anti
+        // Play Store policy build: offline, strips the UI hider and anti
         // uninstall (no device admin), see src/playstore/AndroidManifest.xml.
         create("playstore") {
             dimension = "version"
             versionNameSuffix = "-playstore"
-            buildConfigField("Boolean", "FDROID_VARIANT", "false")
-            buildConfigField("Boolean", "SYNC_USE_FCM", "true")
-            buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", googleWebClientId.asBuildConfigString())
+            buildConfigField("Boolean", "FDROID_VARIANT", "true")
             buildConfigField("Boolean", "SUPPORTS_UI_HIDER", "false")
             buildConfigField("Boolean", "SUPPORTS_ANTI_UNINSTALL", "false")
             buildConfigField("Boolean", "SUPPORTS_WRITE_SECURE_SETTINGS", "false")
@@ -112,10 +103,7 @@ android {
     }
 
     sourceSets {
-        // Cross device sync code shared by the full and playstore flavors.
-        // F-Droid never compiles it, so that build stays offline.
-        getByName("full") { java.srcDir("src/sync/java") }
-        getByName("playstore") { java.srcDir("src/sync/java") }
+        // Sync code removed; keep structure for potential future reintroduction.
     }
 
 
@@ -195,32 +183,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.kotlinx.coroutines.android)
 
-    // Cross device sync. These live only in the full and playstore flavors so the
-    // F-Droid build compiles with no network, no auth, and no Supabase code at all.
-    "fullImplementation"(libs.okhttp)
-    "fullImplementation"(libs.androidx.security.crypto)
-    "fullImplementation"(libs.androidx.work.runtime.ktx)
-    "playstoreImplementation"(libs.okhttp)
-    "playstoreImplementation"(libs.androidx.security.crypto)
-    "playstoreImplementation"(libs.androidx.work.runtime.ktx)
-    "fullImplementation"(libs.androidx.credentials)
-    "fullImplementation"(libs.androidx.credentials.play.services.auth)
-    "fullImplementation"(libs.googleid)
-    "playstoreImplementation"(libs.androidx.credentials)
-    "playstoreImplementation"(libs.androidx.credentials.play.services.auth)
-    "playstoreImplementation"(libs.googleid)
-    // Play Store flavor sells the yearly Sync Premium subscription through
-    // Google Play. The directly distributed full flavor uses Polar instead.
-    "playstoreImplementation"("com.android.billingclient:billing:9.1.0")
-
-    // FCM push, sync flavors ONLY, so the phone can sync instantly in the
-    // background without holding a websocket open. F-Droid never pulls in Firebase
-    // or Google Play Services. Initialised manually from FcmConfig, so the
-    // google-services Gradle plugin and google-services.json are NOT required.
-    "fullImplementation"(platform("com.google.firebase:firebase-bom:33.5.1"))
-    "fullImplementation"("com.google.firebase:firebase-messaging")
-    "playstoreImplementation"(platform("com.google.firebase:firebase-bom:33.5.1"))
-    "playstoreImplementation"("com.google.firebase:firebase-messaging")
+    // Sync removed. No network/auth/sync dependencies.
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

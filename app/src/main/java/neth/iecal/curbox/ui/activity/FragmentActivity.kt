@@ -103,7 +103,6 @@ class FragmentActivity : AppCompatActivity() {
             neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.mindful_messages.MindfulMessagesFragment.FRAGMENT_ID,
             KeywordBlockerFragment.FRAGMENT_ID,
             neth.iecal.curbox.ui.fragments.main.reducers.api.ApiFragment.FRAGMENT_ID,
-            neth.iecal.curbox.ui.fragments.main.reducers.sync.SyncFragment.FRAGMENT_ID,
             AntiUninstallFragment.FRAGMENT_ID,
             ServiceProtectionFragment.FRAGMENT_ID,
             SettingsChangeDelayFragment.FRAGMENT_ID,
@@ -128,7 +127,7 @@ class FragmentActivity : AppCompatActivity() {
                     neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.mindful_messages.MindfulMessagesFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.mindful_messages.MindfulMessagesFragment()
                     IntentsLogFragment.FRAGMENT_ID -> IntentsLogFragment()
                     neth.iecal.curbox.ui.fragments.main.reducers.api.ApiFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.api.ApiFragment()
-                    neth.iecal.curbox.ui.fragments.main.reducers.sync.SyncFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.sync.SyncFragment()
+                    // Sync removed
                     AntiUninstallFragment.FRAGMENT_ID -> AntiUninstallFragment()
                     ServiceProtectionFragment.FRAGMENT_ID -> ServiceProtectionFragment()
                     SettingsChangeDelayFragment.FRAGMENT_ID -> SettingsChangeDelayFragment()

@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The F-Droid flavor adds no network permissions. It stays completely
-     offline: no Supabase, no login, no internet. -->
+<!-- Fully offline. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" />

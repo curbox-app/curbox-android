@@ -18,8 +18,6 @@ import androidx.core.content.ContextCompat
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import neth.iecal.curbox.R
-import neth.iecal.curbox.data.sync.SYNCED_WEB_PACKAGE
-import neth.iecal.curbox.data.sync.SyncGateway
 import neth.iecal.curbox.ui.activity.FragmentActivity
 import neth.iecal.curbox.ui.fragments.main.usage.AppUsageStat
 import neth.iecal.curbox.ui.fragments.main.usage.AllAppsUsageFragment
@@ -149,23 +147,7 @@ class ScreentimeWidgetProvider : AppWidgetProvider() {
             it.totalTime >= 1_000 && it.packageName !in ignoredPackages
         }
 
-        // Fold in app + website usage synced from the user's other devices, same
-        // as AllAppsUsageViewModel, so the widget total matches the in-app total.
-        // Empty on F-Droid (NoopSyncProvider) and whenever nothing has synced yet.
-        val today = LocalDate.now().toString()
-        val remoteApps = runBlocking {
-            runCatching { SyncGateway.provider.remoteAppUsage(today) }.getOrDefault(emptyMap())
-        }
-        val remoteWebsiteTime = runBlocking {
-            runCatching { SyncGateway.provider.remoteWebsiteUsage(today) }.getOrDefault(emptyMap())
-        }.values.sum()
-
-        val list = buildList {
-            addAll(mergeRemoteApps(localList, remoteApps, ignoredPackages))
-            if (remoteWebsiteTime >= 1_000) {
-                add(AppUsageStat(SYNCED_WEB_PACKAGE, remoteWebsiteTime))
-            }
-        }.sortedByDescending { it.totalTime }
+        val list = localList.sortedByDescending { it.totalTime }
 
         val totalScreentime = list.sumOf { it.totalTime }
 
@@ -276,13 +258,6 @@ class ScreentimeWidgetProvider : AppWidgetProvider() {
     }
 
     private fun getAppMetadata(context: Context, packageName: String): WidgetAppMetadata {
-        if (packageName == SYNCED_WEB_PACKAGE) {
-            return WidgetAppMetadata(
-                label = context.getString(R.string.synced_browsing),
-                icon = ContextCompat.getDrawable(context, R.drawable.ic_synced_web),
-            )
-        }
-
         return try {
             val appInfo = context.packageManager.getApplicationInfo(packageName, 0)
             WidgetAppMetadata(

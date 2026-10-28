@@ -152,7 +152,7 @@ object SyncGateway {
     fun init(context: Context) {
         if (providerRef != null) return
         synchronized(this) {
-            if (providerRef == null) providerRef = createSyncProvider(context.applicationContext)
+            if (providerRef == null) providerRef = NoopSyncProvider
         }
     }
 

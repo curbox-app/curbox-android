@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The Play Store flavor keeps cross device sync but ships without the UI hider
+<!-- The Play Store flavor ships offline, without the UI hider
      and anti uninstall features. Their components are stripped from the merged
      manifest here so this build never holds the device admin capability. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <!-- Play Store builds keep the per toggle Shizuku path for grayscale and never
          request the secure settings permission. -->
     <uses-permission
@@ -20,25 +17,6 @@
         tools:node="remove" />
 
     <application>
-        <!-- Wakes the app on a content-less push so it can pull right away, even
-             with the screen off. Runs in the main process. -->
-        <service
-            android:name=".data.sync.CurboxMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-
-        <!-- We initialise Firebase ourselves from FcmConfig, so the auto-init
-             provider (which needs google-services.json) is removed. This keeps the
-             google-services Gradle plugin out of the build entirely. -->
-        <provider
-            android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="${applicationId}.firebaseinitprovider"
-            android:exported="false"
-            tools:node="remove" />
-
         <!-- Anti uninstall relies on device admin, which Play Store builds drop. -->
         <receiver
             android:name=".receivers.AdminReceiver"
