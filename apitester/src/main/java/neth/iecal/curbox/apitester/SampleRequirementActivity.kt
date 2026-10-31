@@ -9,8 +9,11 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class SampleRequirementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setResult(RESULT_CANCELED)
         val requestId = intent.getStringExtra("request_id")
-        if (callingPackage == null || intent.action != "neth.iecal.curbox.api.CHECK_UNLOCK_CONDITION" ||
+        val expectedCaller = getSharedPreferences(PREFS, MODE_PRIVATE).getString(KEY_CURBOX_PACKAGE, null)
+        if (expectedCaller == null || callingPackage != expectedCaller ||
+            intent.action != "neth.iecal.curbox.api.CHECK_UNLOCK_CONDITION" ||
             intent.getStringExtra("condition_id") != "practice_goal" || requestId.isNullOrEmpty()) {
             finish()
             return
@@ -28,5 +31,10 @@ class SampleRequirementActivity : AppCompatActivity() {
             }
             .setOnCancelListener { finish() }
             .show()
+    }
+
+    companion object {
+        const val PREFS = "api_tester"
+        const val KEY_CURBOX_PACKAGE = "curbox_package"
     }
 }

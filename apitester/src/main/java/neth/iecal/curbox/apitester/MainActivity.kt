@@ -141,6 +141,9 @@ class MainActivity : AppCompatActivity() {
         }
         fun select(index: Int) {
             curboxPackage = services[index].serviceInfo.packageName
+            // SampleRequirementActivity only answers checks from this installation.
+            getSharedPreferences(SampleRequirementActivity.PREFS, MODE_PRIVATE).edit()
+                .putString(SampleRequirementActivity.KEY_CURBOX_PACKAGE, curboxPackage).apply()
             log(getString(R.string.api_tester_selected, curboxPackage))
             action()
         }
