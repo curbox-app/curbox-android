@@ -20,4 +20,8 @@ internal object ApiPackageIdentity {
                 .joinToString("") { "%02x".format(it) }
         }.sorted()
     }
+
+    /** Changes when the package is uninstalled and installed again, but not on updates. */
+    fun installTime(context: Context, packageName: String): Long =
+        context.packageManager.getPackageInfo(packageName, 0).firstInstallTime
 }
