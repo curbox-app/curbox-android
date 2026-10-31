@@ -11,6 +11,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.provider.Settings
+import android.util.Log
 import android.util.LruCache
 import android.view.accessibility.AccessibilityEvent
 import kotlinx.coroutines.CoroutineScope
@@ -18,6 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import neth.iecal.curbox.BuildConfig
 import neth.iecal.curbox.CrashLogger
 import neth.iecal.curbox.data.db.AppDatabase
 import neth.iecal.curbox.data.db.ReelStatsDao
@@ -44,6 +46,7 @@ class ReelsCountTracker {
         private const val PAGER_SETTLE_MS = 150L
         private const val PAGED_REEL_HISTORY = 50
         private const val MAX_SKIPPED_REELS = 10
+        private const val TRACE_TAG = "ReelsCountTracker"
     }
 
     private lateinit var service: BaseBlockingService
@@ -146,7 +149,7 @@ class ReelsCountTracker {
             if (data != null) {
                 if (dynamicComparator == null) {
                     lastDynamicText.remove(pkg)
-                    pagedSessions.remove(pkg)
+                    if (pagedSessions.remove(pkg) != null) trace("left reel viewer")
                     hideReelCounter()
                     return
                 }
@@ -240,15 +243,24 @@ class ReelsCountTracker {
         }
 
         session.current = reel
+        // A quick swipe may have counted this page already while passing it.
+        val countedWhilePassing = index != UNKNOWN_INDEX && index in session.seenIndices
         if (previous != null && previous.index != UNKNOWN_INDEX && index != UNKNOWN_INDEX) {
             countPassedReels(pkg, session, previous.index, index)
         }
         if (index != UNKNOWN_INDEX) session.seenIndices.add(index)
 
         val recent = recentPagedReels.getOrPut(pkg) { ArrayDeque() }
-        if (recent.any { !isDifferentReel(it, reel) }) return
-        recent.addLast(reel)
-        if (recent.size > PAGED_REEL_HISTORY) recent.removeFirst()
+        val seenRecently = recent.any { !isDifferentReel(it, reel) }
+        if (!seenRecently) {
+            recent.addLast(reel)
+            if (recent.size > PAGED_REEL_HISTORY) recent.removeFirst()
+        }
+        if (seenRecently || countedWhilePassing) {
+            trace("seen again at $index: $author")
+            return
+        }
+        trace("new reel at $index after ${previous?.index}: $author")
         onReelCounted(pkg)
     }
 
@@ -256,8 +268,16 @@ class ReelsCountTracker {
     private fun countPassedReels(pkg: String, session: PagedSession, from: Int, to: Int) {
         val passed = if (to > from) from + 1 until to else to + 1 until from
         for (passedIndex in passed.take(MAX_SKIPPED_REELS)) {
-            if (session.seenIndices.add(passedIndex)) onReelCounted(pkg)
+            if (session.seenIndices.add(passedIndex)) {
+                trace("passed reel at $passedIndex between $from and $to")
+                onReelCounted(pkg)
+            }
         }
+    }
+
+    /** Debug builds explain each counting decision, for tools/reel-counter-test. */
+    private fun trace(message: String) {
+        if (BuildConfig.DEBUG) Log.i(TRACE_TAG, message)
     }
 
     private fun isDifferentReel(first: PagedReel, second: PagedReel): Boolean {
