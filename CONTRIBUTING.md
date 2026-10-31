@@ -38,6 +38,32 @@ If you use a modded version of Instagram or YouTube, you can add support for ree
 - Copy that entry and create a new one with the mod's package name replaced (e.g., `app.revanced.android.youtube`).
 - Usually, mods keep the same internal IDs, so you just need to update the package name keys.
 
+### 4. Tuning Detection Rules With an AI Agent
+You don't need to know Kotlin to make Curbox more accurate. Apps like Instagram, YouTube, and browsers change their layouts often, and the rules Curbox uses to read them break quietly. A coding agent (Claude Code, Codex, and similar) can fix these for you, as long as it can test on a real phone.
+
+Good candidates:
+- **Reel counter accuracy:** counts that are too high, too low, or missing in some screens (`hardcoded/ReelAppConfig.kt`).
+- **UI hider rules:** a starter rule that stopped hiding the right part of an app (`hardcoded/UiHiderSamples.kt`).
+- **Browser support:** website tracking or keyword blocking that doesn't work in your browser (`hardcoded/BrowserUrlBarIds.kt`).
+
+What you need:
+- An Android phone with USB debugging turned on, connected to your computer.
+- `adb` and the Android SDK (installing Android Studio gives you both).
+- The app you want to fix, installed and signed in on that phone.
+- A coding agent running in your copy of this repository. It reads `AGENTS.md`, which tells it how to do this safely.
+
+How it goes:
+1. Tell the agent what's wrong, in plain words. For example: "The reel counter adds 3 when I swipe once in Instagram. Use adb to find out why and fix it."
+2. The agent installs a debug build, drives the app on your phone, and adds temporary logging to see what Curbox sees.
+3. It changes the rule, reinstalls, and tests again until the results are right.
+4. For the reel counter, it can run `tools/reel-counter-test`, which scrolls about a hundred reels and reports how accurate the count is.
+
+The rules for this kind of pull request:
+- **Real device testing is required.** A change that was only built, never run on a phone, will not be merged. Emulators often don't match real apps.
+- **Show the evidence.** In the pull request, include what was wrong before, what is right now, the app's version, your phone model, and any test report.
+- **Keep it small.** Stick to the rule files above unless the agent truly can't fix it there. If it wants to change how a feature works, open an issue first.
+- **Stay out of private screens.** Don't let the agent open your messages or other personal content while testing.
+
 **Workflow for Quick Contributions:**
 1. Open a Pull Request with your changes.
 2. Wait for the CI to build the APK.

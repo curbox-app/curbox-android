@@ -210,8 +210,43 @@ Use the check that matches the change. Documentation only changes do not need a 
 - Debug builds use the `.debug` application ID suffix and the name `Debug Curbox`.
 - If a relevant check cannot run, say why in the handoff.
 
+## Tuning detection on a real device
+
+Detection rules (reel detectors, UI hider rules, browser URL bar IDs) depend on third party layouts that change without notice. Contributors, including people who do not code, may ask you to fix them on their phone. A build passing proves nothing here: every rule change must be reproduced, fixed, and verified on a connected device.
+
+### Loop
+
+1. Confirm the device with `adb devices`. If none is connected, stop and say so. Do not change detection rules blind.
+2. Install the flavor already on the device. Check with `adb shell dumpsys package neth.iecal.curbox.debug | grep versionName`, then run the matching `installAndGrantAccessibility<Flavor>Debug` task.
+3. Reproduce the problem by driving the app with `adb shell input tap|swipe|keyevent` and `adb exec-out screencap -p`. Read screenshots to confirm the state.
+4. Observe what Curbox sees by adding temporary logging inside the service, then read it with `adb logcat -s <TAG>`.
+5. Change the rule, reinstall, and repeat the same scenarios until they pass. Then test the edges: swiping back, leaving and returning, other entry points into the same screen, and ads.
+6. Remove every temporary log, build all three flavors, and report the scenarios, results, app version, and device.
+
+### Device pitfalls
+
+- Some devices set `log.tag=I` and silently drop `Log.d`. Use `Log.w` for temporary diagnostics. Check with `adb shell getprop log.tag`.
+- `uiautomator dump` and `uiautomator events` use UiAutomation, which can suppress other accessibility services while connected. Never run them while measuring Curbox. `uiautomator dump` also fails while video plays. To see the tree, log it from the background worker instead.
+- Keep temporary diagnostics in the background worker or in a feature's worker path. Never walk the node tree in `onAccessibilityEvent`, even for debugging.
+- Installing restarts the service process and clears in-memory state such as reel deduplication history. Account for this when you compare runs.
+- Do not open messages, emails, or other private content to test. Use public feeds, Explore, and search.
+
+### Reading app trees
+
+- Hidden copies of a screen often stay in the tree, such as Instagram's Reels tab under a reel opened from Explore. `find()` returns the first match, so use `findAll()` with `isOnScreen()`.
+- Node scoped searches can miss children in some apps. If `node.find(id=...)` returns null for a visible child, match window wide `findAll()` results by bounds.
+- Each lookup is a separate IPC call, so a screen can move between two reads. Re-check the anchor after reading, or read only when the screen is settled.
+- Scroll events from pagers report the exact page in `fromIndex`. They are throttled to about every 100 ms, so they lag behind the content.
+
+### Feature specifics
+
+- **Reel counter:** detectors live in `hardcoded/ReelAppConfig.kt`; counting logic is in `trackers/ReelsCountTracker.kt`. Debug builds log every counting decision under the `ReelsCountTracker` tag. Read Curbox's stored count with `adb exec-out run-as neth.iecal.curbox.debug cat databases/curbox_db` (also copy `curbox_db-wal`). For Instagram, run `python3 tools/reel-counter-test/reel_counter_test.py --reels 100` before and after a change. It needs macOS and checks the counter against OCR of real screenshots. Treat a mismatch as a Curbox bug only after the trace and screenshot confirm it; the OCR ground truth can be wrong too.
+- **UI hider rules:** starter rules live in `hardcoded/UiHiderSamples.kt` and use the script language in `blockers/uihider/script`. Verify that the right area is hidden, that nothing else is, and that the rule stops when the user leaves that screen. Run `./gradlew testFullDebugUnitTest` after touching the script language.
+- **Browsers:** URL bar IDs live in `hardcoded/BrowserUrlBarIds.kt`. Verify by visiting a site and checking that website usage records it and that a keyword block triggers.
+
 ## Reference docs
 
 - `CONTRIBUTING.md`: contributor workflows
 - `CURBOX_API.md`: API contract and integration guide
 - `Readme.md`: product overview
+- `tools/reel-counter-test/`: on-device reel counter accuracy test
