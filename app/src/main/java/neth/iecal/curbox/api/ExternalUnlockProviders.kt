@@ -16,7 +16,9 @@ object ExternalUnlockProviders {
 
     suspend fun register(context: Context, packageName: String, args: Bundle) {
         val id = args.getString("id").orEmpty()
-        val label = args.getString("label").orEmpty().trim()
+        // Strip invisible and direction control characters so a label cannot disguise the package name shown next to it.
+        val label = args.getString("label").orEmpty()
+            .filterNot { it.isISOControl() || Character.getType(it) == Character.FORMAT.toInt() }.trim()
         val activity = args.getString("activity").orEmpty()
         require(id.matches(Regex("[A-Za-z0-9_.]{1,100}")))
         require(label.isNotEmpty() && label.length <= 100)
