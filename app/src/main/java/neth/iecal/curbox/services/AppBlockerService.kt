@@ -2,6 +2,8 @@ package neth.iecal.curbox.services
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
@@ -66,6 +68,17 @@ class AppBlockerService : BaseBlockingService() {
     }
     private val websiteObservationChannel = Channel<WebsiteObservation?>(Channel.CONFLATED)
 
+    // A still reel sends no events after its pager stops, so the last scroll is replayed once settled.
+    private val mainHandler = Handler(Looper.getMainLooper())
+    private var pendingReelSettleEvent: AccessibilityEvent? = null
+    private val reelSettleRecheck = Runnable {
+        val event = pendingReelSettleEvent ?: return@Runnable
+        pendingReelSettleEvent = null
+        if (eventChannel.trySend(event).isFailure) {
+            event.recycle()
+        }
+    }
+
     private lateinit var crashLogger: CrashLogger
 
     fun syncDndState() {
@@ -102,6 +115,9 @@ class AppBlockerService : BaseBlockingService() {
 
         try {
             appUsageTracker.onEvent(event)
+            if (reelsCountTracker.onPagerEvent(event)) {
+                scheduleReelSettleRecheck(event)
+            }
             mindfulMessage.onEvent(event)
         } catch (t: Throwable) {
             if (t is CancellationException) throw t
@@ -120,6 +136,19 @@ class AppBlockerService : BaseBlockingService() {
     }
 
     override fun onInterrupt() {
+    }
+
+    private fun scheduleReelSettleRecheck(event: AccessibilityEvent) {
+        mainHandler.removeCallbacks(reelSettleRecheck)
+        pendingReelSettleEvent?.recycle()
+        pendingReelSettleEvent = AccessibilityEvent.obtain(event)
+        mainHandler.postDelayed(reelSettleRecheck, ReelsCountTracker.PAGER_SETTLE_RECHECK_MS)
+    }
+
+    private fun cancelReelSettleRecheck() {
+        mainHandler.removeCallbacks(reelSettleRecheck)
+        pendingReelSettleEvent?.recycle()
+        pendingReelSettleEvent = null
     }
 
     private fun startBackgroundWorker() {
@@ -225,6 +254,7 @@ class AppBlockerService : BaseBlockingService() {
 
     override fun onDestroy() {
         super.onDestroy()
+        cleanupFeature("reel settle recheck") { cancelReelSettleRecheck() }
         cleanupFeature("event worker") { serviceScope.cancel() }
         cleanupFeature("event channel") { eventChannel.cancel() }
         cleanupFeature("website observation channel") { websiteObservationChannel.cancel() }

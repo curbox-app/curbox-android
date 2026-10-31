@@ -19,23 +19,67 @@ class ReelAppConfig {
         private fun instagramScript(packageName: String) = """
             ${isOnScreenFunction()}
 
-            viewer = find(id="$packageName:id/clips_viewer_view_pager")
-            controls = find(id="$packageName:id/clips_ufi_component")
-            if not isOnScreen(viewer) or not isOnScreen(controls) { return null }
-
-            dmReplyBar = find(id="$packageName:id/reply_bar_container_scroll_view")
-            openedFromDmInbox = isOnScreen(dmReplyBar)
-
-            comparator = ""
-            caption = find(id="$packageName:id/clips_captions_component")
-            author = find(id="$packageName:id/clips_author_username")
-            if caption != null { comparator = comparator + caption.subtreeText(32, 20000) }
-            if author != null { comparator = comparator + author.subtreeText(32, 20000) }
-            if openedFromDmInbox {
-                return "$INSTAGRAM_DM_REEL_MARKER" + comparator
+            # Hidden copies stay in the tree, such as the Reels tab under a reel opened from Explore.
+            fn findOnScreen(viewId) {
+                for node in findAll(id="$packageName:id/" + viewId) {
+                    if isOnScreen(node) { return node }
+                }
+                return null
             }
-            return comparator
+
+            # Searching inside a reel page misses its children, so match window wide nodes by bounds.
+            fn findInPage(page, viewId) {
+                for node in findAll(id="$packageName:id/" + viewId) {
+                    # Ad controls can overflow the page a little, so match by centre.
+                    if isOnScreen(node) and node.cy >= page.top and node.cy <= page.bottom {
+                        return node
+                    }
+                }
+                return null
+            }
+
+            # The pager keeps its neighbours attached, so only the page that fills it is current.
+            fn findFullPage(viewer) {
+                for overlay in findAll(id="$packageName:id/clips_item_overlay_component") {
+                    if overlay.visible and overlay.h >= viewer.h * 0.99 { return overlay }
+                }
+                return null
+            }
+
+            viewer = findOnScreen("clips_viewer_view_pager")
+            if viewer == null { return null }
+
+            prefix = ""
+            if findOnScreen("reply_bar_container_scroll_view") != null { prefix = "$INSTAGRAM_DM_REEL_MARKER" }
+
+            # A blank result keeps the reel screen active while a swipe is in progress.
+            page = findFullPage(viewer)
+            if page == null { return prefix }
+            if findInPage(page, "clips_ufi_component") == null { return null }
+
+            # The first line must stay the author because the counter dedupes by it.
+            author = findInPage(page, "clips_author_username")
+            if author == null or author.text == null { return prefix }
+            comparator = author.text
+            caption = findInPage(page, "clips_caption_component")
+            if caption != null { comparator = comparator + "\n" + caption.subtreeText(4, 4000) }
+            for countId in ["comment_count", "repost_count", "save_count"] {
+                count = findInPage(page, countId)
+                if count != null and count.text != null { comparator = comparator + "\n" + count.text }
+            }
+
+            # Each lookup is a separate read, so a swipe that started meanwhile can mix two reels.
+            if findFullPage(viewer) == null { return prefix }
+            return prefix + comparator
         """.trimIndent()
+
+        private fun instagramData(packageName: String) = ReelAppData(
+            scriptSource = instagramScript(packageName),
+            // Seekbar updates keep content events flowing, so a dropped scroll event cannot hide a reel.
+            eventType = AccessibilityEvent.TYPE_VIEW_SCROLLED or
+                AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED,
+            pagerClassName = "androidx.viewpager.widget.ViewPager"
+        )
 
         private fun youtubeScript(packageName: String) = """
             ${isOnScreenFunction()}
@@ -49,13 +93,8 @@ class ReelAppConfig {
         """.trimIndent()
 
         val reelData: Map<String, ReelAppData> = mapOf(
-            INSTAGRAM_PACKAGE to ReelAppData(
-                scriptSource = instagramScript(INSTAGRAM_PACKAGE)
-            ),
-
-            "com.myinsta.android" to ReelAppData(
-                scriptSource = instagramScript("com.myinsta.android")
-            ),
+            INSTAGRAM_PACKAGE to instagramData(INSTAGRAM_PACKAGE),
+            "com.myinsta.android" to instagramData("com.myinsta.android"),
 
             "com.instagram.lite" to ReelAppData(
                 scriptSource = """
