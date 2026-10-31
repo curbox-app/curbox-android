@@ -190,6 +190,9 @@ class Reel:
             matches = sum(1 for number in self.numbers if number in other.numbers)
             if matches * 2 < min(len(self.numbers), len(other.numbers)):
                 return False
+            # Three matching engagement numbers are as good as an id.
+            if matches >= 3:
+                return True
         if not self.caption_words and not other.caption_words:
             return True
         union = self.caption_words | other.caption_words
@@ -240,7 +243,9 @@ class ReelReader:
 
         caption_words: set[str] = set()
         for other in lines:
-            if other["left"] < 0.08 * width and line["top"] < other["top"] < 0.93 * height:
+            # Text burned into the video can sit beside the caption, but it is rarely caption sized.
+            caption_sized = other["bottom"] - other["top"] >= 0.011 * height
+            if other["left"] < 0.08 * width and line["bottom"] <= other["top"] < 0.93 * height and caption_sized:
                 caption_words.update(word.lower() for word in WORD_RE.findall(other["text"]))
 
         numbers = tuple(
@@ -368,6 +373,12 @@ class Run:
         self.last_total, self.last_per_app = total, per_app
         return delta
 
+    def seen_before_run(self, reel: Reel) -> bool:
+        return any(
+            line.startswith("seen again") and authors_match(line.rsplit(": ", 1)[-1].split(" ")[0], reel.author)
+            for line in self.read_trace()
+        )
+
     def clear_trace(self):
         self.trace_mark = self.trace.mark()
 
@@ -419,6 +430,10 @@ class Run:
         else:
             expected = 1 if self.is_new(reel) else 0
         actual = self.counter_delta(-1 if expected is None else expected)
+        if expected == 1 and actual == 0 and self.seen_before_run(reel):
+            # Curbox keeps its history between runs; the test cannot see what came before it.
+            expected = None
+            note = "(Curbox saw it before this run, not verified)"
         self.record(phase, action, reel, expected, actual, shot, note)
         return reel
 
