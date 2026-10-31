@@ -2019,4 +2019,114 @@
     <string name="warning_external_check">Check requirement</string>
     <string name="warning_external_unavailable">This requirement is unavailable. Check that the app is installed and has Curbox API access.</string>
     <string name="warning_external_denied">The requirement was not approved. You can try again.</string>
+    <!-- Advanced analytics -->
+    <string name="advanced_analytics">Advanced analytics</string>
+    <string name="advanced_analytics_desc">See where your time goes, hour by hour.</string>
+    <string name="analytics_range_7">7 days</string>
+    <string name="analytics_range_14">14 days</string>
+    <string name="analytics_range_30">30 days</string>
+    <string name="analytics_range_90">90 days</string>
+    <string name="analytics_range_label">%1$s to %2$s</string>
+    <string name="analytics_empty_title">Nothing to show yet</string>
+    <string name="analytics_empty_desc">Use your phone for a while and come back. Your patterns will show up here.</string>
+    <string name="analytics_footer">These numbers come from usage recorded on this phone.</string>
+    <string name="analytics_under_minute">Under 1 min</string>
+    <string name="analytics_none">None</string>
+    <string name="analytics_category_other">Other</string>
+    <string name="analytics_detail_separator">" · "</string>
+
+    <string name="analytics_section_overview">At a glance</string>
+    <string name="analytics_section_days">Day by day</string>
+    <string name="analytics_section_hours">Hour by hour</string>
+    <string name="analytics_section_week">Your week</string>
+    <string name="analytics_section_categories">Kinds of apps</string>
+    <string name="analytics_section_apps">Every app</string>
+    <string name="analytics_section_websites">Websites</string>
+    <string name="analytics_section_reels">Short videos</string>
+    <string name="analytics_section_focus">Focus and mindful pauses</string>
+
+    <string name="analytics_total_time">Total screen time</string>
+    <string name="analytics_daily_average">Daily average</string>
+    <string name="analytics_change">Compared to before</string>
+    <string name="analytics_active_days">Days used</string>
+    <string name="analytics_app_opens">App opens</string>
+    <string name="analytics_average_visit">Average visit</string>
+    <string name="analytics_peak_hour">Busiest hour</string>
+    <string name="analytics_apps_used">Apps used</string>
+    <string name="analytics_change_up">Up %1$s</string>
+    <string name="analytics_change_down">Down %1$s</string>
+    <string name="analytics_change_detail">Than the %1$d days before</string>
+    <string name="analytics_change_none">No earlier data</string>
+    <string name="analytics_days_of">%1$d of %2$d</string>
+    <string name="analytics_per_day">%1$s each day</string>
+    <string name="analytics_percent">%1$d%%</string>
+
+    <string name="analytics_summary_total">You spent %1$s on your phone. That is about %2$s a day, or %3$d%% of every day.</string>
+    <string name="analytics_summary_top_three">Your top 3 apps take %1$d%% of your time.</string>
+    <string name="analytics_summary_peak">You use your phone the most around %1$s.</string>
+    <string name="analytics_summary_weekend_more">On weekends you use it %1$s more each day than on weekdays.</string>
+    <string name="analytics_summary_weekend_less">On weekends you use it %1$s less each day than on weekdays.</string>
+    <string name="analytics_summary_night">%1$s of your time happened between midnight and 6 AM.</string>
+
+    <string name="analytics_days_hint">Tap a bar to see that day. The dashed line is your daily average.</string>
+    <string name="analytics_day_selected">%1$s: %2$s</string>
+    <string name="analytics_busiest_day">Busiest day</string>
+    <string name="analytics_quietest_day">Quietest day</string>
+    <string name="analytics_weekday_average">Weekday average</string>
+    <string name="analytics_weekend_average">Weekend average</string>
+
+    <string name="analytics_hours_hint">Total time in each hour of the day. Tap a bar for details.</string>
+    <string name="analytics_hour_selected">%1$s: %2$s in total, about %3$s a day</string>
+    <string name="analytics_part_night">Night, midnight to 6 AM</string>
+    <string name="analytics_part_morning">Morning, 6 AM to noon</string>
+    <string name="analytics_part_afternoon">Afternoon, noon to 6 PM</string>
+    <string name="analytics_part_evening">Evening, 6 PM to midnight</string>
+    <string name="analytics_share_of_time">%1$d%% of your time</string>
+
+    <string name="analytics_week_hint">Each square is one hour. Darker squares mean more time. Tap one for details.</string>
+    <string name="analytics_week_selected">%1$s around %2$s: about %3$s on average</string>
+
+    <string name="analytics_show_all_apps">Show all apps</string>
+    <string name="analytics_show_fewer_apps">Show fewer apps</string>
+    <string name="analytics_each_visit">About %1$s each visit</string>
+    <string name="analytics_busiest_around">Busiest around %1$s</string>
+    <string name="analytics_used_on_days">Used on %1$d of %2$d days</string>
+    <string name="analytics_longest_day">Most on %1$s with %2$s</string>
+    <string name="analytics_trend_up">Up %1$s from before</string>
+    <string name="analytics_trend_down">Down %1$s from before</string>
+    <string name="analytics_trend_new">Not used before this</string>
+
+    <string name="analytics_share_of_browsing">%1$d%% of browsing</string>
+    <string name="analytics_visited_on_days">Visited on %1$d of %2$d days</string>
+    <string name="analytics_no_websites">No websites were recorded in this time.</string>
+
+    <string name="analytics_reels_watched">Videos watched</string>
+    <string name="analytics_reels_time">Time watching</string>
+    <string name="analytics_reels_average">Time per video</string>
+    <string name="analytics_seconds">%1$d sec</string>
+    <string name="analytics_no_reels">No short videos were recorded in this time.</string>
+
+    <string name="analytics_focus_sessions">Focus sessions</string>
+    <string name="analytics_focus_time">Time in focus</string>
+    <string name="analytics_focus_finished">Finished</string>
+    <string name="analytics_focus_ended_early">Ended early</string>
+    <string name="analytics_mindful_pauses">Mindful pauses</string>
+    <string name="analytics_time_unlocked">Time unlocked after</string>
+    <string name="analytics_no_intents">No mindful pauses in this time.</string>
+    <plurals name="analytics_opens">
+        <item quantity="one">Opened %d time</item>
+        <item quantity="other">Opened %d times</item>
+    </plurals>
+    <plurals name="analytics_apps_count">
+        <item quantity="one">%d app</item>
+        <item quantity="other">%d apps</item>
+    </plurals>
+    <plurals name="analytics_videos_count">
+        <item quantity="one">%d video</item>
+        <item quantity="other">%d videos</item>
+    </plurals>
+    <plurals name="analytics_pauses_count">
+        <item quantity="one">%d pause</item>
+        <item quantity="other">%d pauses</item>
+    </plurals>
 </resources>

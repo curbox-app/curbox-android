@@ -61,7 +61,7 @@ android {
     defaultConfig {
         applicationId = "neth.iecal.curbox"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 6
         versionName = "6"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -139,6 +139,7 @@ android {
         debug {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
+
             resValue("string", "app_name", "Debug Curbox")
         }
     }

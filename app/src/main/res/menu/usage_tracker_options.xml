@@ -5,6 +5,9 @@
         android:checkable="true"
         android:title="@string/usage_weekly_usage" />
     <item
+        android:id="@+id/open_advanced_analytics"
+        android:title="@string/advanced_analytics" />
+    <item
         android:id="@+id/select_background_art"
         android:title="@string/usage_select_background_art" />
     <item

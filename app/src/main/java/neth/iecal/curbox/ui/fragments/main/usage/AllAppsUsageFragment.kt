@@ -208,6 +208,16 @@ class AllAppsUsageFragment : Fragment() {
                             true
                         }
 
+                        R.id.open_advanced_analytics -> {
+                            startActivity(
+                                Intent(requireContext(), FragmentActivity::class.java).putExtra(
+                                    "fragment",
+                                    neth.iecal.curbox.ui.fragments.main.reducers.analytics.AdvancedAnalyticsFragment.FRAGMENT_ID
+                                )
+                            )
+                            true
+                        }
+
                         R.id.select_background_art -> {
                             showBackgroundArtDialog()
                             true

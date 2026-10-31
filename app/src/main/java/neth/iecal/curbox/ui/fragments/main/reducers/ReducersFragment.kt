@@ -104,6 +104,14 @@ class ReducersFragment : Fragment() {
             startActivity(intent)
         }
 
+        val advancedAnalyticsCard = view.findViewById<MaterialCardView>(R.id.card_advanced_analytics)
+        advancedAnalyticsCard.setOnClickListener {
+            val intent = Intent(requireContext(), FragmentActivity::class.java).apply {
+                putExtra("fragment", neth.iecal.curbox.ui.fragments.main.reducers.analytics.AdvancedAnalyticsFragment.FRAGMENT_ID)
+            }
+            startActivity(intent)
+        }
+
         val apiCard = view.findViewById<MaterialCardView>(R.id.card_api)
         apiCard.setOnClickListener {
             val intent = Intent(requireContext(), FragmentActivity::class.java).apply {
