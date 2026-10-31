@@ -22,6 +22,9 @@ val URL_BAR_ID_LIST = mapOf(
     "org.calyxos.chromium" to BrowserUrlBarInfo(
         displayUrlBarId = "org.calyxos.chromium:id/url_bar",
     ),
+    "foundation.e.browser" to BrowserUrlBarInfo(
+        displayUrlBarId = "foundation.e.browser:id/url_bar",
+    ),
 
     
     "org.mozilla.focus" to BrowserUrlBarInfo(
