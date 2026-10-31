@@ -257,6 +257,7 @@ revoked, globally disabled, or no longer matches the approved signing certificat
 Grants are tied to the package and current APK signing certificates. Old package-only grants need
 fresh approval after the security update. A signing key change also requires fresh approval.
 Updating an app with the same signing certificates does not, by itself, change its approved identity.
+Uninstalling an app ends its grant. Installing it again requires fresh approval.
 
 Authorization is broad: an approved provider gets the same public commands and reads as other
 approved clients. There is no provider-only or read-only permission scope. Explain this to users
@@ -581,7 +582,7 @@ val status = withContext(Dispatchers.IO) {
 | Field | Validation |
 | --- | --- |
 | `id` | Must match `[A-Za-z0-9_.]{1,100}`; unique within the owning package |
-| `label` | Trimmed, nonempty, at most 100 characters after trimming |
+| `label` | Control and invisible formatting characters removed, then trimmed, nonempty, at most 100 characters |
 | `activity` | Nonblank string of at most 300 characters; fully qualified class name, or a name beginning with `.` |
 | Owner | Derived from the verified Binder UID and an approved package; never a supplied arbitrary owner |
 | Activity | Must exist inside that owner package, be exported and enabled, have an enabled application, and require no manifest permission |
@@ -875,7 +876,7 @@ The sample checks no real location or practice data.
 | No Curbox service found | Curbox is not installed, package visibility queries are missing, or the installed build has no matching service. |
 | `bindService()` returned true but `api` is null | Binding is asynchronous; wait for `onServiceConnected()`. |
 | `UNKNOWN_COMMAND` when registering | Check exact `REGISTER_UNLOCK_CONDITION` spelling, `apiVersion() >= 3`, and the selected package. An older release may be installed beside updated Debug Curbox. |
-| `DENIED` after previously working | Access was revoked, the API is off, a legacy grant needs reapproval, signing identity changed, or the supplied `provider_package` is invalid. |
+| `DENIED` after previously working | Access was revoked, the API is off, a legacy grant needs reapproval, the app was reinstalled, signing identity changed, or the supplied `provider_package` is invalid. |
 | Permission activity immediately closes | Launch for result from an Activity and use the chosen installation's package. Referrer extras do not establish identity. |
 | `FAILED` for a targeted toggle | Refresh its group list; verify that `target` is the correct kind of existing ID. |
 | `FAILED` for focus start/stop | A live session may disallow early exit, or the target group may be missing. |
