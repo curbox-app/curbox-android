@@ -67,6 +67,9 @@ open class BaseBlockingService : AccessibilityService() {
         // Lands settings changes whose delay has run out, even when the UI is never opened
         try {
             dataStoreManager.applyDuePendingChanges()
+            // JobScheduler can defer the re-enable job by hours under Doze, so the
+            // heartbeat also ends temporary breaks that have run out
+            dataStoreManager.restoreDueTemporaryAppGroups(rescheduleAlways = false)
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {

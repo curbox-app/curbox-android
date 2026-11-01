@@ -528,14 +528,22 @@ class DataStoreManager(private val context: Context) {
         return changed
     }
 
-    suspend fun restoreDueTemporaryAppGroups() {
+    /**
+     * @param rescheduleAlways false skips rescheduling the job when nothing expired, so the
+     * frequent service heartbeat does not keep cancelling and recreating it.
+     */
+    suspend fun restoreDueTemporaryAppGroups(rescheduleAlways: Boolean = true) {
         var nextDeadline: Long? = null
+        var changed = false
         settingsDataStore.updateData { current ->
             val updated = current.restoreExpiredTemporaryDisables(System.currentTimeMillis())
+            changed = updated != current
             nextDeadline = earliestTemporaryDisable(updated)
             updated
         }
-        neth.iecal.curbox.services.TemporaryGroupDisableJob.schedule(context, nextDeadline)
+        if (changed || rescheduleAlways) {
+            neth.iecal.curbox.services.TemporaryGroupDisableJob.schedule(context, nextDeadline)
+        }
     }
 
     private fun temporaryDisableDeadline(durationMinutes: Long): Long =
