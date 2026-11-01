@@ -35,6 +35,9 @@ class FocusSetupBottomSheet : BottomSheetDialogFragment() {
 
     private lateinit var autoCompleteAdapter: ArrayAdapter<ManualFocusGroup>
 
+    // The view model may reselect a group whenever settings change, so it can't tell create from edit.
+    private var editingGroupId: String? = null
+
     private val selectAppsLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode != Activity.RESULT_OK) return@registerForActivityResult
@@ -72,6 +75,7 @@ class FocusSetupBottomSheet : BottomSheetDialogFragment() {
         binding.btnCreateGroup.setOnClickListener {
             // clear if creating new
             viewModel.selectedGroup = null
+            editingGroupId = null
             binding.groupName.setText("")
             viewModel.newGroupSelectedApps = HashSet()
             viewModel.newGroupSelectedKeywords = hashSetOf()
@@ -112,6 +116,7 @@ class FocusSetupBottomSheet : BottomSheetDialogFragment() {
 
         binding.btnEditGroup.setOnClickListener {
             val group = viewModel.selectedGroup ?: return@setOnClickListener
+            editingGroupId = group.groupId
             // Pre-fill the create group form with this group's details
             binding.createGroup.visibility = View.VISIBLE
             binding.selectGrouo.visibility = View.GONE
@@ -163,7 +168,7 @@ class FocusSetupBottomSheet : BottomSheetDialogFragment() {
         }
 
         binding.saveGroup.setOnClickListener {
-            val isEditing = viewModel.selectedGroup != null
+            val isEditing = editingGroupId != null
             val blockMode = if(binding.selectedBlockAction.checkedButtonId == R.id.btn_selected) FocusBlockMode.BLOCK_SELECTED else FocusBlockMode.BLOCK_ALL_EXCEPT_SELECTED
             
             if (viewModel.newGroupSelectedKeywords.isNotEmpty()) {
@@ -204,7 +209,7 @@ class FocusSetupBottomSheet : BottomSheetDialogFragment() {
 
     private fun saveFocusGroup(isEditing: Boolean, blockMode: FocusBlockMode) {
         val newGroup = ManualFocusGroup(
-            groupId = if (isEditing) viewModel.selectedGroup!!.groupId else java.util.UUID.randomUUID().toString(),
+            groupId = if (isEditing) editingGroupId!! else java.util.UUID.randomUUID().toString(),
             groupName = binding.groupName.text.toString(),
             packages = viewModel.newGroupSelectedApps,
             keywords = viewModel.newGroupSelectedKeywords,
@@ -219,6 +224,7 @@ class FocusSetupBottomSheet : BottomSheetDialogFragment() {
             viewModel.addGroup(newGroup)
         }
 
+        editingGroupId = null
         binding.createGroup.visibility = View.GONE
         binding.selectGrouo.visibility = View.VISIBLE
 
