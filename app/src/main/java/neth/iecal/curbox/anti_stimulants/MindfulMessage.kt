@@ -17,6 +17,7 @@ import neth.iecal.curbox.data.models.MindfulMessageConfig
 import neth.iecal.curbox.services.BaseBlockingService
 import neth.iecal.curbox.ui.overlay.MindfulMessageOverlayManager
 import neth.iecal.curbox.utils.getCurrentKeyboardPackageName
+import neth.iecal.curbox.utils.isActivePackage
 
 class MindfulMessage {
 
@@ -65,7 +66,6 @@ class MindfulMessage {
         }
 
         ignoredpackages = listOf(getCurrentKeyboardPackageName(service) ?: "com.google.android.inputmethod.latin",
-            service.packageName,
             "com.android.systemui",
             "com.google.android.apps.wellbeing")
         scope.launch {
@@ -81,7 +81,8 @@ class MindfulMessage {
 
         val pkg = event.packageName?.toString() ?: return
 
-        if(ignoredpackages.contains(event.packageName.toString()) || currentPkg == event.packageName.toString()) return
+        if (pkg in ignoredpackages || currentPkg == pkg) return
+        if (!service.isActivePackage(pkg)) return
 
         activeIntents.entries.removeIf { System.currentTimeMillis() > it.value.second }
 

@@ -1,9 +1,20 @@
 package neth.iecal.curbox.utils
 
+import android.accessibilityservice.AccessibilityService
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.view.inputmethod.InputMethodManager
+
+@Suppress("DEPRECATION")
+fun AccessibilityService.isActivePackage(packageName: String): Boolean {
+    val root = rootInActiveWindow ?: return false
+    return try {
+        root.packageName?.toString() == packageName
+    } finally {
+        root.recycle()
+    }
+}
 
 
 fun getDefaultLauncherPackageName(packageManager: PackageManager): String? {
