@@ -10,12 +10,14 @@ import neth.iecal.curbox.blockers.uihider.script.Parser
 import neth.iecal.curbox.blockers.uihider.script.ScriptError
 import neth.iecal.curbox.blockers.uihider.script.Stmt
 import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.INSTAGRAM_DM_REEL_MARKER
+import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.TIKTOK_DM_VIDEO_MARKER
 import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.reelData
 import neth.iecal.curbox.services.BaseBlockingService
 
 data class ReelDetection(
     val comparator: String,
-    val isInstagramReelOpenedFromDmInbox: Boolean = false
+    val isInstagramReelOpenedFromDmInbox: Boolean = false,
+    val isTikTokVideoOpenedFromDmInbox: Boolean = false
 )
 
 // not the cleanest way but okay ig
@@ -24,14 +26,16 @@ internal fun reelDetectionFromScriptResult(
     comparisonResultCleanser: (String) -> String
 ): ReelDetection {
     val openedFromDmInbox = result.startsWith(INSTAGRAM_DM_REEL_MARKER)
-    val comparator = if (openedFromDmInbox) {
-        result.removePrefix(INSTAGRAM_DM_REEL_MARKER)
-    } else {
-        result
+    val tikTokDm = result.startsWith(TIKTOK_DM_VIDEO_MARKER)
+    val comparator = when {
+        openedFromDmInbox -> result.removePrefix(INSTAGRAM_DM_REEL_MARKER)
+        tikTokDm -> result.removePrefix(TIKTOK_DM_VIDEO_MARKER)
+        else -> result
     }
     return ReelDetection(
         comparator = comparisonResultCleanser(comparator),
-        isInstagramReelOpenedFromDmInbox = openedFromDmInbox
+        isInstagramReelOpenedFromDmInbox = openedFromDmInbox,
+        isTikTokVideoOpenedFromDmInbox = tikTokDm
     )
 }
 

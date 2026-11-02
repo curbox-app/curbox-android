@@ -61,7 +61,8 @@ class ReelBlocker : BaseBlocker() {
     fun doViewBlockerCheck(
         event: AccessibilityEvent?,
         dynamicComparator: String?,
-        isInstagramReelOpenedFromDmInbox: Boolean
+        isInstagramReelOpenedFromDmInbox: Boolean,
+        isTikTokVideoOpenedFromDmInbox: Boolean
     ){
         fun showWarningScreen(viewId: String){
             if(service.isDelayOver(3000)) {
@@ -91,6 +92,11 @@ class ReelBlocker : BaseBlocker() {
         if (pkg == ReelAppConfig.INSTAGRAM_PACKAGE &&
             isInstagramReelOpenedFromDmInbox &&
             reelBlockerConfig.allowInstagramReelsFromDmInbox
+        ) return
+
+        if (pkg == ReelAppConfig.TIKTOK_PACKAGE &&
+            isTikTokVideoOpenedFromDmInbox &&
+            reelBlockerConfig.allowTikTokVideosFromDmInbox
         ) return
 
         val viewId = pkg

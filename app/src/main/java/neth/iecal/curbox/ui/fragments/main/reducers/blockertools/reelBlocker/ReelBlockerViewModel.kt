@@ -83,6 +83,13 @@ class ReelBlockerViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
+    fun setAllowTikTokVideosFromDmInbox(allow: Boolean) {
+        viewModelScope.launch {
+            dataStoreManager.updateAllowTikTokVideosFromDmInbox(allow)
+            requestReelBlockerRefresh()
+        }
+    }
+
     fun getReelTimeConfig(): ReelTimeConfig {
         return _reelBlockerConfig.value.config?.schedule ?: ReelTimeConfig()
     }
