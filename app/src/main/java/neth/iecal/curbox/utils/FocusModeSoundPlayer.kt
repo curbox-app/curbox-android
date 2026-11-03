@@ -1,48 +1,55 @@
 package neth.iecal.curbox.utils
 
 import android.content.Context
+import android.media.AudioAttributes
 import android.media.AudioManager
-import android.media.ToneGenerator
+import android.media.MediaPlayer
 import android.util.Log
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import neth.iecal.curbox.CrashLogger
+import neth.iecal.curbox.R
 
 class FocusModeSoundPlayer(context: Context) {
 
-    enum class Effect {
-        FOCUS_COMPLETE,
-        BREAK_STARTED,
-        FOCUS_RESUMED,
-        POMODORO_COMPLETE
+    enum class Effect(val soundResId: Int) {
+        FOCUS_COMPLETE(R.raw.focus_complete),
+        BREAK_STARTED(R.raw.break_started),
+        FOCUS_RESUMED(R.raw.focus_resumed),
+        POMODORO_COMPLETE(R.raw.pomodoro_complete)
     }
 
-    private val crashLogger = CrashLogger(context.applicationContext)
-    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
-    private val toneLock = Any()
-    private var toneGenerator: ToneGenerator? = null
-    private var soundJob: Job? = null
+    private val appContext = context.applicationContext
+    private val crashLogger = CrashLogger(appContext)
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+    private var mediaPlayer: MediaPlayer? = null
+
+    // Alarm usage so the chime is still heard while focus mode keeps Do Not Disturb on.
+    private val audioAttributes = AudioAttributes.Builder()
+        .setUsage(AudioAttributes.USAGE_ALARM)
+        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+        .build()
 
     fun play(effect: Effect) {
-        soundJob?.cancel()
-        soundJob = scope.launch {
+        scope.launch {
             try {
-                when (effect) {
-                    Effect.FOCUS_COMPLETE -> playTone(ToneGenerator.TONE_PROP_ACK, 350)
-                    Effect.BREAK_STARTED -> playTone(ToneGenerator.TONE_PROP_PROMPT, 300)
-                    Effect.FOCUS_RESUMED -> playTone(ToneGenerator.TONE_PROP_BEEP2, 250)
-                    Effect.POMODORO_COMPLETE -> {
-                        playTone(ToneGenerator.TONE_PROP_ACK, 250)
-                        delay(150)
-                        playTone(ToneGenerator.TONE_PROP_ACK, 400)
-                    }
+                stopCurrent()
+                val player = MediaPlayer.create(
+                    appContext,
+                    effect.soundResId,
+                    audioAttributes,
+                    AudioManager.AUDIO_SESSION_ID_GENERATE
+                ) ?: return@launch
+                player.setOnCompletionListener {
+                    it.release()
+                    if (mediaPlayer === it) mediaPlayer = null
                 }
+                mediaPlayer = player
+                player.start()
             } catch (e: CancellationException) {
                 throw e
             } catch (t: Throwable) {
@@ -53,26 +60,16 @@ class FocusModeSoundPlayer(context: Context) {
     }
 
     fun release() {
-        soundJob?.cancel()
         scope.cancel()
-        synchronized(toneLock) {
-            runCatching { toneGenerator?.release() }
-            toneGenerator = null
-        }
+        stopCurrent()
     }
 
-    private fun playTone(tone: Int, durationMs: Int) {
-        synchronized(toneLock) {
-            val generator = toneGenerator ?: ToneGenerator(
-                AudioManager.STREAM_NOTIFICATION,
-                VOLUME_PERCENT
-            ).also { toneGenerator = it }
-            generator.startTone(tone, durationMs)
-        }
+    private fun stopCurrent() {
+        mediaPlayer?.let { runCatching { it.release() } }
+        mediaPlayer = null
     }
 
     companion object {
         private const val TAG = "FocusModeSound"
-        private const val VOLUME_PERCENT = 80
     }
 }
