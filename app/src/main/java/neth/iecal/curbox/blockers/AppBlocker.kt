@@ -31,6 +31,7 @@ import neth.iecal.curbox.utils.TimerNotification
 import neth.iecal.curbox.utils.UsageStatsHelper
 import neth.iecal.curbox.utils.activeWindow
 import neth.iecal.curbox.utils.getCurrentKeyboardPackageName
+import neth.iecal.curbox.utils.isActivePackage
 import neth.iecal.curbox.utils.nextChangeAfter
 import java.util.Calendar
 import java.util.concurrent.ConcurrentHashMap
@@ -108,6 +109,7 @@ class AppBlocker : BaseBlocker() {
         if (lastPackage == packageName || ignoredApps.contains(packageName)) {
             return
         }
+        if (!service.isActivePackage(packageName)) return
 
         clearFinishedOnEachOpenSessions(packageName)
 
