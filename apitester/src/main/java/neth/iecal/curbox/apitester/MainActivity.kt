@@ -251,7 +251,7 @@ class MainActivity : AppCompatActivity() {
             log("================ CURBOX DUMP ================")
             for (kind in listOf(
                 "UNLOCK_CONDITIONS", "STATUS", "FOCUS_GROUPS", "APP_BLOCKER_GROUPS", "KEYWORD_GROUPS",
-                "GRAYSCALE_GROUPS", "AUTO_DND_GROUPS", "UI_HIDER_SCRIPTS"
+                "GRAYSCALE_GROUPS", "AUTO_DND_GROUPS", "UI_HIDER_SCRIPTS", "USAGE_HISTORY"
             )) {
                 val res = runCatching { a.list(kind) }.getOrElse { "ERROR: ${it.message}" }
                 log("$kind ->\n${pretty(res)}")

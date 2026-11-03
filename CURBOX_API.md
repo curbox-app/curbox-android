@@ -4,7 +4,7 @@ This document describes the public API implemented in this repository, including
 screen requirements and the security hardening in the current source. Use it as a reference when
 building an Android client or giving implementation instructions to a coding agent.
 
-**Current API version: `4`.** The transport is a local Android Binder service with an AIDL
+**Current API version: `5`.** The transport is a local Android Binder service with an AIDL
 interface. There is no HTTP server, web API, API key, OAuth flow, or remote endpoint. A browser,
 server, or desktop application needs an Android companion to use this API.
 
@@ -37,6 +37,7 @@ An approved app can:
 - Toggle the keyword blocker, reel blocker, UI hider, and reel counter globally.
 - Request a change to Do Not Disturb.
 - Read today's recorded screen time and reel count, and the current focus state.
+- Read daily app and website usage totals for the retained days (version 5).
 - List UI hider script metadata.
 - Register its own named unlock requirements for the user to select in warning settings.
 
@@ -47,7 +48,7 @@ The API does **not** expose:
 - Automatically attaching a provider requirement to a group.
 - Editing UI hider scripts or toggling individual scripts.
 - Editing automatic DND groups, Pomodoro cycles, anti uninstall, or settings change delay.
-- Per app usage reports, website history, previous days, focus history, or a full settings export.
+- Hourly or per path usage, focus history, or a full settings export.
 - Direct unrestricted cooldown grants, API access management, event subscriptions, or webhooks.
 
 Custom requirements extend the existing warning flow. They let a provider show its own check or
@@ -282,7 +283,8 @@ package outside the caller UID or a package that has not been approved.
 The base command and query interface predates version 2. `list()` arrived in version 2. Provider
 registration, removal, and `UNLOCK_CONDITIONS` require version 3. Version 4 adds the exact focus
 end time and group ID to `FOCUS_ACTIVE` and `STATUS`, and the optional `ends_at` argument for
-`START_FOCUS`; older installations ignore `ends_at` and omit those fields. Check the version **before calling
+`START_FOCUS`; older installations ignore `ends_at` and omit those fields. Version 5 adds the
+`USAGE_HISTORY` list. Check the version **before calling
 methods or features an older installation may not implement**. A version number identifies the
 contract; it does not distinguish every security patch within a version.
 
@@ -490,6 +492,7 @@ Do not rely on array order, assume an item exists, or use a group name as a uniq
 | `AUTO_DND_GROUPS` | `id`: string, `name`: string, `autoTurnOnDnd`: boolean |
 | `UI_HIDER_SCRIPTS` | `id`: string, `label`: string, `packageName`: string, `isEnabled`: boolean |
 | `UNLOCK_CONDITIONS` | `packageName`: string, `id`: string, `label`: string, `activityName`: string, `signingCertificates`: array of strings |
+| `USAGE_HISTORY` | Version 5. `date`: ISO `yyyy-MM-dd` string, `screenTimeMs`: integer, `apps`: array of `{packageName, label, ms, launches}`, `websites`: array of `{domain, ms}` |
 
 Focus `blockMode` is `BLOCK_SELECTED` or `BLOCK_ALL_EXCEPT_SELECTED`. The `websites` count is the
 number of configured focus keywords. `apps`, `websites`, and `keywords` are **counts**, not arrays
@@ -529,6 +532,18 @@ The last certificate value is illustrative. Actual values are sorted lowercase S
 of the currently registered APK signing certificates. `UNLOCK_CONDITIONS` lists available providers
 across approved apps, not only the caller's registrations. Missing, unauthorized, disabled, or
 signer-mismatched providers are filtered out. `UI_HIDER_SCRIPTS` returns `[]` on Play Store builds.
+
+### USAGE_HISTORY
+
+Version 5. One item per local day with recorded usage, newest first, covering at most the last 28
+days (Curbox keeps 28). `screenTimeMs` sums every app row for the day except ignored packages, the
+same total `SCREENTIME_TODAY` reports in minutes. `apps` and `websites` hold each day's top 25,
+largest first, so they can add up to less than the day's total. `websites` is usage Curbox tracked
+in browsers on this phone, grouped by domain.
+
+```json
+[{"date":"2026-11-03","screenTimeMs":5400000,"apps":[{"packageName":"com.example.social","label":"Social","ms":1800000,"launches":14}],"websites":[{"domain":"example.com","ms":600000}]}]
+```
 
 ### STATUS
 
@@ -847,7 +862,7 @@ services. Use ordinary installation and manual accessibility setup if you need t
 In API Tester:
 
 1. Tap **Connect** and select the intended Curbox installation if prompted.
-2. Check the log for the selected package and `apiVersion=4`.
+2. Check the log for the selected package and `apiVersion=5`.
 3. Tap **Request permission** and approve in that same Curbox installation.
 4. Check `isGranted`, list groups, and send a command.
 5. Use **Dump everything** to inspect all list kinds and today's usage queries.

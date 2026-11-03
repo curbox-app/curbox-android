@@ -9,7 +9,7 @@ package neth.iecal.curbox.api
  */
 object CurboxApiContract {
 
-    const val API_VERSION = 4
+    const val API_VERSION = 5
 
     // Argument keys placed in the Bundle passed to execute().
     const val ARG_TARGET = "target"
@@ -78,7 +78,9 @@ enum class ApiList {
     GRAYSCALE_GROUPS,
     AUTO_DND_GROUPS,
     UI_HIDER_SCRIPTS,
-    STATUS;
+    STATUS,
+    /** Since version 5: daily app and website totals for the retained days. */
+    USAGE_HISTORY;
 
     companion object {
         fun fromNameOrNull(name: String?): ApiList? = entries.firstOrNull { it.name == name }

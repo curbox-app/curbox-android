@@ -19,6 +19,8 @@ import neth.iecal.curbox.utils.DataStoreManager
 import neth.iecal.curbox.utils.DndHelper
 import neth.iecal.curbox.utils.TimeTools
 import kotlinx.coroutines.flow.first
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlinx.coroutines.CancellationException
 
 /**
@@ -300,6 +302,8 @@ object CurboxApiCommands {
                 )
             }
 
+            ApiList.USAGE_HISTORY -> usageHistory(app, settings.usageTrackerIgnoredApps.toSet())
+
             ApiList.STATUS -> {
                 val (groupId, endTime) = settings.activeManualFocusGroupId
                 val focusActive = groupId != null && endTime > System.currentTimeMillis()
@@ -319,6 +323,53 @@ object CurboxApiCommands {
                     "uiHider" to (BuildConfig.SUPPORTS_UI_HIDER && settings.uiHiderConfig.isActive)
                 )
             }
+        }
+    }
+
+    private const val USAGE_DAYS = 28
+    private const val USAGE_TOP = 25
+
+    /**
+     * Daily totals, newest first, for days that have any usage. Each day keeps its top apps and
+     * websites so the reply stays small enough for Binder.
+     */
+    private suspend fun usageHistory(context: Context, ignored: Set<String>): List<Map<String, Any>> {
+        val db = AppDatabase.getInstance(context)
+        val today = LocalDate.now()
+        val days = (0 until USAGE_DAYS).map { today.minusDays(it.toLong()) }
+        val keys = days.associateBy { TimeTools.dayKey(it) }
+        val apps = db.appUsageDao().getForDates(keys.keys.toList())
+            .filter { it.packageName !in ignored && it.totalTime > 0 }
+            .groupBy { it.date }
+        val sites = db.websiteStatsDao().getStatsForDates(keys.keys.toList())
+            .filter { it.totalTime > 0 }
+            .groupBy { it.date }
+        val pm = context.packageManager
+        val labels = HashMap<String, String>()
+        fun label(pkg: String) = labels.getOrPut(pkg) {
+            runCatching { pm.getApplicationLabel(pm.getApplicationInfo(pkg, 0)).toString() }.getOrDefault(pkg)
+        }
+        return keys.mapNotNull { (key, date) ->
+            val dayApps = apps[key].orEmpty()
+            val daySites = sites[key].orEmpty()
+            if (dayApps.isEmpty() && daySites.isEmpty()) return@mapNotNull null
+            linkedMapOf(
+                "date" to date.format(DateTimeFormatter.ISO_LOCAL_DATE),
+                "screenTimeMs" to dayApps.sumOf { it.totalTime },
+                "apps" to dayApps.sortedByDescending { it.totalTime }.take(USAGE_TOP).map {
+                    linkedMapOf(
+                        "packageName" to it.packageName,
+                        "label" to label(it.packageName),
+                        "ms" to it.totalTime,
+                        "launches" to it.launchCount
+                    )
+                },
+                "websites" to daySites.groupBy { it.domain }
+                    .map { (domain, rows) -> domain to rows.sumOf { it.totalTime } }
+                    .sortedByDescending { it.second }
+                    .take(USAGE_TOP)
+                    .map { (domain, ms) -> linkedMapOf("domain" to domain, "ms" to ms) }
+            )
         }
     }
 }
