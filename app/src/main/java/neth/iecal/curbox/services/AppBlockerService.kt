@@ -159,7 +159,7 @@ class AppBlockerService : BaseBlockingService() {
                     val reelDetection = reelScriptRunner.detect(event)
                     val reelComparator = reelDetection?.comparator
                     reelUsageTracker.onEvent(event, reelComparator)
-                    reelsCountTracker.onEvent(event, reelComparator)
+                    reelsCountTracker.onEvent(event, reelComparator, reelDetection?.position)
                     reelBlocker.doViewBlockerCheck(
                         event,
                         reelComparator,

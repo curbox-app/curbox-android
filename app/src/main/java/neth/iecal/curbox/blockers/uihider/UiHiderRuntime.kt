@@ -202,6 +202,10 @@ class UiHiderRuntime(
             "cx" -> bounds.centerX().toDouble()
             "cy" -> bounds.centerY().toDouble()
             "childCount" -> node.childCount.toDouble()
+            // Recycler and list items expose their position through collection info, not events.
+            "rowIndex" -> node.collectionItemInfo?.rowIndex?.toDouble()
+            "rowSpan" -> node.collectionItemInfo?.rowSpan?.toDouble()
+            "columnIndex" -> node.collectionItemInfo?.columnIndex?.toDouble()
             "clickable" -> node.isClickable
             "scrollable" -> node.isScrollable
             "checked" -> node.isChecked

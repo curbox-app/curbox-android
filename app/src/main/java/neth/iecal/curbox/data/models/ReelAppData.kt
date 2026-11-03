@@ -10,6 +10,8 @@ import android.view.accessibility.AccessibilityEvent
  * comparator deduplication when positions are reused across viewer sessions.
  * When [pagerClassName] is set, vertical scroll events from that pager report the exact reel
  * position, and the first line of the comparator must identify the reel author.
+ * When [positionMarker] is set, the script report carries its own reel position on a line that
+ * starts with that marker, and the counter uses that position instead of comparing whole text.
  */
 data class ReelAppData(
     val scriptSource: String,
@@ -17,5 +19,6 @@ data class ReelAppData(
     val eventType: Int = AccessibilityEvent.TYPE_VIEW_SCROLLED,
     val deduplicateComparators: Boolean = true,
     val initialComparator: String? = null,
-    val pagerClassName: String? = null
+    val pagerClassName: String? = null,
+    val positionMarker: String? = null
 )

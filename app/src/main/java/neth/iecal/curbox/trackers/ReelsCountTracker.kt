@@ -139,7 +139,7 @@ class ReelsCountTracker {
         return true
     }
 
-    fun onEvent(event: AccessibilityEvent?, dynamicComparator: String?) {
+    fun onEvent(event: AccessibilityEvent?, dynamicComparator: String?, position: Int? = null) {
         try {
             val pkg = event?.packageName?.toString() ?: return
             if (ignored.contains(pkg)) return
@@ -163,10 +163,13 @@ class ReelsCountTracker {
                     }
                 }
 
-                if (data.pagerClassName != null) {
-                    checkForPagedReelProgression(pkg, dynamicComparator)
-                } else {
-                    checkForReelProgression(
+                when {
+                    // The detector reads its own position, so wait for it instead of guessing from text.
+                    data.positionMarker != null -> {
+                        if (position != null) checkForScriptPositionProgression(pkg, position, dynamicComparator)
+                    }
+                    data.pagerClassName != null -> checkForPagedReelProgression(pkg, dynamicComparator)
+                    else -> checkForReelProgression(
                         pkg,
                         dynamicComparator,
                         data.deduplicateComparators,
@@ -230,13 +233,47 @@ class ReelsCountTracker {
         val position = pagerPositions[pkg]
         // While the pager moves, its position lags behind and reads can mix two pages.
         if (position != null && now - position.scrolledAt < PAGER_SETTLE_MS) return
+        val index = position?.takeIf { it.scrolledAt >= session.startedAt }?.index ?: UNKNOWN_INDEX
+        recordPagedReel(pkg, session, index, currentText)
+    }
+
+    /** Detectors such as YouTube read the position from the page itself, so no event index is needed. */
+    private fun checkForScriptPositionProgression(pkg: String, index: Int, currentText: String) {
+        val now = SystemClock.uptimeMillis()
+        val session = pagedSessions.getOrPut(pkg) { PagedSession(startedAt = now) }
+        // The row is enough to count, so a page whose text has not loaded yet is still a reel.
+        recordPagedReel(
+            pkg,
+            session,
+            index,
+            currentText.ifBlank { "position:$index" },
+            restartOnLargeBackJump = true
+        )
+    }
+
+    private fun recordPagedReel(
+        pkg: String,
+        session: PagedSession,
+        index: Int,
+        currentText: String,
+        restartOnLargeBackJump: Boolean = false
+    ) {
         if (currentText.isBlank()) return
         val author = currentText.substringBefore('\n').trim()
         if (author.isEmpty()) return
 
-        val index = position?.takeIf { it.scrolledAt >= session.startedAt }?.index ?: UNKNOWN_INDEX
         val reel = PagedReel(session.startedAt, index, author, currentText)
         val previous = session.current
+        // A large jump back means the feed restarted its positions, not that every reel was swiped.
+        if (restartOnLargeBackJump && previous != null &&
+            previous.index != UNKNOWN_INDEX && index != UNKNOWN_INDEX &&
+            index < previous.index && previous.index - index > MAX_SKIPPED_REELS
+        ) {
+            val restarted = PagedSession(startedAt = SystemClock.uptimeMillis())
+            pagedSessions[pkg] = restarted
+            recordPagedReel(pkg, restarted, index, currentText)
+            return
+        }
         if (previous != null && !isDifferentReel(previous, reel)) {
             previous.text = currentText
             return

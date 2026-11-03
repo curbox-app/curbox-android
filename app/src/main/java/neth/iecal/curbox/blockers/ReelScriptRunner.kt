@@ -15,23 +15,40 @@ import neth.iecal.curbox.services.BaseBlockingService
 
 data class ReelDetection(
     val comparator: String,
-    val isInstagramReelOpenedFromDmInbox: Boolean = false
+    val isInstagramReelOpenedFromDmInbox: Boolean = false,
+    val position: Int? = null
 )
 
 // not the cleanest way but okay ig
 internal fun reelDetectionFromScriptResult(
     result: String,
-    comparisonResultCleanser: (String) -> String
+    comparisonResultCleanser: (String) -> String,
+    positionMarker: String? = null
 ): ReelDetection {
     val openedFromDmInbox = result.startsWith(INSTAGRAM_DM_REEL_MARKER)
-    val comparator = if (openedFromDmInbox) {
+    var comparator = if (openedFromDmInbox) {
         result.removePrefix(INSTAGRAM_DM_REEL_MARKER)
     } else {
         result
     }
+
+    // The position line is bookkeeping, so it is removed before the app cleanser sees the text.
+    var position: Int? = null
+    if (positionMarker != null && comparator.contains(positionMarker)) {
+        val lines = comparator.lines()
+        position = lines.firstOrNull { it.startsWith(positionMarker) }
+            ?.removePrefix(positionMarker)
+            ?.trim()
+            ?.toIntOrNull()
+        if (position != null) {
+            comparator = lines.filterNot { it.startsWith(positionMarker) }.joinToString("\n")
+        }
+    }
+
     return ReelDetection(
         comparator = comparisonResultCleanser(comparator),
-        isInstagramReelOpenedFromDmInbox = openedFromDmInbox
+        isInstagramReelOpenedFromDmInbox = openedFromDmInbox,
+        position = position
     )
 }
 
@@ -93,7 +110,7 @@ class ReelScriptRunner {
 
         return try {
             val result = Interpreter(runtime, budget).run(program) as? String ?: return null
-            reelDetectionFromScriptResult(result, data.comparisonResultCleanser)
+            reelDetectionFromScriptResult(result, data.comparisonResultCleanser, data.positionMarker)
         } catch (error: ScriptError) {
             Log.w(TAG, "Runtime error in reel detector for $packageName: ${error.message}")
             crashLogger.logNonFatalError(error)

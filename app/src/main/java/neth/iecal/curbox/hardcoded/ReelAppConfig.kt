@@ -8,6 +8,9 @@ class ReelAppConfig {
         const val INSTAGRAM_PACKAGE = "com.instagram.android"
         const val INSTAGRAM_DM_REEL_MARKER = "\u001Fcurbox:instagram_dm_inbox:\u001F"
 
+        /** Marks the script report line that carries the reel position, such as a recycler row. */
+        const val REEL_POSITION_MARKER = "\u001Fcurbox:reel_position:\u001F"
+
         private fun isOnScreenFunction() = """
             fn isOnScreen(node) {
                 if node == null or not node.visible { return false }
@@ -84,12 +87,32 @@ class ReelAppConfig {
         private fun youtubeScript(packageName: String) = """
             ${isOnScreenFunction()}
 
+            # The recycler keeps its neighbours attached while scrolling, so only the page that fills it is current.
+            fn findFullPage(viewer) {
+                for page in viewer.children() {
+                    if page.visible and page.h >= viewer.h * 0.99 { return page }
+                }
+                return null
+            }
+
             viewer = find(id="$packageName:id/reel_recycler")
             if not isOnScreen(viewer) { return null }
 
-            comparator = find(id="$packageName:id/reel_player_page_content")
-            if comparator == null { return "" }
-            return comparator.subtreeText(32, 20000)
+            page = findFullPage(viewer)
+            if page == null { return "" }
+
+            # The first line must stay the author because the counter dedupes by it.
+            channel = page.find(descContains="Go to channel")
+            author = "?"
+            if channel != null and channel.desc != null { author = channel.desc }
+
+            # Scroll events carry no item index, but YouTube stores the reel row on each page.
+            row = page.rowIndex
+            content = page.find(id="$packageName:id/reel_player_page_content")
+            if content == null { content = page }
+            text = content.subtreeText(32, 20000)
+            if row == null { return author + "\n" + text }
+            return "$REEL_POSITION_MARKER" + str(row) + "\n" + author + "\n" + text
         """.trimIndent()
 
         val reelData: Map<String, ReelAppData> = mapOf(
@@ -115,17 +138,23 @@ class ReelAppConfig {
             "com.google.android.youtube" to ReelAppData(
                 scriptSource = youtubeScript("com.google.android.youtube"),
                 comparisonResultCleanser = ::cleanYouTubeComparator,
-                eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
+                eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED or
+                    AccessibilityEvent.TYPE_VIEW_SCROLLED,
+                positionMarker = REEL_POSITION_MARKER
             ),
             "app.revanced.android.youtube" to ReelAppData(
                 scriptSource = youtubeScript("app.revanced.android.youtube"),
                 comparisonResultCleanser = ::cleanYouTubeComparator,
-                eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
+                eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED or
+                    AccessibilityEvent.TYPE_VIEW_SCROLLED,
+                positionMarker = REEL_POSITION_MARKER
             ),
             "app.morphe.android.youtube" to ReelAppData(
                 scriptSource = youtubeScript("app.morphe.android.youtube"),
                 comparisonResultCleanser = ::cleanYouTubeComparator,
-                eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
+                eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED or
+                    AccessibilityEvent.TYPE_VIEW_SCROLLED,
+                positionMarker = REEL_POSITION_MARKER
             ),
 
             "com.facebook.katana" to ReelAppData(
