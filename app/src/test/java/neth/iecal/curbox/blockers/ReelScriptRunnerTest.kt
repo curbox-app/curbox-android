@@ -68,7 +68,7 @@ class ReelScriptRunnerTest {
 
     @Test
     fun tikTokMarkerDoesNotGrantInstagramException() {
-        val detection = reelDetectionFromScriptResult("${TIKTOK_DM_VIDEO_MARKER}author", { it.uppercase() })
+        val detection = reelDetectionFromScriptResult("${TIKTOK_DM_VIDEO_MARKER}author") { it.uppercase() }
 
         assertEquals("AUTHOR", detection.comparator)
         assertTrue(detection.isTikTokVideoOpenedFromDmInbox)
@@ -77,7 +77,7 @@ class ReelScriptRunnerTest {
 
     @Test
     fun markerInCaptionDoesNotGrantAnException() {
-        val detection = reelDetectionFromScriptResult("author $TIKTOK_DM_VIDEO_MARKER", { it })
+        val detection = reelDetectionFromScriptResult("author $TIKTOK_DM_VIDEO_MARKER") { it }
 
         assertFalse(detection.isTikTokVideoOpenedFromDmInbox)
     }
