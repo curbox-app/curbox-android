@@ -123,7 +123,6 @@ object RestrictionComparator {
                 n.isActive, n.temporarilyDisabledUntilMs)) return false
         if (!o.excludedPackages.containsAll(n.excludedPackages)) return false
         if (!o.allowInstagramReelsFromDmInbox && n.allowInstagramReelsFromDmInbox) return false
-        if (!o.allowTikTokVideosFromDmInbox && n.allowTikTokVideosFromDmInbox) return false
         if (!warningConfig(o.warningScreenConfig, n.warningScreenConfig)) return false
         val oldConfig = o.config ?: return false
         val newConfig = n.config ?: return false

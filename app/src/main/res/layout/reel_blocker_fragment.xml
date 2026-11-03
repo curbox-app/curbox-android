@@ -101,14 +101,6 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/allow_instagram_reels_from_dm_inbox" />
 
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkbox_allow_tiktok_dm_videos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/allow_tiktok_videos_from_dm_inbox" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_warning_config"
                 style="@style/Widget.Material3.Button.TonalButton"

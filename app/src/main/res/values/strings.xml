@@ -456,7 +456,6 @@
     <string name="reel_blocker_allowed_apps_zero">Allowed apps (0)</string>
     <string name="reel_blocker_allowed_apps_count">Allowed apps (%1$d)</string>
     <string name="allow_instagram_reels_from_dm_inbox">Allow Instagram Reels opened from DM inbox</string>
-    <string name="allow_tiktok_videos_from_dm_inbox">Allow TikTok videos opened from DM inbox</string>
     <string name="label_show_more">Show More</string>
     <string name="label_all_time">All Time</string>
     <string name="btn_clear_filters">Clear Filters</string>

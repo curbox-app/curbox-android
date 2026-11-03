@@ -116,11 +116,6 @@ class ReelBlockerFragment : Fragment() {
                 viewModel.setAllowInstagramReelsFromDmInbox(isChecked)
             }
         }
-        binding.checkboxAllowTiktokDmVideos.setOnCheckedChangeListener { _, isChecked ->
-            if (!isUpdatingUi) {
-                viewModel.setAllowTikTokVideosFromDmInbox(isChecked)
-            }
-        }
     }
 
     private fun observeViewModel() {
@@ -153,8 +148,6 @@ class ReelBlockerFragment : Fragment() {
                 )
                 binding.checkboxAllowInstagramDmReels.isChecked =
                     config.allowInstagramReelsFromDmInbox
-                binding.checkboxAllowTiktokDmVideos.isChecked =
-                    config.allowTikTokVideosFromDmInbox
                 isUpdatingUi = false
             }
         }

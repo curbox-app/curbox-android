@@ -3,7 +3,6 @@ package neth.iecal.curbox.blockers
 import neth.iecal.curbox.hardcoded.ReelAppConfig
 import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.INSTAGRAM_DM_REEL_MARKER
 import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.REEL_POSITION_MARKER
-import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.TIKTOK_DM_VIDEO_MARKER
 import neth.iecal.curbox.hardcoded.ReelAppConfig.Companion.reelData
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -63,22 +62,5 @@ class ReelScriptRunnerTest {
 
         assertEquals("AUTHOR CAPTION", detection.comparator)
         assertTrue(detection.isInstagramReelOpenedFromDmInbox)
-        assertFalse(detection.isTikTokVideoOpenedFromDmInbox)
-    }
-
-    @Test
-    fun tikTokMarkerDoesNotGrantInstagramException() {
-        val detection = reelDetectionFromScriptResult("${TIKTOK_DM_VIDEO_MARKER}author") { it.uppercase() }
-
-        assertEquals("AUTHOR", detection.comparator)
-        assertTrue(detection.isTikTokVideoOpenedFromDmInbox)
-        assertFalse(detection.isInstagramReelOpenedFromDmInbox)
-    }
-
-    @Test
-    fun markerInCaptionDoesNotGrantAnException() {
-        val detection = reelDetectionFromScriptResult("author $TIKTOK_DM_VIDEO_MARKER") { it }
-
-        assertFalse(detection.isTikTokVideoOpenedFromDmInbox)
     }
 }

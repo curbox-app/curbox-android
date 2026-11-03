@@ -17,16 +17,6 @@ class ReelBlockerRestrictionComparatorTest {
 
         assertTrue(config.excludedPackages.isEmpty())
         assertFalse(config.allowInstagramReelsFromDmInbox)
-        assertFalse(config.allowTikTokVideosFromDmInbox)
-    }
-
-    @Test
-    fun tikTokDmExceptionFollowsSettingsChangeDelay() {
-        val blocked = ReelBlocker(isActive = true)
-        val allowed = blocked.copy(allowTikTokVideosFromDmInbox = true)
-
-        assertFalse(RestrictionComparator.reelBlocker(blocked, allowed))
-        assertTrue(RestrictionComparator.reelBlocker(allowed, blocked))
     }
 
     @Test
