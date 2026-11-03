@@ -1,6 +1,8 @@
 package neth.iecal.curbox.anti_stimulants
 
+import android.content.BroadcastReceiver
 import android.content.Context
+import android.content.Intent
 import android.provider.Settings
 import android.view.View
 import android.view.WindowManager
@@ -10,6 +12,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.flowOf
@@ -71,6 +74,75 @@ class MindfulMessageSessionTest {
         }
         scope.cancel()
         if (::service.isInitialized) service.onDestroy()
+    }
+
+    @Test
+    fun screenOffEndsPromptSession() = onMain {
+        val updateJob = MindfulMessageOverlayManager::class.java.getDeclaredField("updateJob")
+            .apply { isAccessible = true }.get(overlay) as Job
+        val receiver = MindfulMessage::class.java.getDeclaredField("screenReceiver")
+            .apply { isAccessible = true }.get(message) as BroadcastReceiver
+
+        receiver.onReceive(service, Intent(Intent.ACTION_SCREEN_OFF))
+        receiver.onReceive(service, Intent(Intent.ACTION_SCREEN_OFF))
+
+        assertFalse(overlay.isOverlayVisible)
+        assertEquals(listOf(originalView), service.removedViews)
+        assertEquals(null, MindfulMessage::class.java.getDeclaredField("currentPkg")
+            .apply { isAccessible = true }.get(message))
+        assertTrue(updateJob.isCancelled)
+
+        sendEvent(selectedApp)
+        sendEvent("com.android.systemui")
+        sendEvent(selectedApp, AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED)
+        assertFalse(overlay.isOverlayVisible)
+        assertEquals(1, service.addedViews.size)
+    }
+
+    @Test
+    fun unlockingRechecksForegroundAndStartsFreshSession() {
+        val receiver = MindfulMessage::class.java.getDeclaredField("screenReceiver")
+            .apply { isAccessible = true }.get(message) as BroadcastReceiver
+        val sessionStart = MindfulMessageOverlayManager::class.java.getDeclaredField("sessionStartTime")
+            .apply { isAccessible = true }
+        val originalStart = sessionStart.getLong(overlay)
+
+        for (foreground in listOf(null, "com.example.launcher", selectedApp)) {
+            onMain {
+                receiver.onReceive(service, Intent(Intent.ACTION_SCREEN_OFF))
+                service.activePackage = foreground
+                receiver.onReceive(service, Intent(Intent.ACTION_SCREEN_ON))
+                assertFalse(overlay.isOverlayVisible)
+                receiver.onReceive(service, Intent(Intent.ACTION_USER_PRESENT))
+            }
+            Thread.sleep(500)
+            onMain {
+                assertEquals(foreground == selectedApp, overlay.isOverlayVisible)
+                assertEquals(if (foreground == selectedApp) 2 else 1, service.addedViews.size)
+            }
+        }
+        onMain {
+            assertNotSame(originalView, service.addedViews.last())
+            assertTrue(sessionStart.getLong(overlay) > originalStart)
+        }
+    }
+
+    @Test
+    fun destructionCancelsPendingUnlockRecheck() {
+        onMain {
+            val receiver = MindfulMessage::class.java.getDeclaredField("screenReceiver")
+                .apply { isAccessible = true }.get(message) as BroadcastReceiver
+            receiver.onReceive(service, Intent(Intent.ACTION_SCREEN_OFF))
+            receiver.onReceive(service, Intent(Intent.ACTION_SCREEN_ON))
+            receiver.onReceive(service, Intent(Intent.ACTION_USER_PRESENT))
+            message.onDestroy()
+        }
+        Thread.sleep(500)
+        onMain {
+            sendEvent(selectedApp)
+            assertFalse(overlay.isOverlayVisible)
+            assertEquals(1, service.addedViews.size)
+        }
     }
 
     @Test
