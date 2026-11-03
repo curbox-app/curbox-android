@@ -7,6 +7,8 @@ class ReelAppConfig {
     companion object {
         const val INSTAGRAM_PACKAGE = "com.instagram.android"
         const val INSTAGRAM_DM_REEL_MARKER = "\u001Fcurbox:instagram_dm_inbox:\u001F"
+        const val TIKTOK_PACKAGE = "com.zhiliaoapp.musically"
+        const val TIKTOK_DM_VIDEO_MARKER = "\u001Fcurbox:tiktok_dm_inbox:\u001F"
 
         /** Marks the script report line that carries the reel position, such as a recycler row. */
         const val REEL_POSITION_MARKER = "\u001Fcurbox:reel_position:\u001F"
@@ -184,21 +186,37 @@ class ReelAppConfig {
                 eventType = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED,
             ),
 
-            "com.zhiliaoapp.musically" to ReelAppData(
+            TIKTOK_PACKAGE to ReelAppData(
                 scriptSource = """
                     ${isOnScreenFunction()}
 
-                    viewer = find(id="com.zhiliaoapp.musically:id/view_pager_layout_wrapper")
-                    video = find(id="com.zhiliaoapp.musically:id/long_press_layout")
-                    # TikTok reports the video node as hidden even while its full screen viewer is visible.
-                    if not isOnScreen(viewer) or video == null { return null }
-                    if viewer.w < screen.width * 0.9 or viewer.h < screen.height * 0.75 {
+                    fn findOnScreen(viewId) {
+                        for node in findAll(id="$TIKTOK_PACKAGE:id/" + viewId) {
+                            if isOnScreen(node) { return node }
+                        }
                         return null
                     }
 
-                    commentEditor = find(class="android.widget.EditText")
-                    if isOnScreen(commentEditor) and commentEditor.top > screen.height * 0.6 {
-                        return null
+                    # The pager keeps hidden neighbours attached, so require an on-screen video.
+                    video = null
+                    for node in findAll(id="$TIKTOK_PACKAGE:id/long_press_layout") {
+                        if isOnScreen(node) and node.w >= screen.width * 0.9 and node.h >= screen.height * 0.75 {
+                            video = node
+                            break
+                        }
+                    }
+                    # Older TikTok versions report the video hidden but expose this viewer.
+                    if video == null {
+                        viewer = findOnScreen("view_pager_layout_wrapper")
+                        if viewer == null or viewer.w < screen.width * 0.9 or viewer.h < screen.height * 0.75 { return null }
+                        if find(id="$TIKTOK_PACKAGE:id/long_press_layout") == null { return null }
+                        video = viewer
+                    }
+
+                    prefix = ""
+                    reply = findOnScreen("udm")
+                    if reply != null and reply.top >= video.bottom {
+                        prefix = "$TIKTOK_DM_VIDEO_MARKER"
                     }
 
                     comparator = ""
@@ -211,7 +229,7 @@ class ReelAppConfig {
                     if isOnScreen(sound) {
                         comparator = comparator + sound.subtreeText(4, 2000)
                     }
-                    return comparator
+                    return prefix + comparator
                 """.trimIndent(),
                 eventType = AccessibilityEvent.TYPE_VIEW_SCROLLED or
                     AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED

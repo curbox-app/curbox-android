@@ -12,7 +12,8 @@ data class ReelBlocker(
     val isActive: Boolean = false,
     val temporarilyDisabledUntilMs: Long = 0L,
     val excludedPackages: List<String> = emptyList(),
-    val allowInstagramReelsFromDmInbox: Boolean = false
+    val allowInstagramReelsFromDmInbox: Boolean = false,
+    val allowTikTokVideosFromDmInbox: Boolean = false
 )
 
 data class ReelBlockerConfig(
