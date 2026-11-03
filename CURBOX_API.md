@@ -4,7 +4,7 @@ This document describes the public API implemented in this repository, including
 screen requirements and the security hardening in the current source. Use it as a reference when
 building an Android client or giving implementation instructions to a coding agent.
 
-**Current API version: `3`.** The transport is a local Android Binder service with an AIDL
+**Current API version: `4`.** The transport is a local Android Binder service with an AIDL
 interface. There is no HTTP server, web API, API key, OAuth flow, or remote endpoint. A browser,
 server, or desktop application needs an Android companion to use this API.
 
@@ -280,9 +280,11 @@ package outside the caller UID or a package that has not been approved.
 | `list(kind)` | JSON array string, JSON object string for `STATUS`, or `null` | Yes |
 
 The base command and query interface predates version 2. `list()` arrived in version 2. Provider
-registration, removal, and `UNLOCK_CONDITIONS` require version 3. Check the version **before calling
+registration, removal, and `UNLOCK_CONDITIONS` require version 3. Version 4 adds the exact focus
+end time and group ID to `FOCUS_ACTIVE` and `STATUS`, and the optional `ends_at` argument for
+`START_FOCUS`; older installations ignore `ends_at` and omit those fields. Check the version **before calling
 methods or features an older installation may not implement**. A version number identifies the
-contract; it does not distinguish every security patch within version 3.
+contract; it does not distinguish every security patch within a version.
 
 All operation names and argument keys are **case sensitive**. Send exact uppercase command, state,
 and list names. JSON is returned inside a Java/Kotlin string, not as a `Bundle`.
@@ -331,6 +333,7 @@ Check `isGranted()` and `apiVersion()` to narrow down an unexpected null result.
 | `target` | `String` | Existing group ID; empty if omitted, causing targeted commands to fail |
 | `enable` | `Boolean` | `true` if omitted |
 | `minutes` | `Int` | `25` if omitted; focus duration is clamped to at least 1 minute |
+| `ends_at` | `Long` | Version 4: optional epoch millis end for `START_FOCUS`; when in the future it replaces `minutes`, clamped to between 1 minute and 24 hours from now |
 | `id` | `String` | Provider requirement ID, separate from a Curbox group ID |
 | `label` | `String` | Provider requirement display name |
 | `activity` | `String` | Exported activity in the provider's own package |
@@ -360,7 +363,7 @@ of a missing provider ID are explicitly repeatable.
 
 | Command | Arguments | Behavior |
 | --- | --- | --- |
-| `START_FOCUS` | `target`: focus group ID; `minutes`: integer, default 25 | Starts manual focus using an existing group. Values below 1 minute become 1. Records a focus session and refreshes the blocker. |
+| `START_FOCUS` | `target`: focus group ID; `minutes`: integer, default 25; `ends_at`: long epoch millis (version 4, optional) | Starts manual focus using an existing group. Values below 1 minute become 1. A future `ends_at` sets the exact end instead of `minutes`. Records a focus session and refreshes the blocker. |
 | `STOP_FOCUS` | None | Clears active manual focus and marks running focus statistics as ended. |
 
 Both commands return `FAILED` if a live manual session belongs to a group with `exitable = false`.
@@ -433,22 +436,23 @@ not require the accessibility service merely to store or remove a registration.
 
 | State | Fields and types | Meaning |
 | --- | --- | --- |
-| `FOCUS_ACTIVE` | `active`: string boolean; `focus_group`: string; `focus_remaining`: string integer | Manual focus state, group name, and whole remaining minutes |
+| `FOCUS_ACTIVE` | `active`: string boolean; `focus_group`: string; `focus_remaining`: string integer; `focus_group_id`: string (version 4); `focus_ends_at`: string epoch millis (version 4) | Manual focus state, group name, whole remaining minutes, and (version 4) the group ID and exact end time |
 | `SCREENTIME_TODAY` | `screentime`: string integer | Whole minutes recorded for today's date, excluding ignored app packages |
 | `REELS_TODAY` | `reels`: string integer | Today's recorded reel count, or zero when no count is stored |
 
 Example active and inactive focus responses:
 
 ```json
-{"active":"true","focus_group":"Study","focus_remaining":"24"}
+{"active":"true","focus_group":"Study","focus_remaining":"24","focus_group_id":"focus-id","focus_ends_at":"1767225600000"}
 ```
 
 ```json
-{"active":"false","focus_group":"","focus_remaining":"0"}
+{"active":"false","focus_group":"","focus_remaining":"0","focus_group_id":"","focus_ends_at":"0"}
 ```
 
 Remaining minutes are truncated, not rounded up. A session can still be active with `"0"` whole
-minutes left. `focus_group` is a display name, not the ID required by commands. A live session can
+minutes left. `focus_group` is a display name, not the ID required by commands; use
+`focus_group_id` (version 4) for that. A live session can
 have an empty name if its group is no longer found; this query is not a service health check.
 
 Usage examples:
@@ -535,6 +539,8 @@ signer-mismatched providers are filtered out. `UI_HIDER_SCRIPTS` returns `[]` on
   "focusActive": true,
   "focusGroup": "Study",
   "focusRemainingMinutes": 24,
+  "focusGroupId": "focus-id",
+  "focusEndsAt": 1767225600000,
   "keywordBlocker": true,
   "reelBlocker": false,
   "reelCounter": true,
@@ -542,8 +548,9 @@ signer-mismatched providers are filtered out. `UI_HIDER_SCRIPTS` returns `[]` on
 }
 ```
 
-`focusGroup` is a name, not an ID. When focus is inactive, the name is empty and remaining minutes
-are zero. `uiHider` is always false on unsupported flavors. No field here reports DND, accessibility
+`focusGroup` is a name, not an ID; `focusGroupId` and `focusEndsAt` (version 4) carry the ID and
+exact end in epoch millis. When focus is inactive, the name and ID are empty and the remaining
+minutes and end are zero. `uiHider` is always false on unsupported flavors. No field here reports DND, accessibility
 service health, pending settings changes, actual per app enforcement, or selected group contents.
 Snapshots from separate calls are not an atomic combined snapshot.
 
@@ -840,7 +847,7 @@ services. Use ordinary installation and manual accessibility setup if you need t
 In API Tester:
 
 1. Tap **Connect** and select the intended Curbox installation if prompted.
-2. Check the log for the selected package and `apiVersion=3`.
+2. Check the log for the selected package and `apiVersion=4`.
 3. Tap **Request permission** and approve in that same Curbox installation.
 4. Check `isGranted`, list groups, and send a command.
 5. Use **Dump everything** to inspect all list kinds and today's usage queries.

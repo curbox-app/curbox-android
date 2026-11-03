@@ -38,6 +38,7 @@ object CurboxApiCommands {
         val target = args.getString(CurboxApiContract.ARG_TARGET).orEmpty()
         val enable = args.getBoolean(CurboxApiContract.ARG_ENABLE, true)
         val minutes = args.getInt(CurboxApiContract.ARG_MINUTES, 25)
+        val endsAt = args.getLong(CurboxApiContract.ARG_ENDS_AT, 0L)
 
         val app = context.applicationContext
         val dataStore = DataStoreManager(app)
@@ -48,7 +49,7 @@ object CurboxApiCommands {
                 ApiCommand.REMOVE_UNLOCK_CONDITION -> dataStore.removeExternalUnlockCondition(
                     callerPackage, args.getString("id").orEmpty()
                 )
-                ApiCommand.START_FOCUS -> startFocus(app, dataStore, target, minutes)
+                ApiCommand.START_FOCUS -> startFocus(app, dataStore, target, minutes, endsAt)
                 ApiCommand.STOP_FOCUS -> stopFocus(app, dataStore)
                 ApiCommand.SET_APP_BLOCKER_GROUP -> setAppBlockerGroup(app, dataStore, target, enable)
                 ApiCommand.SET_KEYWORD_BLOCKER -> setKeywordBlocker(app, dataStore, enable)
@@ -75,7 +76,9 @@ object CurboxApiCommands {
         context.sendBroadcast(Intent(action).setPackage(context.packageName))
     }
 
-    private suspend fun startFocus(context: Context, dataStore: DataStoreManager, groupId: String, minutes: Int) {
+    private const val MAX_FOCUS_MS = 24 * 60 * 60_000L
+
+    private suspend fun startFocus(context: Context, dataStore: DataStoreManager, groupId: String, minutes: Int, endsAt: Long) {
         val settings = dataStore.settings.first()
         require(ApiRestrictionPolicy.canReplaceFocus(settings, System.currentTimeMillis())) {
             "The active focus session cannot be ended early"
@@ -83,8 +86,13 @@ object CurboxApiCommands {
         val group = requireNotNull(settings.manualFocusGroups.firstOrNull { it.groupId == groupId }) {
             "Unknown focus group: $groupId"
         }
-        val durationMs = minutes.coerceAtLeast(1) * 60_000L
         val now = System.currentTimeMillis()
+        // An exact end lets a companion line this session up with another device to the millisecond.
+        val durationMs = if (endsAt > now) {
+            (endsAt - now).coerceIn(60_000L, MAX_FOCUS_MS)
+        } else {
+            minutes.coerceAtLeast(1) * 60_000L
+        }
         val endTimeInMillis = now + durationMs
 
         dataStore.setManualFocusStateToActive(
@@ -196,7 +204,9 @@ object CurboxApiCommands {
                 mapOf(
                     "active" to active.toString(),
                     CurboxApiContract.VAR_FOCUS_GROUP to name,
-                    CurboxApiContract.VAR_FOCUS_REMAINING to remainingMin.toString()
+                    CurboxApiContract.VAR_FOCUS_REMAINING to remainingMin.toString(),
+                    CurboxApiContract.VAR_FOCUS_GROUP_ID to (if (active) groupId.orEmpty() else ""),
+                    CurboxApiContract.VAR_FOCUS_ENDS_AT to (if (active) endTime else 0L).toString()
                 )
             }
 
@@ -301,6 +311,8 @@ object CurboxApiCommands {
                     "focusActive" to focusActive,
                     "focusGroup" to focusName,
                     "focusRemainingMinutes" to remaining,
+                    "focusGroupId" to (if (focusActive) groupId.orEmpty() else ""),
+                    "focusEndsAt" to (if (focusActive) endTime else 0L),
                     "keywordBlocker" to settings.keywordBlockerConfig.isActive,
                     "reelBlocker" to settings.reelBlockerConfig.isActive,
                     "reelCounter" to settings.isReelCounterOn,

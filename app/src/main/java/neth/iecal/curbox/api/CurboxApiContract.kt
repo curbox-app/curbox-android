@@ -9,16 +9,21 @@ package neth.iecal.curbox.api
  */
 object CurboxApiContract {
 
-    const val API_VERSION = 3
+    const val API_VERSION = 4
 
     // Argument keys placed in the Bundle passed to execute().
     const val ARG_TARGET = "target"
     const val ARG_ENABLE = "enable"
     const val ARG_MINUTES = "minutes"
+    /** Since version 4: optional exact epoch millis end for START_FOCUS. Wins over [ARG_MINUTES]. */
+    const val ARG_ENDS_AT = "ends_at"
 
     // Keys used in the JSON returned by query().
     const val VAR_FOCUS_GROUP = "focus_group"
     const val VAR_FOCUS_REMAINING = "focus_remaining"
+    /** Since version 4: the active group's id and exact end time in epoch millis. */
+    const val VAR_FOCUS_GROUP_ID = "focus_group_id"
+    const val VAR_FOCUS_ENDS_AT = "focus_ends_at"
     const val VAR_SCREENTIME = "screentime"
     const val VAR_REELS = "reels"
 
