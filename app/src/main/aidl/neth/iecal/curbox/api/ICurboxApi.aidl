@@ -2,6 +2,8 @@
 // Integration guide: CURBOX_API.md.
 package neth.iecal.curbox.api;
 
+import neth.iecal.curbox.api.ICurboxListener;
+
 interface ICurboxApi {
     // Version of this contract, so clients can check compatibility.
     int apiVersion();
@@ -23,4 +25,10 @@ interface ICurboxApi {
     // AUTO_DND_GROUPS, UI_HIDER_SCRIPTS, UNLOCK_CONDITIONS (v3) or STATUS. Returns a JSON array (or object for STATUS),
     // or null when not allowed or the kind is unknown.
     String list(String kind);
+
+    // Since version 6: calls listener.onChanged when focus or the focus groups change. Only allowed
+    // apps are registered. A listener is dropped when its app dies or loses access.
+    void addListener(ICurboxListener listener);
+
+    void removeListener(ICurboxListener listener);
 }

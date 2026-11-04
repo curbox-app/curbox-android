@@ -61,6 +61,9 @@ class AppBlockerService : BaseBlockingService() {
     private val websiteUsageTracker = WebsiteUsageTracker()
     private val appUsageTracker = AppUsageTracker()
 
+    // Keeps companion apps such as Curbox Sync alive without their own foreground service.
+    private val companionHost by lazy { neth.iecal.curbox.api.CompanionHost.Binder(this) }
+
     private val serviceScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
     private val eventChannel = Channel<AccessibilityEvent>(Channel.CONFLATED) { droppedEvent ->
@@ -250,10 +253,12 @@ class AppBlockerService : BaseBlockingService() {
         }
 
         startBackgroundWorker()
+        companionHost.start()
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        cleanupFeature("companions") { companionHost.stop() }
         cleanupFeature("reel settle recheck") { cancelReelSettleRecheck() }
         cleanupFeature("event worker") { serviceScope.cancel() }
         cleanupFeature("event channel") { eventChannel.cancel() }

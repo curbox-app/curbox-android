@@ -40,6 +40,7 @@ An approved app can:
 - Read daily app and website usage totals for the retained days (version 5).
 - List UI hider script metadata.
 - Register its own named unlock requirements for the user to select in warning settings.
+- Get a callback when focus changes, and ask Curbox to keep it running (version 6).
 
 The API does **not** expose:
 
@@ -49,7 +50,7 @@ The API does **not** expose:
 - Editing UI hider scripts or toggling individual scripts.
 - Editing automatic DND groups, Pomodoro cycles, anti uninstall, or settings change delay.
 - Hourly or per path usage, focus history, or a full settings export.
-- Direct unrestricted cooldown grants, API access management, event subscriptions, or webhooks.
+- Direct unrestricted cooldown grants, API access management, or webhooks. Change listeners cover focus only.
 
 Custom requirements extend the existing warning flow. They let a provider show its own check or
 practice activity; they do not replace Curbox's warning screen with arbitrary provider layouts.
@@ -68,11 +69,13 @@ android {
 }
 ```
 
-Copy the [published AIDL file](app/src/main/aidl/neth/iecal/curbox/api/ICurboxApi.aidl) to this exact
-path in your app:
+Copy the [published AIDL file](app/src/main/aidl/neth/iecal/curbox/api/ICurboxApi.aidl) and, from
+version 6, [its listener](app/src/main/aidl/neth/iecal/curbox/api/ICurboxListener.aidl) to these exact
+paths in your app:
 
 ```text
 src/main/aidl/neth/iecal/curbox/api/ICurboxApi.aidl
+src/main/aidl/neth/iecal/curbox/api/ICurboxListener.aidl
 ```
 
 Keep its package, method order, and signatures unchanged:
@@ -86,6 +89,12 @@ interface ICurboxApi {
     String execute(String command, in Bundle args);
     String query(String state);
     String list(String kind);
+    void addListener(ICurboxListener listener);    // version 6
+    void removeListener(ICurboxListener listener); // version 6
+}
+
+oneway interface ICurboxListener {
+    void onChanged(String what);
 }
 ```
 
@@ -279,12 +288,14 @@ package outside the caller UID or a package that has not been approved.
 | `execute(command, args)` | Status string | Yes |
 | `query(state)` | JSON object string or `null` | Yes |
 | `list(kind)` | JSON array string, JSON object string for `STATUS`, or `null` | Yes |
+| `addListener(listener)` | Nothing; registers a change callback (version 6) | Yes |
+| `removeListener(listener)` | Nothing | No |
 
 The base command and query interface predates version 2. `list()` arrived in version 2. Provider
 registration, removal, and `UNLOCK_CONDITIONS` require version 3. Version 4 adds the exact focus
 end time and group ID to `FOCUS_ACTIVE` and `STATUS`, and the optional `ends_at` argument for
 `START_FOCUS`; older installations ignore `ends_at` and omit those fields. Version 5 adds the
-`USAGE_HISTORY` list. Check the version **before calling
+`USAGE_HISTORY` list. Version 6 adds change listeners and `HOST_COMPANION`. Check the version **before calling
 methods or features an older installation may not implement**. A version number identifies the
 contract; it does not distinguish every security patch within a version.
 
@@ -309,7 +320,26 @@ val result = withContext(Dispatchers.IO) {
 ```
 
 The snippets assume an enclosing coroutine and appropriate exception handling. Keep UI work on the
-main thread. Avoid aggressive background polling; there are no callbacks or change subscriptions.
+main thread. Avoid aggressive background polling. From version 6, register a listener instead.
+
+### Change listeners
+
+From version 6 an allowed app can register an `ICurboxListener`. Curbox calls `onChanged("FOCUS")`
+when a focus session starts, stops or is replaced, or when focus groups are added, renamed or
+removed, whichever process made the change. Then read `FOCUS_ACTIVE` or `STATUS` again. The call is
+one way and carries no data. A session reaching its end time is not a change, so schedule your own
+read at `focus_ends_at`. Listeners are dropped when the client process dies, and skipped while the
+app is not allowed. Keep a slow fallback read, every few minutes, in case a callback is missed.
+
+```kotlin
+private val listener = object : ICurboxListener.Stub() {
+    override fun onChanged(what: String?) { refreshFocus() } // Binder thread
+}
+
+if (version >= 6) remote.addListener(listener)
+// On unbind:
+runCatching { remote.removeListener(listener) }
+```
 
 ### Execute results
 
@@ -414,6 +444,37 @@ the others. A global toggle does not expose individual per app reel configuratio
 Grayscale settings can be updated even on a flavor without grayscale capability. In particular,
 `SET_GRAYSCALE_GROUP` lacks a Play Store capability rejection, so it may return `OK` without a visual
 effect. The API does not provide a general capability discovery endpoint.
+
+### Companion hosting
+
+| Command | Arguments | Behavior |
+| --- | --- | --- |
+| `HOST_COMPANION` | `enable`: boolean, default true (version 6) | Asks Curbox to keep the caller running, or stops asking. |
+
+An app that must stay running, such as one serving a local network connection, would normally
+need its own foreground service and notification. Instead it can declare an exported service for
+the action `neth.iecal.curbox.api.COMPANION` and call `HOST_COMPANION`. While Curbox's blocker
+service runs, it binds that service, which keeps the companion's process at the blocker's priority.
+Nothing is sent over the binding.
+
+* Return `null` from `onBind` to decline, for example while the feature is off. Curbox unbinds and
+  tries again on the next `HOST_COMPANION` call or when its blocker restarts.
+* The binding ends when the accessibility service stops, when access is revoked, or when the API is
+  turned off. The companion's service `onDestroy` is its signal to fall back to its own foreground
+  service.
+* Doze still limits network access for a bound process. A companion that needs the network while
+  the phone sleeps should also be excluded from battery optimization, which also lets it start its
+  fallback foreground service from the background.
+
+```xml
+<service
+    android:name=".CompanionService"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="neth.iecal.curbox.api.COMPANION" />
+    </intent-filter>
+</service>
+```
 
 ### Do Not Disturb
 
@@ -937,6 +998,8 @@ replace testing the real provider Activity handoff and cross-process blocker lif
 | [`CurboxApiContract.kt`](app/src/main/java/neth/iecal/curbox/api/CurboxApiContract.kt) | Version, exact operation names, common argument/result keys |
 | [`CurboxApiService.kt`](app/src/main/java/neth/iecal/curbox/api/CurboxApiService.kt) | Caller authentication, serialized execution, JSON serialization |
 | [`CurboxApiCommands.kt`](app/src/main/java/neth/iecal/curbox/api/CurboxApiCommands.kt) | Command effects, queries, and list response schemas |
+| [`ICurboxListener.aidl`](app/src/main/aidl/neth/iecal/curbox/api/ICurboxListener.aidl) | One way change callback (version 6) |
+| [`CompanionHost.kt`](app/src/main/java/neth/iecal/curbox/api/CompanionHost.kt) | Hosted companion list and the blocker side bindings |
 | [`ApiAuthStore.kt`](app/src/main/java/neth/iecal/curbox/api/ApiAuthStore.kt) | Grants, signing pins, API switch, and authorization revision |
 | [`ApiPermissionActivity.kt`](app/src/main/java/neth/iecal/curbox/api/ApiPermissionActivity.kt) | User approval and verified Activity caller |
 | [`ApiPackageIdentity.kt`](app/src/main/java/neth/iecal/curbox/api/ApiPackageIdentity.kt) | APK signing certificate hashes |

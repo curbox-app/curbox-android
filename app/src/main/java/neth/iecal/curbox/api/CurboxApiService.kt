@@ -5,9 +5,20 @@ import android.content.Intent
 import android.os.Binder
 import android.os.Bundle
 import android.os.IBinder
+import android.os.RemoteCallbackList
 import android.util.Log
 import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.drop
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import neth.iecal.curbox.utils.DataStoreManager
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
@@ -23,6 +34,9 @@ class CurboxApiService : Service() {
 
     private val gson = Gson()
     private val commandMutex = Mutex()
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+    private val listeners = RemoteCallbackList<ICurboxListener>()
+    private var watchJob: Job? = null
 
     private val binder = object : ICurboxApi.Stub() {
 
@@ -86,6 +100,53 @@ class CurboxApiService : Service() {
                 null
             }
         }
+
+        override fun addListener(listener: ICurboxListener?) {
+            if (listener == null || !callerAllowed()) return
+            val packages = packageManager.getPackagesForUid(Binder.getCallingUid()).orEmpty()
+            listeners.register(listener, packages)
+            watch()
+        }
+
+        override fun removeListener(listener: ICurboxListener?) {
+            if (listener != null) listeners.unregister(listener)
+        }
+    }
+
+    /** Watches focus while anyone listens. DataStore is multi process, so blocker changes show too. */
+    @Synchronized
+    private fun watch() {
+        if (watchJob?.isActive == true) return
+        watchJob = scope.launch {
+            DataStoreManager(applicationContext).settings
+                .map { s -> s.activeManualFocusGroupId to s.manualFocusGroups.map { it.groupId to it.groupName } }
+                .distinctUntilChanged()
+                .drop(1)
+                .collect { notifyListeners(CHANGED_FOCUS) }
+        }
+    }
+
+    @Synchronized
+    private fun notifyListeners(what: String) {
+        val count = listeners.beginBroadcast()
+        try {
+            for (i in 0 until count) {
+                val packages = listeners.getBroadcastCookie(i) as? Array<*>
+                val allowed = ApiAuthStore.isAnyGranted(
+                    applicationContext, packages?.filterIsInstance<String>()?.toTypedArray()
+                )
+                if (!allowed) continue
+                runCatching { listeners.getBroadcastItem(i).onChanged(what) }
+            }
+        } finally {
+            listeners.finishBroadcast()
+        }
+    }
+
+    override fun onDestroy() {
+        listeners.kill()
+        scope.cancel()
+        super.onDestroy()
     }
 
     private fun callerAllowed(): Boolean {
@@ -97,5 +158,6 @@ class CurboxApiService : Service() {
 
     companion object {
         private const val TAG = "CurboxApiService"
+        private const val CHANGED_FOCUS = "FOCUS"
     }
 }

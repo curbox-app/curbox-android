@@ -9,7 +9,7 @@ package neth.iecal.curbox.api
  */
 object CurboxApiContract {
 
-    const val API_VERSION = 5
+    const val API_VERSION = 6
 
     // Argument keys placed in the Bundle passed to execute().
     const val ARG_TARGET = "target"
@@ -26,6 +26,13 @@ object CurboxApiContract {
     const val VAR_FOCUS_ENDS_AT = "focus_ends_at"
     const val VAR_SCREENTIME = "screentime"
     const val VAR_REELS = "reels"
+
+    /**
+     * Since version 6: an allowed app that declares a service for this action can ask Curbox to
+     * keep it running with HOST_COMPANION. Curbox's blocker service binds it, so the app needs no
+     * foreground service of its own. Return null from onBind to decline.
+     */
+    const val ACTION_COMPANION = "neth.iecal.curbox.api.COMPANION"
 
     // Status strings returned by execute().
     const val STATUS_OK = "OK"
@@ -47,7 +54,9 @@ enum class ApiCommand {
     SET_UI_HIDER,
     SET_GRAYSCALE_GROUP,
     SET_REEL_COUNTER,
-    SET_DND;
+    SET_DND,
+    /** Since version 6: enable true asks Curbox to keep the caller's companion service bound. */
+    HOST_COMPANION;
 
     companion object {
         fun fromNameOrNull(name: String?): ApiCommand? = entries.firstOrNull { it.name == name }

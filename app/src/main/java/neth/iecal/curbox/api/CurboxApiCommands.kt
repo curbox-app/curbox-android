@@ -64,6 +64,7 @@ object CurboxApiCommands {
                 ApiCommand.SET_GRAYSCALE_GROUP -> setGrayscaleGroup(app, dataStore, target, enable)
                 ApiCommand.SET_REEL_COUNTER -> setReelCounter(app, dataStore, enable)
                 ApiCommand.SET_DND -> DndHelper.applyDndState(app, enable)
+                ApiCommand.HOST_COMPANION -> CompanionHost.request(app, callerPackage, enable)
             }
             true
         } catch (e: CancellationException) {

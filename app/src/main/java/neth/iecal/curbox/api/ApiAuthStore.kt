@@ -30,6 +30,7 @@ object ApiAuthStore {
         if (enabled == isApiEnabled(context)) return
         prefs(context).edit().putBoolean(KEY_ENABLED, enabled)
             .putString(KEY_REVISION, UUID.randomUUID().toString()).apply()
+        if (!enabled) CompanionHost.clear(context)
     }
 
     /** Changes even when access is revoked and then restored during an unlock check. */
@@ -110,5 +111,6 @@ object ApiAuthStore {
             .putString(KEY_CERTIFICATES, gson.toJson(storedCertificates(context) - packageName))
             .putString(KEY_INSTALL_TIMES, gson.toJson(storedInstallTimes(context) - packageName))
             .putString(KEY_REVISION, UUID.randomUUID().toString()).apply()
+        CompanionHost.request(context, packageName, false)
     }
 }
