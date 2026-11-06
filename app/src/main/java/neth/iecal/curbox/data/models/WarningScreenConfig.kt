@@ -12,6 +12,7 @@ data class AppBlockerWarningScreenConfig(
     @field:JsonAdapter(WarningMessagesAdapter::class)
     val message: List<String> = listOf("Message 1", "Message 2"),
     val timeInterval: Long = 120000L, // default cooldown period
+    val showUnlockCountdown: Boolean = false,
     val isDynamicIntervalSettingAllowed: Boolean = false,
     val isProceedDisabled: Boolean = false,
     val isWarningDialogHidden: Boolean = false, // perform back/home action directly without showing warning screen

@@ -57,7 +57,14 @@ class AppBlockerService : BaseBlockingService() {
     private val reelsOverlayManager by lazy { ReelsOverlayManager(this) }
     private val reelsCountTracker = ReelsCountTracker()
     private val reelUsageTracker = ReelUsageTracker()
-    private val mindfulMessage = MindfulMessage()
+    private val mindfulMessage = MindfulMessage { packageName ->
+        val remaining = listOf(
+            appBlocker.remainingUnlockMillis(packageName),
+            keywordBlocker.remainingUnlockMillis(packageName),
+            reelBlocker.remainingUnlockMillis(packageName)
+        ).filter { it > 0L }
+        if (remaining.isEmpty()) 0L else remaining.min()
+    }
     private val websiteUsageTracker = WebsiteUsageTracker()
     private val appUsageTracker = AppUsageTracker()
 

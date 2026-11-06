@@ -524,6 +524,20 @@ class KeywordBlocker : BaseBlocker() {
         }
     }
 
+    fun remainingUnlockMillis(packageName: String, nowMs: Long = System.currentTimeMillis()): Long {
+        val observation = lastWebsiteObservation
+        if (!isTurnedOn || observation == null || observation.packageName != packageName) return 0L
+        val deadlines = activeGroups
+            .filter { group ->
+                group.warningScreenConfig.showUnlockCountdown && !group.warningScreenConfig.isOnOpenConfig &&
+                    group.config?.schedule?.activeWindow(nowMs) != null &&
+                    matchesGroup(group, observation.urlIdentifier)
+            }
+            .mapNotNull { cooldownGroupsList[it.id] }
+            .filter { it > nowMs }
+        return if (deadlines.isEmpty()) 0L else deadlines.min() - nowMs
+    }
+
     private fun showNextCooldownNotification() {
         if (destroyed || !isTurnedOn || !::notificationManager.isInitialized) return
 

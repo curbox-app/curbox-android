@@ -20,9 +20,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
 import neth.iecal.curbox.R
+import neth.iecal.curbox.anti_stimulants.MindfulMessageVariableValues
+import neth.iecal.curbox.anti_stimulants.MindfulMessageVariables
 import neth.iecal.curbox.databinding.FragmentMindfulMessagesBinding
 import neth.iecal.curbox.ui.activity.SelectAppsActivity
 import neth.iecal.curbox.ui.overlay.OverlayDragHelper
+import neth.iecal.curbox.ui.overlay.MindfulMessageOverlayManager
 import neth.iecal.curbox.ui.views.ColorPickerDialog
 import java.util.Locale
 
@@ -205,20 +208,14 @@ class MindfulMessagesFragment : Fragment() {
             positionX = config.positionX,
             positionY = config.positionY,
             setupWidget = { widget ->
-                val r = (config.bgColor shr 16) and 0xFF
-                val g = (config.bgColor shr 8) and 0xFF
-                val b = config.bgColor and 0xFF
                 widget.findViewById<TextView>(R.id.mindful_txt).apply {
-                    text = config.messages.lines().firstOrNull()?.ifBlank { "Mindful message" } ?: "Mindful message"
-                    textSize = config.textSize
-                    setTextColor(Color.argb(
-                        config.textOpacity * 255 / 100,
-                        (config.textColor shr 16) and 0xFF,
-                        (config.textColor shr 8) and 0xFF,
-                        config.textColor and 0xFF
-                    ))
-                    setBackgroundColor(Color.argb(config.bgOpacity * 255 / 100, r, g, b))
-                    setPadding(32, 32, 32, 32)
+                    text = MindfulMessageVariables.format(
+                        config.messages.lineSequence().first(),
+                        MindfulMessageVariableValues(appName = getString(R.string.app_name), remainingUnlockMs = 60_000L),
+                        config.selectedApps,
+                        emptyList()
+                    ).ifBlank { getString(R.string.mindful_message_preview) }
+                    MindfulMessageOverlayManager.applyAppearance(this, config)
                 }
             },
             onPositionSaved = { x, y -> viewModel.updatePosition(x, y) },

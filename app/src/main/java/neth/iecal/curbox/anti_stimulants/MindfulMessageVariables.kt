@@ -11,6 +11,7 @@ data class MindfulMessageVariableValues(
     val screenTimeTodayMs: Long = 0L,
     val screenTimeYesterdayMs: Long = 0L,
     val liveSessionMs: Long = 0L,
+    val remainingUnlockMs: Long = 0L,
     val reelCount: Int = 0,
     val todayUsageByPackage: Map<String, Long> = emptyMap(),
     val yesterdayUsageByPackage: Map<String, Long> = emptyMap()
@@ -41,6 +42,7 @@ object MindfulMessageVariables {
             .replace("{screentime_yesterday}", formatUsage(values.screenTimeYesterdayMs))
             .replace("{mindful_apps_usage_today}", formatUsage(mindfulAppsUsageToday))
             .replace("{live_session_duration}", formatSession(values.liveSessionMs))
+            .replace("{remaining_unlock_time}", formatSession(values.remainingUnlockMs))
             .replace("{reel_count}", values.reelCount.toString())
             .replaceGroupUsage(groupUsageTodayPattern, values.todayUsageByPackage, appGroups)
             .replaceGroupUsage(

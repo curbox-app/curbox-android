@@ -118,6 +118,14 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_unlock_countdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/show_unlock_countdown"
+            android:visibility="gone" />
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/proceed_delay_container"
             style="@style/Widget.Material3.CardView.Outlined"

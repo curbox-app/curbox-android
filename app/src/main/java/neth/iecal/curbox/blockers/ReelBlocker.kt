@@ -27,6 +27,7 @@ import neth.iecal.curbox.ui.activity.WarningActivity
 import neth.iecal.curbox.utils.TimeTools
 import neth.iecal.curbox.utils.TimerNotification
 import java.util.Calendar
+import java.util.concurrent.ConcurrentHashMap
 
 class ReelBlocker : BaseBlocker() {
 
@@ -53,7 +54,7 @@ class ReelBlocker : BaseBlocker() {
     private var settingsJob: Job? = null
     private var countJob: Job? = null
     
-    private val cooldownViewIdsList = mutableMapOf<String, Long>()
+    private val cooldownViewIdsList = ConcurrentHashMap<String, Long>()
     private var lastEventTimeStamp = 0L
 
     private lateinit var notificationManager: TimerNotification
@@ -220,6 +221,13 @@ class ReelBlocker : BaseBlocker() {
                 }
             }
         }
+    }
+
+    fun remainingUnlockMillis(packageName: String, nowMs: Long = SystemClock.uptimeMillis()): Long {
+        if (!reelBlockerConfig.isActive || !reelBlockerConfig.warningScreenConfig.showUnlockCountdown ||
+            packageName in reelBlockerConfig.excludedPackages) return 0L
+        val deadline = cooldownViewIdsList[packageName]
+        return if (deadline == null) 0L else (deadline - nowMs).coerceAtLeast(0L)
     }
 
     private fun isCooldownActive(viewId: String): Boolean {

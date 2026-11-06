@@ -318,6 +318,17 @@ class AppBlocker : BaseBlocker() {
         setUpForcedRefreshChecker("cooldown:$groupId", realTimeEndMillis, groupId)
     }
 
+    fun remainingUnlockMillis(packageName: String, nowMs: Long = System.currentTimeMillis()): Long {
+        val deadlines = blockedAppsList[packageName].orEmpty()
+            .filter {
+                it.warningConfig.showUnlockCountdown && !it.warningConfig.isOnOpenConfig &&
+                    it.config.schedule.activeWindow(nowMs) != null
+            }
+            .mapNotNull { cooldownGroupsList[it.groupId] }
+            .filter { it > nowMs }
+        return if (deadlines.isEmpty()) 0L else deadlines.min() - nowMs
+    }
+
     private fun getUsageLimitForToday(config: AppUsageConfig): Long {
         return if (config.isDailyUniform) {
             config.uniformLimit

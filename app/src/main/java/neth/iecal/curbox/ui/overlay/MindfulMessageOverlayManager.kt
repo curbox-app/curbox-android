@@ -2,14 +2,13 @@ package neth.iecal.curbox.ui.overlay
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.graphics.PixelFormat
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewTreeObserver
 import android.view.WindowManager
 import android.widget.TextView
+import androidx.core.graphics.ColorUtils
 import kotlinx.coroutines.*
 import neth.iecal.curbox.CrashLogger
 import neth.iecal.curbox.R
@@ -21,18 +20,33 @@ import neth.iecal.curbox.data.models.MindfulMessageConfig
 import neth.iecal.curbox.utils.TimeTools
 import neth.iecal.curbox.utils.UsageStatsHelper
 
-class MindfulMessageOverlayManager(private val context: Context) {
+class MindfulMessageOverlayManager(
+    private val context: Context,
+    private val remainingUnlockMillis: (String) -> Long
+) {
+
+    companion object {
+        fun applyAppearance(textView: TextView, config: MindfulMessageConfig) {
+            textView.apply {
+                textSize = config.textSize
+                setTextColor(ColorUtils.setAlphaComponent(config.textColor, config.textOpacity * 255 / 100))
+                setBackgroundColor(ColorUtils.setAlphaComponent(config.bgColor, config.bgOpacity * 255 / 100))
+                setPadding(32, 32, 32, 32)
+            }
+        }
+    }
 
     private var overlayView: View? = null
     var isOverlayVisible = false
     private var windowManager: WindowManager? = null
-    private var layoutParams: WindowManager.LayoutParams? = null
 
     private val scope = CoroutineScope(Dispatchers.Main + Job())
     private var updateJob: Job? = null
 
     private var sessionStartTime = 0L
     private var textView: TextView? = null
+    private var displayedConfig = MindfulMessageConfig()
+    private var appGroups = emptyList<AppGroup>()
 
     private val usageHelper = UsageStatsHelper(context)
     private val database = AppDatabase.getInstance(context.applicationContext)
@@ -43,9 +57,15 @@ class MindfulMessageOverlayManager(private val context: Context) {
         config: MindfulMessageConfig,
         appGroups: List<AppGroup>
     ) {
+        val changed = displayedConfig != config
+        displayedConfig = config
+        this.appGroups = appGroups
         if (!isOverlayVisible || overlayView == null) {
             setupView(config)
-            startTicker(pkgName, config, appGroups)
+            startTicker(pkgName)
+        } else if (changed) {
+            textView?.let { applyAppearance(it, config) }
+            overlayView?.requestLayout()
         }
     }
 
@@ -54,22 +74,7 @@ class MindfulMessageOverlayManager(private val context: Context) {
         overlayView = LayoutInflater.from(context).inflate(R.layout.mindfulmsg_overlay, null)
         textView = overlayView?.findViewById<TextView>(R.id.mindful_txt)
 
-        val r = (config.bgColor shr 16) and 0xFF
-        val g = (config.bgColor shr 8) and 0xFF
-        val b = config.bgColor and 0xFF
-        val alpha = (config.bgOpacity * 255 / 100)
-
-        textView?.apply {
-            textSize = config.textSize
-            setTextColor(Color.argb(
-                config.textOpacity * 255 / 100,
-                (config.textColor shr 16) and 0xFF,
-                (config.textColor shr 8) and 0xFF,
-                config.textColor and 0xFF
-            ))
-            setBackgroundColor(Color.argb(alpha, r, g, b))
-            setPadding(32, 32, 32, 32)
-        }
+        textView?.let { applyAppearance(it, config) }
 
         val dm = context.resources.displayMetrics
         val screenWidth = dm.widthPixels
@@ -88,34 +93,30 @@ class MindfulMessageOverlayManager(private val context: Context) {
             x = (screenWidth * config.positionX).toInt()
             y = (screenHeight * config.positionY).toInt()
         }
-        layoutParams = params
-
         windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         windowManager?.addView(overlayView, params)
         isOverlayVisible = true
 
-        overlayView?.viewTreeObserver?.addOnGlobalLayoutListener(object :
-            ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                overlayView?.viewTreeObserver?.removeOnGlobalLayoutListener(this)
-                val vw = overlayView?.width ?: 0
-                val vh = overlayView?.height ?: 0
-                params.x = ((screenWidth * config.positionX) - vw / 2f)
-                    .toInt().coerceIn(0, (screenWidth - vw).coerceAtLeast(0))
-                params.y = ((screenHeight * config.positionY) - vh / 2f)
-                    .toInt().coerceIn(0, (screenHeight - vh).coerceAtLeast(0))
+        overlayView?.viewTreeObserver?.addOnGlobalLayoutListener {
+            val view = overlayView ?: return@addOnGlobalLayoutListener
+            val metrics = context.resources.displayMetrics
+            val x = (metrics.widthPixels * displayedConfig.positionX - view.width / 2f)
+                .toInt().coerceIn(0, (metrics.widthPixels - view.width).coerceAtLeast(0))
+            val y = (metrics.heightPixels * displayedConfig.positionY - view.height / 2f)
+                .toInt().coerceIn(0, (metrics.heightPixels - view.height).coerceAtLeast(0))
+            if (params.x != x || params.y != y) {
+                params.x = x
+                params.y = y
                 try {
-                    windowManager?.updateViewLayout(overlayView, params)
-                } catch (_: Exception) {}
+                    windowManager?.updateViewLayout(view, params)
+                } catch (error: Exception) {
+                    CrashLogger(context).logNonFatalError(error)
+                }
             }
-        })
+        }
     }
 
-    private fun startTicker(
-        pkgName: String,
-        config: MindfulMessageConfig,
-        appGroups: List<AppGroup>
-    ) {
+    private fun startTicker(pkgName: String) {
         updateJob?.cancel()
         val appName = runCatching {
             val appInfo = context.packageManager.getApplicationInfo(pkgName, 0)
@@ -124,6 +125,8 @@ class MindfulMessageOverlayManager(private val context: Context) {
         updateJob = scope.launch {
             try {
                 while (isActive) {
+                    val config = displayedConfig
+                    val appGroups = appGroups
                     val formatted = withContext(Dispatchers.IO) {
                         val todayStats =
                             if (MindfulMessageVariables.needsTodayUsage(config.messages)) {
@@ -158,6 +161,11 @@ class MindfulMessageOverlayManager(private val context: Context) {
                                 screenTimeTodayMs = todayStats.sumOf { it.totalTime },
                                 screenTimeYesterdayMs = yesterdayStats.sumOf { it.totalTime },
                                 liveSessionMs = System.currentTimeMillis() - sessionStartTime,
+                                remainingUnlockMs = if (config.messages.contains("{remaining_unlock_time}")) {
+                                    remainingUnlockMillis(pkgName)
+                                } else {
+                                    0L
+                                },
                                 reelCount = reelCount,
                                 todayUsageByPackage = todayByPackage,
                                 yesterdayUsageByPackage = yesterdayByPackage
@@ -187,6 +195,7 @@ class MindfulMessageOverlayManager(private val context: Context) {
             } catch (_: Exception) {}
             overlayView = null
             isOverlayVisible = false
+            textView = null
         }
     }
 }

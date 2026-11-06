@@ -316,6 +316,7 @@ object RestrictionComparator {
             o.externalUnlockCondition != n.externalUnlockCondition) return false
 
         val onEachOpenOk = !o.isOnOpenConfig || n.isOnOpenConfig
+        val countdownOk = !o.showUnlockCountdown || n.showUnlockCountdown
         val cooldownOk = n.isOnOpenConfig || n.timeInterval <= o.timeInterval
         val dynamicIntervalOk = n.isOnOpenConfig ||
             !n.isDynamicIntervalSettingAllowed ||
@@ -361,7 +362,7 @@ object RestrictionComparator {
             else -> n.minIntentLength.coerceAtLeast(1) >= o.minIntentLength.coerceAtLeast(1)
         }
 
-        return onEachOpenOk && cooldownOk && dynamicIntervalOk &&
+        return onEachOpenOk && countdownOk && cooldownOk && dynamicIntervalOk &&
             proceedDisabledOk && dialogHiddenOk &&
             proceedDelayOk && vibrateOk && proceedLimitOk && qrOk && nfcOk && typingOk && intentOk &&
             adaptiveMathOk && adaptiveMathQuestionCountOk && adaptiveMathStartingLevelOk &&

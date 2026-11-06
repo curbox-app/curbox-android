@@ -62,6 +62,7 @@ internal class WarningConfigFormController(
         val isOnEachOpenEnabled = supportsOnEachOpen && config.isOnOpenConfig
         binding.switchOnEachOpen.isVisible = supportsOnEachOpen
         binding.switchOnEachOpen.isChecked = isOnEachOpenEnabled
+        binding.switchUnlockCountdown.isChecked = config.showUnlockCountdown
         binding.unlockChallengeDropdown.setAdapter(
             WarningUnlockOptionAdapter(fragment.requireContext(), warningChallengeOptions)
         )
@@ -283,6 +284,7 @@ internal class WarningConfigFormController(
                 .filter { it.isNotEmpty() },
 
             timeInterval = numericInputValue(binding.fixedTimeInput) * 60_000L,
+            showUnlockCountdown = binding.switchUnlockCountdown.isChecked,
             isDynamicIntervalSettingAllowed = flags.isDynamicIntervalSettingAllowed,
             isProceedDisabled = flags.isProceedDisabled,
             isWarningDialogHidden = false,
@@ -481,6 +483,7 @@ internal class WarningConfigFormController(
     private fun hideUnlockConfiguration() {
         binding.secondaryBehaviorLayout.isVisible = false
         binding.timingContainer.isVisible = false
+        binding.switchUnlockCountdown.isVisible = false
         binding.proceedDelayContainer.isVisible = false
         binding.qrSetupContainer.isVisible = false
         binding.nfcSetupContainer.isVisible = false
@@ -533,6 +536,8 @@ internal class WarningConfigFormController(
             else -> false
         }
         binding.timingContainer.isVisible = !isOnEachOpenEnabled() && usesSharedTiming
+        binding.switchUnlockCountdown.isVisible = !isOnEachOpenEnabled() &&
+            challengeIndex != WarningUnlockSelectionMapper.NEVER_UNLOCK_INDEX && challengeIndex != -1
         binding.proceedDelayContainer.isVisible =
             challengeIndex != WarningUnlockSelectionMapper.NEVER_UNLOCK_INDEX &&
                 challengeIndex != -1
