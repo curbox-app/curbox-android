@@ -1,6 +1,7 @@
 package neth.iecal.curbox.utils
 
 import neth.iecal.curbox.data.models.AppGroup
+import neth.iecal.curbox.data.models.AppBlockerWarningScreenConfig
 import neth.iecal.curbox.data.models.AppGroupConfig
 import neth.iecal.curbox.data.models.AppTimeConfig
 import neth.iecal.curbox.data.models.AppUsageConfig
@@ -16,6 +17,25 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class SettingsChangeDelaySafetyTest {
+    @Test
+    fun disablingCountdownWeakensTheUnlockConfiguration() {
+        val config = AppBlockerWarningScreenConfig(showUnlockCountdown = true)
+        assertFalse(RestrictionComparator.warningConfig(
+            config, config.copy(showUnlockCountdown = false)
+        ))
+    }
+
+    @Test
+    fun enablingCountdownDoesNotOffsetWeakerUnlockRestrictions() {
+        val config = AppBlockerWarningScreenConfig()
+        assertTrue(RestrictionComparator.warningConfig(
+            config, config.copy(showUnlockCountdown = true)
+        ))
+        assertFalse(RestrictionComparator.warningConfig(
+            config, config.copy(timeInterval = config.timeInterval + 1, showUnlockCountdown = true)
+        ))
+    }
+
     private fun group(intervals: List<TimeInterval>, limit: Long = 60) = AppGroup(
         id = "group",
         isActive = true,

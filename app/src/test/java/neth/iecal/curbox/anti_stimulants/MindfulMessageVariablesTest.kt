@@ -81,5 +81,18 @@ class MindfulMessageVariablesTest {
         assertFalse(MindfulMessageVariables.needsTodayUsage("Stay mindful"))
         assertFalse(MindfulMessageVariables.needsYesterdayUsage("Stay mindful"))
         assertFalse(MindfulMessageVariables.needsReelCount("Stay mindful"))
+        assertFalse(MindfulMessageVariables.needsTodayUsage("{remaining_unlock_time}"))
+        assertFalse(MindfulMessageVariables.needsYesterdayUsage("{remaining_unlock_time}"))
+    }
+
+    @Test
+    fun format_showsRemainingUnlockTimeIncludingSeconds() {
+        val values = MindfulMessageVariableValues(appName = "App", remainingUnlockMs = 65_000L)
+        assertEquals("Time left: 1m 5s", MindfulMessageVariables.format(
+            "Time left: {remaining_unlock_time}", values, emptyList(), emptyList()
+        ))
+        assertEquals("0s", MindfulMessageVariables.format(
+            "{remaining_unlock_time}", values.copy(remainingUnlockMs = 0L), emptyList(), emptyList()
+        ))
     }
 }
