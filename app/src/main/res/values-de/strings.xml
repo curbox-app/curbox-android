@@ -320,9 +320,13 @@
     <string name="add_a_reducer">Einen Reduzierer hinzufügen</string>
     <string name="mindful_messages">Achtsame Nachrichten</string>
     <string name="enable_mindful_messages">Achtsame Nachrichten aktivieren</string>
+    <string name="show_unlock_countdown">Verbleibende Freigabezeit anzeigen</string>
+    <string name="mindful_message_preview">Achtsame Nachricht</string>
+    <string name="remaining_unlock_message">Freigabe endet in {remaining_unlock_time}</string>
+    <string name="mindful_intent_message">Dein Ziel:\n%1$s\n\nHeutige Nutzungszeit: {app_usage_today}</string>
     <string name="target_apps">ZIELAPPS</string>
     <string name="messages_label">NACHRICHTEN</string>
-    <string name="messages_hint">Eins pro Zeile. Variabeln: {app_usage_today}, {screentime_today}, {live_session_duration}, {reel_count}</string>
+    <string name="messages_hint">Eins pro Zeile. Variabeln: {app_usage_today}, {screentime_today}, {live_session_duration}, {remaining_unlock_time}, {reel_count}</string>
     <string name="overlay_position">Postion des Textes</string>
     <string name="position_top">Oben</string>
     <string name="position_center">Zentrum</string>

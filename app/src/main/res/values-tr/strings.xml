@@ -310,9 +310,13 @@
   <string name="add_a_reducer">Denge aracı ekle</string>
   <string name="mindful_messages">Bilinçli Mesajlar</string>
   <string name="enable_mindful_messages">Bilinçli Mesajları Etkinleştir</string>
+  <string name="show_unlock_countdown">Kalan erişim süresini göster</string>
+  <string name="mindful_message_preview">Bilinçli mesaj</string>
+  <string name="remaining_unlock_message">Kalan geçici erişim süresi: {remaining_unlock_time}</string>
+  <string name="mindful_intent_message">Amacın:\n%1$s\n\nBugünkü kullanım süresi: {app_usage_today}</string>
   <string name="target_apps">HEDEF UYGULAMALAR</string>
   <string name="messages_label">MESAJLAR</string>
-  <string name="messages_hint">Değişkenler: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {reel_count}. Social adlı bir engelleme grubu için {group_usage_today:Social} veya {group_usage_yesterday:Social} kullanın.</string>
+  <string name="messages_hint">Değişkenler: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {remaining_unlock_time}, {reel_count}. Social adlı bir engelleme grubu için {group_usage_today:Social} veya {group_usage_yesterday:Social} kullanın.</string>
   <string name="overlay_position">EKRAN KAPLAMASININ KONUMU</string>
   <string name="position_top">Üst</string>
   <string name="position_center">Orta</string>

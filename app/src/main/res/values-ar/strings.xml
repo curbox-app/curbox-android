@@ -261,9 +261,13 @@
     <string name="add_a_reducer">إضافة أداة تهدئة</string>
     <string name="mindful_messages">رسائل واعية</string>
     <string name="enable_mindful_messages">تفعيل الرسائل الواعية</string>
+    <string name="show_unlock_countdown">إظهار الوقت المتبقي للاستخدام المؤقت</string>
+    <string name="mindful_message_preview">رسالة واعية</string>
+    <string name="remaining_unlock_message">ينتهي وقت الاستخدام المؤقت بعد {remaining_unlock_time}</string>
+    <string name="mindful_intent_message">هدفك:\n%1$s\n\nوقت الاستخدام اليوم: {app_usage_today}</string>
     <string name="target_apps">التطبيقات المستهدفة</string>
     <string name="messages_label">الرسائل</string>
-    <string name="messages_hint">المتغيرات: {app_name}، {app_usage_today}، {app_usage_yesterday}، {app_opens_today}، {screentime_today}، {screentime_yesterday}، {mindful_apps_usage_today}، {live_session_duration}، {reel_count}. لمجموعة حظر اسمها Social استخدم {group_usage_today:Social} أو {group_usage_yesterday:Social}.</string>
+    <string name="messages_hint">المتغيرات: {app_name}، {app_usage_today}، {app_usage_yesterday}، {app_opens_today}، {screentime_today}، {screentime_yesterday}، {mindful_apps_usage_today}، {live_session_duration}، {remaining_unlock_time}، {reel_count}. لمجموعة حظر اسمها Social استخدم {group_usage_today:Social} أو {group_usage_yesterday:Social}.</string>
     <string name="overlay_position">موضع النافذة العائمة</string>
     <string name="position_top">أعلى</string>
     <string name="position_center">المنتصف</string>

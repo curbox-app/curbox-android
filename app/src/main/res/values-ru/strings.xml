@@ -261,9 +261,13 @@
     <string name="add_a_reducer">Добавить успокаивающую функцию</string>
     <string name="mindful_messages">Осознанные сообщения</string>
     <string name="enable_mindful_messages">Включить осознанные сообщения</string>
+    <string name="show_unlock_countdown">Показывать оставшееся время доступа</string>
+    <string name="mindful_message_preview">Осознанное сообщение</string>
+    <string name="remaining_unlock_message">Временный доступ закончится через {remaining_unlock_time}</string>
+    <string name="mindful_intent_message">Ваша цель:\n%1$s\n\nВремя использования сегодня: {app_usage_today}</string>
     <string name="target_apps">ЦЕЛЕВЫЕ ПРИЛОЖЕНИЯ</string>
     <string name="messages_label">СООБЩЕНИЯ</string>
-    <string name="messages_hint">Переменные: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {reel_count}. Для группы блокировки Social используйте {group_usage_today:Social} или {group_usage_yesterday:Social}.</string>
+    <string name="messages_hint">Переменные: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {remaining_unlock_time}, {reel_count}. Для группы блокировки Social используйте {group_usage_today:Social} или {group_usage_yesterday:Social}.</string>
     <string name="overlay_position">ПОЛОЖЕНИЕ ОКНА</string>
     <string name="position_top">Сверху</string>
     <string name="position_center">По центру</string>

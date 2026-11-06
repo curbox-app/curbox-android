@@ -313,9 +313,13 @@
     <string name="add_a_reducer">Thêm bộ giảm tốc</string>
     <string name="mindful_messages">Tin nhắn chánh niệm</string>
     <string name="enable_mindful_messages">Kích hoạt tin nhắn chánh niệm</string>
+    <string name="show_unlock_countdown">Hiển thị thời gian truy cập còn lại</string>
+    <string name="mindful_message_preview">Tin nhắn chánh niệm</string>
+    <string name="remaining_unlock_message">Thời gian truy cập còn lại: {remaining_unlock_time}</string>
+    <string name="mindful_intent_message">Mục đích của bạn:\n%1$s\n\nThời gian sử dụng hôm nay: {app_usage_today}</string>
     <string name="target_apps">ỨNG DỤNG MỤC TIÊU</string>
     <string name="messages_label">TIN NHẮN</string>
-    <string name="messages_hint">Các biến: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {reel_count}. Với nhóm chặn tên Social, dùng {group_usage_today:Social} hoặc {group_usage_yesterday:Social}.</string>
+    <string name="messages_hint">Các biến: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {remaining_unlock_time}, {reel_count}. Với nhóm chặn tên Social, dùng {group_usage_today:Social} hoặc {group_usage_yesterday:Social}.</string>
     <string name="overlay_position">VỊ TRÍ LỚP PHỦ</string>
     <string name="position_top">Đứng đầu</string>
     <string name="position_center">Trung tâm</string>

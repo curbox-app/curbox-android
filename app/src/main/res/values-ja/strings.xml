@@ -261,9 +261,13 @@
     <string name="add_a_reducer">リラックス機能を追加</string>
     <string name="mindful_messages">マインドフルなメッセージ</string>
     <string name="enable_mindful_messages">マインドフルなメッセージを有効にする</string>
+    <string name="show_unlock_countdown">利用できる残り時間を表示</string>
+    <string name="mindful_message_preview">マインドフルなメッセージ</string>
+    <string name="remaining_unlock_message">利用できる残り時間：{remaining_unlock_time}</string>
+    <string name="mindful_intent_message">利用の目的：\n%1$s\n\n今日の利用時間：{app_usage_today}</string>
     <string name="target_apps">対象アプリ</string>
     <string name="messages_label">メッセージ</string>
-    <string name="messages_hint">変数：{app_name}、{app_usage_today}、{app_usage_yesterday}、{app_opens_today}、{screentime_today}、{screentime_yesterday}、{mindful_apps_usage_today}、{live_session_duration}、{reel_count}。Social というブロッカーグループには {group_usage_today:Social} または {group_usage_yesterday:Social} を使います。</string>
+    <string name="messages_hint">変数：{app_name}、{app_usage_today}、{app_usage_yesterday}、{app_opens_today}、{screentime_today}、{screentime_yesterday}、{mindful_apps_usage_today}、{live_session_duration}、{remaining_unlock_time}、{reel_count}。Social というブロッカーグループには {group_usage_today:Social} または {group_usage_yesterday:Social} を使います。</string>
     <string name="overlay_position">オーバーレイの位置</string>
     <string name="position_top">上</string>
     <string name="position_center">中央</string>

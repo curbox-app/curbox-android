@@ -261,9 +261,13 @@
     <string name="add_a_reducer">Añadir un reductor</string>
     <string name="mindful_messages">Mensajes conscientes</string>
     <string name="enable_mindful_messages">Activar mensajes conscientes</string>
+    <string name="show_unlock_countdown">Mostrar el tiempo de acceso restante</string>
+    <string name="mindful_message_preview">Mensaje consciente</string>
+    <string name="remaining_unlock_message">El acceso temporal termina en {remaining_unlock_time}</string>
+    <string name="mindful_intent_message">Tu propósito:\n%1$s\n\nTiempo de uso hoy: {app_usage_today}</string>
     <string name="target_apps">APPS OBJETIVO</string>
     <string name="messages_label">MENSAJES</string>
-    <string name="messages_hint">Variables: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {reel_count}. Para un grupo de bloqueo llamado Social, usa {group_usage_today:Social} o {group_usage_yesterday:Social}.</string>
+    <string name="messages_hint">Variables: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {remaining_unlock_time}, {reel_count}. Para un grupo de bloqueo llamado Social, usa {group_usage_today:Social} o {group_usage_yesterday:Social}.</string>
     <string name="overlay_position">POSICIÓN DE LA VENTANA</string>
     <string name="position_top">Arriba</string>
     <string name="position_center">Centro</string>

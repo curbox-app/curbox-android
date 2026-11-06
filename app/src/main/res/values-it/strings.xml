@@ -136,4 +136,9 @@
     <string name="no_time_group">Nessun gruppo orario (tutto il giorno)</string>
     <string name="linked_time_group">Gruppo orario: %1$s</string>
     <string name="linked_warning_managed">La schermata di avviso è gestita dal gruppo di utilizzo collegato</string>
+    <string name="show_unlock_countdown">Mostra il tempo di accesso rimanente</string>
+    <string name="mindful_message_preview">Messaggio di consapevolezza</string>
+    <string name="remaining_unlock_message">L’accesso temporaneo termina tra {remaining_unlock_time}</string>
+    <string name="mindful_intent_message">Il tuo obiettivo:\n%1$s\n\nTempo di utilizzo oggi: {app_usage_today}</string>
+    <string name="messages_hint">Variabili: {app_name}, {app_usage_today}, {app_usage_yesterday}, {app_opens_today}, {screentime_today}, {screentime_yesterday}, {mindful_apps_usage_today}, {live_session_duration}, {remaining_unlock_time}, {reel_count}. Per un gruppo di blocco chiamato Social, usa {group_usage_today:Social} o {group_usage_yesterday:Social}.</string>
 </resources>

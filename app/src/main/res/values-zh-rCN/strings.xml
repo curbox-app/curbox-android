@@ -261,9 +261,13 @@
     <string name="add_a_reducer">添加一个舒缓功能</string>
     <string name="mindful_messages">正念提醒</string>
     <string name="enable_mindful_messages">开启正念提醒</string>
+    <string name="show_unlock_countdown">显示本次解锁的剩余时间</string>
+    <string name="mindful_message_preview">正念提醒</string>
+    <string name="remaining_unlock_message">本次解锁剩余时间：{remaining_unlock_time}</string>
+    <string name="mindful_intent_message">使用目的：\n%1$s\n\n今日使用时长：{app_usage_today}</string>
     <string name="target_apps">目标应用</string>
     <string name="messages_label">提示语</string>
-    <string name="messages_hint">可用变量：{app_name}、{app_usage_today}、{app_usage_yesterday}、{app_opens_today}、{screentime_today}、{screentime_yesterday}、{mindful_apps_usage_today}、{live_session_duration}、{reel_count}。对于名为 Social 的拦截组，请使用 {group_usage_today:Social} 或 {group_usage_yesterday:Social}。</string>
+    <string name="messages_hint">可用变量：{app_name}、{app_usage_today}、{app_usage_yesterday}、{app_opens_today}、{screentime_today}、{screentime_yesterday}、{mindful_apps_usage_today}、{live_session_duration}、{remaining_unlock_time}、{reel_count}。对于名为 Social 的拦截组，请使用 {group_usage_today:Social} 或 {group_usage_yesterday:Social}。</string>
     <string name="overlay_position">悬浮窗位置</string>
     <string name="position_top">顶部</string>
     <string name="position_center">居中</string>

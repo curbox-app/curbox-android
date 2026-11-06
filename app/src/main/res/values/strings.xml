@@ -338,9 +338,9 @@
     <string name="add_a_reducer">Add a Reducer</string>
     <string name="mindful_messages">Mindful Messages</string>
     <string name="enable_mindful_messages">Enable Mindful Messages</string>
-    <string name="show_unlock_countdown">Show unlock countdown</string>
+    <string name="show_unlock_countdown">Show remaining unlock time</string>
     <string name="mindful_message_preview">Mindful message</string>
-    <string name="remaining_unlock_message">Unlock time left: {remaining_unlock_time}</string>
+    <string name="remaining_unlock_message">Unlock expires in {remaining_unlock_time}</string>
     <string name="mindful_intent_message">Your intent:\n%1$s\n\nTime used today: {app_usage_today}</string>
     <string name="target_apps">TARGET APPS</string>
     <string name="messages_label">MESSAGES</string>
