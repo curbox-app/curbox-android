@@ -9,7 +9,7 @@ package neth.iecal.curbox.api
  */
 object CurboxApiContract {
 
-    const val API_VERSION = 6
+    const val API_VERSION = 7
 
     // Argument keys placed in the Bundle passed to execute().
     const val ARG_TARGET = "target"
@@ -17,6 +17,22 @@ object CurboxApiContract {
     const val ARG_MINUTES = "minutes"
     /** Since version 4: optional exact epoch millis end for START_FOCUS. Wins over [ARG_MINUTES]. */
     const val ARG_ENDS_AT = "ends_at"
+    /**
+     * Since version 7: optional Pomodoro cycle for START_FOCUS. A positive [ARG_POMODORO_ROUNDS]
+     * makes the session a cycle; the phase ("FOCUS" or "BREAK") and completed rounds let a client
+     * join a cycle another device is already running. The session's end is the current phase's end.
+     */
+    const val ARG_POMODORO_PHASE = "pomodoro_phase"
+    const val ARG_POMODORO_FOCUS_MINUTES = "pomodoro_focus_minutes"
+    const val ARG_POMODORO_BREAK_MINUTES = "pomodoro_break_minutes"
+    const val ARG_POMODORO_ROUNDS = "pomodoro_rounds"
+    const val ARG_POMODORO_COMPLETED = "pomodoro_completed"
+    /** Since version 7: SAVE_FOCUS_GROUP fields. [ARG_WEBSITES] and [ARG_APPS] are String ArrayLists. */
+    const val ARG_NAME = "name"
+    const val ARG_WEBSITES = "websites"
+    const val ARG_APPS = "apps"
+    const val ARG_BLOCK_MODE = "block_mode"
+    const val ARG_EXITABLE = "exitable"
 
     // Keys used in the JSON returned by query().
     const val VAR_FOCUS_GROUP = "focus_group"
@@ -24,6 +40,12 @@ object CurboxApiContract {
     /** Since version 4: the active group's id and exact end time in epoch millis. */
     const val VAR_FOCUS_GROUP_ID = "focus_group_id"
     const val VAR_FOCUS_ENDS_AT = "focus_ends_at"
+    /** Since version 7: Pomodoro state of the active session. Phase is "" without a cycle. */
+    const val VAR_FOCUS_PHASE = "focus_phase"
+    const val VAR_POMODORO_FOCUS_MINUTES = "pomodoro_focus_minutes"
+    const val VAR_POMODORO_BREAK_MINUTES = "pomodoro_break_minutes"
+    const val VAR_POMODORO_ROUNDS = "pomodoro_rounds"
+    const val VAR_POMODORO_COMPLETED = "pomodoro_completed"
     const val VAR_SCREENTIME = "screentime"
     const val VAR_REELS = "reels"
 
@@ -56,7 +78,11 @@ enum class ApiCommand {
     SET_REEL_COUNTER,
     SET_DND,
     /** Since version 6: enable true asks Curbox to keep the caller's companion service bound. */
-    HOST_COMPANION;
+    HOST_COMPANION,
+    /** Since version 7: creates or updates a focus group's name, websites, mode and exit rule. */
+    SAVE_FOCUS_GROUP,
+    /** Since version 7: removes a focus group that is not in use. */
+    DELETE_FOCUS_GROUP;
 
     companion object {
         fun fromNameOrNull(name: String?): ApiCommand? = entries.firstOrNull { it.name == name }
@@ -89,7 +115,9 @@ enum class ApiList {
     UI_HIDER_SCRIPTS,
     STATUS,
     /** Since version 5: daily app and website totals for the retained days. */
-    USAGE_HISTORY;
+    USAGE_HISTORY,
+    /** Since version 7: focus groups with their website lists, for companions that share them. */
+    FOCUS_GROUP_DETAILS;
 
     companion object {
         fun fromNameOrNull(name: String?): ApiList? = entries.firstOrNull { it.name == name }

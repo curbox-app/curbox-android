@@ -1667,7 +1667,7 @@
 
     <!-- Curbox API permission screen -->
     <string name="api_permission_title">Allow access?</string>
-    <string name="api_permission_message">%1$s (%2$s) wants to control Curbox. It can start focus sessions, turn blockers on or off, read your screen time and usage history, and provide unlock requirements. You can remove this any time.</string>
+    <string name="api_permission_message">%1$s (%2$s) wants to control Curbox. It can start focus sessions, edit focus groups, turn blockers on or off, read your screen time and usage history, and provide unlock requirements. You can remove this any time.</string>
     <string name="api_permission_allow">Allow</string>
     <string name="api_permission_deny">Deny</string>
 

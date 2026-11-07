@@ -118,11 +118,22 @@ class CurboxApiService : Service() {
     private fun watch() {
         if (watchJob?.isActive == true) return
         watchJob = scope.launch {
-            DataStoreManager(applicationContext).settings
-                .map { s -> s.activeManualFocusGroupId to s.manualFocusGroups.map { it.groupId to it.groupName } }
-                .distinctUntilChanged()
-                .drop(1)
-                .collect { notifyListeners(CHANGED_FOCUS) }
+            val settings = DataStoreManager(applicationContext).settings
+            launch {
+                settings
+                    .map { s -> Triple(s.activeManualFocusGroupId, s.activePomodoroState, s.manualFocusGroups.map { it.groupId to it.groupName }) }
+                    .distinctUntilChanged()
+                    .drop(1)
+                    .collect { notifyListeners(CHANGED_FOCUS) }
+            }
+            // Version 7: a group's websites, mode or exit rule changed.
+            launch {
+                settings
+                    .map { s -> s.manualFocusGroups.map { listOf(it.groupId, it.groupName, it.keywords, it.blockMode, it.exitable, it.packages) } }
+                    .distinctUntilChanged()
+                    .drop(1)
+                    .collect { notifyListeners(CHANGED_FOCUS_GROUPS) }
+            }
         }
     }
 
@@ -159,5 +170,6 @@ class CurboxApiService : Service() {
     companion object {
         private const val TAG = "CurboxApiService"
         private const val CHANGED_FOCUS = "FOCUS"
+        private const val CHANGED_FOCUS_GROUPS = "FOCUS_GROUPS"
     }
 }

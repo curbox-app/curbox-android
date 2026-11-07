@@ -4,7 +4,7 @@ This document describes the public API implemented in this repository, including
 screen requirements and the security hardening in the current source. Use it as a reference when
 building an Android client or giving implementation instructions to a coding agent.
 
-**Current API version: `5`.** The transport is a local Android Binder service with an AIDL
+**Current API version: `7`.** The transport is a local Android Binder service with an AIDL
 interface. There is no HTTP server, web API, API key, OAuth flow, or remote endpoint. A browser,
 server, or desktop application needs an Android companion to use this API.
 
@@ -41,14 +41,17 @@ An approved app can:
 - List UI hider script metadata.
 - Register its own named unlock requirements for the user to select in warning settings.
 - Get a callback when focus changes, and ask Curbox to keep it running (version 6).
+- Run or join a Pomodoro cycle, read its phase, and read, create, edit or delete focus groups'
+  names, website and app lists, block mode and exit rule (version 7).
 
 The API does **not** expose:
 
-- Creating, editing, or deleting blocker or focus groups.
-- Choosing a group's apps, keywords, schedules, usage limits, or warning configuration remotely.
+- Creating, editing, or deleting blocker groups (focus groups can be edited from version 7).
+- Choosing a group's apps, keywords, schedules, usage limits, or warning configuration remotely
+  (a focus group's websites and apps are the exception, from version 7).
 - Automatically attaching a provider requirement to a group.
 - Editing UI hider scripts or toggling individual scripts.
-- Editing automatic DND groups, Pomodoro cycles, anti uninstall, or settings change delay.
+- Editing automatic DND groups, anti uninstall, or settings change delay.
 - Hourly or per path usage, focus history, or a full settings export.
 - Direct unrestricted cooldown grants, API access management, or webhooks. Change listeners cover focus only.
 
@@ -295,7 +298,9 @@ The base command and query interface predates version 2. `list()` arrived in ver
 registration, removal, and `UNLOCK_CONDITIONS` require version 3. Version 4 adds the exact focus
 end time and group ID to `FOCUS_ACTIVE` and `STATUS`, and the optional `ends_at` argument for
 `START_FOCUS`; older installations ignore `ends_at` and omit those fields. Version 5 adds the
-`USAGE_HISTORY` list. Version 6 adds change listeners and `HOST_COMPANION`. Check the version **before calling
+`USAGE_HISTORY` list. Version 6 adds change listeners and `HOST_COMPANION`. Version 7 adds Pomodoro
+fields to `START_FOCUS`, `FOCUS_ACTIVE` and `STATUS`, the `FOCUS_GROUP_DETAILS` list, `SAVE_FOCUS_GROUP`,
+`DELETE_FOCUS_GROUP`, and the `FOCUS_GROUPS` listener event. Check the version **before calling
 methods or features an older installation may not implement**. A version number identifies the
 contract; it does not distinguish every security patch within a version.
 
@@ -326,7 +331,9 @@ main thread. Avoid aggressive background polling. From version 6, register a lis
 
 From version 6 an allowed app can register an `ICurboxListener`. Curbox calls `onChanged("FOCUS")`
 when a focus session starts, stops or is replaced, or when focus groups are added, renamed or
-removed, whichever process made the change. Then read `FOCUS_ACTIVE` or `STATUS` again. The call is
+removed, whichever process made the change. From version 7 it also fires on every Pomodoro phase
+change, and `onChanged("FOCUS_GROUPS")` fires when a focus group's websites, block mode, exit rule
+or apps change. Then read `FOCUS_ACTIVE` or `STATUS` (or `FOCUS_GROUP_DETAILS`) again. The call is
 one way and carries no data. A session reaching its end time is not a change, so schedule your own
 read at `focus_ends_at`. Listeners are dropped when the client process dies, and skipped while the
 app is not allowed. Keep a slow fallback read, every few minutes, in case a callback is missed.
@@ -397,6 +404,8 @@ of a missing provider ID are explicitly repeatable.
 | --- | --- | --- |
 | `START_FOCUS` | `target`: focus group ID; `minutes`: integer, default 25; `ends_at`: long epoch millis (version 4, optional) | Starts manual focus using an existing group. Values below 1 minute become 1. A future `ends_at` sets the exact end instead of `minutes`. Records a focus session and refreshes the blocker. |
 | `STOP_FOCUS` | None | Clears active manual focus and marks running focus statistics as ended. |
+| `SAVE_FOCUS_GROUP` | `target`: group ID (created when unknown); `name`: string (required for a new group); `websites`: String ArrayList; `apps`: String ArrayList of package names; `block_mode`: `BLOCK_SELECTED` or `BLOCK_ALL_EXCEPT_SELECTED`; `exitable`: boolean (version 7) | Creates the group or updates only the fields given. Automatic DND is never changed. Up to 1000 websites of at most 500 chars each, in the same keyword format as the app. Fails while the group runs in a session that cannot be ended early. |
+| `DELETE_FOCUS_GROUP` | `target`: group ID (version 7) | Removes the group. Fails while a session uses it. |
 
 Both commands return `FAILED` if a live manual session belongs to a group with `exitable = false`.
 Replacing that session with another `START_FOCUS`, including a shorter session for the same group,
@@ -404,7 +413,14 @@ is also refused. A live session whose group cannot be found fails closed. An exp
 not prevent a new session. Focus state is protected again inside the settings update to avoid a
 concurrent change bypassing the early exit rule.
 
-`START_FOCUS` does not create groups, accept a package list, or configure Pomodoro phases.
+`START_FOCUS` does not create groups or accept a package list. From version 7 it takes an optional
+Pomodoro cycle: `pomodoro_rounds` (integer, 2 to 12; a positive value turns the cycle on),
+`pomodoro_focus_minutes` (defaults to `minutes`), `pomodoro_break_minutes` (default 5),
+`pomodoro_phase` (`FOCUS` or `BREAK`, default `FOCUS`) and `pomodoro_completed` (rounds already done).
+The phase and completed count let a client join a cycle another device is running; `ends_at` is then
+the end of the current phase. Curbox advances the phases itself. A break is not logged as focus
+time. While a cycle is on its break, `FOCUS_ACTIVE` still reports `active` as `true` with the break's
+end, so read `focus_phase` to know whether anything is blocked.
 
 ```kotlin
 val raw = withContext(Dispatchers.IO) { remote.list("FOCUS_GROUPS") }
@@ -499,7 +515,7 @@ not require the accessibility service merely to store or remove a registration.
 
 | State | Fields and types | Meaning |
 | --- | --- | --- |
-| `FOCUS_ACTIVE` | `active`: string boolean; `focus_group`: string; `focus_remaining`: string integer; `focus_group_id`: string (version 4); `focus_ends_at`: string epoch millis (version 4) | Manual focus state, group name, whole remaining minutes, and (version 4) the group ID and exact end time |
+| `FOCUS_ACTIVE` | `active`: string boolean; `focus_group`: string; `focus_remaining`: string integer; `focus_group_id`: string (version 4); `focus_ends_at`: string epoch millis (version 4); `focus_phase`: `FOCUS`, `BREAK` or empty, `pomodoro_focus_minutes`, `pomodoro_break_minutes`, `pomodoro_rounds`, `pomodoro_completed`: string integers (version 7) | Manual focus state, group name, whole remaining minutes, (version 4) the group ID and exact end time of the session or current Pomodoro phase, and (version 7) the Pomodoro cycle, all empty or zero without one |
 | `SCREENTIME_TODAY` | `screentime`: string integer | Whole minutes recorded for today's date, excluding ignored app packages |
 | `REELS_TODAY` | `reels`: string integer | Today's recorded reel count, or zero when no count is stored |
 
@@ -547,6 +563,7 @@ Do not rely on array order, assume an item exists, or use a group name as a uniq
 | Kind | Item fields |
 | --- | --- |
 | `FOCUS_GROUPS` | `id`: string, `name`: string, `apps`: integer count, `websites`: integer count, `blockMode`: string, `exitable`: boolean, `autoTurnOnDnd`: boolean |
+| `FOCUS_GROUP_DETAILS` | Version 7. Same as `FOCUS_GROUPS`, but `websites` is the sorted list of the group's website keywords and `packages` the sorted list of its apps (`apps` stays a count). |
 | `APP_BLOCKER_GROUPS` | `id`: string, `name`: string, `isActive`: boolean, `apps`: integer count |
 | `KEYWORD_GROUPS` | `id`: string, `name`: string, `isActive`: boolean, `keywords`: integer count |
 | `GRAYSCALE_GROUPS` | `id`: string, `name`: string, `isActive`: boolean, `apps`: integer count |
@@ -617,6 +634,7 @@ in browsers on this phone, grouped by domain.
   "focusRemainingMinutes": 24,
   "focusGroupId": "focus-id",
   "focusEndsAt": 1767225600000,
+  "focusPhase": "",
   "keywordBlocker": true,
   "reelBlocker": false,
   "reelCounter": true,
@@ -625,7 +643,8 @@ in browsers on this phone, grouped by domain.
 ```
 
 `focusGroup` is a name, not an ID; `focusGroupId` and `focusEndsAt` (version 4) carry the ID and
-exact end in epoch millis. When focus is inactive, the name and ID are empty and the remaining
+exact end in epoch millis. `focusPhase` (version 7) is `FOCUS` or `BREAK` during a Pomodoro cycle and
+empty otherwise. When focus is inactive, the name and ID are empty and the remaining
 minutes and end are zero. `uiHider` is always false on unsupported flavors. No field here reports DND, accessibility
 service health, pending settings changes, actual per app enforcement, or selected group contents.
 Snapshots from separate calls are not an atomic combined snapshot.

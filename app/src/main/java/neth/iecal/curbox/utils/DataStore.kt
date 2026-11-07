@@ -203,6 +203,11 @@ class DataStoreManager(private val context: Context) {
         settingsDataStore.updateData { it.copy(manualFocusGroups = newGroup) }
     }
 
+    /** Edits the focus groups in one atomic step, so a racing session change is never lost. */
+    suspend fun editManualFocusGroups(transform: (Settings) -> List<ManualFocusGroup>) {
+        settingsDataStore.updateData { it.copy(manualFocusGroups = transform(it)) }
+    }
+
     /**
      * Applies a configuration received from sync without letting another device bypass this
      * device's settings change delay. Runtime focus state stays on its dedicated sync channel,

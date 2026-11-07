@@ -13,6 +13,11 @@ import neth.iecal.curbox.blockers.ReelBlocker
 import neth.iecal.curbox.blockers.uihider.UiHider
 import neth.iecal.curbox.data.db.AppDatabase
 import neth.iecal.curbox.data.db.FocusStatsEntity
+import neth.iecal.curbox.data.models.FocusBlockMode
+import neth.iecal.curbox.data.models.ManualFocusGroup
+import neth.iecal.curbox.data.models.PomodoroPhase
+import neth.iecal.curbox.data.models.PomodoroState
+import neth.iecal.curbox.data.models.Settings
 import neth.iecal.curbox.hardcoded.allScripts
 import neth.iecal.curbox.trackers.ReelsCountTracker
 import neth.iecal.curbox.utils.DataStoreManager
@@ -51,7 +56,7 @@ object CurboxApiCommands {
                 ApiCommand.REMOVE_UNLOCK_CONDITION -> dataStore.removeExternalUnlockCondition(
                     callerPackage, args.getString("id").orEmpty()
                 )
-                ApiCommand.START_FOCUS -> startFocus(app, dataStore, target, minutes, endsAt)
+                ApiCommand.START_FOCUS -> startFocus(app, dataStore, target, minutes, endsAt, pomodoroFrom(args, minutes))
                 ApiCommand.STOP_FOCUS -> stopFocus(app, dataStore)
                 ApiCommand.SET_APP_BLOCKER_GROUP -> setAppBlockerGroup(app, dataStore, target, enable)
                 ApiCommand.SET_KEYWORD_BLOCKER -> setKeywordBlocker(app, dataStore, enable)
@@ -65,6 +70,8 @@ object CurboxApiCommands {
                 ApiCommand.SET_REEL_COUNTER -> setReelCounter(app, dataStore, enable)
                 ApiCommand.SET_DND -> DndHelper.applyDndState(app, enable)
                 ApiCommand.HOST_COMPANION -> CompanionHost.request(app, callerPackage, enable)
+                ApiCommand.SAVE_FOCUS_GROUP -> saveFocusGroup(app, dataStore, target, args)
+                ApiCommand.DELETE_FOCUS_GROUP -> deleteFocusGroup(app, dataStore, target)
             }
             true
         } catch (e: CancellationException) {
@@ -81,7 +88,35 @@ object CurboxApiCommands {
 
     private const val MAX_FOCUS_MS = 24 * 60 * 60_000L
 
-    private suspend fun startFocus(context: Context, dataStore: DataStoreManager, groupId: String, minutes: Int, endsAt: Long) {
+    /** Version 7: a positive round count makes START_FOCUS run (or join) a Pomodoro cycle. */
+    private fun pomodoroFrom(args: Bundle, minutes: Int): PomodoroState {
+        val rounds = args.getInt(CurboxApiContract.ARG_POMODORO_ROUNDS, 0)
+        if (rounds <= 0) return PomodoroState()
+        val phase = if (args.getString(CurboxApiContract.ARG_POMODORO_PHASE).equals("BREAK", ignoreCase = true)) {
+            PomodoroPhase.BREAK
+        } else PomodoroPhase.FOCUS
+        val state = PomodoroState(
+            isActive = true,
+            phase = phase,
+            focusMinutes = args.getInt(CurboxApiContract.ARG_POMODORO_FOCUS_MINUTES, minutes),
+            breakMinutes = args.getInt(CurboxApiContract.ARG_POMODORO_BREAK_MINUTES, PomodoroState.DEFAULT_BREAK_MINUTES),
+            totalFocusIntervals = rounds,
+            completedFocusIntervals = args.getInt(CurboxApiContract.ARG_POMODORO_COMPLETED, 0)
+        ).normalized()
+        // A break follows at least one round, and the last round is never followed by a break.
+        val maxCompleted = state.totalFocusIntervals - 1
+        val minCompleted = if (phase == PomodoroPhase.BREAK) 1 else 0
+        return state.copy(completedFocusIntervals = state.completedFocusIntervals.coerceIn(minCompleted, maxCompleted))
+    }
+
+    private suspend fun startFocus(
+        context: Context,
+        dataStore: DataStoreManager,
+        groupId: String,
+        minutes: Int,
+        endsAt: Long,
+        pomodoro: PomodoroState
+    ) {
         val settings = dataStore.settings.first()
         require(ApiRestrictionPolicy.canReplaceFocus(settings, System.currentTimeMillis())) {
             "The active focus session cannot be ended early"
@@ -91,21 +126,23 @@ object CurboxApiCommands {
         }
         val now = System.currentTimeMillis()
         // An exact end lets a companion line this session up with another device to the millisecond.
-        val durationMs = if (endsAt > now) {
-            (endsAt - now).coerceIn(60_000L, MAX_FOCUS_MS)
-        } else {
-            minutes.coerceAtLeast(1) * 60_000L
+        val durationMs = when {
+            endsAt > now -> (endsAt - now).coerceIn(60_000L, MAX_FOCUS_MS)
+            pomodoro.isActive -> pomodoro.currentPhaseDurationMs()
+            else -> minutes.coerceAtLeast(1) * 60_000L
         }
         val endTimeInMillis = now + durationMs
 
         dataStore.setManualFocusStateToActive(
             group.groupId,
             durationMs,
+            pomodoroState = pomodoro,
             endTimeInMillis = endTimeInMillis,
             requireExitableSession = true
         )
         val statsDao = AppDatabase.getInstance(context).focusStatsDao()
-        statsDao.insert(
+        // Joining a cycle during its break: breaks are rest and never count as focus time.
+        if (!(pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK)) statsDao.insert(
             FocusStatsEntity(
                 groupId = group.groupId,
                 startTimeInMillis = now,
@@ -130,6 +167,93 @@ object CurboxApiCommands {
             statsDao.update(session.copy(status = 1, actualEndTimeInMillis = actEnd))
         }
         broadcast(context, FocusModeBlocker.INTENT_ACTION_REFRESH_FOCUS_MODE)
+    }
+
+    private const val MAX_WEBSITES = 1_000
+    private const val MAX_WEBSITE_LENGTH = 500
+
+    /**
+     * Version 7: creates the group [groupId] or updates the fields given. Apps change only when
+     * given, and Do Not Disturb never does, since a companion may not know them. A group running in a session that
+     * cannot be ended early is left alone, so editing it cannot loosen that session.
+     */
+    private suspend fun saveFocusGroup(context: Context, dataStore: DataStoreManager, groupId: String, args: Bundle) {
+        val id = groupId.trim()
+        require(id.isNotEmpty() && id.length <= 200) { "A focus group id is required" }
+        val name = args.getString(CurboxApiContract.ARG_NAME)?.trim()?.take(100)?.takeIf { it.isNotEmpty() }
+        val websites = args.getStringArrayList(CurboxApiContract.ARG_WEBSITES)
+            ?.map { it.trim() }
+            ?.filter { it.isNotEmpty() && it.length <= MAX_WEBSITE_LENGTH }
+            ?.distinct()
+            ?.take(MAX_WEBSITES)
+            ?.let { HashSet(it) }
+        val apps = args.getStringArrayList(CurboxApiContract.ARG_APPS)
+            ?.map { it.trim() }
+            ?.filter { it.isNotEmpty() && it.length <= MAX_WEBSITE_LENGTH }
+            ?.distinct()
+            ?.take(MAX_WEBSITES)
+            ?.let { HashSet(it) }
+        val mode = args.getString(CurboxApiContract.ARG_BLOCK_MODE)?.let { raw ->
+            requireNotNull(FocusBlockMode.entries.firstOrNull { it.name == raw }) { "Unknown block mode: $raw" }
+        }
+        val exitable = if (args.containsKey(CurboxApiContract.ARG_EXITABLE)) {
+            args.getBoolean(CurboxApiContract.ARG_EXITABLE)
+        } else null
+        dataStore.editManualFocusGroups { settings ->
+            val existing = settings.manualFocusGroups.firstOrNull { it.groupId == id }
+            if (existing == null) {
+                requireNotNull(name) { "A new focus group needs a name" }
+                settings.manualFocusGroups + ManualFocusGroup(
+                    groupId = id,
+                    groupName = name,
+                    keywords = websites ?: hashSetOf(),
+                    packages = apps ?: hashSetOf(),
+                    blockMode = mode ?: FocusBlockMode.BLOCK_SELECTED,
+                    exitable = exitable ?: true
+                )
+            } else {
+                require(!inLockedSession(settings, id)) { "The focus group is in a session that cannot be ended early" }
+                val updated = existing.copy(
+                    groupName = name ?: existing.groupName,
+                    keywords = websites ?: existing.keywords,
+                    packages = apps ?: existing.packages,
+                    blockMode = mode ?: existing.blockMode,
+                    exitable = exitable ?: existing.exitable
+                )
+                settings.manualFocusGroups.map { if (it.groupId == id) updated else it }
+            }
+        }
+        broadcast(context, FocusModeBlocker.INTENT_ACTION_REFRESH_FOCUS_MODE)
+    }
+
+    /** Version 7: removes a focus group unless a session is using it. */
+    private suspend fun deleteFocusGroup(context: Context, dataStore: DataStoreManager, groupId: String) {
+        dataStore.editManualFocusGroups { settings ->
+            require(settings.manualFocusGroups.any { it.groupId == groupId }) { "Unknown focus group: $groupId" }
+            val (activeId, endTime) = settings.activeManualFocusGroupId
+            require(activeId != groupId || endTime <= System.currentTimeMillis()) { "The focus group is in use" }
+            settings.manualFocusGroups.filterNot { it.groupId == groupId }
+        }
+        broadcast(context, FocusModeBlocker.INTENT_ACTION_REFRESH_FOCUS_MODE)
+    }
+
+    private fun inLockedSession(settings: Settings, groupId: String): Boolean {
+        val (activeId, endTime) = settings.activeManualFocusGroupId
+        return activeId == groupId && endTime > System.currentTimeMillis() &&
+            settings.manualFocusGroups.firstOrNull { it.groupId == groupId }?.exitable == false
+    }
+
+    /** Version 7 Pomodoro fields for FOCUS_ACTIVE and STATUS. */
+    private fun pomodoroVars(settings: Settings, active: Boolean): Map<String, String> {
+        val p = settings.activePomodoroState
+        val on = active && p.isActive
+        return mapOf(
+            CurboxApiContract.VAR_FOCUS_PHASE to (if (on) p.phase.name else ""),
+            CurboxApiContract.VAR_POMODORO_FOCUS_MINUTES to (if (on) p.focusMinutes else 0).toString(),
+            CurboxApiContract.VAR_POMODORO_BREAK_MINUTES to (if (on) p.breakMinutes else 0).toString(),
+            CurboxApiContract.VAR_POMODORO_ROUNDS to (if (on) p.totalFocusIntervals else 0).toString(),
+            CurboxApiContract.VAR_POMODORO_COMPLETED to (if (on) p.completedFocusIntervals else 0).toString()
+        )
     }
 
     private suspend fun setAppBlockerGroup(context: Context, dataStore: DataStoreManager, groupId: String, enable: Boolean) {
@@ -210,7 +334,7 @@ object CurboxApiCommands {
                     CurboxApiContract.VAR_FOCUS_REMAINING to remainingMin.toString(),
                     CurboxApiContract.VAR_FOCUS_GROUP_ID to (if (active) groupId.orEmpty() else ""),
                     CurboxApiContract.VAR_FOCUS_ENDS_AT to (if (active) endTime else 0L).toString()
-                )
+                ) + pomodoroVars(settings, active)
             }
 
             ApiState.SCREENTIME_TODAY -> {
@@ -253,6 +377,19 @@ object CurboxApiCommands {
                     "name" to g.groupName,
                     "apps" to g.packages.size,
                     "websites" to g.keywords.size,
+                    "blockMode" to g.blockMode.name,
+                    "exitable" to g.exitable,
+                    "autoTurnOnDnd" to g.autoTurnOnDnd
+                )
+            }
+
+            ApiList.FOCUS_GROUP_DETAILS -> settings.manualFocusGroups.map { g ->
+                linkedMapOf(
+                    "id" to g.groupId,
+                    "name" to g.groupName,
+                    "apps" to g.packages.size,
+                    "websites" to g.keywords.sorted(),
+                    "packages" to g.packages.sorted(),
                     "blockMode" to g.blockMode.name,
                     "exitable" to g.exitable,
                     "autoTurnOnDnd" to g.autoTurnOnDnd
@@ -318,6 +455,7 @@ object CurboxApiCommands {
                     "focusRemainingMinutes" to remaining,
                     "focusGroupId" to (if (focusActive) groupId.orEmpty() else ""),
                     "focusEndsAt" to (if (focusActive) endTime else 0L),
+                    "focusPhase" to (if (focusActive && settings.activePomodoroState.isActive) settings.activePomodoroState.phase.name else ""),
                     "keywordBlocker" to settings.keywordBlockerConfig.isActive,
                     "reelBlocker" to settings.reelBlockerConfig.isActive,
                     "reelCounter" to settings.isReelCounterOn,
