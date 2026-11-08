@@ -9,6 +9,9 @@ data class AppGroup(
     /** Non-zero only while the group is using the opt-in temporary-disable escape hatch. */
     val temporarilyDisabledUntilMs: Long = 0L,
     val warningScreenConfig : AppBlockerWarningScreenConfig = AppBlockerWarningScreenConfig(),
+    val autoAddNewApps: Boolean = false,
+    // Advanced after every check, so an auto-added app the user removes stays removed.
+    val autoAddCheckedUntilMs: Long = 0L,
     // Kept only so settings written by older versions can be migrated.
     @Deprecated("Use config")
     val blockingType: AppBlockingType = AppBlockingType.Usage, // "USAGE" or "TIME"

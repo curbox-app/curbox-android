@@ -65,6 +65,7 @@ class AppBlockerService : BaseBlockingService() {
     private val companionHost by lazy { neth.iecal.curbox.api.CompanionHost.Binder(this) }
 
     private val serviceScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
+    private val newAppAutoAdder by lazy { neth.iecal.curbox.blockers.NewAppAutoAdder(this, serviceScope) }
 
     private val eventChannel = Channel<AccessibilityEvent>(Channel.CONFLATED) { droppedEvent ->
         droppedEvent.recycle()
@@ -234,6 +235,7 @@ class AppBlockerService : BaseBlockingService() {
             nodePicker.setupReceivers()
         }
         reelsCountTracker.setupReceivers()
+        newAppAutoAdder.start()
 
         if (!Settings.canDrawOverlays(this)) {
             Toast.makeText(
@@ -259,6 +261,7 @@ class AppBlockerService : BaseBlockingService() {
     override fun onDestroy() {
         super.onDestroy()
         cleanupFeature("companions") { companionHost.stop() }
+        cleanupFeature("new app auto-add") { newAppAutoAdder.stop() }
         cleanupFeature("reel settle recheck") { cancelReelSettleRecheck() }
         cleanupFeature("event worker") { serviceScope.cancel() }
         cleanupFeature("event channel") { eventChannel.cancel() }

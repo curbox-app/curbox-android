@@ -85,6 +85,7 @@ object RestrictionComparator {
         if (!temporaryDisableSameOrShorter(o.isActive, o.temporarilyDisabledUntilMs,
                 n.isActive, n.temporarilyDisabledUntilMs)) return false
         if (!n.selectedPackages.containsAll(o.selectedPackages)) return false
+        if (o.autoAddNewApps && !n.autoAddNewApps) return false
         if (!warningConfig(o.warningScreenConfig, n.warningScreenConfig)) return false
         val oldConfig = o.config ?: return false
         val newConfig = n.config ?: return false
