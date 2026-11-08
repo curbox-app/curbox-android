@@ -42,7 +42,7 @@ The entire codebase is public. Anyone can verify how the app works. This ensures
 ### Platforms:
 - Android (this repository)
 - [Web Extension Repository](https://github.com/curbox-app/curbox-extension)
-- IOS (comming soon)
+- IOS (coming soon)
 
 
 ### How to install
