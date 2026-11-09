@@ -1686,7 +1686,7 @@
     <string name="selected_count">Selected: %1$d</string>
     <string name="select_apps_count">Select Apps (%1$d)</string>
     <string name="select_apps_count_plus_new">Select Apps (%1$d + new installs)</string>
-    <string name="auto_add_new_apps">Add apps you install later</string>
+    <string name="auto_add_new_apps">Auto Add apps new apps</string>
     <string name="group_type_time_based">Time Based</string>
     <string name="group_type_usage_based">Usage Based</string>
     <string name="group_details_apps">%1$d Apps • %2$s</string>
