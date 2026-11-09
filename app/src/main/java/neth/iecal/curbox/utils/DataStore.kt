@@ -470,6 +470,10 @@ class DataStoreManager(private val context: Context) {
         settingsDataStore.updateData { it.copy(sipStretchBreakEndsAtMs = endsAtMs) }
     }
 
+    suspend fun updateUrgeSurfConfig(config: neth.iecal.curbox.data.models.UrgeSurfConfig) {
+        settingsDataStore.updateData { it.copy(urgeSurfConfig = config) }
+    }
+
     suspend fun updateUiHiderConfig(transform: (neth.iecal.curbox.data.models.UiHiderConfig) -> neth.iecal.curbox.data.models.UiHiderConfig) {
         updateGated(GatedSettingsField.UI_HIDER) { transform(it.uiHiderConfig.normalized()) }
     }

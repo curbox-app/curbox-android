@@ -25,6 +25,7 @@ data class Settings(
     val sipStretchConfig: SipStretchConfig = SipStretchConfig(),
     /** System ms when the running Sip & Stretch break ends. 0 when no break is running. */
     val sipStretchBreakEndsAtMs: Long = 0L,
+    val urgeSurfConfig: UrgeSurfConfig = UrgeSurfConfig(),
     val uiHiderConfig: UiHiderConfig = UiHiderConfig(),
     val reelCounterOverlayConfig: ReelCounterOverlayConfig = ReelCounterOverlayConfig(),
     val nextWebsiteRecheckTime: Long = 0L,
