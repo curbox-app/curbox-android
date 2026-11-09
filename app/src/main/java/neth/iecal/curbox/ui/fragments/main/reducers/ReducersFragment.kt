@@ -87,6 +87,14 @@ class ReducersFragment : Fragment() {
             startActivity(intent)
         }
 
+        val sipStretchCard = view.findViewById<MaterialCardView>(R.id.card_sip_stretch)
+        sipStretchCard.setOnClickListener {
+            val intent = Intent(requireContext(), FragmentActivity::class.java).apply {
+                putExtra("fragment", neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.sip_stretch.SipStretchFragment.FRAGMENT_ID)
+            }
+            startActivity(intent)
+        }
+
         val uiHiderCard = view.findViewById<MaterialCardView>(R.id.card_ui_hider)
         uiHiderCard.isVisible = BuildConfig.SUPPORTS_UI_HIDER
         uiHiderCard.setOnClickListener {
