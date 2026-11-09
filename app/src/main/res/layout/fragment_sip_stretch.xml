@@ -112,7 +112,6 @@
                         android:stepSize="5.0"
                         android:value="30.0"
                         android:valueFrom="5.0"
-                        app:tickVisible="false"
                         android:valueTo="120.0" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -160,7 +159,6 @@
                         android:stepSize="1.0"
                         android:value="5.0"
                         android:valueFrom="1.0"
-                        app:tickVisible="false"
                         android:valueTo="30.0" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
