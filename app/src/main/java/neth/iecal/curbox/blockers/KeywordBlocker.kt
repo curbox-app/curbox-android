@@ -25,6 +25,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -89,6 +90,7 @@ class KeywordBlocker : BaseBlocker() {
     private val blockGuard = Any()
     private var lastBlockedTarget = ""
     private var blockSuppressedUntil = 0L
+    private var suppressionRecheck: Job? = null
     @Volatile private var lastWebsiteObservation: WebsiteObservation? = null
 
     fun compileKeywords(keywords: Collection<String>): Pair<List<Regex>, List<String>> =
@@ -242,7 +244,10 @@ class KeywordBlocker : BaseBlocker() {
         for (group in eligible) {
             val window = group.config?.schedule?.activeWindow(now) ?: continue
             if (isUsageLimitExceeded(group, window)) {
-                if (!claimBlock(packageName, urlIdentifier, group.id)) return
+                if (!claimBlock(packageName, urlIdentifier, group.id)) {
+                    recheckWhenSuppressionEnds()
+                    return
+                }
                 handleBlocking(group, packageName)
                 return
             }
@@ -274,6 +279,16 @@ class KeywordBlocker : BaseBlocker() {
             lastBlockedTarget = target
             blockSuppressedUntil = now + BLOCK_SUPPRESSION_MS
             true
+        }
+    }
+
+    // Recheck after suppression so an early Back does not wait for another event.
+    private fun recheckWhenSuppressionEnds() = synchronized(blockGuard) {
+        val delayMs = blockSuppressedUntil - System.currentTimeMillis() + 100
+        suppressionRecheck?.cancel()
+        suppressionRecheck = blockerScope.launch {
+            delay(delayMs.coerceAtLeast(0L))
+            reevaluateCurrentWebsite()
         }
     }
 
