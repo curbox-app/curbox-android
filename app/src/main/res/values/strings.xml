@@ -2159,4 +2159,63 @@
         <item>Turn your head gently from side to side.</item>
         <item>Shake out your hands and wrists.</item>
     </string-array>
+    <string name="urge_surf">Urge Surfing</string>
+    <string name="urge_surf_card_desc">Ride out a strong craving instead of fighting it.</string>
+    <string name="urge_surf_intro">A craving is like a wave. It rises, peaks, and fades, usually within a few minutes. Urge surfing helps you wait it out. You rate the craving, think about it for a moment, then play a calm puzzle or move your body for 3 minutes. Then you rate it again and see how much it dropped.</string>
+    <string name="urge_surf_enable_button">Show \"I\'m struggling\" on block screens</string>
+    <string name="urge_surf_enable_auto_offer">Offer help after 3 blocks in 5 minutes</string>
+    <string name="urge_surf_auto_offer_note">Trying to open blocked apps again and again is a sign of a strong craving. When it happens, the block screen offers help even if the button above is off.</string>
+    <string name="urge_surf_stats_title">Your cravings</string>
+    <string name="urge_surf_stats_empty">Nothing here yet. Your results will show up here after you ride out a craving.</string>
+    <plurals name="urge_surf_stats_sessions">
+        <item quantity="one">You rode out %d craving.</item>
+        <item quantity="other">You rode out %d cravings.</item>
+    </plurals>
+    <string name="urge_surf_stats_average">On average your craving went from %1$s to %2$s.</string>
+    <plurals name="urge_surf_stats_went_down">
+        <item quantity="one">It went down %1$d time out of %2$d.</item>
+        <item quantity="other">It went down %1$d times out of %2$d.</item>
+    </plurals>
+    <string name="urge_surf_clear_history">Clear history</string>
+    <string name="urge_surf_clear_history_confirm">Delete all your craving results? This cannot be undone.</string>
+    <string name="urge_surf_clear">Delete</string>
+
+    <string name="urge_surf_struggling">I\'m struggling</string>
+    <string name="urge_surf_repeated_blocks">You tried to open blocked apps a few times just now. That can mean a strong craving. Want help riding it out?</string>
+    <string name="urge_surf_close">Close</string>
+    <string name="urge_surf_rate_before_title">How strong is the craving?</string>
+    <string name="urge_surf_rate_before_body">Tap a number. 0 means none at all. 10 means it is all you can think about.</string>
+    <string name="urge_surf_rate_after_title">How strong is it now?</string>
+    <string name="urge_surf_rate_after_body">Be honest. Any number is okay.</string>
+    <string name="urge_surf_rate_low">None</string>
+    <string name="urge_surf_rate_high">Very strong</string>
+    <string name="urge_surf_rating_description">Rate %d</string>
+    <string-array name="urge_surf_reflect_prompts">
+        <item>How will you feel about this in an hour?</item>
+        <item>What were you going to do instead?</item>
+        <item>What would you tell a friend who felt like this?</item>
+    </string-array>
+    <string name="urge_surf_reflect_body">Take a moment to really think about it.</string>
+    <string name="urge_surf_continue">Continue</string>
+    <string name="urge_surf_choose_title">Ride it out for 3 minutes</string>
+    <string name="urge_surf_choose_body">Pick one. When the time is up, you will rate the craving again.</string>
+    <string name="urge_surf_puzzle_title">Play a calm puzzle</string>
+    <string name="urge_surf_puzzle_desc">Drag blocks onto the board. No score.</string>
+    <string name="urge_surf_puzzle_hint">Drag a block onto the board. Fill a row or column to clear it.</string>
+    <string name="urge_surf_move_title">Move your body</string>
+    <string name="urge_surf_move_desc">Squats, stairs, or a fast walk.</string>
+    <string name="urge_surf_move_options">Do 30 squats\nor walk up and down the stairs\nor go for a fast walk</string>
+    <string name="urge_surf_move_effort">Move hard enough that you breathe faster. A stretch does not count. Your phone will buzz when the time is up.</string>
+    <string name="urge_surf_result_scores">%1$d → %2$d</string>
+    <plurals name="urge_surf_result_down">
+        <item quantity="one">Your craving went down by %d point. Cravings fade when you wait them out.</item>
+        <item quantity="other">Your craving went down by %d points. Cravings fade when you wait them out.</item>
+    </plurals>
+    <string name="urge_surf_result_same">Your craving stayed the same, and you still did not give in. That counts.</string>
+    <string name="urge_surf_result_up">Some cravings take longer to fade. You still rode this one out without giving in.</string>
+    <plurals name="urge_surf_result_usual_drop">
+        <item quantity="one">Your cravings usually drop by %d point in 3 minutes.</item>
+        <item quantity="other">Your cravings usually drop by %d points in 3 minutes.</item>
+    </plurals>
+    <string name="urge_surf_go_home">Go to home screen</string>
 </resources>

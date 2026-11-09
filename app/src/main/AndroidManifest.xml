@@ -49,6 +49,14 @@
             android:theme="@style/Theme.Curbox" />
 
         <activity
+            android:name=".ui.activity.UrgeSurfActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Curbox" />
+
+        <activity
             android:name=".ui.activity.PendingChangeReviewActivity"
             android:excludeFromRecents="true"
             android:exported="false"
