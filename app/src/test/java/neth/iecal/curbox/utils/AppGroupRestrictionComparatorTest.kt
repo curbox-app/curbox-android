@@ -25,6 +25,31 @@ class AppGroupRestrictionComparatorTest {
     }
 
     @Test
+    fun turningOnAutoAddNewAppsIsStricter() {
+        assertTrue(
+            RestrictionComparator.appGroups(listOf(oldGroup), listOf(oldGroup.copy(autoAddNewApps = true)))
+        )
+    }
+
+    @Test
+    fun turningOffAutoAddNewAppsIsWeaker() {
+        val withAutoAdd = oldGroup.copy(autoAddNewApps = true)
+        assertFalse(
+            RestrictionComparator.appGroups(listOf(withAutoAdd), listOf(oldGroup))
+        )
+    }
+
+    @Test
+    fun autoAddingAnAppAndAdvancingTheWatermarkIsStricter() {
+        val withAutoAdd = oldGroup.copy(autoAddNewApps = true, autoAddCheckedUntilMs = 1L)
+        val afterInstall = withAutoAdd.copy(
+            selectedPackages = withAutoAdd.selectedPackages + "new.app",
+            autoAddCheckedUntilMs = 2L
+        )
+        assertTrue(RestrictionComparator.appGroups(listOf(withAutoAdd), listOf(afterInstall)))
+    }
+
+    @Test
     fun shorterActiveScheduleIsWeaker() {
         assertFalse(
             RestrictionComparator.appGroups(

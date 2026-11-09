@@ -37,6 +37,7 @@ class CreateAppGroupFragment : Fragment() {
 
     private var selectedApps: ArrayList<String> = arrayListOf()
     private var isPrefilled = false
+    private var autoAddNewApps = false
     private val viewModel: AppBlockerSettingViewModel by activityViewModels()
 
     private val selectAppsLauncher = registerForActivityResult(
@@ -46,7 +47,8 @@ class CreateAppGroupFragment : Fragment() {
             val apps = result.data?.getStringArrayListExtra("SELECTED_APPS")
             if (apps != null) {
                 selectedApps = apps
-                binding.btnSelectApps.text = getString(R.string.select_apps_count, selectedApps.size)
+                autoAddNewApps = result.data?.getBooleanExtra(SelectAppsActivity.EXTRA_AUTO_ADD_NEW_APPS, false) == true
+                updateSelectAppsButton()
             }
         }
     }
@@ -72,7 +74,7 @@ class CreateAppGroupFragment : Fragment() {
         if (groupId == null && !isPrefilled && prefillPackage != null) {
             isPrefilled = true
             selectedApps = arrayListOf(prefillPackage)
-            binding.btnSelectApps.text = getString(R.string.select_apps_count, selectedApps.size)
+            updateSelectAppsButton()
         }
 
         if (groupId != null) {
@@ -84,7 +86,8 @@ class CreateAppGroupFragment : Fragment() {
                         binding.textView2.text = getString(R.string.app_group_edit_title)
                         binding.etGroupName.setText(group.name)
                         selectedApps = ArrayList(group.selectedPackages)
-                        binding.btnSelectApps.text = getString(R.string.select_apps_count, selectedApps.size)
+                        autoAddNewApps = group.autoAddNewApps
+                        updateSelectAppsButton()
 
                         binding.btnDeleteGroup.visibility = View.VISIBLE
                         binding.btnDeleteGroup.setOnClickListener {
@@ -144,7 +147,7 @@ class CreateAppGroupFragment : Fragment() {
             return
         }
 
-        if (selectedApps.isEmpty()) {
+        if (selectedApps.isEmpty() && !autoAddNewApps) {
             Toast.makeText(requireContext(), getString(R.string.please_select_at_least_one_app), Toast.LENGTH_SHORT).show()
             return
         }
@@ -172,7 +175,11 @@ class CreateAppGroupFragment : Fragment() {
                 if (isEditingRecord && targetExistingGroup != null) targetExistingGroup.isActive
                 else true,
             temporarilyDisabledUntilMs = targetExistingGroup?.temporarilyDisabledUntilMs ?: 0L,
-            warningScreenConfig = viewModel.warningScrnConfig
+            warningScreenConfig = viewModel.warningScrnConfig,
+            autoAddNewApps = autoAddNewApps,
+            autoAddCheckedUntilMs =
+                if (autoAddNewApps && targetExistingGroup?.autoAddNewApps == true) targetExistingGroup.autoAddCheckedUntilMs
+                else System.currentTimeMillis()
         )
 
         val conflicts = newGroup.scheduleConflictsWith(viewModel.groups.value)
@@ -223,8 +230,16 @@ class CreateAppGroupFragment : Fragment() {
         val intent = Intent(requireContext(), SelectAppsActivity::class.java).apply {
             putStringArrayListExtra("PRE_SELECTED_APPS", selectedApps)
             putExtra(SelectAppsActivity.EXTRA_ALLOW_CURBOX, true)
+            putExtra(SelectAppsActivity.EXTRA_AUTO_ADD_NEW_APPS, autoAddNewApps)
         }
         selectAppsLauncher.launch(intent)
+    }
+
+    private fun updateSelectAppsButton() {
+        binding.btnSelectApps.text = getString(
+            if (autoAddNewApps) R.string.select_apps_count_plus_new else R.string.select_apps_count,
+            selectedApps.size
+        )
     }
 
     private fun openScheduleEditor() {
