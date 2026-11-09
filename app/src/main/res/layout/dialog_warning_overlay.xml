@@ -163,4 +163,27 @@
         android:text="@string/cancel"
         android:textAllCaps="true" />
 
+    <TextView
+        android:id="@+id/urge_surf_offer"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/urge_surf_repeated_blocks"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_struggling"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/urge_surf_struggling"
+        android:visibility="gone" />
+
 </LinearLayout>

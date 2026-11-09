@@ -13,12 +13,14 @@ import android.os.VibratorManager
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.transition.TransitionManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
 import com.journeyapps.barcodescanner.ScanContract
@@ -53,6 +55,7 @@ import androidx.core.content.edit
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.color.MaterialColors
 import neth.iecal.curbox.anti_stimulants.MindfulMessage
+import neth.iecal.curbox.data.models.UrgeSurfConfig
 
 class WarningActivity : AppCompatActivity() {
 
@@ -372,6 +375,9 @@ class WarningActivity : AppCompatActivity() {
 
         binding.warningMsg.text = warningScreenConfig.message.random()
 
+        val recentBlockCount = if (savedInstanceState == null) recordBlockForUrgeSurf() else 0
+        setupUrgeSurf(mode, recentBlockCount)
+
         if (warningScreenConfig.isOnOpenConfig) {
             binding.minsPicker.visibility = View.GONE
         } else {
@@ -540,6 +546,65 @@ class WarningActivity : AppCompatActivity() {
             }
 
             closeWarningScreen()
+        }
+    }
+
+    /** Remembers this block and returns how many blocks happened in the recent window. */
+    private fun recordBlockForUrgeSurf(): Int {
+        val prefs = getSharedPreferences(URGE_SURF_PREFS, Context.MODE_PRIVATE)
+        val now = System.currentTimeMillis()
+        val recent = (prefs.getString(KEY_RECENT_BLOCKS, "") ?: "")
+            .split(",")
+            .mapNotNull { it.toLongOrNull() }
+            .filter { now - it in 0 until UrgeSurfConfig.AUTO_OFFER_WINDOW_MS }
+            .toMutableList()
+        // One block can open this screen more than once in a burst. Count it once.
+        if (recent.none { now - it < SAME_BLOCK_MS }) recent.add(now)
+        prefs.edit { putString(KEY_RECENT_BLOCKS, recent.joinToString(",")) }
+        return recent.size
+    }
+
+    private fun setupUrgeSurf(mode: Int, recentBlockCount: Int) {
+        binding.btnStruggling.setOnClickListener {
+            val blockedPackage = if (mode == Constants.WARNING_SCREEN_MODE_APP_BLOCKER) {
+                intent.getStringExtra("launch_package") ?: ""
+            } else {
+                ""
+            }
+            try {
+                // Leave the blocked app first so it is not waiting behind the exercise.
+                startActivity(
+                    Intent(Intent.ACTION_MAIN)
+                        .addCategory(Intent.CATEGORY_HOME)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+                startActivity(
+                    Intent(this, UrgeSurfActivity::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        .putExtra(UrgeSurfActivity.EXTRA_PACKAGE_NAME, blockedPackage)
+                )
+            } catch (e: Exception) {
+                CrashLogger(applicationContext).logNonFatalError(e)
+            }
+            sendWarningScreenVisibility(false)
+            dialog?.dismiss()
+            finish()
+        }
+
+        lifecycleScope.launch {
+            try {
+                val config = DataStoreManager(applicationContext).settings.first().urgeSurfConfig
+                val isRepeated = config.isAutoOfferEnabled &&
+                    recentBlockCount >= UrgeSurfConfig.AUTO_OFFER_BLOCK_COUNT
+                if (!config.isButtonEnabled && !isRepeated) return@launch
+                TransitionManager.beginDelayedTransition(binding.root as ViewGroup)
+                binding.urgeSurfOffer.visibility = if (isRepeated) View.VISIBLE else View.GONE
+                binding.btnStruggling.visibility = View.VISIBLE
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                CrashLogger(applicationContext).logNonFatalError(e)
+            }
         }
     }
 
@@ -897,6 +962,9 @@ class WarningActivity : AppCompatActivity() {
 
     private companion object {
         const val KEY_MATH_RETRY_ENDS_AT_MS = "math_retry_ends_at_ms"
+        const val URGE_SURF_PREFS = "urge_surf"
+        const val KEY_RECENT_BLOCKS = "recent_blocks"
+        const val SAME_BLOCK_MS = 3_000L
         const val MATH_RETRY_DELAY_MS = 15_000L
         const val MIN_ADAPTIVE_MATH_QUESTIONS = 1
         const val MAX_ADAPTIVE_MATH_QUESTIONS = 10
