@@ -8,8 +8,8 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
-    entities = [ReelStatsEntity::class, ReelUsageStatsEntity::class, ScrollPatternEntity::class, FocusStatsEntity::class, WebsiteStatsEntity::class, IntentLogEntity::class, AppUsageEntity::class],
-    version = 10,
+    entities = [ReelStatsEntity::class, ReelUsageStatsEntity::class, ScrollPatternEntity::class, FocusStatsEntity::class, WebsiteStatsEntity::class, IntentLogEntity::class, AppUsageEntity::class, CravingSessionEntity::class],
+    version = 11,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -21,6 +21,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun websiteStatsDao(): WebsiteStatsDao
     abstract fun intentLogDao(): IntentLogDao
     abstract fun appUsageDao(): AppUsageDao
+    abstract fun cravingSessionDao(): CravingSessionDao
 
     companion object {
         @Volatile
@@ -49,13 +50,28 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        private val MIGRATION_10_11 = object : Migration(10, 11) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    """CREATE TABLE IF NOT EXISTS `craving_sessions` (
+                        `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        `timestamp` INTEGER NOT NULL,
+                        `packageName` TEXT NOT NULL,
+                        `ratingBefore` INTEGER NOT NULL,
+                        `ratingAfter` INTEGER NOT NULL,
+                        `activity` TEXT NOT NULL
+                    )""".trimIndent()
+                )
+            }
+        }
+
         fun getInstance(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
                     "curbox_db"
-                ).addMigrations(MIGRATION_8_9, MIGRATION_9_10)
+                ).addMigrations(MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11)
                     .enableMultiInstanceInvalidation()
                     .fallbackToDestructiveMigration()
                     .build()
