@@ -122,6 +122,13 @@ class InfoFragment : Fragment() {
             openUrl("https://github.com/nethical6")
         }
 
+        binding.cardContributors.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_holder, ContributorsFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
         binding.btnDonate.setOnClickListener {
             openUrl("https://curbox.app/donate")
         }

@@ -102,6 +102,10 @@
     <string name="label_browser_extension">Browser Extension</string>
     <string name="curbox_extension_repo">curbox-extension</string>
     <string name="about_the_developer">About the Developer</string>
+    <string name="contributors_title">Contributors</string>
+    <string name="contributors_row_hint">Meet the people who build Curbox</string>
+    <string name="contributors_intro">These people help build Curbox. Bigger names made more changes.</string>
+    <string name="contributors_cloud_description">Names of the people who help build Curbox: %1$s</string>
     <string name="view_on_github">View on GitHub ↗</string>
     <string name="donate_title">Donate</string>
     <string name="donate_pitch">I\'ve put 1500+ hours into Curbox, building it alongside school, exams and study, to save millions of minutes worldwide. Donate to help me keep it free and growing for everyone.</string>
