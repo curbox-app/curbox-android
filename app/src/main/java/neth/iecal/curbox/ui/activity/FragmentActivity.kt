@@ -104,6 +104,7 @@ class FragmentActivity : AppCompatActivity() {
                 AdvancedAnalyticsFragment.FRAGMENT_ID,
             neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.mindful_messages.MindfulMessagesFragment.FRAGMENT_ID,
             neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.sip_stretch.SipStretchFragment.FRAGMENT_ID,
+            neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.urge_surf.UrgeSurfFragment.FRAGMENT_ID,
             KeywordBlockerFragment.FRAGMENT_ID,
             neth.iecal.curbox.ui.fragments.main.reducers.api.ApiFragment.FRAGMENT_ID,
             AntiUninstallFragment.FRAGMENT_ID,
@@ -129,6 +130,7 @@ class FragmentActivity : AppCompatActivity() {
                     CreateGrayscaleGroupFragment.FRAGMENT_ID -> CreateGrayscaleGroupFragment()
                     neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.mindful_messages.MindfulMessagesFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.mindful_messages.MindfulMessagesFragment()
                     neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.sip_stretch.SipStretchFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.sip_stretch.SipStretchFragment()
+                    neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.urge_surf.UrgeSurfFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.urge_surf.UrgeSurfFragment()
                     IntentsLogFragment.FRAGMENT_ID -> IntentsLogFragment()
                     AdvancedAnalyticsFragment.FRAGMENT_ID -> AdvancedAnalyticsFragment()
                     neth.iecal.curbox.ui.fragments.main.reducers.api.ApiFragment.FRAGMENT_ID -> neth.iecal.curbox.ui.fragments.main.reducers.api.ApiFragment()
