@@ -143,6 +143,8 @@ for a new browser, etc.
 
 Curbox is licensed under the GPL 3 or later license. You are free to use, modify, and distribute this software in accordance with the license.
 
+This applies to all source code in this repository, including the implementation of Curbox’s blocking mechanisms. If you use, adapt, or port any of this code (including into another language or platform), your project must also be released under GPL-3.0-or-later with its source code available.
+
 ### Contact
 
 For questions or feedback, please open an issue on the GitHub repository or reach out:
