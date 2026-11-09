@@ -2163,8 +2163,8 @@
     <string name="urge_surf_card_desc">Ride out a strong craving instead of fighting it.</string>
     <string name="urge_surf_intro">A craving is like a wave. It rises, peaks, and fades, usually within a few minutes. Urge surfing helps you wait it out. You rate the craving, think about it for a moment, then play a calm puzzle or move your body for 3 minutes. Then you rate it again and see how much it dropped.</string>
     <string name="urge_surf_enable_button">Show \"I\'m struggling\" on block screens</string>
-    <string name="urge_surf_enable_auto_offer">Offer help after 3 blocks in 5 minutes</string>
-    <string name="urge_surf_auto_offer_note">Trying to open blocked apps again and again is a sign of a strong craving. When it happens, the block screen offers help even if the button above is off.</string>
+    <string name="urge_surf_enable_auto_offer">Offer help after 3 unlocks in a row</string>
+    <string name="urge_surf_auto_offer_note">Getting past the block screen again and again is a sign of a strong craving. After 3 unlocks in a row, the block screen offers help even if the button above is off. Tapping Cancel starts the count over.</string>
     <string name="urge_surf_stats_title">Your cravings</string>
     <string name="urge_surf_stats_empty">Nothing here yet. Your results will show up here after you ride out a craving.</string>
     <plurals name="urge_surf_stats_sessions">
@@ -2181,7 +2181,7 @@
     <string name="urge_surf_clear">Delete</string>
 
     <string name="urge_surf_struggling">I\'m struggling</string>
-    <string name="urge_surf_repeated_blocks">You tried to open blocked apps a few times just now. That can mean a strong craving. Want help riding it out?</string>
+    <string name="urge_surf_repeated_blocks">You unlocked blocked apps a few times in a row. That can mean a strong craving. Want help riding it out?</string>
     <string name="urge_surf_close">Close</string>
     <string name="urge_surf_rate_before_title">How strong is the craving?</string>
     <string name="urge_surf_rate_before_body">Tap a number. 0 means none at all. 10 means it is all you can think about.</string>

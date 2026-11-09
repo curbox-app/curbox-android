@@ -369,14 +369,14 @@ class WarningActivity : AppCompatActivity() {
             .setView(binding.root)
             .setCancelable(isDialogCancelable)
             .setOnCancelListener {
+                resetUnlockStreak()
                 finishAffinity()
             }
             .show()
 
         binding.warningMsg.text = warningScreenConfig.message.random()
 
-        val recentBlockCount = if (savedInstanceState == null) recordBlockForUrgeSurf() else 0
-        setupUrgeSurf(mode, recentBlockCount)
+        setupUrgeSurf(mode)
 
         if (warningScreenConfig.isOnOpenConfig) {
             binding.minsPicker.visibility = View.GONE
@@ -389,6 +389,7 @@ class WarningActivity : AppCompatActivity() {
         }
 
         binding.btnCancel.setOnClickListener {
+            resetUnlockStreak()
             if (mode == Constants.WARNING_SCREEN_MODE_APP_BLOCKER || mode == Constants.WARNING_SCREEN_MODE_KEYWORD_BLOCKER || isHomePressRequested) {
                 val intent = Intent(Intent.ACTION_MAIN)
                 intent.addCategory(Intent.CATEGORY_HOME)
@@ -483,6 +484,8 @@ class WarningActivity : AppCompatActivity() {
                 sendBroadcast(broadcastIntent)
             }
 
+            recordUnlock()
+
             if (mode == Constants.WARNING_SCREEN_MODE_VIEW_BLOCKER) {
                 intent.getStringExtra("result_id")
                     ?.let { it1 ->
@@ -549,23 +552,25 @@ class WarningActivity : AppCompatActivity() {
         }
     }
 
-    /** Remembers this block and returns how many blocks happened in the recent window. */
-    private fun recordBlockForUrgeSurf(): Int {
-        val prefs = getSharedPreferences(URGE_SURF_PREFS, Context.MODE_PRIVATE)
-        val now = System.currentTimeMillis()
-        val recent = (prefs.getString(KEY_RECENT_BLOCKS, "") ?: "")
-            .split(",")
-            .mapNotNull { it.toLongOrNull() }
-            .filter { now - it in 0 until UrgeSurfConfig.AUTO_OFFER_WINDOW_MS }
-            .toMutableList()
-        // One block can open this screen more than once in a burst. Count it once.
-        if (recent.none { now - it < SAME_BLOCK_MS }) recent.add(now)
-        prefs.edit { putString(KEY_RECENT_BLOCKS, recent.joinToString(",")) }
-        return recent.size
+    /** Unlocks in a row without the user backing out. Strong cravings show up as long streaks. */
+    private fun unlockStreak(): Int =
+        getSharedPreferences(URGE_SURF_PREFS, Context.MODE_PRIVATE).getInt(KEY_UNLOCK_STREAK, 0)
+
+    private fun recordUnlock() {
+        getSharedPreferences(URGE_SURF_PREFS, Context.MODE_PRIVATE).edit {
+            putInt(KEY_UNLOCK_STREAK, unlockStreak() + 1)
+        }
     }
 
-    private fun setupUrgeSurf(mode: Int, recentBlockCount: Int) {
+    private fun resetUnlockStreak() {
+        getSharedPreferences(URGE_SURF_PREFS, Context.MODE_PRIVATE).edit {
+            putInt(KEY_UNLOCK_STREAK, 0)
+        }
+    }
+
+    private fun setupUrgeSurf(mode: Int) {
         binding.btnStruggling.setOnClickListener {
+            resetUnlockStreak()
             val blockedPackage = if (mode == Constants.WARNING_SCREEN_MODE_APP_BLOCKER) {
                 intent.getStringExtra("launch_package") ?: ""
             } else {
@@ -595,7 +600,7 @@ class WarningActivity : AppCompatActivity() {
             try {
                 val config = DataStoreManager(applicationContext).settings.first().urgeSurfConfig
                 val isRepeated = config.isAutoOfferEnabled &&
-                    recentBlockCount >= UrgeSurfConfig.AUTO_OFFER_BLOCK_COUNT
+                    unlockStreak() >= UrgeSurfConfig.AUTO_OFFER_UNLOCK_COUNT
                 if (!config.isButtonEnabled && !isRepeated) return@launch
                 TransitionManager.beginDelayedTransition(binding.root as ViewGroup)
                 binding.urgeSurfOffer.visibility = if (isRepeated) View.VISIBLE else View.GONE
@@ -963,8 +968,7 @@ class WarningActivity : AppCompatActivity() {
     private companion object {
         const val KEY_MATH_RETRY_ENDS_AT_MS = "math_retry_ends_at_ms"
         const val URGE_SURF_PREFS = "urge_surf"
-        const val KEY_RECENT_BLOCKS = "recent_blocks"
-        const val SAME_BLOCK_MS = 3_000L
+        const val KEY_UNLOCK_STREAK = "unlock_streak"
         const val MATH_RETRY_DELAY_MS = 15_000L
         const val MIN_ADAPTIVE_MATH_QUESTIONS = 1
         const val MAX_ADAPTIVE_MATH_QUESTIONS = 10
