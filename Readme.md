@@ -38,7 +38,7 @@ Click on any image to enlarge it.
 Most screen time tools are closed source. This raises concerns about your private usage data being tracked or sold. Curbox takes a different path.
 * Open Source Transparency
 The entire codebase is public. Anyone can verify how the app works. This ensures there are no hidden trackers or malicious behaviors. Open source doesn't mean anyone can see how you use the app. 
-
+* Never connects to internet
 ### Platforms:
 - Android (this repository)
 - [Web Extension Repository](https://github.com/curbox-app/curbox-extension)
