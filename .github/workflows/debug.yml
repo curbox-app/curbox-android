@@ -24,7 +24,7 @@ jobs:
       - name: Clear build cache
         uses: gradle/gradle-build-action@v3.1.0
         with:
-          gradle-version: nightly
+          gradle-version: wrapper
           arguments: clean
 
       - name: Build Fdroid Debug APK
