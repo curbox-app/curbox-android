@@ -60,6 +60,7 @@ object SettingsChangeDelayUtils {
                 GatedSettingsField.REEL_COUNTER -> R.string.change_delay_field_reel_counter
                 GatedSettingsField.GRAYSCALE_GROUPS -> R.string.change_delay_field_grayscale
                 GatedSettingsField.MINDFUL_MESSAGES -> R.string.change_delay_field_mindful_messages
+                GatedSettingsField.SIP_STRETCH -> R.string.change_delay_field_sip_stretch
                 GatedSettingsField.UI_HIDER -> R.string.change_delay_field_ui_hider
                 GatedSettingsField.APP_USAGE_TRACKING -> R.string.app_usage_tracking
                 GatedSettingsField.WEBSITE_USAGE_TRACKING -> R.string.website_usage_tracking

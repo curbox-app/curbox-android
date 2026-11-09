@@ -2135,4 +2135,28 @@
         <item quantity="one">%d pause</item>
         <item quantity="other">%d pauses</item>
     </plurals>
+
+    <!-- Sip &amp; Stretch -->
+    <string name="sip_stretch">Sip &amp; Stretch</string>
+    <string name="sip_stretch_card_desc">Take a short break to drink water and move after long use.</string>
+    <string name="enable_sip_stretch">Enable Sip &amp; Stretch</string>
+    <string name="sip_stretch_intro">When you spend too long in the apps you pick, your phone takes a short break. All apps are blocked until the break ends, so you can drink water, stand up, and stretch.</string>
+    <string name="sip_stretch_rest_note">Time away from these apps counts as rest. If you stay away as long as one break, the timer starts over.</string>
+    <string name="sip_stretch_usage_limit">Break after</string>
+    <string name="sip_stretch_break_length">Break length</string>
+    <string name="sip_stretch_minutes_value">%d min</string>
+    <string name="change_delay_field_sip_stretch">Sip &amp; Stretch</string>
+    <string name="sip_stretch_break_title">Time for a break</string>
+    <string name="sip_stretch_break_body">Your apps will open again when the timer ends.</string>
+    <string name="sip_stretch_go_home">Go to home screen</string>
+    <string-array name="sip_stretch_tips">
+        <item>Drink a full glass of water.</item>
+        <item>Stand up and reach for the sky.</item>
+        <item>Roll your shoulders back five times.</item>
+        <item>Look out a window at something far away.</item>
+        <item>Take a short walk around the room.</item>
+        <item>Breathe in slowly, then let it all out.</item>
+        <item>Turn your head gently from side to side.</item>
+        <item>Shake out your hands and wrists.</item>
+    </string-array>
 </resources>

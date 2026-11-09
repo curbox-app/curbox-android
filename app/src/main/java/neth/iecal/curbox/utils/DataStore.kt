@@ -282,6 +282,7 @@ class DataStoreManager(private val context: Context) {
                 else remote.antiUninstallConfig2.copy(
                     unlockRequestedAtMs = current.antiUninstallConfig2.unlockRequestedAtMs
                 ),
+                sipStretchBreakEndsAtMs = current.sipStretchBreakEndsAtMs,
                 serviceProtectionConfig = remote.serviceProtectionConfig.copy(
                     appBlockerLastAliveMs = current.serviceProtectionConfig.appBlockerLastAliveMs
                 ),
@@ -302,6 +303,7 @@ class DataStoreManager(private val context: Context) {
                 isAppUsageTrackingEnabled = current.isAppUsageTrackingEnabled,
                 isWebsiteUsageTrackingEnabled = current.isWebsiteUsageTrackingEnabled,
                 mindfulMessageConfig = current.mindfulMessageConfig,
+                sipStretchConfig = current.sipStretchConfig,
                 uiHiderConfig = current.uiHiderConfig,
                 nextWebsiteRecheckTime = current.nextWebsiteRecheckTime,
                 externalUnlockConditions = current.externalUnlockConditions,
@@ -458,6 +460,14 @@ class DataStoreManager(private val context: Context) {
 
     suspend fun updateMindfulMessageConfig(config: neth.iecal.curbox.data.models.MindfulMessageConfig) {
         updateGated(GatedSettingsField.MINDFUL_MESSAGES) { config }
+    }
+
+    suspend fun updateSipStretchConfig(config: neth.iecal.curbox.data.models.SipStretchConfig) {
+        updateGated(GatedSettingsField.SIP_STRETCH) { config }
+    }
+
+    suspend fun updateSipStretchBreakEndsAt(endsAtMs: Long) {
+        settingsDataStore.updateData { it.copy(sipStretchBreakEndsAtMs = endsAtMs) }
     }
 
     suspend fun updateUiHiderConfig(transform: (neth.iecal.curbox.data.models.UiHiderConfig) -> neth.iecal.curbox.data.models.UiHiderConfig) {
@@ -765,6 +775,9 @@ class DataStoreManager(private val context: Context) {
                 GatedSettingsField.MINDFUL_MESSAGES -> settings.copy(
                     mindfulMessageConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.MindfulMessageConfig::class.java)
                 )
+                GatedSettingsField.SIP_STRETCH -> settings.copy(
+                    sipStretchConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.SipStretchConfig::class.java)
+                )
                 GatedSettingsField.UI_HIDER -> settings.copy(
                     uiHiderConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.UiHiderConfig::class.java)
                 )
@@ -796,6 +809,7 @@ class DataStoreManager(private val context: Context) {
                 GatedSettingsField.REEL_COUNTER -> settings.isReelCounterOn
                 GatedSettingsField.GRAYSCALE_GROUPS -> settings.grayscaleGroups
                 GatedSettingsField.MINDFUL_MESSAGES -> settings.mindfulMessageConfig
+                GatedSettingsField.SIP_STRETCH -> settings.sipStretchConfig
                 GatedSettingsField.UI_HIDER -> settings.uiHiderConfig
                 GatedSettingsField.APP_USAGE_TRACKING -> settings.isAppUsageTrackingEnabled
                 GatedSettingsField.WEBSITE_USAGE_TRACKING -> settings.isWebsiteUsageTrackingEnabled

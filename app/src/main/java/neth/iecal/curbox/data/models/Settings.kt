@@ -22,6 +22,9 @@ data class Settings(
     val isAppUsageTrackingEnabled: Boolean = true,
     val isWebsiteUsageTrackingEnabled: Boolean = true,
     val mindfulMessageConfig: MindfulMessageConfig = MindfulMessageConfig(),
+    val sipStretchConfig: SipStretchConfig = SipStretchConfig(),
+    /** System ms when the running Sip & Stretch break ends. 0 when no break is running. */
+    val sipStretchBreakEndsAtMs: Long = 0L,
     val uiHiderConfig: UiHiderConfig = UiHiderConfig(),
     val reelCounterOverlayConfig: ReelCounterOverlayConfig = ReelCounterOverlayConfig(),
     val nextWebsiteRecheckTime: Long = 0L,
