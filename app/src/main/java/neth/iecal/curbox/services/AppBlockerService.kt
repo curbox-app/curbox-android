@@ -22,6 +22,7 @@ import neth.iecal.curbox.R
 import neth.iecal.curbox.anti_stimulants.AutoDnd
 import neth.iecal.curbox.anti_stimulants.GrayScaleFilter
 import neth.iecal.curbox.anti_stimulants.MindfulMessage
+import neth.iecal.curbox.anti_stimulants.SipStretch
 import neth.iecal.curbox.blockers.AntiUninstallBlocker
 import neth.iecal.curbox.blockers.AppBlocker
 import neth.iecal.curbox.blockers.FocusModeBlocker
@@ -58,6 +59,7 @@ class AppBlockerService : BaseBlockingService() {
     private val reelsCountTracker = ReelsCountTracker()
     private val reelUsageTracker = ReelUsageTracker()
     private val mindfulMessage = MindfulMessage()
+    private val sipStretch = SipStretch()
     private val websiteUsageTracker = WebsiteUsageTracker()
     private val appUsageTracker = AppUsageTracker()
 
@@ -112,6 +114,7 @@ class AppBlockerService : BaseBlockingService() {
             appBlocker.doAppBlockerCheck(event)
             grayScaleFilter.doGrayscaleCheck(event)
             focusModeBlocker.doFocusModeCheck(event)
+            sipStretch.onEvent(event)
         } catch (t: Throwable) {
             Log.e("error", t.message ?: "Unknown error")
             crashLogger.logNonFatalError(Exception(t))
@@ -219,6 +222,7 @@ class AppBlockerService : BaseBlockingService() {
         reelUsageTracker.setup(this)
         reelsCountTracker.setup(this, reelsOverlayManager, reelUsageTracker::onReelCounted)
         mindfulMessage.setup(this)
+        sipStretch.setup(this)
         websiteUsageTracker.setup(this) { observation ->
             websiteObservationChannel.trySend(observation)
         }
@@ -282,6 +286,7 @@ class AppBlockerService : BaseBlockingService() {
             cleanupFeature("anti uninstall") { antiUninstallBlocker.onDestroy() }
         }
         cleanupFeature("mindful messages") { mindfulMessage.onDestroy() }
+        cleanupFeature("sip and stretch") { sipStretch.onDestroy() }
         cleanupFeature("reel counter") { reelsCountTracker.onDestroy() }
         cleanupFeature("reel usage") { reelUsageTracker.onDestroy() }
         cleanupFeature("website usage") { websiteUsageTracker.onDestroy() }

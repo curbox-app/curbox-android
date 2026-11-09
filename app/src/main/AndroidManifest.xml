@@ -42,6 +42,13 @@
             android:theme="@style/Theme.Curbox.TransparentDialog" />
 
         <activity
+            android:name=".ui.activity.SipStretchBreakActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Curbox" />
+
+        <activity
             android:name=".ui.activity.PendingChangeReviewActivity"
             android:excludeFromRecents="true"
             android:exported="false"
