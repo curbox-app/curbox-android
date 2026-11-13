@@ -29,6 +29,7 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import neth.iecal.curbox.BuildConfig
 import neth.iecal.curbox.Constants
 import neth.iecal.curbox.R
 import neth.iecal.curbox.data.db.AppDatabase
@@ -180,7 +181,7 @@ class KeywordBlocker : BaseBlocker() {
                     markSnapshotAsObserved(latest)
                 ) {
                     evaluateAndBlock(latest.packageName, latest.urlIdentifier)
-                    Log.d("KeywordBlocker", "Evaluated $latest")
+                    if (BuildConfig.DEBUG) Log.d("KeywordBlocker", "Evaluated $latest")
                 }
             }
         }

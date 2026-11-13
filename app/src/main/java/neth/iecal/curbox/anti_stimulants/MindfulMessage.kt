@@ -21,6 +21,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import neth.iecal.curbox.BuildConfig
 import neth.iecal.curbox.CrashLogger
 import neth.iecal.curbox.data.models.AppGroup
 import neth.iecal.curbox.data.models.MindfulMessageConfig
@@ -101,7 +102,7 @@ class MindfulMessage {
                 val text = intent.getStringExtra("intent_text") ?: return
                 val duration = intent.getLongExtra("duration_ms", 0)
                 activeIntents[pkg] = Pair(text, System.currentTimeMillis() + duration)
-                Log.d("active intent", activeIntents.toString())
+                if (BuildConfig.DEBUG) Log.d("active intent", activeIntents.toString())
             }
         }
     }
