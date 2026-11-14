@@ -42,6 +42,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import neth.iecal.curbox.BuildConfig
 import neth.iecal.curbox.utils.ViewUtils
 import neth.iecal.curbox.R
 import neth.iecal.curbox.data.db.WebsiteStatsEntity
@@ -708,7 +709,7 @@ class AllAppsUsageFragment : Fragment() {
                     it.packageName == stats.packageName && (it.totalTime > 0L || it.reelCount > 0)
                 }
 
-                Log.d("website stats", browserWebsites.toString())
+                if (BuildConfig.DEBUG) Log.d("website stats", browserWebsites.toString())
                 if (browserWebsites.isNotEmpty()) {
                     binding.threadContainer.visibility = View.VISIBLE
                     val top5 = browserWebsites.take(5)
