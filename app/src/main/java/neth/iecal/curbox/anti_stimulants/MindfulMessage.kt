@@ -153,7 +153,13 @@ class MindfulMessage {
     }
 
     fun onEvent(event: AccessibilityEvent?) {
-        if (destroyed || !canDisplay()) return
+        if (destroyed) return
+        // With no session, no overlay, no intents and an app that isn't selected, the checks below
+        // change nothing, so skip their IPC calls, which otherwise run on every event.
+        if (currentPkg == null && !overlayManager.isOverlayVisible && activeIntents.isEmpty() &&
+            !isSelectedApp(event?.packageName?.toString())
+        ) return
+        if (!canDisplay()) return
         if (event == null || (event.eventType and TARGET_EVENTS_MASK) == 0) return
 
         val pkg = event.packageName?.toString() ?: return
@@ -163,6 +169,9 @@ class MindfulMessage {
 
         updateForegroundPackage(pkg)
     }
+
+    private fun isSelectedApp(pkg: String?): Boolean =
+        pkg != null && config.isActive && config.selectedApps.contains(pkg)
 
     private fun canDisplay(): Boolean {
         if (screenOn && powerManager.isInteractive && !keyguardManager.isKeyguardLocked) return true
