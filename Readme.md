@@ -38,7 +38,14 @@ Click on any image to enlarge it.
 Most screen time tools are closed source. This raises concerns about your private usage data being tracked or sold. Curbox takes a different path.
 * Open Source Transparency
 The entire codebase is public. Anyone can verify how the app works. This ensures there are no hidden trackers or malicious behaviors. Open source doesn't mean anyone can see how you use the app. 
-* Never connects to internet
+* Never connects to internet. No servers = No worries of your data being stolen
+* Easy to setup. The features may seem an overhaul but they're all heavily organised and well thought. Setting up takes less than 5 minutes.
+* Supports sync (requires [curbox sync app](https://github.com/curbox-app/curbox-sync))
+* Trusted by millions. Curbox was the first open source screentime management suite for android
+* Small (only 8 mb large)
+* Lightweight. Consumes nearly the same ram and battery your keyboard does in background.
+
+
 ### Platforms:
 - Android (this repository)
 - [Web Extension Repository](https://github.com/curbox-app/curbox-extension)
