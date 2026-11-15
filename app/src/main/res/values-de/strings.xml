@@ -4,8 +4,6 @@
     <string name="add">Hinzufügen</string>
     <string name="save">Speichern</string>
     <string name="write_down_a_keyword">Ein Stichwort aufschreiben</string>
-    <string name="warning_message">Warnungsnachricht</string>
-    <string name="minutes">Minuten</string>
     <string name="app_icon">app_logo</string>
     <string name="accessibility_permission_app_blocker">
         Dieses Feature benötigt die Berechtigung, über anderen Apps dargestellt werden zu können, um zu funktionieren. Bitte aktiviere das zuerst, bevor du dieses aktivierst. Sollte etwas aufhören zu funktionieren, starte die App neu.\n\n
@@ -18,15 +16,11 @@
     <string name="close">Schließen</string>
     <string name="proceed">Fortfahren</string>
     <string name="cancel">Abbruch</string>
-    <string name="configure_warning_screen">Warnungsbildschirm</string>
     <string name="proceed_in">Bitte warte %1$d bis du fortfahren kannst.</string>
     <string name="select_all">Alle auswählen</string>
     <string name="clear_all">Alle löschen</string>
-    <string name="focus_ready">Bereit dich zu fokussieren?</string>
-    <string name="focus_subtitle_minimal">Zeit auswählen, dann starten</string>
     <string name="focus_start">Zügle mich</string>
     <string name="focus_create_group">Fokusgruppe erstellen</string>
-    <string name="focus_active">Fokusmodus ist aktiv</string>
     <string name="focus_end_session">Sitzung beenden</string>
     <string name="focus_group">Fokusgruppe</string>
     <string name="focus_new_group">Neue Gruppe erstellen</string>
@@ -57,9 +51,7 @@
     <string name="label_empty_dash">-</string>
     <string name="value_zero">0</string>
     <string name="label_add_plus">+</string>
-    <string name="screen_time">Bildschirmzeit</string>
     <string name="value_zero_time">0h 0m</string>
-    <string name="sample_usage_1h">1h App</string>
     <string name="reels_today">Reels heute</string>
     <string name="sample_reels_count">1.3k</string>
     <string name="sample_percentage_increase">+100%</string>
@@ -70,7 +62,6 @@
     <string name="disable_shortform_video_feeds">Verstecke Kurzforminhalte, um deine Aufmerksamkeitsspanne zu beschützen</string>
     <string name="auto_dnd">Auto BNS</string>
     <string name="autodnd_help_popup">Autmatisch Benachrichtigungen in deinen Fokussitzungen stummschalten</string>
-    <string name="turn_on_focus_mode_between_set">Bitte nicht stören automatisch täglich aktivieren</string>
     <string name="blocked_keywords">Stichwörter und Webseiten</string>
     <string name="filter_specific_words_across_apps">Halte deinen digitalen Raum friedlich, indem du bestimmte Wörter filterst.</string>
     <string name="stimulation_reducers">Achtsame Impulse</string>
@@ -80,9 +71,7 @@
     <string name="track_the_number_of_reels_consumed">Deine Nutzung von Kurzforminhalten messen und analysieren</string>
     <string name="grayscale_filter">Grautonfilter</string>
     <string name="reduce_visual_stimulation">Visuelle Stimulation reduzieren</string>
-    <string name="fuel_the_developer">Über den Entwickler ☕</string>
     <string name="hello_this_is_nethical_the_creator">Hey, I\'m Nethical, the person behind Curbox. I\'m 18, fresh out of high school, and a little obsessed with tech, art, and building cool things from scratch. A while back I went looking for a free app blocker that actually did what I wanted. Nothing came close, so I built my own. Curbox is that app, and I\'ve been pouring into it almost every day for over two years now. So happy you\'re here. I hope it helps you take your time back.</string>
-    <string name="support_the_project">Das Projekt unterstützen ↗</string>
     <string name="join_the_focus_pack">Werde Teil der Fokus Gemeinschaft</string>
     <string name="dont_fix_your_screen_time_alone">Repariere deine Bilschirmzeit nicht alleine. Tritt unserem Discord bei um Gleichgesinnte zu treffen, die sich gegenseitig unterstützen und Strategien teilen, um sich selbst zu verbessern.</string>
     <string name="join_the_discord">Tritt dem Discord bei</string>
@@ -114,7 +103,6 @@
     <string name="group_name_required">Bitte gib einen Gruppennamen ein</string>
     <string name="desc_10_apps_usage_based">10 Apps • Basierend auf Benutzung</string>
     <string name="no_app_groups_yet_create_one">Noch keine App Gruppen, erstelle eine!</string>
-    <string name="create_group">Gruppe erstellen</string>
     <string name="apps_to_block">ZU BLOCKIERENDE APPS</string>
     <string name="select_apps_0">Apps auswählen (0)</string>
     <string name="blocking_configuration">BLOCKIERUNGSKONFIGURATION</string>
@@ -142,33 +130,12 @@
     <string name="warning_section_title">WENN BLOCK AUSGELÖST</string>
     <string name="select_start_time">Startzeit auswählen</string>
     <string name="select_end_time">Endzeit auswählen</string>
-    <string name="usage_based">Basierend auf Nutzung</string>
-    <string name="time_based">Basierend auf Zeit</string>
-    <string name="configure_settings">Erlaubten Zeitplan konfigurieren</string>
     <string name="configure_warning_screen_1">Warnbildschirm konfigurieren</string>
-    <string name="link_time_group">Eine Zeitgruppe limitieren</string>
-    <string name="no_time_group">Keine Zeitgruppe (den ganzen Tag)</string>
-    <string name="linked_time_group">Zeitgruppe: %1$s</string>
-    <string name="linked_warning_managed">Warnbildschirm wird von verlinkter Benutzungsgruppe verwaltet</string>
     <string name="done">Fertig</string>
-    <string name="set_limits_for_each_day">Zeitgrenzen für jeden Tag setzen</string>
     <string name="hours">Stunden</string>
     <string name="minutes_1">Minuten</string>
-    <string name="its_a_temporary_block_that_appears">Es ist eine vorübergehende Sperre, die auftaucht wenn deine Zeit vorbei ist. Statt dich einfach auszusperren gibt es dir die Wahl: App direkt schließen oder &amp;quot;borrow&amp;quot; ein paar Minuten mehr bevor die Erinnerung wieder auftaucht.</string>
-    <string name="skip_this_screen_and_go_back">Diesen Bildschirm überspringen und direkt zurück gehen</string>
-    <string name="let_me_decide_how_many_extra">Lass mich dann entscheiden wie viele extra Minuten ich brauche</string>
-    <string name="use_a_predefined_limit_like_5">Verwende eine vorgegebene Zeit, z.B. 5 min</string>
-    <string name="show_me_the_warning_screen_but">Zeig mir einen Warnbildschirm aber lass mich nicht fortfahren</string>
-    <string name="how_long_to_unlock_for_after">Wie lange Freischalten nach Fortfahren?</string>
-    <string name="how_long_to_wait_before_being">Wie lange warten bevor der weiter-Knopf gedrückt werden kann. Verhindert, direkt den Knopf zu drücken ohne die Nachricht gelesen zu haben.</string>
-    <string name="duration_3_seconds">3 sek</string>
-    <string name="duration_9_seconds">9 sek</string>
-    <string name="duration_15_seconds">15 sek</string>
-    <string name="duration_30_seconds">30 sek</string>
-    <string name="allowed_time_ranges">Erlaubte Zeitspannen</string>
     <string name="apply_to_every_day">Auf jeden Tag anwenden</string>
     <string name="add_time_range">Zeitspanne hinzufügen</string>
-    <string name="save_time_ranges">Zeitspannen speichern</string>
     <string name="monday">Montag</string>
     <string name="sample_start_time">09:00 AM</string>
     <string name="to">bis</string>
@@ -177,7 +144,6 @@
     <string name="value_zero_minutes">0m</string>
     <string name="value_zero_percent">0%</string>
     <string name="a_few_final_steps">Ein paar finale Schritte</string>
-    <string name="select_what_apps_youd_like_to">Wähle aus welche Apps du einschränken willst</string>
     <string name="create_a_new_group">Neue Gruppe erstellen</string>
     <string name="use_a_focus_group_to_instantly">Verwende Fokusgruppen um direkt Fokussitzungen starten zu können mit den ausgewählten Apps und Webseiten</string>
     <string name="enter_group_name">Gruppenname wählen</string>
@@ -188,29 +154,14 @@
     <string name="block_all_except_selected">Alle bis auf Ausgewählte blockieren</string>
     <string name="let_me_quit_midsessions">Lass mich die Fokussitzung abbrechen</string>
     <string name="save_group">Gruppe speichern</string>
-    <string name="reel_blocker">Reel Sperre</string>
-    <string name="enable_reel_blocker">Reel Sperre aktivieren</string>
-    <string name="warning_screen">Warnungsbildschirm</string>
-    <string name="blocking_basis">Sperrungsbasis</string>
-    <string name="reel_count_based">Reel-Anzahl basiert</string>
-    <string name="configure_limits">Grenzen konfigurieren</string>
     <string name="reel_limits">Reel Grenzen</string>
     <string name="apply_same_limit_to_every_day">Selbe Grenze jeden Tag anwenden</string>
     <string name="maximum_reels_allowed">Maximal erlaubte Reels</string>
     <string name="save_limits">Grenzen Speichern</string>
-    <string name="keyword_blocker">Stichwortsperre</string>
-    <string name="enable_keyword_blocker">Stichwortsperre aktivieren</string>
     <string name="enter_a_keyword">Ein Stichwort oder eine Website eingeben</string>
-    <string name="redirection">Weiterleitung</string>
-    <string name="redirection_url">Weiterleitungs-URL</string>
-    <string name="configuration">Konfiguration</string>
-    <string name="search_recursively_for_blocked_keywords_on">Rekursiv nach gesperrten Stichwörtern in allen Texten auf dem Bildschirm suchen</string>
     <string name="block_all_browsers_except_supported_ones">Nicht unterstützte Browser blockieren</string>
     <string name="select_ignored_apps">Ignorierte Apps auswählen</string>
-    <string name="activity_powered_by">BETRIEBEN VON CURBOX</string>
-    <string name="your_digital_wellbeing">Dein digitales Wohlbefinden</string>
     <string name="total_today">SUMME HEUTE</string>
-    <string name="most_used">AM MEISTEN VERWENDET</string>
     <string name="crunching_numbers">Zahlen werden ausgewertet...</string>
     <string name="usage_welcome_title">Hallo lieber Nutzer</string>
     <string name="usage_welcome_message">Deine Appstatistiken werden genau hier erscheinen. Ich habe angefangen mitzustoppen, als du mich installiert hast. Bitte lies die Dokumentation, sodass du Curbox\' volles Potenzial ausschöpfen kannst.</string>
@@ -221,24 +172,13 @@
     <string name="no_auto_dnd_groups_yet_create">Noch keine auto-BNS Gruppen. Erstelle eine!</string>
     <string name="desc_10_apps_included">10 Apps • Beinhaltet</string>
     <string name="create_autodnd_group">Auto-BNS Gruppe erstellen</string>
-    <string name="apps_to_blockallow">APPS SPERREN/ERLAUBEN</string>
-    <string name="blocking_mode">SPERRMODUS</string>
     <string name="configure_schedule">Zeitplan konfigurieren</string>
-    <string name="exitable">Schließbar</string>
-    <string name="allow_focus_mode_to_be_exited">Fokusmodus erlauben, automatisch zu verlassen.</string>
-    <string name="save_schedule">Zeitplan speichern</string>
     <string name="track_the_number_of_short_videos">Miss die Anzahl von Kurzvideos, durch die du scrollst.</string>
     <string name="grayscale_filter_setup">Graustufeneinrichtung</string>
     <string name="no_grayscale_groups_yet_create_one">Noch keine Graustufengruppen. Erstelle eine!</string>
     <string name="desc_10_apps">10 Apps</string>
     <string name="create_grayscale_group">Graustufengruppe erstellen</string>
     <string name="apps_to_greyscale">APPS, DIE EINGEGRAUT WERDEN</string>
-    <string name="duration_25_minutes">25</string>
-    <string name="duration_15_minutes">15</string>
-    <string name="duration_30_minutes">30</string>
-    <string name="duration_60_minutes">60</string>
-    <string name="duration_120_minutes">120</string>
-    <string name="time_zero">00:00</string>
     <string name="your_phone_is_designed_to_be">Dein
         Handy
         ist
@@ -247,23 +187,13 @@
         zu fesseln</string>
     <string name="you_arent_lazy_and_your_willpower">Du bist nicht faul und dein Wille ist nicht gebrochen. Du kämpfst nur gegen Algorithmen, die von tausenden Psychologen gebaut wurden, um dich ans Handy zu fesseln.</string>
     <string name="lets_level_the_playing_field">Befreie auf meine Willenskraft</string>
-    <string name="lets_look_at_the_numbers">Lass uns auf die Zahlen schauen</string>
     <string name="how_many_hours_a_day_do">Wie viel scrollst du am Tag?</string>
     <string name="sample_usage_4_hours">4 std</string>
     <string name="over_a_year_that_is_60">Das ist 1 Woche deines Lebens, die du pro Jahr auf einen Bildschirm starrst</string>
     <string name="i_want_my_time_back">Ich will meine Zeit zurück</string>
     <string name="what_are_you_making_room_for">Wofür schaffst du Raum?</string>
-    <string name="mindless_scrolling_leaves_us_with_brain">Gedankenloses Scrollen hinterlässt uns vernebelt anstatt uns auszuruhen. Was würdest du lieber mit der zurückgewonnenen Zeit tun?</string>
-    <string name="focusing_on_deep_workstudying">Auf tiefe Arbeit/Lernen konzentrieren</string>
-    <string name="learning_a_new_skill_like_guitar">Eine neue Fähigkeit erlernen (Gitarre oder programmieren)</string>
-    <string name="being_present_with_friends_and_family">Präsent sein mit Freunden und Familie</string>
-    <string name="getting_actual_restful_sleep">Wirklich guten und erholsamen Schlaf bekommen</string>
     <string name="commit_to_these_goals">Verpflichte dich diesen Zielen gegenüber</string>
-    <string name="willpower_isnt_enough_we_use_friction">Willenskraft ist nicht genug. Wir verwenden Widerstand</string>
-    <string name="we_dont_just_block_your_apps">Wir blockieren nicht einfach deine Apps. Wir unterbrechen dein muscle memory. Wenn du gedankenlos auf Insta oder YouTube konsumierst, zwingen wir dich zum durchatmen und aktiv wählen, ob es deine Zeit wert ist.</string>
-    <string name="make_me_pause">Zwing mich, zu stoppen</string>
     <string name="choose_your_first_target">Wähle dein erstes Ziel</string>
-    <string name="dont_try_to_change_everything_at">Versuche nicht, alles auf einen Schlag anzugehen. Wähle die eine App, die dich am ehesten fesselt</string>
     <string name="instagram">Instagram</string>
     <string name="tiktok">TikTok</string>
     <string name="youtube">YouTube</string>
@@ -279,10 +209,8 @@
     <string name="give_us_the_keys">Gib die Werkzeuge</string>
     <string name="to_create_friction_and_give_you">Um Widerstand zu erzeugen und dir deine Zeit zurückzugeben benötigen wir tiefe Systemrechte.</string>
     <string name="display_over_other_apps">Über anderen Apps anzeigen</string>
-    <string name="usage_access">Benutzungszugriff</string>
     <string name="send_notifications">Benachrichtigungen senden</string>
     <string name="app_blocker_accessibility">Appsperre (Zugriff)</string>
-    <string name="do_you_want_to_restore_a">Willst du ein vorher erstelltest Backup laden? Das kannst du später nicht nochmal tun.</string>
     <string name="restore_backup">Backup wiederherstellen</string>
     <string name="enable_permissions">Berechtigungen aktivieren</string>
     <string name="add_widget_to_homescreen">Widget zum Startbildschirm hinzufügen</string>
@@ -296,13 +224,6 @@
     <string name="log_in">Anmelden</string>
     <string name="sync_across_devices">Zwischen Geräten synchronisieren</string>
     <string name="sync_across_devices_pitch">Ich behalte deine Einstellungen und Zeitstatistiken lokal auf deinem Handy oder Browser, verschlüsselt mit einem Schlüssel den nur du besitzt.</string>
-    <string name="sync_finish_setup_pitch">Du bist angemeldet. Ein letzter Schritt aktiviert die Synchronisation und aktiviert die Zeitmessung auf diesem Gerät</string>
-    <string name="finish_sync_setup">Einrichtung abschließen</string>
-    <string name="sync_is_on">Synchronisation ist an</string>
-    <string name="sync_is_on_pitch">Deine Einstellungen und Zeitstatistiken bleiben auf deinem Gerät. Klicke um die Synchronisation zu verwalten oder dich abzumelden.</string>
-    <string name="manage_sync">Synchronisation verwalten</string>
-    <string name="this_app_is_currently_under_focus">Diese App ist momentan unter dem Fokusmodus</string>
-    <string name="blocked_keyword_word_was_found">Blockiertes Stickwort -word wurde gefunden</string>
     <string name="please_provide_draw_over_other_apps">Bitte aktiviere \'Über anderen Apps anzeigen\', um diese Funktion richtig funktionieren zu lassen.</string>
     <string name="added_successfully">Erfolgreich hinzugefügt</string>
     <string name="package_already_exists">Paket existiert bereits</string>
@@ -315,7 +236,6 @@
     <string name="group_deleted">Gruppe gelöscht</string>
     <string name="please_select_at_least_one_app">Bitte wähle mindestens eine App aus</string>
     <string name="group_saved_successfully">Gruppe erfolgreich gespeichert</string>
-    <string name="warning_link_blocker_may_not_work">WARNUNG: Blockieren von Links funknktioniert eventuell nicht überall.</string>
     <string name="active_reducers">Aktive Reduzierer</string>
     <string name="add_a_reducer">Einen Reduzierer hinzufügen</string>
     <string name="mindful_messages">Achtsame Nachrichten</string>
@@ -323,22 +243,8 @@
     <string name="target_apps">ZIELAPPS</string>
     <string name="messages_label">NACHRICHTEN</string>
     <string name="messages_hint">Eins pro Zeile. Variabeln: {app_usage_today}, {screentime_today}, {live_session_duration}, {reel_count}</string>
-    <string name="overlay_position">Postion des Textes</string>
-    <string name="position_top">Oben</string>
-    <string name="position_center">Zentrum</string>
-    <string name="position_bottom">Unten</string>
 
-    <string name="default_rules">Standardregeln</string>
-    <string name="custom_rules">Individuelle Regeln</string>
-    <string name="custom_rule_hint">Hinweis für individuelle Regeln</string>
-    <string name="pick_element">Element auswählen</string>
 
-    <string name="picker_channel_name">Elementwähler</string>
-    <string name="picker_channel_description">Benachrichtigungen für den Elementwähler</string>
-    <string name="picker_notification_title">Elementwähler bereit</string>
-    <string name="picker_notification_text">Klicke um ein Element auszuwählen</string>
-    <string name="picker_active_title">Elementwähler aktiv</string>
-    <string name="picker_active_text">Klicke auf Elemente auf dem Bilschirm um sie auszuwählen</string>
 
     <string name="appearance">Erscheinungsbild</string>
     <string name="btn_set_position">Setze Position</string>
@@ -353,14 +259,10 @@
     <string name="position_hint">Ziehe den Indikator, bis die Überlagerung erscheint</string>
 
     <!-- Extracted Strings -->
-    <string name="dialog_question_mark">\?</string>
     <string name="blocking_service_channel_name">Sperrservice</string>
     <string name="blocking_service_channel_description">Läuft im Hintergrund um dich zu schützen</string>
     <string name="blocking_service_notification_title">Curbox %1$s ist aktiv</string>
     <string name="blocking_service_notification_text">Beschütze dein digitales Wohlbefinden</string>
-    <string name="picker_no_element_found">Kein Element gefunden an diesem Punkt</string>
-    <string name="picker_no_element_selected">Kein Element ausgewählt</string>
-    <string name="picker_default_text">Text</string>
     <string name="dialog_title_select_date_range">Datumsspanne auswählen</string>
     <string name="dialog_title_select_export_range">Exportspanne auswählen</string>
     <string name="toast_unsupported_browser">Nicht unterstützter Browser</string>
@@ -377,36 +279,8 @@
     <string name="onboarding_restricted_settings_desc">Android 13+ schränkt Zugriffsdienste für Apps, die nicht aus App Stores (wie F-Droid oder Play Store) kommen ein. Um Berechtigungen zu aktivieren musst du \'Eingeschränkte Einstellungen\' manuell für Curbox aktivieren. Alternativ installire via F-Droid App (nicht Webseite), um dies zu vermeiden.</string>
     <string name="onboarding_show_tutorial">Anleitung um Berechtigungen zu aktivieren anzeigen</string>
     <string name="onboarding_shizuku_grant">Gewähre alle Berechtigungen mit Shizuku</string>
-    <string name="sync_paywall_title">Stelle die Einrichtung der Synchronisation fertig.</string>
-    <string name="sync_paywall_subtitle">Dein Account ist bereit. Wähle den jährlichen Plan um fortzufahren.</string>
-    <string name="sync_paywall_body">Ein Plan. Alles unten geschriebene ist darin enthalten</string>
-    <string name="sync_paywall_feature_devices">✓ Synchronisiere jedes Handy und jeden Browser</string>
-    <string name="sync_paywall_feature_private">✓ Halte deine Daten sicher mit einem persönlichen Passwort</string>
-    <string name="sync_paywall_feature_cancel">✓ Kündige vor der nächsten Erneuerung</string>
-    <string name="sync_paywall_price">%1$s pro Jahr</string>
-    <string name="sync_paywall_price_fallback">$25</string>
-    <string name="sync_paywall_subscribe">Abonniere</string>
-    <string name="sync_paywall_subscribe_price">Fortfahren für %1$s</string>
-    <string name="sync_paywall_restore">Mein Abo wiederherstellen</string>
-    <string name="sync_paywall_checking">Prüfe dein Abo</string>
-    <string name="sync_paywall_renewal_note">Erneuert sich jedes Jahr bis du abbrichst.</string>
-    <string name="sync_paywall_signed_in_as">Angemeldet als %1$s</string>
-    <string name="sync_paywall_your_account">dein Account</string>
-    <string name="pairing_code_warning_title">Halte diesen Code privat</string>
-    <string name="pairing_code_warning_message">Dieser Code beinhaltet den geheimen Schlüssel, der all deine synchronisierten Daten freischaltet. Jeder, der ein Foto davon macht, kann deine Daten lesen. Bitte mach keine Screenshots und teile ihn auf keinen Fall. Der Code versteckt sich selbst nach einer Minute.</string>
-    <string name="pairing_code_show">Code anzeigen</string>
     <string name="dnd_access_dialog_title">Bitte nicht stören</string>
     <string name="dnd_access_dialog_message">Curbox benötigt dies, um Bitte nicht stören für dich zu aktivieren, sodass du Anrufe und Wecker stummschalten kannst während du dich fokussierst. Ohne kann Curbox Ablenkungen nicht stummschalten.\n\n🔒 Curbox sammelt, sendet oder speichert niemals deine Daten auf einem Server ohne deine Zustimmung.\n\n🛡️ Curbox respektiert deinen Frieden: Es benutzt dies nur um Ablenkungen stummzuschalten wenn du danach fragst.</string>
-    <string name="picker_dialog_block_element">Dieses Element blockieren</string>
-    <string name="picker_dialog_generated_rule">Generierte Regel:</string>
-    <string name="picker_dialog_rule_desc">Auto-generiert aus deiner Auswahl. Wechsle zwischen Chips unten um anzupassen.</string>
-    <string name="picker_dialog_element_properties">⊕ Eigenschaften des Elements</string>
-    <string name="picker_dialog_properties_desc">Was identifiziert dieses Element? Schalte um, um das Element dieser Regel hinzuzufügen/zu entfernen.</string>
-    <string name="picker_dialog_blocking_action">⚡ Blockiere Aktion</string>
-    <string name="picker_dialog_action_desc">Was passiert wenn dieses Element nicht gefunden wird?</string>
-    <string name="picker_dialog_advanced">⚙ Fortgeschritten</string>
-    <string name="picker_dialog_advanced_desc">Zuteilungsverhalten wird angepasst</string>
-    <string name="picker_dialog_label_optional">💬 Markierung (optional)</string>
     <string name="dialog_add_websites">Webseiten hinzufügen</string>
     <string name="dialog_selected_count">Ausgewählt: %1$d</string>
     <string name="dialog_turn_on_dnd">Bitte nicht stören aktivieren</string>
@@ -422,29 +296,17 @@
     <string name="grayscale_shizuku_desc">Diese Funktion benötigt Shizuku Berechtiungen um den Graustufenfilter korrekt anzuwenden.</string>
     <string name="grayscale_secure_settings_desc">Curbox benötigt eine einmalige Berechtigung, deine Bilschirmfarben zu verändern. Erteile diese mit Shizuku. Danach funktionieren die Graustufen von selbst, auch wenn du dein Handy neu startest.</string>
     <string name="btn_grant_permission">Berechtigungen erteilen</string>
-    <string name="picker_control_tap_to_select">Klicke auf ein Element um es auszuwählen</string>
-    <string name="btn_deeper">Tiefer</string>
-    <string name="btn_parent">Eltern</string>
-    <string name="btn_block">Block</string>
-    <string name="btn_all">Alle</string>
-    <string name="btn_move">Bewegen</string>
     <string name="label_group_name">Gruppenname</string>
     <string name="label_app_blocker">Appsperre</string>
     <string name="default_focus_duration_value">25</string>
     <string name="label_mins">mins</string>
     <string name="create_keyword_group_title">Stichwortgruppe erstellen</string>
     <string name="label_keywords_to_block">Zu sperrende Stichwörter</string>
-    <string name="label_unlock_behavior">Verhalten bei Entsperrung</string>
-    <string name="label_url_redirection">URL Weiterleitung</string>
-    <string name="label_show_warning_screen">Warnungbildschirm anzeigen</string>
     <string name="label_keyword_blocker_title">Stichwortsperre</string>
     <string name="label_no_keyword_groups">Noch keine Stichwörtergruppen. Erstelle eine!</string>
-    <string name="btn_undo">RÜCKGÄNGIG</string>
     <string name="label_loading">Lädt </string>
     <string name="warning_config_title">Warnungsbildschirmskonfiguration</string>
     <string name="warning_config_desc">Stell ein was passiert, wenn du deine Grenze erreichst.</string>
-    <string name="label_fixed_unlock_duration">Festgelegte Entsperrdauer: 5 mins</string>
-    <string name="label_wait_before_unlocking">Warten vor Ensperrung: 15s</string>
     <string name="label_wait_desc">Zwingt dich, nachzudenken bevor zu die Sperre umgehst</string>
     <string name="label_qr_auth">QR-/Barcodeauthentifizierung</string>
     <string name="btn_generate_new">Neu generieren</string>
@@ -456,20 +318,13 @@
     <string name="label_typing_desc">Schreib den Satz, den der Nutzer genau abtippen muss, um die Sperre zu umgehen:</string>
     <string name="label_intent_auth">Länge der Freischaltephrase</string>
     <string name="label_intent_min_desc">Ich wähle aus wie viele Zeichen jemand tippen muss bevor er fortfahren kann.</string>
-    <plurals name="warning_intent_min_length">
-        <item quantity="one">Minimum an Zeichen: %1$d</item>
-        <item quantity="other">Minimum an Zeichen: %1$d</item>
-    </plurals>
     <plurals name="warning_intent_chars_needed">
         <item quantity="one">Schreib mindestens %1$d Zeichen (%2$d mehr)</item>
         <item quantity="other">Schreibe mindestens %1$d Zeichen (%2$d mehr)</item>
     </plurals>
     <string name="label_limit_unlock_frequency">Freichalteintervall beschränken</string>
-    <string name="label_allowed_proceeds">Erlaubte Prozesse: 3</string>
-    <string name="label_time_window">Zeitfenster: 60 mins</string>
     <string name="label_vibrate_brightness">Vibriere \u0026 max Helligkeit bei Warnung</string>
     <string name="label_reducer_analytics">Verringererstatistiken</string>
-    <string name="label_logged_intents">Dokumentierte Versuche</string>
     <string name="label_logged_intents_desc">Betrachte deine letzten Entsperrgründe</string>
     <string name="label_app_pause">App-Pause</string>
     <string name="label_rather_spend_time">Ich würde in dieser Zeit lieber...</string>
@@ -481,11 +336,7 @@
     <string name="btn_share">Teilen</string>
     <string name="focus_add_websites_desc">Gib spezifische Webseiten (z.B. facebook.com/*) oder verwende andere Stickpunkte zum Blockieren oder Erlauben während der Fokussitzung.</string>
     <string name="create_app_group_title">Appgruppe erstellen</string>
-    <string name="label_on_each_open">Bei jedem Öffnen</string>
-    <string name="label_configure_allowed_schedule">Konfiguriere erlaubten Zeitplan</string>
 
-    <string name="hint_picker_query">pkg:com.app id:btn</string>
-    <string name="hint_picker_label">z.B. verstecke Reels, blockiere Werbung...</string>
     <string name="hint_type_sentence">Tippe exakt den Satz von oben</string>
     <string name="hint_unlock_reason">Warum musst du diese App jetzt benutzen?</string>
     <string name="hint_search_intents">Suche Gründe oder Apps</string>
@@ -562,7 +413,6 @@
     <string name="terms_consent_exit">Nicht jetzt</string>
 
     <!-- Curbox API -->
-    <string name="label_automation">AUTOMATISIERUNG</string>
     <string name="api_screen_title">Curbox API</string>
     <string name="api_card_subtitle">Lass andere Apps Curbox steuern</string>
     <string name="api_screen_subtitle">Andere Apps können dich auffordern, Fokusmodus zu starten, Sperren zu aktivieren und deine Daten auszulesen. Du entscheidest, wer Zugriff bekommt.</string>
@@ -731,7 +581,6 @@
     <string name="api_permission_deny">Ablehnen</string>
 
     <!-- Common / shared -->
-    <string name="common_back">Zurück</string>
     <string name="common_mins">mins</string>
     <string name="common_continue">Fortfahren</string>
     <string name="okay">Okay</string>
@@ -740,10 +589,7 @@
     <string name="percent_value">%1$d%%</string>
     <string name="selected_count">Ausgewählt: %1$d</string>
     <string name="select_apps_count">Ausgewählte Apps (%1$d)</string>
-    <string name="group_type_time_based">Zeitbasiert</string>
-    <string name="group_type_usage_based">Nutzungsbasiert</string>
     <string name="group_details_apps">%1$d Apps • %2$s</string>
-    <string name="group_details_keywords">%1$d Stichwörter • %2$s</string>
     <string name="group_details_keywords_only">%1$d Stichwörter</string>
     <string name="group_details_apps_only">%1$d Apps</string>
     <string name="group_no_usage_left">Keine Zeit übrig in diesem Zeitplan</string>
@@ -752,81 +598,6 @@
     <string name="warning_current_app_session">Aktuelle Appsitzung</string>
 
     <!-- Sync account -->
-    <string name="account_sync_title">Zwischen meinen Geräten synchronisieren</string>
-    <string name="account_sync_desc">Ich behalte deine Einstellungen und Zeitstatistiken synchron auf allen Handys und Browsern. Alles ist mit einem Schlüssel gesichert, den nur sie haben und den sonst niemand lesen kann.</string>
-    <string name="account_hint_email">Email</string>
-    <string name="account_hint_password">Passwort</string>
-    <string name="account_hint_email_code">Emailcode</string>
-    <string name="account_hint_new_password">Neues Passwort</string>
-    <string name="account_hint_secret_phrase">Geheime Phrase</string>
-    <string name="account_hint_paste_code">Kopplungscode eingeben</string>
-    <string name="account_pairing_code_desc">Kopplungscode</string>
-    <string name="account_sign_in">Anmelden</string>
-    <string name="account_continue_google">Mit Google fortfahren</string>
-    <string name="account_google_fast_hint">Schnellste Option. Kein Passwort der Code nötig</string>
-    <string name="account_use_email">Alternativ Email verwenden</string>
-    <string name="account_email_section">Email und Passwort</string>
-    <string name="account_use_different_account">Einen andere Account verwenden</string>
-    <string name="account_forgot_password">Passwort vergessen?</string>
-    <string name="account_new_here">Neu hier? </string>
-    <string name="account_create_account">Einen Account erstellen</string>
-    <string name="account_verify_continue">Verifizieren und fortfahren</string>
-    <string name="account_send_new_code">Einen neuen Code senden</string>
-    <string name="account_send_reset_code">Zurücksetzungscode senden</string>
-    <string name="account_back_to_sign_in">Zurück zur Anmeldung</string>
-    <string name="account_set_new_password">Neues Passwort setzen</string>
-    <string name="account_turn_on_sync">Synchronisation aktivieren</string>
-    <string name="account_pair_desc">Wenn du dein anderes Gerät zur Hand hast ist das der einfachste Weg. Öffne dort die Synchronisation und zeig dir dort den Code an.</string>
-    <string name="account_scan_code">Einen Code scannen</string>
-    <string name="account_use_pasted_code">Eingefügten Code verwenden</string>
-    <string name="account_show_pairing_code">Kopplungscode für ein anderes Gerät anzeigen</string>
-    <string name="account_pairing_warning">Jeder der diesen Code sieht kann deine Daten lesen, also zeit ihn nur deinen eigenen Geräten.</string>
-    <string name="account_sync_now">Jetzt synchronisieren</string>
-    <string name="account_sign_out">Aus diesem Gerät abmelden</string>
-    <string name="account_device_name">Dieses Gerät</string>
-    <string name="account_save_device_name">Name speichern</string>
-    <string name="account_what_syncs">WAS SYNCHRONISIERT</string>
-    <string name="account_sync_usage_stats">Nutzerstatistiken</string>
-    <string name="account_sync_reducer_configs">Verringererstatistiken</string>
-    <string name="account_usage_shown_from">NUTZUNG ANZEIGEN VON</string>
-    <string name="account_usage_filter_desc">Wähle aus welche anderen Geräte zur gemeinsamen Nutzung beitragen.</string>
-    <string name="account_all_devices">Alle Geräte</string>
-    <string name="account_create_account_action">Account erstellen</string>
-    <string name="account_already_have_account">Du hast bereits einen Account? </string>
-    <string name="account_unlock_data">Meine Daten freischalten</string>
-    <string name="account_make_secret_phrase">Eine geheime Phrase festlegen</string>
-    <string name="account_title_sync_on">Synchronisierung ist an</string>
-    <string name="account_title_check_email">Prüfe deine Emails</string>
-    <string name="account_title_reset_password">Passwort zurücksetzen</string>
-    <string name="account_title_choose_new_password">Neues Passwort wählen</string>
-    <string name="account_title_create_account">Deinen Account erstellen</string>
-    <string name="account_title_welcome_back">Willkommen zurück</string>
-    <string name="account_title_sign_in">Synchronisation aktivieren</string>
-    <string name="account_sub_sync_on">Deine Einstellungen und Zeitstatistiken bleiben aktuell auf all deinen Geräten.</string>
-    <string name="account_sub_unlock">Tippe die geheime Phrase ein, die du auf deinem ersten Gerät erstellt hast. Solltest du das Gerät in der Nähe haben, tippe auf einen Code scannen unten und verbinde dieses Gerät ohne irgendwas tippen zu müssen.</string>
-    <string name="account_sub_make_phrase">Erstelle ein Phrase die du dir merken kannst. Sie bleibt auf deinen Geräten und hält deine synchronisierten Daten privat.</string>
-    <string name="account_sub_verify">Code wurde per Email gesendet an %1$s. Gib ihn unten ein um die Einrichtung abzuschließen</string>
-    <string name="account_sub_forgot">Sag mir deine Email-Adresse und ich schicke dir einen Code, um dein Passwort zurückzusetzen.</string>
-    <string name="account_sub_reset">Gib den Code ein, der per Email kam und dein neues Passwort.</string>
-    <string name="account_sub_sign_up">Erstelle einene Account sodass deine Einstellungen und Statistiken bei dir bleiben</string>
-    <string name="account_sub_sign_in">Melde dich an um deine Einstellungen und Zeitstatistiken live auf allen Geräten zu haben, Ende zu Ende verschlüsselt.</string>
-    <string name="account_sub_google_first">Verwende Google für eine schnelle Einrichtung.Deine Einstellungen und Statistiken bleiben privat.</string>
-    <string name="account_msg_new_code_sent">Neuer Code gesendet an %1$s</string>
-    <string name="account_msg_reset_code_sent">Wiederherstellungscode gesendet an %1$s</string>
-    <string name="account_msg_phrase_too_short">Wähle eine geheime Phrase mit mindestens 8 Buchstaben</string>
-    <string name="account_msg_phrase_too_long">Die geheime Phrase ist zu lang.</string>
-    <string name="account_err_sync_data_invalid">Einige synchronisierte Daten konnten nicht gelesen werden.</string>
-    <string name="account_msg_syncing">Neuste Daten jetzt Synchronisiert.</string>
-    <string name="account_err_generic">Etwas ist schief gelaufen. Bitte versuch es erneut.</string>
-    <string name="account_err_invalid_login">Email-Adresse oder Passwort stimmen nicht. Bitte versuch es nochmal.</string>
-    <string name="account_err_already_registered">Es existiert bereits ein Account mit dieser Email-Adresse. Bitte melde dich stattdessen an.</string>
-    <string name="account_err_email_not_confirmed">Bestätige zuerst deine Email-Adresse. Ich kann dir einen neuen Code senden.</string>
-    <string name="account_err_bad_code">Der Code hat nicht funktioniert. Prüfe ihn oder frag mich, einen neuen zu senden.</string>
-    <string name="account_err_rate_limit">Bitte warte einen Moment, dann versuch es erneut</string>
-    <string name="account_err_weak_password">Bitte verwende ein Passwort mit mindestens 6 Zeichen oder Zahlen.</string>
-    <string name="account_err_no_network">Ich kann das Internet grade nicht erreichen. Bitte prüfe deine Verbindung und versuche es erneut.</string>
-    <string name="account_err_google">Google-Anmeldung hat nicht funktioniert. Versuche es erneut oder verwende deine Email-Adresse.</string>
-    <string name="account_err_google_not_configured">Google-Anmeldung ist noch nicht bereit. Bitte verwende vorerst deine Email-Adresse.</string>
 
     <!-- Language -->
     <string name="language">Sprache</string>
@@ -870,11 +641,7 @@
     <string name="focus_add_websites_title">Webseiten/Stichwörter hinzufügen</string>
 
     <!-- Warning screen config -->
-    <string name="warning_fixed_unlock_duration">Feste Freischaltedauer: %1$d mins</string>
     <string name="warning_fixed_unlock_duration_lower">Feste Freischaltedauer: %1$d mins</string>
-    <string name="warning_wait_before_unlock">Warten vor Freischaltung: %1$ds</string>
-    <string name="warning_allowed_proceeds">Erlaubte Prozesse: %1$d</string>
-    <string name="warning_time_window">Zeitfenster: %1$d %2$s</string>
     <string name="warning_fixed_unlock_duration_input">Feste Freischaltedauer</string>
     <string name="warning_wait_before_unlock_input">Warten vor Freischaltung</string>
     <string name="warning_intent_min_length_input">Minimale Zeichenmenge</string>
@@ -904,7 +671,6 @@
     <string name="warning_typing_quote">\"%1$s\"</string>
     <string name="warning_scan_qr_code">QR-Code scannen</string>
     <string name="warning_scan_nfc_tag">NFC-Tag scannen</string>
-    <string name="warning_math_problem">Löse %1$s</string>
     <string name="warning_math_progress">%1$d von %2$d gelöst</string>
     <string name="warning_math_answer_hint">Antwort</string>
     <string name="warning_math_check_answer">Antwort überprüfen</string>
@@ -928,20 +694,11 @@
     <string name="warning_option_adaptive_math_desc">Löse Aufgaben mit adaptiver Schwierigkeit</string>
     <string name="label_adaptive_math">Adaptive Mathe</string>
     <string name="label_adaptive_math_desc">Wähle aus wie viele korrekte Lösungen nötig sind</string>
-    <string name="warning_math_starting_level">Startlevel: %1$d</string>
     <string name="label_adaptive_math_level_desc">Level 1 verwendet simple Arithmetik. Level 10 kombiniert Dezimalzahlen, Brüche, Wurzeln, Exponenten und Rechenregeln.</string>
-    <plurals name="warning_math_question_count">
-        <item quantity="one">Benötigte Frage: %1$d</item>
-        <item quantity="other">Benötigte Fragen: %1$d</item>
-    </plurals>
     <string name="label_focus_goal_unlock">Tägliche Fokusvorraussetzung</string>
     <string name="label_focus_goal_unlock_desc">Das Entsperren ist erlaubt nachdem die ausgewählte Fokuszeit für heute erreicht wurde.</string>
     <string name="hint_focus_group">Fokusgruppe</string>
     <string name="warning_focus_goal_group_required">Fokusgruppe wählen</string>
-    <plurals name="warning_focus_goal_minutes">
-        <item quantity="one">Benötigte Fokuszeit: %1$d Minute</item>
-        <item quantity="other">Benötigte Fokuszeit: %1$d Minuten</item>
-    </plurals>
     <string name="warning_focus_goal_checking">Prüfe Fokusfortschritt</string>
     <string name="warning_focus_goal_complete">Fokusziel erreicht für %1$s.</string>
     <string name="warning_focus_goal_not_met">Fokusziel nicht erreicht. %1$d Minuten fehlen für %2$s.</string>

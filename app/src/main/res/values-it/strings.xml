@@ -4,23 +4,17 @@
     <string name="add">Aggiungi</string>
     <string name="save">Salva</string>
     <string name="write_down_a_keyword">Scrivi una parola chiave</string>
-    <string name="warning_message">Messaggio di avviso</string>
-    <string name="minutes">minuti</string>
     <string name="app_icon">app_icon</string>
 
     <string name="admin_permission_desc">Protezione anti-disinstallazione di Curbox</string>
     <string name="close">Chiudi</string>
     <string name="proceed">Continua</string>
     <string name="cancel">Annulla</string>
-    <string name="configure_warning_screen">Schermata di avviso</string>
     <string name="proceed_in">Attendi %1$d secondi prima di premere continua</string>
     <string name="select_all">Seleziona tutto</string>
     <string name="clear_all">Deseleziona tutto</string>
-    <string name="focus_ready">Pronto a concentrarti?</string>
-    <string name="focus_subtitle_minimal">Seleziona la durata, poi avvia.</string>
     <string name="focus_start">Fammi concentrare</string>
     <string name="focus_create_group">Crea gruppo Focus</string>
-    <string name="focus_active">La modalità Focus è attiva</string>
     <string name="focus_end_session">Termina sessione</string>
     <string name="focus_group">Gruppo Focus</string>
     <string name="focus_new_group">Crea nuovo gruppo</string>
@@ -50,9 +44,7 @@
     <string name="label_empty_dash">-</string>
     <string name="value_zero">0</string>
     <string name="label_add_plus">+</string>
-    <string name="screen_time">Tempo sullo schermo</string>
     <string name="value_zero_time">0h 0m</string>
-    <string name="sample_usage_1h">1h App</string>
     <string name="reels_today">Reel oggi</string>
     <string name="sample_reels_count">1.3k</string>
     <string name="sample_percentage_increase">+100%</string>
@@ -64,9 +56,6 @@
         Nascondi i video brevi per aiutarti a mantenere la capacità di attenzione.
     </string>
     <string name="auto_dnd">DND automatico</string>
-    <string name="turn_on_focus_mode_between_set">
-        Attiva automaticamente la modalità Non disturbare secondo il tuo programma giornaliero.
-    </string>
     <string name="blocked_keywords">Parole chiave e siti web</string>
     <string name="filter_specific_words_across_apps">
         Mantieni il tuo spazio digitale più sereno filtrando argomenti specifici.
@@ -86,11 +75,9 @@
     </string>
     <string name="grayscale_filter">Filtro scala di grigi</string>
     <string name="reduce_visual_stimulation">Riduci la stimolazione visiva</string>
-    <string name="fuel_the_developer">Offri un caffè allo sviluppatore ☕</string>
     <string name="hello_this_is_nethical_the_creator">
         Ciao, sono Nethical, il creatore di Curbox. Ho 17 anni e frequento il liceo, con una grande passione per la tecnologia e i computer. Qualche anno fa non riuscivo a trovare una soluzione gratuita per bloccare le app che soddisfacesse davvero le mie esigenze, quindi ho deciso di crearne una io stesso. Se trovi Curbox utile, considera anche una piccola donazione per supportarne lo sviluppo continuo. Grazie!
     </string>
-    <string name="support_the_project">Supporta il progetto ↗</string>
     <string name="join_the_focus_pack">Unisciti al Focus Pack 🐾</string>
     <string name="dont_fix_your_screen_time_alone">
         Non affrontare da solo il problema del tempo sullo schermo. Unisciti al nostro Discord di persone con gli stessi obiettivi, che si aiutano a vicenda e condividono strategie per migliorare la concentrazione.
@@ -132,8 +119,4 @@
     <string name="warning_section_title">QUANDO SI ATTIVA IL BLOCCO</string>
     <string name="select_start_time">Seleziona l’ora di inizio</string>
     <string name="select_end_time">Seleziona l’ora di fine</string>
-    <string name="link_time_group">Limita a un gruppo orario</string>
-    <string name="no_time_group">Nessun gruppo orario (tutto il giorno)</string>
-    <string name="linked_time_group">Gruppo orario: %1$s</string>
-    <string name="linked_warning_managed">La schermata di avviso è gestita dal gruppo di utilizzo collegato</string>
 </resources>
