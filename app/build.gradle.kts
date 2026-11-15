@@ -1,13 +1,5 @@
 import java.util.Locale
 
-// Public OAuth web client ID used to verify Google ID tokens. The Google button
-// stays hidden when it is absent so release builds never expose a dead action.
-val googleWebClientId = providers.gradleProperty("CURBOX_GOOGLE_WEB_CLIENT_ID")
-    .orElse(providers.environmentVariable("CURBOX_GOOGLE_WEB_CLIENT_ID"))
-    .getOrElse("")
-
-fun String.asBuildConfigString(): String = "\"${replace("\\", "\\\\").replace("\"", "\\\"")}\""
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -126,18 +118,6 @@ android {
         }
     }
 
-    sourceSets {
-        // Sync code removed; keep structure for potential future reintroduction.
-    }
-
-
-    splits {
-        abi {
-            isEnable = false
-
-        }
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -209,14 +189,11 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.kotlinx.coroutines.android)
 
-    // Sync removed. No network/auth/sync dependencies.
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.mpandroidchart)
-    implementation(libs.timerangepicker)
 
 }
 androidComponents {

@@ -1,6 +1,5 @@
 [versions]
 agp = "8.13.2"
-anychartAndroid = "1.1.5"
 api = "13.1.5"
 datastore = "1.2.1"
 fragmentKtx = "1.8.9"
@@ -18,18 +17,9 @@ constraintlayout = "2.1.4"
 lifecycleViewmodel = "2.10.0"
 mpandroidchart = "v3.1.0"
 room = "2.6.1"
-timerangepicker = "1.0.0"
-okhttp = "4.12.0"
-securityCrypto = "1.1.0-alpha06"
-work = "2.9.1"
 coroutines = "1.7.3"
-credentials = "1.5.0"
-googleId = "1.1.1"
 
 [libraries]
-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
-androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
-androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "work" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
@@ -37,7 +27,6 @@ androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-anychart-android = { module = "com.github.AnyChart:AnyChart-Android", version.ref = "anychartAndroid" }
 api = { module = "dev.rikka.shizuku:api", version.ref = "api" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -50,10 +39,6 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
 provider = { module = "dev.rikka.shizuku:provider", version.ref = "api" }
-timerangepicker = { module = "nl.joery.timerangepicker:timerangepicker", version.ref = "timerangepicker" }
-androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
-androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
-googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleId" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
