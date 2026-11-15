@@ -2219,4 +2219,9 @@
     </plurals>
     <string name="urge_surf_go_home">Go to home screen</string>
     <string name="scheduled_notifications">Scheduled Notifications</string>
+    <string name="scheduled_notifications_ping_title">Your notifications are here</string>
+    <plurals name="scheduled_notifications_ping_body">
+        <item quantity="one">%d notification waited for this time.</item>
+        <item quantity="other">%d notifications waited for this time.</item>
+    </plurals>
 </resources>

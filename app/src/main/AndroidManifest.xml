@@ -119,6 +119,19 @@
                 android:value="App blocking and usage monitoring for digital wellbeing" />
         </service>
 
+        <!-- Holds notifications for Scheduled Notifications. Runs beside the blocker so the
+             main process is not started for every notification. -->
+        <service
+            android:name=".services.ScheduledNotificationsService"
+            android:exported="true"
+            android:label="@string/scheduled_notifications"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:process=":app_blocker_service">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
         <service
             android:name=".services.NodePickerService"
             android:exported="false"
