@@ -58,6 +58,30 @@ android {
         abortOnError = false
     }
 
+    // Libraries ship strings for about 80 languages. Keep only the ones Curbox translates.
+    androidResources {
+        localeFilters += listOf("en", "ar", "de", "es", "it", "ja", "pt-rBR", "ru", "tr", "vi", "zh-rCN")
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
+    packaging {
+        resources {
+            excludes += listOf(
+                "META-INF/**/LICENSE.txt",
+                "META-INF/*.version",
+                "META-INF/*.kotlin_module",
+                "META-INF/com/android/build/gradle/app-metadata.properties",
+                "kotlin/**",
+                "kotlin-tooling-metadata.json",
+                "DebugProbesKt.bin"
+            )
+        }
+    }
+
     defaultConfig {
         applicationId = "neth.iecal.curbox"
         minSdk = 26
@@ -116,7 +140,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

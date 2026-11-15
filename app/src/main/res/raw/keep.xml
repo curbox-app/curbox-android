@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Background art is looked up by field name, so the resource shrinker cannot see it. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@string/ascii*" />
