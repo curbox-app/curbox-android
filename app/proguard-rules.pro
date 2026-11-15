@@ -5,6 +5,9 @@
 # storage format, and default constructors supply the defaults for fields missing in old JSON.
 -keep class neth.iecal.curbox.data.models.** { *; }
 -keep class neth.iecal.curbox.ui.views.Contributor { *; }
+# Settings stores a Pair, which Gson writes as "first" and "second".
+-keepclassmembers class kotlin.Pair { <fields>; }
+-keepclassmembers class kotlin.Triple { <fields>; }
 
 # MPAndroidChart animates through ObjectAnimator property names.
 -keep class com.github.mikephil.charting.animation.ChartAnimator { *; }
