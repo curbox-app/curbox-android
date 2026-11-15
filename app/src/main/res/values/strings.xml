@@ -2218,4 +2218,5 @@
         <item quantity="other">Your cravings usually drop by %d points in 3 minutes.</item>
     </plurals>
     <string name="urge_surf_go_home">Go to home screen</string>
+    <string name="scheduled_notifications">Scheduled Notifications</string>
 </resources>

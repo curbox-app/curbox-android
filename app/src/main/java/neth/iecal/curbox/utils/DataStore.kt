@@ -304,6 +304,7 @@ class DataStoreManager(private val context: Context) {
                 isWebsiteUsageTrackingEnabled = current.isWebsiteUsageTrackingEnabled,
                 mindfulMessageConfig = current.mindfulMessageConfig,
                 sipStretchConfig = current.sipStretchConfig,
+                scheduledNotificationsConfig = current.scheduledNotificationsConfig,
                 uiHiderConfig = current.uiHiderConfig,
                 nextWebsiteRecheckTime = current.nextWebsiteRecheckTime,
                 externalUnlockConditions = current.externalUnlockConditions,
@@ -464,6 +465,10 @@ class DataStoreManager(private val context: Context) {
 
     suspend fun updateSipStretchConfig(config: neth.iecal.curbox.data.models.SipStretchConfig) {
         updateGated(GatedSettingsField.SIP_STRETCH) { config }
+    }
+
+    suspend fun updateScheduledNotificationsConfig(config: neth.iecal.curbox.data.models.ScheduledNotificationsConfig) {
+        updateGated(GatedSettingsField.SCHEDULED_NOTIFICATIONS) { config }
     }
 
     suspend fun updateSipStretchBreakEndsAt(endsAtMs: Long) {
@@ -782,6 +787,9 @@ class DataStoreManager(private val context: Context) {
                 GatedSettingsField.SIP_STRETCH -> settings.copy(
                     sipStretchConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.SipStretchConfig::class.java)
                 )
+                GatedSettingsField.SCHEDULED_NOTIFICATIONS -> settings.copy(
+                    scheduledNotificationsConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.ScheduledNotificationsConfig::class.java)
+                )
                 GatedSettingsField.UI_HIDER -> settings.copy(
                     uiHiderConfig = gson.fromJson(valueJson, neth.iecal.curbox.data.models.UiHiderConfig::class.java)
                 )
@@ -814,6 +822,7 @@ class DataStoreManager(private val context: Context) {
                 GatedSettingsField.GRAYSCALE_GROUPS -> settings.grayscaleGroups
                 GatedSettingsField.MINDFUL_MESSAGES -> settings.mindfulMessageConfig
                 GatedSettingsField.SIP_STRETCH -> settings.sipStretchConfig
+                GatedSettingsField.SCHEDULED_NOTIFICATIONS -> settings.scheduledNotificationsConfig
                 GatedSettingsField.UI_HIDER -> settings.uiHiderConfig
                 GatedSettingsField.APP_USAGE_TRACKING -> settings.isAppUsageTrackingEnabled
                 GatedSettingsField.WEBSITE_USAGE_TRACKING -> settings.isWebsiteUsageTrackingEnabled
