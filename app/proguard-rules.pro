@@ -8,3 +8,10 @@
 
 # MPAndroidChart animates through ObjectAnimator property names.
 -keep class com.github.mikephil.charting.animation.ChartAnimator { *; }
+
+
+# Debug logging is dead weight in release builds.
+-assumenosideeffects class android.util.Log {
+    public static int v(...);
+    public static int d(...);
+}
