@@ -2219,6 +2219,18 @@
     </plurals>
     <string name="urge_surf_go_home">Go to home screen</string>
     <string name="scheduled_notifications">Scheduled Notifications</string>
+    <string name="scheduled_notifications_card_desc">Get your notifications together at set times, not all day long.</string>
+    <string name="enable_scheduled_notifications">Enable Scheduled Notifications</string>
+    <string name="scheduled_notifications_intro">Notifications pull you back to your phone all day. With this on, Curbox holds them when they come in and gives them back together at the times you pick. For example, at 9 in the morning, 1 in the afternoon, and 6 in the evening.</string>
+    <string name="scheduled_notifications_delivery_times">DELIVERY TIMES</string>
+    <string name="scheduled_notifications_add_time">Add a time</string>
+    <string name="scheduled_notifications_pick_time">Pick a delivery time</string>
+    <string name="scheduled_notifications_allowed_apps">APPS THAT CAN ALWAYS NOTIFY</string>
+    <string name="scheduled_notifications_note">Calls, alarms, and ongoing notifications like music or maps always come through. A notification may make a short sound before Curbox holds it. If you turn this off, notifications that are already held still come back at the next delivery time.</string>
+    <string name="scheduled_notifications_access_title">Allow notification access</string>
+    <string name="scheduled_notifications_access_message">Curbox needs notification access to hold your notifications until the times you pick. Curbox does not read, save, or send them anywhere.</string>
+    <string name="scheduled_notifications_access_missing">Notification access is off, so nothing is being held.</string>
+    <string name="scheduled_notifications_allow_access">Allow access</string>
     <string name="scheduled_notifications_ping_title">Your notifications are here</string>
     <plurals name="scheduled_notifications_ping_body">
         <item quantity="one">%d notification waited for this time.</item>

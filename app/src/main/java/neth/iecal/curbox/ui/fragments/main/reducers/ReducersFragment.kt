@@ -95,6 +95,14 @@ class ReducersFragment : Fragment() {
             startActivity(intent)
         }
 
+        val scheduledNotificationsCard = view.findViewById<MaterialCardView>(R.id.card_scheduled_notifications)
+        scheduledNotificationsCard.setOnClickListener {
+            val intent = Intent(requireContext(), FragmentActivity::class.java).apply {
+                putExtra("fragment", neth.iecal.curbox.ui.fragments.main.reducers.anti_stimulants.scheduled_notifications.ScheduledNotificationsFragment.FRAGMENT_ID)
+            }
+            startActivity(intent)
+        }
+
         val urgeSurfCard = view.findViewById<MaterialCardView>(R.id.card_urge_surf)
         urgeSurfCard.setOnClickListener {
             val intent = Intent(requireContext(), FragmentActivity::class.java).apply {
