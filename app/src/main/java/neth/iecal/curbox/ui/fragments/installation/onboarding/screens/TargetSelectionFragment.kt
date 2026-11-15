@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import neth.iecal.curbox.databinding.FragmentTargetSelectionBinding
 import neth.iecal.curbox.R
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingFragment
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingViewModel
+import neth.iecal.curbox.utils.ExtensionPromo
 import neth.iecal.curbox.utils.setAsciiArt
 
 class TargetSelectionFragment : Fragment() {
@@ -66,6 +68,13 @@ class TargetSelectionFragment : Fragment() {
         binding.btnSkip.setOnClickListener {
             viewModel.skipTargetApp()
             (parentFragment as? OnboardingFragment)?.goToNextPage()
+        }
+
+        // New users learn about the extension here, so the update announcement
+        // does not repeat it right after onboarding.
+        ExtensionPromo.markSeen(requireContext())
+        binding.cardExtension.setOnClickListener {
+            (activity as? AppCompatActivity)?.let { ExtensionPromo.show(it) }
         }
     }
 

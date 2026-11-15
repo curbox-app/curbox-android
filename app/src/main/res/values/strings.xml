@@ -107,6 +107,16 @@
     <string name="donate_prompt_share">I\'ll share it instead</string>
     <string name="donate_prompt_later">Maybe later</string>
     <string name="share_curbox_message">I\'ve been using Curbox to take back control of my screen time. It\'s free, give it a try: https://curbox.app</string>
+    <string name="extension_promo_label">New</string>
+    <string name="extension_promo_title">Curbox is on your computer too</string>
+    <string name="extension_promo_body">The Curbox browser extension works in Chrome and Firefox. It shows how long you spend on each website, blocks the ones that distract you, and helps you focus.</string>
+    <string name="extension_promo_footer">It is free and open source, just like this app.</string>
+    <string name="extension_promo_get">Get the extension</string>
+    <string name="extension_promo_share">Share link</string>
+    <string name="extension_promo_later">Maybe later</string>
+    <string name="extension_promo_share_message">Curbox browser extension for Chrome and Firefox: %1$s</string>
+    <string name="onboarding_extension_title">Scroll on your computer too?</string>
+    <string name="onboarding_extension_desc">Curbox also has a free browser extension for Chrome and Firefox. Tap to learn more.</string>
     <string name="system_diagnostics">System Diagnostics</string>
     <string name="view_and_share_application_crash_logs">View and share application crash logs to help improve Curbox.</string>
     <string name="view_crash_logs">View Crash Logs</string>
