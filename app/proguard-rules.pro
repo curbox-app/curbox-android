@@ -8,8 +8,3 @@
 
 # MPAndroidChart animates through ObjectAnimator property names.
 -keep class com.github.mikephil.charting.animation.ChartAnimator { *; }
-
-# The usage screen discovers ASCII art strings by their resource field names.
--keepclassmembers class neth.iecal.curbox.R$string {
-    public static int ascii*;
-}

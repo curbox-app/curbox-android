@@ -33,7 +33,6 @@
                     android:inputType="textMultiLine"
                     android:lineSpacingMultiplier="0.85"
                     android:singleLine="false"
-                    android:text="@string/ascii_meditate"
                     android:textSize="12sp" />
             </HorizontalScrollView>
 

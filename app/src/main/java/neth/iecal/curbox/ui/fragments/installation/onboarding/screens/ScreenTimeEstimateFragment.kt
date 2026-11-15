@@ -11,6 +11,7 @@ import neth.iecal.curbox.R
 import neth.iecal.curbox.databinding.FragmentScreenTimeEstimateBinding
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingFragment
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingViewModel
+import neth.iecal.curbox.utils.setAsciiArt
 
 class ScreenTimeEstimateFragment : Fragment() {
 
@@ -29,6 +30,7 @@ class ScreenTimeEstimateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.asciiArt.setAsciiArt("ascii_pill")
         
         updateRealityText(viewModel.estimatedHours.value ?: 4)
         

@@ -12,6 +12,7 @@ import com.google.android.material.card.MaterialCardView
 import neth.iecal.curbox.databinding.FragmentCoreValuesBinding
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingFragment
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingViewModel
+import neth.iecal.curbox.utils.setAsciiArt
 
 class CoreValuesFragment : Fragment() {
 
@@ -30,6 +31,7 @@ class CoreValuesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.asciiMeditate.setAsciiArt("ascii_meditate")
 
         binding.btnAction.setOnClickListener {
             (parentFragment as? OnboardingFragment)?.goToNextPage()

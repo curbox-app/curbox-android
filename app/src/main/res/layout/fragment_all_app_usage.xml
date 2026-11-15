@@ -32,7 +32,6 @@
                     android:inputType="textMultiLine"
                     android:lineSpacingMultiplier="0.85"
                     android:singleLine="false"
-                    android:text="@string/ascii_star2"
                     android:textSize="7sp" />
             </HorizontalScrollView>
 
@@ -221,7 +220,6 @@
             android:includeFontPadding="false"
             android:lineSpacingMultiplier="0.85"
             android:singleLine="false"
-            android:text="@string/ascii_hello"
             android:textSize="4sp" />
 
         <TextView

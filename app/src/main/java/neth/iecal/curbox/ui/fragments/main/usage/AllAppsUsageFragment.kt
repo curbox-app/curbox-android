@@ -66,6 +66,8 @@ import java.time.Instant
 import java.time.ZoneId
 import java.util.Date
 import java.util.Locale
+import neth.iecal.curbox.utils.AsciiArt
+import neth.iecal.curbox.utils.setAsciiArt
 
 class AllAppsUsageFragment : Fragment() {
 
@@ -353,7 +355,7 @@ class AllAppsUsageFragment : Fragment() {
             binding.main.visibility = View.GONE
             binding.loadingOverlay.visibility = View.GONE
             binding.welcomeState.visibility = View.VISIBLE
-            binding.welcomeAscii.text = getString(R.string.ascii_hello)
+            binding.welcomeAscii.setAsciiArt("ascii_hello")
             binding.btnReadDocs.setOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://curbox.app/docs")))
             }
@@ -834,18 +836,14 @@ class AllAppsUsageFragment : Fragment() {
         }
 
 
-        private val backgroundArts by lazy {
-            R.string::class.java.fields
-                .filter { it.name.startsWith("ascii") && it.type == Int::class.javaPrimitiveType }
-                .sortedBy { it.name }
-                .map { it.name to it.getInt(null) }
-        }
+        private val backgroundArts by lazy { AsciiArt.names(requireContext()) }
         private var backgroundArtDialog: androidx.appcompat.app.AlertDialog? = null
 
         private fun applyBackgroundArt(artName: String) {
-            val art = backgroundArts.find { it.first == artName }
+            val art = artName.takeIf { it in backgroundArts }
                 ?: backgroundArts.randomOrNull()
-            _binding?.asciiArt?.setText(art?.second ?: R.string.angel_fallen)
+                ?: return
+            _binding?.asciiArt?.setAsciiArt(art)
         }
 
         private fun showBackgroundArtDialog() {
@@ -853,7 +851,7 @@ class AllAppsUsageFragment : Fragment() {
                 val dataStore = DataStoreManager(requireContext())
                 val selectedArt = dataStore.settings.first().usageBackgroundArt
                 val choices = listOf("" to getString(R.string.usage_background_art_random)) +
-                    backgroundArts.map { (name, _) ->
+                    backgroundArts.map { name ->
                         name to name.removePrefix("ascii_").replace('_', ' ')
                             .replaceFirstChar { it.titlecase(Locale.getDefault()) }
                     }

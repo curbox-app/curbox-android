@@ -47,6 +47,7 @@ import neth.iecal.curbox.ui.fragments.main.reducers.blockertools.appBlocker.AppB
 import neth.iecal.curbox.ui.fragments.main.usage.AllAppsUsageFragment
 import neth.iecal.curbox.utils.OnboardingState
 import neth.iecal.curbox.utils.PermissionUtils
+import neth.iecal.curbox.utils.setAsciiArt
 
 class OnboardingPermissionsFragment : Fragment() {
 
@@ -96,6 +97,7 @@ class OnboardingPermissionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.asciiArt.setAsciiArt("ascii_key")
 
         // Completed users also reach this screen when a required permission is lost.
         // Restore eligibility must not prevent them from granting it again.

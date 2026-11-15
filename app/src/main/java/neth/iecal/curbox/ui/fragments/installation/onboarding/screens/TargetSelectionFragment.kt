@@ -10,6 +10,7 @@ import neth.iecal.curbox.databinding.FragmentTargetSelectionBinding
 import neth.iecal.curbox.R
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingFragment
 import neth.iecal.curbox.ui.fragments.installation.onboarding.OnboardingViewModel
+import neth.iecal.curbox.utils.setAsciiArt
 
 class TargetSelectionFragment : Fragment() {
 
@@ -28,6 +29,7 @@ class TargetSelectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.asciiArt.setAsciiArt("ascii_aim")
 
         viewModel.setTargetApp("Instagram")
         viewModel.setDailyLimit(30L)

@@ -24,7 +24,6 @@
             android:inputType="textMultiLine"
             android:lineSpacingMultiplier="0.85"
             android:singleLine="false"
-            android:text="@string/ascii_key"
             android:textSize="11sp" />
     </HorizontalScrollView>
 
