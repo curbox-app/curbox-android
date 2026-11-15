@@ -1,0 +1,26 @@
+NEW:
+• Curbox now has a browser extension for Chrome and Firefox.
+• Use the curbox sync app to sync usage and focus mode between multiple devices.
+• Urge Surfing: tap "I'm struggling" on a block screen to ride out a craving. Curbox also offers it after 3 unlocks in a row.
+• Sip & Stretch: take short breaks to drink water and move. Apps stay blocked during the break.
+• Scheduled Notifications: get your notifications together at set times, not all day long.
+• Advanced analytics with a usage heatmap.
+• App groups can now add apps you install later on their own.
+• Focus Mode plays a sound when a session, Pomodoro, or break starts and ends.
+• Added browser support for /e/OS Browser and Waterfox.
+• API: exact focus end times, group ids, usage history, and focus listeners.
+
+IMPROVEMENTS:
+• Curbox is now a smaller download. (8mb to 3mb)
+• The Instagram reel and Yt counter is more accurate and no longer counts reels you skip past in a fast swipe.
+• Mindful messages stay hidden while your phone is locked.
+• API access ends when the connected app is uninstalled.
+• Updated the Vietnamese translation.
+
+FIXES:
+• Fixed anti uninstall not working when the phone uses another language.
+• Fixed groups that stayed off after "temporarily turn off" ran out.
+• Fixed app unlocks and session timers resetting when another window appeared.
+• Fixed editing a Focus Mode group creating a new one.
+• Fixed grayscale bugs.
+• Fixed the brightness slider crash in the color picker.
