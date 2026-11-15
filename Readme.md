@@ -42,7 +42,7 @@ The entire codebase is public. Anyone can verify how the app works. This ensures
 * Easy to setup. The features may seem an overhaul but they're all heavily organised and well thought. Setting up takes less than 5 minutes.
 * Supports sync (requires [curbox sync app](https://github.com/curbox-app/curbox-sync))
 * Trusted by millions. Curbox was the first open source screentime management suite for android
-* Small (only 8 mb large)
+* Small (~3 mb large)
 * Lightweight. Consumes nearly the same ram and battery your keyboard does in background.
 
 
