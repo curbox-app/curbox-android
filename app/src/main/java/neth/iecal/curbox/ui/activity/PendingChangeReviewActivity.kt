@@ -28,6 +28,7 @@ class PendingChangeReviewActivity : AppCompatActivity() {
         const val EXTRA_APPLIES_AT_MS = "applies_at_ms"
         const val EXTRA_REPLACED_EXISTING = "replaced_existing"
         const val EXTRA_TAMPER_GATED = "tamper_gated"
+        const val EXTRA_KEPT_TIMER = "kept_timer"
     }
 
     private var dialog: AlertDialog? = null
@@ -35,6 +36,7 @@ class PendingChangeReviewActivity : AppCompatActivity() {
     private var appliesAtMs = 0L
     private var replacedExisting = false
     private var tamperGated = false
+    private var keptTimer = false
 
     private val ticker = Handler(Looper.getMainLooper())
     private val tickRunnable = object : Runnable {
@@ -81,6 +83,7 @@ class PendingChangeReviewActivity : AppCompatActivity() {
         appliesAtMs = intent.getLongExtra(EXTRA_APPLIES_AT_MS, 0L)
         replacedExisting = intent.getBooleanExtra(EXTRA_REPLACED_EXISTING, false)
         tamperGated = intent.getBooleanExtra(EXTRA_TAMPER_GATED, false)
+        keptTimer = intent.getBooleanExtra(EXTRA_KEPT_TIMER, false)
     }
 
     private fun buildMessage(): String {
@@ -98,7 +101,9 @@ class PendingChangeReviewActivity : AppCompatActivity() {
         if (tamperGated) {
             message += "\n\n" + getString(R.string.change_delay_review_tamper_note)
         }
-        if (replacedExisting) {
+        if (keptTimer) {
+            message += "\n\n" + getString(R.string.change_delay_review_kept_timer_note)
+        } else if (replacedExisting) {
             message += "\n\n" + getString(R.string.change_delay_review_replaced_note)
         }
         return message
