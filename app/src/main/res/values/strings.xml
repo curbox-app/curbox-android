@@ -659,6 +659,7 @@
     <string name="change_delay_review_replaced_note">A change for this tool was already waiting. This new one takes its place and the timer starts over.</string>
     <string name="change_delay_review_keep">Keep it waiting</string>
     <string name="change_delay_review_undo">Undo this change</string>
+    <string name="change_delay_applied_over_waiting_toast">Stricter edit applied now. The earlier %1$s change still waits.</string>
     <string name="change_delay_dropped_toast">The stricter change is active. The pending change for %1$s was removed.</string>
     <string name="temporary_disable_title">Temporarily disable %1$s</string>
     <string name="temporary_disable_5m">5 minutes</string>
