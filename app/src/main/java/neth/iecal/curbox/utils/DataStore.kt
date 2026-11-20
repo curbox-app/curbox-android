@@ -23,6 +23,7 @@ import neth.iecal.curbox.data.models.GatedSettingsField
 import neth.iecal.curbox.data.models.KeywordBlocker
 import neth.iecal.curbox.data.models.ManualFocusGroup
 import neth.iecal.curbox.data.models.PendingSettingsChange
+import neth.iecal.curbox.data.models.PomodoroPhase
 import neth.iecal.curbox.data.models.PomodoroState
 import neth.iecal.curbox.data.models.Settings
 import neth.iecal.curbox.data.models.SettingsChangeDelayConfig
@@ -405,6 +406,33 @@ class DataStoreManager(private val context: Context) {
             }
         }
         return updated.takeIf { advanced }
+    }
+
+    /**
+     * Moves the end of the running focus session, or the current Pomodoro focus round, later.
+     * Breaks are never made longer. Returns the new end, or null when nothing changed.
+     */
+    suspend fun extendManualFocus(expectedEndTimeInMillis: Long, extraMs: Long): Long? {
+        var newEndTimeInMillis: Long? = null
+        settingsDataStore.updateData { current ->
+            newEndTimeInMillis = null
+            val (groupId, endTimeInMillis) = current.activeManualFocusGroupId
+            val pomodoro = current.activePomodoroState
+            val now = System.currentTimeMillis()
+            if (groupId == null ||
+                endTimeInMillis != expectedEndTimeInMillis ||
+                endTimeInMillis <= now ||
+                (pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK)
+            ) {
+                return@updateData current
+            }
+            val maxEnd = now + PomodoroState.MAX_FOCUS_MINUTES * 60_000L
+            val extended = minOf(endTimeInMillis + extraMs, maxEnd)
+            if (extended <= endTimeInMillis) return@updateData current
+            newEndTimeInMillis = extended
+            current.copy(activeManualFocusGroupId = Pair(groupId, extended))
+        }
+        return newEndTimeInMillis
     }
 
     suspend fun setManualFocusStateToInactive(requireExitableSession: Boolean = false) {

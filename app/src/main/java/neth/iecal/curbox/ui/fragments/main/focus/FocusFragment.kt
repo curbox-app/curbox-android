@@ -65,6 +65,12 @@ class FocusFragment : Fragment() {
                         val isRunning = groupId != null
                         b.tvActiveGroup.visibility = if (isRunning) View.VISIBLE else View.GONE
                         b.btnGoToStats.visibility = if (isRunning) View.GONE else View.VISIBLE
+                        // Adding time to a break would only make the break longer.
+                        b.btnAddTime.visibility = if (isRunning && !(pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK)) {
+                            View.VISIBLE
+                        } else {
+                            View.GONE
+                        }
                         b.tvSeconds.text = if (isRunning) "" else getString(R.string.common_mins)
 
                         if (isRunning) {
@@ -194,6 +200,10 @@ class FocusFragment : Fragment() {
             }
         }
 
+        binding.btnAddTime.setOnClickListener {
+            showAddTimeDialog()
+        }
+
         binding.btnHelp.setOnClickListener {
             ViewUtils.showHelpPopup(it, "Focus mode helps you stay away from distractions for a set period of time.", "https://curbox.app/docs/focus/focus-mode/")
         }
@@ -202,6 +212,26 @@ class FocusFragment : Fragment() {
             showWriteFocusNfcDialog()
         }
     }
+
+    private fun showAddTimeDialog() {
+        val labels = addTimeOptions.map { minutes ->
+            val duration = if (minutes < 60) {
+                getString(R.string.focus_duration_minutes_short, minutes)
+            } else {
+                getString(R.string.focus_duration_hours_short, minutes / 60)
+            }
+            getString(R.string.focus_add_time_option, duration)
+        }
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(R.string.focus_add_time_title)
+            .setItems(labels.toTypedArray()) { _, which ->
+                viewModel.extendFocus(addTimeOptions[which])
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+
+    private val addTimeOptions = listOf(5, 15, 30, 60)
 
     private val focusNfcActions = listOf("toggle", "start", "stop")
 

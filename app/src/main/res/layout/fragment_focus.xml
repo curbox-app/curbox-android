@@ -79,6 +79,26 @@
             app:layout_constraintTop_toTopOf="@+id/btnStartConfig"
             app:tint="?attr/colorOnSurface" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddTime"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/focus_add_time"
+            android:visibility="gone"
+            app:icon="@drawable/baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="@+id/btnStartConfig"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnStartConfig" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="btnGoToStats,btnAddTime" />
+
         <FrameLayout
             android:id="@+id/flRuler"
             android:layout_width="match_parent"
@@ -112,7 +132,7 @@
             android:text="@string/focus_start"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnGoToStats" />
+            app:layout_constraintStart_toEndOf="@+id/barrierActions" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

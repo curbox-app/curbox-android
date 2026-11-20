@@ -116,6 +116,21 @@ class FocusViewModel(application: Application) : AndroidViewModel(application) {
             requestFocusBlockerRefresh()
         }
     }
+    fun extendFocus(extraMinutes: Int) {
+        val (groupId, oldEndTime) = _currentRunningFocus.value
+        if (groupId == null) return
+        viewModelScope.launch {
+            val newEndTime = dataStoreManager.extendManualFocus(oldEndTime, extraMinutes * 60_000L)
+                ?: return@launch
+            for (session in statsDao.getRunningSessions()) {
+                if (session.groupId == groupId && session.estimatedEndTimeInMillis == oldEndTime) {
+                    statsDao.update(session.copy(estimatedEndTimeInMillis = newEndTime))
+                }
+            }
+            requestFocusBlockerRefresh()
+        }
+    }
+
     fun startFocusing() {
         if(selectedGroup == null) return
         val pomodoroState = if (isPomodoroEnabled) {

@@ -164,15 +164,14 @@ class FocusModeBlocker : BaseBlocker() {
         }
     }
 
-    private suspend fun reconcilePomodoroStats(settings: Settings) = statsMutex.withLock {
+    private suspend fun reconcileFocusStats(settings: Settings) = statsMutex.withLock {
         val pomodoro = settings.activePomodoroState
-        if (!pomodoro.isActive) return@withLock
         val groupId = settings.activeManualFocusGroupId.first ?: return@withLock
         val endTimeInMillis = settings.activeManualFocusGroupId.second
         val statsDao = AppDatabase.getInstance(service).focusStatsDao()
         val runningForGroup = statsDao.getRunningSessions().filter { it.groupId == groupId }
 
-        if (pomodoro.phase == PomodoroPhase.BREAK) {
+        if (pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK) {
             for (session in runningForGroup) {
                 statsDao.update(
                     session.copy(
@@ -188,6 +187,15 @@ class FocusModeBlocker : BaseBlocker() {
             return@withLock
         }
         val now = System.currentTimeMillis()
+        // A session or Pomodoro round that has not ended yet was given more time, so it keeps going.
+        val extended = runningForGroup.firstOrNull {
+            it.estimatedEndTimeInMillis > now && it.estimatedEndTimeInMillis < endTimeInMillis
+        }
+        if (extended != null) {
+            statsDao.update(extended.copy(estimatedEndTimeInMillis = endTimeInMillis))
+            return@withLock
+        }
+        if (!pomodoro.isActive) return@withLock
         for (session in runningForGroup) {
             statsDao.update(session.stoppedAt(now))
         }
@@ -347,11 +355,11 @@ class FocusModeBlocker : BaseBlocker() {
                 }
 
                 try {
-                    reconcilePomodoroStats(settings)
+                    reconcileFocusStats(settings)
                 } catch (e: CancellationException) {
                     throw e
                 } catch (t: Throwable) {
-                    Log.e("FocusMode", "Failed to reconcile Pomodoro stats", t)
+                    Log.e("FocusMode", "Failed to reconcile focus stats", t)
                     crashLogger.logNonFatalError(Exception(t))
                 }
 
