@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -23,6 +24,7 @@ import neth.iecal.curbox.databinding.FragmentFocusStatsBinding
 import neth.iecal.curbox.databinding.ItemAnalyticsRowBinding
 import neth.iecal.curbox.databinding.ItemFocusStatBinding
 import neth.iecal.curbox.ui.views.WeeklyBarGraphView
+import java.time.Instant
 import java.time.ZoneId
 import java.time.format.TextStyle
 import java.util.Locale
@@ -68,11 +70,11 @@ class FocusStatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setLabel(binding.statTotalTime, R.string.focus_total_time_label)
+        setLabel(binding.statDailyAverage, R.string.focus_stats_daily_average)
         setLabel(binding.statSessions, R.string.focus_sessions_label)
         setLabel(binding.statCompletion, R.string.focus_completion_rate)
         setLabel(binding.statAvgSession, R.string.focus_avg_duration)
         setLabel(binding.statLongest, R.string.focus_stats_longest)
-        setLabel(binding.statStreak, R.string.focus_streak_label)
         setLabel(binding.statPomodoros, R.string.focus_stats_pomodoros)
         setLabel(binding.statPomodoroRounds, R.string.focus_stats_rounds)
         setLabel(binding.statPomodoroTime, R.string.focus_stats_focus_time)
@@ -83,11 +85,9 @@ class FocusStatsFragment : Fragment() {
             render()
         }
 
-        binding.weeklyBarGraph.setOnBarSelectedListener { bar ->
-            binding.tvSelectedDay.text = selectedDayText(bar)
-        }
+        binding.weeklyBarGraph.setOnBarSelectedListener { bar -> showDay(bar) }
 
-        setupGroupSpinner()
+        setupGroupFilter()
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -103,23 +103,32 @@ class FocusStatsFragment : Fragment() {
         stat.tvLabel.setText(label)
     }
 
-    private fun setupGroupSpinner() {
+    private fun setupGroupFilter() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.groups.collectLatest {
-                    updateSpinner()
+                    updateGroupChip()
                     render()
                 }
             }
         }
 
-        binding.spinGroups.setOnItemClickListener { _, _, position, _ ->
-            val options = groupOptions()
-            if (position < options.size) {
-                selectedGroupId = options[position].first
-                render()
-            }
+        val showMenu = View.OnClickListener { showGroupMenu() }
+        binding.chipGroup.setOnClickListener(showMenu)
+        binding.chipGroup.setOnCloseIconClickListener(showMenu)
+    }
+
+    private fun showGroupMenu() {
+        val options = groupOptions()
+        val popup = PopupMenu(requireContext(), binding.chipGroup)
+        options.forEachIndexed { index, option -> popup.menu.add(0, index, index, option.second) }
+        popup.setOnMenuItemClickListener { item ->
+            selectedGroupId = options.getOrNull(item.itemId)?.first
+            updateGroupChip()
+            render()
+            true
         }
+        popup.show()
     }
 
     // Auto DND groups never record focus sessions, so only manual groups are offered.
@@ -127,18 +136,11 @@ class FocusStatsFragment : Fragment() {
         listOf<Pair<String?, String>>(null to getString(R.string.all_groups)) +
             viewModel.groups.value.map { it.groupId to it.groupName }
 
-    private fun updateSpinner() {
+    private fun updateGroupChip() {
         if (!isAdded) return
         val options = groupOptions()
         if (options.none { it.first == selectedGroupId }) selectedGroupId = null
-
-        val adapter = android.widget.ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_dropdown_item_1line,
-            options.map { it.second }
-        )
-        binding.spinGroups.setAdapter(adapter)
-        binding.spinGroups.setText(options.first { it.first == selectedGroupId }.second, false)
+        binding.chipGroup.text = options.first { it.first == selectedGroupId }.second
     }
 
     private fun render() {
@@ -162,22 +164,17 @@ class FocusStatsFragment : Fragment() {
     private fun showReport(report: FocusStatsCalculator.Report) {
         val hasSessions = report.sessionCount > 0
 
-        binding.tvToday.text = formatDuration(report.todayMs)
-        binding.tvHeroSummary.text = getString(
-            R.string.focus_stats_hero_summary,
-            formatDuration(report.dailyAverageMs),
-            resources.getQuantityString(R.plurals.focus_stats_days, report.bestStreak, report.bestStreak)
-        )
-        binding.tvEmpty.isVisible = !hasSessions
+        updateWeeklyGraph(report.lastSevenDays)
+        updateStreak(report)
 
+        binding.tvEmpty.isVisible = !hasSessions
+        binding.cardOverview.isVisible = hasSessions
         binding.statTotalTime.tvValue.text = formatDuration(report.totalFocusMs)
+        binding.statDailyAverage.tvValue.text = formatDuration(report.dailyAverageMs)
         binding.statSessions.tvValue.text = report.sessionCount.toString()
         binding.statCompletion.tvValue.text = getString(R.string.percent_value, report.completionPercent)
         binding.statAvgSession.tvValue.text = formatDuration(report.averageSessionMs)
         binding.statLongest.tvValue.text = formatDuration(report.longestSessionMs)
-        binding.statStreak.tvValue.text = report.currentStreak.toString()
-
-        updateWeeklyGraph(report.lastSevenDays)
 
         binding.sectionPomodoro.isVisible = report.pomodoroCount > 0
         binding.statPomodoros.tvValue.text = report.pomodoroCount.toString()
@@ -200,15 +197,36 @@ class FocusStatsFragment : Fragment() {
         }
         weekFocusByDay = bars.zip(days).associate { (bar, day) -> bar.dateMillis to day.focusMs }
         binding.weeklyBarGraph.setData(bars, selected = bars.lastIndex)
-        bars.lastOrNull()?.let { binding.tvSelectedDay.text = selectedDayText(it) }
+        bars.lastOrNull()?.let { showDay(it) }
     }
 
-    private fun selectedDayText(bar: WeeklyBarGraphView.BarData): String =
-        getString(R.string.focus_stats_day_selected, bar.label, formatDuration(weekFocusByDay[bar.dateMillis] ?: 0L))
+    /** The big number shows today until the user taps another day in the graph. */
+    private fun showDay(bar: WeeklyBarGraphView.BarData) {
+        val zone = ZoneId.systemDefault()
+        val date = Instant.ofEpochMilli(bar.dateMillis).atZone(zone).toLocalDate()
+        val isToday = date == Instant.ofEpochMilli(System.currentTimeMillis()).atZone(zone).toLocalDate()
+        binding.tvDayLabel.text = if (isToday) {
+            getString(R.string.focus_stats_today)
+        } else {
+            getString(R.string.focus_stats_focused_on, date.dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault()))
+        }
+        binding.tvDayValue.text = formatDuration(weekFocusByDay[bar.dateMillis] ?: 0L)
+    }
+
+    private fun updateStreak(report: FocusStatsCalculator.Report) {
+        val best = resources.getQuantityString(R.plurals.focus_stats_days, report.bestStreak, report.bestStreak)
+        binding.tvStreak.isVisible = report.bestStreak > 0
+        binding.tvStreak.text = if (report.currentStreak > 0) {
+            val current = resources.getQuantityString(R.plurals.focus_stats_days, report.currentStreak, report.currentStreak)
+            getString(R.string.focus_stats_streak, current, best)
+        } else {
+            getString(R.string.focus_stats_best_streak, best)
+        }
+    }
 
     private fun updateTimeOfDay(report: FocusStatsCalculator.Report) {
         val total = report.partsOfDay.sum()
-        binding.cardTimeOfDay.isVisible = total > 0
+        binding.sectionTimeOfDay.isVisible = total > 0
         binding.llTimeOfDay.removeAllViews()
         if (total <= 0) return
 
@@ -224,16 +242,15 @@ class FocusStatsFragment : Fragment() {
                 container = binding.llTimeOfDay,
                 label = getString(labels[index]),
                 value = formatDuration(ms),
-                progress = if (maxPart > 0) ms.toFloat() / maxPart else 0f,
-                detail = getString(R.string.focus_stats_share, (ms * 100f / total).roundToInt())
+                progress = if (maxPart > 0) ms.toFloat() / maxPart else 0f
             )
         }
     }
 
     private fun updateGroups(report: FocusStatsCalculator.Report) {
-        binding.cardGroups.isVisible = selectedGroupId == null && report.groups.isNotEmpty()
+        binding.sectionGroups.isVisible = selectedGroupId == null && report.groups.isNotEmpty()
         binding.llGroups.removeAllViews()
-        if (!binding.cardGroups.isVisible) return
+        if (!binding.sectionGroups.isVisible) return
 
         val maxGroup = report.groups.maxOf { it.focusMs }
         for (group in report.groups) {
@@ -248,7 +265,7 @@ class FocusStatsFragment : Fragment() {
     }
 
     private fun updateRecentSessions(report: FocusStatsCalculator.Report) {
-        binding.cardRecent.isVisible = report.recentSessions.isNotEmpty()
+        binding.sectionRecent.isVisible = report.recentSessions.isNotEmpty()
         binding.llRecent.removeAllViews()
 
         for (session in report.recentSessions) {

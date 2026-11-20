@@ -27,7 +27,6 @@
     <string name="focus_stats">Fokusstatistiken</string>
     <string name="focus_sessions_label">Sitzungen</string>
     <string name="focus_total_time_label">Gesamtzeit</string>
-    <string name="focus_streak_label">Strähne</string>
     <string name="focus_avg_duration">Durchschn. Dauer</string>
     <string name="focus_completion_rate">Vollendet</string>
     <string name="focus_duration_minutes_short">%1$d min</string>

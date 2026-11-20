@@ -20,7 +20,6 @@
     <string name="focus_stats">Estatísticas de foco</string>
     <string name="focus_sessions_label">Sessões</string>
     <string name="focus_total_time_label">Tempo total</string>
-    <string name="focus_streak_label">Sequência</string>
     <string name="focus_avg_duration">Duração média</string>
     <string name="focus_completion_rate">Concluídas</string>
     <string name="quick_setup_guide">Guia rápido de configuração</string>

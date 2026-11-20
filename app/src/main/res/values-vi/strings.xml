@@ -22,7 +22,6 @@
     <string name="focus_stats">Thống kê tập trung</string>
     <string name="focus_sessions_label">Phiên</string>
     <string name="focus_total_time_label">Tổng thời gian</string>
-    <string name="focus_streak_label">Chuỗi ngày</string>
     <string name="focus_avg_duration">Phiên trung bình</string>
     <string name="focus_completion_rate">Hoàn thành</string>
     <string name="focus_duration_minutes_short">%1$d phút</string>

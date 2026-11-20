@@ -20,7 +20,6 @@
     <string name="focus_stats">إحصاءات التركيز</string>
     <string name="focus_sessions_label">الجلسات</string>
     <string name="focus_total_time_label">الوقت الإجمالي</string>
-    <string name="focus_streak_label">التتابع اليومي</string>
     <string name="focus_avg_duration">متوسط مدة الجلسة</string>
     <string name="focus_completion_rate">نسبة الإكمال</string>
     <string name="quick_setup_guide">دليل الإعداد السريع</string>

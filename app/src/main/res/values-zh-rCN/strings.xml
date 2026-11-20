@@ -20,7 +20,6 @@
     <string name="focus_stats">专注统计</string>
     <string name="focus_sessions_label">次数</string>
     <string name="focus_total_time_label">总时长</string>
-    <string name="focus_streak_label">连续天数</string>
     <string name="focus_avg_duration">平均时长</string>
     <string name="focus_completion_rate">完成率</string>
     <string name="quick_setup_guide">快速设置指南</string>

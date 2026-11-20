@@ -20,7 +20,6 @@
     <string name="focus_stats">Статистика фокусировки</string>
     <string name="focus_sessions_label">Сессии</string>
     <string name="focus_total_time_label">Общее время</string>
-    <string name="focus_streak_label">Серия дней</string>
     <string name="focus_avg_duration">Средняя сессия</string>
     <string name="focus_completion_rate">Завершено</string>
     <string name="quick_setup_guide">Краткое руководство по настройке</string>

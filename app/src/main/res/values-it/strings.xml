@@ -21,7 +21,6 @@
     <string name="focus_stats">Statistiche Focus</string>
     <string name="focus_sessions_label">Sessioni</string>
     <string name="focus_total_time_label">Tempo totale</string>
-    <string name="focus_streak_label">Serie consecutiva</string>
     <string name="focus_avg_duration">Durata media sessione</string>
     <string name="focus_completion_rate">Completate</string>
     <string name="quick_setup_guide">Guida rapida alla configurazione</string>

@@ -21,7 +21,6 @@
   <string name="focus_stats">Odak istatistikleri</string>
   <string name="focus_sessions_label">Oturumlar</string>
   <string name="focus_total_time_label">Toplam Süre</string>
-  <string name="focus_streak_label">Seri</string>
   <string name="focus_avg_duration">Ort. Oturum Süresi</string>
   <string name="focus_completion_rate">Tamamlanma Oranı</string>
   <string name="focus_duration_minutes_short">%1$d dk</string>

@@ -20,7 +20,6 @@
     <string name="focus_stats">フォーカス統計</string>
     <string name="focus_sessions_label">セッション数</string>
     <string name="focus_total_time_label">合計時間</string>
-    <string name="focus_streak_label">連続日数</string>
     <string name="focus_avg_duration">平均セッション時間</string>
     <string name="focus_completion_rate">達成率</string>
     <string name="quick_setup_guide">クイックセットアップガイド</string>
