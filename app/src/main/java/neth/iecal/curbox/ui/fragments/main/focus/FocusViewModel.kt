@@ -83,7 +83,7 @@ class FocusViewModel(application: Application) : AndroidViewModel(application) {
                         if (settings.activePomodoroState.isActive) {
                             requestFocusBlockerRefresh()
                         } else {
-                            forceStopFocus(wasMidwayExit = false)
+                            forceStopFocus()
                         }
                     } else {
                         requestFocusBlockerRefresh()
@@ -105,17 +105,12 @@ class FocusViewModel(application: Application) : AndroidViewModel(application) {
         application.sendBroadcast(intent)
     }
 
-    fun forceStopFocus(wasMidwayExit: Boolean = false){
+    fun forceStopFocus() {
         viewModelScope.launch {
             val runningSessions = statsDao.getRunningSessions()
             val now = System.currentTimeMillis()
             for (session in runningSessions) {
-                if (wasMidwayExit) {
-                    statsDao.update(session.copy(status = 2, actualEndTimeInMillis = now))
-                } else {
-                    val actEnd = if (session.estimatedEndTimeInMillis < now) session.estimatedEndTimeInMillis else now
-                    statsDao.update(session.copy(status = 1, actualEndTimeInMillis = actEnd))
-                }
+                statsDao.update(session.stoppedAt(now))
             }
             dataStoreManager.setManualFocusStateToInactive()
             requestFocusBlockerRefresh()
@@ -129,7 +124,8 @@ class FocusViewModel(application: Application) : AndroidViewModel(application) {
                 phase = PomodoroPhase.FOCUS,
                 focusMinutes = selectedMins,
                 breakMinutes = pomodoroBreakMins,
-                totalFocusIntervals = pomodoroFocusIntervals
+                totalFocusIntervals = pomodoroFocusIntervals,
+                cycleId = java.util.UUID.randomUUID().toString()
             ).normalized()
         } else {
             PomodoroState()
@@ -155,7 +151,8 @@ class FocusViewModel(application: Application) : AndroidViewModel(application) {
                 startTimeInMillis = startTime,
                 estimatedEndTimeInMillis = endTime,
                 actualEndTimeInMillis = 0L,
-                status = 0
+                status = 0,
+                pomodoroCycleId = pomodoroState.cycleId
             )
             statsDao.insert(session)
             

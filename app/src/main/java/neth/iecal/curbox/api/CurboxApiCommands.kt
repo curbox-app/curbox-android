@@ -27,6 +27,7 @@ import kotlinx.coroutines.flow.first
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlinx.coroutines.CancellationException
+import java.util.UUID
 
 /**
  * Turns an API command into a real change in Curbox.
@@ -132,25 +133,42 @@ object CurboxApiCommands {
             else -> minutes.coerceAtLeast(1) * 60_000L
         }
         val endTimeInMillis = now + durationMs
+        // A companion moving the same Pomodoro to its next phase keeps it as one stats session.
+        val runningPomodoro = settings.activePomodoroState
+        val cycleId = when {
+            !pomodoro.isActive -> null
+            runningPomodoro.isActive && settings.activeManualFocusGroupId.first == group.groupId ->
+                runningPomodoro.cycleId ?: UUID.randomUUID().toString()
+            else -> UUID.randomUUID().toString()
+        }
 
-        dataStore.setManualFocusStateToActive(
-            group.groupId,
-            durationMs,
-            pomodoroState = pomodoro,
-            endTimeInMillis = endTimeInMillis,
-            requireExitableSession = true
-        )
         val statsDao = AppDatabase.getInstance(context).focusStatsDao()
         // Joining a cycle during its break: breaks are rest and never count as focus time.
-        if (!(pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK)) statsDao.insert(
-            FocusStatsEntity(
-                groupId = group.groupId,
-                startTimeInMillis = now,
-                estimatedEndTimeInMillis = endTimeInMillis,
-                actualEndTimeInMillis = 0L,
-                status = 0
-            )
+        val session = if (pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK) null else FocusStatsEntity(
+            groupId = group.groupId,
+            startTimeInMillis = now,
+            estimatedEndTimeInMillis = endTimeInMillis,
+            actualEndTimeInMillis = 0L,
+            status = 0,
+            pomodoroCycleId = cycleId
         )
+        // Saved before the state changes, so the service sees this row and does not add its own.
+        session?.let { statsDao.insert(it) }
+        try {
+            dataStore.setManualFocusStateToActive(
+                group.groupId,
+                durationMs,
+                pomodoroState = pomodoro.copy(cycleId = cycleId),
+                endTimeInMillis = endTimeInMillis,
+                requireExitableSession = true
+            )
+        } catch (e: Exception) {
+            session?.let { statsDao.delete(it) }
+            throw e
+        }
+        for (running in statsDao.getRunningSessions()) {
+            if (running.id != session?.id) statsDao.update(running.stoppedAt(now))
+        }
         broadcast(context, FocusModeBlocker.INTENT_ACTION_REFRESH_FOCUS_MODE)
     }
 
@@ -163,8 +181,7 @@ object CurboxApiCommands {
         val sessions = statsDao.getRunningSessions()
         dataStore.setManualFocusStateToInactive(requireExitableSession = true)
         for (session in sessions) {
-            val actEnd = if (session.estimatedEndTimeInMillis < now) session.estimatedEndTimeInMillis else now
-            statsDao.update(session.copy(status = 1, actualEndTimeInMillis = actEnd))
+            statsDao.update(session.stoppedAt(now))
         }
         broadcast(context, FocusModeBlocker.INTENT_ACTION_REFRESH_FOCUS_MODE)
     }

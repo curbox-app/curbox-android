@@ -24,14 +24,9 @@
   <string name="focus_streak_label">Seri</string>
   <string name="focus_avg_duration">Ort. Oturum Süresi</string>
   <string name="focus_completion_rate">Tamamlanma Oranı</string>
-  <string name="focus_top_tags">En Çok Kullanılan Gruplar</string>
   <string name="focus_duration_minutes_short">%1$d dk</string>
   <string name="focus_duration_hours_short">%1$d sa</string>
   <string name="focus_duration_hours_minutes_short">%1$d sa %2$d dk</string>
-  <plurals name="focus_top_tag_sessions">
-    <item quantity="one">• %1$s (%2$d oturum)</item>
-    <item quantity="other">• %1$s (%2$d oturum)</item>
-  </plurals>
   <string name="quick_setup_guide">Hızlı Kurulum Rehberi</string>
   <string name="curbox_needs_accessibility_permissions_to_help">Curbox, ekran süreni takip etmene yardımcı olmak için erişilebilirlik izinlerine ihtiyaç duyar. Kurulum adımları, uygulamayı nasıl yüklediğine göre değişir.</string>
   <string name="fdroid_installation">F-Droid Kurulumu</string>

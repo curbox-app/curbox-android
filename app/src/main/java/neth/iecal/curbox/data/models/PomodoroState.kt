@@ -11,7 +11,9 @@ data class PomodoroState(
     val focusMinutes: Int = DEFAULT_FOCUS_MINUTES,
     val breakMinutes: Int = DEFAULT_BREAK_MINUTES,
     val totalFocusIntervals: Int = DEFAULT_FOCUS_INTERVALS,
-    val completedFocusIntervals: Int = 0
+    val completedFocusIntervals: Int = 0,
+    // Links the focus rounds of this Pomodoro in focus stats.
+    val cycleId: String? = null
 ) {
     val currentFocusInterval: Int
         get() = (completedFocusIntervals.coerceAtLeast(0) + 1).coerceAtMost(

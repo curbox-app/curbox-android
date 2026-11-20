@@ -25,7 +25,6 @@
     <string name="focus_streak_label">Chuỗi ngày</string>
     <string name="focus_avg_duration">Phiên trung bình</string>
     <string name="focus_completion_rate">Hoàn thành</string>
-    <string name="focus_top_tags">Thẻ hàng đầu</string>
     <string name="focus_duration_minutes_short">%1$d phút</string>
     <string name="focus_duration_hours_short">%1$d giờ</string>
     <string name="focus_duration_hours_minutes_short">%1$d giờ %2$d phút</string>
@@ -35,10 +34,6 @@
     <string name="focus_pomodoro_intervals">Vòng tập trung</string>
     <string name="focus_pomodoro_focus_progress">%1$s • Tập trung %2$d/%3$d</string>
     <string name="focus_pomodoro_break_progress">%1$s • Nghỉ ngơi sau phiên tập trung %2$d trong %3$d</string>
-    <plurals name="focus_top_tag_sessions">
-        <item quantity="one">• %1$s (%2$d phiên)</item>
-        <item quantity="other">• %1$s (%2$d phiên)</item>
-    </plurals>
     <string name="quick_setup_guide">Hướng dẫn thiết lập nhanh</string>
     <string name="curbox_needs_accessibility_permissions_to_help">Curbox cần có quyền Trợ năng để giúp bạn theo dõi thời gian dùng màn hình của mình. Quá trình thiết lập khác nhau tùy theo cách bạn cài đặt ứng dụng.</string>
     <string name="fdroid_installation">Cài đặt F-Droid</string>

@@ -23,7 +23,6 @@
     <string name="focus_streak_label">Sequência</string>
     <string name="focus_avg_duration">Duração média</string>
     <string name="focus_completion_rate">Concluídas</string>
-    <string name="focus_top_tags">Principais tags</string>
     <string name="quick_setup_guide">Guia rápido de configuração</string>
     <string name="curbox_needs_accessibility_permissions_to_help">O Curbox precisa das permissões de acessibilidade para te ajudar a monitorar seu tempo de tela. O processo de configuração varia de acordo com a forma como você instalou o app.</string>
     <string name="fdroid_installation">Instalação pelo F-Droid</string>

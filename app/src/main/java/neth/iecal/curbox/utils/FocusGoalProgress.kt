@@ -8,38 +8,37 @@ object FocusGoalProgress {
         dayStart: Long,
         dayEnd: Long,
         now: Long
-    ): Long {
+    ): Long = focusRanges(sessions, dayStart, dayEnd, now).sumOf { it.second - it.first }
+
+    /** The time between [from] and [to] spent focusing, with overlapping sessions merged. */
+    fun focusRanges(
+        sessions: List<FocusStatsEntity>,
+        from: Long,
+        to: Long,
+        now: Long
+    ): List<Pair<Long, Long>> {
         val ranges = sessions.mapNotNull { session ->
-            val sessionEnd = if (session.status == RUNNING_STATUS) {
-                minOf(now, session.estimatedEndTimeInMillis)
-            } else {
-                session.actualEndTimeInMillis
-            }
-            val clippedStart = maxOf(session.startTimeInMillis, dayStart)
-            val clippedEnd = minOf(sessionEnd, dayEnd)
+            val clippedStart = maxOf(session.startTimeInMillis, from)
+            val clippedEnd = minOf(effectiveEnd(session, now), to)
             if (clippedEnd > clippedStart) clippedStart to clippedEnd else null
         }.sortedBy { it.first }
 
-        var total = 0L
-        var currentStart = 0L
-        var currentEnd = 0L
-        ranges.forEachIndexed { index, range ->
-            if (index == 0) {
-                currentStart = range.first
-                currentEnd = range.second
-            } else if (range.first <= currentEnd) {
-                currentEnd = maxOf(currentEnd, range.second)
+        val merged = mutableListOf<Pair<Long, Long>>()
+        for (range in ranges) {
+            val last = merged.lastOrNull()
+            if (last != null && range.first <= last.second) {
+                merged[merged.lastIndex] = last.first to maxOf(last.second, range.second)
             } else {
-                total += currentEnd - currentStart
-                currentStart = range.first
-                currentEnd = range.second
+                merged.add(range)
             }
         }
-        if (ranges.isNotEmpty()) {
-            total += currentEnd - currentStart
-        }
-        return total
+        return merged
     }
 
-    private const val RUNNING_STATUS = 0
+    fun effectiveEnd(session: FocusStatsEntity, now: Long): Long =
+        if (session.status == FocusStatsEntity.STATUS_RUNNING) {
+            minOf(now, session.estimatedEndTimeInMillis)
+        } else {
+            session.actualEndTimeInMillis
+        }
 }

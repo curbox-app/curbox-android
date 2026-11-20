@@ -187,13 +187,9 @@ class FocusModeBlocker : BaseBlocker() {
         if (runningForGroup.any { it.estimatedEndTimeInMillis == endTimeInMillis }) {
             return@withLock
         }
+        val now = System.currentTimeMillis()
         for (session in runningForGroup) {
-            statsDao.update(
-                session.copy(
-                    status = 1,
-                    actualEndTimeInMillis = session.estimatedEndTimeInMillis
-                )
-            )
+            statsDao.update(session.stoppedAt(now))
         }
         statsDao.insert(
             FocusStatsEntity(
@@ -201,7 +197,8 @@ class FocusModeBlocker : BaseBlocker() {
                 startTimeInMillis = endTimeInMillis - pomodoro.currentPhaseDurationMs(),
                 estimatedEndTimeInMillis = endTimeInMillis,
                 actualEndTimeInMillis = 0L,
-                status = 0
+                status = 0,
+                pomodoroCycleId = pomodoro.cycleId
             )
         )
     }

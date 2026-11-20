@@ -1,23 +1,32 @@
 package neth.iecal.curbox.ui.fragments.main.focus
 
 import android.os.Bundle
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.LinearLayout
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import neth.iecal.curbox.R
-import neth.iecal.curbox.databinding.FragmentFocusStatsBinding
 import neth.iecal.curbox.data.db.FocusStatsEntity
-import java.util.Calendar
+import neth.iecal.curbox.databinding.FragmentFocusStatsBinding
+import neth.iecal.curbox.databinding.ItemAnalyticsRowBinding
+import neth.iecal.curbox.databinding.ItemFocusStatBinding
+import neth.iecal.curbox.ui.views.WeeklyBarGraphView
+import java.time.ZoneId
+import java.time.format.TextStyle
+import java.util.Locale
+import kotlin.math.roundToInt
 
 class FocusStatsFragment : Fragment() {
 
@@ -26,8 +35,20 @@ class FocusStatsFragment : Fragment() {
 
     // Shared ViewModel with FocusFragment to get stats
     private val viewModel: FocusViewModel by activityViewModels()
-    
+
     private var selectedGroupId: String? = null // null means "All Groups"
+    private var rangeDays: Int? = 7 // null means all time
+    private var latestSessions: List<FocusStatsEntity>? = null
+    private var weekFocusByDay: Map<Long, Long> = emptyMap()
+    private var renderJob: Job? = null
+
+    private val rangeChips by lazy {
+        mapOf(
+            R.id.chip7Days to 7,
+            R.id.chip30Days to 30,
+            R.id.chipAllTime to null
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +56,7 @@ class FocusStatsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFocusStatsBinding.inflate(inflater, container, false)
-        
+
         binding.toolbar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack()
         }
@@ -45,138 +66,238 @@ class FocusStatsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
+        setLabel(binding.statTotalTime, R.string.focus_total_time_label)
+        setLabel(binding.statSessions, R.string.focus_sessions_label)
+        setLabel(binding.statCompletion, R.string.focus_completion_rate)
+        setLabel(binding.statAvgSession, R.string.focus_avg_duration)
+        setLabel(binding.statLongest, R.string.focus_stats_longest)
+        setLabel(binding.statStreak, R.string.focus_streak_label)
+        setLabel(binding.statPomodoros, R.string.focus_stats_pomodoros)
+        setLabel(binding.statPomodoroRounds, R.string.focus_stats_rounds)
+        setLabel(binding.statPomodoroTime, R.string.focus_stats_focus_time)
+
+        binding.chipGroupRange.setOnCheckedStateChangeListener { _, checkedIds ->
+            val checkedId = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
+            rangeDays = rangeChips[checkedId]
+            render()
+        }
+
+        binding.weeklyBarGraph.setOnBarSelectedListener { bar ->
+            binding.tvSelectedDay.text = selectedDayText(bar)
+        }
+
         setupGroupSpinner()
-        
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.allSessions.collectLatest { sessions: List<FocusStatsEntity> ->
-                    updateUI(sessions)
+                viewModel.allSessions.collectLatest { sessions ->
+                    latestSessions = sessions
+                    render()
                 }
             }
         }
     }
-    
+
+    private fun setLabel(stat: ItemFocusStatBinding, label: Int) {
+        stat.tvLabel.setText(label)
+    }
+
     private fun setupGroupSpinner() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    viewModel.groups.collectLatest { updateSpinner() }
-                }
-                launch {
-                    viewModel.autoDndGroups.collectLatest { updateSpinner() }
+                viewModel.groups.collectLatest {
+                    updateSpinner()
+                    render()
                 }
             }
         }
-        
+
         binding.spinGroups.setOnItemClickListener { _, _, position, _ ->
-            val allGroups = mutableListOf<Pair<String?, String>>()
-            allGroups.add(null to getString(R.string.all_groups))
-            viewModel.groups.value.forEach { allGroups.add(it.groupId to it.groupName) }
-            viewModel.autoDndGroups.value.forEach { allGroups.add(it.groupId to it.groupName) }
-            
-            if (position < allGroups.size) {
-                selectedGroupId = allGroups[position].first
-                viewLifecycleOwner.lifecycleScope.launch {
-                    val currentSessions = viewModel.allSessions.first()
-                    updateUI(currentSessions)
-                }
+            val options = groupOptions()
+            if (position < options.size) {
+                selectedGroupId = options[position].first
+                render()
             }
         }
     }
-    
+
+    // Auto DND groups never record focus sessions, so only manual groups are offered.
+    private fun groupOptions(): List<Pair<String?, String>> =
+        listOf<Pair<String?, String>>(null to getString(R.string.all_groups)) +
+            viewModel.groups.value.map { it.groupId to it.groupName }
+
     private fun updateSpinner() {
-        val allGroupsLabel = getString(R.string.all_groups)
-        val names = mutableListOf(allGroupsLabel)
-        viewModel.groups.value.forEach { names.add(it.groupName) }
-        viewModel.autoDndGroups.value.forEach { names.add(it.groupName) }
-        
         if (!isAdded) return
-        
-        val adapter = android.widget.ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, names)
+        val options = groupOptions()
+        if (options.none { it.first == selectedGroupId }) selectedGroupId = null
+
+        val adapter = android.widget.ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_dropdown_item_1line,
+            options.map { it.second }
+        )
         binding.spinGroups.setAdapter(adapter)
-        
-        val selectedName = if (selectedGroupId == null) allGroupsLabel else {
-            viewModel.groups.value.find { it.groupId == selectedGroupId }?.groupName
-                ?: viewModel.autoDndGroups.value.find { it.groupId == selectedGroupId }?.groupName
-                ?: allGroupsLabel
-        }
-        binding.spinGroups.setText(selectedName, false)
+        binding.spinGroups.setText(options.first { it.first == selectedGroupId }.second, false)
     }
 
-    private fun updateUI(sessions: List<FocusStatsEntity>) {
-        val completed = sessions.filter { 
-            (it.status == 1 || it.status == 2) && 
-            (selectedGroupId == null || it.groupId == selectedGroupId) 
-        }
-        val totalSessions = completed.size
-        
-        var totalDurationMs = 0L
-        var successfulSessions = 0
-        
-        val tagCounts = mutableMapOf<String, Int>()
-        
-        for (session in completed) {
-            val duration = session.actualEndTimeInMillis - session.startTimeInMillis
-            if (duration > 0) {
-                totalDurationMs += duration
+    private fun render() {
+        val groupId = selectedGroupId
+        val days = rangeDays
+        val sessions = latestSessions ?: return
+        renderJob?.cancel()
+        renderJob = viewLifecycleOwner.lifecycleScope.launch {
+            val report = withContext(Dispatchers.Default) {
+                FocusStatsCalculator.build(
+                    rows = sessions.filter { groupId == null || it.groupId == groupId },
+                    rangeDays = days,
+                    now = System.currentTimeMillis(),
+                    zone = ZoneId.systemDefault()
+                )
             }
-            if (session.status == 1) {
-                successfulSessions++
-            }
-            
-            val count = tagCounts.getOrDefault(session.groupId, 0)
-            tagCounts[session.groupId] = count + 1
+            if (_binding != null) showReport(report)
         }
-        
-        binding.tvTotalSessions.text = totalSessions.toString()
-        binding.tvTotalDuration.text = formatDuration(totalDurationMs)
-        
-        val avgDuration = if (totalSessions > 0) totalDurationMs / totalSessions.toLong() else 0L
-        binding.tvAvgDuration.text = formatDuration(avgDuration)
-        
-        val completionRate = if (totalSessions > 0) ((successfulSessions * 100).toFloat() / totalSessions.toFloat()).toInt() else 0
-        binding.tvCompletionRate.text = getString(R.string.percent_value, completionRate)
-        
-        binding.tvStreak.text = computeStreak(completed).toString()
-        
-        updateTopTags(tagCounts)
-        updateWeeklyGraph(completed)
     }
-    
-    private fun updateWeeklyGraph(sessions: List<FocusStatsEntity>) {
-        val days = mutableListOf<neth.iecal.curbox.ui.views.WeeklyBarGraphView.BarData>()
-        val cal = Calendar.getInstance()
-        cal.set(Calendar.HOUR_OF_DAY, 0)
-        cal.set(Calendar.MINUTE, 0)
-        cal.set(Calendar.SECOND, 0)
-        cal.set(Calendar.MILLISECOND, 0)
 
-        val format = java.text.SimpleDateFormat("EEE", java.util.Locale.getDefault())
+    private fun showReport(report: FocusStatsCalculator.Report) {
+        val hasSessions = report.sessionCount > 0
 
-        for (i in 6 downTo 0) {
-            val dayStart = cal.timeInMillis - (i * 86400000L)
-            val dayEnd = dayStart + 86400000L
-            
-            val daySessions = sessions.filter { it.startTimeInMillis in dayStart until dayEnd }
-            var totalMs = 0L
-            daySessions.forEach { 
-                val dur = it.actualEndTimeInMillis - it.startTimeInMillis
-                if (dur > 0) totalMs += dur
-            }
-            
-            val hours = totalMs / 3600000f
-            
-            val c = Calendar.getInstance().apply { timeInMillis = dayStart }
-            days.add(neth.iecal.curbox.ui.views.WeeklyBarGraphView.BarData(
-                label = format.format(c.time),
-                value = hours,
-                dateMillis = dayStart
-            ))
-        }
-        
-        binding.weeklyBarGraph.setData(days, selected = -1)
+        binding.tvToday.text = formatDuration(report.todayMs)
+        binding.tvHeroSummary.text = getString(
+            R.string.focus_stats_hero_summary,
+            formatDuration(report.dailyAverageMs),
+            resources.getQuantityString(R.plurals.focus_stats_days, report.bestStreak, report.bestStreak)
+        )
+        binding.tvEmpty.isVisible = !hasSessions
+
+        binding.statTotalTime.tvValue.text = formatDuration(report.totalFocusMs)
+        binding.statSessions.tvValue.text = report.sessionCount.toString()
+        binding.statCompletion.tvValue.text = getString(R.string.percent_value, report.completionPercent)
+        binding.statAvgSession.tvValue.text = formatDuration(report.averageSessionMs)
+        binding.statLongest.tvValue.text = formatDuration(report.longestSessionMs)
+        binding.statStreak.tvValue.text = report.currentStreak.toString()
+
+        updateWeeklyGraph(report.lastSevenDays)
+
+        binding.sectionPomodoro.isVisible = report.pomodoroCount > 0
+        binding.statPomodoros.tvValue.text = report.pomodoroCount.toString()
+        binding.statPomodoroRounds.tvValue.text = report.pomodoroRounds.toString()
+        binding.statPomodoroTime.tvValue.text = formatDuration(report.pomodoroFocusMs)
+
+        updateTimeOfDay(report)
+        updateGroups(report)
+        updateRecentSessions(report)
     }
+
+    private fun updateWeeklyGraph(days: List<FocusStatsCalculator.DayTotal>) {
+        val zone = ZoneId.systemDefault()
+        val bars = days.map { day ->
+            WeeklyBarGraphView.BarData(
+                label = day.date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault()),
+                value = day.focusMs / 3_600_000f,
+                dateMillis = day.date.atStartOfDay(zone).toInstant().toEpochMilli()
+            )
+        }
+        weekFocusByDay = bars.zip(days).associate { (bar, day) -> bar.dateMillis to day.focusMs }
+        binding.weeklyBarGraph.setData(bars, selected = bars.lastIndex)
+        bars.lastOrNull()?.let { binding.tvSelectedDay.text = selectedDayText(it) }
+    }
+
+    private fun selectedDayText(bar: WeeklyBarGraphView.BarData): String =
+        getString(R.string.focus_stats_day_selected, bar.label, formatDuration(weekFocusByDay[bar.dateMillis] ?: 0L))
+
+    private fun updateTimeOfDay(report: FocusStatsCalculator.Report) {
+        val total = report.partsOfDay.sum()
+        binding.cardTimeOfDay.isVisible = total > 0
+        binding.llTimeOfDay.removeAllViews()
+        if (total <= 0) return
+
+        val labels = listOf(
+            R.string.analytics_part_night,
+            R.string.analytics_part_morning,
+            R.string.analytics_part_afternoon,
+            R.string.analytics_part_evening
+        )
+        val maxPart = report.partsOfDay.maxOrNull() ?: 0L
+        report.partsOfDay.forEachIndexed { index, ms ->
+            addRow(
+                container = binding.llTimeOfDay,
+                label = getString(labels[index]),
+                value = formatDuration(ms),
+                progress = if (maxPart > 0) ms.toFloat() / maxPart else 0f,
+                detail = getString(R.string.focus_stats_share, (ms * 100f / total).roundToInt())
+            )
+        }
+    }
+
+    private fun updateGroups(report: FocusStatsCalculator.Report) {
+        binding.cardGroups.isVisible = selectedGroupId == null && report.groups.isNotEmpty()
+        binding.llGroups.removeAllViews()
+        if (!binding.cardGroups.isVisible) return
+
+        val maxGroup = report.groups.maxOf { it.focusMs }
+        for (group in report.groups) {
+            addRow(
+                container = binding.llGroups,
+                label = groupName(group.groupId),
+                value = formatDuration(group.focusMs),
+                progress = if (maxGroup > 0) group.focusMs.toFloat() / maxGroup else 0f,
+                detail = resources.getQuantityString(R.plurals.focus_stats_group_detail, group.sessions, group.sessions)
+            )
+        }
+    }
+
+    private fun updateRecentSessions(report: FocusStatsCalculator.Report) {
+        binding.cardRecent.isVisible = report.recentSessions.isNotEmpty()
+        binding.llRecent.removeAllViews()
+
+        for (session in report.recentSessions) {
+            val whenText = DateUtils.formatDateTime(
+                requireContext(),
+                session.startMs,
+                DateUtils.FORMAT_SHOW_WEEKDAY or DateUtils.FORMAT_SHOW_DATE or
+                    DateUtils.FORMAT_SHOW_TIME or DateUtils.FORMAT_ABBREV_ALL
+            )
+            val status = getString(
+                when {
+                    session.isRunning -> R.string.focus_stats_running
+                    session.endedEarly -> R.string.focus_stats_ended_early
+                    else -> R.string.focus_stats_finished
+                }
+            )
+            val pomodoro = if (session.isPomodoro) {
+                resources.getQuantityString(R.plurals.focus_stats_pomodoro_rounds, session.rounds, session.rounds)
+            } else null
+            addRow(
+                container = binding.llRecent,
+                label = groupName(session.groupId),
+                value = formatDuration(session.focusMs),
+                detail = listOfNotNull(whenText, pomodoro, status)
+                    .joinToString(getString(R.string.analytics_detail_separator))
+            )
+        }
+    }
+
+    private fun addRow(
+        container: LinearLayout,
+        label: String,
+        value: String,
+        progress: Float? = null,
+        detail: String? = null
+    ) {
+        val row = ItemAnalyticsRowBinding.inflate(layoutInflater, container, false)
+        row.rowLabel.text = label
+        row.rowValue.text = value
+        row.rowProgress.isVisible = progress != null
+        progress?.let { row.rowProgress.setProgressCompat((it * 1000).roundToInt().coerceIn(0, 1000), false) }
+        row.rowDetail.isVisible = !detail.isNullOrEmpty()
+        row.rowDetail.text = detail
+        container.addView(row.root)
+    }
+
+    private fun groupName(groupId: String): String =
+        viewModel.groups.value.find { it.groupId == groupId }?.groupName
+            ?: getString(R.string.focus_unknown_group)
 
     private fun formatDuration(millis: Long): String {
         val totalMinutes = millis / 60_000L
@@ -191,104 +312,10 @@ class FocusStatsFragment : Fragment() {
             getString(R.string.focus_duration_hours_short, hours)
         }
     }
-    
-    private fun computeStreak(sessions: List<FocusStatsEntity>): Int {
-        if (sessions.isEmpty()) return 0
-        
-        val sortedDesc = sessions.sortedByDescending { it.startTimeInMillis }
-        
-        var currentStreak = 0
-        val cal = Calendar.getInstance()
-        cal.set(Calendar.HOUR_OF_DAY, 0)
-        cal.set(Calendar.MINUTE, 0)
-        cal.set(Calendar.SECOND, 0)
-        cal.set(Calendar.MILLISECOND, 0)
-        var expectedDayStart = cal.timeInMillis
-
-        val uniqueDays = sortedDesc.map { 
-            val c = Calendar.getInstance()
-            c.timeInMillis = it.startTimeInMillis
-            c.set(Calendar.HOUR_OF_DAY, 0)
-            c.set(Calendar.MINUTE, 0)
-            c.set(Calendar.SECOND, 0)
-            c.set(Calendar.MILLISECOND, 0)
-            c.timeInMillis
-        }.distinct()
-
-        if (uniqueDays.isEmpty()) return 0
-        
-        if (uniqueDays[0] == expectedDayStart) {
-            currentStreak++
-            expectedDayStart -= 86400000L
-            for (i in 1 until uniqueDays.size) {
-                if (uniqueDays[i] == expectedDayStart) {
-                    currentStreak++
-                    expectedDayStart -= 86400000L
-                } else break
-            }
-        } else if (uniqueDays[0] == expectedDayStart - 86400000L) {
-            currentStreak++
-            expectedDayStart -= 86400000L * 2
-            for (i in 1 until uniqueDays.size) {
-                if (uniqueDays[i] == expectedDayStart) {
-                    currentStreak++
-                    expectedDayStart -= 86400000L
-                } else break
-            }
-        }
-
-        return currentStreak
-    }
-    
-    private fun updateTopTags(tagCounts: Map<String, Int>) {
-        if (selectedGroupId != null) {
-             binding.cardTopTags.visibility = View.GONE
-             return
-        }
-        
-        if (tagCounts.isEmpty()) {
-            binding.cardTopTags.visibility = View.GONE
-            return
-        }
-        
-        binding.cardTopTags.visibility = View.VISIBLE
-        binding.llTagStats.removeAllViews()
-        
-        val sortedTags = tagCounts.entries.sortedByDescending { it.value }.take(3)
-        val manualGroups = viewModel.groups.value
-        val autoGroups = viewModel.autoDndGroups.value
-        
-        for (entry in sortedTags) {
-            val groupId = entry.key
-            val count = entry.value
-            
-            var name = getString(R.string.focus_unknown_group)
-            val mGroup = manualGroups.find { it.groupId == groupId }
-            if (mGroup != null) name = mGroup.groupName
-            else {
-                val aGroup = autoGroups.find { it.groupId == groupId }
-                if (aGroup != null) name = aGroup.groupName
-            }
-            
-            val tv = TextView(requireContext()).apply {
-                text = resources.getQuantityString(
-                    R.plurals.focus_top_tag_sessions,
-                    count,
-                    name,
-                    count
-                )
-                textSize = 15f
-                layoutParams = android.widget.LinearLayout.LayoutParams(
-                    android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                    android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
-                ).apply { setMargins(0, 4, 0, 4) }
-            }
-            binding.llTagStats.addView(tv)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        renderJob = null
         _binding = null
     }
 }

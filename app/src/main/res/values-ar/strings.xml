@@ -23,7 +23,6 @@
     <string name="focus_streak_label">التتابع اليومي</string>
     <string name="focus_avg_duration">متوسط مدة الجلسة</string>
     <string name="focus_completion_rate">نسبة الإكمال</string>
-    <string name="focus_top_tags">أكثر الوسوم استخدامًا</string>
     <string name="quick_setup_guide">دليل الإعداد السريع</string>
     <string name="curbox_needs_accessibility_permissions_to_help">يحتاج Curbox إلى إذن الوصول المساعد ليساعدك على متابعة وقت استخدام شاشتك. تختلف خطوات الإعداد حسب طريقة تثبيت التطبيق.</string>
     <string name="fdroid_installation">التثبيت عبر F-Droid</string>

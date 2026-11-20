@@ -23,7 +23,6 @@
     <string name="focus_streak_label">Серия дней</string>
     <string name="focus_avg_duration">Средняя сессия</string>
     <string name="focus_completion_rate">Завершено</string>
-    <string name="focus_top_tags">Популярные теги</string>
     <string name="quick_setup_guide">Краткое руководство по настройке</string>
     <string name="curbox_needs_accessibility_permissions_to_help">Curbox нужно разрешение специальных возможностей, чтобы помочь вам отслеживать время у экрана. Процесс настройки зависит от того, как вы установили приложение.</string>
     <string name="fdroid_installation">Установка через F-Droid</string>

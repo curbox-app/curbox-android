@@ -30,14 +30,9 @@
     <string name="focus_streak_label">Strähne</string>
     <string name="focus_avg_duration">Durchschn. Dauer</string>
     <string name="focus_completion_rate">Vollendet</string>
-    <string name="focus_top_tags">Top Tags</string>
     <string name="focus_duration_minutes_short">%1$d min</string>
     <string name="focus_duration_hours_short">%1$d hr</string>
     <string name="focus_duration_hours_minutes_short">%1$d hr %2$d min</string>
-    <plurals name="focus_top_tag_sessions">
-        <item quantity="one">• %1$s (%2$d Sitzung)</item>
-        <item quantity="other">• %1$s (%2$d Sitzungen)</item>
-    </plurals>
     <string name="quick_setup_guide">Schnelleinrichtung</string>
     <string name="curbox_needs_accessibility_permissions_to_help">Curbox benötigt Berechtigung für Bedieungshilfen um dir beim verfolgen deiner Bilschirmzeit zu helfen. Der Einrichtungsprozess hängt davon ab, wie du die App installiert hast.</string>
     <string name="fdroid_installation">F-Droid Installation</string>

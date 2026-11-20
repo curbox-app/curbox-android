@@ -23,7 +23,6 @@
     <string name="focus_streak_label">連続日数</string>
     <string name="focus_avg_duration">平均セッション時間</string>
     <string name="focus_completion_rate">達成率</string>
-    <string name="focus_top_tags">よく使うタグ</string>
     <string name="quick_setup_guide">クイックセットアップガイド</string>
     <string name="curbox_needs_accessibility_permissions_to_help">スクリーンタイムを記録するために、Curboxにはユーザー補助の権限が必要です。設定手順はアプリのインストール方法によって異なります。</string>
     <string name="fdroid_installation">F-Droidでのインストール</string>

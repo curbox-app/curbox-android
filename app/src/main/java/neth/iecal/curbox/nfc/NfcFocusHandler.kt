@@ -148,6 +148,10 @@ object NfcFocusHandler {
         val endTimeInMillis = now + durationMs
 
         val statsDao = AppDatabase.getInstance(context).focusStatsDao()
+        // A tag can replace a running session, so close it first or both would count.
+        for (session in statsDao.getRunningSessions()) {
+            statsDao.update(session.stoppedAt(now))
+        }
         statsDao.insert(
             FocusStatsEntity(
                 groupId = group.groupId,
@@ -182,8 +186,7 @@ object NfcFocusHandler {
         val statsDao = AppDatabase.getInstance(context).focusStatsDao()
         val now = System.currentTimeMillis()
         for (session in statsDao.getRunningSessions()) {
-            val actEnd = if (session.estimatedEndTimeInMillis < now) session.estimatedEndTimeInMillis else now
-            statsDao.update(session.copy(status = 1, actualEndTimeInMillis = actEnd))
+            statsDao.update(session.stoppedAt(now))
         }
         dataStore.setManualFocusStateToInactive()
         broadcast(context)

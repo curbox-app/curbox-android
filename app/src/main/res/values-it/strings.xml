@@ -24,7 +24,6 @@
     <string name="focus_streak_label">Serie consecutiva</string>
     <string name="focus_avg_duration">Durata media sessione</string>
     <string name="focus_completion_rate">Completate</string>
-    <string name="focus_top_tags">Tag principali</string>
     <string name="quick_setup_guide">Guida rapida alla configurazione</string>
     <string name="curbox_needs_accessibility_permissions_to_help">
         Curbox necessita dei permessi di accessibilità per aiutarti a monitorare il tempo trascorso sullo schermo. Il processo di configurazione varia in base a come hai installato l\'app.
