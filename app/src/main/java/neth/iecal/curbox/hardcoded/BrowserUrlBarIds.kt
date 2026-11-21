@@ -31,6 +31,9 @@ val URL_BAR_ID_LIST = mapOf(
     "org.cromite.cromite" to BrowserUrlBarInfo(
         displayUrlBarId = "org.cromite.cromite:id/url_bar",
     ),
+    "io.dioide.aerium" to BrowserUrlBarInfo(
+        displayUrlBarId = "io.dioide.aerium:id/url_bar",
+    ),
 
     // Gecko / GeckoView Engine Browsers (Firefox)
     "io.github.forkmaintainers.iceraven" to BrowserUrlBarInfo(
