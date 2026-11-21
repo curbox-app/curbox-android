@@ -409,8 +409,8 @@ class DataStoreManager(private val context: Context) {
     }
 
     /**
-     * Moves the end of the running focus session, or the current Pomodoro focus round, later.
-     * Breaks are never made longer. Returns the new end, or null when nothing changed.
+     * Moves the end of the running focus session, or the current Pomodoro round, later.
+     * Returns the new end, or null when nothing changed.
      */
     suspend fun extendManualFocus(expectedEndTimeInMillis: Long, extraMs: Long): Long? {
         var newEndTimeInMillis: Long? = null
@@ -421,12 +421,13 @@ class DataStoreManager(private val context: Context) {
             val now = System.currentTimeMillis()
             if (groupId == null ||
                 endTimeInMillis != expectedEndTimeInMillis ||
-                endTimeInMillis <= now ||
-                (pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK)
+                endTimeInMillis <= now
             ) {
                 return@updateData current
             }
-            val maxEnd = now + PomodoroState.MAX_FOCUS_MINUTES * 60_000L
+            val isBreak = pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK
+            val maxMinutes = if (isBreak) PomodoroState.MAX_BREAK_MINUTES else PomodoroState.MAX_FOCUS_MINUTES
+            val maxEnd = now + maxMinutes * 60_000L
             val extended = minOf(endTimeInMillis + extraMs, maxEnd)
             if (extended <= endTimeInMillis) return@updateData current
             newEndTimeInMillis = extended

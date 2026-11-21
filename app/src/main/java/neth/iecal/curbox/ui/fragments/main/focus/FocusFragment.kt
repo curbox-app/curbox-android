@@ -65,12 +65,7 @@ class FocusFragment : Fragment() {
                         val isRunning = groupId != null
                         b.tvActiveGroup.visibility = if (isRunning) View.VISIBLE else View.GONE
                         b.btnGoToStats.visibility = if (isRunning) View.GONE else View.VISIBLE
-                        // Adding time to a break would only make the break longer.
-                        b.btnAddTime.visibility = if (isRunning && !(pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK)) {
-                            View.VISIBLE
-                        } else {
-                            View.GONE
-                        }
+                        b.btnAddTime.visibility = if (isRunning) View.VISIBLE else View.GONE
                         b.tvSeconds.text = if (isRunning) "" else getString(R.string.common_mins)
 
                         if (isRunning) {
@@ -222,8 +217,10 @@ class FocusFragment : Fragment() {
             }
             getString(R.string.focus_add_time_option, duration)
         }
+        val pomodoro = viewModel.currentPomodoroState.value
+        val isBreak = pomodoro.isActive && pomodoro.phase == PomodoroPhase.BREAK
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.focus_add_time_title)
+            .setTitle(if (isBreak) R.string.focus_add_break_time_title else R.string.focus_add_time_title)
             .setItems(labels.toTypedArray()) { _, which ->
                 viewModel.extendFocus(addTimeOptions[which])
             }

@@ -25,6 +25,7 @@
     <string name="focus_end_pomodoro">End Pomodoro</string>
     <string name="focus_add_time">Add time</string>
     <string name="focus_add_time_title">Keep focusing longer</string>
+    <string name="focus_add_break_time_title">Make your break longer</string>
     <string name="focus_add_time_option">Add %1$s</string>
     <string name="focus_group">Focus Group</string>
     <string name="focus_new_group">Create New Group</string>
