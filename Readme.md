@@ -57,8 +57,16 @@ The entire codebase is public. Anyone can verify how the app works. This ensures
 
 
  <p>
+    <a href="https://play.google.com/store/apps/details?id=neth.iecal.curbox"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="80"></a>
     <a href="https://f-droid.org/packages/neth.iecal.curbox"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"></a>
     <a href="https://github.com/curbox-app/curbox-android/releases/latest"><img src="https://raw.githubusercontent.com/andOTP/andOTP/master/assets/badges/get-it-on-github.png" height="80"></a>
+   </p>
+
+#### Browser extension
+
+ <p>
+    <a href="https://chromewebstore.google.com/detail/curbox/pibbkglphadkglpndilhefjkjpojmlie"><img src="https://img.shields.io/badge/Download%20from-Chrome%20Web%20Store-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Download from Chrome Web Store" height="40"></a>
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/curbox/"><img src="https://img.shields.io/badge/Download%20from-Firefox%20Add--ons-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Download from Firefox Add-ons" height="40"></a>
    </p>
 
 
