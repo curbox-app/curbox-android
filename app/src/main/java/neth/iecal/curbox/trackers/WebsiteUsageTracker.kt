@@ -15,6 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import neth.iecal.curbox.BuildConfig
 import neth.iecal.curbox.data.db.AppDatabase
 import neth.iecal.curbox.data.db.WebsiteStatsDao
 import neth.iecal.curbox.data.db.WebsiteStatsEntity
@@ -117,7 +118,7 @@ class WebsiteUsageTracker {
     private fun filterOutUrlFromPlainText(inputText: String?): String? {
         if (inputText.isNullOrBlank()) return null
 
-        Log.d("website", "filtering url $inputText")
+        if (BuildConfig.DEBUG) Log.d("website", "filtering url $inputText")
         val urlRegex = Regex(
             pattern = """(?:https?://|www\.)?[^\s<>\"']+""",
             option = RegexOption.IGNORE_CASE
@@ -166,7 +167,7 @@ class WebsiteUsageTracker {
         val urlBarInfo = URL_BAR_ID_LIST[packageName] ?: return
 
 
-        Log.d("w source node",event.source.toString())
+        if (BuildConfig.DEBUG) Log.d("w source node", event.source.toString())
         try {
             val nodes = AccessibilityHelper.findElementById(
                 rootNode,
@@ -175,7 +176,7 @@ class WebsiteUsageTracker {
                 event.source,
                 urlBarInfo.displayUrlBarId
             ) ?: return
-            Log.d("found node",nodes.toString())
+            if (BuildConfig.DEBUG) Log.d("found node", nodes.toString())
             val text = (nodes.text ?: nodes.contentDescription).toString()
 
             if (text.isNotEmpty()) {
@@ -197,7 +198,7 @@ class WebsiteUsageTracker {
         if (destroyed) return
         if (siteInfo.urlIdentifier == currentUrlIdentifier && packageName == currentPackage) return
 
-        Log.d("saving session", siteInfo.urlIdentifier)
+        if (BuildConfig.DEBUG) Log.d("saving session", siteInfo.urlIdentifier)
         saveSession()
         currentDomain = siteInfo.domain
         currentUrlIdentifier = siteInfo.urlIdentifier
@@ -347,7 +348,7 @@ class WebsiteUsageTracker {
                         lastVisited = wallNow
                     )
                     websiteStatsDao.insertIfAbsent(entity)
-                    Log.d("saving session", entity.toString())
+                    if (BuildConfig.DEBUG) Log.d("saving session", entity.toString())
                     websiteStatsDao.addTime(
                         slice.date,
                         packageName,
