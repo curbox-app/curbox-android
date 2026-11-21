@@ -212,6 +212,21 @@ class MindfulMessageSessionTest {
         assertEquals(1, service.addedViews.size)
     }
 
+    @Test
+    fun foregroundEventWithoutSessionStillClearsExpiredIntent() = onMain {
+        service.activePackage = "com.example.launcher"
+        sendEvent("com.example.launcher")
+        assertFalse(overlay.isOverlayVisible)
+        @Suppress("UNCHECKED_CAST")
+        val intents = MindfulMessage::class.java.getDeclaredField("activeIntents")
+            .apply { isAccessible = true }.get(message) as MutableMap<String, Pair<String, Long>>
+        intents["com.example.browser"] = Pair("Check one thing", System.currentTimeMillis() - 1)
+
+        sendEvent("com.example.launcher", AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED)
+
+        assertTrue(intents.isEmpty())
+    }
+
     private fun onMain(action: () -> Unit) {
         var failure: Throwable? = null
         InstrumentationRegistry.getInstrumentation().runOnMainSync {
