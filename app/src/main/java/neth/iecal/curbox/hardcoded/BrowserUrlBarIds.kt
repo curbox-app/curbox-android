@@ -25,6 +25,9 @@ val URL_BAR_ID_LIST = mapOf(
     "io.github.jqssun.helium" to BrowserUrlBarInfo(
         displayUrlBarId = "io.github.jqssun.helium:id/url_bar",
     ),
+    "org.barebrowser" to BrowserUrlBarInfo(
+        displayUrlBarId = "org.barebrowser:id/url_bar",
+    ),
     "org.calyxos.chromium" to BrowserUrlBarInfo(
         displayUrlBarId = "org.calyxos.chromium:id/url_bar",
     ),
