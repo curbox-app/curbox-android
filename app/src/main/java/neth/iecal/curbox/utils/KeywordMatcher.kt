@@ -1,5 +1,6 @@
 package neth.iecal.curbox.utils
 
+import java.net.URLDecoder
 import java.util.Locale
 
 /**
@@ -77,9 +78,15 @@ object KeywordMatcher {
      *   - Domain prefix:        "youtube.com"  → "youtube.com/shorts"
      *   - www normalisation:    "www.x.com"    → "x.com/..." and vice-versa
      *   - Path segment:         "/shorts"      → "youtube.com/shorts"
-     *   - Domain word:          "youtube"      → "youtube.com", "m.youtube.com"
+     *   - Plain word anywhere:  "youtube"      → "xyzyoutube.com", "google.com/search?q=youtube"
+     *   - Domain word only:     "youtube"      → "youtube.com", "m.youtube.com"
+     *     (when [plainWordsMatchAnywhere] is false, so an allow list stays strict)
      */
-    private fun matchesLiteral(keyword: String, urlIdentifier: String): Boolean {
+    private fun matchesLiteral(
+        keyword: String,
+        urlIdentifier: String,
+        plainWordsMatchAnywhere: Boolean
+    ): Boolean {
         val url = normalize(urlIdentifier)
 
         if (keyword.startsWith("/")) {
@@ -94,6 +101,7 @@ object KeywordMatcher {
             url.startsWith("$keyword?") || url.startsWith("$keyword#")) return true
 
         if (!keyword.contains('.') && !keyword.contains('/')) {
+            if (plainWordsMatchAnywhere) return decode(url).contains(keyword)
             val domain = url.substringBefore('/').substringBefore('?').substringBefore('#')
             if (domain.split('.').any { it == keyword }) return true
         }
@@ -101,10 +109,23 @@ object KeywordMatcher {
         return false
     }
 
-    fun matchesPatterns(patterns: Pair<List<Regex>, List<String>>, urlIdentifier: String): Boolean {
+    // The URL identifier keeps the raw query, so "q=youtube+shorts" must be decoded
+    // before it can match the keyword "youtube shorts".
+    private fun decode(url: String): String =
+        runCatching { URLDecoder.decode(url, "UTF-8") }.getOrDefault(url)
+
+    /**
+     * [plainWordsMatchAnywhere] lets a plain word (no '.' or '/') match anywhere in the URL.
+     * Pass false when a match allows a website, so "wiki" cannot allow "youtube.com/?q=wiki".
+     */
+    fun matchesPatterns(
+        patterns: Pair<List<Regex>, List<String>>,
+        urlIdentifier: String,
+        plainWordsMatchAnywhere: Boolean = true
+    ): Boolean {
         val normalizedUrl = normalize(urlIdentifier)
         val (regexes, literals) = patterns
         return regexes.any { it.containsMatchIn(normalizedUrl) } ||
-               literals.any { matchesLiteral(it, normalizedUrl) }
+               literals.any { matchesLiteral(it, normalizedUrl, plainWordsMatchAnywhere) }
     }
 }
