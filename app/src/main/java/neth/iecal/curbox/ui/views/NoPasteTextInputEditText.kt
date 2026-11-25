@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
 import android.view.DragEvent
-import android.view.inputmethod.BaseInputConnection
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
 import android.view.inputmethod.InputConnectionWrapper
@@ -12,19 +11,17 @@ import android.view.inputmethod.TextAttribute
 import androidx.annotation.RequiresApi
 import com.google.android.material.textfield.TextInputEditText
 
-internal fun isBulkImeInsertion(
-    text: CharSequence,
-    activeComposition: CharSequence?
-): Boolean {
-    if (Character.codePointCount(text, 0, text.length) <= 1) return false
-    return activeComposition?.toString() != text.toString()
-}
+internal fun isAllowedImeCommit(text: CharSequence): Boolean =
+    Character.codePointCount(text, 0, text.length) <= 5
+
+internal fun isPasteContextMenuAction(id: Int): Boolean =
+    id == android.R.id.paste || id == android.R.id.pasteAsPlainText
 
 /**
  * Text input for challenges that must be completed by typing.
  *
- * Paste is blocked from the regular and selection action menus, keyboard
- * clipboard panels, and drag and drop.
+ * Paste is blocked from the regular and selection action menus and drag
+ * and drop. Input method commits are limited to five Unicode code points.
  */
 class NoPasteTextInputEditText @JvmOverloads constructor(
     context: Context,
@@ -33,10 +30,10 @@ class NoPasteTextInputEditText @JvmOverloads constructor(
 ) : TextInputEditText(context, attrs, defStyleAttr) {
 
     override fun onTextContextMenuItem(id: Int): Boolean {
-        return when (id) {
-            android.R.id.paste,
-            android.R.id.pasteAsPlainText -> false
-            else -> super.onTextContextMenuItem(id)
+        return if (isPasteContextMenuAction(id)) {
+            false
+        } else {
+            super.onTextContextMenuItem(id)
         }
     }
 
@@ -45,61 +42,43 @@ class NoPasteTextInputEditText @JvmOverloads constructor(
     }
 
     override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
-        val inputConnection = super.onCreateInputConnection(outAttrs) ?: return null
+        val connection = super.onCreateInputConnection(outAttrs) ?: return null
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            Api33NoPasteInputConnection(inputConnection)
+            Api33LimitedInputConnection(connection)
         } else {
-            NoPasteInputConnection(inputConnection)
+            LimitedInputConnection(connection)
         }
     }
 
-    private fun isBulkImeInsertion(text: CharSequence): Boolean {
-        val editable = editableText
-        val composingStart = BaseInputConnection.getComposingSpanStart(editable)
-        val composingEnd = BaseInputConnection.getComposingSpanEnd(editable)
-        val activeComposition = if (composingStart >= 0 && composingEnd > composingStart) {
-            editable.subSequence(composingStart, composingEnd)
-        } else {
-            null
-        }
-        return isBulkImeInsertion(text, activeComposition)
-    }
-
-    private open inner class NoPasteInputConnection(
-        target: InputConnection
-    ) : InputConnectionWrapper(target, false) {
+    private open inner class LimitedInputConnection(target: InputConnection) :
+        InputConnectionWrapper(target, false) {
 
         override fun commitText(text: CharSequence, newCursorPosition: Int): Boolean {
-            return if (isBulkImeInsertion(text)) {
-                true
-            } else {
+            return if (isAllowedImeCommit(text)) {
                 super.commitText(text, newCursorPosition)
+            } else {
+                true
             }
         }
 
         override fun performContextMenuAction(id: Int): Boolean {
-            return if (id == android.R.id.paste || id == android.R.id.pasteAsPlainText) {
-                true
-            } else {
-                super.performContextMenuAction(id)
-            }
+            return if (isPasteContextMenuAction(id)) true else super.performContextMenuAction(id)
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-    private inner class Api33NoPasteInputConnection(
-        target: InputConnection
-    ) : NoPasteInputConnection(target) {
+    private inner class Api33LimitedInputConnection(target: InputConnection) :
+        LimitedInputConnection(target) {
 
         override fun commitText(
             text: CharSequence,
             newCursorPosition: Int,
             textAttribute: TextAttribute?
         ): Boolean {
-            return if (isBulkImeInsertion(text)) {
-                true
-            } else {
+            return if (isAllowedImeCommit(text)) {
                 super.commitText(text, newCursorPosition, textAttribute)
+            } else {
+                true
             }
         }
     }
