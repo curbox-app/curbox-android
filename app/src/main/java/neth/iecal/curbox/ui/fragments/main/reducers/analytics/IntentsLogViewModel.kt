@@ -13,7 +13,11 @@ import kotlinx.coroutines.launch
 import neth.iecal.curbox.data.db.IntentLogDao
 import neth.iecal.curbox.data.db.IntentLogEntity
 
-class IntentsLogViewModel(private val dao: IntentLogDao) : ViewModel() {
+class IntentsLogViewModel(
+    private val dao: IntentLogDao,
+    private val allTimeLabel: String,
+    private val dateRangeFormat: String
+) : ViewModel() {
 
     private val _searchQuery = MutableStateFlow("")
     private val _dateRange = MutableStateFlow<Pair<Long, Long>?>(null)
@@ -36,13 +40,13 @@ class IntentsLogViewModel(private val dao: IntentLogDao) : ViewModel() {
     }.stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     val dateRangeText: StateFlow<String> = _dateRange.map { range ->
-        if (range == null) "All Time"
+        if (range == null) allTimeLabel
         else {
             val start = java.text.SimpleDateFormat("MMM dd", java.util.Locale.getDefault()).format(java.util.Date(range.first))
             val end = java.text.SimpleDateFormat("MMM dd", java.util.Locale.getDefault()).format(java.util.Date(range.second))
-            if (start == end) start else "$start - $end"
+            if (start == end) start else String.format(java.util.Locale.getDefault(), dateRangeFormat, start, end)
         }
-    }.stateIn(viewModelScope, SharingStarted.Lazily, "All Time")
+    }.stateIn(viewModelScope, SharingStarted.Lazily, allTimeLabel)
 
     fun setSearchQuery(query: String) {
         _searchQuery.value = query
@@ -64,11 +68,15 @@ class IntentsLogViewModel(private val dao: IntentLogDao) : ViewModel() {
     }
 }
 
-class IntentsLogViewModelFactory(private val dao: IntentLogDao) : ViewModelProvider.Factory {
+class IntentsLogViewModelFactory(
+    private val dao: IntentLogDao,
+    private val allTimeLabel: String,
+    private val dateRangeFormat: String
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(IntentsLogViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return IntentsLogViewModel(dao) as T
+            return IntentsLogViewModel(dao, allTimeLabel, dateRangeFormat) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

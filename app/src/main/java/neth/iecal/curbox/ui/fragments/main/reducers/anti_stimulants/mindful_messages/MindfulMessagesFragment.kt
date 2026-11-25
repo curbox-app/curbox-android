@@ -209,7 +209,9 @@ class MindfulMessagesFragment : Fragment() {
                 val g = (config.bgColor shr 8) and 0xFF
                 val b = config.bgColor and 0xFF
                 widget.findViewById<TextView>(R.id.mindful_txt).apply {
-                    text = config.messages.lines().firstOrNull()?.ifBlank { "Mindful message" } ?: "Mindful message"
+                    text = config.messages.lines().firstOrNull()?.ifBlank {
+                        getString(R.string.mindful_message_default)
+                    } ?: getString(R.string.mindful_message_default)
                     textSize = config.textSize
                     setTextColor(Color.argb(
                         config.textOpacity * 255 / 100,

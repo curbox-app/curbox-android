@@ -54,7 +54,7 @@ class ReelCounterFragment : Fragment() {
         }
 
         binding.btnHelp.setOnClickListener {
-            ViewUtils.showHelpPopup(it, "Track how many short videos you watch to build better digital habits.", "https://curbox.app/docs/reducers/video-counter/")
+            ViewUtils.showHelpPopup(it, getString(R.string.help_reel_counter), "https://curbox.app/docs/reducers/video-counter/")
         }
 
         binding.btnPrevWeek.setOnClickListener { viewModel.goToPreviousWeek() }

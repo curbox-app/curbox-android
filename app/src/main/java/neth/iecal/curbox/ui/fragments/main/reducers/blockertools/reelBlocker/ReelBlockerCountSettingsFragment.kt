@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import neth.iecal.curbox.R
 import neth.iecal.curbox.data.models.ReelCountConfig
 import neth.iecal.curbox.databinding.FragmentReelBlockerCountSettingsBinding
 import neth.iecal.curbox.databinding.ItemDayCountLimitBinding
@@ -18,9 +19,8 @@ class ReelBlockerCountSettingsFragment : BottomSheetDialogFragment() {
     private val binding get() = _binding!!
     private val viewModel: ReelBlockerViewModel by activityViewModels()
 
-    private val daysOfWeek = listOf(
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-    )
+    private val daysOfWeek: List<String>
+        get() = resources.getStringArray(R.array.days_of_week_monday_first).toList()
 
     private val dayBindings = mutableMapOf<Int, ItemDayCountLimitBinding>()
 

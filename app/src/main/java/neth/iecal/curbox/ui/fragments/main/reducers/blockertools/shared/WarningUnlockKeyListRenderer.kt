@@ -31,10 +31,10 @@ internal class WarningUnlockKeyListRenderer(
                 val durationText = when {
                     isOnEachOpenEnabled() ->
                         fragment.getString(R.string.warning_current_app_session)
-                    duration == -1L -> "Dynamic time"
-                    else -> "${duration / 60_000} mins"
+                    duration == -1L -> fragment.getString(R.string.warning_unlock_dynamic_time)
+                    else -> fragment.getString(R.string.warning_unlock_minutes, duration / 60_000)
                 }
-                text = "$label - $durationText"
+                text = "$label · $durationText"
                 layoutParams = LinearLayout.LayoutParams(
                     0,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -47,7 +47,7 @@ internal class WarningUnlockKeyListRenderer(
                 null,
                 com.google.android.material.R.attr.materialButtonOutlinedStyle
             ).apply {
-                text = "Remove"
+                text = fragment.getString(R.string.warning_unlock_remove)
                 layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
