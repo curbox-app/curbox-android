@@ -334,11 +334,13 @@ class DataStoreManager(private val context: Context) {
                         0,
                         SettingsChangeDelayConfig.MAX_DELAY_MINUTES,
                     )
-                    val appliesAt = if (timeGateActive) now + delayMinutes * 60_000L else now
+                    val kept = keepablePendingTimer(field, current, existingPending, proposed)
+                    val appliesAt = kept?.appliesAtMs
+                        ?: if (timeGateActive) now + delayMinutes * 60_000L else now
                     val pending = PendingSettingsChange(
                         field = field.name,
                         newValueJson = newValueJson,
-                        requestedAtMs = now,
+                        requestedAtMs = kept?.requestedAtMs ?: now,
                         appliesAtMs = appliesAt,
                     )
                     updated = updated.copy(
@@ -709,11 +711,13 @@ class DataStoreManager(private val context: Context) {
         var hadPendingForField = false
         var tamperGated = false
         var unchangedPending = false
+        var keptTimer = false
         settingsDataStore.updateData { current ->
             deferredUntilMs = 0L
             hadPendingForField = false
             tamperGated = false
             unchangedPending = false
+            keptTimer = false
             val newValueJson = gson.toJson(computeNewValue(overlayPendingChanges(current)))
             val proposed = withFieldValue(current, field, newValueJson) ?: return@updateData current
             val delayConfig = current.settingsChangeDelayConfig2
@@ -738,11 +742,13 @@ class DataStoreManager(private val context: Context) {
                 // With no active timer, the pending value is due the instant tamper protection
                 // turns off; applyDuePendingChanges re-checks that condition on every sweep.
                 val delayMinutes = delayConfig.delayMinutes.coerceIn(0, SettingsChangeDelayConfig.MAX_DELAY_MINUTES)
-                deferredUntilMs = if (timeGateActive) now + delayMinutes * 60_000L else now
+                val kept = keepablePendingTimer(field, current, existingPending, proposed)
+                keptTimer = kept != null
+                deferredUntilMs = kept?.appliesAtMs ?: if (timeGateActive) now + delayMinutes * 60_000L else now
                 val pending = PendingSettingsChange(
                     field = field.name,
                     newValueJson = newValueJson,
-                    requestedAtMs = now,
+                    requestedAtMs = kept?.requestedAtMs ?: now,
                     appliesAtMs = deferredUntilMs
                 )
                 current.copy(settingsChangeDelayConfig2 = delayConfig.copy(
@@ -754,10 +760,27 @@ class DataStoreManager(private val context: Context) {
         if (unchangedPending) {
             return@withContext
         } else if (deferredUntilMs > 0L) {
-            notifyChangeDeferred(field, deferredUntilMs, hadPendingForField, tamperGated)
+            notifyChangeDeferred(field, deferredUntilMs, hadPendingForField, tamperGated, keptTimer)
         } else if (hadPendingForField) {
             notifyPendingChangeDropped(field)
         }
+    }
+
+    /**
+     * Returns [existing] when [proposed] is same or stricter than the value already waiting
+     * for [field]. Such an edit only adds restrictions on top of that waiting change, so it
+     * rides on the same timer instead of restarting it: when the timer ends the user gets
+     * nothing weaker than the waiting change would already have given them.
+     */
+    private fun keepablePendingTimer(
+        field: GatedSettingsField,
+        current: Settings,
+        existing: PendingSettingsChange?,
+        proposed: Settings
+    ): PendingSettingsChange? {
+        existing ?: return null
+        val waiting = withFieldValue(current, field, existing.newValueJson) ?: return null
+        return existing.takeIf { RestrictionComparator.isSameOrStricter(field, waiting, proposed) }
     }
 
     private fun applyPendingValue(settings: Settings, change: PendingSettingsChange): Settings? {
@@ -877,7 +900,8 @@ class DataStoreManager(private val context: Context) {
         field: GatedSettingsField,
         appliesAtMs: Long,
         replacedExisting: Boolean,
-        tamperGated: Boolean
+        tamperGated: Boolean,
+        keptTimer: Boolean = false
     ) {
         val appContext = context.applicationContext
         Handler(Looper.getMainLooper()).post {
@@ -888,6 +912,7 @@ class DataStoreManager(private val context: Context) {
                     putExtra(neth.iecal.curbox.ui.activity.PendingChangeReviewActivity.EXTRA_APPLIES_AT_MS, appliesAtMs)
                     putExtra(neth.iecal.curbox.ui.activity.PendingChangeReviewActivity.EXTRA_REPLACED_EXISTING, replacedExisting)
                     putExtra(neth.iecal.curbox.ui.activity.PendingChangeReviewActivity.EXTRA_TAMPER_GATED, tamperGated)
+                    putExtra(neth.iecal.curbox.ui.activity.PendingChangeReviewActivity.EXTRA_KEPT_TIMER, keptTimer)
                 }
                 appContext.startActivity(intent)
             } catch (e: Exception) {

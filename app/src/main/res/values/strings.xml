@@ -655,6 +655,7 @@
     <string name="change_delay_review_message">This change weakens the %1$s rules, so it will not apply immediately. It applies in %2$s. The current rules stay active until then.</string>
     <string name="change_delay_review_message_no_timer">This change weakens the %1$s rules, so it will not apply immediately. The current rules stay active until the change is allowed.</string>
     <string name="change_delay_review_tamper_note">It will not apply until tamper protection is off.</string>
+    <string name="change_delay_review_kept_timer_note">A change for this tool was already waiting. This edit only adds to it, so it joins that change and keeps its timer.</string>
     <string name="change_delay_review_replaced_note">A change for this tool was already waiting. This new one takes its place and the timer starts over.</string>
     <string name="change_delay_review_keep">Keep it waiting</string>
     <string name="change_delay_review_undo">Undo this change</string>
