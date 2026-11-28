@@ -640,7 +640,7 @@
     <string name="change_delay_deferred_toast">Saved for later. This change starts working in %1$s. You can cancel it under Settings change delay.</string>
     <string name="change_delay_tamper_gated_toast">Saved for later. This change will not apply until tamper protection is off.</string>
     <string name="change_delay_cancelled_toast">The waiting change was cancelled. Nothing changed.</string>
-    <string name="change_delay_pending_note">If you make a stricter change to the same tool while a change is waiting, the waiting change is removed.</string>
+    <string name="change_delay_pending_note">A stricter change to the same tool applies right away. A change that is already waiting keeps its timer. It is only removed if your new change makes it unnecessary.</string>
     <string name="change_delay_help_popup">When enabled, changes that weaken a rule wait before they apply. This gives you time to reconsider them.</string>
     <string name="change_delay_field_app_groups">App blocker</string>
     <string name="change_delay_field_auto_dnd">Auto DND</string>
