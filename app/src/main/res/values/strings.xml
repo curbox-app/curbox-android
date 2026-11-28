@@ -640,7 +640,7 @@
     <string name="change_delay_deferred_toast">Saved for later. This change starts working in %1$s. You can cancel it under Settings change delay.</string>
     <string name="change_delay_tamper_gated_toast">Saved for later. This change will not apply until tamper protection is off.</string>
     <string name="change_delay_cancelled_toast">The waiting change was cancelled. Nothing changed.</string>
-    <string name="change_delay_pending_note">If you make a stricter change to the same tool while a change is waiting, the waiting change is removed.</string>
+    <string name="change_delay_pending_note">A stricter change to the same feature, such as App blocker, applies right away. A change that is already waiting keeps its timer. It is only removed if your new change makes it unnecessary.</string>
     <string name="change_delay_help_popup">When enabled, changes that weaken a rule wait before they apply. This gives you time to reconsider them.</string>
     <string name="change_delay_field_app_groups">App blocker</string>
     <string name="change_delay_field_auto_dnd">Auto DND</string>
@@ -655,10 +655,11 @@
     <string name="change_delay_review_message">This change weakens the %1$s rules, so it will not apply immediately. It applies in %2$s. The current rules stay active until then.</string>
     <string name="change_delay_review_message_no_timer">This change weakens the %1$s rules, so it will not apply immediately. The current rules stay active until the change is allowed.</string>
     <string name="change_delay_review_tamper_note">It will not apply until tamper protection is off.</string>
-    <string name="change_delay_review_kept_timer_note">A change for this tool was already waiting. This edit only adds to it, so it joins that change and keeps its timer.</string>
-    <string name="change_delay_review_replaced_note">A change for this tool was already waiting. This new one takes its place and the timer starts over.</string>
+    <string name="change_delay_review_kept_timer_note">A change to %1$s was already waiting. This edit only adds to it, so it joins that change and keeps its timer.</string>
+    <string name="change_delay_review_replaced_note">A change to %1$s was already waiting. This new one takes its place and the timer starts over.</string>
     <string name="change_delay_review_keep">Keep it waiting</string>
     <string name="change_delay_review_undo">Undo this change</string>
+    <string name="change_delay_applied_over_waiting_toast">Stricter edit applied now. The earlier %1$s change still waits.</string>
     <string name="change_delay_dropped_toast">The stricter change is active. The pending change for %1$s was removed.</string>
     <string name="temporary_disable_title">Temporarily disable %1$s</string>
     <string name="temporary_disable_5m">5 minutes</string>

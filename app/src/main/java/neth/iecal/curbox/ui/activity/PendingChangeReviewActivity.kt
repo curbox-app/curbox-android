@@ -102,9 +102,9 @@ class PendingChangeReviewActivity : AppCompatActivity() {
             message += "\n\n" + getString(R.string.change_delay_review_tamper_note)
         }
         if (keptTimer) {
-            message += "\n\n" + getString(R.string.change_delay_review_kept_timer_note)
+            message += "\n\n" + getString(R.string.change_delay_review_kept_timer_note, label)
         } else if (replacedExisting) {
-            message += "\n\n" + getString(R.string.change_delay_review_replaced_note)
+            message += "\n\n" + getString(R.string.change_delay_review_replaced_note, label)
         }
         return message
     }

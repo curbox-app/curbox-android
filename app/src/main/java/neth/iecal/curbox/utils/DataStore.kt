@@ -11,6 +11,7 @@ import androidx.datastore.core.MultiProcessDataStoreFactory
 import androidx.datastore.core.Serializer
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
+import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -712,13 +713,16 @@ class DataStoreManager(private val context: Context) {
         var tamperGated = false
         var unchangedPending = false
         var keptTimer = false
+        var appliedOverWaiting = false
         settingsDataStore.updateData { current ->
             deferredUntilMs = 0L
             hadPendingForField = false
             tamperGated = false
             unchangedPending = false
             keptTimer = false
-            val newValueJson = gson.toJson(computeNewValue(overlayPendingChanges(current)))
+            appliedOverWaiting = false
+            val overlay = overlayPendingChanges(current)
+            val newValueJson = gson.toJson(computeNewValue(overlay))
             val proposed = withFieldValue(current, field, newValueJson) ?: return@updateData current
             val delayConfig = current.settingsChangeDelayConfig2
             val existingPending = delayConfig.pendingChanges.find { it.field == field.name }
@@ -738,6 +742,12 @@ class DataStoreManager(private val context: Context) {
                     pendingChanges = proposedDelayConfig.pendingChanges.filterNot { it.field == field.name }
                 ))
             } else {
+                // The edit was made on top of a waiting change. If what the edit itself changed
+                // is same or stricter, it goes live now; the waiting value still takes the edit
+                // in so nothing is lost when it lands.
+                val live = existingPending?.let { editAppliedToLive(field, current, overlay, newValueJson) }
+                appliedOverWaiting = live != null
+                val base = live ?: current
                 val now = System.currentTimeMillis()
                 // With no active timer, the pending value is due the instant tamper protection
                 // turns off; applyDuePendingChanges re-checks that condition on every sweep.
@@ -751,7 +761,7 @@ class DataStoreManager(private val context: Context) {
                     requestedAtMs = kept?.requestedAtMs ?: now,
                     appliesAtMs = deferredUntilMs
                 )
-                current.copy(settingsChangeDelayConfig2 = delayConfig.copy(
+                base.copy(settingsChangeDelayConfig2 = base.settingsChangeDelayConfig2.copy(
                     pendingChanges = delayConfig.pendingChanges.filterNot { it.field == field.name } + pending
                 ))
             }
@@ -759,6 +769,8 @@ class DataStoreManager(private val context: Context) {
         schedulePendingChanges()
         if (unchangedPending) {
             return@withContext
+        } else if (appliedOverWaiting) {
+            notifyAppliedOverWaiting(field)
         } else if (deferredUntilMs > 0L) {
             notifyChangeDeferred(field, deferredUntilMs, hadPendingForField, tamperGated, keptTimer)
         } else if (hadPendingForField) {
@@ -782,6 +794,25 @@ class DataStoreManager(private val context: Context) {
         val waiting = withFieldValue(current, field, existing.newValueJson) ?: return null
         return existing.takeIf { RestrictionComparator.isSameOrStricter(field, waiting, proposed) }
     }
+
+    /**
+     * Applies only what an edit changed (from [overlay]'s value to [newValueJson]) to the value
+     * in force in [current]. Returns the result when it differs from [current] and is same or
+     * stricter, else null. See [GatedEditMerge].
+     */
+    private fun editAppliedToLive(
+        field: GatedSettingsField,
+        current: Settings,
+        overlay: Settings,
+        newValueJson: String
+    ): Settings? = runCatching {
+        val before = JsonParser.parseString(syncedFieldValueJson(overlay, field) ?: return null)
+        val live = JsonParser.parseString(syncedFieldValueJson(current, field) ?: return null)
+        val merged = GatedEditMerge.merge(before, JsonParser.parseString(newValueJson), live)
+        if (merged == null || merged == live) return null
+        val candidate = withFieldValue(current, field, gson.toJson(merged)) ?: return null
+        candidate.takeIf { RestrictionComparator.isSameOrStricter(field, current, it) }
+    }.getOrNull()
 
     private fun applyPendingValue(settings: Settings, change: PendingSettingsChange): Settings? {
         val field = runCatching { GatedSettingsField.valueOf(change.field) }.getOrNull() ?: return null
@@ -926,6 +957,23 @@ class DataStoreManager(private val context: Context) {
                     Toast.makeText(appContext, message, Toast.LENGTH_LONG).show()
                 } catch (_: Exception) {
                 }
+            }
+        }
+    }
+
+    private fun notifyAppliedOverWaiting(field: GatedSettingsField) {
+        val appContext = context.applicationContext
+        Handler(Looper.getMainLooper()).post {
+            try {
+                Toast.makeText(
+                    appContext,
+                    appContext.getString(
+                        R.string.change_delay_applied_over_waiting_toast,
+                        SettingsChangeDelayUtils.fieldLabel(appContext, field.name)
+                    ),
+                    Toast.LENGTH_LONG
+                ).show()
+            } catch (_: Exception) {
             }
         }
     }
