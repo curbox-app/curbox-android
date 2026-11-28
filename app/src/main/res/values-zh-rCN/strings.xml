@@ -5,7 +5,7 @@
     <string name="save">保存</string>
     <string name="write_down_a_keyword">输入一个关键词</string>
     <string name="app_icon">应用图标</string>
-    <string name="admin_permission_desc">Curbox 防拆保护</string>
+    <string name="admin_permission_desc">Curbox 防篡改保护</string>
     <string name="close">关闭</string>
     <string name="proceed">继续</string>
     <string name="cancel">取消</string>
@@ -453,7 +453,7 @@
     <string name="change_delay_review_undo">撤销这个更改</string>
     <string name="change_delay_dropped_toast">我更严格的更改现在生效了。原本等待 %1$s 的更改已被丢弃。</string>
     <string name="api_permission_title">允许访问吗？</string>
-    <string name="api_permission_message">%1$s 想要控制 Curbox。它可以开启专注会话、开关拦截功能，并读取你的屏幕使用时间。你可以随时移除这个权限。</string>
+    <string name="api_permission_message">%1$s（%2$s）想要控制 Curbox。它可以开启专注会话、编辑专注分组、开启或关闭拦截功能、读取你的屏幕使用时间和使用历史，并提供解锁要求。你可以随时移除这个权限。</string>
     <string name="api_permission_allow">允许</string>
     <string name="api_permission_deny">拒绝</string>
     <string name="common_mins">分钟</string>
@@ -575,9 +575,11 @@
     <string name="notification_remaining_usage_lockdown">封锁前剩余可用时间</string>
     <string name="notification_remaining_usage_reels_lockdown">短视频封锁前剩余可用时间</string>
     <plurals name="anti_uninstall_summary_timed">
+        <item quantity="one">申请后 %1$d 天关闭。</item>
         <item quantity="other">申请后 %1$d 天关闭。</item>
     </plurals>
     <plurals name="anti_uninstall_timed_confirm">
+        <item quantity="one">保护将在 %1$d 天后自动关闭。一旦开始等待，就无法停止。</item>
         <item quantity="other">保护将在 %1$d 天后自动关闭。一旦开始等待，就无法停止。</item>
     </plurals>
 
@@ -611,4 +613,518 @@
     <string name="warning_section_title">触发屏蔽时</string>
     <string name="select_start_time">选择开始时间</string>
     <string name="select_end_time">选择结束时间</string>
+
+    <!-- Simplified Chinese localization coverage -->
+    <string name="accessibility_permission_app_blocker">此功能需要“显示在其他应用上层”权限才能工作。请先开启这个权限，再开启无障碍权限。如果功能停止工作，请重启 Curbox。
+
+开启后，Curbox 可以帮你完成这些事情：
+1. 拦截应用
+2. 拦截短视频内容
+3. 拦截网站和关键词
+4. 专注模式
+5. 隐藏应用中让你分心的界面部分
+6. 查看你在每个应用中花了多长时间
+7. 统计你刷过的短视频数量，并在悬浮层中显示
+8. 查看你访问过哪些网站，以及访问了多长时间
+
+Curbox 需要无障碍权限来识别你正在使用的应用、网站或界面，然后按照你的设置进行拦截并记录使用情况。没有这个权限，这些功能都无法工作。
+
+未经你的允许，Curbox 不会分享任何内容。</string>
+    <string name="focus_end_pomodoro">结束番茄钟</string>
+    <string name="focus_add_time">增加时间</string>
+    <string name="focus_add_time_title">继续专注更久</string>
+    <string name="focus_add_break_time_title">延长休息时间</string>
+    <string name="focus_add_time_option">增加 %1$s</string>
+    <string name="focus_duration_minutes_short">%1$d 分钟</string>
+    <string name="focus_duration_hours_short">%1$d 小时</string>
+    <string name="focus_duration_hours_minutes_short">%1$d 小时 %2$d 分钟</string>
+    <string name="focus_stats_today">今日专注</string>
+    <string name="focus_stats_focused_on">专注于 %1$s</string>
+    <string name="focus_stats_streak">已连续 %1$s。你的最佳记录是 %2$s。</string>
+    <string name="focus_stats_best_streak">你的最佳连续记录是 %1$s。</string>
+    <string name="focus_stats_overview">概览</string>
+    <string name="focus_stats_daily_average">每日平均</string>
+    <string name="focus_stats_empty">这里还没有专注记录。开始一次专注后，统计数据会显示在这里。</string>
+    <string name="focus_stats_longest">最长一次</string>
+    <string name="focus_stats_pomodoro_title">番茄钟</string>
+    <string name="focus_stats_pomodoro_hint">每个番茄钟算作一次专注。休息时间不计入专注时长。</string>
+    <string name="focus_stats_pomodoros">番茄钟</string>
+    <string name="focus_stats_rounds">完成轮数</string>
+    <string name="focus_stats_focus_time">专注时长</string>
+    <string name="focus_stats_time_of_day">专注时间段</string>
+    <string name="focus_stats_groups">分组</string>
+    <string name="focus_stats_recent">最近的专注</string>
+    <string name="focus_stats_finished">已完成</string>
+    <string name="focus_stats_ended_early">提前结束</string>
+    <string name="focus_stats_running">正在进行</string>
+    <string name="focus_pomodoro">番茄钟计时器</string>
+    <string name="focus_pomodoro_summary">重复进行选定时长的专注，每轮之间安排短暂休息。</string>
+    <string name="focus_pomodoro_break_minutes">休息分钟数</string>
+    <string name="focus_pomodoro_intervals">专注轮数</string>
+    <string name="focus_pomodoro_focus_progress">%1$s · 专注第 %2$d 轮，共 %3$d 轮</string>
+    <string name="focus_pomodoro_break_progress">%1$s · 专注第 %2$d 轮后休息，共 %3$d 轮</string>
+    <plurals name="focus_stats_days">
+        <item quantity="one">%d 天</item>
+        <item quantity="other">%d 天</item>
+    </plurals>
+    <plurals name="focus_stats_group_detail">
+        <item quantity="one">%1$d 次专注</item>
+        <item quantity="other">%1$d 次专注</item>
+    </plurals>
+    <plurals name="focus_stats_pomodoro_rounds">
+        <item quantity="one">番茄钟，第 %1$d 轮</item>
+        <item quantity="other">番茄钟，第 %1$d 轮</item>
+    </plurals>
+    <string name="autodnd_help_popup">在专注期间自动静音通知。</string>
+    <string name="label_github">GitHub</string>
+    <string name="curbox_github_repo">curbox-android</string>
+    <string name="curbox_also_on">Curbox 也在这些平台上</string>
+    <string name="label_browser_extension">浏览器扩展</string>
+    <string name="curbox_extension_repo">curbox-extension</string>
+    <string name="contributors_title">贡献者</string>
+    <string name="contributors_row_hint">认识一起构建 Curbox 的人</string>
+    <string name="contributors_intro">这些人帮助构建 Curbox。名字越大，代表贡献越多。</string>
+    <string name="contributors_cloud_description">帮助构建 Curbox 的人：%1$s</string>
+    <string name="extension_promo_label">新增</string>
+    <string name="extension_promo_title">电脑上也能用 Curbox</string>
+    <string name="extension_promo_body">Curbox 浏览器扩展支持 Chrome 和 Firefox。它会显示你在每个网站上花了多长时间，拦截让你分心的网站，帮助你保持专注。</string>
+    <string name="extension_promo_footer">和这个应用一样，它免费且开源。</string>
+    <string name="extension_promo_get">获取扩展</string>
+    <string name="extension_promo_share">分享链接</string>
+    <string name="extension_promo_later">以后再说</string>
+    <string name="extension_promo_share_message">适用于 Chrome 和 Firefox 的 Curbox 浏览器扩展：%1$s</string>
+    <string name="onboarding_extension_title">电脑上也会刷个不停吗？</string>
+    <string name="onboarding_extension_desc">Curbox 也有适用于 Chrome 和 Firefox 的免费浏览器扩展。点击了解更多。</string>
+    <string name="total_this_week">本周总计</string>
+    <string name="total_for_period">总计 · %1$s</string>
+    <string name="usage_date_range">%1$s 至 %2$s</string>
+    <string name="usage_weekly_usage">每周使用情况</string>
+    <string name="usage_daily_chart_description">每日应用使用情况图表</string>
+    <string name="usage_weekly_chart_description">每周应用使用情况图表</string>
+    <string name="usage_welcome_star_repo">给我们的仓库点个 Star</string>
+    <string name="whats_new_title">更新内容</string>
+    <string name="whats_new_dismiss">知道了</string>
+    <string name="skip_choosing_a_target_app">稍后选择目标应用</string>
+    <string name="refresh_usage_stats">刷新</string>
+    <string name="app_version">版本 %1$s</string>
+    <string name="unable_to_share_crash_logs">无法分享崩溃日志。</string>
+    <string name="settings_save_failed">无法保存你的更改，请重试。</string>
+    <string name="settings_saving">正在保存</string>
+    <string name="reel_counter_appearance">计数器显示</string>
+    <string name="reel_counter_text">计数器文字</string>
+    <string name="reel_counter_text_size_default">文字大小：96sp</string>
+    <string name="reel_counter_text_size_value">文字大小：%dsp</string>
+    <string name="reel_counter_text_opacity_default">文字不透明度：80%</string>
+    <string name="reel_counter_text_opacity_value">文字不透明度：%d%%</string>
+    <string name="reel_counter_text_color">计数器文字颜色</string>
+    <string name="reel_counter_background">计数器背景</string>
+    <string name="reel_counter_background_color">计数器背景颜色</string>
+    <string name="reel_counter_background_opacity_default">背景不透明度：0%</string>
+    <string name="reel_counter_background_opacity_value">背景不透明度：%d%%</string>
+    <string name="reel_counter_position">计数器位置</string>
+    <string name="reel_counter_position_hint">拖动计数器，选择它出现的位置。</string>
+    <string name="set_reel_counter_position">设置计数器位置</string>
+    <string name="notification_title_pomodoro_break">番茄钟休息</string>
+    <string name="nfc_focus_started">已开始专注：%1$s（%2$d 分钟）</string>
+    <string name="nfc_focus_stopped">专注已停止</string>
+    <string name="nfc_focus_no_group">没有找到可开始的专注分组</string>
+    <string name="nfc_focus_not_exitable">这次专注不能提前结束</string>
+    <string name="nfc_tag_unrecognized">无法识别 Curbox NFC 标签</string>
+    <string name="allow_instagram_reels_from_dm_inbox">允许打开从私信收件箱进入的 Instagram 短视频</string>
+    <string name="label_nfc_auth">NFC 验证</string>
+    <string name="label_configured_nfc">已配置的 NFC 标签：</string>
+    <string name="label_intent_auth">解锁理由长度</string>
+    <string name="label_intent_min_desc">设置继续之前必须输入的最少字符数。</string>
+    <plurals name="warning_intent_chars_needed">
+        <item quantity="one">至少输入 %1$d 个字符，还差 %2$d 个</item>
+        <item quantity="other">至少输入 %1$d 个字符，还差 %2$d 个</item>
+    </plurals>
+    <string name="desc_earlier_weeks">更早的周</string>
+    <string name="desc_later_weeks">更晚的周</string>
+    <string name="download_keyword_list">下载关键词列表</string>
+    <string name="reducer_logs">舒缓功能日志</string>
+    <string name="intent_log">解锁理由记录</string>
+    <string name="terms_url">https://curbox.app/terms.html</string>
+    <string name="privacy_url">https://curbox.app/privacy.html</string>
+    <string name="service_protection_remove_device_admin">关闭设备管理权限</string>
+    <string name="service_protection_remove_device_admin_warning">Curbox 将不再是设备所有者或设备管理员。你的手机可能会更容易停止或移除 Curbox。</string>
+    <string name="service_protection_remove">关闭</string>
+    <string name="service_protection_admin_locked">请先关闭防篡改保护。</string>
+    <string name="service_protection_admin_removal_started">正在关闭设备管理权限</string>
+    <string name="service_protection_admin_removal_failed">无法关闭设备管理权限，请重试。</string>
+    <string name="change_delay_tamper_lock_title">还要求关闭防篡改保护</string>
+    <string name="change_delay_tamper_lock_desc">防篡改保护开启时，放宽限制的更改会继续等待，即使计时结束也不会生效。请关闭防篡改保护，让它生效。</string>
+    <string name="change_delay_blocked_by_tamper">正在等待关闭防篡改保护</string>
+    <string name="change_delay_tamper_gated_toast">已保存，稍后生效。关闭防篡改保护后，这项更改才会生效。</string>
+    <string name="change_delay_review_message_no_timer">这项更改会放宽 %1$s 规则，因此不会立即生效。在允许更改之前，当前规则会继续生效。</string>
+    <string name="change_delay_review_tamper_note">关闭防篡改保护后，这项更改才会生效。</string>
+    <string name="temporary_disable_title">暂时关闭 %1$s</string>
+    <string name="temporary_disable_5m">5 分钟</string>
+    <string name="temporary_disable_15m">15 分钟</string>
+    <string name="temporary_disable_1h">1 小时</string>
+    <string name="temporary_disable_until_enabled">直到你重新开启</string>
+    <string name="temporary_disable_custom">自定义分钟数</string>
+    <string name="temporary_disable_custom_hint">分钟</string>
+    <string name="temporary_disable_action">暂时关闭</string>
+    <string name="temporary_disable_invalid">请输入 1 到 43,200 分钟之间的时长。</string>
+    <string name="temporary_disable_until">已暂时关闭 %1$s</string>
+    <string name="temporary_disable_until_manually_enabled">已关闭，直到你重新开启</string>
+    <string name="select_apps_count_plus_new">选择应用（%1$d 个，另有新安装应用）</string>
+    <string name="auto_add_new_apps">自动添加新应用</string>
+    <string name="group_details_keywords_only">%1$d 个关键词</string>
+    <string name="group_no_usage_left">这个日程中没有剩余时间</string>
+    <string name="group_usage_left">这个日程还剩 %1$s</string>
+    <string name="warning_show_on_each_open">每次打开所选应用时都显示此界面</string>
+    <string name="warning_current_app_session">当前应用会话</string>
+    <string name="crash_logs_read_error">无法读取崩溃日志。</string>
+    <string name="warning_proceeds_left">还可以打开 %1$d 次，共 %2$d 次</string>
+    <string name="scanner_flashlight_on">打开手电筒</string>
+    <string name="scanner_flashlight_off">关闭手电筒</string>
+    <string name="warning_scan_nfc_tag">扫描 NFC 标签</string>
+    <string name="warning_math_progress">已完成 %1$d 题，共 %2$d 题</string>
+    <string name="warning_math_answer_hint">答案</string>
+    <string name="warning_math_check_answer">检查答案</string>
+    <string name="warning_math_answer_required">请输入数字</string>
+    <string name="warning_math_incorrect">答案不正确，请稍后再试。</string>
+    <plurals name="warning_math_retry_in">
+        <item quantity="one">请在 %1$d 秒后再试</item>
+        <item quantity="other">请在 %1$d 秒后再试</item>
+    </plurals>
+    <string name="warning_option_never_unlock">永不解锁</string>
+    <string name="warning_option_never_unlock_desc">完全锁定，不允许绕过。</string>
+    <string name="warning_option_require_effort">解锁需要付出努力</string>
+    <string name="warning_option_require_effort_desc">行为心理学认为，增加一些实际阻力可以打断自动化习惯，让大脑停下来重新考虑。</string>
+    <string name="warning_option_wait">等待后解锁</string>
+    <string name="warning_option_wait_desc">短暂等待后即可访问。</string>
+    <string name="warning_option_qr">解锁需要扫描二维码或条形码</string>
+    <string name="warning_option_qr_desc">扫描任意代码即可，例如家中产品包装上的代码。</string>
+    <string name="warning_option_typing">解锁需要输入句子</string>
+    <string name="warning_option_typing_desc">准确输入一段较长的句子，确认自己已经准备好。</string>
+    <string name="warning_option_intent">解锁需要写下理由</string>
+    <string name="warning_option_intent_desc">简要说明你接下来要做什么。</string>
+    <string name="warning_option_nfc">解锁需要扫描 NFC 标签</string>
+    <string name="warning_option_nfc_desc">触碰实体 NFC 标签即可解锁。</string>
+    <string name="warning_option_adaptive_math">自适应数学题</string>
+    <string name="warning_option_adaptive_math_desc">完成难度会自动调整的题目。</string>
+    <string name="label_adaptive_math">自适应数学题</string>
+    <string name="label_adaptive_math_desc">选择需要答对的题目数量。</string>
+    <string name="label_adaptive_math_level_desc">第 1 级使用简单算术。第 10 级会综合使用小数、分数、根号、幂和运算顺序。</string>
+    <string name="label_focus_goal_unlock">每日专注要求</string>
+    <string name="label_focus_goal_unlock_desc">今天完成选定的专注时长后，才允许解锁。</string>
+    <string name="hint_focus_group">专注分组</string>
+    <string name="warning_focus_goal_group_required">请选择专注分组</string>
+    <string name="warning_focus_goal_checking">正在检查专注进度</string>
+    <string name="warning_focus_goal_complete">已完成 %1$s 的专注目标。</string>
+    <string name="warning_focus_goal_not_met">尚未完成专注目标，%2$s 还剩 %1$d 分钟。</string>
+    <string name="warning_focus_goal_unavailable">所选专注分组不可用，暂时无法解锁。</string>
+    <string name="warning_focus_goal_check_failed">无法检查专注进度，暂时无法解锁。</string>
+    <string name="warning_option_choose_time">让我选择需要多长时间</string>
+    <string name="warning_option_choose_time_desc">每次解锁时由你选择时长。</string>
+    <string name="warning_option_fixed_time">只给我固定时长</string>
+    <string name="warning_option_fixed_time_desc">达到设定时长后自动重新锁定。</string>
+    <string name="warning_invalid_nfc">这个 NFC 标签尚未注册</string>
+    <string name="nfc_tap_title">触碰你的 NFC 标签</string>
+    <string name="nfc_tap_message">将 NFC 标签贴在手机背面。</string>
+    <string name="nfc_unavailable">此设备上的 NFC 已关闭或不可用</string>
+    <string name="nfc_tag_saved">NFC 标签已注册</string>
+    <string name="nfc_write_failed">无法写入标签，请使用可写入的 NFC 标签。</string>
+    <string name="nfc_write_success">标签已写入并注册</string>
+    <string name="nfc_already_registered">这个标签已经注册</string>
+    <string name="focus_nfc_write_title">写入专注 NFC 标签</string>
+    <string name="focus_nfc_write_button">写入标签</string>
+    <string name="focus_nfc_no_groups">请先创建专注分组</string>
+    <string name="focus_nfc_pick_group">专注分组</string>
+    <string name="focus_nfc_pick_action">触碰后的操作</string>
+    <string name="focus_nfc_unnamed_group">未命名分组</string>
+    <string name="focus_nfc_action_toggle">切换专注状态</string>
+    <string name="focus_nfc_action_start">开始专注</string>
+    <string name="focus_nfc_action_stop">停止专注</string>
+    <string name="focus_nfc_duration_input_hint">时长</string>
+    <string name="focus_nfc_load_button">从标签读取</string>
+    <string name="focus_nfc_load_title">触碰标签以读取</string>
+    <string name="focus_nfc_loaded">已从标签读取设置</string>
+    <string name="focus_nfc_load_invalid">这个标签不是 Curbox 专注标签</string>
+    <string name="usage_short_form_videos_scrolled">刷过的短视频 · %1$d</string>
+    <string name="usage_short_form_video_duration">时长 · %1$s</string>
+    <string name="usage_short_form_video_average_attention">平均注意力时长 · %1$s</string>
+    <string name="usage_tracking_settings">使用跟踪</string>
+    <string name="usage_tracking_settings_description">选择无障碍服务在此设备上保存哪些使用数据。</string>
+    <string name="app_usage_tracking">应用使用跟踪</string>
+    <string name="website_usage_tracking">网站使用跟踪</string>
+    <string name="usage_tracking_disabled_warning">注意：关闭某类跟踪后，基于使用情况的拦截选项将无法对该类型生效。</string>
+    <string name="more_from_nethical">Nethical 的其他项目</string>
+    <string name="langowage_name">Langowage</string>
+    <string name="langowage_description">通过和其他玩家进行 60 秒对局学习日语</string>
+    <string name="backup_settings_title">备份设置</string>
+    <string name="backup_settings_description">将你的设置和规则保存到文件。使用历史不会包含在内。只能在设置应用期间恢复备份。</string>
+    <string name="backup_save">保存备份</string>
+    <string name="backup_saved">备份已保存。</string>
+    <string name="backup_save_failed">无法保存备份，请选择文件后重试。</string>
+    <string name="backup_restore_title">有备份吗？</string>
+    <string name="backup_restore_intro">完成设置前恢复你的设置和规则。之后无法再恢复。</string>
+    <string name="backup_restore_confirmation">这会替换当前设置和规则，不包含使用历史。你需要重新开启卸载保护。</string>
+    <string name="backup_restored">设置和规则已恢复。</string>
+    <string name="backup_restore_failed">无法恢复此文件，请选择有效的 Curbox 设置备份后重试。</string>
+    <string name="onboarding_finish_failed">无法完成设置，请重试。</string>
+    <string name="usage_select_background_art">选择背景图</string>
+    <string name="usage_background_art_random">随机</string>
+    <string name="warning_option_external">需要其他应用验证</string>
+    <string name="warning_option_external_desc">让其他应用在你继续之前检查目标是否完成</string>
+    <string name="warning_external_condition">要求</string>
+    <string name="warning_external_help">通过 Curbox API 连接受支持的应用。该应用会检查你的目标，例如到达某个地点或完成卡片。访问权限会持续到你选择的解锁时长结束。</string>
+    <string name="warning_external_select">选择一项要求。如果列表为空，请连接受支持的应用。</string>
+    <string name="warning_external_check">检查要求</string>
+    <string name="warning_external_unavailable">此要求不可用。请确认应用已安装，并且已获得 Curbox API 权限。</string>
+    <string name="warning_external_denied">要求未通过，你可以重试。</string>
+    <string name="advanced_analytics">高级分析</string>
+    <string name="advanced_analytics_desc">按小时查看你的时间都花在哪里。</string>
+    <string name="analytics_range_7">7 天</string>
+    <string name="analytics_range_14">14 天</string>
+    <string name="analytics_range_30">30 天</string>
+    <string name="analytics_range_90">90 天</string>
+    <string name="analytics_range_label">%1$s 至 %2$s</string>
+    <string name="analytics_empty_title">还没有可显示的内容</string>
+    <string name="analytics_empty_desc">先使用手机一段时间再回来看看，你的使用规律会显示在这里。</string>
+    <string name="analytics_footer">这些数字来自此手机记录的使用情况。</string>
+    <string name="analytics_under_minute">不到 1 分钟</string>
+    <string name="analytics_none">无</string>
+    <string name="analytics_category_other">其他</string>
+    <string name="analytics_detail_separator"> · </string>
+    <string name="analytics_section_overview">一眼看懂</string>
+    <string name="analytics_section_days">按天查看</string>
+    <string name="analytics_section_hours">按小时查看</string>
+    <string name="analytics_section_week">本周情况</string>
+    <string name="analytics_section_categories">应用类型</string>
+    <string name="analytics_section_apps">所有应用</string>
+    <string name="analytics_section_websites">网站</string>
+    <string name="analytics_section_reels">短视频</string>
+    <string name="analytics_section_focus">专注和正念暂停</string>
+    <string name="analytics_total_time">屏幕使用总时长</string>
+    <string name="analytics_daily_average">每日平均</string>
+    <string name="analytics_change">与之前相比</string>
+    <string name="analytics_active_days">使用天数</string>
+    <string name="analytics_app_opens">打开应用次数</string>
+    <string name="analytics_average_visit">平均每次使用</string>
+    <string name="analytics_peak_hour">最常使用的时段</string>
+    <string name="analytics_apps_used">使用过的应用</string>
+    <string name="analytics_change_up">增加 %1$s</string>
+    <string name="analytics_change_down">减少 %1$s</string>
+    <string name="analytics_change_detail">比之前 %1$d 天</string>
+    <string name="analytics_change_none">没有更早的数据</string>
+    <string name="analytics_days_of">%1$d 天，共 %2$d 天</string>
+    <string name="analytics_per_day">每天 %1$s</string>
+    <string name="analytics_percent">%1$d%%</string>
+    <string name="analytics_summary_total">你在手机上花了 %1$s，平均每天约 %2$s，占每天时间的 %3$d%%。</string>
+    <string name="analytics_summary_top_three">你使用最多的 3 个应用占用了 %1$d%% 的时间。</string>
+    <string name="analytics_summary_peak">你最常在 %1$s 使用手机。</string>
+    <string name="analytics_summary_weekend_more">周末每天比工作日多使用 %1$s。</string>
+    <string name="analytics_summary_weekend_less">周末每天比工作日少使用 %1$s。</string>
+    <string name="analytics_summary_night">你的使用时间中有 %1$s 发生在午夜到早上 6 点之间。</string>
+    <string name="analytics_days_hint">点击柱状图查看某一天。虚线表示每日平均值。</string>
+    <string name="analytics_day_selected">%1$s：%2$s</string>
+    <string name="analytics_busiest_day">最常使用的一天</string>
+    <string name="analytics_quietest_day">最少使用的一天</string>
+    <string name="analytics_weekday_average">工作日平均</string>
+    <string name="analytics_weekend_average">周末平均</string>
+    <string name="analytics_hours_hint">查看每天每个小时的总时长。点击柱状图查看详情。</string>
+    <string name="analytics_hour_selected">%1$s：总计 %2$s，平均每天约 %3$s</string>
+    <string name="analytics_part_night">夜间，午夜到早上 6 点</string>
+    <string name="analytics_part_morning">上午，早上 6 点到中午</string>
+    <string name="analytics_part_afternoon">下午，中午到下午 6 点</string>
+    <string name="analytics_part_evening">晚上，下午 6 点到午夜</string>
+    <string name="analytics_share_of_time">占使用时间的 %1$d%%</string>
+    <string name="analytics_week_hint">每个方块代表 1 小时。颜色越深，使用时间越长。点击查看详情。</string>
+    <string name="analytics_week_selected">%1$s，大约在 %2$s：平均约 %3$s</string>
+    <string name="analytics_show_all_apps">显示所有应用</string>
+    <string name="analytics_show_fewer_apps">显示较少应用</string>
+    <string name="analytics_each_visit">每次使用约 %1$s</string>
+    <string name="analytics_busiest_around">最常使用时间在 %1$s 左右</string>
+    <string name="analytics_used_on_days">在 %2$d 天中使用了 %1$d 天</string>
+    <string name="analytics_longest_day">最多的一天是 %1$s，共 %2$s</string>
+    <string name="analytics_trend_up">比之前增加 %1$s</string>
+    <string name="analytics_trend_down">比之前减少 %1$s</string>
+    <string name="analytics_trend_new">之前没有使用过</string>
+    <string name="analytics_share_of_browsing">占浏览时间的 %1$d%%</string>
+    <string name="analytics_visited_on_days">在 %2$d 天中访问了 %1$d 天</string>
+    <string name="analytics_no_websites">这段时间没有记录网站访问。</string>
+    <string name="analytics_reels_watched">观看的视频</string>
+    <string name="analytics_reels_time">观看时长</string>
+    <string name="analytics_reels_average">每个视频的时长</string>
+    <string name="analytics_seconds">%1$d 秒</string>
+    <string name="analytics_no_reels">这段时间没有记录短视频。</string>
+    <string name="analytics_focus_sessions">专注次数</string>
+    <string name="analytics_focus_time">专注时长</string>
+    <string name="analytics_focus_finished">已完成</string>
+    <string name="analytics_focus_ended_early">提前结束</string>
+    <string name="analytics_mindful_pauses">正念暂停</string>
+    <string name="analytics_time_unlocked">解锁后的使用时长</string>
+    <string name="analytics_no_intents">这段时间没有正念暂停记录。</string>
+    <plurals name="analytics_opens">
+        <item quantity="one">打开了 %d 次</item>
+        <item quantity="other">打开了 %d 次</item>
+    </plurals>
+    <plurals name="analytics_apps_count">
+        <item quantity="one">%d 个应用</item>
+        <item quantity="other">%d 个应用</item>
+    </plurals>
+    <plurals name="analytics_videos_count">
+        <item quantity="one">%d 个视频</item>
+        <item quantity="other">%d 个视频</item>
+    </plurals>
+    <plurals name="analytics_pauses_count">
+        <item quantity="one">%d 次暂停</item>
+        <item quantity="other">%d 次暂停</item>
+    </plurals>
+    <string name="sip_stretch">喝水和拉伸</string>
+    <string name="sip_stretch_card_desc">长时间使用后短暂休息，喝水并活动一下。</string>
+    <string name="enable_sip_stretch">开启喝水和拉伸</string>
+    <string name="sip_stretch_intro">当你在选定的应用中使用太久时，手机会短暂休息。休息结束前，所有应用都会被拦截，让你可以喝水、站起来并伸展身体。</string>
+    <string name="sip_stretch_rest_note">离开这些应用的时间会算作休息。如果你离开应用的时间达到一次休息时长，计时器会重新开始。</string>
+    <string name="sip_stretch_usage_limit">多久后休息</string>
+    <string name="sip_stretch_break_length">休息时长</string>
+    <string name="sip_stretch_minutes_value">%d 分钟</string>
+    <string name="change_delay_field_sip_stretch">喝水和拉伸</string>
+    <string name="sip_stretch_break_title">该休息一下了</string>
+    <string name="sip_stretch_break_body">计时结束后，你的应用会重新打开。</string>
+    <string name="sip_stretch_go_home">回到主屏幕</string>
+    <string-array name="sip_stretch_tips">
+        <item>喝满一杯水。</item>
+        <item>站起来伸个懒腰。</item>
+        <item>向后转动肩膀五次。</item>
+        <item>看看窗外远处的东西。</item>
+        <item>在房间里走一小圈。</item>
+        <item>慢慢吸气，再全部呼出。</item>
+        <item>轻轻地左右转动头部。</item>
+        <item>甩动手掌和手腕。</item>
+    </string-array>
+    <string name="urge_surf">冲动冲浪</string>
+    <string name="urge_surf_card_desc">不要和强烈的冲动对抗，陪它一起退去。</string>
+    <string name="urge_surf_intro">冲动就像海浪，会升高、达到顶峰，然后退去，通常只需要几分钟。冲动冲浪可以帮助你撑过这段时间。你会先给冲动打分，停下来想一想，然后玩一个平静的小游戏或活动身体 3 分钟。最后再次评分，看看冲动减弱了多少。</string>
+    <string name="urge_surf_enable_button">在拦截界面显示“我现在很难熬”</string>
+    <string name="urge_surf_enable_auto_offer">连续解锁 3 次后提供帮助</string>
+    <string name="urge_surf_auto_offer_note">一次又一次通过拦截界面，可能说明你正在经历强烈冲动。连续解锁 3 次后，拦截界面会主动提供帮助，即使上面的按钮已关闭。点击“取消”会重新开始计数。</string>
+    <string name="urge_surf_stats_title">你的冲动</string>
+    <string name="urge_surf_stats_empty">这里还没有记录。撑过一次冲动后，结果会显示在这里。</string>
+    <plurals name="urge_surf_stats_sessions">
+        <item quantity="one">你撑过了 %d 次冲动。</item>
+        <item quantity="other">你撑过了 %d 次冲动。</item>
+    </plurals>
+    <string name="urge_surf_stats_average">平均来说，你的冲动从 %1$s 降到了 %2$s。</string>
+    <plurals name="urge_surf_stats_went_down">
+        <item quantity="one">其中有 %1$d 次在 %2$d 次中减弱。</item>
+        <item quantity="other">其中有 %1$d 次在 %2$d 次中减弱。</item>
+    </plurals>
+    <string name="urge_surf_clear_history">清除历史记录</string>
+    <string name="urge_surf_clear_history_confirm">要删除所有冲动结果吗？此操作无法撤销。</string>
+    <string name="urge_surf_clear">删除</string>
+    <string name="urge_surf_struggling">我现在很难熬</string>
+    <string name="urge_surf_repeated_blocks">你连续几次解锁了被拦截的应用，这可能说明你正在经历强烈冲动。要不要试着撑过它？</string>
+    <string name="urge_surf_close">关闭</string>
+    <string name="urge_surf_rate_before_title">冲动有多强？</string>
+    <string name="urge_surf_rate_before_body">点击一个数字。0 表示完全没有，10 表示你满脑子都是这件事。</string>
+    <string name="urge_surf_rate_after_title">现在有多强？</string>
+    <string name="urge_surf_rate_after_body">诚实回答即可，任何数字都没关系。</string>
+    <string name="urge_surf_rate_low">没有</string>
+    <string name="urge_surf_rate_high">非常强</string>
+    <string name="urge_surf_rating_description">评分 %d</string>
+    <string-array name="urge_surf_reflect_prompts">
+        <item>一小时后，你会如何看待这件事？</item>
+        <item>你原本准备做什么？</item>
+        <item>如果朋友有同样的感受，你会对他说什么？</item>
+    </string-array>
+    <string name="urge_surf_reflect_body">花一点时间认真想一想。</string>
+    <string name="urge_surf_continue">继续</string>
+    <string name="urge_surf_choose_title">用 3 分钟撑过去</string>
+    <string name="urge_surf_choose_body">选择一种方式。时间结束后，你会再次给冲动评分。</string>
+    <string name="urge_surf_puzzle_title">玩一个平静的小游戏</string>
+    <string name="urge_surf_puzzle_desc">把方块拖到棋盘上，不计分。</string>
+    <string name="urge_surf_puzzle_hint">把方块拖到棋盘上。填满一行或一列即可消除。</string>
+    <string name="urge_surf_move_title">活动身体</string>
+    <string name="urge_surf_move_desc">深蹲、爬楼梯或快走。</string>
+    <string name="urge_surf_move_options">做 30 个深蹲
+或上下楼梯
+或快走一会儿</string>
+    <string name="urge_surf_move_effort">活动到呼吸变快的程度。简单拉伸不算。时间结束时，手机会震动提醒你。</string>
+    <string name="urge_surf_result_scores">%1$d → %2$d</string>
+    <plurals name="urge_surf_result_down">
+        <item quantity="one">你的冲动降低了 %d 分。冲动会在你等待时慢慢退去。</item>
+        <item quantity="other">你的冲动降低了 %d 分。冲动会在你等待时慢慢退去。</item>
+    </plurals>
+    <string name="urge_surf_result_same">你的冲动没有变化，但你仍然没有顺从它。这同样值得肯定。</string>
+    <string name="urge_surf_result_up">有些冲动需要更久才会退去。但你仍然撑过了这一次，没有顺从它。</string>
+    <plurals name="urge_surf_result_usual_drop">
+        <item quantity="one">你的冲动通常会在 3 分钟内降低 %d 分。</item>
+        <item quantity="other">你的冲动通常会在 3 分钟内降低 %d 分。</item>
+    </plurals>
+    <string name="urge_surf_go_home">回到主屏幕</string>
+    <string name="scheduled_notifications">定时通知</string>
+    <string name="scheduled_notifications_card_desc">在设定的时间集中查看通知，而不是全天不断被打扰。</string>
+    <string name="enable_scheduled_notifications">开启定时通知</string>
+    <string name="scheduled_notifications_intro">通知会让你整天回到手机上。开启后，Curbox 会先暂存收到的通知，再在你选择的时间集中送达。例如早上 9 点、下午 1 点和晚上 6 点。</string>
+    <string name="scheduled_notifications_delivery_times">送达时间</string>
+    <string name="scheduled_notifications_add_time">添加时间</string>
+    <string name="scheduled_notifications_pick_time">选择送达时间</string>
+    <string name="scheduled_notifications_allowed_apps">始终可以发送通知的应用</string>
+    <string name="scheduled_notifications_note">电话、闹钟，以及音乐或地图等持续通知始终会送达。Curbox 暂存通知前，通知可能会先发出一声短提示音。关闭此功能后，已经暂存的通知仍会在下一次送达时间出现。</string>
+    <string name="scheduled_notifications_access_title">允许通知访问</string>
+    <string name="scheduled_notifications_access_message">Curbox 需要通知访问权限，才能将通知暂存到你选择的时间。Curbox 不会读取、保存或发送通知内容。</string>
+    <string name="scheduled_notifications_access_missing">通知访问权限已关闭，因此没有通知会被暂存。</string>
+    <string name="scheduled_notifications_allow_access">允许访问</string>
+    <string name="scheduled_notifications_ping_title">你的通知到了</string>
+    <plurals name="scheduled_notifications_ping_body">
+        <item quantity="one">有 %d 条通知等到了这个时间。</item>
+        <item quantity="other">有 %d 条通知等到了这个时间。</item>
+    </plurals>
+    <string name="help_reducers">拦截工具和减少刺激的功能可以帮助你重新专注。</string>
+    <string name="help_focus">专注模式会在设定的一段时间内帮你远离干扰。</string>
+    <string name="help_usage">记录应用使用统计，帮助你更好地了解自己的数字习惯。</string>
+    <string name="help_app_blocker">拦截让你分心的应用，重新掌控屏幕使用时间。</string>
+    <string name="help_ui_hider">使用自定义脚本隐藏应用中的特定界面元素。</string>
+    <string name="help_reel_counter">记录你观看的短视频数量，帮助你养成更好的数字习惯。</string>
+    <string name="help_grayscale">将指定应用的屏幕变成灰度，减少视觉刺激。</string>
+    <string name="warning_scan_qr_code_prompt">扫描二维码或条形码，以便稍后解锁拦截。几乎任何代码都可以使用，例如家中产品包装上的代码，因此不需要专门打印新的代码。</string>
+    <plurals name="website_usage_show_more">
+        <item quantity="one">显示更多（%d）</item>
+        <item quantity="other">显示更多（%d）</item>
+    </plurals>
+    <string name="website_usage_show_less">显示更少</string>
+    <string name="warning_unlock_dynamic_time">动态时长</string>
+    <string name="warning_unlock_minutes">%d 分钟</string>
+    <string name="warning_unlock_remove">移除</string>
+    <string name="mindful_message_default">正念提醒</string>
+    <string name="app_blocker_service_label">Curbox 应用拦截</string>
+    <string name="app_blocker_service_description">拦截应用并记录屏幕使用时间</string>
+    <string name="ui_hider_service_description">检查无障碍节点，用于创建界面隐藏脚本</string>
+    <string name="reels_widget_label">短视频统计</string>
+    <string name="screentime_widget_label">屏幕使用时间统计</string>
+    <string name="timer_notification_channel_name">应用拦截计时器</string>
+    <string name="timer_notification_channel_description">被拦截应用的活动倒计时</string>
+    <string-array name="days_of_week_monday_first">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </string-array>
+    <string-array name="days_of_week_sunday_first">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+    <string-array name="usage_days_of_week">
+        <item>每天使用相同限制</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </string-array>
 </resources>

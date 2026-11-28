@@ -417,7 +417,7 @@ class WarningActivity : AppCompatActivity() {
             if (warningScreenConfig.isQrUnlockRequirementEnabled && !isQrScanned) {
                 val options = ScanOptions()
                 options.setDesiredBarcodeFormats(ScanOptions.ALL_CODE_TYPES)
-                options.setPrompt("Scan a QR Code to unlock")
+                options.setPrompt(getString(R.string.warning_scan_qr_code_prompt))
                 options.setCameraId(0) // Use a specific camera of the device
                 options.setBeepEnabled(false)
                 options.setBarcodeImageEnabled(true)

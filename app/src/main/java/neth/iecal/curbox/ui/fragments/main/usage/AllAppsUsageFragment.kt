@@ -325,7 +325,7 @@ class AllAppsUsageFragment : Fragment() {
                         R.id.action_help -> {
                             ViewUtils.showHelpPopup(
                                 binding.openMenu,
-                                "Track your application usage statistics to understand your digital habits better.",
+                                getString(R.string.help_usage),
                                 "https://curbox.app/docs/usage/usage-stats/"
                             )
                             true

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import neth.iecal.curbox.R
 import neth.iecal.curbox.data.models.AppTimeConfig
 import neth.iecal.curbox.databinding.FragmentAutodndTimeSettingsBinding
 import neth.iecal.curbox.ui.fragments.main.reducers.blockertools.shared.BaseTimeSettingsFragment
@@ -16,7 +17,8 @@ class AutoDndTimeSettingsFragment : BaseTimeSettingsFragment() {
 
     private val viewModel: AutoDndViewModel by activityViewModels()
 
-    override val daysOfWeek = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+    override val daysOfWeek: List<String>
+        get() = resources.getStringArray(R.array.days_of_week_monday_first).toList()
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?): View =
         FragmentAutodndTimeSettingsBinding.inflate(inflater, container, false).root

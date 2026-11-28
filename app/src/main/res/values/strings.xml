@@ -1146,4 +1146,56 @@
         <item quantity="one">%d notification waited for this time.</item>
         <item quantity="other">%d notifications waited for this time.</item>
     </plurals>
+    <string name="help_reducers">Blocker tools and stimulation reducers help you regain focus.</string>
+    <string name="help_focus">Focus mode helps you stay away from distractions for a set period of time.</string>
+    <string name="help_usage">Track your application usage statistics to understand your digital habits better.</string>
+    <string name="help_app_blocker">Block distracting apps and regain control over your screen time.</string>
+    <string name="help_ui_hider">Hide specific UI elements within apps using custom scripts.</string>
+    <string name="help_reel_counter">Track how many short videos you watch to build better digital habits.</string>
+    <string name="help_grayscale">Reduce visual stimulation by turning your screen grayscale for specific apps.</string>
+    <string name="warning_scan_qr_code_prompt">Scan a QR code or barcode to unlock the blocker later. You can use almost any code, even one from a product box at home, so there is no need to print a new one.</string>
+    <plurals name="website_usage_show_more">
+        <item quantity="one">Show More (%d)</item>
+        <item quantity="other">Show More (%d)</item>
+    </plurals>
+    <string name="website_usage_show_less">Show Less</string>
+    <string name="warning_unlock_dynamic_time">Dynamic time</string>
+    <string name="warning_unlock_minutes">%d mins</string>
+    <string name="warning_unlock_remove">Remove</string>
+    <string name="mindful_message_default">Mindful message</string>
+    <string name="app_blocker_service_label">Curbox App Blocker</string>
+    <string name="app_blocker_service_description">App blocking and usage monitoring for digital wellbeing</string>
+    <string name="ui_hider_service_description">Accessibility node inspection for building UI hider scripts</string>
+    <string name="reels_widget_label">Reel Stats</string>
+    <string name="screentime_widget_label">ScreenTime Stats</string>
+    <string name="timer_notification_channel_name">App Blocker Timers</string>
+    <string name="timer_notification_channel_description">Active countdowns for blocked apps</string>
+    <string-array name="days_of_week_monday_first">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+    <string-array name="days_of_week_sunday_first">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+    <string-array name="usage_days_of_week">
+        <item>Same Limit Everyday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
 </resources>

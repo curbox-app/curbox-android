@@ -146,7 +146,15 @@ class WebsiteUsageFragment : Fragment() {
 
             if (stats.size > 1) {
                 binding.expandButton.visibility = View.VISIBLE
-                binding.expandButton.text = if (isExpanded) "Show Less" else "Show More (${stats.size - 1})"
+                binding.expandButton.text = if (isExpanded) {
+                    getString(neth.iecal.curbox.R.string.website_usage_show_less)
+                } else {
+                    resources.getQuantityString(
+                        neth.iecal.curbox.R.plurals.website_usage_show_more,
+                        stats.size - 1,
+                        stats.size - 1
+                    )
+                }
                 binding.expandButton.setOnClickListener { onToggle() }
             } else {
                 binding.expandButton.visibility = View.GONE

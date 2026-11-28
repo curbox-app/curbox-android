@@ -32,7 +32,7 @@ class ReducersFragment : Fragment() {
         val autoDndCard = view.findViewById<MaterialCardView>(R.id.card_autodnd)
         
         view.findViewById<MaterialButton>(R.id.btn_help).setOnClickListener {
-            ViewUtils.showHelpPopup(it, "Blocker tools and stimulation reducers help you regain focus.", "https://curbox.app/docs/reducers/overview/")
+            ViewUtils.showHelpPopup(it, getString(R.string.help_reducers), "https://curbox.app/docs/reducers/overview/")
         }
 
         appBlockerCard.setOnClickListener {

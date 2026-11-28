@@ -82,7 +82,7 @@ class GrayscaleFragment : Fragment() {
         }
 
         binding.btnHelp.setOnClickListener {
-            ViewUtils.showHelpPopup(it, "Reduce visual stimulation by turning your screen grayscale for specific apps.", "https://curbox.app/docs/reducers/grayscale/")
+            ViewUtils.showHelpPopup(it, getString(R.string.help_grayscale), "https://curbox.app/docs/reducers/grayscale/")
         }
 
         binding.rvGrayscaleGroups.layoutManager = LinearLayoutManager(requireContext())

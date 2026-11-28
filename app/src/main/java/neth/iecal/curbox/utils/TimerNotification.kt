@@ -172,10 +172,10 @@ class TimerNotification(
         runCatching {
             val channel = NotificationChannel(
                 CHANNEL_ID,
-                "App Blocker Timers",
+                context.getString(neth.iecal.curbox.R.string.timer_notification_channel_name),
                 NotificationManager.IMPORTANCE_LOW
             ).apply {
-                description = "Active countdowns for blocked apps"
+                description = context.getString(neth.iecal.curbox.R.string.timer_notification_channel_description)
                 setSound(null, null)
                 enableVibration(false)
                 setShowBadge(false)
