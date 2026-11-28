@@ -135,8 +135,13 @@ class KeywordBlocker : BaseBlocker() {
 
         if (blockMode == FocusBlockMode.BLOCK_ALL_EXCEPT_SELECTED && isInternalBrowserPage(urlIdentifier)) return false
 
-        val matched = matchesPatterns(compiledKeywords, urlIdentifier)
-        return if (blockMode == FocusBlockMode.BLOCK_SELECTED) matched else !matched
+        val isBlockList = blockMode == FocusBlockMode.BLOCK_SELECTED
+        val matched = KeywordMatcher.matchesPatterns(
+            compiledKeywords,
+            urlIdentifier,
+            plainWordsMatchAnywhere = isBlockList
+        )
+        return if (isBlockList) matched else !matched
     }
 
     private fun isInternalBrowserPage(url: String): Boolean {
